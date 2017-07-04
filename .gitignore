@@ -13,3 +13,4 @@ buildNumber.properties
 .mvn/timing.properties
 *~
 examples.cache.old
+.content-site-checkout

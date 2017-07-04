@@ -68,3 +68,14 @@ in `src/main/jbake/content/examples`. If you want to take into account another e
 need to delete the cache before re-running the generation.
 
 Finally note that the site generation will rely on the cache as well to generate the examples home page.
+
+== Publish (needs an ASF account)
+
+`SvnPub` is a main to push to the staging the site content once built, you need to set the system properties (`MAVEN_OPTS`) `site.password`
+to your asf password and `site.username` if you user name is not `USER` environment variable for it to work.
+
+It will checkout/update the site from svn then copy the site folder from target directory to synchronize it with the svn version
+and finally it will commit everything.
+
+You can set the system property `site.message` to not use the default commit message.
+
