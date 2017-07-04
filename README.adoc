@@ -71,11 +71,20 @@ Finally note that the site generation will rely on the cache as well to generate
 
 == Publish (needs an ASF account)
 
-`SvnPub` is a main to push to the staging the site content once built, you need to set the system properties (`MAVEN_OPTS`) `site.password`
-to your asf password and `site.username` if you user name is not `USER` environment variable for it to work.
+`SvnPub` is a main to push to the staging the site content once built, you need to set the system properties (or properties in ~/.m2/settings.xml)
+`site.password` to your asf password and `site.username` if you user name is not `USER` environment variable for it to work.
 
 It will checkout/update the site from svn then copy the site folder from target directory to synchronize it with the svn version
 and finally it will commit everything.
 
 You can set the system property `site.message` to not use the default commit message.
 
+NOTE: `.content-site-checkout` will be the local copy of the website (if you need to modify manually the files or delete some old ones.
+
+NOTE: if the process fails unexpectedly (wrong update in the logic or anything) you can unlock the `.content-site-checkout` executing inside `svn cleanup`.
+
+To build and deploy on staging at once: `mvn clean compile pre-site`.
+
+Then to deploy to "prod": go on https://cms.apache.org/tomee/publish and hit "Submit" (note: you can review changes before if you want to check what the CMS took as changes).
+
+TIP: the staging is available when https://ci.apache.org/builders/tomee-site-staging build is done (triggered on commit), you can't deploy before.
