@@ -140,5 +140,10 @@ public class SvnPub {
             throw new IllegalStateException(commitInfo.getErrorMessage().toString());
         }
         System.out.println(commitInfo.toString());
+
+        // do we want to POST https://cms.apache.org/tomee/publish?diff=1 \
+        // message=&submit=Submit&key=commitInfo.getNewRevision()&source_url=https%3A%2F%2Fsvn.apache.org%2Frepos%2Fasf%2Ftomee%2Fsite&referer=
+        //
+        // to automatically publish on prod?
     }
 }
