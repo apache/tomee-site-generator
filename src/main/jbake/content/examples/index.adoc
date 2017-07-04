@@ -1,0 +1,5 @@
+= Examples
+:jbake-date: 2016-08-30
+:jbake-type: examples
+:jbake-status: published
+:jbake-tomeepdf:

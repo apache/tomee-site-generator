@@ -1,0 +1,8 @@
+= mtom
+:jbake-date: 2016-09-06
+:jbake-type: page
+:jbake-tomeepdf:
+:jbake-status: published
+
+Example mtom can be browsed at https://github.com/apache/tomee/tree/master/examples/mtom
+

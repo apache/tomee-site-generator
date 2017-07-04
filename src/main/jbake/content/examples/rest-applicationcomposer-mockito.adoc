@@ -1,0 +1,9 @@
+= rest-applicationcomposer-mockito
+:jbake-date: 2016-09-06
+:jbake-type: page
+:jbake-tomeepdf:
+:jbake-status: published
+
+Example rest-applicationcomposer-mockito can be browsed at https://github.com/apache/tomee/tree/master/examples/rest-applicationcomposer-mockito
+
+No README.md yet, be the first to contribute one!

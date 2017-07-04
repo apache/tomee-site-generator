@@ -1,0 +1,8 @@
+= bval-evaluation-redeployment
+:jbake-date: 2016-09-06
+:jbake-type: page
+:jbake-tomeepdf:
+:jbake-status: published
+
+Example bval-evaluation-redeployment can be browsed at https://github.com/apache/tomee/tree/master/examples/bval-evaluation-redeployment
+

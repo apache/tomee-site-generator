@@ -1,0 +1,106 @@
+= TomEE 7.0.3 Released
+:jbake-date: 2017-03-13
+:jbake-type: post
+:jbake-tags: website
+:jbake-status: published
+:jbake-tomeepdf:
+
+Aapche TomEE 7.0.3 just got released. It is available as usual on central
+or our download page.
+
+Most significant changes are linked to the dependency upgrades but several bugfixes can be interesting as well.
+
+The release note is the following one:
+
+                                
+== Bug
+
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1874[TOMEE-1874] -         Do not inject CDI if the application is being undeployed
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1897[TOMEE-1897] -         CdiResourceProvider masks critical error in InjectionException
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1965[TOMEE-1965] -         EntityManager(Factory) (and EntityManagerFactoryCallable) not serializable
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1967[TOMEE-1967] -         ObserverManager uses printStackTrace instead of logger.error
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1969[TOMEE-1969] -         Embedded maven plugin fails with java.lang.NoClassDefFoundError: org/apache/commons/beanutils/BeanUtils
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1970[TOMEE-1970] -         Configuration error can cause infinite loop
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1972[TOMEE-1972] -         dont initialize SystemInstance reading openejb.io.util.timeout
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1975[TOMEE-1975] -         authorization should be removed from the url for openejb-client
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1982[TOMEE-1982] -         @RunAs should only apply to nested calls, not the declaring bean ones
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1983[TOMEE-1983] -         NullPointerException is thrown from a consumer created by JMSContext when queue is empty
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1992[TOMEE-1992] -         JMSContext is not serializable, causing problems for Session and Transaction Scoped CDI beans
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1993[TOMEE-1993] -         When using symbolic links the @WebServlet is not processed
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1998[TOMEE-1998] -         moviefun-rest example not working with Tomee 7
+
+* link::https://issues.apache.org/jira/browse/TOMEE-2007[TOMEE-2007] -         CUTask (ManagedExecutorService) can lead to NPE used from an EJB
+
+* link::https://issues.apache.org/jira/browse/TOMEE-2009[TOMEE-2009] -         openejb.jpa.auto-scan should also add @Converter classes
+
+* link::https://issues.apache.org/jira/browse/TOMEE-2012[TOMEE-2012] -         JPA 2.1 providers not always recognized
+
+* link::https://issues.apache.org/jira/browse/TOMEE-2016[TOMEE-2016] -         7.0.2 (plus) Batch fails before batch starting
+
+* link::https://issues.apache.org/jira/browse/TOMEE-2018[TOMEE-2018] -         connectionFactoryLookup and destinationLookup not supported for mdbs
+
+
+    
+== Dependency upgrade
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1966[TOMEE-1966] -         tomcat 8.5.11
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1986[TOMEE-1986] -         johnzon 1.0.0
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1987[TOMEE-1987] -         geronimo transaction/connector 3.1.4
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1990[TOMEE-1990] -         JCS 2.0
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1994[TOMEE-1994] -         Outdated serp version: Entites with Java 8 features not mapped
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1996[TOMEE-1996] -         OpenJPA 2.4.2
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1997[TOMEE-1997] -         OpenWebBeans 1.7.2
+
+* link::https://issues.apache.org/jira/browse/TOMEE-2010[TOMEE-2010] -         cxf 3.1.10
+
+* link::https://issues.apache.org/jira/browse/TOMEE-2011[TOMEE-2011] -         activemq 5.14.3
+
+* link::https://issues.apache.org/jira/browse/TOMEE-2015[TOMEE-2015] -         jcs 2.1
+
+
+                
+== Improvement
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1976[TOMEE-1976] -         http ejbd client doesnt throw AuthorizationException for 401 errors
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1981[TOMEE-1981] -         Allow to disable TomEEJohnzonProvider
+
+* link::https://issues.apache.org/jira/browse/TOMEE-2008[TOMEE-2008] -         when a lot of @PersistenceContext are in the app, org.apache.openejb.assembler.classic.EntityManagerFactoryCallable#getProvider makes startup slower
+
+
+                
+== New Feature
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1980[TOMEE-1980] -         basic.username and basic.password support for http ejbd client
+
+* link::https://issues.apache.org/jira/browse/TOMEE-1991[TOMEE-1991] -         add to org.apache.tomee.jul.handler.rotating.LocalFileHandler.PatternFormatter class and method as 7th and 8th parameters
+
+* link::https://issues.apache.org/jira/browse/TOMEE-2005[TOMEE-2005] -         support to override arquillian protocol default value of adapters
+
+
+                                                    
+== Task
+
+* link::https://issues.apache.org/jira/browse/TOMEE-2002[TOMEE-2002] -         use ClassUnwrapper from cxf to slowly replace ClassHelper
+
+
+

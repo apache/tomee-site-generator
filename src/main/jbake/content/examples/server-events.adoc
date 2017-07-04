@@ -1,0 +1,9 @@
+= server-events
+:jbake-date: 2016-09-06
+:jbake-type: page
+:jbake-tomeepdf:
+:jbake-status: published
+
+Example server-events can be browsed at https://github.com/apache/tomee/tree/master/examples/server-events
+
+No README.md yet, be the first to contribute one!

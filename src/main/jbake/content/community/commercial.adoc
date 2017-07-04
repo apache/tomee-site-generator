@@ -1,0 +1,31 @@
+= Commercial Support
+:jbake-date: 2016-03-16
+:jbake-type: page
+:jbake-status: published
+:jbake-tomeepdf:
+
+This page is dedicated to companies offering products and services around or including Apache TomEE.
+
+The Apache TomEE PMC does not endorse or recommend any of the products or services on this page. We love all our supporters equally.
+
+Want to be added to this page? See at the bottom.
+
+=== Tomitribe
+
+Tomitribe is a company created by several founding members of the Apache TomEE community with the mission of uniting businesses using TomEE with responsible and sustainable Open Source. Our goal is to support both the community and fuel the success of business that rely TomEE with a complete set of consulting, training, and commercial support.
+
+
+=== ManageCat
+
+ManageCat is a cloud management and service platform for Apache Tomcat and Apache TomEE servers. Involving with a lot of Apache Java EE projects, we want to transfer not only our knowledge about Apache TomEE and also other Java EE technologies including JPA, EJB, CDI, JSF, JSTL, JTA, JMS. We will help our customers to develop and deploy their production based Java EE applications smoothly.
+
+=== I want to be added there
+
+To be listed in the Commercial Support send a link:../security/support.html[mail] to the Apache TomEE PMC with a description of your offerings and the text you would like to have added.
+
+==== Policy for additions
+The Apache TomEE PMC does not and cannot endorse or recommend any products or services.
+
+All submitted information must be factual and informational in nature and not be a marketing statement. Statements that promote your products and services over other offerings on the page will not be tolerated and will be removed. Such marketing statements can be added to your own pages on your own site.
+
+When in doubt, email the Apache TomEE PMC list (see link:../security/support.html[Mailing Lists]) and ask. We are be happy to help.

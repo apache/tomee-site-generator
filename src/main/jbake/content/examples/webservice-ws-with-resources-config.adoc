@@ -1,0 +1,9 @@
+= webservice-ws-with-resources-config
+:jbake-date: 2016-09-06
+:jbake-type: page
+:jbake-tomeepdf:
+:jbake-status: published
+
+Example webservice-ws-with-resources-config can be browsed at https://github.com/apache/tomee/tree/master/examples/webservice-ws-with-resources-config
+
+No README.md yet, be the first to contribute one!

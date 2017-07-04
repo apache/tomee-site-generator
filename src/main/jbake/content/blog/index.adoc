@@ -1,0 +1,6 @@
+= Blog
+:jbake-date: 2015-04-05
+:jbake-type: blog
+:jbake-tags: website
+:jbake-status: published
+:jbake-tomeepdf:

@@ -1,0 +1,63 @@
+= Sources
+:jbake-date: 2016-03-16
+:jbake-type: page
+:jbake-status: published
+
+=== Github
+
+TomEE is on Github at https://github.com/apache/tomee . The sources are synchronized by Apache on Github
+but Pull/Requests are integrated with Apache Infrastructure which means you can just submit us a patch as
+you would do on any Github project and Apache takes care of the rest of the process.
+
+=== Apache Git
+
+TomEE is using https://git-scm.com/[Git] as source content manager.
+
+The master sources are on https://git-wip-us.apache.org/repos/asf/tomee.git and you can clone them using the following command:
+
+[source]
+----
+git clone https://git-wip-us.apache.org/repos/asf/tomee.git tomee-master
+----
+
+If you are interested in 1.7.x branch only just checkout the `tomee-1.7.x` branch:
+
+[source]
+----
+git clone -b tomee-1.7.x https://git-wip-us.apache.org/repos/asf/tomee.git tomee-1.7.x
+----
+
+Master branch is the more up to date version of the codebase and currently targets TomEE 7.x branch.
+
+=== Building
+
+TomEE is a standard Maven project and to build it you just have to use the following command:
+
+[source]
+----
+mvn clean install
+----
+
+TIP: you can need to tune your environment variable `MAVEN_OPTS`, a commonly use value is `-Xmx1536m -XX:PermSize=64m -XX:MaxPermSize=384m`
+
+NOTE: if you are interested in testing arquillian tests with all adapters of tomee you will need to activate the dedicated profile: `-Pall-adapters`.
+
+==== Fast build
+
+Here are some shortcut builds if you just want to create a specific artifact (note it skips tests but removing `-DskipTests` you will execute them):
+
+- TomEE zip/tar.gz:
+
+[source]
+----
+mvn clean install -DskipTests -pl tomee/apache-tomee -am
+----
+
+Then TomEE archives are at `tomee/apache/tomee/target/apache-tomee-${classifier}-${version}.${extension}`.
+
+=== Continuous Integration
+
+TomEE is using Buildbot for its continuous integration. You can access main builds (Ubuntu ones) at these address:
+
+- https://ci.apache.org/builders/tomee-trunk-ubuntu[TomEE Master]
+- https://ci.apache.org/builders/tomee-1.7.x-ubuntu[TomEE 1.7.x]

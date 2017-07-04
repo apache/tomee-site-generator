@@ -1,0 +1,70 @@
+= TomEE Website Proposal
+
+== Add content
+
+Documentation is in `src/main/jbake/content`, it follows the sitemap/structure. If you add a new page ensure to add a link to it please.
+
+Preferred format is `asciidoc`.
+
+Here a sample for a new page:
+
+[source,adoc]
+----
+= My New Page
+:jbake-date: 2017-03-16
+:jbake-type: page
+:jbake-status: published
+:jbake-tomeepdf:
+
+This page will rocks.
+
+- One point
+- Another point
+
+=== Subtitle
+
+Some content.
+----
+
+TIP: to run the website check the build section or run the main `org.apache.tomee.website.JBake`, it will log the local address to access the dev website and
+enable you to type `r[ENTER]` to rebuild it without restarting.
+
+== Build
+
+To build the final website just use:
+
+[source]
+----
+mvn compile
+----
+
+For development `mvn compile -Djbake.http=true` starts a server on http://localhost:8080 and auto refreshes
+pages after updates.
+
+
+Then website is generated in `target/site-${version}` and you just need to sync it with CMS repo.
+
+NOTE: it also opens the door to documentation versioning with subfolder per version like maven does.
+
+TIP: the rendering is just a main so if the process doesn't work for you just enrich it in `JBake` class.
+
+== Extensions
+
+Build will generate a PDF for each page containing the attribute `jbake-tomeepdf`.
+
+== Examples
+
+TomEE examples (${tomee.master}/examples) generates samples. It relies on `Examples` class
+which requests on github the README.md for each subfolder of `examples` folder.
+
+For rate limit reason examples are cached locally in examples.cache and you can set your
+github auth header (`Authorization`) setting the system property `-Dgithub.auth` to have
+a higher rate limit.
+
+The cache is just the github response excepted the content of the files which are decoded (base64).
+
+Then the main calls org.apache.tomee.website.Examples.populateTree which creates the examples
+in `src/main/jbake/content/examples`. If you want to take into account another example you
+need to delete the cache before re-running the generation.
+
+Finally note that the site generation will rely on the cache as well to generate the examples home page.
