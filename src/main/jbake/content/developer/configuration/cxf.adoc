@@ -1,10 +1,10 @@
-= TomEE and CXF Configuration
+= CXF Configuration - JAX-RS and JAX-WS
 :jbake-date: 2016-03-16
 :jbake-type: page
 :jbake-status: published
 :jbake-tomeepdf:
 
-TomEE relies on Apache CXF for JAX-WS and JAX-RS, it doesn't provides all CXF modules but most comomn
+TomEE relies on Apache CXF for JAX-RS and JAX-WS, it doesn't provides all CXF modules but most common
 ones for both specifications (JAX-RS is part of all distributions but JAX-WS is only part of plus one).
 
 == Configuration

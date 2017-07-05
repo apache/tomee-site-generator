@@ -25,28 +25,28 @@
 			<div class="row intro-tables animated fadeInUp" style="opacity: 0;">
 				<div class="col-md-4">
 				    <div class="intro-table intro-table1 intro-table-hover1 intro-table-hover">
-                        <h5 class="white heading hide-hover">TomEE for administrators</h5>
+                        <h5 class="white heading hide-hover">Learn more about TomEE</h5>
                         <div class="bottom">
-                            <h4 class="white heading small-heading no-margin regular">I'm an admin</h4>
-                            <a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>admin/index.html" class="btn btn-white-fill expand">Learn more...</a>
+                            <h4 class="white heading small-heading no-margin regular">Documentation</h4>
+                            <a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/documentation.html" class="btn btn-white-fill expand">Learn more...</a>
                         </div>
                     </div>
 				</div>
 				<div class="col-md-4">
 					<div class="intro-table intro-table2 intro-table-hover2 intro-table-hover">
-						<h5 class="white heading hide-hover">TomEE for developers</h5>
+						<h5 class="white heading hide-hover">How can I contribute to TomEE?</h5>
 						<div class="bottom">
-							<h4 class="white heading small-heading no-margin regular">I'm a developer</h4>
-							<a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>developer/index.html" class="btn btn-white-fill expand">Learn more...</a>
+							<h4 class="white heading small-heading no-margin regular">Community</h4>
+							<a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/community/index.html" class="btn btn-white-fill expand">Learn more...</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
                     <div class="intro-table intro-table3 intro-table-hover3 intro-table-hover">
-                        <h5 class="white heading hide-hover">Advanced usages</h5>
+                        <h5 class="white heading hide-hover">How can I download TomEE?</h5>
                         <div class="bottom">
-                            <h4 class="white heading small-heading no-margin regular">Too easy, let's go further</h4>
-                            <a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>advanced/index.html" class="btn btn-white-fill expand">Learn more...</a>
+                            <h4 class="white heading small-heading no-margin regular">Downloads</h4>
+                            <a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html" class="btn btn-white-fill expand">Learn more...</a>
                         </div>
                     </div>
 				</div>

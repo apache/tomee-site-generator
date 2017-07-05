@@ -1,4 +1,4 @@
-= TomEE and JSON
+= TomEE 7 and Apache Johnzon
 :jbake-date: 2016-03-16
 :jbake-type: page
 :jbake-status: published
@@ -8,7 +8,7 @@ Since TomEE 7.0, TomEE comes with Apache Johnzon.
 It means you can use JSON-P out of the box but also Johnzon Mapper
 which is the default JAX-RS provider for JSON.
 
-IMPORTANT: this is a breaking change with 1.x which was using jettison.
+*IMPORTANT* - this is a breaking change with 1.x which was using jettison.
 This last one was relying on JAXB model to generate JSON which often led
 to unexpected JSON tree and some unexpected escaping too.
 

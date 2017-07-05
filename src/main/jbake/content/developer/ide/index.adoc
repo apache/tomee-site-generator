@@ -1,10 +1,10 @@
-= TomEE and IDE
+= IDEs
 :jbake-date: 2016-03-16
 :jbake-type: page
 :jbake-status: published
 :jbake-tomeepdf:
 
-TomEE is supported by main IDE of the marker:
+TomEE is supported by the main IDEs in the market:
 
 - https://eclipse.org/downloads/[Eclipse]
 - https://www.jetbrains.com/idea/download/[Intellij Idea]

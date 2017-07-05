@@ -1,10 +1,8 @@
-= TomEE Shading
+= Fat / Uber jars - Shade Plugin
 :jbake-date: 2016-03-16
 :jbake-type: page
 :jbake-status: published
 :jbake-tomeepdf:
-
-== Fat Jars with Maven
 
 Shading the container and the application has some challenges like merging correctly resources (`META-INF/services/` typically).
 

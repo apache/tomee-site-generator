@@ -3,6 +3,7 @@ package org.apache.tomee.website;
 import com.orientechnologies.orient.core.Orient;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.configuration.CompositeConfiguration;
+import org.apache.commons.io.FileUtils;
 import org.apache.tomee.embedded.Configuration;
 import org.apache.tomee.embedded.Container;
 import org.jbake.app.ConfigUtil;
@@ -56,6 +57,7 @@ public class JBake {
                     PDFify.generatePdf(pdfSource, destination);
                 }
 
+                copyFileLayoutToDirStructure(destination);
                 System.out.println("  > done :)");
             } catch (final Exception e) {
                 e.printStackTrace();
@@ -177,5 +179,15 @@ public class JBake {
             }
             onQuit.run();
         }
+    }
+
+    private static void copyFileLayoutToDirStructure(File destination) throws IOException {
+        final File adminFolder = new File(destination, "admin");
+        final File fileLayoutHtml = new File(adminFolder, "file-layout.html");
+        final File dirStructureHtml = new File(adminFolder, "directory-structure.html");
+        final File fileLayoutPdf = new File(adminFolder, "file-layout.pdf");
+        final File dirStructurePdf = new File(adminFolder, "directory-structure.pdf");
+        FileUtils.copyFile(fileLayoutHtml, dirStructureHtml);
+        FileUtils.copyFile(fileLayoutPdf, dirStructurePdf);
     }
 }

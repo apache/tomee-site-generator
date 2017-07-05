@@ -1,4 +1,4 @@
-= ApplicationComposer: The TomEE Swiss Knife
+= ApplicationComposer: the swiss knife of TomEE
 :jbake-date: 2016-03-16
 :jbake-type: page
 :jbake-status: published
