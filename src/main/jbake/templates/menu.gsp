@@ -8,7 +8,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/#">
+				<a class="navbar-brand" href="/">
 				    <span>
 
 				    <% if (content.uri && content.uri == '/index.html') { %>
@@ -26,14 +26,11 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right main-nav">
-					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>developer/index.html">Developer</a></li>
-					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>admin/index.html">Admin</a></li>
-					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>advanced/index.html">Advanced</a></li>
-					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>security/index.html">Security</a></li>
-					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>examples/index-ng.html">Examples</a></li>
-					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>blog/index.html">Blog</a></li>
+					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>documentation.html">Documentation</a></li>
+					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>examples/index.html">Examples</a></li>
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>community/index.html">Community</a></li>
-                    <li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>download-ng.html">Downloads</a></li>
+					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>security/index.html">Security</a></li>
+					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>download-ng.html">Downloads</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

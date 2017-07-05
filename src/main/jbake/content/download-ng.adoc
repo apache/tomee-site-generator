@@ -5,7 +5,7 @@
 :jbake-tomeepdf:
 :icons: font
 
-IMPORTANT: only TomEE 1.x WebProfile and JAX-RS distributions are certified.
+IMPORTANT: Only TomEE 1.x WebProfile and JAX-RS distributions are certified.
 
 [.table.table-bordered,options="header"]
 |===

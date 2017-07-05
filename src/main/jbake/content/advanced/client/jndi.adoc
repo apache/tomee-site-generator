@@ -1,4 +1,4 @@
-= Advanced
+= JNDI
 :jbake-date: 2016-10-14
 :jbake-type: page
 :jbake-status: published
