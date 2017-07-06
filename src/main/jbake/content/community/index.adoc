@@ -3,7 +3,7 @@
 :jbake-type: page
 :jbake-status: published
 
-=== Source Code
+=== The Source Code
 
 Want to grab TomEE source code and hack it? Nothing simpler, just go link:sources.html[there].
 
@@ -19,7 +19,7 @@ Facebook, Twitter, Google+: if that speaks to you just follow this link:social.h
 
 For more information about available support for TomEE please have a look on link:../security/support.html[Support] page.
 
-=== Contribute to this website
+=== Contribute to This Website
 
 This website is a simple JBake project you can find at https://git-wip-us.apache.org/repos/asf/tomee-site-generator.git.
 

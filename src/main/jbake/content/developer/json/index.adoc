@@ -1,4 +1,4 @@
-= TomEE 7 and Apache Johnzon
+= TomEE and Apache Johnzon - JAX-RS JSON Provider
 :jbake-date: 2016-03-16
 :jbake-type: page
 :jbake-status: published
