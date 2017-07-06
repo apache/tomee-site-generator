@@ -1,4 +1,4 @@
-= Fat / Uber jars - Shade Plugin
+= Fat / Uber jars - Using the Shade Plugin
 :jbake-date: 2016-03-16
 :jbake-type: page
 :jbake-status: published

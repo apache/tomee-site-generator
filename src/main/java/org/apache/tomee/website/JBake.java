@@ -187,7 +187,13 @@ public class JBake {
         final File dirStructureHtml = new File(adminFolder, "directory-structure.html");
         final File fileLayoutPdf = new File(adminFolder, "file-layout.pdf");
         final File dirStructurePdf = new File(adminFolder, "directory-structure.pdf");
-        FileUtils.copyFile(fileLayoutHtml, dirStructureHtml);
-        FileUtils.copyFile(fileLayoutPdf, dirStructurePdf);
+
+        if(fileLayoutPdf.exists()){
+            FileUtils.copyFile(fileLayoutPdf, dirStructurePdf);
+        }
+
+        if(fileLayoutHtml.exists()){
+            FileUtils.copyFile(fileLayoutHtml, dirStructureHtml);
+        }
     }
 }
