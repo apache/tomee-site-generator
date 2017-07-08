@@ -28,7 +28,7 @@
                         <h5 class="white heading hide-hover">Learn more about TomEE</h5>
                         <div class="bottom">
                             <h4 class="white heading small-heading no-margin regular">Documentation</h4>
-                            <a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/documentation.html" class="btn btn-white-fill expand">Learn more...</a>
+                            <a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/docs.html" class="btn btn-white-fill expand">Learn more...</a>
                         </div>
                     </div>
 				</div>
