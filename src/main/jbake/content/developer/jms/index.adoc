@@ -8,7 +8,27 @@
 
 === JMS
 
-Be the first to write this part!
+
+
+The *Java Message Service* (JMS) API is a Java Message Oriented Middleware for creating, sending, receiving messages between two or more clients. The major benefits of JMS are:
+
+* Communication between components loosely coupled.
+* Asynchronous messages. Clients don’t need to request messages in order to read them.
+* Reliable messages. Each message is delivered once.
+
+
+=== Glossary
+
+
+* *JMS Provider*: The implementation of Message Oriented Middleware following JMS interfaces.
+* *JMS Client*:  Application that produces or/and receives messages.
+* *JMS Producer*: JMS client that creates and sends messages.
+* *JMS Consumer*: JMS client that receives messages.
+* *JMS Message*: The object that is transferred between clients.
+* *JMS Queue*: Area that contains sent messages that are waiting to be read by only one consumer.
+* *JMS Topic*: A distribution mechanism for publishing messages that are delivered to multiple subscribers.
+
+
 
 === Message
 
@@ -24,5 +44,13 @@ Be the first to write this part!
 
 
 === JMS Advanced
+
+
+=== JMS and TomEE
+
+Apache TomEE (Plume and Plus) provide Apache ActiveMQ (http://activemq.apache.org/) as part of the distribution,
+ and this can run in either embedded mode, or TomEE can connect to an external standalone ActiveMQ broker.
+  Apache TomEE does allow ActiveMQ to be replaced by another JMS provider, or alternatively you can run two or more
+  JMS providers simultaneously and specify which provider MDBs and callers should use via configuration.
 
 - link:developer/jms/advanced.html[Understanding the TomEE JMS]
