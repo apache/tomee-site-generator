@@ -51,9 +51,6 @@ The Message interface is the root interface of all JMS messages. It defines the 
 * *Bytes*: A *BytesMessage* object's message body contains a stream of uninterpreted bytes. This message type is for literally encoding a body to match an existing message format. In many cases, it is possible to use one of the other body types, which are easier to use. Although the JMS API allows the use of message properties with byte messages, they are typically not used, since the inclusion of properties may affect the format.
 
 
-=== JMS Advanced
-- link:developer/jms/advanced.html[Understanding the TomEE JMS]
-
 === JMS and TomEE
 
 Apache TomEE (Plume and Plus) provide Apache ActiveMQ (http://activemq.apache.org/) as part of the distribution,
@@ -61,3 +58,7 @@ Apache TomEE (Plume and Plus) provide Apache ActiveMQ (http://activemq.apache.or
 Apache TomEE does allow ActiveMQ to be replaced by another JMS provider, or alternatively you can run two or more
  JMS providers simultaneously and specify which provider MDBs and callers should use via configuration.
 
+
+=== JMS Advanced
+
+- link:advanced.html[JMS Advanced]

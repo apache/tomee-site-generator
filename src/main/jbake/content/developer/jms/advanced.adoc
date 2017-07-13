@@ -5,11 +5,12 @@
 :jbake-tomeepdf:
 
 
-=== Activation Message
+=== Configuring the Container
 
 Be the first to write this part!
 
-=== Configuring the Container
+
+=== Activation Message
 
 Be the first to write this part!
 
