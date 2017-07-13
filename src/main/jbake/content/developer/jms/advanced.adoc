@@ -5,9 +5,43 @@
 :jbake-tomeepdf:
 
 
-=== Configuring the Container
+=== Configuring the Container tomee.xml
 
-Be the first to write this part!
+===== Queue
+
+[source,java]
+----
+<Resource id="Foo" type="javax.jms.Queue">
+    destination = Specifies the name of the queue
+</Resource>
+----
+
+===== Topic
+
+[source,java]
+----
+
+<Resource id="Foo" type="javax.jms.Topic">
+    destination = Specifies the name of the topic
+</Resource>
+----
+
+
+===== Topic
+
+[source,java]
+----
+
+<Resource id="Foo" type="javax.jms.ConnectionFactory">
+    ResourceAdapter 	Default value is Default JMS Resource Adapter.
+    TransactionSupport 	Specifies if the connection is enrolled in global transaction, allowed values: xa, local or none. Default value is xa.
+    PoolMaxSize 	Maximum number of physical connection to the ActiveMQ broker. Default value is 10.
+    PoolMinSize 	Minimum number of physical connection to the ActiveMQ broker. Default value is 0.
+    ConnectionMaxWaitMilliseconds 	Maximum amount of time to wait for a connection. Default value is 5000.
+    ConnectionMaxIdleMinutes 	Maximum amount of time a connection can be idle before being reclaimed. Default value is 15.
+</Resource>
+
+----
 
 
 === Activation Message
