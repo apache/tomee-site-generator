@@ -60,8 +60,13 @@
 
 === Activation Message
 
-Be the first to write this part!
+A JMS activation specification is associated with one or more message-driven beans and provides the configuration necessary for them to receive messages.
 
-==== Configurations
 
-Be the first to write this part!
+[source,java]
+----
+containerId.activation.atrribute=value
+----
+
+So, the attribute will send through all the message-drive bean who has the container id equals to *containerId*.
+
