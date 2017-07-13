@@ -1,4 +1,9 @@
 = Understanding the TomEE JMS
+:jbake-date: 2016-03-17
+:jbake-type: page
+:jbake-status: published
+:jbake-tomeepdf:
+
 
 
 === JMS
@@ -16,3 +21,8 @@ Be the first to write this part!
 ==== Message Types
 
 Be the first to write this part!
+
+
+=== JMS Advanced
+
+- link:developer/jms/advanced.html[Understanding the TomEE JMS]

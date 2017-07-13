@@ -1,0 +1,18 @@
+= JMS Advanced
+:jbake-date: 2016-03-17
+:jbake-type: page
+:jbake-status: published
+:jbake-tomeepdf:
+
+
+=== Activation Message
+
+Be the first to write this part!
+
+=== Configuring the Container
+
+Be the first to write this part!
+
+==== Configurations
+
+Be the first to write this part!
