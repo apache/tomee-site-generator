@@ -32,7 +32,9 @@ The *Java Message Service* (JMS) API is a Java Message Oriented Middleware for c
 
 === Message
 
-Be the first to write this part!
+The Message interface is the root interface of all JMS messages. It defines the message header and the acknowledge method used for all messages.
+
+*More*: https://docs.oracle.com/javaee/7/api/javax/jms/Message.html
 
 ==== Message Compose
 
@@ -40,7 +42,7 @@ Be the first to write this part!
 * *Properties*: Each message contains a built-in facility for supporting application-defined property values. Properties provide an efficient mechanism for supporting application-defined message filtering.
 * *Body*: The JMS API defines several types of message body, which cover the majority of messaging styles currently in use.
 
-==== Message Types
+==== Message Bodies
 
 * *Stream*: A *StreamMessage* object's message body contains a stream of primitive values in the Java programming language ("Java primitives"). It is filled and read sequentially.
 * *Map*: A *MapMessage* object's message body contains a set of name-value pairs, where names are String objects, and values are Java primitives. The entries can be accessed sequentially or randomly by name. The order of the entries is undefined.
@@ -50,13 +52,12 @@ Be the first to write this part!
 
 
 === JMS Advanced
-
+- link:developer/jms/advanced.html[Understanding the TomEE JMS]
 
 === JMS and TomEE
 
 Apache TomEE (Plume and Plus) provide Apache ActiveMQ (http://activemq.apache.org/) as part of the distribution,
  and this can run in either embedded mode, or TomEE can connect to an external standalone ActiveMQ broker.
-  Apache TomEE does allow ActiveMQ to be replaced by another JMS provider, or alternatively you can run two or more
-  JMS providers simultaneously and specify which provider MDBs and callers should use via configuration.
+Apache TomEE does allow ActiveMQ to be replaced by another JMS provider, or alternatively you can run two or more
+ JMS providers simultaneously and specify which provider MDBs and callers should use via configuration.
 
-- link:developer/jms/advanced.html[Understanding the TomEE JMS]
