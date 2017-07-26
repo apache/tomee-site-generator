@@ -9,7 +9,7 @@
 
 ===== Queue
 
-[source,java]
+[source,xml]
 ----
 <Resource id="Foo" type="javax.jms.Queue">
     destination = Specifies the name of the queue
@@ -18,9 +18,8 @@
 
 ===== Topic
 
-[source,java]
+[source,xml]
 ----
-
 <Resource id="Foo" type="javax.jms.Topic">
     destination = Specifies the name of the topic
 </Resource>
@@ -29,9 +28,8 @@
 
 ===== ConnectionFactory
 
-[source,java]
+[source,xml]
 ----
-
 <Resource id="Foo" type="javax.jms.ConnectionFactory">
     ResourceAdapter = Default value is Default JMS Resource Adapter.
     TransactionSupport = Specifies if the connection is enrolled in global transaction, allowed values: xa, local or none. Default value is xa.
@@ -40,21 +38,18 @@
     ConnectionMaxWaitMilliseconds = Maximum amount of time to wait for a connection. Default value is 5000.
     ConnectionMaxIdleMinutes = Maximum amount of time a connection can be idle before being reclaimed. Default value is 15.
 </Resource>
-
 ----
 
 ===== MESSAGE
 
-[source,java]
+[source,xml]
 ----
-
 <Container id="Foo" type="MESSAGE">
     ResourceAdapter = The resource adapter delivers messages to the container. Default value is Default JMS Resource Adapter.
     MessageListenerInterface = Specifies the message listener interface handled by this container. Default value is javax.jms.MessageListener.
     ActivationSpecClass = Specifies the activation spec class. Default value is org.apache.activemq.ra.ActiveMQActivationSpec.
     InstanceLimit = Specifies the maximum number of bean instances that are allowed to exist for each MDB deployment. Default value is 10.
 </Container>
-
 ----
 
 
@@ -65,11 +60,20 @@ A JMS activation specification is associated with one or more message-driven bea
 
 [source,java]
 ----
-containerId.activation.atrribute=value
+containerId.activation.atrribute = value
 ----
 
 So, the attribute will send through all the message-drive bean who has the container id equals to *containerId*.
 
+
+==== Global Configuration
+
+To set a global configuration which will be used for all container configured we can you can use `mdb` instead of `containerId`
+
+[source,java]
+----
+mdb.activation.atrribute = value
+----
 
 ==== Ignore fields:
 
@@ -78,7 +82,6 @@ Add a file `service-jar.xml` at the path `resources/META-INF/org.apache.openejb/
 
 [source,xml]
 ----
-
  <ServiceProvider
           id="Default MDB Container"
           service="Container"
@@ -87,26 +90,20 @@ Add a file `service-jar.xml` at the path `resources/META-INF/org.apache.openejb/
           class-name="org.apache.openejb.core.mdb.MdbContainer">
 
     # The resource adapter delivers messages to the container
-
     ResourceAdapter Default JMS Resource Adapter
 
     # Specifies the message listener interface handled by this container
-
     MessageListenerInterface javax.jms.MessageListener
 
     # Specifies the activation spec class
-
     ActivationSpecClass org.apache.openejb.resource.activemq.TomEEMessageActivationSpec
 
     # Specifies the maximum number of bean instances that are
     # allowed to exist for each MDB deployment.
-
     InstanceLimit 10
 
     # log a warning if true or throw an exception if false is an activation spec can't be respected
-
     FailOnUnknownActivationSpec = false
 
 </ServiceProvider>
-
 ----

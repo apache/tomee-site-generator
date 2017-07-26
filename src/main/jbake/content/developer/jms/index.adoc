@@ -62,3 +62,8 @@ Apache TomEE does allow ActiveMQ to be replaced by another JMS provider, or alte
 === JMS Advanced
 
 - link:advanced.html[JMS Advanced]
+
+
+=== JMS Common Configuration
+
+- link:common-jms-configuration.html[JMS Common Configuration]

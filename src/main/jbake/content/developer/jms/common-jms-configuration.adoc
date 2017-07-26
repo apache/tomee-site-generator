@@ -1,0 +1,95 @@
+= JMS Common Configuration
+:jbake-date: 2017-07-26
+:jbake-type: page
+:jbake-status: published
+:jbake-tomeepdf:
+
+See the link:advanced.html[JMS Advanced] for details on all configuration options for JMS.
+
+JBoss MQ
+[source,xml]
+----
+  <Resource id="JBossMQResourceAdapter" class-name="org.jboss.resource.adapter.jms.JmsResourceAdapter">
+  </Resource>
+
+  <Resource id="JBossMQConnectionFactory" class-name="org.jboss.resource.adapter.jms.JmsManagedConnectionFactory">
+    ConnectionFactory=ConnectionFactory
+    JndiParameters=java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory;java.naming.provider.url=jnp://localhost:1099;java.naming.factory.url.pkgs=org.jboss.naming:org.jnp.interfaces
+    SessionDefaultType=agnostic
+    Strict=true
+  </Resource>
+
+  <Resource id="topic/testTopic" type="javax.jms.Topic" class-name="org.jboss.mq.SpyTopic" constructor="name">
+    name=testTopic
+  </Resource>
+
+  <Container id="JBossMQMDBContainer" ctype="MESSAGE">
+    ResourceAdapter=JBossMQResourceAdapter
+    ActivationSpecClass=org.jboss.resource.adapter.jms.inflow.JmsActivationSpec
+    InstanceLimit=20
+  </Container>
+
+  <Resource id="TibcoResourceAdapter" class-name="org.jboss.resource.adapter.jms.JmsResourceAdapter">
+  </Resource>
+----
+
+TIBCO Enterprise Message Service
+[source,xml]
+----
+<Resource id="TibcoResourceAdapter" class-name="org.jboss.resource.adapter.jms.JmsResourceAdapter">
+  </Resource>
+
+  <Resource id="TibcoConnectionFactory" class-name="org.jboss.resource.adapter.jms.JmsManagedConnectionFactory">
+    ConnectionFactory=ConnectionFactory
+    JndiParameters=java.naming.security.principal=admin;java.naming.security.credentials=password123;java.naming.factory.initial=com.tibco.tibjms.naming.TibjmsInitialContextFactory;java.naming.factory.url.pkgs=com.tibco.tibjms.naming;java.naming.provider.url=tcp://192.168.37.110:7222
+    SessionDefaultType=agnostic
+    Strict=true
+  </Resource>
+
+  <Resource id="sample" type="javax.jms.Topic" class-name="com.tibco.tibjms.TibjmsTopic" constructor="name">
+    name=topic.sample
+  </Resource>
+
+  <Container id="TibcoMDBContainer" ctype="MESSAGE">
+    ResourceAdapter=TibcoResourceAdapter
+    ActivationSpecClass=org.jboss.resource.adapter.jms.inflow.JmsActivationSpec
+    InstanceLimit=20
+  </Container>
+----
+
+WebSphere MQ
+[source,xml]
+----
+<Resource id="WMQResourceAdapter" class-name="com.ibm.mq.connector.ResourceAdapterImpl">
+    connectionConcurrency 1
+    maxConnections 50
+    logWriterEnabled true
+    reconnectionRetryCount 5
+    reconnectionRetryInterval 300000
+    startupRetryCount 0
+    startupRetryInterval 30000
+    traceEnabled false
+  </Resource>
+
+  <Resource id="WMQConnectionFactory" class-name="com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl">
+    maxConnections=200
+    hostName=ec2-54-82-138-6.compute-1.amazonaws.com
+    port=14141
+    queueManager=test
+    channel=test
+    transportType=CLIENT
+  </Resource>
+
+  <Container id="WMQMDBContainer" ctype="MESSAGE">
+    ResourceAdapter WMQResourceAdapter
+    ActivationSpecClass com.ibm.mq.connector.inbound.ActivationSpecImpl
+  </Container>
+
+  <Resource id="wmqTopic" type="javax.jms.Topic" class-name="com.ibm.mq.jms.MQTopic" constructor="topicName">
+    SkipImplicitAttributes=true
+    topicName=wmqTopic
+    XMSC_CONNECTION_TYPE_NAME=com.ibm.msg.client.wmq
+  </Resource>
+----
+
+
