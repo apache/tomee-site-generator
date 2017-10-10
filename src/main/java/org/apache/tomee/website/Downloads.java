@@ -14,12 +14,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Stream;
 
 import static java.time.format.DateTimeFormatter.RFC_1123_DATE_TIME;
@@ -41,8 +45,13 @@ public class Downloads {
     }
 
     public static void main(final String[] args) {
+
         System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "512");
-        Stream.of(
+
+        AtomicReference<String> version1 = new AtomicReference<>();
+        AtomicReference<String> version7 = new AtomicReference<>();
+
+        final List<Download> downloads = Stream.of(
                 Stream.of("org/apache/openejb/openejb", "org/apache/tomee/tomee-project")
                         .flatMap(Downloads::toVersions)
                         .map(v -> v.extensions("zip"))
@@ -65,20 +74,28 @@ public class Downloads {
                 .map(Downloads::fillDownloadable)
                 .filter(Objects::nonNull /* skipped */)
                 .sorted((o1, o2) -> {
-                    final int nameComp = o1.name.compareTo(o2.name);
-                    if (nameComp != 0) {
-                        return nameComp;
-                    }
 
-                    final int versionComp = o2.version.compareTo(o1.version);
+                    int versionComp = o2.version.compareTo(o1.version);
+
                     if (versionComp != 0) {
                         if (o2.version.startsWith(o1.version) && o2.version.contains("-M")) { // milestone
-                            return -1;
+                            versionComp = -1;
+                        } else if (o1.version.startsWith(o2.version) && o1.version.contains("-M")) { // milestone
+                            versionComp = 1;
                         }
-                        if (o1.version.startsWith(o2.version) && o1.version.contains("-M")) { // milestone
-                            return 1;
-                        }
+
+                        checkMaxVersion(version1, version7, o1, versionComp);
+
                         return versionComp;
+                    }
+
+                    final int nameComp = o1.name.compareTo(o2.name);
+
+                    if (nameComp != 0) {
+
+                        checkMaxVersion(version1, version7, o1, nameComp);
+
+                        return nameComp;
                     }
 
                     final long dateComp = LocalDateTime.parse(o2.date, RFC_1123_DATE_TIME).toInstant(ZoneOffset.UTC).toEpochMilli()
@@ -89,15 +106,60 @@ public class Downloads {
 
                     return o1.url.compareTo(o2.url);
                 })
-                .collect(toList())
-                .forEach(d ->
-                        System.out.println("" +
-                                "|" + d.name + (d.classifier.isEmpty() ? "" : (" " + d.classifier)) +
-                                "|" + d.version +
-                                "|" + d.date +
-                                "|" + d.size + " MB " +
-                                "|" + d.format +
-                                "| " + d.url + "[icon:download[] " + d.format + "] " + d.sha1 + "[icon:download[] sha1] " + d.md5 + "[icon:download[] md5] " + d.asc + "[icon:download[] asc]"));
+                .collect(toList());
+
+        String versionCurrent = version7.get();
+
+        //Current
+        for (final Download d : downloads) {
+            if (d.version.startsWith(version7.get()) || d.version.startsWith(version1.get())) {
+
+                if (!versionCurrent.equals(d.version)) {
+                    versionCurrent = d.version;
+                    System.out.println("||||||");
+                }
+
+                printRow(d);
+            }
+        }
+
+        System.out.println();
+        versionCurrent = version7.get();
+
+        //Archive
+        for (final Download d : downloads) {
+            if (!d.version.startsWith(version7.get()) && !d.version.startsWith(version1.get())) {
+
+                if (!versionCurrent.equals(d.version)) {
+                    versionCurrent = d.version;
+                    System.out.println("||||||");
+                }
+
+                printRow(d);
+            }
+        }
+
+
+    }
+
+    private static void printRow(Download d) {
+        System.out.println("" +
+                "|" + d.name.replace("Apache ", "") + (d.classifier.isEmpty() ? "" : (" " + d.classifier)) +
+                "|" + d.version +
+                "|" + new SimpleDateFormat("d MMM yyyy").format(Date.from(LocalDateTime.parse(d.date, RFC_1123_DATE_TIME).toInstant(ZoneOffset.UTC))) +
+                "|" + d.size + " MB " +
+                "|" + d.format.toUpperCase() +
+                "| " + d.url + "[icon:download[] " + d.format.toUpperCase() + "] " + d.sha1 + "[icon:download[] SHA1] " + d.md5 + "[icon:download[] MD5]");
+    }
+
+    private static void checkMaxVersion(AtomicReference<String> version1, AtomicReference<String> version7, Download o1, int versionComp) {
+        if (versionComp > 0) {
+            if (o1.version.startsWith("1.")) {
+                version1.set(o1.version);
+            } else if (o1.version.startsWith("7.")) {
+                version7.set(o1.version);
+            }
+        }
     }
 
     private static Download fillDownloadable(final Download download) {
@@ -114,7 +176,8 @@ public class Downloads {
             }
 
             download.setDate(connection.getHeaderField("Last-Modified").replaceAll(" +", " "));
-            download.setSize(toMega(ofNullable(connection.getHeaderField("Content-Length")).map(Long::parseLong).orElse(0L), ofNullable(connection.getHeaderField("Accept-Ranges")).orElse("bytes")));
+            download.setSize(toMega(ofNullable(connection.getHeaderField("Content-Length")).map(Long::parseLong).orElse(0L), ofNullable(connection.getHeaderField("Accept-Ranges")).orElse
+                    ("bytes")));
 
             connection.getInputStream().close();
         } catch (final IOException e) {
@@ -143,7 +206,8 @@ public class Downloads {
         final String artifactBase = version.base + "/" + version.version + "/" + artifactId + "-" + version.version;
         return version.extensions.stream()
                 .flatMap(e -> (version.classifiers.isEmpty() ? Stream.of(new ArtifactDescription("", e)) : version.classifiers.stream().map(c -> new ArtifactDescription(c, e))))
-                .map(a -> toDownload(artifactId, a.classifier, version.version, a.extension, artifactBase + (a.classifier.isEmpty() ? '.' + a.extension : ('-' + a.classifier + '.' + a.extension))));
+                .map(a -> toDownload(artifactId, a.classifier, version.version, a.extension, artifactBase + (a.classifier.isEmpty() ? '.' + a.extension : ('-' + a.classifier + '.' + a
+                        .extension))));
     }
 
     private static Download toDownload(final String artifactId, final String classifier, final String version, final String format, final String url) {
