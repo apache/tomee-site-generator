@@ -33,6 +33,7 @@ IMPORTANT: Note: Please note the 8.0.0-M1 release is a milestone release intende
 
 IMPORTANT: Note: Only the TomEE 1.x WebProfile and JAX-RS distributions are certified.
 
+[.table.table-bordered,options="header"]
 |===
 |Name|Version|Date|Size|Type|Links
 |TomEE plume|7.1.0|07 Sep 2018|65 MB |TAR.GZ| https://www.apache.org/dyn/closer.cgi/tomee/tomee-7.1.0/apache-tomee-7.1.0-plume.tar.gz[icon:download[] TAR.GZ] https://www.apache.org/dist/tomee/tomee-7.1.0/apache-tomee-7.1.0-plume.tar.gz.sha256[icon:download[] SHA256] https://www.apache.org/dist/tomee/tomee-7.1.0/apache-tomee-7.1.0-plume.tar.gz.sha512[icon:download[] SHA512]
