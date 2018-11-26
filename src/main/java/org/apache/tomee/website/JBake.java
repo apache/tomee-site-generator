@@ -38,14 +38,26 @@ public class JBake {
         final boolean startHttp = args == null || args.length < 2 || Boolean.parseBoolean(args[2]); // by default we dev
         final boolean skipPdf = args == null || args.length < 3 || Boolean.parseBoolean(args[3]); // by default...too slow sorry
 
+        final Sources sources = new Sources(
+                new File("target/jbake"),
+                new File("repos"),
+                new File("src/main/jbake"),
+                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "master", "master"),
+                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.1.0", "tomee-7.1"),
+                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.0.5", "tomee-7.0"),
+                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-8.0.0-M1", "tomee-8.0", true)
+        );
+
+        sources.prepare();
+
         final Runnable build = () -> {
             System.out.println("Building TomEE website in " + destination);
             final Orient orient = Orient.instance();
             try {
                 orient.startup();
 
-                final Oven oven = new Oven(source, destination, new CompositeConfiguration() {{
-                    addConfiguration(ConfigUtil.load(source));
+                final Oven oven = new Oven(sources.getDestination(), destination, new CompositeConfiguration() {{
+                    addConfiguration(ConfigUtil.load(sources.getDestination()));
                 }}, true);
                 oven.setupPaths();
 
