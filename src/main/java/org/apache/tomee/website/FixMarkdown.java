@@ -19,6 +19,7 @@ package org.apache.tomee.website;
 import org.apache.openejb.loader.IO;
 import org.apache.openejb.util.Join;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,13 +33,21 @@ public class FixMarkdown {
     private Consumer<String> processor = this::findJbakeHeader;
 
     public static void process(final Example example) {
-        if (!example.getExt().startsWith("md")) return;
+        process(example.getDestReadme());
+    }
+
+    public static void process(final Docs.Doc doc) {
+        process(doc.getSource());
+    }
+
+    public static void process(final File destReadme) {
+        if (!Example.getExtension(destReadme).startsWith("md")) return;
 
         final FixMarkdown fixMarkdown = new FixMarkdown();
 
         try {
             final List<String> lines = new ArrayList<>();
-            Collections.addAll(lines, IO.slurp(example.getDestReadme()).split("\n"));
+            Collections.addAll(lines, IO.slurp(destReadme).split("\n"));
 
             for (final String line : lines) {
                 fixMarkdown.process(line);
@@ -47,7 +56,7 @@ public class FixMarkdown {
             fixMarkdown.process("");
 
             // Update the destination readme file
-            IO.copy(IO.read(Join.join("\n", fixMarkdown.completed)), example.getDestReadme());
+            IO.copy(IO.read(Join.join("\n", fixMarkdown.completed)), destReadme);
 
         } catch (IOException e) {
             throw new RuntimeException(e);

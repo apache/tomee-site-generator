@@ -47,8 +47,42 @@ public class Docs {
             throw new RuntimeException(e);
         }
 
+        try {
+            Files.walk(destDocs.toPath())
+                    .filter(path -> path.toFile().isFile())
+                    .filter(path -> path.toFile().getName().endsWith(".mdtext"))
+                    .forEach(path -> renameMdtextFile(path.toFile()));
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        final List<Doc> docs;
+        try {
+            docs = Files.walk(destDocs.toPath())
+                    .filter(path -> path.toFile().isFile())
+                    .filter(this::isRendered)
+                    .map(Path::toFile)
+                    .map(path -> toLink(destDocs, path))
+                    .collect(Collectors.toList());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        docs.stream()
+                .peek(JbakeHeaders::addJbakeHeader)
+                .forEach(FixMarkdown::process);
+        ;
+
         if (!hasIndex(destDocs)) {
-            buildIndex(destDocs);
+            buildIndex(destDocs, docs);
+        }
+    }
+
+    private void renameMdtextFile(final File file) {
+        final File newName = new File(file.getParentFile(), file.getName().replace(".mdtext", ".md"));
+        if (!file.renameTo(newName)) {
+            throw new IllegalStateException("Couldn't rename: " + file.getAbsolutePath() + "\n  to: " + newName.getAbsolutePath());
         }
     }
 
@@ -60,13 +94,10 @@ public class Docs {
                 .findFirst().isPresent();
     }
 
-    private void buildIndex(final File destDocs) {
+    private void buildIndex(final File destDocs, final List<Doc> docs) {
         try {
-            final List<String> links = Files.walk(destDocs.toPath())
-                    .filter(path -> path.toFile().isFile())
-                    .filter(this::isRendered)
-                    .map(path -> toLink(destDocs, path))
-                    .map(Link::toAdoc)
+            final List<String> links = docs.stream()
+                    .map(Doc::toAdoc)
                     .collect(Collectors.toList());
 
             final StringBuilder index = new StringBuilder();
@@ -86,25 +117,31 @@ public class Docs {
         }
     }
 
-    private Link toLink(final File base, final Path path) {
+    private Doc toLink(final File base, final File file) {
         final int baseLength = base.getAbsolutePath().length() + 1;
 
-        final String href = path.toFile().getAbsolutePath().substring(baseLength)
+        final String href = file.getAbsolutePath().substring(baseLength)
                 .replace(".adoc", ".html")
                 .replace(".mdtext", ".html")
                 .replace(".md", ".html");
 
         final String name = href.replace(".html", "");
-        return new Link(href, name);
+        return new Doc(href, name, file);
     }
 
-    public static class Link {
+    public static class Doc {
         private final String href;
         private final String name;
+        private final File source;
 
-        public Link(final String href, final String name) {
+        public Doc(final String href, final String name, final File source) {
             this.href = href;
             this.name = name;
+            this.source = source;
+        }
+
+        public File getSource() {
+            return source;
         }
 
         public String getHref() {

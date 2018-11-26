@@ -67,9 +67,13 @@ public class Example {
     }
 
     public static Example from(final File readme) {
-        final String ext = readme.getName().replaceFirst("[^.]+\\.", "");
+        final String ext = getExtension(readme);
         final String exampleName = readme.getParentFile().getName();
 
         return new Example(readme, exampleName, ext, exampleName + ".html", "Example");
+    }
+
+    public static String getExtension(final File readme) {
+        return readme.getName().replaceFirst("[^.]+\\.", "");
     }
 }
