@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -50,6 +51,7 @@ public class Examples2 {
                 .peek(example -> example.updateDestination(destDir))
                 .peek(this::copyToDest)
                 .peek(this::addJbakeHeader)
+                .peek(FixMarkdown::process)
                 .collect(Collectors.toList());
 
 

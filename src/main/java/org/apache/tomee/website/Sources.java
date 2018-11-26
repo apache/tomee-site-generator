@@ -52,6 +52,12 @@ public class Sources {
         repos.mkdirs();
 
         Collections.addAll(this.sources, sources);
+        for (final Source source : sources) {
+            if (source.isLatest()) {
+                this.sources.add(new Source(source.getScmUrl(), source.getBranch(), "latest"));
+                break;
+            }
+        }
     }
 
     public File getDestination() {
@@ -97,16 +103,5 @@ public class Sources {
 
     private static void done(final Source source) {
         System.out.println("Done " + source);
-    }
-
-    public static void main(String[] args) throws Exception {
-        final Sources sources = new Sources(new File("target/jbake"), new File("repos"), new File("src/main/jbake/content"),
-                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "master", "master"),
-                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.1.0", "tomee-7.1"),
-                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.0.5", "tomee-7.0"),
-                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-8.0.0-M1", "tomee-8.0", true)
-        );
-
-        sources.prepare();
     }
 }
