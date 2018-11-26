@@ -17,9 +17,15 @@
 package org.apache.tomee.website;
 
 import org.apache.openejb.loader.IO;
+import org.apache.openejb.util.Join;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Docs {
 
@@ -40,5 +46,90 @@ public class Docs {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        if (!hasIndex(destDocs)) {
+            buildIndex(destDocs);
+        }
+    }
+
+    private boolean hasIndex(final File destDocs) {
+        return Stream.of(destDocs.listFiles())
+                .filter(File::isFile)
+                .filter(file -> file.getName().startsWith("index."))
+                .filter(this::isRendered)
+                .findFirst().isPresent();
+    }
+
+    private void buildIndex(final File destDocs) {
+        try {
+            final List<String> links = Files.walk(destDocs.toPath())
+                    .filter(path -> path.toFile().isFile())
+                    .filter(this::isRendered)
+                    .map(path -> toLink(destDocs, path))
+                    .map(Link::toAdoc)
+                    .collect(Collectors.toList());
+
+            final StringBuilder index = new StringBuilder();
+            index.append(":jbake-type: page\n")
+                    .append(":jbake-status: published\n")
+                    .append(":jbake-title: Documentation\n")
+                    .append("\n")
+                    .append("Documentation\n\n")
+            ;
+
+            index.append(Join.join("\n", links));
+
+            IO.copy(IO.read(index.toString()), new File(destDocs, "index.adoc"));
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private Link toLink(final File base, final Path path) {
+        final int baseLength = base.getAbsolutePath().length() + 1;
+
+        final String href = path.toFile().getAbsolutePath().substring(baseLength)
+                .replace(".adoc", ".html")
+                .replace(".mdtext", ".html")
+                .replace(".md", ".html");
+
+        final String name = href.replace(".html", "");
+        return new Link(href, name);
+    }
+
+    public static class Link {
+        private final String href;
+        private final String name;
+
+        public Link(final String href, final String name) {
+            this.href = href;
+            this.name = name;
+        }
+
+        public String getHref() {
+            return href;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String toAdoc() {
+            return " - link:" + href + "[" + name + "]";
+        }
+    }
+
+    private boolean isRendered(final Path path) {
+        final File file = path.toFile();
+        return isRendered(file);
+    }
+
+    private boolean isRendered(final File file) {
+        if (file.getName().endsWith(".mdtext")) return true;
+        if (file.getName().endsWith(".md")) return true;
+        if (file.getName().endsWith(".adoc")) return true;
+        if (file.getName().endsWith(".html")) return true;
+        return false;
     }
 }

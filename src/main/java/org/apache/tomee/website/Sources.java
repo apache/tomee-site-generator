@@ -64,6 +64,10 @@ public class Sources {
         return destination;
     }
 
+    public List<Source> getSources() {
+        return sources;
+    }
+
     /**
      * This is the heart of the code to merge several documentation
      * sources into one tree.
@@ -71,20 +75,24 @@ public class Sources {
     public void prepare() {
         final Docs docs = new Docs(this);
         final Examples2 examples = new Examples2(this);
-
-        sources.stream()
-                .peek(source -> source.setDir(new File(repos, source.getName())))
-                .peek(Repos::download)
-                .peek(docs::prepare)
-                .peek(examples::prepare)
-                .forEach(Sources::done);
-        ;
+        final VersionIndex versionIndex = new VersionIndex(this);
 
         try {
             IO.copyDirectory(mainSource, destination);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        sources.stream()
+                .peek(source -> source.setDir(new File(repos, source.getName())))
+                .peek(Repos::download)
+                .peek(docs::prepare)
+                .peek(examples::prepare)
+                .peek(versionIndex::prepare)
+                .forEach(Sources::done);
+        ;
+
+        VersionsIndex.prepare(this);
     }
 
     public File getDestinationFor(final Source source, final String... parts) {
