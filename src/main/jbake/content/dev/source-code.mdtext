@@ -1,0 +1,101 @@
+Title: Source Code
+
+**<span style="color: rgb(128,0,0);">We have moved to GIT</span>. This means that anything you may find elsewhere on the site about SVN is no longer valid!**
+  
+The documentation will be updated over the next few days and weeks but if you find anything that is **really** misleading then please send a message to the developer list at: [dev@tomee.apache.org](mailto:dev@tomee.apache.org)
+
+Probably the best GIT tutorial on the planet can be found here: [https://www.atlassian.com/git/](https://www.atlassian.com/git/) - This is a great reference for both existing and new GIT users. Please take a look.
+
+###GIT Information for Everyone
+
+You can browse the source code via the [web interface](http://git-wip-us.apache.org/repos/asf/tomee.git).
+
+If you intend to hack on TomEE then it is recommended that you create a [GitHub Account](https://github.com) and [fork](https://help.github.com/articles/fork-a-repo/) the TomEE repository so that you can submit pull requests (See below).
+
+If you just want to build the source version then you can download (aka clone) the sources of Apache TomEE with a GIT client from the following URL [https://git-wip-us.apache.org/repos/asf/tomee.git](https://git-wip-us.apache.org/repos/asf/tomee.git) - The 'master' branch is the current development branch.
+
+Performing the checkout from a command line using the GIT client (recommended) is as easy as executing the following command:
+> git clone [https://git-wip-us.apache.org/repos/asf/tomee.git](https://git-wip-us.apache.org/repos/asf/tomee.git) tomee
+
+If you want to checkout a specific branch then you can just change that in the command:
+
+> git clone -b tomee-1.7.x [https://git-wip-us.apache.org/repos/asf/tomee.git](https://git-wip-us.apache.org/repos/asf/tomee.git) tomee-1.7.x
+
+Or alternatively with Apache Maven 3.0.5 or later:
+
+> mvn scm:checkout
+> -DconnectionUrl=scm:git:[https://git-wip-us.apache.org/repos/asf/tomee.git](https://git-wip-us.apache.org/repos/asf/tomee.git)
+> -DcheckoutDirectory=tomee
+
+Note: This method does not require the GIT client.
+
+<a name="SourceCode-Contributors"></a>
+###GIT Information for TomEE Contributors
+
+**Please read our own detailed GitFlow workflow information [here](git.html)**
+
+We will be using the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) from day one. Please read and understand how this works.
+
+See [here](https://help.github.com/articles/using-pull-requests/) for information on pull requests. 
+
+The official Apache Committer documentation can be found [here](https://git-wip-us.apache.org/#committers-getting-started)
+
+<a name="SourceCode-Continuousintegration"></a>
+###Continuous integration
+
+Apache TomEE continuous integration relies on [Apache Buildbot](http://ci.apache.org/).
+All builders are available [from the page](http://ci.apache.org/builders).
+
+* [Apache TomEE 1.7.x under Ubuntu](http://ci.apache.org/builders/tomee-1.7.x-ubuntu)
+* [Apache TomEE 2.x under Ubuntu](http://ci.apache.org/builders/tomee-trunk-ubuntu)
+* [Apache TomEE 2.x under Windows using a Sun/Oracle JDK](http://ci.apache.org/builders/tomee-trunk-win-sunjdk)
+* [Apache TomEE 2.x under Windows using an IBM JDK](http://ci.apache.org/builders/tomee-trunk-win-ibmjdk6)
+
+<a name="SourceCode-Building"></a>
+###Maven
+To build the code, you'll need to grab a copy of [Apache Maven](http://maven.apache.org), version 3.0.5 or later.
+ 
+###Memory Settings
+
+It is pretty much guaranteed that you will need to give Maven an increase on the available memory.  
+Depending on the OS you are working on the fix can be as easy as (Note: *-XX:MaxPermSize=256M* is ignored by Java 8):  
+>export MAVEN_OPTS="-Xmx768m -XX:MaxPermSize=256M -XX:ReservedCodeCacheSize=64m -Xss2048k"
+
+on MacOS and Unices or 
+>set "MAVEN_OPTS=-Xmx768m -XX:MaxPermSize=256M -XX:ReservedCodeCacheSize=64m -Xss2048k"
+  
+on MS Windows.
+
+###Full Build
+
+A fast build that skips all tests, generates no reports and creates full distribution archives is as follows:
+>mvn -Dsurefire.useFile=false -DdisableXmlReport=true -DuniqueVersion=false -ff -Dassemble -DskipTests -DfailIfNoTests=false clean install
+
+The full build with tests takes around 2 hours:
+>mvn -Dassemble clean install
+
+The output of those commands should end with "BUILD SUCCESSFUL"
+
+It is of course possible to just compile and test individual modules. Just change to the module directory and run the same commands as above.
+
+###Quick Build
+
+If you are in real a hurry (and let's face it most of us are) you can run a quick build without the examples using the *quick* profile:
+>mvn -Pquick -Dsurefire.useFile=false -DdisableXmlReport=true -DuniqueVersion=false -ff -Dassemble -DskipTests -DfailIfNoTests=false clean install
+
+###Binary locations
+
+Once built, the TomEE binaries will be located at:
+
+    ls [project]/tomee/apache-tomee/target/*.zip
+	
+    tomee/apache-tomee/target/apache-tomee-jaxrs-[version]-SNAPSHOT.zip
+    tomee/apache-tomee/target/apache-tomee-plus-[version]-SNAPSHOT.zip
+    tomee/apache-tomee/target/apache-tomee-webprofile-[version]-SNAPSHOT.zip
+    tomee/apache-tomee/target/apache-tomee-plume-[version]-SNAPSHOT.tar.gz
+
+The OpenEJB standalone binaries will be located at:
+
+    ls [project]/assembly/openejb-standalone/target/*.zip
+	
+    assembly/openejb-standalone/target/apache-openejb-[version]-SNAPSHOT.zip

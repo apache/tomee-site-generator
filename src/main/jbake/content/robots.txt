@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.htm
+Sitemap: http://tomee.apache.org/sitemap.xml
