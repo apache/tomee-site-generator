@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -60,13 +59,17 @@ public class Examples2 {
 
         // Create an index.adoc file
         final StringBuilder index = new StringBuilder();
+        index.append(":jbake-type: page\n")
+                .append(":jbake-status: published\n")
+                .append(":jbake-title: Examples\n");
+
         for (final Example example : examples) {
-            index.append(" - ")
+            index.append(" - link:")
                     .append(example.getHref())
                     .append("[")
                     .append(example.getName())
                     .append("]")
-                    .append(File.separator)
+                    .append("\n")
             ;
         }
 

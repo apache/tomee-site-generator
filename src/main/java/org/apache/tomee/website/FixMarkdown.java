@@ -19,7 +19,6 @@ package org.apache.tomee.website;
 import org.apache.openejb.loader.IO;
 import org.apache.openejb.util.Join;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
