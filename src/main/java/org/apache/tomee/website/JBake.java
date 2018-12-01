@@ -42,7 +42,7 @@ public class JBake {
                 new File("target/jbake"),
                 new File("repos"),
                 new File("src/main/jbake"),
-                new Source("https://github.com/dblevins/tomee.git", "tomee-8.0.x-docs", "tomee-8.0", true),
+                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "master", "tomee-8.0", true),
                 new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.1.0", "tomee-7.1"),
                 new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.0.5", "tomee-7.0"),
                 new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "master", "master")
@@ -64,10 +64,10 @@ public class JBake {
                 System.out.println("  > baking");
                 oven.bake();
 
-                if (!skipPdf) {
-                    System.out.println("  > pdfifying");
-                    PDFify.generatePdf(pdfSource, destination);
-                }
+//                if (!skipPdf) {
+//                    System.out.println("  > pdfifying");
+//                    PDFify.generatePdf(pdfSource, destination);
+//                }
 
                 copyFileLayoutToDirStructure(destination);
                 System.out.println("  > done :)");
