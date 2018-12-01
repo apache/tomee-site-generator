@@ -2,10 +2,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 text-center-mobile">
-					<h3 class="white">Apache TomEE the little great server.</h3>
+					<h3 class="white">Be simple.  Be certified. Be Tomcat.</h3>
 					<h5 class="light regular light-white">"A good application in a good server"</h5>
 					<ul class="social-footer">
-						<li><a href="https://fr-fr.facebook.com/ApacheTomEE/"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://www.facebook.com/ApacheTomEE/"><i class="fa fa-facebook"></i></a></li>
 						<li><a href="https://twitter.com/apachetomee"><i class="fa fa-twitter"></i></a></li>
 						<li><a href="https://plus.google.com/communities/105208241852045684449"><i class="fa fa-google-plus"></i></a></li>
 					</ul>
@@ -13,21 +13,21 @@
 				<div class="col-sm-6 text-center-mobile">
 					<div class="row opening-hours">
 						<div class="col-sm-3 text-center-mobile">
-							<h5><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>documentation.html" class="white">Documentation</a></h5>
+							<h5><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/documentation.html" class="white">Documentation</a></h5>
 							<ul class="list-unstyled">
-								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>admin/configuration/index.html" class="regular light-white">How to configure</a></li>
-								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>admin/directory-structure.html" class="regular light-white">Dir. Structure</a></li>
-								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>developer/testing/index.html" class="regular light-white">Testing</a></li>
-								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>admin/cluster/index.html" class="regular light-white">Clustering</a></li>
+								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/admin/configuration/index.html" class="regular light-white">How to configure</a></li>
+								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/admin/file-layout.html" class="regular light-white">Dir. Structure</a></li>
+								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/developer/testing/index.html" class="regular light-white">Testing</a></li>
+								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/admin/cluster/index.html" class="regular light-white">Clustering</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-3 text-center-mobile">
 							<h5><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>examples.html" class="white">Examples</a></h5>
 							<ul class="list-unstyled">
-								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>examples/simple-cdi-interceptor.html" class="regular light-white">CDI Interceptor</a></li>
-								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>examples/rest-cdi.html" class="regular light-white">REST with CDI</a></li>
-								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>examples/ejb-examples.html" class="regular light-white">EJB</a></li>
-								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>examples/jsf-managedBean-and-ejb.html" class="regular light-white">JSF</a></li>
+								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/examples/simple-cdi-interceptor.html" class="regular light-white">CDI Interceptor</a></li>
+								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/examples/rest-cdi.html" class="regular light-white">REST with CDI</a></li>
+								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/examples/ejb-examples.html" class="regular light-white">EJB</a></li>
+								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/examples/jsf-managedBean-and-ejb.html" class="regular light-white">JSF</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-3 text-center-mobile">
@@ -59,9 +59,9 @@
 	<!-- Holder for mobile navigation -->
 	<div class="mobile-nav">
         <ul>
-          <li><a hef="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>admin/index.html">Administrators</a>
-          <li><a hef="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>developer/index.html">Developers</a>
-          <li><a hef="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>advanced/index.html">Advanced</a>
+          <li><a hef="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/admin/index.html">Administrators</a>
+          <li><a hef="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/developer/index.html">Developers</a>
+          <li><a hef="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/advanced/index.html">Advanced</a>
           <li><a hef="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>community/index.html">Community</a>
         </ul>
 		<a href="#" class="close-link"><i class="arrow_up"></i></a>
