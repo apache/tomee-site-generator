@@ -112,13 +112,14 @@ header .typed-cursor {
 
 pre {
 	border: 0px solid #ccc;
+	margin: 0 0 20px;
 }
 code {
 	color: #8a6d3b;
 	background-color: #f5f5f5;
 }
 p {
-    margin: 20px 0 20px;
+    margin: 0px 0 20px;
 }
 td p {
     margin: 0px;
@@ -129,15 +130,16 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
-h1, .h1, h2, .h2, h3, .h3 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4,  {
     margin-top: 30px;
     margin-bottom: 10px;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 300;
 }
-h4, .h4, h5, .h5, h6, .h6 {
+h5, .h5, h6, .h6 {
     margin-top: 25px;
+    font-weight: 600;
 }
 .page-header h1 {
 	font-weight: 500;
@@ -1180,4 +1182,84 @@ h2 { /*ensure downlooad as PDF are clickable*/
 }
 vspace {
     height: 1em;
+}
+
+.admonitionblock td.content > .title, .exampleblock > .title, .imageblock > .title, .videoblock > .title, .listingblock > .title, .literalblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, .sidebarblock > .title, .tableblock > .title, .verseblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { text-align: left; font-weight: bold; }
+
+.tableblock > caption { text-align: left; font-weight: bold; white-space: nowrap; overflow: visible; max-width: 0; }
+
+table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p { font-size: inherit; }
+
+.admonitionblock > table {
+	border: 0;
+	background: none;
+	width: 100%;
+	margin: 0px 0px 20px;
+}
+
+.admonitionblock > table td.icon {
+	text-align: center;
+	width: 80px;
+}
+
+.admonitionblock > table td.icon img {
+	max-width: none;
+}
+
+.admonitionblock > table td.icon .title {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.admonitionblock > table td.content {
+	padding-left: 1.125em;
+	padding-right: 1.25em;
+	border-left: 1px solid #dddddd;
+	color: #6f6f6f;
+	font-size: 15px;
+}
+
+.admonitionblock > table td.content > :last-child > :last-child {
+	margin-bottom: 0;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    vertical-align: middle;
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+}
+span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
+
+.admonitionblock td.icon [class^="fa icon-"]:before {
+	font-size: 2.5em;
+	text-shadow: 1px 1px 2px #e6e6e6;
+	cursor: default; /* -webkit-font-smoothing: antialiased; */
+}
+
+.admonitionblock td.icon .icon-note:before {
+	content: "\f05a";
+	color: #005498;
+	color: #80a8c7;
+}
+
+.admonitionblock td.icon .icon-tip:before {
+	content: "\f0eb";
+	text-shadow: 1px 1px 2px rgba(222, 222, 68, 0.8);
+	color: #c7ba71;
+}
+
+.admonitionblock td.icon .icon-warning:before {
+	content: "\f071";
+	color: #da8f33;
+}
+
+.admonitionblock td.icon .icon-caution:before {
+	content: "\f06d";
+	color: #af5e40;
+}
+
+.admonitionblock td.icon .icon-important:before {
+	content: "\f06a";
+	color: #bd5a5a;
 }
