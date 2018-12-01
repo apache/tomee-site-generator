@@ -1,12 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
-body {
-	font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	overflow-x: hidden;
-	color: #2a3237;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 
 .parallax {
 	position: absolute;
@@ -50,41 +42,6 @@ body {
 	font-size: 18px;
 	line-height: 1.5;
 	color: #80287a;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: 'Roboto', 'Avenir Next', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
-	position: relative;
-	margin: 10px 0;
-}
-
-h1 {
-	font-size: 60px;
-}
-
-h2 {
-	font-size: 48px;
-}
-
-h3 {
-	font-size: 30px;
-}
-
-h4 {
-	font-size: 24px;
-}
-
-h5 {
-	font-size: 18px;
-}
-
-h6 {
-	font-size: 16px;
 }
 
 ul.white-list {
@@ -152,12 +109,47 @@ header .typed-cursor {
 	animation-iteration-count: infinite;
 }
 
-a {
-	text-decoration: none;
-	color: #80287a;
-	-webkit-transition: all 0.3s ease;
-	transition: all 0.3s ease;
+
+pre {
+	border: 0px solid #ccc;
 }
+code {
+	color: #8a6d3b;
+	background-color: #f5f5f5;
+}
+p {
+    margin: 20px 0 20px;
+}
+body {
+    font-size: 17px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 300;
+}
+h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 25px;
+}
+.page-header h1 {
+	font-weight: 500;
+}
+.page-header {
+    margin: 40px 0 0px;
+}
+li {
+	margin-bottom: 10px;
+}
+/*a {*/
+	/*text-decoration: none;*/
+	/*color: #80287a;*/
+	/*-webkit-transition: all 0.3s ease;*/
+	/*transition: all 0.3s ease;*/
+/*}*/
 /* Navigation Bar ( Navbar ) */
 
 nav.navbar {
