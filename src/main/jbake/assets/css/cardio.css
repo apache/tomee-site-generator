@@ -145,7 +145,7 @@ h5, .h5, h6, .h6 {
 	font-weight: 500;
 }
 .page-header {
-    margin: 40px 0 0px;
+    margin: 40px 0 20px;
 }
 li {
 	margin-bottom: 10px;
@@ -1262,4 +1262,28 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .admonitionblock td.icon .icon-important:before {
 	content: "\f06a";
 	color: #bd5a5a;
+}
+
+/* Markdown table */
+.mdtable {
+	border: 1px solid #ddd;
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+.mdtable > thead > tr > th, .mdtable > thead > tr > td {
+    border-bottom-width: 2px;
+}
+.mdtable > thead > tr > th, .mdtable > tbody > tr > th, .mdtable > tfoot > tr > th, .mdtable > thead > tr > td, .mdtable > tbody > tr > td, .mdtable > tfoot > tr > td {
+    border: 1px solid #ddd;
+}
+.mdtable > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+}
+.mdtable > thead > tr > th, .mdtable > tbody > tr > th, .mdtable > tfoot > tr > th, .mdtable > thead > tr > td, .mdtable > tbody > tr > td, .mdtable > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
 }
