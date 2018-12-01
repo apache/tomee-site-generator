@@ -10,7 +10,7 @@
                             Apache TomEE
                         </div>
                         <div class="col-md-12 text-center">
-                            <h2 class="white typed">The Embedded or Remote EE Application Server</h2>
+                            <h2 class="white typed">MicroProfile and Jakarta EE on Tomcat</h2>
                             <span class="typed-cursor">|</span>
                         </div>
                     </div>
