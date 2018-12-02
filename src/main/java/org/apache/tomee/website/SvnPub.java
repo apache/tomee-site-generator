@@ -17,6 +17,7 @@
 package org.apache.tomee.website;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.xml.security.exceptions.Base64DecodingException;
 import org.tmatesoft.svn.core.SVNCommitInfo;
 import org.tmatesoft.svn.core.SVNDepth;
 import org.tmatesoft.svn.core.SVNException;
@@ -37,21 +38,19 @@ import org.tmatesoft.svn.core.wc2.SvnTarget;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.stream.Stream;
+import java.util.HashMap;
+import java.util.Map;
 
 import static java.util.Arrays.asList;
 import static java.util.Optional.ofNullable;
-import static java.util.stream.Collectors.toList;
 
 public class SvnPub {
     private SvnPub() {
         // no-op
     }
 
-    public static void main(final String[] args) throws SVNException, IOException {
+    public static void main(final String[] args) throws SVNException, IOException, Base64DecodingException {
         SVNJNAUtil.setJNAEnabled(false); // svnkit and java 8 == easy sigsev on ubuntu (fixed when upgrading svnkit version)
 
         final String username = System.getProperty("site.username", System.getenv("USER"));
@@ -93,52 +92,58 @@ public class SvnPub {
         }
         FileUtils.copyDirectory(site[0], copy);
 
-        final Collection<File> added = new ArrayList<>();
-        final Collection<File> updated = new ArrayList<>();
-        client.getStatusClient().doStatus(copy, SVNRevision.HEAD, SVNDepth.INFINITY, false, false, false, false, new ISVNStatusHandler() {
-            @Override
-            public void handleStatus(final SVNStatus status) throws SVNException {
-                final SVNStatusType contentsStatus = status.getContentsStatus();
-                if (contentsStatus == SVNStatusType.STATUS_UNVERSIONED) {
-                    added.add(status.getFile());
-                } else if (contentsStatus == SVNStatusType.STATUS_MODIFIED || contentsStatus == SVNStatusType.STATUS_REPLACED) {
-                    updated.add(status.getFile());
-                } // else we don't care
-            }
-        }, null);
+        final Path sitePath = copy.getAbsoluteFile().toPath();
 
-        final Collection<File> copies = Stream.concat(added.stream(), updated.stream()).collect(toList());
-        // remove the .pdf without their .html, likely means there is no real update
-        added.removeIf(f -> f.getName().endsWith(".pdf") && !copies.contains(new File(f.getParentFile(), f.getName().replace(".pdf", ".html"))));
-        updated.removeIf(f -> f.getName().endsWith(".pdf") && !copies.contains(new File(f.getParentFile(), f.getName().replace(".pdf", ".html"))));
+        final Map<String, File> changed = new HashMap<>();
+        int previous = 0;
 
-        if (updated.size() + added.size() == 0) {
+        do {
+            previous = changed.size();
+
+            client.getStatusClient().doStatus(copy, SVNRevision.HEAD, SVNDepth.INFINITY, false, false, false, false, new ISVNStatusHandler() {
+                @Override
+                public void handleStatus(final SVNStatus status) throws SVNException {
+                    final SVNStatusType contentsStatus = status.getContentsStatus();
+                    final File file = status.getFile();
+
+                    final String path = sitePath.relativize(file.getAbsoluteFile().toPath()).toString();
+
+                    if (contentsStatus == SVNStatusType.STATUS_UNVERSIONED || contentsStatus == SVNStatusType.STATUS_NONE) {
+
+                        changed.put(path, file);
+                        client.getWCClient().doAdd(file, false, false, false, SVNDepth.INFINITY, false, false, true);
+                        System.out.println("A " + path);
+
+                    } else if (contentsStatus == SVNStatusType.STATUS_MODIFIED || contentsStatus == SVNStatusType.STATUS_REPLACED) {
+
+                        if (changed.put(path, file) == null) {
+                            System.out.println("M " + path);
+                        }
+
+                    } // else we don't care
+                }
+            }, null);
+
+        } while (changed.size() != previous);
+
+        if (changed.size() == 0) {
             System.out.println("Nothing to commit!");
             return;
         }
-
-        added.forEach(f -> {
-            try {
-                client.getWCClient().doAdd(f, false, false, false, SVNDepth.INFINITY, false, false, true);
-            } catch (final SVNException e) {
-                throw new IllegalStateException(e);
-            }
-        });
-
-        final Path sitePath = copy.getAbsoluteFile().toPath();
-        added.forEach(f -> System.out.println("A " + sitePath.relativize(f.getAbsoluteFile().toPath())));
-        updated.forEach(f -> System.out.println("M " + sitePath.relativize(f.getAbsoluteFile().toPath())));
 
         // now update it remotely, note: we could use the status output to do it more efficiently
         final String message = ofNullable(args == null || args.length < 2 ? System.getProperty("site.message") : args[1])
                 .filter(m -> !"notset".equalsIgnoreCase(m))
                 .orElseGet(() -> "Maven update of the website on the " + new Date() + " from " + username);
-        final SVNCommitInfo commitInfo = client.getCommitClient().doCommit(
-                Stream.concat(added.stream(), updated.stream()).toArray(File[]::new), false, message,
-                null, null, false, false, SVNDepth.IMMEDIATES);
+
+        final File[] commit = changed.values().stream().toArray(File[]::new);
+
+        final SVNCommitInfo commitInfo = client.getCommitClient().doCommit(commit, false, message, null, null, false, false, SVNDepth.IMMEDIATES);
+
         if (commitInfo.getErrorMessage() != null) {
             throw new IllegalStateException(commitInfo.getErrorMessage().toString());
         }
+
         System.out.println(commitInfo.toString());
 
         // do we want to POST https://cms.apache.org/tomee/publish?diff=1 \
