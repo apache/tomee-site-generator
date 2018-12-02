@@ -50,10 +50,10 @@ public class VersionsIndex {
                 final File docs = sources.getDestinationFor(source, "docs");
                 final File examples = sources.getDestinationFor(source, "examples");
 
-                if (docs.exists()) {
+                if (docs.exists() && docs.listFiles().length > 0) {
                     index.append(" - link:").append(source.getName()).append("/docs[Documentation]\n");
                 }
-                if (examples.exists()) {
+                if (examples.exists() && examples.listFiles().length > 0) {
                     index.append(" - link:").append(source.getName()).append("/examples[Examples]\n");
                 }
                 index.append("\n\n");

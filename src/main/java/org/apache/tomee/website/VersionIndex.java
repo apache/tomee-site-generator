@@ -17,15 +17,9 @@
 package org.apache.tomee.website;
 
 import org.apache.openejb.loader.IO;
-import org.apache.openejb.util.Join;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class VersionIndex {
 
@@ -50,10 +44,10 @@ public class VersionIndex {
                     .append("\n")
             ;
 
-            if (docs.exists()) {
+            if (docs.exists() && docs.listFiles().length > 0) {
                 index.append(" - link:docs[Documentation]\n");
             }
-            if (examples.exists()) {
+            if (examples.exists() && examples.listFiles().length > 0) {
                 index.append(" - link:examples[Examples]\n");
             }
 
