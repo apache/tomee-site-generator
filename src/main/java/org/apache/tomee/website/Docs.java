@@ -74,9 +74,7 @@ public class Docs {
                 .forEach(FixMarkdown::process);
         ;
 
-        if (!hasIndex(destDocs)) {
-            buildIndex(destDocs, docs);
-        }
+        GroupedIndex.process(destDocs, "docsindex");
     }
 
     private void renameMdtextFile(final File file) {
@@ -90,7 +88,7 @@ public class Docs {
         return Stream.of(destDocs.listFiles())
                 .filter(File::isFile)
                 .filter(file -> file.getName().startsWith("index."))
-                .filter(this::isRendered)
+                .filter(Docs::isRendered)
                 .findFirst().isPresent();
     }
 
@@ -118,15 +116,21 @@ public class Docs {
     }
 
     private Doc toLink(final File base, final File file) {
-        final int baseLength = base.getAbsolutePath().length() + 1;
-
-        final String href = file.getAbsolutePath().substring(baseLength)
-                .replace(".adoc", ".html")
-                .replace(".mdtext", ".html")
-                .replace(".md", ".html");
+        final String href = href(base, file);
 
         final String name = href.replace(".html", "");
         return new Doc(href, name, file);
+    }
+
+    public static String href(final File base, final File file) {
+        final String relativePath = relativePath(base, file);
+        return Docs.simpleName(relativePath) + ".html";
+    }
+
+    public static String relativePath(final File base, final File file) {
+        final int baseLength = base.getAbsolutePath().length() + 1;
+
+        return file.getAbsolutePath().substring(baseLength);
     }
 
     public static class Doc {
@@ -162,11 +166,27 @@ public class Docs {
         return isRendered(file);
     }
 
-    private boolean isRendered(final File file) {
-        if (file.getName().endsWith(".mdtext")) return true;
-        if (file.getName().endsWith(".md")) return true;
-        if (file.getName().endsWith(".adoc")) return true;
-        if (file.getName().endsWith(".html")) return true;
+    public static boolean isRendered(final File file) {
+        final String name = file.getName();
+        for (final String extension : extensions) {
+            if (name.endsWith(extension)) return true;
+        }
         return false;
+    }
+
+    private static final String[] extensions = {".html", ".asciidoc", ".adoc", ".ad", ".md"};
+
+    public static String simpleName(final File file) {
+        final String name = file.getName();
+
+        return simpleName(name);
+    }
+
+    public static String simpleName(final String name) {
+        for (final String extension : extensions) {
+            if (name.endsWith(extension)) return name.replace(extension, "");
+        }
+
+        throw new IllegalStateException("Unknown extension: " + name);
     }
 }

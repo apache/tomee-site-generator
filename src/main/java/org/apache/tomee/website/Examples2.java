@@ -51,30 +51,7 @@ public class Examples2 {
                 .collect(Collectors.toList());
 
 
-        // Add any missing JBake headers
-
-
-        // Create an index.adoc file
-        final StringBuilder index = new StringBuilder();
-        index.append(":jbake-type: page\n")
-                .append(":jbake-status: published\n")
-                .append(":jbake-title: Examples\n");
-
-        for (final Example example : examples) {
-            index.append(" - link:")
-                    .append(example.getHref())
-                    .append("[")
-                    .append(example.getName())
-                    .append("]")
-                    .append("\n")
-            ;
-        }
-
-        try {
-            IO.copy(IO.read(index.toString()), new File(destDir, "index.adoc"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        GroupedIndex.process(destDir, "examplesindex");
 //        https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/HttpServletMapping.html
     }
 

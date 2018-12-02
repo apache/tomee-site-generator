@@ -42,10 +42,10 @@ public class JBake {
                 new File("target/jbake"),
                 new File("repos"),
                 new File("src/main/jbake"),
-                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "master", "tomee-8.0", true),
-                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.1.0", "tomee-7.1"),
-                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.0.5", "tomee-7.0"),
-                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "master", "master")
+                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "master", "tomee-8.0")
+//                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.1.0", "tomee-7.1"),
+//                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.0.5", "tomee-7.0"),
+//                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "master", "master")
         );
 
         sources.prepare();
