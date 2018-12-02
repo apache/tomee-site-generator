@@ -5,7 +5,7 @@
         <div class="row title">
           <div class="col-md-12">
             <div class='page-header'>
-              <h1>Documentation</h1>
+              <h1>Examples</h1>
             </div>
           </div>
         </div>

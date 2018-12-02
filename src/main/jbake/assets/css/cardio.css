@@ -1347,6 +1347,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] {
   font-size: 17px;
   padding-left: 0;
   list-style-type: none;
+  margin-bottom: 30px;
 }
 
 .group-title {

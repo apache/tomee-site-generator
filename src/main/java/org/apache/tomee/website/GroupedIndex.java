@@ -56,39 +56,86 @@ public class GroupedIndex {
         final List<Doc> docs = list(directory);
         final Map<String, List<Doc>> sections = docs.stream().collect(Collectors.groupingBy(Doc::getGroup));
 
-        for (final Map.Entry<String, List<Doc>> entry : sections.entrySet()) {
-            final ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-            final PrintStream out = new PrintStream(bytes);
+        /**
+         * We want to sort the sections with the most entries towards the top.
+         * Unless it is crazy big, then we put it in a special section at the bottom.
+         */
+        sections.entrySet().stream()
+                .filter(entry -> entry.getValue().size() < 10)
+                .sorted((o1, o2) -> new Integer(o2.getValue().size()).compareTo(o1.getValue().size()))
+                .forEach(entry -> {
 
-            out.printf("            <div class=\"group-title\">%s</div>\n", entry.getKey());
-            out.printf("            <ul class=\"group\">\n");
-            entry.getValue().stream().sorted().forEach(doc -> {
-                out.printf("              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n", doc.getHref(), doc.getTitle());
-            });
-            out.printf("            </ul>\n");
+                    final ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+                    final PrintStream out = new PrintStream(bytes);
 
-            sectionsFormatted.add(new String(bytes.toByteArray()));
-        }
+                    out.printf("            <div class=\"group-title\">%s</div>\n", entry.getKey());
+                    out.printf("            <ul class=\"group\">\n");
+                    entry.getValue().stream().sorted().forEach(doc -> {
+                        out.printf("              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n", doc.getHref(), doc.getTitle());
+                    });
+                    out.printf("            </ul>\n");
+
+                    sectionsFormatted.add(new String(bytes.toByteArray()));
+
+                });
 
         try (final PrintStream out = print(directory, "index.html")) {
             out.printf("type=%s\n", type);
             out.printf("status=published\n");
             out.printf("~~~~~~\n");
 
-            final ListIterator<String> iterator = sectionsFormatted.listIterator();
-            while (iterator.hasNext()) {
-                out.printf("        <div class=\"row\">\n");
-                out.printf("          <div class=\"col-md-4\">\n");
-                out.printf(iterator.hasNext() ? iterator.next() : "");
-                out.printf("          </div>\n");
-                out.printf("          <div class=\"col-md-4\">\n");
-                out.printf(iterator.hasNext() ? iterator.next() : "");
-                out.printf("          </div>\n");
-                out.printf("          <div class=\"col-md-4\">\n");
-                out.printf(iterator.hasNext() ? iterator.next() : "");
-                out.printf("          </div>\n");
-                out.printf("        </div>\n");
+            {
+                final ListIterator<String> iterator = sectionsFormatted.listIterator();
+                while (iterator.hasNext()) {
+                    out.printf("        <div class=\"row\">\n");
+                    out.printf("          <div class=\"col-md-4\">\n");
+                    out.printf(iterator.hasNext() ? iterator.next() : "");
+                    out.printf("          </div>\n");
+                    out.printf("          <div class=\"col-md-4\">\n");
+                    out.printf(iterator.hasNext() ? iterator.next() : "");
+                    out.printf("          </div>\n");
+                    out.printf("          <div class=\"col-md-4\">\n");
+                    out.printf(iterator.hasNext() ? iterator.next() : "");
+                    out.printf("          </div>\n");
+                    out.printf("        </div>\n");
+                }
             }
+
+            sections.entrySet().stream()
+                    .filter(entry -> entry.getValue().size() >= 10)
+                    .sorted((o1, o2) -> new Integer(o1.getValue().size()).compareTo(o2.getValue().size()))
+                    .forEach(entry -> {
+
+                        out.printf("        <div class=\"row\">\n");
+                        out.printf("          <div class=\"col-md-12\">\n");
+                        out.printf("            <div class=\"group-title large\">%s</div>\n", entry.getKey());
+                        out.printf("          </div>\n");
+                        out.printf("        </div>\n");
+
+                        final ListIterator<Doc> iterator = entry.getValue().stream()
+                                .sorted()
+                                .collect(Collectors.toList())
+                                .listIterator();
+
+                        final int i = (int) Math.ceil(entry.getValue().size() / 3f);
+
+                        out.printf("        <div class=\"row\">\n");
+                        while (iterator.hasNext()) {
+                            int count = 0;
+
+                            out.printf("          <div class=\"col-md-4\">\n");
+                            out.printf("            <ul class=\"group\">\n");
+                            while (iterator.hasNext() && count++ < i) {
+                                final Doc doc = iterator.next();
+                                out.printf("              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n", doc.getHref(), doc.getTitle());
+
+                            }
+                            out.printf("            </ul>\n");
+                            out.printf("          </div>\n");
+                        }
+                        out.printf("        </div>\n");
+                    });
+
         }
     }
 
@@ -129,9 +176,15 @@ public class GroupedIndex {
     }
 
     private String getTitle(final Map<String, Object> map, final File file) {
-        if (map.get("short-title") != null) return map.get("short-title") + "";
-        if (map.get("title") != null) return map.get("title") + "";
+        if (hasValue(map.get("short-title"))) return map.get("short-title") + "";
+        if (hasValue(map.get("title"))) return map.get("title") + "";
         return Docs.simpleName(file);
+    }
+
+    private boolean hasValue(final Object o) {
+        if (o == null) return false;
+        if ("".equals(o + ""))return false;
+        return true;
     }
 
     public static class Doc implements Comparable<Doc> {
