@@ -22,7 +22,7 @@
 							</ul>
 						</div>
 						<div class="col-sm-3 text-center-mobile">
-							<h5><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>examples.html" class="white">Examples</a></h5>
+							<h5><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/examples/" class="white">Examples</a></h5>
 							<ul class="list-unstyled">
 								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/examples/simple-cdi-interceptor.html" class="regular light-white">CDI Interceptor</a></li>
 								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/examples/rest-cdi.html" class="regular light-white">REST with CDI</a></li>
