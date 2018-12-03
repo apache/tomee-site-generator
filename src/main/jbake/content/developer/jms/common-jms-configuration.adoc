@@ -14,7 +14,7 @@ JBoss MQ
 
   <Resource id="JBossMQConnectionFactory" class-name="org.jboss.resource.adapter.jms.JmsManagedConnectionFactory">
     ConnectionFactory=ConnectionFactory
-    JndiParameters=java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory;java.naming.provider.url=jnp://localhost:1099;java.naming.factory.url.pkgs=org.jboss.naming:org.jnp.interfaces
+    JndiParameters=java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory;java.naming.provider.url=jnp://<ip address>:<port>;java.naming.factory.url.pkgs=org.jboss.naming:org.jnp.interfaces
     SessionDefaultType=agnostic
     Strict=true
   </Resource>
@@ -41,7 +41,7 @@ TIBCO Enterprise Message Service
 
   <Resource id="TibcoConnectionFactory" class-name="org.jboss.resource.adapter.jms.JmsManagedConnectionFactory">
     ConnectionFactory=ConnectionFactory
-    JndiParameters=java.naming.security.principal=admin;java.naming.security.credentials=password123;java.naming.factory.initial=com.tibco.tibjms.naming.TibjmsInitialContextFactory;java.naming.factory.url.pkgs=com.tibco.tibjms.naming;java.naming.provider.url=tcp://192.168.37.110:7222
+    JndiParameters=java.naming.security.principal=admin;java.naming.security.credentials=password123;java.naming.factory.initial=com.tibco.tibjms.naming.TibjmsInitialContextFactory;java.naming.factory.url.pkgs=com.tibco.tibjms.naming;java.naming.provider.url=tcp://<ip_address>:<port>
     SessionDefaultType=agnostic
     Strict=true
   </Resource>
@@ -73,8 +73,8 @@ WebSphere MQ
 
   <Resource id="WMQConnectionFactory" class-name="com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl">
     maxConnections=200
-    hostName=ec2-54-82-138-6.compute-1.amazonaws.com
-    port=14141
+    hostName=<ip_address>
+    port=<port>
     queueManager=test
     channel=test
     transportType=CLIENT
