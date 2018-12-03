@@ -56,7 +56,7 @@ The Message interface is the root interface of all JMS messages. It defines the 
 Apache TomEE (Plume and Plus) provide Apache ActiveMQ (http://activemq.apache.org/) as part of the distribution,
  and this can run in either embedded mode, or TomEE can connect to an external standalone ActiveMQ broker.
 Apache TomEE does allow ActiveMQ to be replaced by another JMS provider, or alternatively you can run two or more
- JMS providers simultaneously and specify which provider MDBs and callers should use via configuration.
+JMS providers simultaneously and specify which provider http://tomee.apache.org/jms-resources-and-mdb-container.html[MDBs and callers should use via configuration].
 
 
 === JMS Advanced
