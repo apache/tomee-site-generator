@@ -6,7 +6,7 @@
 
 See the link:advanced.html[JMS Advanced] for details on all configuration options for JMS.
 
-## JBoss MQ
+== JBoss MQ
 
 [source,xml]
 ----
@@ -34,7 +34,7 @@ See the link:advanced.html[JMS Advanced] for details on all configuration option
   </Resource>
 ----
 
-TIBCO Enterprise Message Service
+== TIBCO Enterprise Message Service
 
 [source,xml]
 ----
@@ -59,7 +59,7 @@ TIBCO Enterprise Message Service
   </Container>
 ----
 
-##  WebSphere MQ
+==  WebSphere MQ
 [source,xml]
 ----
 <Resource id="WMQResourceAdapter" class-name="com.ibm.mq.connector.ResourceAdapterImpl">
