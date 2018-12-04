@@ -6,16 +6,10 @@
 
 === Contribute
 
+- link:contributing/contribution-tips.html[Contribution tips]
+- link:sources.html[Apache TomEE]
 - link:contributing/website.html[This website]
-
-
-=== The Source Code
-
-Want to grab TomEE source code and hack it? Nothing simpler, just go link:sources.html[there].
-
-=== Contributors
-
-You can see our wall of fame on: link:contributors.html[TomEE Wall Of Fame].
+- link:contributors.html[TomEE Wall Of Fame]
 
 === Social Media: cause contributing is not only about coding
 
