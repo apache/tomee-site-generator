@@ -5,8 +5,8 @@
 
 
 === Contribute
-- link:contributorsguides/tomee.html[Apache TomEE]
-- link:contributorsguides/website.html[This website]
+
+- link:contributing/website.html[This website]
 
 
 === The Source Code
