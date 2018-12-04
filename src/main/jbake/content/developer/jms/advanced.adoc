@@ -57,11 +57,22 @@
 
 A JMS activation specification is associated with one or more message-driven beans and provides the configuration necessary for them to receive messages.
 
-
 [source,java]
 ----
 containerId.activation.atrribute = value
 ----
+
+Also note that these can be specified by:
+
+* Annotations on the bean
+* In ejb-jar.xml
+* As properties (with the prefix of "activation.") on bean in openejb-jar.xml
+* Properties (with the prefix of "activation.") on a MDB container in tomee.xml as system properties
+
+In terms of priority:
+
+1. Bean specific activation properties override global properties
+1. Annotations are overridden by ejb-jar.xml values, which in turn are overridden by system properties.
 
 So, the attribute will send through all the message-drive bean who has the container id equals to *containerId*.
 
