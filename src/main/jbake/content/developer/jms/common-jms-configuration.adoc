@@ -7,6 +7,7 @@
 See the link:advanced.html[JMS Advanced] for details on all configuration options for JMS.
 
 JBoss MQ
+
 [source,xml]
 ----
   <Resource id="JBossMQResourceAdapter" class-name="org.jboss.resource.adapter.jms.JmsResourceAdapter">
@@ -73,7 +74,7 @@ WebSphere MQ
 
   <Resource id="WMQConnectionFactory" class-name="com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl">
     maxConnections=200
-    hostName=<ip_address>
+    hostName=<ec2_address>
     port=<port>
     queueManager=test
     channel=test
