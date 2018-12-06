@@ -282,6 +282,7 @@ nav.navbar-fixed-top .navbar-nav > li > a:not(.btn) {
 
 .navbar {
   top: 50px;
+  height: 70px;
 }
 
 .container {
@@ -299,8 +300,8 @@ section {
   background: #fff;
 }
 
-.section-padded {
-  padding: 50px 0 40px;
+.main-block {
+  padding-top: 50px;
 }
 
 .cut-top {
