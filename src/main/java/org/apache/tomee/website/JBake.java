@@ -33,10 +33,8 @@ public class JBake {
         System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "64"); // try to have parallelStream better than default
 
         final File source = args == null || args.length < 1 ? new File("src/main/jbake") : new File(args[0]);
-        final File pdfSource = new File(source, "content");
         final File destination = args == null || args.length < 2 ? new File("target/site-tmp") : new File(args[1]);
         final boolean startHttp = args == null || args.length < 2 || Boolean.parseBoolean(args[2]); // by default we dev
-        final boolean skipPdf = args == null || args.length < 3 || Boolean.parseBoolean(args[3]); // by default...too slow sorry
 
         final Sources sources = new Sources(
                 new File("target/jbake"),
