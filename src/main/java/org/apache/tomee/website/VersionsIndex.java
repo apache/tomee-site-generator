@@ -47,8 +47,8 @@ public class VersionsIndex {
 
                 index.append("*\n\n");
 
-                final File docs = sources.getDestinationFor(source, "docs");
-                final File examples = sources.getDestinationFor(source, "examples");
+                final File docs = sources.getJbakeContentDestFor(source, "docs");
+                final File examples = sources.getJbakeContentDestFor(source, "examples");
 
                 if (docs.exists() && docs.listFiles().length > 0) {
                     index.append(" - link:").append(source.getName()).append("/docs[Documentation]\n");
@@ -59,8 +59,8 @@ public class VersionsIndex {
                 index.append("\n\n");
             }
 
-            IO.copy(IO.read(index.toString()), new File(sources.getDestination(), "content/documentation.adoc"));
-            IO.copy(IO.read(index.toString()), new File(sources.getDestination(), "content/docs.adoc"));
+            IO.copy(IO.read(index.toString()), new File(sources.getJbake(), "content/documentation.adoc"));
+            IO.copy(IO.read(index.toString()), new File(sources.getJbake(), "content/docs.adoc"));
 
         } catch (IOException e) {
             throw new RuntimeException(e);

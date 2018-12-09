@@ -38,17 +38,47 @@ import java.util.List;
  */
 public class Sources {
 
-    private final File destination;
+    /**
+     * The directory where all final html files are placed
+     * after generation.
+     */
+    private final File generated;
+
+
+    /**
+     * The directory where all JBake input is aggregated
+     * to create one big source tree prior to generation.
+     */
+    private final File jbake;
+
+    /**
+     * The directory where we are keeping a cache of git
+     * clones of the repos and branches that contribute
+     * to the content of the site.
+     */
     private final File repos;
+
+    /**
+     * The directory where we are keeping a cache of git
+     * clones of the repos and branches that contribute
+     * to the content of the site.
+     */
     private final File mainSource;
+
+
+    /**
+     * The definition of each repo/branch that contributes
+     * to the content of the site.
+     */
     private final List<Source> sources = new ArrayList<>();
 
-    public Sources(final File destination, final File repos, final File mainSource, final Source... sources) {
-        this.destination = destination;
+    public Sources(final File jbake, final File repos, final File mainSource, final File generated, final Source... sources) {
+        this.generated = generated;
+        this.jbake = jbake;
         this.repos = repos;
         this.mainSource = mainSource;
 
-        destination.mkdirs();
+        jbake.mkdirs();
         repos.mkdirs();
 
         Collections.addAll(this.sources, sources);
@@ -60,8 +90,20 @@ public class Sources {
         }
     }
 
-    public File getDestination() {
-        return destination;
+    public File getGenerated() {
+        return generated;
+    }
+
+    public File getRepos() {
+        return repos;
+    }
+
+    public File getMainSource() {
+        return mainSource;
+    }
+
+    public File getJbake() {
+        return jbake;
     }
 
     public List<Source> getSources() {
@@ -78,7 +120,7 @@ public class Sources {
         final VersionIndex versionIndex = new VersionIndex(this);
 
         try {
-            IO.copyDirectory(mainSource, destination);
+            IO.copyDirectory(mainSource, jbake);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -95,8 +137,8 @@ public class Sources {
         VersionsIndex.prepare(this);
     }
 
-    public File getDestinationFor(final Source source, final String... parts) {
-        final File content = new File(destination, "content");
+    public File getJbakeContentDestFor(final Source source, final String... parts) {
+        final File content = new File(jbake, "content");
         File dir = new File(content, source.getName());
 
         for (final String part : parts) {

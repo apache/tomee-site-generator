@@ -30,8 +30,8 @@ public class VersionIndex {
     }
 
     public void prepare(final Source source) {
-        final File docs = sources.getDestinationFor(source, "docs");
-        final File examples = sources.getDestinationFor(source, "examples");
+        final File docs = sources.getJbakeContentDestFor(source, "docs");
+        final File examples = sources.getJbakeContentDestFor(source, "examples");
 
         try {
             final StringBuilder index = new StringBuilder();

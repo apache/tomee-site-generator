@@ -42,6 +42,7 @@ public class JBake {
                 new File("target/jbake"),
                 new File("repos"),
                 new File("src/main/jbake"),
+                destination,
                 new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "master", "tomee-8.0", true),
                 new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.1.0", "tomee-7.1"),
                 new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.0.5", "tomee-7.0"),
@@ -56,8 +57,8 @@ public class JBake {
             try {
                 orient.startup();
 
-                final Oven oven = new Oven(sources.getDestination(), destination, new CompositeConfiguration() {{
-                    addConfiguration(ConfigUtil.load(sources.getDestination()));
+                final Oven oven = new Oven(sources.getJbake(), destination, new CompositeConfiguration() {{
+                    addConfiguration(ConfigUtil.load(sources.getJbake()));
                 }}, true);
                 oven.setupPaths();
 
