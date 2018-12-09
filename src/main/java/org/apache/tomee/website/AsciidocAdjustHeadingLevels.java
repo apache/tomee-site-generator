@@ -141,7 +141,7 @@ public class AsciidocAdjustHeadingLevels {
         }
 
         public String fix(final String line) {
-            return line.replaceAll("^[=#]*", current);
+            return line.trim().replaceAll("^[=#]* *", current + " ");
         }
     }
 }
