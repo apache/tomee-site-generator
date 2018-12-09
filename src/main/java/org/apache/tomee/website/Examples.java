@@ -24,11 +24,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Examples2 {
+public class Examples {
 
     private final Sources sources;
 
-    public Examples2(final Sources sources) {
+    public Examples(final Sources sources) {
         this.sources = sources;
     }
 

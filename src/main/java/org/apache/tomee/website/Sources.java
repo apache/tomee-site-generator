@@ -116,7 +116,7 @@ public class Sources {
      */
     public void prepare() {
         final Docs docs = new Docs(this);
-        final Examples2 examples = new Examples2(this);
+        final Examples examples = new Examples(this);
         final VersionIndex versionIndex = new VersionIndex(this);
 
         try {
