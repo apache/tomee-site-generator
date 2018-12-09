@@ -116,6 +116,7 @@ public class Sources {
      */
     public void prepare() {
         final Docs docs = new Docs(this);
+        final Javadocs javadocs = new Javadocs(this);
         final Examples examples = new Examples(this);
         final VersionIndex versionIndex = new VersionIndex(this);
 
@@ -129,6 +130,7 @@ public class Sources {
                 .peek(source -> source.setDir(new File(repos, source.getName())))
                 .peek(Repos::download)
                 .peek(docs::prepare)
+                .peek(javadocs::prepare)
                 .peek(examples::prepare)
                 .peek(versionIndex::prepare)
                 .forEach(Sources::done);
