@@ -75,10 +75,10 @@ public class AsciidocAdjustHeadingLevels {
         processor.accept(line);
     }
 
-    public class EndCodeblock {
+    public class Codeblock {
         private final String delimiter;
 
-        public EndCodeblock(final String delimiter) {
+        public Codeblock(final String delimiter) {
             this.delimiter = delimiter;
         }
 
@@ -105,7 +105,11 @@ public class AsciidocAdjustHeadingLevels {
         }
 
         private void process(String line) {
-            if (line.startsWith("=") || line.startsWith("#")) {
+            if (codeblockStart.matcher(line).matches()) {
+
+                processor = new Codeblock(line)::findEnd;
+
+            } else if (line.startsWith("=") || line.startsWith("#")) {
 
                 final HeadingLevel adjusted = headingLevel.adjust(line);
 
