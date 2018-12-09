@@ -105,7 +105,7 @@ public class AsciidocAdjustHeadingLevels {
         }
 
         private void process(String line) {
-            if (line.startsWith("=")) {
+            if (line.startsWith("=") || line.startsWith("#")) {
 
                 final HeadingLevel adjusted = headingLevel.adjust(line);
 
