@@ -7,6 +7,7 @@
 === Contribute
 
 - link:contributing/contribution-tips.html[Contribution tips]
+- link:contributing/workflow.html[Contribution workflow]
 - link:sources.html[Apache TomEE]
 - link:contributing/website.html[This website]
 - link:contributors.html[TomEE Wall Of Fame]
