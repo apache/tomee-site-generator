@@ -61,3 +61,11 @@ TomEE is using Buildbot for its continuous integration. You can access main buil
 
 - https://ci.apache.org/builders/tomee-trunk-ubuntu[TomEE Master]
 - https://ci.apache.org/builders/tomee-1.7.x-ubuntu[TomEE 1.7.x]
+
+=== Issues
+
+Tomee uses Jira for issues, if you are looking for a problem or reporting one, use the following address:
+
+- Create a ticket on http://issues.apache.org/jira/browse/TOMEE
+
+- Open a PR in the Gihub mirror with the ticket number e.g `TOMEE-1000 - Ticket Description`
