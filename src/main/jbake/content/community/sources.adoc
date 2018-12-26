@@ -59,7 +59,7 @@ Then TomEE archives are at `tomee/apache/tomee/target/apache-tomee-${classifier}
 
 TomEE is using Buildbot for its continuous integration. You can access main builds (Ubuntu ones) at these address:
 
-- https://ci.apache.org/builders/tomee-trunk-ubuntu[TomEE Master]
+- https://ci.apache.org/builders/tomee-trunk-ubuntu-jvm8[TomEE Master]
 - https://ci.apache.org/builders/tomee-1.7.x-ubuntu[TomEE 1.7.x]
 
 === Issues
