@@ -13,18 +13,18 @@ you would do on any Github project and Apache takes care of the rest of the proc
 
 TomEE is using https://git-scm.com/[Git] as source content manager.
 
-The master sources are on https://git-wip-us.apache.org/repos/asf/tomee.git and you can clone them using the following command:
+The master sources are on https://gitbox.apache.org/repos/asf/tomee.git and you can clone them using the following command:
 
 [source]
 ----
-git clone https://git-wip-us.apache.org/repos/asf/tomee.git tomee-master
+git clone https://gitbox.apache.org/repos/asf/tomee.git tomee-master
 ----
 
 If you are interested in 1.7.x branch only just checkout the `tomee-1.7.x` branch:
 
 [source]
 ----
-git clone -b tomee-1.7.x https://git-wip-us.apache.org/repos/asf/tomee.git tomee-1.7.x
+git clone -b tomee-1.7.x https://gitbox.apache.org/repos/asf/tomee.git tomee-1.7.x
 ----
 
 Master branch is the more up to date version of the codebase and currently targets TomEE 7.x branch.
