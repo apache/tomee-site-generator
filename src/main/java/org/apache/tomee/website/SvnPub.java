@@ -21,6 +21,7 @@ import org.apache.xml.security.exceptions.Base64DecodingException;
 import org.tmatesoft.svn.core.SVNCommitInfo;
 import org.tmatesoft.svn.core.SVNDepth;
 import org.tmatesoft.svn.core.SVNException;
+import org.tmatesoft.svn.core.SVNProperties;
 import org.tmatesoft.svn.core.SVNURL;
 import org.tmatesoft.svn.core.auth.ISVNAuthenticationManager;
 import org.tmatesoft.svn.core.internal.util.jna.SVNJNAUtil;
@@ -29,6 +30,7 @@ import org.tmatesoft.svn.core.wc.ISVNStatusHandler;
 import org.tmatesoft.svn.core.wc.SVNClientManager;
 import org.tmatesoft.svn.core.wc.SVNRevision;
 import org.tmatesoft.svn.core.wc.SVNStatus;
+import org.tmatesoft.svn.core.wc.SVNStatusClient;
 import org.tmatesoft.svn.core.wc.SVNStatusType;
 import org.tmatesoft.svn.core.wc.SVNUpdateClient;
 import org.tmatesoft.svn.core.wc.SVNWCUtil;
@@ -37,6 +39,7 @@ import org.tmatesoft.svn.core.wc2.SvnTarget;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Date;
 import java.util.HashMap;
@@ -94,51 +97,57 @@ public class SvnPub {
 
         final Path sitePath = copy.getAbsoluteFile().toPath();
 
-        final Map<String, File> changed = new HashMap<>();
-        int previous = 0;
+        final SVNStatusClient statusClient = client.getStatusClient();
 
-        do {
-            previous = changed.size();
+        Files.walk(sitePath)
+                .map(Path::toFile)
+                .filter(file -> !file.getAbsolutePath().endsWith(".svn"))
+                .filter(file -> !file.getAbsolutePath().contains(".svn/"))
+                .forEach(file -> {
+                    try {
+                        final SVNStatus status = statusClient.doStatus(file, false);
+                        final SVNStatusType contentsStatus = status.getContentsStatus();
+                        final String path = sitePath.relativize(file.getAbsoluteFile().toPath()).toString();
 
-            client.getStatusClient().doStatus(copy, SVNRevision.HEAD, SVNDepth.INFINITY, false, false, false, false, new ISVNStatusHandler() {
-                @Override
-                public void handleStatus(final SVNStatus status) throws SVNException {
-                    final SVNStatusType contentsStatus = status.getContentsStatus();
-                    final File file = status.getFile();
+                        if (contentsStatus == SVNStatusType.STATUS_NORMAL) return;
 
-                    final String path = sitePath.relativize(file.getAbsoluteFile().toPath()).toString();
-
-                    if (contentsStatus == SVNStatusType.STATUS_UNVERSIONED || contentsStatus == SVNStatusType.STATUS_NONE) {
-
-                        changed.put(path, file);
-                        client.getWCClient().doAdd(file, false, false, false, SVNDepth.INFINITY, false, false, true);
-                        System.out.println("A " + path);
-
-                    } else if (contentsStatus == SVNStatusType.STATUS_MODIFIED || contentsStatus == SVNStatusType.STATUS_REPLACED) {
-
-                        if (changed.put(path, file) == null) {
+                        if (contentsStatus == SVNStatusType.STATUS_MODIFIED) {
                             System.out.println("M " + path);
+                            return;
                         }
 
-                    } // else we don't care
-                }
-            }, null);
+                        if (contentsStatus == SVNStatusType.STATUS_UNVERSIONED || contentsStatus == SVNStatusType.STATUS_NONE) {
 
-        } while (changed.size() != previous);
+                            client.getWCClient().doAdd(file, false, false, false, SVNDepth.INFINITY, false, false, true);
+                            System.out.println("A " + path);
 
-        if (changed.size() == 0) {
-            System.out.println("Nothing to commit!");
-            return;
-        }
+                        } else if (contentsStatus == SVNStatusType.STATUS_MODIFIED || contentsStatus == SVNStatusType.STATUS_REPLACED) {
+
+                            System.out.println("M " + path);
+
+                        }
+                    } catch (SVNException e) {
+                        throw new IllegalStateException(e);
+                    }
+                });
+
 
         // now update it remotely, note: we could use the status output to do it more efficiently
         final String message = ofNullable(args == null || args.length < 2 ? System.getProperty("site.message") : args[1])
                 .filter(m -> !"notset".equalsIgnoreCase(m))
                 .orElseGet(() -> "Maven update of the website on the " + new Date() + " from " + username);
 
-        final File[] commit = changed.values().stream().toArray(File[]::new);
+        final File[] commit = new File[]{copy};
 
-        final SVNCommitInfo commitInfo = client.getCommitClient().doCommit(commit, false, message, null, null, false, false, SVNDepth.IMMEDIATES);
+        System.out.println("Committing... ");
+
+        final boolean keepLocks = false;
+        final SVNProperties revisionProperties = null;
+        final String[] changelists = null;
+        final boolean keepChangelist = false;
+        final boolean force = false;
+        final SVNDepth depth = SVNDepth.INFINITY;
+        final SVNCommitInfo commitInfo = client.getCommitClient().doCommit(commit, keepLocks, message, revisionProperties, changelists, keepChangelist, force, depth);
 
         if (commitInfo.getErrorMessage() != null) {
             throw new IllegalStateException(commitInfo.getErrorMessage().toString());

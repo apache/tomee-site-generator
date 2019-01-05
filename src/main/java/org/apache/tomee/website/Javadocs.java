@@ -74,7 +74,6 @@ public class Javadocs {
      * @param source
      */
     public void prepare(final Source source) {
-
         final File javaSources = mkdirs(new File(String.format("target/javadocs/%s-src", source.getName())));
 
         try {
