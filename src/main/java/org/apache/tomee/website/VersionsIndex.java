@@ -56,6 +56,8 @@ public class VersionsIndex {
                 if (examples.exists() && examples.listFiles().length > 0) {
                     index.append(" - link:").append(source.getName()).append("/examples[Examples]\n");
                 }
+                index.append(" - link:").append(source.getName()).append("/javadoc[Javadoc]\n");
+
                 index.append("\n\n");
             }
 

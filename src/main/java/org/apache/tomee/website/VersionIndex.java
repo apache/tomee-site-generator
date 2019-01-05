@@ -50,6 +50,7 @@ public class VersionIndex {
             if (examples.exists() && examples.listFiles().length > 0) {
                 index.append(" - link:examples[Examples]\n");
             }
+            index.append(" - link:javadoc[Javadoc]\n");
 
             IO.copy(IO.read(index.toString()), new File(docs.getParentFile(), "index.adoc"));
 
