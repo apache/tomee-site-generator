@@ -20,6 +20,8 @@ import org.apache.openejb.loader.IO;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VersionsIndex {
 
@@ -30,9 +32,9 @@ public class VersionsIndex {
         try {
             final StringBuilder index = new StringBuilder();
             index.append(":jbake-type: page\n")
-                    .append(":jbake-status: published\n")
-                    .append(":jbake-title: Apache TomEE Documentation\n")
-                    .append("\n")
+                 .append(":jbake-status: published\n")
+                 .append(":jbake-title: Apache TomEE Documentation\n")
+                 .append("\n")
             ;
 
 
@@ -54,7 +56,23 @@ public class VersionsIndex {
                     index.append(" - link:").append(source.getName()).append("/docs[Documentation]\n");
                 }
                 if (examples.exists() && examples.listFiles().length > 0) {
-                    index.append(" - link:").append(source.getName()).append("/examples[Examples]\n");
+                    //index.append(" - link:").append(source.getName()).append("/examples[Examples]\n");
+
+                    List<String> listOfLanguagesDirs = VersionIndex.obtainListOfLanguages(examples);
+
+                    index.append(" - link:").append(source.getName()).append("/examples[Examples]");
+
+                    for (String LanguageDir : listOfLanguagesDirs) {
+                        index.append(" link:")
+                             .append(source.getName())
+                             .append("/examples/")
+                             .append(LanguageDir)
+                             .append("[ [")
+                             .append(LanguageDir)
+                             .append("\\] ]");
+                    }
+
+                    index.append("\n");
                 }
                 index.append("\n\n");
             }

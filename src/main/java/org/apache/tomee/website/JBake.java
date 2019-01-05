@@ -37,17 +37,19 @@ public class JBake {
         final boolean startHttp = args == null || args.length < 2 || Boolean.parseBoolean(args[2]); // by default we dev
 
         final Sources sources = new Sources(
-                new File("target/jbake"),
-                new File("repos"),
-                new File("src/main/jbake"),
+                new File("target/jbake"), //jbake
+                new File("repos"), //repos
+                new File("src/main/jbake"), //mainSource
                 destination,
                 new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "master", "tomee-8.0", true),
-                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.1.0", "tomee-7.1"),
-                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.0.5", "tomee-7.0"),
+//                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.1.0", "tomee-7.1"),
+//                new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "tomee-7.0.5", "tomee-7.0"),
                 new Source("https://git-wip-us.apache.org/repos/asf/tomee.git", "master", "master")
         );
 
         sources.prepare();
+
+        //aquim e quede, poner breakpoint y ver si aqui solo se creo la estructura sin aun crearce los html index files.
 
         final Runnable build = () -> {
             System.out.println("Building TomEE website in " + destination);

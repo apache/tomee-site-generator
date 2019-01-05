@@ -20,6 +20,8 @@ import org.apache.openejb.loader.IO;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VersionIndex {
 
@@ -36,19 +38,29 @@ public class VersionIndex {
         try {
             final StringBuilder index = new StringBuilder();
             index.append(":jbake-type: page\n")
-                    .append(":jbake-status: published\n")
-                    .append(":jbake-title: ")
-                    .append(source.getName())
-                    .append(" resources")
-                    .append("\n")
-                    .append("\n")
+                 .append(":jbake-status: published\n")
+                 .append(":jbake-title: ")
+                 .append(source.getName())
+                 .append(" resources")
+                 .append("\n")
+                 .append("\n")
             ;
 
             if (docs.exists() && docs.listFiles().length > 0) {
+                //ToDo: add to the doc index file the available languages for documentation.
                 index.append(" - link:docs[Documentation]\n");
             }
             if (examples.exists() && examples.listFiles().length > 0) {
-                index.append(" - link:examples[Examples]\n");
+
+                List<String> listOfLanguagesDirs = obtainListOfLanguages(examples);
+
+                index.append(" - link:examples[Examples]");
+
+                for (String LanguageDir : listOfLanguagesDirs) {
+                    index.append(" link:examples/" + LanguageDir + "[ [" + LanguageDir + "\\] ]");
+                }
+
+                index.append("\n");
             }
 
             IO.copy(IO.read(index.toString()), new File(docs.getParentFile(), "index.adoc"));
@@ -56,6 +68,18 @@ public class VersionIndex {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static List<String> obtainListOfLanguages(File file) {
+        List<String> listOfLanguages = new ArrayList<>();
+
+        File[] directories = new File(file.getAbsolutePath()).listFiles(File::isDirectory);
+
+        for (File directory : directories) {
+            listOfLanguages.add(directory.getName());
+        }
+
+        return listOfLanguages;
     }
 
 }

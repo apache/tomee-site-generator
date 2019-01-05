@@ -27,11 +27,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class GroupedIndex {
@@ -48,13 +44,36 @@ public class GroupedIndex {
         new GroupedIndex(directory, type).process();
     }
 
+
     public void process() {
 
-        final List<String> sectionsFormatted = new ArrayList<>();
-
-
         final List<Doc> docs = list(directory);
-        final Map<String, List<Doc>> sections = docs.stream().collect(Collectors.groupingBy(Doc::getGroup));
+
+        final List<String> detectedLanguages = new ArrayList<>();
+        Set<String> uniqueValues = new HashSet<>();
+        for (Doc doc1 : docs) {
+            if (uniqueValues.add(doc1.language)) {
+                detectedLanguages.add(doc1.language);
+            }
+        }
+
+        for (String language : detectedLanguages) {
+            sortSectionsAndCreateIndexFiles(docs, language);
+        }
+    }
+
+    private void sortSectionsAndCreateIndexFiles(List<Doc> docs, String language) {
+
+        final Map<String, List<Doc>> sections = new HashMap<>();
+
+        //filtering only documents with the same language
+        for (Doc doc1 : docs) {
+            if (doc1.language.equalsIgnoreCase(language)) {
+                sections.computeIfAbsent(doc1.getGroup(), k -> new ArrayList<>()).add(doc1);
+            }
+        }
+
+        final List<String> sectionsFormatted = new ArrayList<>();
 
         /**
          * We want to sort the sections with the most entries towards the top.
@@ -71,7 +90,15 @@ public class GroupedIndex {
                     out.printf("            <div class=\"group-title\">%s</div>\n", entry.getKey());
                     out.printf("            <ul class=\"group\">\n");
                     entry.getValue().stream().sorted().forEach(doc -> {
-                        out.printf("              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n", doc.getHref(), doc.getTitle());
+
+//                        if(language.equalsIgnoreCase("en")){
+//                            out.printf("              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n", doc.getHref(), doc.getTitle());
+//                        }else {
+                        out.printf(
+                                "              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n",
+                                doc.getHref().replaceAll(language + File.separator, ""), doc.getTitle());
+//                        }
+
                     });
                     out.printf("            </ul>\n");
 
@@ -79,7 +106,8 @@ public class GroupedIndex {
 
                 });
 
-        try (final PrintStream out = print(directory, "index.html")) {
+        try (final PrintStream out = print(directory.getAbsolutePath(), "index.html", language)) {
+
             out.printf("type=%s\n", type);
             out.printf("status=published\n");
             out.printf("~~~~~~\n");
@@ -113,9 +141,9 @@ public class GroupedIndex {
                         out.printf("        </div>\n");
 
                         final ListIterator<Doc> iterator = entry.getValue().stream()
-                                .sorted()
-                                .collect(Collectors.toList())
-                                .listIterator();
+                                                                .sorted()
+                                                                .collect(Collectors.toList())
+                                                                .listIterator();
 
                         final int i = (int) Math.ceil(entry.getValue().size() / 3f);
 
@@ -127,7 +155,9 @@ public class GroupedIndex {
                             out.printf("            <ul class=\"group\">\n");
                             while (iterator.hasNext() && count++ < i) {
                                 final Doc doc = iterator.next();
-                                out.printf("              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n", doc.getHref(), doc.getTitle());
+                                out.printf(
+                                        "              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n",
+                                        doc.getHref().replaceAll(language + File.separator, ""), doc.getTitle());
 
                             }
                             out.printf("            </ul>\n");
@@ -136,12 +166,22 @@ public class GroupedIndex {
                         out.printf("        </div>\n");
                     });
 
+        } catch (Exception e) {
+            throw e; //ToDo: implementing proper logger and catch.
         }
     }
 
-    public static PrintStream print(final File directory, final String child) {
+    public static PrintStream print(final String directory, final String child, String language) {
         try {
-            return new PrintStream(IO.write(new File(directory, child)));
+            File fileParentFolder;
+
+            if (language.equalsIgnoreCase("en")) {
+                fileParentFolder = new File(directory);
+            } else {
+                fileParentFolder = new File(directory + File.separator + language);
+            }
+
+            return new PrintStream(IO.write(new File(fileParentFolder, child)));
         } catch (FileNotFoundException e) {
             throw new IllegalStateException(e);
         }
@@ -150,15 +190,31 @@ public class GroupedIndex {
     public List<Doc> list(final File directory) {
         try {
             return Files.walk(directory.toPath())
-                    .map(Path::toFile)
-                    .filter(File::isFile)
-                    .filter(Docs::isRendered)
-                    .map(this::parse)
-                    .collect(Collectors.toList());
+                        .map(Path::toFile)
+                        .filter(File::isFile)
+                        .filter(Docs::isRendered)
+                        .map(this::parse)
+                        .collect(Collectors.toList());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
+    private static String getLanguageFromPath(File file, String expectedFileParentFolder) {
+
+        String fileParentFolder = file.getParentFile().getName();
+
+        if (fileParentFolder != null) {
+            if (fileParentFolder.equalsIgnoreCase(expectedFileParentFolder)) {
+                return "";
+            } else {
+                return fileParentFolder;
+            }
+        } else {
+            return "";
+        }
+    }
+
 
     public Doc parse(final File file) {
         final Parser parser = new Parser(new CompositeConfiguration(), file.getAbsolutePath());
@@ -171,8 +227,25 @@ public class GroupedIndex {
         final String title = getTitle(map, file);
         final String group = Optional.ofNullable(map.get("index-group")).orElse("Unknown") + "";
 
+        /*
+         Extract language from the file path like this:
+                   examples/file.adoc  will not generate language. (default to "en")
+                   examples/es/file.adoc  generates language es atribute inside the New Doc that is returned.
+         */
 
-        return new Doc(group, title, Docs.href(directory, file), file);
+        if (type.equalsIgnoreCase("examplesindex")) {
+            String detectedLanguage = getLanguageFromPath(file, "examples");
+            if (detectedLanguage.equalsIgnoreCase("")) {
+                return new Doc(group, title, Docs.href(directory, file), file); //default to english "en"
+            } else {
+                return new Doc(group, title, Docs.href(directory, file), file, detectedLanguage);
+            }
+        } else {
+            // todo: Here we can implement later when doc type is docindex and not examplesindex
+            return new Doc(group, title, Docs.href(directory, file), file); //default to english
+        }
+
+
     }
 
     private String getTitle(final Map<String, Object> map, final File file) {
@@ -183,22 +256,43 @@ public class GroupedIndex {
 
     private boolean hasValue(final Object o) {
         if (o == null) return false;
-        if ("".equals(o + ""))return false;
+        if ("".equals(o + "")) return false;
         return true;
     }
 
     public static class Doc implements Comparable<Doc> {
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(language);
+        }
 
         private final String group;
         private final String title;
         private final String href;
         private final File source;
 
+        private final String language;
+
         public Doc(final String group, final String title, final String href, final File source) {
             this.group = group;
             this.title = title;
             this.href = href;
             this.source = source;
+            this.language = "en";
+        }
+
+        public Doc(final String group, final String title, final String href, final File source,
+                   final String language) {
+            this.group = group;
+            this.title = title;
+            this.href = href;
+            this.source = source;
+            this.language = language;
+        }
+
+        public String getLanguage() {
+            return language;
         }
 
         public String getGroup() {
@@ -220,6 +314,14 @@ public class GroupedIndex {
         @Override
         public int compareTo(final Doc o) {
             return this.title.toLowerCase().compareTo(o.title.toLowerCase());
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Doc doc = (Doc) o;
+            return Objects.equals(language, doc.language);
         }
     }
 }

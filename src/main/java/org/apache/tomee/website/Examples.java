@@ -61,7 +61,7 @@ public class Examples {
         }
 
 
-        GroupedIndex.process(destDir, "examplesindex");
+        GroupedIndex.process(destDir, "examplesindex"); //Creates the index.html for each example folder
 //        https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/HttpServletMapping.html
     }
 
