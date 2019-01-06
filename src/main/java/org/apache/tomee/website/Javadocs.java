@@ -76,29 +76,9 @@ public class Javadocs {
     public void prepare(final Source source) {
         final File javaSources = mkdirs(new File(String.format("target/javadocs/%s-src", source.getName())));
 
-        try {
-            java.nio.file.Files.walk(source.getDir().toPath())
-                    .map(Path::toFile)
-                    .filter(File::isFile)
-                    .filter(this::isJava)
-                    .filter(this::srcMainJava)
-                    .filter(file -> !file.getAbsolutePath().contains("/tck/"))
-                    .filter(file -> !file.getAbsolutePath().contains("/itests/"))
-                    .filter(file -> !file.getAbsolutePath().contains("/examples/"))
-                    .filter(file -> !file.getAbsolutePath().contains("-example/"))
-                    .filter(file -> !file.getAbsolutePath().contains("/archetype-resources/"))
-                    .forEach(file -> {
-                        try {
-                            final String relativePath = file.getAbsolutePath().replaceAll(".*/src/main/java/", "");
-                            final File dest = new File(javaSources, relativePath);
-                            Files.mkdirs(dest.getParentFile());
-                            IO.copy(file, dest);
-                        } catch (IOException e) {
-                            throw new IllegalStateException(e);
-                        }
-                    });
-        } catch (IOException e) {
-            throw new IllegalStateException("Failed to aggregate java sources");
+        copySource(source, javaSources);
+        for (final Source related : source.getRelated()) {
+            copySource(related, javaSources);
         }
 
         final ProcessBuilder cmd = new ProcessBuilder(
@@ -120,6 +100,29 @@ public class Javadocs {
             Pipe.pipe(cmd.start());
         } catch (IOException e) {
             throw new IllegalStateException("Command failed");
+        }
+    }
+
+    private void copySource(final Source source, final File javaSources) {
+        try {
+            java.nio.file.Files.walk(source.getDir().toPath())
+                    .map(Path::toFile)
+                    .filter(File::isFile)
+                    .filter(this::isJava)
+                    .filter(source.getJavadocFilter()::include)
+                    .filter(source.getJavadocFilter()::exclude)
+                    .forEach(file -> {
+                        try {
+                            final String relativePath = file.getAbsolutePath().replaceAll(".*/src/main/java/", "");
+                            final File dest = new File(javaSources, relativePath);
+                            Files.mkdirs(dest.getParentFile());
+                            IO.copy(file, dest);
+                        } catch (IOException e) {
+                            throw new IllegalStateException(e);
+                        }
+                    });
+        } catch (IOException e) {
+            throw new IllegalStateException("Failed to aggregate java sources");
         }
     }
 
@@ -150,10 +153,6 @@ public class Javadocs {
     }
 
     private static void copy(final File file, File javaSources) {
-    }
-
-    private boolean srcMainJava(final File file) {
-        return file.getAbsolutePath().contains("src/main/java/");
     }
 
     private boolean isJava(final File file) {

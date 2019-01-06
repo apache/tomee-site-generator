@@ -127,6 +127,11 @@ public class Sources {
         }
 
         sources.stream()
+                .flatMap(source -> source.getRelated().stream())
+                .peek(source -> source.setDir(new File(repos, source.getName())))
+                .forEach(Repos::download);
+
+        sources.stream()
                 .peek(source -> source.setDir(new File(repos, source.getName())))
                 .peek(Repos::download)
                 .peek(docs::prepare)
@@ -138,6 +143,7 @@ public class Sources {
 
         VersionsIndex.prepare(this);
     }
+
     /**
      * This is the heart of the code to merge several documentation
      * sources into one tree.
