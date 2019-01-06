@@ -36,27 +36,9 @@ public class JBake {
         final File destination = args == null || args.length < 2 ? new File("target/site-tmp") : new File(args[1]);
         final boolean startHttp = args == null || args.length < 2 || Boolean.parseBoolean(args[2]); // by default we dev
 
-        final Source[] microProfile2 = new Source[]{
-                new Source("https://github.com/eclipse/microprofile-jwt-auth.git", "1.1.1", "microprofile-jwt-1.1").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-config.git", "1.3", "microprofile-config-1.3").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-fault-tolerance", "1.1.4", "microprofile-fault-tolerance-1.1").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-health", "1.0", "microprofile-health-1.0").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-metrics", "1.1.1", "microprofile-metrics-1.1").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-open-api", "1.0.2", "microprofile-open-api-1.0").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-opentracing", "1.1", "microprofile-opentracing-1.1").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-rest-client", "1.1", "microprofile-rest-client-1.1").filterJavadoc(".*/api/src/main/java/.*", ""),
-        };
+        final Source[] website = org.apache.tomee.website.Configuration.getSources();
 
-        final Sources sources = new Sources(
-                new File("target/jbake"),
-                new File("repos"),
-                new File("src/main/jbake"),
-                destination,
-                new Source("https://gitbox.apache.org/repos/asf/tomee.git", "master", "tomee-8.0", true).related(microProfile2),
-                new Source("https://gitbox.apache.org/repos/asf/tomee.git", "tomee-7.1.0", "tomee-7.1"),
-                new Source("https://gitbox.apache.org/repos/asf/tomee.git", "tomee-7.0.5", "tomee-7.0"),
-                new Source("https://gitbox.apache.org/repos/asf/tomee.git", "master", "master")
-        );
+        final Sources sources = new Sources(new File("target/jbake"), new File("repos"), new File("src/main/jbake"), destination, website);
 
         sources.prepare();
 
