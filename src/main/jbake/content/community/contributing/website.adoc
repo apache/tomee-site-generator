@@ -6,7 +6,7 @@
 
 This website is a simple link:http://jbake.org/[JBake] project you can find at:
 
- - https://git-wip-us.apache.org/repos/asf/tomee-site-generator.git. (Apache)
+ - https://gitbox.apache.org/repos/asf/tomee-site-generator.git. (Apache)
 
  - https://github.com/apache/tomee-site-generator.git (Github mirror)
 

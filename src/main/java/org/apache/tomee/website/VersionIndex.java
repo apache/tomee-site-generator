@@ -62,6 +62,7 @@ public class VersionIndex {
 
                 index.append("\n");
             }
+            index.append(" - link:javadoc[Javadoc]\n");
 
             IO.copy(IO.read(index.toString()), new File(docs.getParentFile(), "index.adoc"));
 

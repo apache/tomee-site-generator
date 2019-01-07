@@ -35,7 +35,7 @@ public class Examples {
 
     public void prepare(final Source source) {
         final File srcDir = new File(source.getDir(), "examples");
-        final File destDir = sources.getJbakeContentDestFor(source, "examples"); //target/jbake/latest/examples
+        final File destDir = sources.getJbakeContentDestFor(source, "examples"); //target/jbake/<tomeeBranch>t/examples
 
         // If we don't have examples in this codebase, skip
         if (!srcDir.exists()) return;

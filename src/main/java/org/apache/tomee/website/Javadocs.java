@@ -16,6 +16,18 @@
  */
 package org.apache.tomee.website;
 
+import org.apache.openejb.loader.Files;
+import org.apache.openejb.loader.IO;
+import org.apache.openejb.util.Pipe;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
+
+import static org.apache.openejb.loader.Files.mkdirs;
+
 /**
  * For each git repo (source) it will collects the `src/main/java` contents
  * into one large source tree and use the Javadoc proccessor directly in code
@@ -62,7 +74,88 @@ public class Javadocs {
      * @param source
      */
     public void prepare(final Source source) {
+        final File javaSources = mkdirs(new File(String.format("target/javadocs/%s-src", source.getName())));
 
-        // do the magic
+        copySource(source, javaSources);
+        for (final Source related : source.getRelated()) {
+            copySource(related, javaSources);
+        }
+
+        final ProcessBuilder cmd = new ProcessBuilder(
+                getJavadocCommand().getAbsolutePath(),
+                "-sourcepath",
+                javaSources.getAbsolutePath(),
+                "-d",
+                sources.getGeneratedDestFor(source, "javadoc").getAbsolutePath()
+        );
+
+        Stream.of(javaSources.listFiles())
+                .filter(File::isDirectory)
+                .forEach(file -> {
+                    cmd.command().add("-subpackages");
+                    cmd.command().add(file.getName());
+                });
+
+        try {
+            Pipe.pipe(cmd.start());
+        } catch (IOException e) {
+            throw new IllegalStateException("Command failed");
+        }
+    }
+
+    private void copySource(final Source source, final File javaSources) {
+        try {
+            java.nio.file.Files.walk(source.getDir().toPath())
+                    .map(Path::toFile)
+                    .filter(File::isFile)
+                    .filter(this::isJava)
+                    .filter(source.getJavadocFilter()::include)
+                    .filter(source.getJavadocFilter()::exclude)
+                    .forEach(file -> {
+                        try {
+                            final String relativePath = file.getAbsolutePath().replaceAll(".*/src/main/java/", "");
+                            final File dest = new File(javaSources, relativePath);
+                            Files.mkdirs(dest.getParentFile());
+                            IO.copy(file, dest);
+                        } catch (IOException e) {
+                            throw new IllegalStateException(e);
+                        }
+                    });
+        } catch (IOException e) {
+            throw new IllegalStateException("Failed to aggregate java sources");
+        }
+    }
+
+    public static File getJavadocCommand() {
+
+        final File java_home = System.getenv("JAVA_HOME") != null ? new File(System.getenv("JAVA_HOME")) : new File("");
+        final File javaHome = new File(System.getProperty("java.home"));
+
+        final Supplier<File>[] locations = new Supplier[]{
+                () -> new File(java_home, "bin/javadoc"),
+                () -> new File(java_home, "bin/javadoc.exe"),
+                () -> new File(java_home.getParentFile(), "bin/javadoc"),
+                () -> new File(java_home.getParentFile(), "bin/javadoc.exe"),
+                () -> new File(javaHome, "bin/javadoc"),
+                () -> new File(javaHome, "bin/javadoc.exe"),
+                () -> new File(javaHome.getParentFile(), "bin/javadoc"),
+                () -> new File(javaHome.getParentFile(), "bin/javadoc.exe"),
+        };
+
+        return Stream.of(locations)
+                .map(Supplier::get)
+                .filter(File::exists)
+                .filter(File::canExecute)
+                .findFirst().orElseThrow(() -> new IllegalStateException("Cannot find javadoc command"));
+    }
+
+    public static void main(String[] args) {
+    }
+
+    private static void copy(final File file, File javaSources) {
+    }
+
+    private boolean isJava(final File file) {
+        return file.getName().endsWith(".java");
     }
 }

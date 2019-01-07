@@ -91,13 +91,10 @@ public class GroupedIndex {
                     out.printf("            <ul class=\"group\">\n");
                     entry.getValue().stream().sorted().forEach(doc -> {
 
-//                        if(language.equalsIgnoreCase("en")){
-//                            out.printf("              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n", doc.getHref(), doc.getTitle());
-//                        }else {
                         out.printf(
                                 "              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n",
                                 doc.getHref().replaceAll(language + File.separator, ""), doc.getTitle());
-//                        }
+
 
                     });
                     out.printf("            </ul>\n");
@@ -228,9 +225,9 @@ public class GroupedIndex {
         final String group = Optional.ofNullable(map.get("index-group")).orElse("Unknown") + "";
 
         /*
-         Extract language from the file path like this:
+         Extract language from the file path, examples:
                    examples/file.adoc  will not generate language. (default to "en")
-                   examples/es/file.adoc  generates language es atribute inside the New Doc that is returned.
+                   examples/es/file.adoc  generates language es attribute inside the New Doc that is returned.
          */
 
         if (type.equalsIgnoreCase("examplesindex")) {

@@ -56,7 +56,6 @@ public class VersionsIndex {
                     index.append(" - link:").append(source.getName()).append("/docs[Documentation]\n");
                 }
                 if (examples.exists() && examples.listFiles().length > 0) {
-                    //index.append(" - link:").append(source.getName()).append("/examples[Examples]\n");
 
                     List<String> listOfLanguagesDirs = VersionIndex.obtainListOfLanguages(examples);
 
@@ -74,6 +73,8 @@ public class VersionsIndex {
 
                     index.append("\n");
                 }
+                index.append(" - link:").append(source.getName()).append("/javadoc[Javadoc]\n");
+
                 index.append("\n\n");
             }
 

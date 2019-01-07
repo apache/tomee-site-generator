@@ -100,11 +100,9 @@ public class Example {
         final String exampleName = readme.getParentFile().getName();
         final String language = getLanguage(readme);
 
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>aqui:" + exampleName);
         if (exampleName.equalsIgnoreCase("")) {
             return new Example(readme, exampleName, ext, exampleName + ".html", "Example");
         } else {
-            //return new Example(readme, exampleName+"-"+language, ext, exampleName+"-"+language + ".html", "Example/"+language);
             return new Example(readme, exampleName, ext, exampleName + ".html", "Ejemplos", language);
         }
     }

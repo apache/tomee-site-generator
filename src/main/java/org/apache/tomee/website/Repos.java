@@ -29,13 +29,12 @@ public class Repos {
 
     public static void download(final Source source) {
         if (source.getDir().exists()) {
-//Temporall commented out, will rollback when this PR is ready
-//            try {
-//                pull(source);
-//            } catch (Exception e) {
-//                System.out.println("Pull Failed. " + source);
-//                e.printStackTrace();
-//            }
+            try {
+                pull(source);
+            } catch (Exception e) {
+                System.out.println("Pull Failed. " + source);
+                e.printStackTrace();
+            }
 
         } else {
 

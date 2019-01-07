@@ -30,7 +30,7 @@
 				<ul class="nav navbar-nav navbar-right main-nav">
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>docs.html">Documentation</a></li>
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>community/index.html">Community</a></li>
-					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>security/index.html">Security</a></li>
+					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>security/security.html">Security</a></li>
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>download-ng.html">Downloads</a></li>
 				</ul>
 			</div>

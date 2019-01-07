@@ -127,6 +127,11 @@ public class Sources {
         }
 
         sources.stream()
+                .flatMap(source -> source.getRelated().stream())
+                .peek(source -> source.setDir(new File(repos, source.getName())))
+                .forEach(Repos::download);
+
+        sources.stream()
                 .peek(source -> source.setDir(new File(repos, source.getName())))
                 .peek(Repos::download)
                 .peek(docs::prepare)
@@ -139,9 +144,35 @@ public class Sources {
         VersionsIndex.prepare(this);
     }
 
+    /**
+     * This is the heart of the code to merge several documentation
+     * sources into one tree.
+     */
+    public void post() {
+        final Javadocs javadocs = new Javadocs(this);
+
+        sources.stream()
+                .peek(javadocs::prepare)
+                .forEach(Sources::done);
+        ;
+    }
+
     public File getJbakeContentDestFor(final Source source, final String... parts) {
         final File content = new File(jbake, "content");
         File dir = new File(content, source.getName());
+
+        for (final String part : parts) {
+            dir = new File(dir, part);
+        }
+
+        if (!dir.exists()) {
+            if (!dir.mkdirs()) throw new RuntimeException("Could not make directory: " + dir.getAbsolutePath());
+        }
+        return dir;
+    }
+
+    public File getGeneratedDestFor(final Source source, final String... parts) {
+        File dir = new File(generated, source.getName());
 
         for (final String part : parts) {
             dir = new File(dir, part);

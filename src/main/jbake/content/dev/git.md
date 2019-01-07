@@ -10,7 +10,7 @@ Notes before you begin (mostly for SVN users):
 * Unlike SVN a 'commit' is only a local action. The local commits are only published to the remote repository using 'push'.  
 * Commit and push code to your own feature branch as often as you like, but only merge stable branches back into to the *develop* branch.  
 * Only the release manager should manage the *master* repository
-* Read the official Apache Committer documentation [here](https://git-wip-us.apache.org/#committers-getting-started) 
+* Read the official Apache Committer documentation [here](https://gitbox.apache.org/#committers-getting-started)
 
 <span style="color: rgb(128,0,0);">Run commands in the directory of the project you are working on, for example 'tomee':</span>
 

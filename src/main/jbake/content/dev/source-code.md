@@ -8,23 +8,23 @@ Probably the best GIT tutorial on the planet can be found here: [https://www.atl
 
 ###GIT Information for Everyone
 
-You can browse the source code via the [web interface](http://git-wip-us.apache.org/repos/asf/tomee.git).
+You can browse the source code via the [web interface](http://gitbox.apache.org/repos/asf/tomee.git).
 
 If you intend to hack on TomEE then it is recommended that you create a [GitHub Account](https://github.com) and [fork](https://help.github.com/articles/fork-a-repo/) the TomEE repository so that you can submit pull requests (See below).
 
-If you just want to build the source version then you can download (aka clone) the sources of Apache TomEE with a GIT client from the following URL [https://git-wip-us.apache.org/repos/asf/tomee.git](https://git-wip-us.apache.org/repos/asf/tomee.git) - The 'master' branch is the current development branch.
+If you just want to build the source version then you can download (aka clone) the sources of Apache TomEE with a GIT client from the following URL [https://gitbox.apache.org/repos/asf/tomee.git](https://gitbox.apache.org/repos/asf/tomee.git) - The 'master' branch is the current development branch.
 
 Performing the checkout from a command line using the GIT client (recommended) is as easy as executing the following command:
-> git clone [https://git-wip-us.apache.org/repos/asf/tomee.git](https://git-wip-us.apache.org/repos/asf/tomee.git) tomee
+> git clone [https://gitbox.apache.org/repos/asf/tomee.git](https://gitbox.apache.org/repos/asf/tomee.git) tomee
 
 If you want to checkout a specific branch then you can just change that in the command:
 
-> git clone -b tomee-1.7.x [https://git-wip-us.apache.org/repos/asf/tomee.git](https://git-wip-us.apache.org/repos/asf/tomee.git) tomee-1.7.x
+> git clone -b tomee-1.7.x [https://gitbox.apache.org/repos/asf/tomee.git](https://gitbox.apache.org/repos/asf/tomee.git) tomee-1.7.x
 
 Or alternatively with Apache Maven 3.0.5 or later:
 
 > mvn scm:checkout
-> -DconnectionUrl=scm:git:[https://git-wip-us.apache.org/repos/asf/tomee.git](https://git-wip-us.apache.org/repos/asf/tomee.git)
+> -DconnectionUrl=scm:git:[https://gitbox.apache.org/repos/asf/tomee.git](https://gitbox.apache.org/repos/asf/tomee.git)
 > -DcheckoutDirectory=tomee
 
 Note: This method does not require the GIT client.
@@ -38,7 +38,7 @@ We will be using the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/
 
 See [here](https://help.github.com/articles/using-pull-requests/) for information on pull requests. 
 
-The official Apache Committer documentation can be found [here](https://git-wip-us.apache.org/#committers-getting-started)
+The official Apache Committer documentation can be found [here](https://gitbox.apache.org/#committers-getting-started)
 
 <a name="SourceCode-Continuousintegration"></a>
 ###Continuous integration
