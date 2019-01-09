@@ -53,14 +53,25 @@ public class Example {
         this.language = language;
     }
 
-    public void updateDestination(final File examplesDir) {
+    public void updateDestination(final File examplesDir) { //target/jbake/<tomeeBranch>
+
+
+
+
         if (this.language.equalsIgnoreCase("")) {
-            this.setDestReadme(new File(examplesDir, this.getName() + "." + this.getExt()));
+            File languageDir = new File(examplesDir + File.separator + "en" + File.separator + "examples");
+            if (!languageDir.exists()) {
+                languageDir.mkdirs();    // anates tomee8.0/examples/es  ahora  tomee8.0/es/examples/
+            }
+            this.setDestReadme(new File(examplesDir+File.separator+"en"+File.separator+"examples", this.getName() + "." + this.getExt()));
         } else {
 
-            File languageDir = new File(examplesDir + File.separator + getLanguage());
+            //File languageDir = new File(examplesDir + File.separator + getLanguage());
+            //File languageDir = new File(examplesDir.getParentFile().getParent() + File.separator + getLanguage() + File.separator + "examples");
+                                                     //target/jbake/<tomeeBranch>/es/examples
+            File languageDir = new File(examplesDir + File.separator + getLanguage() + File.separator + "examples");
             if (!languageDir.exists()) {
-                languageDir.mkdirs();
+                languageDir.mkdirs();    // anates tomee8.0/examples/es  ahora  tomee8.0/es/examples/
             }
 
             this.setDestReadme(new File(languageDir.getAbsolutePath(), this.getName() + "." + this.getExt()));

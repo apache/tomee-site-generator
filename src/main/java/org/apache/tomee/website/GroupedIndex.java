@@ -36,7 +36,8 @@ public class GroupedIndex {
     private final String type;
 
     public GroupedIndex(final File directory, final String type) {
-        this.directory = directory;
+        this.directory = directory;//target/jbake/<tomeeBranch>
+        // ahora target/jbake/<tomeeBranch>    o tambien //target/jbake/<tomeeBranch>/docs
         this.type = type;
     }
 
@@ -59,6 +60,8 @@ public class GroupedIndex {
 
         for (String language : detectedLanguages) {
             sortSectionsAndCreateIndexFiles(docs, language);
+            //target/jbake/<tomeeBranch>/en/examples
+            //target/jbake/<tomeeBranch>/es/examples
         }
     }
 
@@ -103,7 +106,7 @@ public class GroupedIndex {
 
                 });
 
-        try (final PrintStream out = print(directory.getAbsolutePath(), "index.html", language)) {
+        try (final PrintStream out = print(directory.getAbsolutePath(), "index.html", language, this.type)) {
 
             out.printf("type=%s\n", type);
             out.printf("status=published\n");
@@ -168,14 +171,22 @@ public class GroupedIndex {
         }
     }
 
-    public static PrintStream print(final String directory, final String child, String language) {
+    public static PrintStream print(final String directory, final String child, String language, String type) { //target/jbake/<tomeeBranch> o  tambien //target/jbake/<tomeeBranch>/docs
         try {
-            File fileParentFolder;
+            File fileParentFolder = null;
 
-            if (language.equalsIgnoreCase("en")) {
+//            if (language.equalsIgnoreCase("en")) {
+//                fileParentFolder = new File(directory);
+//            } else {
+//                fileParentFolder = new File(directory + File.separator + language);
+//            }
+
+
+            if(type.equalsIgnoreCase("docsindex")){
                 fileParentFolder = new File(directory);
-            } else {
-                fileParentFolder = new File(directory + File.separator + language);
+            }else { //examplesindex
+//                fileParentFolder = new File(directory + File.separator + language + File.separator + "examples");
+                fileParentFolder = new File(directory +  File.separator + language + File.separator + "examples");
             }
 
             return new PrintStream(IO.write(new File(fileParentFolder, child)));
@@ -184,7 +195,8 @@ public class GroupedIndex {
         }
     }
 
-    public List<Doc> list(final File directory) {
+    public List<Doc> list(final File directory) {//target/jbake/<tomeeBranch>/examples
+        // ahora target/jbake/<tomeeBranch>
         try {
             return Files.walk(directory.toPath())
                         .map(Path::toFile)
@@ -197,19 +209,17 @@ public class GroupedIndex {
         }
     }
 
-    private static String getLanguageFromPath(File file, String expectedFileParentFolder) {
+    private static String getLanguageFromPath(File file, String type) { //target/jbake/<tomeeBranch>/examples/es/readme_es.adoc
+                                                                                        //pero ahora //target/jbake/<tomeeBranch>/en/examples/index.html
+                                                                                        //pero ahora //target/jbake/<tomeeBranch>/es/examples/index.html
 
-        String fileParentFolder = file.getParentFile().getName();
 
-        if (fileParentFolder != null) {
-            if (fileParentFolder.equalsIgnoreCase(expectedFileParentFolder)) {
-                return "";
-            } else {
-                return fileParentFolder;
-            }
-        } else {
+        if(type.equalsIgnoreCase("docsindex")){ //ToDo: this needs to be updated when we are going to proccess docs internationalization too.
             return "";
+        }else { //examplesindex
+            return file.getParentFile().getParentFile().getName();
         }
+
     }
 
 
@@ -230,13 +240,14 @@ public class GroupedIndex {
                    examples/es/file.adoc  generates language es attribute inside the New Doc that is returned.
          */
 
-        if (type.equalsIgnoreCase("examplesindex")) {
-            String detectedLanguage = getLanguageFromPath(file, "examples");
-            if (detectedLanguage.equalsIgnoreCase("")) {
-                return new Doc(group, title, Docs.href(directory, file), file); //default to english "en"
-            } else {
-                return new Doc(group, title, Docs.href(directory, file), file, detectedLanguage);
-            }
+        if (type.equalsIgnoreCase("examplesindex") && file.getParentFile().getName().equalsIgnoreCase("examples")) {
+            String detectedLanguage = getLanguageFromPath(file,this.type);
+            return new Doc(group, title, Docs.href(directory, file), file, detectedLanguage);
+//            if (detectedLanguage.equalsIgnoreCase("en")) {
+//                return new Doc(group, title, Docs.href(directory, file), file); //default to english "en"
+//            } else {
+//                return new Doc(group, title, Docs.href(directory, file), file, detectedLanguage);
+//            }
         } else {
             // todo: Here we can implement later when doc type is docindex and not examplesindex
             return new Doc(group, title, Docs.href(directory, file), file); //default to english

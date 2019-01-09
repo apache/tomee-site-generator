@@ -37,7 +37,7 @@ public class Docs {
 
     public void prepare(final Source source) {
         final File srcDocs = new File(source.getDir(), "docs");
-        final File destDocs = sources.getJbakeContentDestFor(source, "docs");
+        final File destDocs = sources.getJbakeContentDestFor(source, "docs"); //target/jbake/<tomeeBranch>/docs
 
         if (!srcDocs.exists()) return;
 
