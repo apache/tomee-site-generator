@@ -30,13 +30,12 @@ public class Repos {
     public static void download(final Source source) {
 
         if (source.getDir().exists()) {
-//            //temporal commented out for development purposes
-//            try {
-//                pull(source);
-//            } catch (Exception e) {
-//                System.out.println("Pull Failed. " + source);
-//                e.printStackTrace();
-//            }
+            try {
+                pull(source);
+            } catch (Exception e) {
+                System.out.println("Pull Failed. " + source);
+                e.printStackTrace();
+            }
 
         } else {
 

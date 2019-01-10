@@ -35,7 +35,6 @@ public class Examples {
 
     public void prepare(final Source source) {
         final File srcDir = new File(source.getDir(), "examples");
-//        final File destDir = sources.getJbakeContentDestFor(source, "en"+File.separator+"examples"); //target/jbake/<tomeeBranch>/
         final File destDir = sources.getJbakeContentDestFor(source, ""); //target/jbake/<tomeeBranch>/
 
         // If we don't have examples in this codebase, skip

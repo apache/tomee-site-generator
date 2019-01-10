@@ -59,10 +59,10 @@ public class VersionsIndex {
 
                 if (listOfLanguagesDirs.size() > 0) {
 
-                    index.append(" - link:"+source.getName()+"/en/examples[Examples]");
+                    index.append(" - link:" + source.getName() + "/en/examples[Examples]");
 
                     for (String LanguageDir : listOfLanguagesDirs) {
-                        if(!LanguageDir.equalsIgnoreCase("en")){
+                        if (!LanguageDir.equalsIgnoreCase("en")) {
                             index.append(" link:")
                                  .append(source.getName())
                                  .append("/")

@@ -36,8 +36,7 @@ public class GroupedIndex {
     private final String type;
 
     public GroupedIndex(final File directory, final String type) {
-        this.directory = directory;//target/jbake/<tomeeBranch>
-        // ahora target/jbake/<tomeeBranch>    o tambien //target/jbake/<tomeeBranch>/docs
+        this.directory = directory;//target/jbake/<tomeeBranch> or target/jbake/<tomeeBranch>/docs
         this.type = type;
     }
 
@@ -60,8 +59,6 @@ public class GroupedIndex {
 
         for (String language : detectedLanguages) {
             sortSectionsAndCreateIndexFiles(docs, language);
-            //target/jbake/<tomeeBranch>/en/examples
-            //target/jbake/<tomeeBranch>/es/examples
         }
     }
 
@@ -138,9 +135,6 @@ public class GroupedIndex {
                 }
             }
 
-            //ToDo:*****************
-            //ToDo: This is going to break when a group will have more than 10 documents in different languages
-            //ToDo:*****************
             sections.entrySet().stream()
                     .filter(entry -> entry.getValue().size() >= 10)
                     .sorted((o1, o2) -> new Integer(o1.getValue().size()).compareTo(o2.getValue().size()))
@@ -187,17 +181,9 @@ public class GroupedIndex {
         try {
             File fileParentFolder = null;
 
-//            if (language.equalsIgnoreCase("en")) {
-//                fileParentFolder = new File(directory);
-//            } else {
-//                fileParentFolder = new File(directory + File.separator + language);
-//            }
-
-
             if(type.equalsIgnoreCase("docsindex")){
                 fileParentFolder = new File(directory);
             }else { //examplesindex
-//                fileParentFolder = new File(directory + File.separator + language + File.separator + "examples");
                 fileParentFolder = new File(directory +  File.separator + language + File.separator + "examples");
             }
 
@@ -207,8 +193,7 @@ public class GroupedIndex {
         }
     }
 
-    public List<Doc> list(final File directory) {//target/jbake/<tomeeBranch>/examples
-        // ahora target/jbake/<tomeeBranch>
+    public List<Doc> list(final File directory) {//target/jbake/<tomeeBranch>
         try {
             return Files.walk(directory.toPath())
                         .map(Path::toFile)
@@ -221,11 +206,7 @@ public class GroupedIndex {
         }
     }
 
-    private static String getLanguageFromPath(File file, String type) { //target/jbake/<tomeeBranch>/examples/es/readme_es.adoc
-                                                                                        //pero ahora //target/jbake/<tomeeBranch>/en/examples/index.html
-                                                                                        //pero ahora //target/jbake/<tomeeBranch>/es/examples/index.html
-
-
+    private static String getLanguageFromPath(File file, String type) { //target/jbake/<tomeeBranch>/en/examples/index.html
         if(type.equalsIgnoreCase("docsindex")){ //ToDo: this needs to be updated when we are going to proccess docs internationalization too.
             return "";
         }else { //examplesindex
@@ -257,13 +238,6 @@ public class GroupedIndex {
         if (type.equalsIgnoreCase("examplesindex") && file.getParentFile().getName().equalsIgnoreCase("examples")) {
             String detectedLanguage = getLanguageFromPath(file,this.type);
             return new Doc(group, title, Docs.href(new File (directory + File.separator + detectedLanguage + File.separator + "examples"), file), file, detectedLanguage);
-            //target/jbake/content/tomee-8.0/docs   //target/jbake/content/tomee-8.0/docs/maven/configtest-mojo.adoc
-            //target/jbake/content/tomee-8.0        //target/jbake/content/tomee-8.0/fr/examples/cdi-request-scope.adoc
-//            if (detectedLanguage.equalsIgnoreCase("en")) {
-//                return new Doc(group, title, Docs.href(directory, file), file); //default to english "en"
-//            } else {
-//                return new Doc(group, title, Docs.href(directory, file), file, detectedLanguage);
-//            }
         } else {
             // todo: Here we can implement later when doc type is docindex and not examplesindex
             return new Doc(group, title, Docs.href(directory, file), file); //default to english
