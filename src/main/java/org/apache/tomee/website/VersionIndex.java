@@ -31,9 +31,15 @@ public class VersionIndex {
         this.sources = sources;
     }
 
+    /**
+     * Add the available languages to the /target/jbake/content/tomee-8.0/examples/index.html
+     * Add the available languages to the /target/jbake/content/tomee-8.0/es/examples/index.html
+     *
+     * @param source
+     */
     public void prepare(final Source source) {
         final File docs = sources.getJbakeContentDestFor(source, "docs");
-        final File examples = sources.getJbakeContentDestFor(source, "examples");
+        final File examples = sources.getJbakeContentDestFor(source, ""); // target/jbake/content/tomee-8.0/
 
         try {
             final StringBuilder index = new StringBuilder();
@@ -50,14 +56,16 @@ public class VersionIndex {
                 //ToDo: add to the doc index file the available languages for documentation.
                 index.append(" - link:docs[Documentation]\n");
             }
-            if (examples.exists() && examples.listFiles().length > 0) {
+            List<String> listOfLanguagesDirs = obtainListOfExamplesLanguages(examples);
 
-                List<String> listOfLanguagesDirs = obtainListOfLanguages(examples);
+            if (listOfLanguagesDirs.size() > 0) {
 
-                index.append(" - link:examples[Examples]");
+                index.append(" - link:en/examples[Examples]");
 
                 for (String LanguageDir : listOfLanguagesDirs) {
-                    index.append(" link:examples/" + LanguageDir + "[ [" + LanguageDir + "\\] ]");
+                    if (!LanguageDir.equalsIgnoreCase("en")) {
+                        index.append(" link:" + LanguageDir + "/examples" + "[ [" + LanguageDir + "\\] ]");
+                    }
                 }
 
                 index.append("\n");
@@ -71,13 +79,18 @@ public class VersionIndex {
         }
     }
 
-    public static List<String> obtainListOfLanguages(File file) {
+    public static List<String> obtainListOfExamplesLanguages(File file) { // target/jbake/content/tomee-8.0/
         List<String> listOfLanguages = new ArrayList<>();
 
         File[] directories = new File(file.getAbsolutePath()).listFiles(File::isDirectory);
 
+        File temp = null;
+
         for (File directory : directories) {
-            listOfLanguages.add(directory.getName());
+            temp = new File(directory.getAbsolutePath() + File.separator + "examples");
+            if (temp.exists()) {
+                listOfLanguages.add(directory.getName());
+            }
         }
 
         return listOfLanguages;

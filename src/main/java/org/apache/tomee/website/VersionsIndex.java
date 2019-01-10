@@ -20,7 +20,6 @@ import org.apache.openejb.loader.IO;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class VersionsIndex {
@@ -50,25 +49,29 @@ public class VersionsIndex {
                 index.append("*\n\n");
 
                 final File docs = sources.getJbakeContentDestFor(source, "docs");
-                final File examples = sources.getJbakeContentDestFor(source, "examples");
+                final File examples = sources.getJbakeContentDestFor(source, "");
 
                 if (docs.exists() && docs.listFiles().length > 0) {
                     index.append(" - link:").append(source.getName()).append("/docs[Documentation]\n");
                 }
-                if (examples.exists() && examples.listFiles().length > 0) {
 
-                    List<String> listOfLanguagesDirs = VersionIndex.obtainListOfLanguages(examples);
+                List<String> listOfLanguagesDirs = VersionIndex.obtainListOfExamplesLanguages(examples);
 
-                    index.append(" - link:").append(source.getName()).append("/examples[Examples]");
+                if (listOfLanguagesDirs.size() > 0) {
+
+                    index.append(" - link:"+source.getName()+"/en/examples[Examples]");
 
                     for (String LanguageDir : listOfLanguagesDirs) {
-                        index.append(" link:")
-                             .append(source.getName())
-                             .append("/examples/")
-                             .append(LanguageDir)
-                             .append("[ [")
-                             .append(LanguageDir)
-                             .append("\\] ]");
+                        if(!LanguageDir.equalsIgnoreCase("en")){
+                            index.append(" link:")
+                                 .append(source.getName())
+                                 .append("/")
+                                 .append(LanguageDir)
+                                 .append("/examples/")
+                                 .append("[ [")
+                                 .append(LanguageDir)
+                                 .append("\\] ]");
+                        }
                     }
 
                     index.append("\n");

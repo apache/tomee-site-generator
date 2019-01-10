@@ -69,10 +69,19 @@ public class GroupedIndex {
 
         final Map<String, List<Doc>> sections = new HashMap<>();
 
-        //filtering only documents with the same language
-        for (Doc doc1 : docs) {
-            if (doc1.language.equalsIgnoreCase(language)) {
-                sections.computeIfAbsent(doc1.getGroup(), k -> new ArrayList<>()).add(doc1);
+        //filtering only documents with the same language for: target/jbake/<tomeeBranch>/docs
+        if(this.type.equalsIgnoreCase("docsindex")){
+
+            for (Doc doc1 : docs) {
+                if (doc1.language.equalsIgnoreCase(language)) {
+                    sections.computeIfAbsent(doc1.getGroup(), k -> new ArrayList<>()).add(doc1);
+                }
+            }
+        }else{
+            for (Doc doc1 : docs) { //filtering only documents with the same language for: target/jbake/<tomeeBranch> and type = examplesindex
+                if (doc1.language.equalsIgnoreCase(language) && doc1.source.getParentFile().getName().equalsIgnoreCase("examples")) {
+                    sections.computeIfAbsent(doc1.getGroup(), k -> new ArrayList<>()).add(doc1);
+                }
             }
         }
 
@@ -96,7 +105,7 @@ public class GroupedIndex {
 
                         out.printf(
                                 "              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n",
-                                doc.getHref().replaceAll(language + File.separator, ""), doc.getTitle());
+                                doc.getHref(), doc.getTitle());
 
 
                     });
@@ -129,6 +138,9 @@ public class GroupedIndex {
                 }
             }
 
+            //ToDo:*****************
+            //ToDo: This is going to break when a group will have more than 10 documents in different languages
+            //ToDo:*****************
             sections.entrySet().stream()
                     .filter(entry -> entry.getValue().size() >= 10)
                     .sorted((o1, o2) -> new Integer(o1.getValue().size()).compareTo(o2.getValue().size()))
@@ -157,7 +169,7 @@ public class GroupedIndex {
                                 final Doc doc = iterator.next();
                                 out.printf(
                                         "              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n",
-                                        doc.getHref().replaceAll(language + File.separator, ""), doc.getTitle());
+                                        doc.getHref(), doc.getTitle());
 
                             }
                             out.printf("            </ul>\n");
@@ -235,14 +247,18 @@ public class GroupedIndex {
         final String group = Optional.ofNullable(map.get("index-group")).orElse("Unknown") + "";
 
         /*
-         Extract language from the file path, examples:
-                   examples/file.adoc  will not generate language. (default to "en")
-                   examples/es/file.adoc  generates language es attribute inside the New Doc that is returned.
-         */
+             Create the document reference to be ready to be added as part of the index files like:
+             target/jbake/content/tomee-8.0/docs/index.html
+             target/jbake/content/tomee-8.0/docs/maven/index.html
+             target/jbake/content/tomee-8.0/fr/examples/index.html
+             target/jbake/content/tomee-8.0/en/examples/index.html
 
+         */
         if (type.equalsIgnoreCase("examplesindex") && file.getParentFile().getName().equalsIgnoreCase("examples")) {
             String detectedLanguage = getLanguageFromPath(file,this.type);
-            return new Doc(group, title, Docs.href(directory, file), file, detectedLanguage);
+            return new Doc(group, title, Docs.href(new File (directory + File.separator + detectedLanguage + File.separator + "examples"), file), file, detectedLanguage);
+            //target/jbake/content/tomee-8.0/docs   //target/jbake/content/tomee-8.0/docs/maven/configtest-mojo.adoc
+            //target/jbake/content/tomee-8.0        //target/jbake/content/tomee-8.0/fr/examples/cdi-request-scope.adoc
 //            if (detectedLanguage.equalsIgnoreCase("en")) {
 //                return new Doc(group, title, Docs.href(directory, file), file); //default to english "en"
 //            } else {

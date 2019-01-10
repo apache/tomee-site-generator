@@ -139,7 +139,7 @@ public class Sources {
                 .peek(examples::prepare)
                 .peek(versionIndex::prepare)
                 .forEach(Sources::done);
-        ;
+
 
         VersionsIndex.prepare(this);
     }
