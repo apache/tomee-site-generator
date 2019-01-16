@@ -59,11 +59,11 @@ public class Example {
 
 
         if (this.language.equalsIgnoreCase("")) {
-            File languageDir = new File(examplesDir + File.separator + "en" + File.separator + "examples");
+            File languageDir = new File(examplesDir + File.separator + "examples");
             if (!languageDir.exists()) {
-                languageDir.mkdirs();    // tomee8.0/en/examples/
+                languageDir.mkdirs();    //tomee8.0/examples
             }
-            this.setDestReadme(new File(examplesDir+File.separator+"en"+File.separator+"examples", this.getName() + "." + this.getExt()));
+            this.setDestReadme(new File(examplesDir+File.separator+"examples", this.getName() + "." + this.getExt()));
         } else {
 
             File languageDir = new File(examplesDir + File.separator + getLanguage() + File.separator + "examples");

@@ -32,8 +32,8 @@ public class VersionIndex {
     }
 
     /**
-     * Add the available languages to the /target/jbake/content/tomee-8.0/examples/index.html
-     * Add the available languages to the /target/jbake/content/tomee-8.0/es/examples/index.html
+     * Add the available languages to the /target/jbake/content/tomee-8.0/index.html
+     * Add the available languages to the /target/jbake/content/tomee-8.0/es/index.html
      *
      * @param source
      */
@@ -60,7 +60,7 @@ public class VersionIndex {
 
             if (listOfLanguagesDirs.size() > 0) {
 
-                index.append(" - link:en/examples[Examples]");
+                index.append(" - link:examples[Examples]");
 
                 for (String LanguageDir : listOfLanguagesDirs) {
                     if (!LanguageDir.equalsIgnoreCase("en")) {
@@ -86,11 +86,18 @@ public class VersionIndex {
 
         File temp = null;
 
+        //Obtain the list of languages different than English
         for (File directory : directories) {
             temp = new File(directory.getAbsolutePath() + File.separator + "examples");
             if (temp.exists()) {
                 listOfLanguages.add(directory.getName());
             }
+        }
+
+        //check if English language exist
+        temp = new File(file.getAbsolutePath()+File.separator+"examples");
+        if(temp.exists()){
+            listOfLanguages.add("en");
         }
 
         return listOfLanguages;

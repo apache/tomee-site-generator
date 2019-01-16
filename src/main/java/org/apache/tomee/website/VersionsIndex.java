@@ -24,7 +24,7 @@ import java.util.List;
 
 public class VersionsIndex {
 
-
+    // Created the index content for http://localhost:8080/docs.html
     public static void prepare(final Sources sources) {
 
 
@@ -59,7 +59,7 @@ public class VersionsIndex {
 
                 if (listOfLanguagesDirs.size() > 0) {
 
-                    index.append(" - link:" + source.getName() + "/en/examples[Examples]");
+                    index.append(" - link:" + source.getName() + "/examples[Examples]");
 
                     for (String LanguageDir : listOfLanguagesDirs) {
                         if (!LanguageDir.equalsIgnoreCase("en")) {
