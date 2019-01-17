@@ -20,6 +20,7 @@ import org.apache.openejb.loader.IO;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -34,24 +35,33 @@ public class Examples {
 
     public void prepare(final Source source) {
         final File srcDir = new File(source.getDir(), "examples");
-        final File destDir = sources.getJbakeContentDestFor(source, "examples");
+        final File destDir = sources.getJbakeContentDestFor(source, ""); //target/jbake/<tomeeBranch>/
 
         // If we don't have examples in this codebase, skip
         if (!srcDir.exists()) return;
 
-        final List<Example> examples = Stream.of(srcDir.listFiles())
-                .filter(File::isDirectory)
-                .filter(this::hasReadme)
-                .map(this::getReadme)
-                .map(Example::from)
-                .peek(example -> example.updateDestination(destDir))
-                .peek(this::copyToDest)
-                .peek(JbakeHeaders::addJbakeHeader)
-                .peek(FixMarkdown::process)
-                .collect(Collectors.toList());
+        final List<Example> examples = new ArrayList<>();
+        for (File file : srcDir.listFiles()) {
+            if (file.isDirectory()) {
+                if (hasReadme(file)) {
+
+                    for (final File aReadmeFile : file.listFiles()) {
+                        if (aReadmeFile.getName().startsWith("README")) {
+                            File readme = aReadmeFile;
+                            Example example = Example.from(readme);
+                            example.updateDestination(destDir);
+                            copyToDest(example);
+                            JbakeHeaders.addJbakeHeader(example);
+                            FixMarkdown.process(example);
+                            examples.add(example);
+                        }
+                    }
+                }
+            }
+        }
 
 
-        GroupedIndex.process(destDir, "examplesindex");
+        GroupedIndex.process(destDir, "examplesindex"); //Creates the index.html for each example folder
 //        https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/HttpServletMapping.html
     }
 
@@ -73,7 +83,7 @@ public class Examples {
 
     private File getReadme(final File dir) {
         for (final File file : dir.listFiles()) {
-            if (file.getName().startsWith("README.")) return file;
+            if (file.getName().startsWith("README")) return file;
         }
 
         return null;

@@ -27,11 +27,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class GroupedIndex {
@@ -40,7 +36,7 @@ public class GroupedIndex {
     private final String type;
 
     public GroupedIndex(final File directory, final String type) {
-        this.directory = directory;
+        this.directory = directory;//target/jbake/<tomeeBranch> or target/jbake/<tomeeBranch>/docs
         this.type = type;
     }
 
@@ -48,13 +44,54 @@ public class GroupedIndex {
         new GroupedIndex(directory, type).process();
     }
 
+
     public void process() {
 
-        final List<String> sectionsFormatted = new ArrayList<>();
-
-
         final List<Doc> docs = list(directory);
-        final Map<String, List<Doc>> sections = docs.stream().collect(Collectors.groupingBy(Doc::getGroup));
+
+        final List<String> detectedLanguages = new ArrayList<>();
+        Set<String> uniqueValues = new HashSet<>();
+        for (Doc doc1 : docs) {
+            if (uniqueValues.add(doc1.language)) {
+                detectedLanguages.add(doc1.language);
+            }
+        }
+
+        for (String language : detectedLanguages) {
+            sortSectionsAndCreateIndexFiles(docs, language);
+        }
+    }
+
+    private void sortSectionsAndCreateIndexFiles(List<Doc> docs, String language) {
+
+        final Map<String, List<Doc>> sections = new HashMap<>();
+
+        //filtering only documents with the same language for: target/jbake/<tomeeBranch>/docs
+        if(this.type.equalsIgnoreCase("docsindex")){
+
+            for (Doc doc1 : docs) {
+                if (doc1.language.equalsIgnoreCase(language)) {
+                    sections.computeIfAbsent(doc1.getGroup(), k -> new ArrayList<>()).add(doc1);
+                }
+            }
+        }else{
+
+            if(this.type.equalsIgnoreCase("examplesindex")){
+                for (Doc doc1 : docs) { //filtering only documents with the same language for: target/jbake/<tomeeBranch> and type = examplesindex
+                    if (doc1.language.equalsIgnoreCase(language) && doc1.source.getParentFile().getName().equalsIgnoreCase("examples")) {
+                        sections.computeIfAbsent(doc1.getGroup(), k -> new ArrayList<>()).add(doc1);
+                    }
+                }
+            }else{//any type (used in GroupedIndexTest.java
+                for (Doc doc1 : docs) {
+                    if (doc1.language.equalsIgnoreCase(language)) {
+                        sections.computeIfAbsent(doc1.getGroup(), k -> new ArrayList<>()).add(doc1);
+                    }
+                }
+            }
+        }
+
+        final List<String> sectionsFormatted = new ArrayList<>();
 
         /**
          * We want to sort the sections with the most entries towards the top.
@@ -71,7 +108,12 @@ public class GroupedIndex {
                     out.printf("            <div class=\"group-title\">%s</div>\n", entry.getKey());
                     out.printf("            <ul class=\"group\">\n");
                     entry.getValue().stream().sorted().forEach(doc -> {
-                        out.printf("              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n", doc.getHref(), doc.getTitle());
+
+                        out.printf(
+                                "              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n",
+                                doc.getHref(), doc.getTitle());
+
+
                     });
                     out.printf("            </ul>\n");
 
@@ -79,7 +121,8 @@ public class GroupedIndex {
 
                 });
 
-        try (final PrintStream out = print(directory, "index.html")) {
+        try (final PrintStream out = print(directory.getAbsolutePath(), "index.html", language, this.type)) {
+
             out.printf("type=%s\n", type);
             out.printf("status=published\n");
             out.printf("~~~~~~\n");
@@ -113,9 +156,9 @@ public class GroupedIndex {
                         out.printf("        </div>\n");
 
                         final ListIterator<Doc> iterator = entry.getValue().stream()
-                                .sorted()
-                                .collect(Collectors.toList())
-                                .listIterator();
+                                                                .sorted()
+                                                                .collect(Collectors.toList())
+                                                                .listIterator();
 
                         final int i = (int) Math.ceil(entry.getValue().size() / 3f);
 
@@ -127,7 +170,9 @@ public class GroupedIndex {
                             out.printf("            <ul class=\"group\">\n");
                             while (iterator.hasNext() && count++ < i) {
                                 final Doc doc = iterator.next();
-                                out.printf("              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n", doc.getHref(), doc.getTitle());
+                                out.printf(
+                                        "              <li class=\"group-item\"><span class=\"group-item-i\" ><i class=\"fa fa-angle-right\"></i></span><a href=\"%s\">%s</a></li>\n",
+                                        doc.getHref(), doc.getTitle());
 
                             }
                             out.printf("            </ul>\n");
@@ -136,29 +181,64 @@ public class GroupedIndex {
                         out.printf("        </div>\n");
                     });
 
+        } catch (Exception e) {
+            throw e; //ToDo: implementing proper logger and catch.
         }
     }
 
-    public static PrintStream print(final File directory, final String child) {
+    public static PrintStream print(final String directory, final String child, String language, String type) { //target/jbake/<tomeeBranch> o  tambien //target/jbake/<tomeeBranch>/docs
         try {
-            return new PrintStream(IO.write(new File(directory, child)));
+            File fileParentFolder = null;
+
+            if(type.equalsIgnoreCase("docsindex")){
+                fileParentFolder = new File(directory);
+            }else {
+                if(type.equalsIgnoreCase("examplesindex")){
+                    if(language.equalsIgnoreCase("en")){
+                        fileParentFolder = new File(directory +  File.separator + "examples");
+                    }else{
+                         fileParentFolder = new File(directory +  File.separator + language + File.separator + "examples");
+
+                    }
+                }else{
+                    fileParentFolder = new File(directory);
+                }
+            }
+
+            return new PrintStream(IO.write(new File(fileParentFolder, child)));
         } catch (FileNotFoundException e) {
             throw new IllegalStateException(e);
         }
     }
 
-    public List<Doc> list(final File directory) {
+    public List<Doc> list(final File directory) {//target/jbake/<tomeeBranch>
         try {
             return Files.walk(directory.toPath())
-                    .map(Path::toFile)
-                    .filter(File::isFile)
-                    .filter(Docs::isRendered)
-                    .map(this::parse)
-                    .collect(Collectors.toList());
+                        .map(Path::toFile)
+                        .filter(File::isFile)
+                        .filter(Docs::isRendered)
+                        .map(this::parse)
+                        .collect(Collectors.toList());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
+    private static String getLanguageFromPath(File file, String type) { //target/jbake/<tomeeBranch>/fr/examples/index.html
+        if(type.equalsIgnoreCase("docsindex")){ //ToDo: this needs to be updated when we are going to proccess docs internationalization too.
+            return "";
+        }else { //examplesindex
+
+            if(file.getParentFile().getParentFile().getName().length() > 3){  // target/jbake/<tomeeBranchLengthIsGratherThan3>/examples/index.html
+                return "en";
+            }else{
+                return file.getParentFile().getParentFile().getName();  // target/jbake/<tomeeBranch>/fr/examples/index.html
+            }
+
+        }
+
+    }
+
 
     public Doc parse(final File file) {
         final Parser parser = new Parser(new CompositeConfiguration(), file.getAbsolutePath());
@@ -171,8 +251,29 @@ public class GroupedIndex {
         final String title = getTitle(map, file);
         final String group = Optional.ofNullable(map.get("index-group")).orElse("Unknown") + "";
 
+        /*
+             Create the document reference to be ready to be added as part of the index files like:
+             target/jbake/content/tomee-8.0/docs/index.html
+             target/jbake/content/tomee-8.0/docs/maven/index.html
+             target/jbake/content/tomee-8.0/fr/examples/index.html
+             target/jbake/content/tomee-8.0/examples/index.html
 
-        return new Doc(group, title, Docs.href(directory, file), file);
+         */
+        if (type.equalsIgnoreCase("examplesindex") && file.getParentFile().getName().equalsIgnoreCase("examples")) {
+            String detectedLanguage = getLanguageFromPath(file,this.type);
+
+            if(detectedLanguage.equalsIgnoreCase("en")){
+                return new Doc(group, title, Docs.href(new File (directory + File.separator + "examples"), file), file, detectedLanguage);
+            }else{
+                return new Doc(group, title, Docs.href(new File (directory + File.separator + detectedLanguage + File.separator + "examples"), file), file, detectedLanguage);
+            }
+
+        } else {
+            // todo: Here we can implement later when doc type is docindex and not examplesindex
+            return new Doc(group, title, Docs.href(directory, file), file); //default to english
+        }
+
+
     }
 
     private String getTitle(final Map<String, Object> map, final File file) {
@@ -183,22 +284,43 @@ public class GroupedIndex {
 
     private boolean hasValue(final Object o) {
         if (o == null) return false;
-        if ("".equals(o + ""))return false;
+        if ("".equals(o + "")) return false;
         return true;
     }
 
     public static class Doc implements Comparable<Doc> {
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(language);
+        }
 
         private final String group;
         private final String title;
         private final String href;
         private final File source;
 
+        private final String language;
+
         public Doc(final String group, final String title, final String href, final File source) {
             this.group = group;
             this.title = title;
             this.href = href;
             this.source = source;
+            this.language = "en";
+        }
+
+        public Doc(final String group, final String title, final String href, final File source,
+                   final String language) {
+            this.group = group;
+            this.title = title;
+            this.href = href;
+            this.source = source;
+            this.language = language;
+        }
+
+        public String getLanguage() {
+            return language;
         }
 
         public String getGroup() {
@@ -220,6 +342,14 @@ public class GroupedIndex {
         @Override
         public int compareTo(final Doc o) {
             return this.title.toLowerCase().compareTo(o.title.toLowerCase());
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Doc doc = (Doc) o;
+            return Objects.equals(language, doc.language);
         }
     }
 }

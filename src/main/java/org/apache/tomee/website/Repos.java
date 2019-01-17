@@ -28,8 +28,8 @@ import java.io.IOException;
 public class Repos {
 
     public static void download(final Source source) {
-        if (source.getDir().exists()) {
 
+        if (source.getDir().exists()) {
             try {
                 pull(source);
             } catch (Exception e) {

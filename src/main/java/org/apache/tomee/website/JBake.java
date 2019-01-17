@@ -36,11 +36,14 @@ public class JBake {
         final File destination = args == null || args.length < 2 ? new File("target/site-tmp") : new File(args[1]);
         final boolean startHttp = args == null || args.length < 2 || Boolean.parseBoolean(args[2]); // by default we dev
 
+
         final Source[] website = org.apache.tomee.website.Configuration.getSources();
 
         final Sources sources = new Sources(new File("target/jbake"), new File("repos"), new File("src/main/jbake"), destination, website);
 
+
         sources.prepare();
+
 
         final Runnable build = () -> {
             System.out.println("Building TomEE website in " + destination);

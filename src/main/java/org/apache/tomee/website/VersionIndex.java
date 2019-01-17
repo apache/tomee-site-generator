@@ -20,6 +20,8 @@ import org.apache.openejb.loader.IO;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VersionIndex {
 
@@ -29,26 +31,44 @@ public class VersionIndex {
         this.sources = sources;
     }
 
+    /**
+     * Add the available languages to the /target/jbake/content/tomee-8.0/index.html
+     * Add the available languages to the /target/jbake/content/tomee-8.0/es/index.html
+     *
+     * @param source
+     */
     public void prepare(final Source source) {
         final File docs = sources.getJbakeContentDestFor(source, "docs");
-        final File examples = sources.getJbakeContentDestFor(source, "examples");
+        final File examples = sources.getJbakeContentDestFor(source, ""); // target/jbake/content/tomee-8.0/
 
         try {
             final StringBuilder index = new StringBuilder();
             index.append(":jbake-type: page\n")
-                    .append(":jbake-status: published\n")
-                    .append(":jbake-title: ")
-                    .append(source.getName())
-                    .append(" resources")
-                    .append("\n")
-                    .append("\n")
+                 .append(":jbake-status: published\n")
+                 .append(":jbake-title: ")
+                 .append(source.getName())
+                 .append(" resources")
+                 .append("\n")
+                 .append("\n")
             ;
 
             if (docs.exists() && docs.listFiles().length > 0) {
+                //ToDo: add to the doc index file the available languages for documentation.
                 index.append(" - link:docs[Documentation]\n");
             }
-            if (examples.exists() && examples.listFiles().length > 0) {
-                index.append(" - link:examples[Examples]\n");
+            List<String> listOfLanguagesDirs = obtainListOfExamplesLanguages(examples);
+
+            if (listOfLanguagesDirs.size() > 0) {
+
+                index.append(" - link:examples[Examples]");
+
+                for (String LanguageDir : listOfLanguagesDirs) {
+                    if (!LanguageDir.equalsIgnoreCase("en")) {
+                        index.append(" link:" + LanguageDir + "/examples" + "[ [" + LanguageDir + "\\] ]");
+                    }
+                }
+
+                index.append("\n");
             }
             index.append(" - link:javadoc[Javadoc]\n");
 
@@ -57,6 +77,30 @@ public class VersionIndex {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static List<String> obtainListOfExamplesLanguages(File file) { // target/jbake/content/tomee-8.0/
+        List<String> listOfLanguages = new ArrayList<>();
+
+        File[] directories = new File(file.getAbsolutePath()).listFiles(File::isDirectory);
+
+        File temp = null;
+
+        //Obtain the list of languages different than English
+        for (File directory : directories) {
+            temp = new File(directory.getAbsolutePath() + File.separator + "examples");
+            if (temp.exists()) {
+                listOfLanguages.add(directory.getName());
+            }
+        }
+
+        //check if English language exist
+        temp = new File(file.getAbsolutePath()+File.separator+"examples");
+        if(temp.exists()){
+            listOfLanguages.add("en");
+        }
+
+        return listOfLanguages;
     }
 
 }

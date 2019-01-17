@@ -20,19 +20,20 @@ import org.apache.openejb.loader.IO;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class VersionsIndex {
 
-
+    // Created the index content for http://localhost:8080/docs.html
     public static void prepare(final Sources sources) {
 
 
         try {
             final StringBuilder index = new StringBuilder();
             index.append(":jbake-type: page\n")
-                    .append(":jbake-status: published\n")
-                    .append(":jbake-title: Apache TomEE Documentation\n")
-                    .append("\n")
+                 .append(":jbake-status: published\n")
+                 .append(":jbake-title: Apache TomEE Documentation\n")
+                 .append("\n")
             ;
 
 
@@ -48,13 +49,32 @@ public class VersionsIndex {
                 index.append("*\n\n");
 
                 final File docs = sources.getJbakeContentDestFor(source, "docs");
-                final File examples = sources.getJbakeContentDestFor(source, "examples");
+                final File examples = sources.getJbakeContentDestFor(source, "");
 
                 if (docs.exists() && docs.listFiles().length > 0) {
                     index.append(" - link:").append(source.getName()).append("/docs[Documentation]\n");
                 }
-                if (examples.exists() && examples.listFiles().length > 0) {
-                    index.append(" - link:").append(source.getName()).append("/examples[Examples]\n");
+
+                List<String> listOfLanguagesDirs = VersionIndex.obtainListOfExamplesLanguages(examples);
+
+                if (listOfLanguagesDirs.size() > 0) {
+
+                    index.append(" - link:" + source.getName() + "/examples[Examples]");
+
+                    for (String LanguageDir : listOfLanguagesDirs) {
+                        if (!LanguageDir.equalsIgnoreCase("en")) {
+                            index.append(" link:")
+                                 .append(source.getName())
+                                 .append("/")
+                                 .append(LanguageDir)
+                                 .append("/examples/")
+                                 .append("[ [")
+                                 .append(LanguageDir)
+                                 .append("\\] ]");
+                        }
+                    }
+
+                    index.append("\n");
                 }
                 index.append(" - link:").append(source.getName()).append("/javadoc[Javadoc]\n");
 
