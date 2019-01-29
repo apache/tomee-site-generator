@@ -12,7 +12,7 @@ Want to be added to this page? See at the bottom.
 
 === Tomitribe
 
-Tomitribe is a company created by several founding members of the Apache TomEE community with the mission of uniting businesses using TomEE with responsible and sustainable Open Source. Our goal is to support both the community and fuel the success of business that rely TomEE with a complete set of consulting, training, and commercial support.
+https://www.tomitribe.com[Tomitribe] is a company created by several founding members of the Apache TomEE community with the mission of uniting businesses using TomEE with responsible and sustainable Open Source. Our goal is to support both the community and fuel the success of business that rely TomEE with a complete set of consulting, training, and commercial support.
 
 
 === ManageCat

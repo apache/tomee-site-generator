@@ -1,8 +1,9 @@
 <%include "header.gsp"%>
 	<%include "menu.gsp"%>
 
-    <div id="main-block" class="container section-padded">
+    <div id="main-block" class="container main-block">
         <div class="row title">
+          <div class="col-md-12">
             <div class='page-header'>
               <%if (content.containsKey('tomeepdf')) {%>
               <div class='btn-toolbar pull-right' style="z-index: 2000;">
@@ -11,8 +12,9 @@
                 </div>
               </div>
               <% } %>
-              <h2>${content.title}</h2>
+              <h1>${content.title}</h1>
             </div>
+          </div>
         </div>
         <div class="row">
             <%if (content.body) {%>

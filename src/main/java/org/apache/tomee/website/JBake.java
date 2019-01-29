@@ -33,10 +33,17 @@ public class JBake {
         System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "64"); // try to have parallelStream better than default
 
         final File source = args == null || args.length < 1 ? new File("src/main/jbake") : new File(args[0]);
-        final File pdfSource = new File(source, "content");
         final File destination = args == null || args.length < 2 ? new File("target/site-tmp") : new File(args[1]);
         final boolean startHttp = args == null || args.length < 2 || Boolean.parseBoolean(args[2]); // by default we dev
-        final boolean skipPdf = args == null || args.length < 3 || Boolean.parseBoolean(args[3]); // by default...too slow sorry
+
+
+        final Source[] website = org.apache.tomee.website.Configuration.getSources();
+
+        final Sources sources = new Sources(new File("target/jbake"), new File("repos"), new File("src/main/jbake"), destination, website);
+
+
+        sources.prepare();
+
 
         final Runnable build = () -> {
             System.out.println("Building TomEE website in " + destination);
@@ -44,18 +51,18 @@ public class JBake {
             try {
                 orient.startup();
 
-                final Oven oven = new Oven(source, destination, new CompositeConfiguration() {{
-                    addConfiguration(ConfigUtil.load(source));
+                final Oven oven = new Oven(sources.getJbake(), destination, new CompositeConfiguration() {{
+                    addConfiguration(ConfigUtil.load(sources.getJbake()));
                 }}, true);
                 oven.setupPaths();
 
                 System.out.println("  > baking");
                 oven.bake();
 
-                if (!skipPdf) {
-                    System.out.println("  > pdfifying");
-                    PDFify.generatePdf(pdfSource, destination);
-                }
+//                if (!skipPdf) {
+//                    System.out.println("  > pdfifying");
+//                    PDFify.generatePdf(pdfSource, destination);
+//                }
 
                 copyFileLayoutToDirStructure(destination);
                 System.out.println("  > done :)");
@@ -188,11 +195,11 @@ public class JBake {
         final File fileLayoutPdf = new File(adminFolder, "file-layout.pdf");
         final File dirStructurePdf = new File(adminFolder, "directory-structure.pdf");
 
-        if(fileLayoutPdf.exists()){
+        if (fileLayoutPdf.exists()) {
             FileUtils.copyFile(fileLayoutPdf, dirStructurePdf);
         }
 
-        if(fileLayoutHtml.exists()){
+        if (fileLayoutHtml.exists()) {
             FileUtils.copyFile(fileLayoutHtml, dirStructureHtml);
         }
     }

@@ -1,0 +1,40 @@
+= Contribution Workflow
+:jbake-date: 2018-12-08
+:jbake-type: page
+:jbake-status: published
+
+:numbered:
+
+
+
+=== JIRA ticket
+- create ticket in JIRA, if not already existing
+- if ticket already assigned to someone else => talk
+- assign ticket to contributor, if not already assigned +
+  (link:jira-ticket.html[more details])
+
+
+
+=== Process Task
+- fork repository
+- create branch in own repository (name = JIRA ticket id)
+- discuss on mailing list
+- work on code
+- document work in JIRA ticket +
+  (link:process-task.html[more details])
+
+=== Submit Changes
+- ensure code compiles 
+- ensure tests passes
+- create PR (pull request)
+- ask for review on mailing list +
+  (link:submit-changes.html[more details])
+
+=== Merge Changes (done by a committer)
+- review changes
+- merge code
+- change JIRA ticket status / close ticket +
+
+=== Cleanup
+- wait until PR is merged (ticket status change)
+- remove branch in own repository +

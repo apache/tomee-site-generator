@@ -1,0 +1,30 @@
+Title: Unassigned Items
+#set ( $tomee = $rss.fetch("https://issues.apache.org/jira/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml?assignee=Unassigned&&pid=TOMEE&status=Open&tempMax=1000&reset=true&decorator=none") )
+#set ( $openejb = $rss.fetch("https://issues.apache.org/jira/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml?assignee=Unassigned&pid=OPENEJB&status=Open&tempMax=1000&reset=true&decorator=none") )
+#set( $issues = $tomee.issues.union( $openejb.issues ) )
+#set( $priorities = $issues.collect("priority").unique("id").sort("id"))
+
+Looking for something to do?
+
+This page contains a list of JIRA issues that are open and not assigned to anyone.  Anything in this list is a great candidate for contribution.
+
+**Note "Major" and "Minor" refer to priority and not effort required to complete a task.**
+
+When looking for a task for first-time contributors, we highly encourage people to start small and find something simple and quick.  See also [Contribution Tips](../contribution-tips.html)
+
+#foreach( $p in $priorities )
+#$p
+
+#set( $list = $issues.equals("priority", $p.name).sort("id", true) )
+#set( $types = $list.collect("type").unique("id").sort("id") )
+
+#foreach( $type in $types )
+**$type**:
+
+#foreach( $issue in $list.equals("type", $type.name) )
+ - [$issue.key](https://issues.apache.org/jira/browse/$issue.key): $issue.summary
+#end
+
+#end
+
+#end

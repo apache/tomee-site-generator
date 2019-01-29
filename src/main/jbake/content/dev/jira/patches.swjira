@@ -1,0 +1,32 @@
+Title: Pending Patches
+#set( $url = "https://issues.apache.org/jira/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml?jqlQuery=project+in+%28OPENEJB%2C+TOMEE%29+AND+status+%3D+Open&tempMax=1000" )
+#set( $jirarss = $rss.fetch( $url ) )
+#set( $issues = $jirarss.fillAttachments() )
+#set( $void = $date.format("yyyy-MM-dd") )
+##
+#foreach( $issue in $issues )
+#set( $issue.attributes.totalAttachments = $issue.attachments.size() )
+#end
+#set( $issues = $issues.greater("@totalAttachments", 0) )
+#foreach( $issue in $issues )
+#set( $issue.attributes.firstPatch = $issue.attachments.min("created").created )
+#end
+##
+
+**${issues.size()} patches in the queue**
+
+Generated $date.as("EEEE, MMMM d, yyyy")
+
+(sorted oldest to newest)
+
+#foreach( $issue in $issues.sort("@firstPatch") )
+[$issue.key]($issue.link) $issue.summary
+
+- $date.format($issue.created)  **$issue.reporter** -  _${issue.type}_
+#foreach ( $attachment in $issue.attachments.sort("created") )
+- $date.format($attachment.created)  $attachment.author   [$attachment.fileName]($attachment.url)
+#end
+
+
+
+#end

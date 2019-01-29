@@ -1,0 +1,49 @@
+# Apache TomEE 1.7.1 Released!
+
+After the huge buzz getting version 1.7.0 off the press it is time to get back to the day to day. As promised we are committed to providing the best for our community, and so without further a do here is TomEE 1.7.1 - This is a maintenance release that fixes some minor issues and a few tweaks (We understand it is not so minor if you are waiting for it, so thanks for your patience). This version is still shipped upon Apache Tomcat 7.0.55.
+
+Please note that the TomEE 1.7.1 drop in WAR file will not work on Apache Tomcat 8. If you are interested in a Tomcat 8.x version then please feel free to check out and [contribute to the developer branch](contribute.html) - We are always interested in any help from the community that we can get.
+
+The Apache TomEE 1.7.1 release files can be downloaded from here:
+
+[http://tomee.apache.org/downloads.html](downloads.html)
+
+###Important Notes: 
+
+Issue [TOMEE-1339](https://issues.apache.org/jira/browse/TOMEE-1339) introduced a default (but configurable) check for a static *index.html* file when an empty JAX-RS resource URL is specified by a client. You can use this file to return a descriptive response to the client for example. Make sure that this optional file does not contain sensitive information when made available. Currently it is not a JSP and it is not parsed in any way by the Servlet container - This may change in the next version.
+
+A new property **openejb.finder.module-scoped** was added that changed default behaviour. It is used to enable rare optional scanning outside of the current runtime scope. For example, if a bean is declared in one application that is extended in another application or test scope then you must now explicitly enable cross scope scanning by setting **openejb.finder.module-scoped=true**  
+ - In such cases failure to do this will invariably result in an **javax.naming.NameAlreadyBoundException**
+
+###Update Maven POM Files
+
+Simply update your existing Maven JavaEE-API, OpenEJB and or TomEE pom.xml entries to point to the latest versions:
+
+	<dependency>
+		<groupId>org.apache.openejb</groupId>
+		<artifactId>javaee-api</artifactId>
+		<version>6.0-6</version>
+		<scope>provided</scope>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.openejb</groupId>
+		<artifactId>openejb-core</artifactId>
+		<version>4.7.1</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.openejb</groupId>
+		<artifactId>tomee</artifactId>
+		<version>1.7.1</version>
+	</dependency>
+
+A complete [Changelog](tomee-1.7.1-release-notes.html) can be viewed here:
+
+[tomee-1.7.1-release-notes.html](tomee-1.7.1-release-notes.html)
+
+Please feel free to jump in feet first and [get started with TomEE](documentation.html). You will nearly always find someone to help you on one of our [support channels](support.html).
+
+###Java EE7 and Beyond
+
+From this point on the TomEE community will be focusing most of it's efforts on TomEE 2.0.x, which will be the first TomEE Java EE 7 driven version running on Apache Tomcat 8.x. It is more than likely that support for Java SE 6 will be dropped so that Java SE 7 features can finally be leveraged during the development process. We will of course continue to maintain the 1.7.x branch for the foreseeable future.
