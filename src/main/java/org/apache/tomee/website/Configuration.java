@@ -55,10 +55,11 @@ public class Configuration {
         };
 
         return new Source[]{
-                new Source("https://gitbox.apache.org/repos/asf/tomee.git", "master", "tomee-8.0", true).related(microProfile2).related(jakartaEE8),
-                new Source("https://gitbox.apache.org/repos/asf/tomee.git", "tomee-7.1.0", "tomee-7.1"),
-                new Source("https://gitbox.apache.org/repos/asf/tomee.git", "tomee-7.0.5", "tomee-7.0"),
-                new Source("https://gitbox.apache.org/repos/asf/tomee.git", "master", "master"),
+//                new Source("https://github.com/apache/tomee.git", "master", "tomee-8.0"),
+                new Source("https://github.com/apache/tomee.git", "master", "tomee-8.0", true).related(microProfile2).related(jakartaEE8),
+                new Source("https://github.com/apache/tomee.git", "tomee-7.1.0", "tomee-7.1"),
+                new Source("https://github.com/apache/tomee.git", "tomee-7.0.5", "tomee-7.0"),
+                new Source("https://github.com/apache/tomee.git", "master", "master"),
                 new Source("https://github.com/eclipse/microprofile-bom.git", "master", "microprofile-2.0").related(microProfile2),
                 new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "master", "jakartaee-8.0").related(jakartaEE8)
         };
