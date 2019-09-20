@@ -5,8 +5,6 @@
 :jbake-tomeepdf:
 :icons: font
 
-
-IMPORTANT: Note: Please note the 8.0.0 release is a milestone release intended for evaluation purposes and should not be used in production.
 [.table.table-bordered,options="header"]
 |===
 |Name|Version|Date|Size|Type|Links
