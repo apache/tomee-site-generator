@@ -13,7 +13,7 @@ The Apache TomEE 7.0.0-M2 release files can be downloaded from here:
 
 link:download/tomee-7.0.0-M2.html[http://tomee.apache.org/download/tomee-7.0.0-M2.html]
 
-###Update Maven POM Files - The OpenEJB version and groupId have been aligned
+*** Update Maven POM Files - The OpenEJB version and groupId have been aligned
 
 Simply update your existing Maven JavaEE-API, OpenEJB and or TomEE pom.xml entries to point to the latest versions:
 

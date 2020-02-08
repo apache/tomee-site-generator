@@ -88,7 +88,7 @@ A @Key can be of type FAILURE or WARNING or ERROR.
 Default value is FAILURE.
 As seen in the example above, the test() method is expecting two warnings for the key injectionTarget.nameContainsSet.
 If count is not equal to 2 or some other Validation Failure/Warning/Error was also thrown from the method, then the test fails.
-###Be Careful The test must cause a Validation Failure otherwise the test framework does not get invoked.
+*** Be Careful The test must cause a Validation Failure otherwise the test framework does not get invoked.
 For example, in the above code, a Key of type WARNING is being tested, however the test is purposely being failed by putting an `@AroundInvoke` around the method with zero arguments
 . Once you have written the test and successfully run it, you now need to generate the report.
 Simply invoke the following maven command
@@ -97,7 +97,7 @@ mvn test -Dtest=ValidationKeysAuditorTest -DconfluenceUsername=YourConfluenceUse
 
 The above command will create a complete test coverage report and post it to this location link:openejb:validation-keys-audit-report.html[OPENEJB:Validation Keys Audit Report]
 
-###Quick facts about ValidationRunner and things to keep in mind while writing tests
+*** Quick facts about ValidationRunner and things to keep in mind while writing tests
 
 This class is created specifically to write tests which test OpenEjb validation code.
 Specifically, it is used to check the usage of keys defined in `org.apache.openejb.config.rules.Messages.properties`.

@@ -1,6 +1,6 @@
 Title: GIT for TomEE Developers
 
-###The GitFlow Workflow
+*** The GitFlow Workflow
 
 Notes before you begin (mostly for SVN users):
 
@@ -79,7 +79,7 @@ ____
 git push origin develop
 ____
 
-+++<a name="git-gui">++++++</a>+++ ###The GUI Way
++++<a name="git-gui">++++++</a>+++ *** The GUI Way
 
 Now we have learned to do it the hard way, time to look at the simplified version.
 The GitHub native tools!

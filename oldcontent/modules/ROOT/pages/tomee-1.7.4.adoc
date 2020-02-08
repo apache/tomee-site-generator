@@ -11,7 +11,7 @@ The Apache TomEE 1.7.4 release files can be downloaded from here:
 
 link:downloads.html[http://tomee.apache.org/downloads.html]
 
-###Update Maven POM Files
+*** Update Maven POM Files
 
 Simply update your existing Maven JavaEE-API, OpenEJB and or TomEE pom.xml entries to point to the latest versions:
 
@@ -43,7 +43,7 @@ link:tomee-1.7.4-release-notes.html[tomee-1.7.4-release-notes.html]
 Please feel free to jump in feet first and link:documentation.html[get started with TomEE].
 You will nearly always find someone to help you on one of our link:support.html[support channels].
 
-###Java EE7 and Beyond
+*** Java EE7 and Beyond
 
 From this point on the TomEE community will be focusing most of it's efforts on TomEE 7.0.0, which will be the first TomEE Java EE 7 driven version running on Apache Tomcat 8.x.
 It is more than likely that support for Java SE 6 will be dropped so that Java SE 7 features can finally be leveraged during the development process.

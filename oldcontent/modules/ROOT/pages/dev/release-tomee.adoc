@@ -4,7 +4,7 @@
 
  This document is aimed at guiding a release manager through the general release process. You will need either a Linux, Mac, or failing that a Linux Virtual (with at least a 50GB Drive) on Win.
 
-###Preparation of The Branch
+*** Preparation of The Branch
 
 Run menu:ant -f rat.xml[report.txt] on trunk to ensure all licences are in place.
 
@@ -25,7 +25,7 @@ An SVN trigger must be added afterwards.
 This can only be done by someone with admin permissions, such as any PMC chair or an Infra team member.
 Just drop an email to _infrastructure@apache.org_
 
-###Create a TCK Branch
+*** Create a TCK Branch
 
 Branch the TCK using the same version as the release branch from here:
 
@@ -43,7 +43,7 @@ Run menu:ant -f rat.xml[report.txt] on the branch.
 * Review the report.txt and update/add missing headers until clean.
 * _Tip_, search for *Unapproved licenses:*.
 
-###Check SVN Authentication
+*** Check SVN Authentication
 
 Pre-authenticate svn repositories to ensure your credentials are cached before using any tools.
 
@@ -54,7 +54,7 @@ Pre-authenticate svn repositories to ensure your credentials are cached before u
  svn mkdir --username [apacheuser] --password [apachepw] -m "Create test dir" https://dist.apache.org/repos/dist/dev/tomee/testdir3
  svn delete --username [apacheuser] --password [apachepw] -m "Delete test dir" https://dist.apache.org/repos/dist/dev/tomee/testdir3
 
-###Prepare Maven Authentication
+*** Prepare Maven Authentication
 
 Ensure your maven .m2/settings.xml correct, and be aware that the tools currently require a clear text password:
 
@@ -88,7 +88,7 @@ Ensure your maven .m2/settings.xml correct, and be aware that the tools currentl
 		  </repositories>
 ....
 
-###Code Signing Setup
+*** Code Signing Setup
 
 If this is your first release then you will have to ensure that you have a code signing key prepared on the machine from which you perform the release.
 The process is quite intense.
@@ -121,7 +121,7 @@ The basic steps are also here, please read both before you proceed:
 * Take note of your key fingerprint using **gpg --fingerprint +++<your name="">+++**+++</your>+++
 * Go to https://id.apache.org, log in and fill OpenPGP Public Key Primary Fingerprint: with the value of your fingerprint.
 
-###Build the Release Tools
+*** Build the Release Tools
 
 Checkout the release tools using SVN from here https://svn.apache.org/repos/asf/tomee/sandbox/release-tools
 
@@ -134,7 +134,7 @@ Have a look at *run.sh* to see the entry point.
 
 Understand that the release tools are not polished, and you currently may have to edit source and re-compile.
 
-###Site Staging <<staging,>> For some of the release steps you will need to provide documentation on the site.
+*** Site Staging <<staging,>> For some of the release steps you will need to provide documentation on the site.
 Checkout the site here:
 
 https://svn.apache.org/repos/asf/tomee/site/trunk
@@ -157,7 +157,7 @@ Once you are happy with the staging you can publish to the real site using:
 
 https://cms.apache.org/tomee/publish
 
-###Begin The Release Process
+*** Begin The Release Process
 
 Ensure TCK is passing all tests, and if so create an SVN tag from the branch.
 
@@ -210,7 +210,7 @@ How you do this is up to you at this point in time.
 
 Create the next version iterations in JIRA.
 
-###Rolling Out The Preview
+*** Rolling Out The Preview
 
 ....
 Note: Before running anything below ensure you either have:
@@ -246,7 +246,7 @@ Votes are generally managed and identified using keywords such as [VOTE], [CANCE
 
 If the vote fails then discuss, fix and re-roll.
 
-###Voted Binaries
+*** Voted Binaries
 
 Once the vote has passed then release the binaries on Nexus: https://repository.apache.org/index.html#welcome
 
@@ -283,7 +283,7 @@ Commit and publish changes to the site, see link:release-tomee.html#staging[Site
 
  https://cms.apache.org/tomee/publish
 
-###Blog
+*** Blog
 
 Announce to the world that TomEE has new bells and whistles!
 
