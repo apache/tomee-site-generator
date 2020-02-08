@@ -1,0 +1,3 @@
+Title: Tomcat Object Factory _The TomcatEjbFactory as discussed in the http://www.onjava.com/pub/a/onjava/2003/02/12/ejb_tomcat.html[OnJava article "OpenEJB: EJB for Tomcat"]  is no longer required._
+
+As of OpenEJB 3.0 references from Servlets to EJBs happen automatically with usage of the link:openejbx30:injection-of-other-ejbs-example.html[@EJB annotation]  in the Servlet, Filter or Listener or with the +++<ejb-ref>+++or+++</ejb-ref>++++++<ejb-local-ref>+++declared in the web.xml. See the [Tomcat Integration](openejbx30:tomcat.html) page for the most up-to-date details on using OpenEJB inside Tomcat.+++</ejb-local-ref>+++
