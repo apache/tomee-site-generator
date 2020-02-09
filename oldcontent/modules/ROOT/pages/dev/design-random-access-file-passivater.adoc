@@ -4,7 +4,7 @@ Title: Design - Random Access File Passivater
 
 == Random Access File Passivater
 
-Implementation of link:design-passivation-strategy.html[Passivation Strategy]
+Implementation of xref:design-passivation-strategy.adoc[Passivation Strategy]
 
 +++<a name="Design-RandomAccessFilePassivater-Description">++++++</a>+++
 

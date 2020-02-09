@@ -145,7 +145,7 @@ property (configurable in application.properties) to deactivate timers
 * [https://issues.apache.org/jira/browse/TOMEE-1114[TOMEE-1114]] - TomEE Maven Plugin should support OpenEJB standalone
 * [https://issues.apache.org/jira/browse/TOMEE-1121[TOMEE-1121]] - add openejb.cxf-rs.wadl-generator.ignoreRequests to configure and not force ignoreRequests on wadlgenerator
 * [https://issues.apache.org/jira/browse/TOMEE-1127[TOMEE-1127]] - New Event: @Observes LifecycleEvent
-* [https://issues.apache.org/jira/browse/TOMEE-1132[TOMEE-1132]] - add javaagents parameter to link:maven/index.html[tomee-maven-plugin]
+* [https://issues.apache.org/jira/browse/TOMEE-1132[TOMEE-1132]] - add javaagents parameter to xref:maven/index.adoc[tomee-maven-plugin]
 * [https://issues.apache.org/jira/browse/TOMEE-1133[TOMEE-1133]] - support @CdiExtensions on test class for ApplicationComposer
 * [https://issues.apache.org/jira/browse/TOMEE-1140[TOMEE-1140]] - Support CDI LoginModule
 * [https://issues.apache.org/jira/browse/TOMEE-1144[TOMEE-1144]] - provide an exec war goal to tomee plugin

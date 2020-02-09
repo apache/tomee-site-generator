@@ -57,9 +57,9 @@ Or just update your existing Maven JavaEE-API, OpenEJB and or TomEE entries to p
 </dependency>
 ....
 
-A complete link:tomee-1.7.0-release-notes.html[Changelog] can be viewed here:
+A complete xref:tomee-1.7.0-release-notes.adoc[Changelog] can be viewed here:
 
-link:tomee-1.7.0-release-notes.html[tomee-1.7.0-release-notes.html]
+xref:tomee-1.7.0-release-notes.adoc[tomee-1.7.0-release-notes.html]
 
 So please feel free to jump in feet first and http://tomee.apache.org/documentation.html[get started with TomEE].
 You will nearly always find someone to help you on one of our http://tomee.apache.org/support.html[support channels].

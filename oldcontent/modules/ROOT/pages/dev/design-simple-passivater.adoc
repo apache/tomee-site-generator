@@ -4,7 +4,7 @@ Title: Design - Simple Passivater
 
 == Simple Passivater
 
-Implementation of link:design-passivation-strategy.html[Passivation Strategy]
+Implementation of xref:design-passivation-strategy.adoc[Passivation Strategy]
 
 +++<a name="Design-SimplePassivater-Description">++++++</a>+++
 

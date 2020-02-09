@@ -5,22 +5,22 @@
 :jbake-tomeepdf:
 
 === Administration
-- link:admin/configuration/index.html[Server Configuration]
-- link:admin/file-layout.html[Directory Structure]
-- link:admin/cluster/index.html[Clustering and High Availability (HA)]
+- xref:admin/configuration/index.adoc[Server Configuration]
+- xref:admin/file-layout.adoc[Directory Structure]
+- xref:admin/cluster/index.adoc[Clustering and High Availability (HA)]
 
 === Developers
-- link:developer/ide/index.html[IDEs - Eclipse, Intellij Idea and Netbeans]
-- link:developer/testing/index.html[Unit Testing - Arquillian, OpenEJB JUnit, TomEE Embedded and ApplicationComposer]
-- link:developer/tools/index.html[Build Tools and Plugins]
-- link:developer/migration/tomee-1-to-7.html[Migrating From TomEE 1.x to 7.x]
-- link:developer/json/index.html[TomEE and Apache Johnzon - JAX-RS JSON Provider]
-- link:developer/configuration/cxf.html[Apache CXF Configuration - JAX-RS (RESTful Services) and JAX-WS (Web Services)]
-- link:developer/classloading/index.html[Understanding the TomEE ClassLoader]
+- xref:developer/ide/index.adoc[IDEs - Eclipse, Intellij Idea and Netbeans]
+- xref:developer/testing/index.adoc[Unit Testing - Arquillian, OpenEJB JUnit, TomEE Embedded and ApplicationComposer]
+- xref:developer/tools/index.adoc[Build Tools and Plugins]
+- xref:developer/migration/tomee-1-to-7.adoc[Migrating From TomEE 1.x to 7.x]
+- xref:developer/json/index.adoc[TomEE and Apache Johnzon - JAX-RS JSON Provider]
+- xref:developer/configuration/cxf.adoc[Apache CXF Configuration - JAX-RS (RESTful Services) and JAX-WS (Web Services)]
+- xref:developer/classloading/index.adoc[Understanding the TomEE ClassLoader]
 
 === Advanced
-- link:advanced/applicationcomposer/index.html[`ApplicationComposer` with JBatch]
-- link:advanced/setup/index.html[How to Setup TomEE in Production]
-- link:advanced/shading/index.html[Fat / Uber Jar Deployment using the Maven Shade Plugin]
-- link:advanced/client/jndi.html[Java Naming and Directory Interface (JNDI)]
-- link:advanced/jms/jms-configuration.html[Why is my ActiveMQ/JMS MDB not scaling as expected?]
+- xref:advanced/applicationcomposer/index.adoc[`ApplicationComposer` with JBatch]
+- xref:advanced/setup/index.adoc[How to Setup TomEE in Production]
+- xref:advanced/shading/index.adoc[Fat / Uber Jar Deployment using the Maven Shade Plugin]
+- xref:advanced/client/jndi.adoc[Java Naming and Directory Interface (JNDI)]
+- xref:advanced/jms/jms-configuration.adoc[Why is my ActiveMQ/JMS MDB not scaling as expected?]

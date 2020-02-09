@@ -5,7 +5,7 @@
 :jbake-tomeepdf:
 :icons: font
 
-- link:download-ng.html[The current versions can be found here]
+- xref:download-ng.adoc[The current versions can be found here]
 
 IMPORTANT: Note: Only the TomEE 1.x WebProfile and JAX-RS distributions are certified.
 IMPORTANT: Note: Please note the 8.0.0-M releases are milestone releases intended for evaluation purposes and should not be used in production.

@@ -3,9 +3,9 @@ Title: Contributing
 Contributing to the project is a great way to support the community.
 Some great links for getting involved
 
-* link:dev/source-code.html[Source Code]
-* link:dev/contribution-tips.html[Contribution Tips]
-* link:dev/index.html[Developer Documentation]
+* xref:dev/source-code.adoc[Source Code]
+* xref:dev/contribution-tips.adoc[Contribution Tips]
+* xref:dev/index.adoc[Developer Documentation]
 
 *** Contributing doesn't always mean code.
 If you love the project and want to see it grow, follow it on Facebook and Twitter.
@@ -28,7 +28,7 @@ Do your part and watch the project grow grow grow!
 Most of the pages on this site can be edited by you.
 If you find a spelling mistake, or just want to improve the documentation then please do!
 
-If you want to edit the link:examples-trunk/index.html[Examples Documentation] then check-out the link:dev/source-code.html[Source Code] and edit or create the README.md in the example directory you want to improve.
+If you want to edit the xref:examples-trunk/index.adoc[Examples Documentation] then check-out the xref:dev/source-code.adoc[Source Code] and edit or create the README.md in the example directory you want to improve.
 
 *** Committers
 

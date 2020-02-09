@@ -2,7 +2,7 @@ Title: Design - Remote Server +++<a name="Design-RemoteServer-RemoteServer">++++
 
 == Remote Server
 
-Implementation of link:design-application-server.html[Application Server]
+Implementation of xref:design-application-server.adoc[Application Server]
 
 +++<a name="Design-RemoteServer-Description">++++++</a>+++
 

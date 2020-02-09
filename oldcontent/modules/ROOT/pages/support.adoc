@@ -38,4 +38,4 @@ Please be aware when asking questions that the Apache Software Foundation does n
 All community support comes from volunteers on a volunteer basis.
 Joining the community as a volunteer and helping your fellow users is highly encouraged!
 
-For commercial support or to commercially support the community see link:commercial-support.html[Commercial Support] page.
+For commercial support or to commercially support the community see xref:commercial-support.adoc[Commercial Support] page.

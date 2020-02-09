@@ -2,7 +2,7 @@ Title: Design - Passivation Strategy +++<a name="Design-PassivationStrategy-Pass
 
 == Passivation Strategy
 
-Sub-component of link:design-stateful-sessionbean-container.html[Stateful SessionBean Container]
+Sub-component of xref:design-stateful-sessionbean-container.adoc[Stateful SessionBean Container]
 
 +++<a name="Design-PassivationStrategy-Definition">++++++</a>+++
 
@@ -26,5 +26,5 @@ Used by the Stateful Container to passivate and activate stateful session beans 
 
 == Implementations
 
-* link:design-random-access-file-passivater.html[Random Access File Passivater]
-* link:design-simple-passivater.html[Simple Passivater]
+* xref:design-random-access-file-passivater.adoc[Random Access File Passivater]
+* xref:design-simple-passivater.adoc[Simple Passivater]

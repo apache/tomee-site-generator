@@ -12,6 +12,6 @@ The Apache TomEE Release 1.6.0.2 files can be found here:
 
 http://tomee.apache.org/downloads.html
 
-A complete link:tomee-1.6.0.2-release-notes.html[Changelog] can be viewed here:
+A complete xref:tomee-1.6.0.2-release-notes.adoc[Changelog] can be viewed here:
 
-link:tomee-1.6.0.2-release-notes.html[tomee-1.6.0.2-release-notes.html]
+xref:tomee-1.6.0.2-release-notes.adoc[tomee-1.6.0.2-release-notes.html]

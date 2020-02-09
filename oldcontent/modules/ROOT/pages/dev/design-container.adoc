@@ -2,7 +2,7 @@ Title: Design - Container +++<a name="Design-Container-Container">++++++</a>+++
 
 == Container
 
-Sub-component of link:-design.html[OpenEJB]
+Sub-component of xref:-design.adoc[OpenEJB]
 
 +++<a name="Design-Container-Definition">++++++</a>+++
 
@@ -36,7 +36,7 @@ Containers for custom container-bean contracts can also be created.
 
 == Implementations
 
-* link:design-stateful-sessionbean-container.html[Stateful SessionBean Container]
-* link:design-stateless-sessionbean-container.html[Stateless SessionBean Container]
-* link:design-bmp-entitybean-container.html[BMP EntityBean Container]
-* link:design-cmp-entitybean-container.html[CMP EntityBean Container]
+* xref:design-stateful-sessionbean-container.adoc[Stateful SessionBean Container]
+* xref:design-stateless-sessionbean-container.adoc[Stateless SessionBean Container]
+* xref:design-bmp-entitybean-container.adoc[BMP EntityBean Container]
+* xref:design-cmp-entitybean-container.adoc[CMP EntityBean Container]

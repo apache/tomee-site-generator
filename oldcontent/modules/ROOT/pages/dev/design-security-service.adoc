@@ -2,7 +2,7 @@ Title: Design - Security Service +++<a name="Design-SecurityService-SecurityServ
 
 == Security Service
 
-Sub-component of link:-design.html[OpenEJB]
+Sub-component of xref:-design.adoc[OpenEJB]
 
 +++<a name="Design-SecurityService-Definition">++++++</a>+++
 

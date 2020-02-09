@@ -2,7 +2,7 @@ Title: Design - Stateful SessionBean Container +++<a name="Design-StatefulSessio
 
 == Stateful SessionBean Container
 
-Implementation of link:design-container.html[Container]
+Implementation of xref:design-container.adoc[Container]
 
 +++<a name="Design-StatefulSessionBeanContainer-Description">++++++</a>+++
 
@@ -27,4 +27,4 @@ Container that implements the EJB defined bean-container contract for Stateful S
 
 == Sub-components
 
-* link:design-passivation-strategy.html[Passivation Strategy]
+* xref:design-passivation-strategy.adoc[Passivation Strategy]

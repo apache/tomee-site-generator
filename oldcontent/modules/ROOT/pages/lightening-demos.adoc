@@ -49,4 +49,4 @@ Title: Lightening Demos
 +++<td>+++David Blevins+++</td>+++
 +++<td>++++++<a rel="nofollow" class="external-link" href="http://vimeo.com/16872034">+++Vimeo +++</a>++++++</td>++++++</tr>++++++</tbody>++++++</table>++++++</div>+++
 
-_NOTE: For more details about the idea behind Lightening Demos, please read link:-http://markmail.org/message/5jq5xun44kt7tcni.html[this]  e-mail thread._
+_NOTE: For more details about the idea behind Lightening Demos, please read xref:-http://markmail.org/message/5jq5xun44kt7tcni.adoc[this]  e-mail thread._

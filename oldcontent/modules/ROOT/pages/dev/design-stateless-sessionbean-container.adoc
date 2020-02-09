@@ -4,7 +4,7 @@ Title: Design - Stateless SessionBean Container
 
 == Stateless SessionBean Container
 
-Implementation of link:design-container.html[Container]
+Implementation of xref:design-container.adoc[Container]
 
 +++<a name="Design-StatelessSessionBeanContainer-Description">++++++</a>+++
 

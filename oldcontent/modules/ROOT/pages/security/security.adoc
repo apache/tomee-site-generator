@@ -25,7 +25,7 @@ Questions about:
 - obtaining further information on a published vulnerability
 - availability of patches and/or new releases
 
-should be addressed to the link:support.html[users mailing list].
+should be addressed to the xref:support.adoc[users mailing list].
 
 The private security mailing address is: security (at) apache (dot) org
 

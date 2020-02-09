@@ -11,7 +11,7 @@
 - create ticket in JIRA, if not already existing
 - if ticket already assigned to someone else => talk
 - assign ticket to contributor, if not already assigned +
-  (link:jira-ticket.html[more details])
+  (xref:jira-ticket.adoc[more details])
 
 
 
@@ -21,14 +21,14 @@
 - discuss on mailing list
 - work on code
 - document work in JIRA ticket +
-  (link:process-task.html[more details])
+  (xref:process-task.adoc[more details])
 
 === Submit Changes
 - ensure code compiles 
 - ensure tests passes
 - create PR (pull request)
 - ask for review on mailing list +
-  (link:submit-changes.html[more details])
+  (xref:submit-changes.adoc[more details])
 
 === Merge Changes (done by a committer)
 - review changes

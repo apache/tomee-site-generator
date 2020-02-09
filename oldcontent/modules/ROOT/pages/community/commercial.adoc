@@ -21,11 +21,11 @@ ManageCat is a cloud management and service platform for Apache Tomcat and Apach
 
 === I want to be added there
 
-To be listed in the Commercial Support send a link:../security/support.html[mail] to the Apache TomEE PMC with a description of your offerings and the text you would like to have added.
+To be listed in the Commercial Support send a xref:../security/support.adoc[mail] to the Apache TomEE PMC with a description of your offerings and the text you would like to have added.
 
 ==== Policy for additions
 The Apache TomEE PMC does not and cannot endorse or recommend any products or services.
 
 All submitted information must be factual and informational in nature and not be a marketing statement. Statements that promote your products and services over other offerings on the page will not be tolerated and will be removed. Such marketing statements can be added to your own pages on your own site.
 
-When in doubt, email the Apache TomEE PMC list (see link:../security/support.html[Mailing Lists]) and ask. We are be happy to help.
+When in doubt, email the Apache TomEE PMC list (see xref:../security/support.adoc[Mailing Lists]) and ask. We are be happy to help.

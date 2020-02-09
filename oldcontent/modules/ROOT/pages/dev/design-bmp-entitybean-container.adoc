@@ -4,7 +4,7 @@ Title: Design - BMP EntityBean Container
 
 == BMP EntityBean Container
 
-Implementation of link:design-container.html[Container]
+Implementation of xref:design-container.adoc[Container]
 
 +++<a name="Design-BMPEntityBeanContainer-Description">++++++</a>+++
 

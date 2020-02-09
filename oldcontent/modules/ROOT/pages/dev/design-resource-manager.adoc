@@ -4,7 +4,7 @@ Title: Design - Resource Manager
 
 == Resource Manager
 
-Sub-component of link:-design.html[OpenEJB]
+Sub-component of xref:-design.adoc[OpenEJB]
 
 +++<a name="Design-ResourceManager-Definition">++++++</a>+++
 

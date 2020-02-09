@@ -68,4 +68,4 @@ IMPORTANT: Note: Only the TomEE 1.x WebProfile and JAX-RS distributions are cert
 |===
 
 
-- link:download-archive.html[Older versions can be found here]
+- xref:download-archive.adoc[Older versions can be found here]

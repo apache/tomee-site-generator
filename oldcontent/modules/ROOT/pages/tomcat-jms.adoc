@@ -52,6 +52,6 @@ public class MyServet extends HttpServlet {
 No need to add even a single library!
 In the above scenario even the "foo" Topic and the "bar" Queue would be automatically created with no configuration necessary.
 
-link:downloads.html[Download] TomEE and you're minutes away from a functioning JMS application on Tomcat.
+xref:downloads.adoc[Download] TomEE and you're minutes away from a functioning JMS application on Tomcat.
 
 {include:apache-tomee.mdtext}

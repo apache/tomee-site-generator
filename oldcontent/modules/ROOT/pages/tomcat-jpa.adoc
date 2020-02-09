@@ -60,6 +60,6 @@ To make the above work all you need is a `WEB-INF/persistence.xml` file in your 
 
 DataSources will automatically be created if they haven't be configured explicitly.
 
-link:downloads.html[Download] TomEE and you're minutes away from a functioning JPA application on Tomcat.
+xref:downloads.adoc[Download] TomEE and you're minutes away from a functioning JPA application on Tomcat.
 
 {include:apache-tomee.mdtext}

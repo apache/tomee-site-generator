@@ -45,7 +45,7 @@ The short answer is yes.
 The basic approach for all embedding scenarios is to 1) add OpenEJB to your classpath, and 2) construct your InitialContext using org.apache.openejb.client.LocalInitialContextFactory.
 The LocalInitialContextFactory will boot OpenEJB in your vm and all ejb applications visible in the classpath will be deployed.
 See http://tomee.apache.org/embedding-openejb.html for details on how to embed openejb in your application and IDE.
-See link:openejbx30:application-discovery-via-the-classpath.html[Application discovery via the classpath]  for various ways to have your applications discovered.
+See xref:openejbx30:application-discovery-via-the-classpath.adoc[Application discovery via the classpath]  for various ways to have your applications discovered.
 
 === During embedded testing, how can I externalize all my DataSource
 

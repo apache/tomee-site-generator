@@ -7,7 +7,7 @@ Title: Tomcat Detailed Instructions \{composition-setup}
 = {anchor:detailed instructions} Detailed Installation Instructions
 
 These instructions assume you have a standard Tomcat installation running on port 8080.
-If you do not have an existing Tomcat installation, or want to start with a fresh installation for OpenEJB, the link:tomcat-installation.html[Tomcat Installation]  will show you how to setup and verify a Tomcat installation.
+If you do not have an existing Tomcat installation, or want to start with a fresh installation for OpenEJB, the xref:tomcat-installation.adoc[Tomcat Installation]  will show you how to setup and verify a Tomcat installation.
 
 +++<a name="TomcatDetailedInstructions-Addopenejb.wartoTomcat">++++++</a>+++
 
@@ -73,7 +73,7 @@ The installer should report that the installation was successful.
 If it didn't work click [OPENEJB:here|#problems] .
 
 \{warning} The installer servlet adds the OpenEJB JavaAgent declaration to the catalina.sh and catalina.bat files.
-If you are using an IDE or some other mechanism to start Tomcat, you will need to link:manual-installation#javaagent.html[manually]  add the JavaAgent declaration to the Java VM options of the launcher you are using.
+If you are using an IDE or some other mechanism to start Tomcat, you will need to xref:manual-installation#javaagent.adoc[manually]  add the JavaAgent declaration to the Java VM options of the launcher you are using.
 \{warning}
 
 +++<a name="TomcatDetailedInstructions-RestartTomcat">++++++</a>+++
@@ -267,7 +267,7 @@ The openejb.war file must be removed because some versions of Tomcat will use th
 
 == Other Issues
 
-If you are having problems with the installation, please send a message to the OpenEJB users link:openejb:mailing-lists.html[mailing list]  containing any error message(s) and the following information:
+If you are having problems with the installation, please send a message to the OpenEJB users xref:openejb:mailing-lists.adoc[mailing list]  containing any error message(s) and the following information:
 
 * OpenEJB Version
 * Tomcat Version

@@ -5,11 +5,11 @@ As promised we are committed to providing the best for our community, and so wit
 This version is still shipped upon Apache Tomcat 7.0.55.
 
 Please note that the TomEE 1.7.1 drop in WAR file will not work on Apache Tomcat 8.
-If you are interested in a Tomcat 8.x version then please feel free to check out and link:contribute.html[contribute to the developer branch] - We are always interested in any help from the community that we can get.
+If you are interested in a Tomcat 8.x version then please feel free to check out and xref:contribute.adoc[contribute to the developer branch] - We are always interested in any help from the community that we can get.
 
 The Apache TomEE 1.7.1 release files can be downloaded from here:
 
-link:downloads.html[http://tomee.apache.org/downloads.html]
+xref:downloads.adoc[http://tomee.apache.org/downloads.html]
 
 *** Important Notes:
 
@@ -49,12 +49,12 @@ Simply update your existing Maven JavaEE-API, OpenEJB and or TomEE pom.xml entri
 </dependency>
 ....
 
-A complete link:tomee-1.7.1-release-notes.html[Changelog] can be viewed here:
+A complete xref:tomee-1.7.1-release-notes.adoc[Changelog] can be viewed here:
 
-link:tomee-1.7.1-release-notes.html[tomee-1.7.1-release-notes.html]
+xref:tomee-1.7.1-release-notes.adoc[tomee-1.7.1-release-notes.html]
 
-Please feel free to jump in feet first and link:documentation.html[get started with TomEE].
-You will nearly always find someone to help you on one of our link:support.html[support channels].
+Please feel free to jump in feet first and xref:documentation.adoc[get started with TomEE].
+You will nearly always find someone to help you on one of our xref:support.adoc[support channels].
 
 *** Java EE7 and Beyond
 
