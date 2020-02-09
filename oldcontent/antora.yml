@@ -1,6 +1,6 @@
-name: Tomee 
-title: Tomee Documentation
-version: '0.1' 
+name: tomee
+title: TomEE Documentation
+version: '0.1'
 start_page: ROOT:contribute.adoc
-nav: 
+nav:
 - modules/ROOT/nav.adoc
