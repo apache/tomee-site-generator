@@ -2,7 +2,7 @@ Title: Design - Local Server +++<a name="Design-LocalServer-LocalServer">++++++<
 
 == Local Server
 
-Implementation of xref:design-application-server.adoc[Application Server]
+Implementation of xref:dev/design-application-server.adoc[Application Server]
 
 +++<a name="Design-LocalServer-Description">++++++</a>+++
 

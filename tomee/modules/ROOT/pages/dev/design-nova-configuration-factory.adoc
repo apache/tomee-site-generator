@@ -4,7 +4,7 @@ Title: Design - Nova Configuration Factory
 
 == Nova Configuration Factory
 
-Implementation of xref:design-configuration-factory.adoc[Configuration Factory]
+Implementation of xref:dev/design-configuration-factory.adoc[Configuration Factory]
 
 +++<a name="Design-NovaConfigurationFactory-Description">++++++</a>+++
 

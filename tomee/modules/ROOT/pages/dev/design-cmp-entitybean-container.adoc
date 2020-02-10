@@ -4,7 +4,7 @@ Title: Design - CMP EntityBean Container
 
 == CMP EntityBean Container
 
-Implementation of xref:design-container.adoc[Container]
+Implementation of xref:dev/design-container.adoc[Container]
 
 +++<a name="Design-CMPEntityBeanContainer-Description">++++++</a>+++
 

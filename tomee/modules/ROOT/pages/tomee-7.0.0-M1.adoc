@@ -1,6 +1,9 @@
 = Apache TomEE 7.0.0-M1 released, Dec 11th 2015
 
-The Apache TomEE community is proud to announce the release of xref:download/tomee-7.0.0-M1.adoc[Apache TomEE 7.0.0-M1], which is based on http://tomcat.apache.org/tomcat-8.0-doc/index.html[Apache Tomcat 8.0.30] and is our first milestone release towards EE7.
+The Apache TomEE community is proud to announce the release of 
+//FIXME CHOOSE ONE
+xref:0.0@tomee::tomee-7.0.0-M1.adoc[]
+xref:0.1@tomee::tomee-7.0.0-M1.adoc[Apache TomEE 7.0.0-M1], which is based on http://tomcat.apache.org/tomcat-8.0-doc/index.html[Apache Tomcat 8.0.30] and is our first milestone release towards EE7.
 We know this has been a long time coming, so we thank you for your patience and support.
 
 Please feel free to check out and xref:contribute.adoc[contribute to the developer branch] - We are always interested in any help from the community that we can get.
@@ -42,5 +45,10 @@ A complete xref:tomee-7.0.0-M1-release-notes.adoc[Changelog] can be viewed here:
 
 xref:tomee-7.0.0-M1-release-notes.adoc[tomee-7.0.0-M1-release-notes.html]
 
-Please feel free to jump in feet first and xref:documentation.adoc[get started with TomEE].
+Please feel free to jump in feet first and 
+//FIXME CHOOSE ONE
+xref:0.0@tomee::documentation.adoc[]
+xref:7.0@tomee::documentation.adoc[]
+xref:7.1@tomee::documentation.adoc[]
+xref:8.0@tomee::documentation.adoc[get started with TomEE].
 You will nearly always find someone to help you on one of our xref:support.adoc[support channels].

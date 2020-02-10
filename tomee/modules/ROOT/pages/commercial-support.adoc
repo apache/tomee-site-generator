@@ -6,7 +6,7 @@ The Apache TomEE PMC does not endorse or recommend any of the products or servic
 We love all our supporters equally.
 
 Want to be added to this page?
-xref:add-my-offering.adoc[See here.]
+xref:0.0@tomee::add-my-offering.adoc[See here.]
 
 === Tomitribe
 

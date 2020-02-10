@@ -27,7 +27,7 @@ about you. Welcome to the adventure!
 
 === What is the process?
 
-Check and follow the xref:workflow.adoc[workflow for contributing].
+Check and follow the xref:community/contributing/workflow.adoc[workflow for contributing].
 
 After a while when people feel comfortable with you as contributor, they vote you in as a committer and ... big surprise ... there's almost no change in the daily routine. You get access to svn and pretty much everything else stays the same. Instead of submitting patches, now you have to help review them and commit them. Instead of learning how to contribute to an open source project, now you have to learn how to help others get involved. And of course it doesn't happen all at once, you never stop learning these things and you never stop wishing you had more time.
 

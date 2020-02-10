@@ -20,4 +20,4 @@ If you want to help, contact the assigned person using the mailing list or write
 To inform others that you are working on a task, the corresponding ticket in JIRA should be assigned to you. +
 If you don't have permission to assign tickets (there is no edit sign behind the Field "Assignee"), just ask on the developers mailing list.
 
-(xref:workflow.adoc[back to Contribution workflow])
+(xref:community/contributing/workflow.adoc[back to Contribution workflow])

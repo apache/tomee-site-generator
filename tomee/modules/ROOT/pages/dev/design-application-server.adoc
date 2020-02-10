@@ -2,7 +2,7 @@ Title: Design - Application Server +++<a name="Design-ApplicationServer-Applicat
 
 == Application Server
 
-Sub-component of xref:design.adoc[OpenEJB]
+Sub-component of xref:dev/design.adoc[OpenEJB]
 
 +++<a name="Design-ApplicationServer-Definition">++++++</a>+++
 
@@ -37,5 +37,5 @@ Any component wishing to serve or deliver Enterprise JavaBeans.
 
 == Implementations
 
-* xref:design-local-server.adoc[Local Server]
-* xref:design-remote-server.adoc[Remote Server]
+* xref:dev/design-local-server.adoc[Local Server]
+* xref:dev/design-remote-server.adoc[Remote Server]

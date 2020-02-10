@@ -38,7 +38,7 @@ NOTE: This method does not require the GIT client.
 
 +++<a name="SourceCode-Contributors">++++++</a>+++ *** GIT Information for TomEE Contributors
 
-*Please read our own detailed GitFlow workflow information xref:git.adoc[here]*
+*Please read our own detailed GitFlow workflow information xref:dev/git.adoc[here]*
 
 We will be using the https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow[Gitflow Workflow] from day one.
 Please read and understand how this works.

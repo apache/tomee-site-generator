@@ -52,4 +52,4 @@ These are ok, much better than just a number.  Subjects are often truncated.  Th
 
 Here we flip it.  The real subject as at the beginning.  The verbs and generic nouns like "options" come after.  When you can pull it off, huge respect. 
 
-(xref:workflow.adoc[back to Contribution workflow])
+(xref:community/contributing/workflow.adoc[back to Contribution workflow])

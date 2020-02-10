@@ -39,7 +39,12 @@ A complete xref:tomee-1.7.3-release-notes.adoc[Changelog] can be viewed here:
 
 xref:tomee-1.7.3-release-notes.adoc[tomee-1.7.3-release-notes.html]
 
-Please feel free to jump in feet first and xref:documentation.adoc[get started with TomEE].
+Please feel free to jump in feet first and 
+//FIXME CHOOSE ONE
+xref:0.0@tomee::documentation.adoc[]
+xref:7.0@tomee::documentation.adoc[]
+xref:7.1@tomee::documentation.adoc[]
+xref:8.0@tomee::documentation.adoc[get started with TomEE].
 You will nearly always find someone to help you on one of our xref:support.adoc[support channels].
 
 *** Java EE7 and Beyond

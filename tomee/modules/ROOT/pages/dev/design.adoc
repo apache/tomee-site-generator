@@ -40,9 +40,9 @@ A modular, configurable, customizable, embeddable open source EJB container syst
 
 == Sub-components
 
-* xref:design-application-server.adoc[Application Server]
-* xref:design-transaction-service.adoc[Transaction Service]
-* xref:design-security-service.adoc[Security Service]
-* xref:design-resource-manager.adoc[Resource Manager]
-* xref:design-container.adoc[Container]
-* xref:design-assembler.adoc[Assembler]
+* xref:dev/design-application-server.adoc[Application Server]
+* xref:dev/design-transaction-service.adoc[Transaction Service]
+* xref:dev/design-security-service.adoc[Security Service]
+* xref:dev/design-resource-manager.adoc[Resource Manager]
+* xref:dev/design-container.adoc[Container]
+* xref:dev/design-assembler.adoc[Assembler]

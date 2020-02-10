@@ -279,7 +279,7 @@ list_mirrors | while read n; do
 done | sort | grep 'http'
 ....
 
-Commit and publish changes to the site, see xref:release-tomee.adoc#staging[Site Staging]
+Commit and publish changes to the site, see xref:dev/release-tomee.adoc#staging[Site Staging]
 
  https://cms.apache.org/tomee/publish
 

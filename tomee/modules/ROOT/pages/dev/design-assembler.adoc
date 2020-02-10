@@ -4,7 +4,7 @@ Title: Design - Assembler
 
 == Assembler
 
-Sub-component of xref:design.adoc[OpenEJB]
+Sub-component of xref:dev/design.adoc[OpenEJB]
 
 +++<a name="Design-Assembler-Definition">++++++</a>+++
 
@@ -36,4 +36,4 @@ Doing this comes with large amounts of resposibility and complexity and should n
 
 == Implementations
 
-* xref:design-classic-assembler.adoc[Classic Assembler]
+* xref:dev/design-classic-assembler.adoc[Classic Assembler]

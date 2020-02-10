@@ -4,7 +4,7 @@ Title: Design - Transaction Service
 
 == Transaction Service
 
-Sub-component of xref:design.adoc[OpenEJB]
+Sub-component of xref:dev/design.adoc[OpenEJB]
 
 +++<a name="Design-TransactionService-Definition">++++++</a>+++
 
