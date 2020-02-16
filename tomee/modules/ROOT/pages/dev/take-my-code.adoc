@@ -1,4 +1,5 @@
-Title: Take My Code Gladly!
+= Take My Code Gladly!
+
 We (the individuals who makeup the community) will happily take your code.
 
 The easiest way for us to take code both legally and practically is by:

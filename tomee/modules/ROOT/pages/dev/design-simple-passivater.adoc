@@ -1,18 +1,12 @@
-Title: Design - Simple Passivater
-
-+++<a name="Design-SimplePassivater-SimplePassivater">++++++</a>+++
+= Design - Simple Passivater
 
 == Simple Passivater
 
 Implementation of xref:dev/design-passivation-strategy.adoc[Passivation Strategy]
 
-+++<a name="Design-SimplePassivater-Description">++++++</a>+++
-
 == Description
 
 A PassivationStrategy that idividually passivates bean instances to a binary file.
-
-+++<a name="Design-SimplePassivater-RelatedClasses">++++++</a>+++
 
 == Related Classes
 

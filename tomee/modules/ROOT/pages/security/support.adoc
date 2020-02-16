@@ -10,25 +10,25 @@ Please be aware when asking questions that the Apache Software Foundation does n
 All community support comes from volunteers on a volunteer basis.
 Joining the xref:../community/index.adoc[Community] as a volunteer and helping your fellow users is highly encouraged!
 
-=== Mailing Lists
+== Mailing Lists
 
 - mailto:users@tomee.apache.org[User Mailing List] (mailto:users-subscribe@tomee.apache.org[Subscribe now] | mailto:users-unsubscribe@tomee.apache.org[Unsubscribe]): for all your questions or to share the issues you can meet
 - mailto:dev@tomee.apache.org[Dev Mailing List] (mailto:dev-subscribe@tomee.apache.org[Subscribe now] | mailto:dev-unsubscribe@tomee.apache.org[Unsubscribe]): to speak about the project and developments
 - mailto:commits@tomee.apache.org[Commits Mailing List] (mailto:commits-subscribe@tomee.apache.org[Subscribe now] | mailto:commits-unsubscribe@tomee.apache.org[Unsubscribe]): receive commits by mail
 
 
-=== IRC
+== IRC
 
 http://webchat.freenode.net/?channels=openejb[openejb @ freenode] is the channel most of us use.
 
-=== Forums
+== Forums
 
 Our forum (mailing lists archives) can be accessed through http://tomee-openejb.979440.n4.nabble.com/[Nabble].
 
-=== Bugtracker/JIRA
+== Bugtracker/JIRA
 
 If you encounter a bug or want to submit a patch just go on our https://issues.apache.org/jira/browse/TOMEE[JIRA].
 
-=== Commercial Support
+== Commercial Support
 
-If you need advanced support with SLA please have a look to our xref:../community/commercial.adoc[Commercial] page.
+If you need advanced support with SLA please have a look to our xref:community/commercial.adoc[Commercial] page.

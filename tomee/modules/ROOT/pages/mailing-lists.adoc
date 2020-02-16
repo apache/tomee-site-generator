@@ -1,10 +1,6 @@
-:doctype: book
+= Mailing Lists
 
-Title: Mailing Lists
-
-+++<a name="MailingLists-UserMailingList">++++++</a>+++
-
-= User Mailing List
+== User Mailing List
 
 Where the general TomEE community goes to ask questions, make suggestions, chat  with other users and developers, and keep a finger on the pulse of the project.
 
@@ -14,16 +10,40 @@ Medium volume mailing list, dedicated to the  TomEE community.
 * link:mailto:users-subscribe@tomee.apache.org[Subscribe]
 * link:mailto:users-unsubscribe@tomee.apache.org[Unsubscribe]
 
-TomEE Users Online Archives/Forums:+++<table>++++++<tr>++++++<th>+++Search+++</th>++++++<th>+++Post+++</th>++++++<th>+++Depth+++</th>++++++<th>+++Archive URL+++</th>++++++</tr>+++
-+++<tr>++++++<td>+++(/)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2002+++</td>++++++<td>+++http://openejb.markmail.org/search/?q=type:users+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++(/)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2002+++</td>++++++<td>+++http://marc.info/?l=openejb-user+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++(x)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2006+++</td>++++++<td>+++http://mail-archives.apache.org/mod_mbox/TomEE-users/+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++(/)+++</td>++++++<td>+++(/)+++</td>++++++<td>+++2006+++</td>++++++<td>+++http://n4.nabble.com/OpenEJB-User-f979441.html+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++(/)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2007+++</td>++++++<td>+++http://www.mail-archive.com/users@tomee.apache.org+++</td>++++++</tr>++++++</table>+++
+TomEE Users Online Archives/Forums:
+|===
+|Search
+|Post
+|Depth
+|Archive URL
 
-+++<a name="MailingLists-DeveloperMailingList">++++++</a>+++
+|(/)
+|(x)
+|2002
+|http://openejb.markmail.org/search/?q=type:users
 
-= Developer Mailing List
+|(/)
+|(x)
+|2002
+|http://marc.info/?l=openejb-user
+
+|(x)
+|(x)
+|2006
+|http://mail-archives.apache.org/mod_mbox/TomEE-users/
+
+|(/)
+|(/)
+|2006
+|http://n4.nabble.com/OpenEJB-User-f979441.html
+
+|(/)
+|(x)
+|2007
+|http://www.mail-archive.com/users@tomee.apache.org
+|===
+
+== Developer Mailing List
 
 If you're a developer or contributor on TomEE, this is the place for you.
 Join in on the develpment and planning discussions.
@@ -33,16 +53,40 @@ Get the scoop on the changes that take place in TomEE as our team is hard at wor
 * link:mailto:dev-subscribe@tomee.apache.org[Subscribe]
 * link:mailto:dev-unsubscribe@tomee.apache.org[Unsubscribe]
 
-TomEE Developers Online Archives/Forums:+++<table>++++++<tr>++++++<th>+++Search+++</th>++++++<th>+++Post+++</th>++++++<th>+++Depth+++</th>++++++<th>+++Archive URL+++</th>++++++</tr>+++
-+++<tr>++++++<td>+++(/)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2002+++</td>++++++<td>+++http://openejb.markmail.org/search/?q=type:development+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++(/)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2002+++</td>++++++<td>+++http://marc.info/?l=openejb-development+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++(x)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2006+++</td>++++++<td>+++http://mail-archives.apache.org/mod_mbox/tomee-dev/+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++(/)+++</td>++++++<td>+++(/)+++</td>++++++<td>+++2006+++</td>++++++<td>+++http://n4.nabble.com/OpenEJB-Dev-f982480.html+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++(/)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2007+++</td>++++++<td>+++http://www.mail-archive.com/dev@tomee.apache.org+++</td>++++++</tr>++++++</table>+++
+TomEE Developers Online Archives/Forums:
+|===
+|Search
+|Post
+|Depth
+|Archive URL
 
-+++<a name="MailingLists-CommitMailingList">++++++</a>+++
+|(/)
+|(x)
+|2002
+|http://openejb.markmail.org/search/?q=type:development
 
-= Commit Mailing List
+|(/)
+|(x)
+|2002
+|http://marc.info/?l=openejb-development
+
+|(x)
+|(x)
+|2006
+|http://mail-archives.apache.org/mod_mbox/tomee-dev/
+
+|(/)
+|(/)
+|2006
+|http://n4.nabble.com/OpenEJB-Dev-f982480.html
+
+|(/)
+|(x)
+|2007
+|http://www.mail-archive.com/dev@tomee.apache.org
+|===
+
+== Commit Mailing List
 
 Keep tabs on all the changes to our svn.
 We have mixed a few of the popular perl scripts for cvs email notification as well as added a few features that are all new.
@@ -52,8 +96,30 @@ This new list provides you with as-it-happens information regarding TomEE develo
 * link:mailto:commits-subscribe@tomee.apache.org[Subscribe]
 * link:mailto:commits-unsubscribe@tomee.apache.org[Unsubscribe]
 
-TomEE Commits Online Archives/Forums:+++<table>++++++<tr>++++++<th>+++Search+++</th>++++++<th>+++Post+++</th>++++++<th>+++Depth+++</th>++++++<th>+++Archive URL+++</th>++++++</tr>+++
-+++<tr>++++++<td>+++(/)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2002+++</td>++++++<td>+++http://openejb.markmail.org/search/?q=type:checkins+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++(/)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2004+++</td>++++++<td>+++http://marc.info/?l=openejb-cvs+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++(x)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2006+++</td>++++++<td>+++http://mail-archives.apache.org/mod_mbox/TomEE-commits/+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++(/)+++</td>++++++<td>+++(x)+++</td>++++++<td>+++2007+++</td>++++++<td>+++http://www.mail-archive.com/commits@tomee.apache.org+++</td>++++++</tr>++++++</table>+++
+TomEE Commits Online Archives/Forums:
+|===
+|Search
+|Post
+|Depth
+|Archive URL
+
+|(/)
+|(x)
+|2002
+|http://openejb.markmail.org/search/?q=type:checkins
+
+|(/)
+|(x)
+|2004
+|http://marc.info/?l=openejb-cvs
+
+|(x)
+|(x)
+|2006
+|http://mail-archives.apache.org/mod_mbox/TomEE-commits/
+
+|(/)
+|(x)
+|2007
+|http://www.mail-archive.com/commits@tomee.apache.org
+|===

@@ -1,23 +1,22 @@
-:doctype: book
+= Tomcat ejb-refs
 
-Title: Tomcat ejb-refs +++<a name="Tomcatejb-refs-Via@EJBAnnotation">++++++</a>+++
-
-= Via @EJB Annotation
+== Via @EJB Annotation
 
 Which an be as simple as adding this to your Servlet, Filter, or Listener:
 
+----
  @EJB
  private HelloLocal helloLocal;
+----
 
 See the xref:0.0@tomee::injection-of-other-ejbs-example.adoc[@EJB Injection Example]  for a running example.
 The example uses one ejb to refer to another ejb, but the same rules apply for servlets.
 
-+++<a name="Tomcatejb-refs-Addingejb-refinyourweb.xml">++++++</a>+++
-
-= Adding ejb-ref in your web.xml
+== Adding ejb-ref in your web.xml
 
 Or on the older xml-style:
 
+----
  <ejb-ref>
   <description> EJB Reference to the bean deployed to OpenEJB </description>
   <ejb-ref-name>ejb/hello</ejb-ref-name>
@@ -25,3 +24,4 @@ Or on the older xml-style:
   <home>org.acme.HelloHome</home>
   <remote>org.acme.Hello</remote>
  </ejb-ref>
+----

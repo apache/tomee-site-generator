@@ -1,6 +1,4 @@
-:doctype: book
-
-Title: OpenEJB Release Process
+= OpenEJB Release Process
 
  Note: This information is largely obsolete and remains here for reference only.
 
@@ -19,7 +17,7 @@ mvn clean deploy -Prelease -Dassemble -Dusername=dblevins -DaltDeploymentReposit
 
 {code:none} svn copy -m "TomEE 1.5.1 branch" \   https://svn.apache.org/repos/asf/tomee/tomee/trunk \   https://svn.apache.org/repos/asf/tomee/tomee/branches/tomee-1.5.1
 
-= Merging things from trunk to the branch
+== Merging things from trunk to the branch
 
 ....
 While fixing issues in the branch and trunk in parallel it may happen that some changes in trunk have not been applied to the branch. Provided you're in the branch's directory the following command applies a change from the trunk  to the branch (`{-c 575845`} is the commit number with the fix and the url points to a repo the change is in).
@@ -51,9 +49,7 @@ for n in $@; do
 done
 ....
 
-+++<a name="OpenEJBReleaseProcess-Aggregationintoastage/3.xdirectory">++++++</a>+++
-
-= Aggregation into a stage/3.x directory
+== Aggregation into a stage/3.x directory
 
 ....
 #!/bin/bash
@@ -107,9 +103,7 @@ echo $VER | ssh people.apache.org 'read VER && for n in ~/public_html/stage/repo
 echo $VER | ssh people.apache.org 'read VER && for n in ~/public_html/stage/repo/org/apache/openejb/openejb-tomcat-webapp/$VER/openejb-tomcat-webapp-$VER.war{,.asc,.md5}; do cp $n ~/public_html/stage/$VER/$(basename ${n/-tomcat-webapp-$VER/}); done'
 ....
 
-+++<a name="OpenEJBReleaseProcess-Releasenotes">++++++</a>+++
-
-= Release notes
+== Release notes
 
 ....
 #set( $rpc = $xmlrpc.connect("dblevins:xxxxx","http://issues.apache.org/jira/rpc/xmlrpc") )
@@ -163,9 +157,7 @@ Unimplemented Features, bugs, limitations
 #end
 ....
 
-+++<a name="OpenEJBReleaseProcess-README.htmlfile">++++++</a>+++
-
-= README.html file
+== README.html file
 
 some way to dynamically update this would be great.
 

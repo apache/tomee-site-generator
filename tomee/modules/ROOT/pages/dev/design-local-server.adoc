@@ -1,23 +1,20 @@
-Title: Design - Local Server +++<a name="Design-LocalServer-LocalServer">++++++</a>+++
+= Design - Local Server
 
 == Local Server
 
 Implementation of xref:dev/design-application-server.adoc[Application Server]
 
-+++<a name="Design-LocalServer-Description">++++++</a>+++
 
 == Description
 
 Allows for optimized interaction among beans and clients in the same virtual machine.
 
-+++<a name="Design-LocalServer-AlsoKnownAs">++++++</a>+++
 
 == Also Known As
 
 * IntraVM
 * IntraVM Server
 
-+++<a name="Design-LocalServer-RelatedPackages">++++++</a>+++
 
 == Related Packages
 

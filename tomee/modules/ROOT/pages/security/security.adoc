@@ -4,7 +4,7 @@
 :jbake-status: published
 :jbake-tomeepdf:
 
-=== Security updates
+== Security updates
 
 Please note that, except in rare circumstances, binary patches are not produced for individual vulnerabilities. To obtain the binary fix for a particular vulnerability you should upgrade to an Apache TomEE version where that vulnerability has been fixed.
 
@@ -31,7 +31,7 @@ The private security mailing address is: security (at) apache (dot) org
 
 Note that all networked servers are subject to denial of service attacks, and we cannot promise magic workarounds to generic problems (such as a client streaming lots of data to your server, or re-requesting the same URL repeatedly). In general our philosophy is to avoid any attacks which can cause the server to consume resources in a non-linear relationship to the size of inputs.
 
-=== Third-party projects
+== Third-party projects
 
 Apache is built with the following components. Please see the security advisories information for each component for more information on the security vulnerabilities and issues that may affect that component.
 
@@ -44,7 +44,7 @@ Apache is built with the following components. Please see the security advisorie
 
 By default any regular TomEE releases uses latest sub project releases, so that we can follow all security fixes as much as possible.
 
-=== Apache TomEE versioning details
+== Apache TomEE versioning details
 
 As security is a key concern in many companies, TomEE team also considers to deliver specific security fixes for those external projects being fixed. For instance, if Tomcat fixes a security issue in Tomcat x.y.z, used in TomEE a.b.c, we will consider packaging a new security update release using the new Tomcat release.
 
@@ -56,15 +56,15 @@ In order to achieve a smoothly migration patch between a TomEE version and a sec
 
 Optionally we can concatenate a security update to the version if TomEE source base if not impacted but only a dependency. Note this didn't happen yet.
 
-=== Additional information
+== Additional information
 
-==== Secunia
+=== Secunia
 
 Secunia is an international IT security company specialising in vulnerability management based in Copenhagen, Denmark.
 
 There is an Apache Software Foundation vendor declared so you can follow all vulnerabilities related to Apache products. Of course, a Apache TomEE product is also available so you can search for know advisories.
 
-=== Links
+== Links
 
 - http://apache.org/security/
 - http://apache.org/security/projects.html

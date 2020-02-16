@@ -1,6 +1,6 @@
-:doctype: book
+= Webadmin
 
-Title: Webadmin The Webadmin is a new addition to OpenEJB 1.0 and very innovative in that it lets you plug-in your own admin beans.
+The Webadmin is a new addition to OpenEJB 1.0 and very innovative in that it lets you plug-in your own admin beans.
 Here are some screenshots:
 
 * http://tomee.apache.org/images/webadmin-main.png[Main]
@@ -10,8 +10,6 @@ Here are some screenshots:
 * http://tomee.apache.org/images/webadmin-viewjndi.png[JNDI Viewer]
 * http://tomee.apache.org/images/webadmin-ejbviewer.png[EJB Viewer]
 * http://tomee.apache.org/images/webadmin-objectinvoker.png[Object and EJB Invoker]
-
-+++<a name="Webadmin-EnablingtheWebadminin1.0beta1">++++++</a>+++
 
 == Enabling the Webadmin in 1.0 beta 1
 
@@ -46,9 +44,7 @@ Ready!
 
 Now you can open your browser to go to http://localhost:4203/
 
-+++<a name="Webadmin-WebAdminBeans">++++++</a>+++
-
-= WebAdmin Beans
+== WebAdmin Beans
 
 To create an EJB and have it included as part of the WebAdmin, simply subclass from WebAdminBean and include it in your ejb-jar.xml file as such:
 
@@ -67,7 +63,7 @@ WebAdminBeans are grouped together by the 'menu-section' portion of their ejb-na
 The 'menu-item' is the clickable link that causes the EJB code to be execute.
 Very simple and makes it possible to package administrative components with your EJB applications.
 
-= WebAdmin Plugins
+== WebAdmin Plugins
 
 [cols=2*]
 |===
@@ -76,7 +72,7 @@ Very simple and makes it possible to package administrative components with your
 | http://beangen.sourceforge.net]
 |===
 
-= Developers guide
+== Developers guide
 
 Below is David Blevins' email on how webadmin worked.
 Please have a look at the text below before you start working on porting the existing WebAdmin to version 3.

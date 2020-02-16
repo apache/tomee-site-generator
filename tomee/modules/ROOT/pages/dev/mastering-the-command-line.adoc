@@ -1,5 +1,5 @@
 = Linux/OSX awesomeness
-:doctype: book
+
 
 Not specific to this projec, but can be incredibly useful ways to maximizes your time.
 Mastering the command line is the best way to get things done, quick and cheaply.
@@ -8,11 +8,11 @@ Reapeat after me:
 
 * I will write a script for any tasks I do regularly
 
-= Core commands
+== Core commands
 
 Some very big time-saving commands
 
-== In shell scripts
+=== In shell scripts
 
 * *basename* - what is the file name again?
 not the path, just the file name
@@ -81,12 +81,12 @@ I wish I were a fish.
 * *tr* - echo $PATH
 * *uname* - what system am I on?
 
-== OSX commands
+=== OSX commands
 
 * *pbpaste* - paste the contents of the clipboard to stdout
 * *pbcopy* - copy stdin to the clipbboard
 
-== running shell scripts
+=== running shell scripts
 
 * *bash* - quick way to run a script if it isn't already executable
 * *chmod* - this file should be executable
@@ -101,7 +101,7 @@ I wish I were a fish.
 * *top* - what the heck is chewing up my cpu?
 * *uname* - what system am I on?
 
-= I never use
+== I never use
 
 Some people like it.
 sed -- i always use "perl -pe 's/find/replace/'")

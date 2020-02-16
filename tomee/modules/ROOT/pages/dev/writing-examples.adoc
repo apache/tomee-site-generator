@@ -1,6 +1,4 @@
-:doctype: book
-
-Title: Writing Presentable Examples
+= Writing Presentable Examples
 
 Writing an example is easy.
 Any example is a good one.
@@ -18,7 +16,7 @@ Some basic guidelines of writing examples:
 * be conscious of the cost of "setting the stage"
 * if examples get too big, split it
 
-= Noise vs signal
+== Noise vs signal
 
 It takes time to learn the example scenario (noise).
 You need to learn the scenario before you can start to see the important parts (signal).
@@ -30,7 +28,7 @@ Get to the point in as few classes as possible.
 
 You should be able to explain the entire example in two minutes.
 
-= Five ways to do the same thing
+== Five ways to do the same thing
 
 If there are five ways to do the same thing, avoid making five different scenarios.
 Copy the example to a new directory, and tweak it to show the variation.
@@ -68,7 +66,7 @@ When names and scenarios are consistent, the variations jump out quickly and wit
 
 If there are five ways to do the same thing, show the same thing five different ways.
 
-= Short Class Names
+== Short Class Names
 
 You don't need to document the example with the class name.
 Class names that are a mouthful cannot be effectively used in presentations or screencasts.

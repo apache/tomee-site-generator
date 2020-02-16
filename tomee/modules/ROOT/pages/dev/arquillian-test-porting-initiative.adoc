@@ -1,12 +1,10 @@
-:doctype: book
-
-Title: Arquillian Test Porting Initiative
+= Arquillian Test Porting Initiative
 
 First things, first.
 You can contribute your ideas by clicking the blue pencile icon in the upper right.
 Edit this page and help shape the initiative!
 
-= Unite the Armies to fight the Bugs!
+== Unite the Armies to fight the Bugs!
 
 Testing is the most crucial part of any project.
 A project that incorporates as much functionality as TomEE does needs a _lot_ of tests.
@@ -23,7 +21,7 @@ An unparalleled feat.
 Such a thing has never been done at the ASF.
 Be ready to blaze some trails and be a pioneer.
 
-= The Kingdoms
+== The Kingdoms
 
 There are far more than 3,000 test classes we could port across the various projects, each using it's own flavor of home-made setup code.
 The coverage is also not what you'd expect.
@@ -43,7 +41,7 @@ In all fairness, the projects with so few test are not as "untested" as they app
 This is adequate, but not fantastic.
 *An open source project should have open tests.*
 
-= Generals Needed
+== Generals Needed
 
 This is no small feet.
 With over 3,000 tests porting them all is not realistc.
@@ -60,7 +58,7 @@ Individuals to survey the land and plan attacks with small groups of soldiers.
 Porting 50 tests yourself is impressive.
 Leading the charge on 500 tests being ported is astonishing.
 
-= Early stage
+== Early stage
 
 The tests in question are located more or less here:
 

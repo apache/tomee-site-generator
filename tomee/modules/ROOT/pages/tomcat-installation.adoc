@@ -1,10 +1,6 @@
-:doctype: book
+= Tomcat Installation
 
-Title: Tomcat Installation \{composition-setup} \{composition-setup}
-
-+++<a name="TomcatInstallation-Overview">++++++</a>+++
-
-= Overview
+== Overview
 
 Tomcat installation is very simple, and can be describes as "Unpack and Run".
 These instructions were written using Tomcat 6.0.14 but any recent 6.x version should work.
@@ -18,15 +14,11 @@ otherwise skip to the <<download.html,OPENEJB:Download Tomcat>>  section.
 . Visit http://localhost:8080/
 . Run bin/shutdown.sh or bin/shutdown.bat
 
-+++<a name="TomcatInstallation-{anchor:download}DownloadTomcat">++++++</a>+++
-
-= {anchor:download} Download Tomcat
+== {anchor:download} Download Tomcat
 
 Download Tomcat 6 zip file from http://tomcat.apache.org/download-60.cgi#6.0.14[here] .
 
-+++<a name="TomcatInstallation-UnpackTomcat">++++++</a>+++
-
-= Unpack Tomcat
+== Unpack Tomcat
 
 Unpack the Tomcat zip file  which will create a new directory containing the complete Tomcat installation.
 
@@ -56,7 +48,7 @@ NOTICE	       RUNNING.txt    conf/	     logs/	    webapps/
 
 \{deck}
 
-= [OPENEJB:Windows](openejb:windows.html)
+== [OPENEJB:Windows](openejb:windows.html)
 
 Set JAVA_HOME environment variable
 
@@ -67,7 +59,7 @@ The following command will set the JAVA_HOME environment variable:
 
  {deck}
 
-= [OPENEJB:Unix]
+== [OPENEJB:Unix]
 
 Make shell scripts executable
 
@@ -83,7 +75,7 @@ apache-tomcat-6.0.14$ chmod u+x bin/*.sh
 
 +++<a name="TomcatInstallation-StartTomcat">++++++</a>+++
 
-= Start Tomcat
+== Start Tomcat
 
 Execute the following command to start the Tomcat server:
 
@@ -106,15 +98,11 @@ Using JRE_HOME:        /your/java/installation
 
 _NOTE:_ Your output will be different from the example above due to differences in installation location.
 
-+++<a name="TomcatInstallation-VerifyTomcatisRunning">++++++</a>+++
-
-= Verify Tomcat is Running
+== Verify Tomcat is Running
 
 Visit http://localhost:8080/  and you should see the Tomcat welcome page.
 
-+++<a name="TomcatInstallation-StopTomcat">++++++</a>+++
-
-= Stop Tomcat
+== Stop Tomcat
 
 Shutdown Tomcat by executing the following command:
 

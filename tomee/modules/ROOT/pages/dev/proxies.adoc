@@ -1,8 +1,6 @@
-:doctype: book
+= Proxies
 
-Title: Proxies +++<a name="Proxies-Where'stheJavasourcefortheproxies?">++++++</a>+++
-
-= Where's the Java source for the proxies?
+== Where's the Java source for the proxies?
 
 The short answer is we do not generate java code containing any ejb logic at all as other platforms like WebSphere and WebLogic do.
 We use dynamic proxy generation via java.lang.reflect.Proxy.

@@ -1,10 +1,8 @@
 = Tips and Suggestions
 
 
-[#TipsandSuggestions-Usefulinformationforcontributors]
 == Useful information for contributors
 
-[#TipsandSuggestions-JIRAusage]
 === JIRA usage
 It's good to leverage JIRA, but everything that happens there should be
 considered invisible for the most part and only reviewed on a random and
@@ -52,7 +50,6 @@ description has some good information:
 {+}If you'd like to get added to the openejb-contributors JIRA group, just
 ping the list with your JIRA id and someone will add you.{+}
 
-[#TipsandSuggestions-Commits]
 === Commits
 
 *Contributed by*: David Blevins
@@ -86,11 +83,9 @@ way though :-)
 As far as jira titles, I always *try and make them short and succinct* for
 the future release notes.
 
-[#TipsandSuggestions-SVN+JIRA]
 === SVN + JIRA
 
 
-[#TipsandSuggestions-*Contributedby*:Vamsi]
 ==== *Contributed by*: Vamsi
 
 I had trouble figuring out if a revision is related to a JIRA and what all
@@ -107,7 +102,6 @@ modify an existing file, I always check if I have to add these missing
 $Rev$ $Date$ and add those so that the file will have them from my next
 commit onwards.
 
-[#TipsandSuggestions-*Contributedby*:DavidBlevins]
 ==== *Contributed by*: David Blevins
 
 > If you put "\[jira\](jira\.html)
@@ -115,7 +109,6 @@ commit onwards.
 > email gets added as a comment with all '> quoted' text stripped out.
 PS: XXX is the JIRA issue number
 
-[#TipsandSuggestions-Details]
 ==== Details
 
 The following subject lines did work:
@@ -184,8 +177,7 @@ David
 
 </three>
 
-=== scp, ssh, and rsync examples for working with files and directories on
-people.apache.org
+=== scp, ssh, and rsync examples for working with files and directories on people.apache.org
 
 *Contributed by*: David Blevins
 
@@ -249,7 +241,6 @@ on people.apache.org
 and if you want to access your home page, you should create a dir with the
 name public_html, and then upload files to it.
 
-[#TipsandSuggestions-Acoolsubversiontip]
 === A cool subversion tip
 
 *Contributed by*: Jacek Laskowski.
@@ -331,8 +322,6 @@ svn:mime-type=text/plain;svn:eol-style=native;svn:keywords=Date
 Revision
 ----
 
-
-[#TipsandSuggestions-Maventips]
 === Maven tips
 
 *Contributed by:* Jacek and David
@@ -402,9 +391,9 @@ commands will not be executed.
 > If you want to be thorough, run with \-Dassemble.
 ----
 
-[#TipsandSuggestions-JAXBUsage]
 === JAXB Usage
-{note:title=TODO}
+
+TODO:
 Create a write up from here
 http://www.nabble.com/jaxb-question-td18023648.html
-{note}
+

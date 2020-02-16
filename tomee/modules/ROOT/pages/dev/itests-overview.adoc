@@ -1,8 +1,6 @@
-:doctype: book
+= iTests Overview
 
-Title: iTests Overview +++<a name="iTestsOverview-Motivation">++++++</a>+++
-
-= Motivation
+== Motivation
 
 The basic idea behind itests that makes them slightly different than plain junit tests ran by maven is that it's assumed that there are other systems (servers, databases, brokers, etc) that need to be started or connected to before the tests can run.
 The tests themselves don't setup the other systems themselves so that the tests don't become coupled with them and you can actually swap out various aspects of those systems behind the back of the tests;
@@ -13,15 +11,11 @@ It took a lot of work to get them to run as part of the maven build and the ites
 
 Definitely give those a look at:  http://svn.apache.org/viewvc/tomee/tomee/trunk/itests/
 
-+++<a name="iTestsOverview-Pluggingin">++++++</a>+++
-
-= Plugging in
+== Plugging in
 
 You can have systems started and stopped before and after the tests in a number of ways.
 
-+++<a name="iTestsOverview-Inmaven1">++++++</a>+++
-
-== In maven 1
+=== In maven 1
 
 This series of articles established a basic technique for Container Driven Testing with Maven and OpenEJB using preGoals and postGoals to do server and databse setup and teardown before and after Maven runs the unit tests.
 http://www.theserverside.com/articles/article.tss?l=ContainerDrivenTestingSeries
@@ -37,16 +31,12 @@ http://maven.apache.org/plugins-sandbox/itest/
 
 ActiveMQ later started using the itest plugin and now has a large suite of their own JMS specific integration tests.
 
-+++<a name="iTestsOverview-Inmaven2">++++++</a>+++
-
-== In maven 2
+=== In maven 2
 
 The concept of integration tests (itests) has been built into the lifecycle of maven 2, so it is no longer required to have the itest plugin around to get the extra "itest:setup" and "itest:teardown" goals.
 See this document for more info:  http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
 
-+++<a name="iTestsOverview-Injunitsetupandteardown">++++++</a>+++
-
-== In junit setup and teardown
+=== In junit setup and teardown
 
 The ejb tests in particular require you to plug in facades for the server and the database so the client (the tests) can say "give me an initial context" or "create these tables i need" in a generic way.
 It's assumed that those systems were setup and guaranteed in working state in the itest setup phase.
@@ -60,9 +50,7 @@ Using the itest concept you could setup any system you need before hand, then ju
 So it's not limited to just a server or a database.
 You could do queue, topic, clustering heartbeat agent, directory server, etc.
 
-+++<a name="iTestsOverview-Testingmatrix">++++++</a>+++
-
-= Testing matrix
+== Testing matrix
 
 Even with just what we have we can get quite far.
 In a perfect world, we would actually test against the full matrix:

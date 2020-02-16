@@ -1,4 +1,4 @@
-Title: Working on the Website
+= Working on the Website
 
 The easiest way to edit is to simply click the blue pencil icon in the upper right.
 Have fun!
@@ -26,7 +26,7 @@ Enter the optional log message and click "sumbit", then done!
 
 The login information is cached for a while, so you won't have to enter user/pass information each time.
 
-== Building Locally +++<small>+++optional+++</small>+++
+== Building Locally
 
 Should you want to build the site locally, you can do so pretty easily with the right perl modules installed.
 

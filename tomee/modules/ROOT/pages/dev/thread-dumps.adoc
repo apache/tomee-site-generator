@@ -1,8 +1,6 @@
-:doctype: book
+= Thread Dumps
 
-Title: Thread Dumps +++<a name="ThreadDumps-Java5tools">++++++</a>+++
-
-= Java 5 tools
+== Java 5 tools
 
 This should work on any Java 5 or newer platform.
 
@@ -25,12 +23,10 @@ Thread t@59139: (state = BLOCKED)
 - java.lang.Thread.run() @bci=11, line=613 (Interpreted frame)
 ----
 
-+++<a name="ThreadDumps-OSsignals">++++++</a>+++
-
-= OS signals
+== OS signals
 
 In the case of an OS signal the thread dump is printed to the console window that started the java process.
 If you use javaw to start the process, the dump is lost.
 
 On Windows, typing _ctrl-break_ in the console window that started the Java process.
-On Unix, the command *kill -QUIT +++<pid>+++* or typing *ctrl-&#92;* in the console window that started the Java process.+++</pid>+++
+On Unix, the command *kill -QUIT <pid>* or typing *ctrl-&#92;* in the console window that started the Java process.

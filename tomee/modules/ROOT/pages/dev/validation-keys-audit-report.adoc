@@ -1,5 +1,12 @@
-Title: Validation Keys Audit Report {warning:title=Warning}This page is auto-generated.
-Any manual changes would be over-written the next time this page is regenerated\{warning} {info:title=Audit Result}h2.Out of a total of 144 keys, 123 have been tested.
+= Validation Keys Audit Report
+
+Warning: This page is auto-generated.
+Any manual changes would be over-written the next time this page is regenerated
+
+TODO: figure out if this page is still relevant, it certainly isn't being generated any more.
+
+== Out of a total of 144 keys, 123 have been tested.
+
 Test coverage for keys is 85.41666666666666 %.\{info} {table-plus:autoNumber=true}
 
 | abstractAnnotatedAsBean |   | ann.ejb.beanClass |   | ann.ejb.notInterface |   | ann.localRemote.generalconflict |   | asynchronous.badExceptionType |   | asynchronous.badReturnType |   | asynchronous.methodignored |   | asynchronous.missing |   | callback.missing.possibleTypo |   | cannot.validate |   | client.missingMainClass |   | ignoredClassAnnotation |   | interfaceAnnotatedAsBean |   | missing.dependent.class |   | misslocated.class |   | multiplyAnnotatedAsBean |   | timeout.badReturnType |   | timeout.invalidArguments |   | timeout.missing.possibleTypo |   | timeout.tooManyMethods |   | xml.noEjbClass |  \{table-plus} +++<a name="ValidationKeysAuditReport-Listofkeyswhichhavebeentested.">++++++</a>+++

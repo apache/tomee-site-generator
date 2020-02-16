@@ -1,24 +1,16 @@
-Title: Design - Random Access File Passivater
-
-+++<a name="Design-RandomAccessFilePassivater-RandomAccessFilePassivater">++++++</a>+++
+= Design - Random Access File Passivater
 
 == Random Access File Passivater
 
 Implementation of xref:dev/design-passivation-strategy.adoc[Passivation Strategy]
 
-+++<a name="Design-RandomAccessFilePassivater-Description">++++++</a>+++
-
 == Description
 
 A PassivationStrategy that bulk passivates bean instances to a random access file.
 
-+++<a name="Design-RandomAccessFilePassivater-AlsoKnownAs">++++++</a>+++
-
 == Also Known As
 
 * RAF Passivater
-
-+++<a name="Design-RandomAccessFilePassivater-RelatedClasses">++++++</a>+++
 
 == Related Classes
 

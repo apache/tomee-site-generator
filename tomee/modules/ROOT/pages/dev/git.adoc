@@ -1,6 +1,6 @@
-Title: GIT for TomEE Developers
+= GIT for TomEE Developers
 
-*** The GitFlow Workflow
+== The GitFlow Workflow
 
 Notes before you begin (mostly for SVN users):
 

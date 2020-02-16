@@ -1,9 +1,10 @@
-Title: Tomcat CDI
+= Tomcat CDI
 
 Tomcat + Java EE = TomEE, the Java Enterprise Edition of Tomcat.
 With TomEE you get Tomcat with CDI added and integrated and ready to go!
 
-....
+[source,java]
+----
 import javax.annotation.Resource;
 import javax.enterprise.inject.spi.BeanManager;
 import javax.inject.Inject;
@@ -25,13 +26,15 @@ public class MyServlet extends HttpServlet {
 
     }
 }
-....
+----
 
 Where `Car` could be any POJO with a no-arg constructor.
 Additionally it's quite easy to create a factory to create the car you want injected.
 Simply do as follows:
 
-....
+[source,java]
+----
+
 import javax.enterprise.inject.Produces;
 
 public class AssemblyLine {
@@ -41,7 +44,7 @@ public class AssemblyLine {
         return new Car("Ferrari", "458 Italia", 2012);
     }
 }
-....
+----
 
 So when will the `Car` be created?
 In the above it will be created when `MyServlet` is created.
@@ -59,6 +62,8 @@ Any jar in your webapp with the above will automatically be CDI enabled and all 
 All this is setup and ready to go!
 Spend your time learning and having fun and writing your app, don't spend it chasing down libraries and integrating things the hard way.
 
-xref:downloads.adoc[Download] TomEE and you're minutes away from having fun with CDI on Tomcat.
+xref:downloads-ng.adoc[Download] TomEE and you're minutes away from having fun with CDI on Tomcat.
 
-{include:apache-tomee.mdtext}
+TODO what?
+
+include:apache-tomee.adoc

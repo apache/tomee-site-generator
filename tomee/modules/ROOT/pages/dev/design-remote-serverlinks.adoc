@@ -1,1 +1,3 @@
-Title: Design - Remote ServerLinks {include:Design - Application ServerLinks}
+= Design - Remote ServerLinks
+
+include:design-application-serverlinks.adoc[leveloffset=+1]

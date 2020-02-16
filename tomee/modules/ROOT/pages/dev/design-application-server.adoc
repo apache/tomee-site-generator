@@ -1,23 +1,20 @@
-Title: Design - Application Server +++<a name="Design-ApplicationServer-ApplicationServer">++++++</a>+++
+= Design - Application Server
 
 == Application Server
 
 Sub-component of xref:dev/design.adoc[OpenEJB]
 
-+++<a name="Design-ApplicationServer-Definition">++++++</a>+++
 
 == Definition
 
 Any component wishing to serve or deliver Enterprise JavaBeans.
 
-+++<a name="Design-ApplicationServer-AlsoKnownAs">++++++</a>+++
 
 == Also Known As
 
 * Server Adapter
 * Server Provider
 
-+++<a name="Design-ApplicationServer-Responsibilities">++++++</a>+++
 
 == Responsibilities
 
@@ -27,13 +24,11 @@ Any component wishing to serve or deliver Enterprise JavaBeans.
 * Provide clients with a JNDI name space for looking up beans.
 * Delegate method invocations to the container.
 
-+++<a name="Design-ApplicationServer-RelatedClasses">++++++</a>+++
 
 == Related Classes
 
 * org.apache.openejb.spi.ApplicationServer
 
-+++<a name="Design-ApplicationServer-Implementations">++++++</a>+++
 
 == Implementations
 

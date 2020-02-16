@@ -7,7 +7,7 @@
 
 
 
-=== JIRA ticket
+== JIRA ticket
 - create ticket in JIRA, if not already existing
 - if ticket already assigned to someone else => talk
 - assign ticket to contributor, if not already assigned +
@@ -15,7 +15,7 @@
 
 
 
-=== Process Task
+== Process Task
 - fork repository
 - create branch in own repository (name = JIRA ticket id)
 - discuss on mailing list
@@ -23,18 +23,18 @@
 - document work in JIRA ticket +
   (xref:community/contributing/process-task.adoc[more details])
 
-=== Submit Changes
+== Submit Changes
 - ensure code compiles 
 - ensure tests passes
 - create PR (pull request)
 - ask for review on mailing list +
   (xref:community/contributing/submit-changes.adoc[more details])
 
-=== Merge Changes (done by a committer)
+== Merge Changes (done by a committer)
 - review changes
 - merge code
 - change JIRA ticket status / close ticket +
 
-=== Cleanup
+== Cleanup
 - wait until PR is merged (ticket status change)
 - remove branch in own repository +

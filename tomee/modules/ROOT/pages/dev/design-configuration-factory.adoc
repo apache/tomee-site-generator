@@ -1,12 +1,8 @@
-Title: Design - Configuration Factory
-
-+++<a name="Design-ConfigurationFactory-ConfigurationFactory">++++++</a>+++
+ Design - Configuration Factory
 
 == Configuration Factory
 
 Sub-component of xref:dev/design-classic-assembler.adoc[Classic Assembler]
-
-+++<a name="Design-ConfigurationFactory-Definition">++++++</a>+++
 
 == Definition
 
@@ -14,28 +10,20 @@ Creates an instance of the OpenEjbConfiguration class that contains all the data
 The object structure in the OpenEjbConfiguration class is refered to as the InfoObjects.
 The Configuration Factory can construct, retreive, or populate the InfoObjects from any data source it chooses or by any means it chooses.
 
-+++<a name="Design-ConfigurationFactory-AlsoKnownAs">++++++</a>+++
-
 == Also Known As
 
 * Config Factory
 * InfoObject Factory
-
-+++<a name="Design-ConfigurationFactory-Responsibilities">++++++</a>+++
 
 == Responsibilities
 
 * Creates an instance of the OpenEjbConfiguration
 * The data in the InfoObjects must be validated and accurately represent the system, services, jars, and beans to be constructed
 
-+++<a name="Design-ConfigurationFactory-RelatedClasses">++++++</a>+++
-
 == Related Classes
 
 * org.apache.openejb.assembler.classic.OpenEjbConfigurationFactory
 * org.apache.openejb.assembler.classic.OpenEjbConfiguration
-
-+++<a name="Design-ConfigurationFactory-Implementations">++++++</a>+++
 
 == Implementations
 

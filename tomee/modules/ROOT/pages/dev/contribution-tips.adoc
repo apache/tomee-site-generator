@@ -1,10 +1,6 @@
-:doctype: book
+= Contribution Tips
 
-Title: Contribution Tips
-
-+++<a name="ContributionTips-Firststeps">++++++</a>+++
-
-= First steps
+== First steps
 
 . Subscribe to the link:mailto:dev-subscribe@tomee.apache.org[developer mailing list] and say Hi
 . Get the source code with svn
@@ -32,9 +28,7 @@ Some of the neater ones are (ordered simple to complex):
 * http://tomee.apache.org/examples-trunk/testing-security-2/README.html[testing-security-2]
 * http://tomee.apache.org/examples-trunk/simple-webservice/README.html[simple-webservice]
 
-+++<a name="ContributionTips-Whatistheprocess?">++++++</a>+++
-
-= What is the process?
+== What is the process?
 
 ....
 public void contributeToOpenSource() {
@@ -102,9 +96,7 @@ It's very much about the journey and there is no real end as long as you're havi
 Probably finding something to do when you do have time is the hardest part ...
 that never changes.
 
-+++<a name="ContributionTips-BeBrave">++++++</a>+++
-
-= Be Brave
+== Be Brave
 
 Don't assume everything has already been discussed a million times and you're the only one who doesn't know and so you shouldn't bother anyone and should just figure it out on your own.
 That thinking is your enemy.
@@ -126,9 +118,7 @@ Maybe it's like Karaoke;
 if the people singing sound like you when you sing, there are better odds you might get up and sign too.
 Seeing people like yourself do the things you want to do is inspiring.
 
-+++<a name="ContributionTips-StartSmall">++++++</a>+++
-
-= Start Small
+== Start Small
 
 You may suddenly get a creative surge and see many many things that could be done.
 One thing you learn about open source is that you never know when life is going to intervene and you have to stop.
@@ -148,9 +138,7 @@ Don't work too long in isolation.
 
 Start small, get it checked in (or patch submitted) and work iteratively.
 
-+++<a name="ContributionTips-Thingsthatalwaysneeddoing">++++++</a>+++
-
-= Things that always need doing
+== Things that always need doing
 
 * Final variables & fields are preferred where possible, but a lot of the code is old.
 Feel free to add them and hand the code back.
@@ -171,14 +159,9 @@ But sometimes the above tasks can lead to more fun and exciting things.
 Anything that gets you in and looking at code and actually touching and changing it usually results in questions, discussions and ideas...
 then little passions and late nights and lack of sleep and caffeine abuse.
 
-+++<a name="ContributionTips-Thingstoavoid">++++++</a>+++
+== Things to avoid
 
-= Things to avoid
-
-+++<a name="ContributionTips-Hugepatches">++++++</a>+++
-
-[discrete]
-==== Huge patches
+=== Huge patches
 
 Huge patches are hard to digest.
 Try to avoid them whenever possible.
@@ -186,10 +169,7 @@ Any step forward is a good one.
 Small steps allow people to see where you're headed and give input.
 That's true regardless if you are a committer or contributor.
 
-+++<a name="ContributionTips-Becarefulwithreformatting">++++++</a>+++
-
-[discrete]
-==== Be careful with reformatting
+=== Be careful with reformatting
 
 Try to never mix logic changes with code reformatting.
 It makes it nearly impossible for others to see what the actual change was.

@@ -1,11 +1,12 @@
-Title: Tomcat and ActiveMQ
+= Tomcat and ActiveMQ
 
 Tomcat + Java EE = TomEE, the Java Enterprise Edition of Tomcat.
 With TomEE you get Tomcat with ActiveMQ added and integrated and ready to go!
 
 In a plain Servlet, Filter or Listener you can do fun things like injection of JMS Topics or Queues:
 
-....
+[source,java]
+----
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServlet;
 import javax.jms.Topic;
@@ -47,11 +48,14 @@ public class MyServet extends HttpServlet {
     }
 
 }
-....
+----
 
 No need to add even a single library!
 In the above scenario even the "foo" Topic and the "bar" Queue would be automatically created with no configuration necessary.
 
-xref:downloads.adoc[Download] TomEE and you're minutes away from a functioning JMS application on Tomcat.
+xref:downloads-ng.adoc[Download] TomEE and you're minutes away from a functioning JMS application on Tomcat.
 
-{include:apache-tomee.mdtext}
+
+TODO what?
+
+include:apache-tomee.adoc

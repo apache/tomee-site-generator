@@ -1,5 +1,4 @@
 = xbean-finder
-:doctype: book
 
 == AnnotationFinder
 
@@ -192,7 +191,7 @@ You just:
 Obviously, the above style to object creation couples really well to the `ResourceFinder` method that gives you Properties objects back.
 You put the class name and config for your plugin in the properties files and pass the properties right into the ObjectRecipe and more or less get a little do-it-yourself IoC plugin system.
 
-= OpenEJB/TomEE
+== OpenEJB/TomEE
 
 Here is a grep of some of the calls made to `AnnotationFinder`.
 Most of this code is in an OpenEJB class called `AnnotationDeployer` whose primary job is to merge the @annotation and +++<xml>+++metadata into one tree.+++</xml>+++

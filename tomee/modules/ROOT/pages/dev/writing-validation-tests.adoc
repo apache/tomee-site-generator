@@ -1,6 +1,5 @@
-Title: Writing Validation Tests
+= Writing Validation Tests
 
-+++<a name="WritingValidationTests-Summary">++++++</a>+++
 
 == Summary
 
@@ -9,7 +8,6 @@ If you are writing some code which validates some rules, you should definitely w
 A little validation test framework is available to write tests specifically for Validation.
 This page explains the details of writing such tests using example snippets.
 
-+++<a name="WritingValidationTests-TheValidationFramework">++++++</a>+++
 
 == The Validation Framework
 
@@ -61,8 +59,6 @@ Here is an _example validation message_
 . The validation framework does not stop processing on the first validation failure, but keeps going and checking for other validation errors and reports them all to the user.
 This allows the user to fix all errors in one go and re-attempt deploying the application.
 
-+++<a name="WritingValidationTests-TheValidationTestFramework">++++++</a>+++
-
 == The Validation Test Framework
 
 . The test framework is specifically written with the following goals in mind:
@@ -95,9 +91,9 @@ Simply invoke the following maven command
 +
 mvn test -Dtest=ValidationKeysAuditorTest -DconfluenceUsername=YourConfluenceUsername -DconfluencePassword=YourConfluencePassword
 
-The above command will create a complete test coverage report and post it to this location xref:openejb:validation-keys-audit-report.adoc[OPENEJB:Validation Keys Audit Report]
+The above command will create a complete test coverage report and post it to this location xref:validation-keys-audit-report.adoc[Validation Keys Audit Report]
 
-*** Quick facts about ValidationRunner and things to keep in mind while writing tests
+=== Quick facts about ValidationRunner and things to keep in mind while writing tests
 
 This class is created specifically to write tests which test OpenEjb validation code.
 Specifically, it is used to check the usage of keys defined in `org.apache.openejb.config.rules.Messages.properties`.

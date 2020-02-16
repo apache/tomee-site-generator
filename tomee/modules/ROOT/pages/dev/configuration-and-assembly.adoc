@@ -1,15 +1,11 @@
-:doctype: book
-
-Title: Configuration and Assembly
+= Configuration and Assembly
 
 Disclaimer that we do tweak and change this code frequently, without notice.
 It is the very heart of OpenEJB.
 To keep things tight and clean, we reserve the right to change it at anytime.
 Do not consider it a stable public API.
 
-+++<a name="ConfigurationandAssembly-OverviewinCode">++++++</a>+++
-
-= Overview in Code
+== Overview in Code
 
 First a glimpse of how OpenEJB looks internally.
 Here's a test that builds OpenEJB using it's internal API.
@@ -90,9 +86,7 @@ public class StatefulTest extends TestCase {
 }
 ....
 
-+++<a name="ConfigurationandAssembly-LogicalOverview">++++++</a>+++
-
-= Logical Overview
+== Logical Overview
 
 Slightly more detailed account of the above.
 Our startup and deploy world is broken into two phases:
@@ -121,9 +115,7 @@ Some of the steps are
 
 The listings above aren't necesarrily complete or perfectly ordered, but generally show the nature of the work done in each phase.
 
-+++<a name="ConfigurationandAssembly-ConfigurationPhase">++++++</a>+++
-
-== Configuration Phase
+=== Configuration Phase
 
 A goal is that nothing gets through configuration and into assembly if it can't actually be built.
 The configuration phase is where we're supposed to wipe away any ambiguity, fully normalize the app, make sure it's internally consistent, spec compliant and generally good to go.
@@ -131,9 +123,7 @@ If it's not, no worries as we actually haven't built anything permanent yet.
 Everything in the configuration phase is temporary.
 If it fails the configuration phase we just issue an error and say "App will not be loaded" and that's it, there's nothing to undo.
 
-+++<a name="ConfigurationandAssembly-InfoObjects-DatabetweenConfigurationandAssembly">++++++</a>+++
-
-== Info Objects - Data between Configuration and Assembly
+=== Info Objects - Data between Configuration and Assembly
 
 The output of the configuration phase is what we call Info objects and the root of that tree is OpenEjbConfiguration.
 These objects are all simple, serializable data types with no methods, no constructors and no code or logic of any kind.
@@ -151,9 +141,7 @@ We could create an OpenEjbConfigurationFactory implementation that actually pull
 Perhaps, someday we write an OpenEjbConfigurationFactory implementation to wrap the existing one and look for any changed files.
 If nothing has changed since last boot, we simple deserialize an OpenEjbConfiguration tree saved from a previous boot as a way of reducing startup time on very large apps.
 
-+++<a name="ConfigurationandAssembly-Assembly">++++++</a>+++
-
-== Assembly
+=== Assembly
 
 The assembly phase is where real running things are actually built.
 This process is inherently ingrained in the details on how OpenEJB works internally.

@@ -1,5 +1,4 @@
 = High level goals
-:doctype: book
 
 * Pre Certification
  ** pass the tcks
@@ -8,11 +7,11 @@
  ** fill out features, performance tune and polish
  ** release final
 
-= Post Certification requirements
+== Post Certification requirements
 
 Aside from passing the tcks, the
 
-= Post Certification goals
+== Post Certification goals
 
 Unordered list:
 

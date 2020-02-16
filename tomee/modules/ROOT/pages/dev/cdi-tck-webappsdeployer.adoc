@@ -1,6 +1,4 @@
-:doctype: book
-
-Title: CDI TCK status with webapps/ deployer
+= CDI TCK status with webapps deployer
 
 To run the TCK with the webapps/ directory deployer:
 
@@ -29,7 +27,7 @@ That can be changed as well:
 
  mvn clean install -Pwebapp-deployer -Dopenejb.server.debug=true -Dserver.debug.port=5001
 
-= Possible issues in the server
+== Possible issues in the server
 
 * testBeanWithNameJavaxEnterpriseContextConversation(org.jboss.jsr299.tck.tests.context.conversation.ClientConversationContextTest): 500 Internal Server Error for http://127.0.0.1:51857/org.jboss.jsr299.tck.tests.context.conversation.ClientConversationContextTest/builtin.jsf
 * testBeanWithRequestScope(org.jboss.jsr299.tck.tests.context.conversation.ClientConversationContextTest): 500 Internal Server Error for http://127.0.0.1:51857/org.jboss.jsr299.tck.tests.context.conversation.ClientConversationContextTest/builtin.jsf
@@ -169,7 +167,7 @@ Kept on getting 404s.
 * testBeanTypesOnSessionBean(org.jboss.jsr299.tck.tests.lookup.typesafe.resolution.EnterpriseResolutionByTypeTest)
 * testDecoratorNotResolved(org.jboss.jsr299.tck.tests.lookup.typesafe.resolution.decorator.DecoratorNotInjectedTest): Expected exception class org.jboss.jsr299.tck.DeploymentFailure but none was thrown
 
-= Issues likely with the deployer itself
+== Issues likely with the deployer itself
 
 * testPassivationCapableBeanWithNonPassivatingDecoratorBeanConstructorFails(org.jboss.jsr299.tck.tests.context.passivating.broken.decoratorWithNonPassivatingBeanConstructor.DecoratorWithNonPassivatingBeanConstructorTest): Expected exception class org.jboss.jsr299.tck.DeploymentFailure but none was thrown
 * testPassivationCapableBeanWithNonPassivatingInitializerInDecoratorFails(org.jboss.jsr299.tck.tests.context.passivating.broken.decoratorWithNonPassivatingInitializerMethod.DecoratorWithNonPassivatingInitializerMethodTest): Expected exception class org.jboss.jsr299.tck.DeploymentFailure but none was thrown
