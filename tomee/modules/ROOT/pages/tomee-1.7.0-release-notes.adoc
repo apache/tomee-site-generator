@@ -9,8 +9,7 @@
 * [https://issues.apache.org/jira/browse/TOMEE-836[TOMEE-836]] - ReportValidationResults should log.info about the root cause
 * [https://issues.apache.org/jira/browse/TOMEE-885[TOMEE-885]] - Cannot inject no-interface groovy local bean
 * [https://issues.apache.org/jira/browse/TOMEE-926[TOMEE-926]] - arquillian adaptors can fail replacing port if a port includes another one
-* [https://issues.apache.org/jira/browse/TOMEE-953[TOMEE-953]] - tolerate javax.
-classes from app when not in server
+* [https://issues.apache.org/jira/browse/TOMEE-953[TOMEE-953]] - tolerate javax. classes from app when not in server
 * [https://issues.apache.org/jira/browse/TOMEE-982[TOMEE-982]] - JAXRS @ApplicationPath deployment fails if path starts with http and is not a URL
 * [https://issues.apache.org/jira/browse/TOMEE-1054[TOMEE-1054]] - catalina.sh created by installer is not executable
 * [https://issues.apache.org/jira/browse/TOMEE-1075[TOMEE-1075]] - openejb.home system properties not correctly set
@@ -145,73 +144,7 @@ property (configurable in application.properties) to deactivate timers
 * [https://issues.apache.org/jira/browse/TOMEE-1114[TOMEE-1114]] - TomEE Maven Plugin should support OpenEJB standalone
 * [https://issues.apache.org/jira/browse/TOMEE-1121[TOMEE-1121]] - add openejb.cxf-rs.wadl-generator.ignoreRequests to configure and not force ignoreRequests on wadlgenerator
 * [https://issues.apache.org/jira/browse/TOMEE-1127[TOMEE-1127]] - New Event: @Observes LifecycleEvent
-* [https://issues.apache.org/jira/browse/TOMEE-1132[TOMEE-1132]] - add javaagents parameter to 
-//FIXME CHOOSE ONE
-xref:download/index.adoc[]
-xref:maven/index.adoc[]
-xref:security/index.adoc[]
-xref:blog/index.adoc[]
-xref:community/index.adoc[]
-xref:7.0@tomee::admin/cluster/index.adoc[]
-xref:7.0@tomee::admin/configuration/index.adoc[]
-xref:7.0@tomee::admin/index.adoc[]
-xref:7.0@tomee::advanced/applicationcomposer/index.adoc[]
-xref:7.0@tomee::advanced/index.adoc[]
-xref:7.0@tomee::advanced/setup/index.adoc[]
-xref:7.0@tomee::advanced/shading/index.adoc[]
-xref:7.0@tomee::advanced/tomee-embedded/index.adoc[]
-xref:7.0@tomee::application-composer/index.adoc[]
-xref:7.0@tomee::developer/classloading/index.adoc[]
-xref:7.0@tomee::developer/ide/index.adoc[]
-xref:7.0@tomee::developer/index.adoc[]
-xref:7.0@tomee::developer/json/index.adoc[]
-xref:7.0@tomee::developer/testing/applicationcomposer/index.adoc[]
-xref:7.0@tomee::developer/testing/arquillian/index.adoc[]
-xref:7.0@tomee::developer/testing/index.adoc[]
-xref:7.0@tomee::developer/testing/other/index.adoc[]
-xref:7.0@tomee::developer/tools/index.adoc[]
-xref:7.0@tomee::maven/index.adoc[]
-xref:7.1@tomee::admin/cluster/index.adoc[]
-xref:7.1@tomee::admin/configuration/index.adoc[]
-xref:7.1@tomee::admin/index.adoc[]
-xref:7.1@tomee::advanced/applicationcomposer/index.adoc[]
-xref:7.1@tomee::advanced/index.adoc[]
-xref:7.1@tomee::advanced/setup/index.adoc[]
-xref:7.1@tomee::advanced/shading/index.adoc[]
-xref:7.1@tomee::advanced/tomee-embedded/index.adoc[]
-xref:7.1@tomee::application-composer/index.adoc[]
-xref:7.1@tomee::developer/classloading/index.adoc[]
-xref:7.1@tomee::developer/ide/index.adoc[]
-xref:7.1@tomee::developer/index.adoc[]
-xref:7.1@tomee::developer/json/index.adoc[]
-xref:7.1@tomee::developer/testing/applicationcomposer/index.adoc[]
-xref:7.1@tomee::developer/testing/arquillian/index.adoc[]
-xref:7.1@tomee::developer/testing/index.adoc[]
-xref:7.1@tomee::developer/testing/other/index.adoc[]
-xref:7.1@tomee::developer/tools/index.adoc[]
-xref:7.1@tomee::maven/index.adoc[]
-xref:8.0@examples::index.adoc[]
-xref:8.0_es@examples::index.adoc[]
-xref:8.0_pt@examples::index.adoc[]
-xref:8.0@tomee::admin/cluster/index.adoc[]
-xref:8.0@tomee::admin/configuration/index.adoc[]
-xref:8.0@tomee::admin/index.adoc[]
-xref:8.0@tomee::advanced/applicationcomposer/index.adoc[]
-xref:8.0@tomee::advanced/index.adoc[]
-xref:8.0@tomee::advanced/setup/index.adoc[]
-xref:8.0@tomee::advanced/shading/index.adoc[]
-xref:8.0@tomee::advanced/tomee-embedded/index.adoc[]
-xref:8.0@tomee::application-composer/index.adoc[]
-xref:8.0@tomee::developer/classloading/index.adoc[]
-xref:8.0@tomee::developer/ide/index.adoc[]
-xref:8.0@tomee::developer/index.adoc[]
-xref:8.0@tomee::developer/json/index.adoc[]
-xref:8.0@tomee::developer/testing/applicationcomposer/index.adoc[]
-xref:8.0@tomee::developer/testing/arquillian/index.adoc[]
-xref:8.0@tomee::developer/testing/index.adoc[]
-xref:8.0@tomee::developer/testing/other/index.adoc[]
-xref:8.0@tomee::developer/tools/index.adoc[]
-xref:8.0@tomee::maven/index.adoc[tomee-maven-plugin]
+* [https://issues.apache.org/jira/browse/TOMEE-1132[TOMEE-1132]] - add javaagents parameter to xref:maven/index.adoc[tomee-maven-plugin]
 * [https://issues.apache.org/jira/browse/TOMEE-1133[TOMEE-1133]] - support @CdiExtensions on test class for ApplicationComposer
 * [https://issues.apache.org/jira/browse/TOMEE-1140[TOMEE-1140]] - Support CDI LoginModule
 * [https://issues.apache.org/jira/browse/TOMEE-1144[TOMEE-1144]] - provide an exec war goal to tomee plugin
