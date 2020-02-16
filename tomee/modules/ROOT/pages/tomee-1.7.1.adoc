@@ -9,7 +9,7 @@ If you are interested in a Tomcat 8.x version then please feel free to check out
 
 The Apache TomEE 1.7.1 release files can be downloaded from here:
 
-xref:downloads.adoc[http://tomee.apache.org/downloads.html]
+xref:download-ng.adoc[http://tomee.apache.org/downloads.html]
 
 *** Important Notes:
 

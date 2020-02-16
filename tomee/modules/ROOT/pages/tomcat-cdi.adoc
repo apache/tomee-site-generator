@@ -62,8 +62,8 @@ Any jar in your webapp with the above will automatically be CDI enabled and all 
 All this is setup and ready to go!
 Spend your time learning and having fun and writing your app, don't spend it chasing down libraries and integrating things the hard way.
 
-xref:downloads-ng.adoc[Download] TomEE and you're minutes away from having fun with CDI on Tomcat.
+xref:download-ng.adoc[Download] TomEE and you're minutes away from having fun with CDI on Tomcat.
 
 TODO what?
 
-include:apache-tomee.adoc
+include::apache-tomee.adoc

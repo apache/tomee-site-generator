@@ -8,7 +8,7 @@ If you do not have an existing Tomcat installation, or want to start with a fres
 === Add openejb.war to Tomcat
 
 The TomEE plugin for Tomcat is distributed as a standalone war file containing all of the necessary files and an installer Servlet.
-The war can be obtained from the xref:downloads.adoc[download page] .  Once downloaded, simply copy the file into the Tomcat webapps directory.
+The war can be obtained from the xref:download-ng.adoc[download page] .  Once downloaded, simply copy the file into the Tomcat webapps directory.
 
 {deck:id=Copy openejb.war} {card:label=Windows}{noformat:nopanel=true} C:>copy openejb.war apache-tomcat-6.0.14\webapps\openejb.war 	1 file(s) copied.
 
