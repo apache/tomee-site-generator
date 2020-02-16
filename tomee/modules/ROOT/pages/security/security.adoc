@@ -3,6 +3,7 @@
 :jbake-type: page
 :jbake-status: published
 :jbake-tomeepdf:
+:page-aliases: index.adoc
 
 == Security updates
 
