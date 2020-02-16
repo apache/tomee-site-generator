@@ -12,22 +12,22 @@ The next thing you need is link:http://www.eclipse.org/m2e[m2eclipse] plugin.
 If you doesn't have it in your eclipse package, install it like another plugin.
 
 === Webby
-0. Then you need to install link:https://github.com/tesla/m2eclipse-webby[m2eclipse-webby]
-1. In eclipse, select menu "Help" / "Install new software", and type this URL : https://repository.takari.io/content/sites/m2e.extras/m2eclipse-webby/0.2.2/N/LATEST/
-2. Select Web Application Launcher for M2Eclipse / Webby Core
-3. Click Finish and continue the classic installation way.
-4. Restart eclipse.
+. Then you need to install link:https://github.com/tesla/m2eclipse-webby[m2eclipse-webby]
+. In eclipse, select menu "Help" / "Install new software", and type this URL : https://repository.takari.io/content/sites/m2e.extras/m2eclipse-webby/0.2.2/N/LATEST/
+. Select Web Application Launcher for M2Eclipse / Webby Core
+. Click Finish and continue the classic installation way.
+. Restart eclipse.
 
 == Setting up eclipse project
-1. Create new Maven project or import an existing one (only War project are accepted with Webby).
-2. Add new Debug configuration (Right click on the project / Debug As / Debug Configuration)
-3. Select Launch Type "Webby", right click "New"
-4. Browse your project if it not present
-5. Type an optionnal context root
-6. Select container "tomee1x" and select "Installed" as type (the only way who works right now)
-7. Browse your tomEE installation in "Home" section
-8. Optionnal : change port and timeout values.
-9. Click "Apply", and "Debug" to start TomEE.
+. Create new Maven project or import an existing one (only War project are accepted with Webby).
+. Add new Debug configuration (Right click on the project / Debug As / Debug Configuration)
+. Select Launch Type "Webby", right click "New"
+. Browse your project if it not present
+. Type an optionnal context root
+. Select container "tomee1x" and select "Installed" as type (the only way who works right now)
+. Browse your tomEE installation in "Home" section
+. Optionnal : change port and timeout values.
+. Click "Apply", and "Debug" to start TomEE.
 
 == Webby capabilities
 * Webby manage code hot replacement if you don't change method signature and so on... If other case you need to restart it.
