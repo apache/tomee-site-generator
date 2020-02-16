@@ -14,11 +14,11 @@ JMX instrumentation and statistics have also been added generically to all pools
 
 Other major features include deploy-time enhancement for JPA Entities via Apache OpenJPA, support including JPA providers in webapps, ability to mock and inject mocks in unit tests and a powerful new 
 //FIXME CHOOSE ONE
-xref:0.0@tomee::download/index.adoc[]
-xref:0.0@tomee::maven/index.adoc[]
-xref:0.0@tomee::security/index.adoc[]
-xref:0.1@tomee::blog/index.adoc[]
-xref:0.1@tomee::community/index.adoc[]
+xref:download/index.adoc[]
+xref:maven/index.adoc[]
+xref:security/index.adoc[]
+xref:blog/index.adoc[]
+xref:community/index.adoc[]
 xref:7.0@tomee::admin/cluster/index.adoc[]
 xref:7.0@tomee::admin/configuration/index.adoc[]
 xref:7.0@tomee::admin/index.adoc[]

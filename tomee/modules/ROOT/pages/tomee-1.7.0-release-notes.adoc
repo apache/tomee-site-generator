@@ -147,11 +147,11 @@ property (configurable in application.properties) to deactivate timers
 * [https://issues.apache.org/jira/browse/TOMEE-1127[TOMEE-1127]] - New Event: @Observes LifecycleEvent
 * [https://issues.apache.org/jira/browse/TOMEE-1132[TOMEE-1132]] - add javaagents parameter to 
 //FIXME CHOOSE ONE
-xref:0.0@tomee::download/index.adoc[]
-xref:0.0@tomee::maven/index.adoc[]
-xref:0.0@tomee::security/index.adoc[]
-xref:0.1@tomee::blog/index.adoc[]
-xref:0.1@tomee::community/index.adoc[]
+xref:download/index.adoc[]
+xref:maven/index.adoc[]
+xref:security/index.adoc[]
+xref:blog/index.adoc[]
+xref:community/index.adoc[]
 xref:7.0@tomee::admin/cluster/index.adoc[]
 xref:7.0@tomee::admin/configuration/index.adoc[]
 xref:7.0@tomee::admin/index.adoc[]

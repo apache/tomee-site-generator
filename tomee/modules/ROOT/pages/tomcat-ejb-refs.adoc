@@ -9,7 +9,7 @@ Which an be as simple as adding this to your Servlet, Filter, or Listener:
  private HelloLocal helloLocal;
 ----
 
-See the xref:0.0@tomee::injection-of-other-ejbs-example.adoc[@EJB Injection Example]  for a running example.
+See the xref:injection-of-other-ejbs-example.adoc[@EJB Injection Example]  for a running example.
 The example uses one ejb to refer to another ejb, but the same rules apply for servlets.
 
 == Adding ejb-ref in your web.xml

@@ -7,11 +7,11 @@ Some great links for getting involved
 * xref:dev/contribution-tips.adoc[Contribution Tips]
 * 
 //FIXME CHOOSE ONE
-xref:0.0@tomee::download/index.adoc[]
-xref:0.0@tomee::maven/index.adoc[]
-xref:0.0@tomee::security/index.adoc[]
-xref:0.1@tomee::blog/index.adoc[]
-xref:0.1@tomee::community/index.adoc[]
+xref:download/index.adoc[]
+xref:maven/index.adoc[]
+xref:security/index.adoc[]
+xref:blog/index.adoc[]
+xref:community/index.adoc[]
 xref:7.0@tomee::docs.adoc[]
 xref:7.0@tomee::admin/cluster/index.adoc[]
 xref:7.0@tomee::admin/configuration/index.adoc[]
@@ -90,11 +90,11 @@ If you find a spelling mistake, or just want to improve the documentation then p
 
 If you want to edit the 
 //FIXME CHOOSE ONE
-xref:0.0@tomee::download/index.adoc[]
-xref:0.0@tomee::maven/index.adoc[]
-xref:0.0@tomee::security/index.adoc[]
-xref:0.1@tomee::blog/index.adoc[]
-xref:0.1@tomee::community/index.adoc[]
+xref:download/index.adoc[]
+xref:maven/index.adoc[]
+xref:security/index.adoc[]
+xref:blog/index.adoc[]
+xref:community/index.adoc[]
 xref:7.0@tomee::docs.adoc[]
 xref:7.0@tomee::admin/cluster/index.adoc[]
 xref:7.0@tomee::admin/configuration/index.adoc[]

@@ -2,12 +2,12 @@
 
 The Apache TomEE community is proud to announce the release of 
 //FIXME CHOOSE ONE
-xref:0.0@tomee::tomee-7.0.0-M3.adoc[]
-xref:0.1@tomee::tomee-7.0.0-M3.adoc[Apache TomEE 7.0.0-M3], which is based on http://tomcat.apache.org/tomcat-8.0-doc/index.html[Apache Tomcat 8.0.32] and is our first milestone release towards EE7.
+xref:tomee-7.0.0-M3.adoc[]
+xref:tomee-7.0.0-M3.adoc[Apache TomEE 7.0.0-M3], which is based on http://tomcat.apache.org/tomcat-8.0-doc/index.html[Apache Tomcat 8.0.32] and is our first milestone release towards EE7.
 Part of this release an important security fix is included if EJBd is active on your instance (true by default).
 More on 
 //FIXME CHOOSE ONE
-xref:0.0@tomee::security/tomee.adoc[]
+xref:security/tomee.adoc[]
 xref:7.0@tomee::developer/tools/maven/tomee.adoc[]
 xref:7.1@tomee::developer/tools/maven/tomee.adoc[]
 xref:8.0@tomee::developer/tools/maven/tomee.adoc[CVE-2016-0779].
@@ -53,7 +53,7 @@ xref:tomee-7.0.0-M3-release-notes.adoc[tomee-7.0.0-M3-release-notes.html]
 
 Please feel free to jump in feet first and 
 //FIXME CHOOSE ONE
-xref:0.0@tomee::documentation.adoc[]
+xref:documentation.adoc[]
 xref:7.0@tomee::documentation.adoc[]
 xref:7.1@tomee::documentation.adoc[]
 xref:8.0@tomee::documentation.adoc[get started with TomEE].
