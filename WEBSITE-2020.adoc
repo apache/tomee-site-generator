@@ -1,12 +1,13 @@
-# Proposal: Website 2020
+= Proposal: Website 2020
+
 
 This will hopefully serve as the documentation for the website once/if executed.
 
 High-level plan
 
- - Kill all use and trace of the Apache CMS
- - Publish html directly to git
- - Allow for several sources to publish html
+* Kill all use and trace of the Apache CMS
+* Publish html directly to git
+* Allow for several sources to publish html
 
 The result will be several sources, that can be run and managed
 independently, feeding content into the git repo housing our live html
@@ -15,13 +16,13 @@ website.
 This is a pragmatic perspective that sets us up to get a best-of-breed
 outcome acknowledging trends in all our website endevors:
  
- - All tools we've used have been heavily extended
- - Content takes a hit each tool change
- - All tools have limitations (strenghts/weaknesses)
- - Filling gaps involves extensions (bullet one)
- - Tools last on average 2-5 years
- - Many types of content actually exist: javadoc, release notes, download pages
- - We will always be in a hybrid situation
+* All tools we've used have been heavily extended
+* Content takes a hit each tool change
+* All tools have limitations (strenghts/weaknesses)
+* Filling gaps involves extensions (bullet one)
+* Tools last on average 2-5 years
+* Many types of content actually exist: javadoc, release notes, download pages
+* We will always be in a hybrid situation
 
 Think of it as "microservices for content" and avoiding a monolith.
 
@@ -37,11 +38,46 @@ directly to html directly to our site git.
 
 As long as we maintain a common CSS and look and feel, we're good.
 
-## Kill	all use	and trace of the Apache	CMS
+== DJ
+That's one point of view.
+I agree with a lot of it, but I'm worried...
+Perhaps I can characterize it as thinking that more options are better.
+However, nothing stopped anyone from migrating all the content from CMS to an external .md based system, or from .md to .adoc.
+But no one did it.
+Instead, people piled system on top of system, duplicating content in a partially intelligable state, and reducing the amount of organization and coherence at every step.
+I think reasonable priorities are:
 
+* as few systems involved in the website as possible
+* avoid extensions and writing our own systems, we don't have time to maintain them let alone document them.
+* organize the input to the website generation process.
+* discourage adding more systems.
+
+My most profound teacher said to pay attention to the balance between structure and behavior.
+We need simple and fairly rigid structure here so behavior can go towards improving the documentation rather than wondering how or why.
+
+I'm very worried about having more than one process push content to the git "website" repo.
+Right now, we effectively have that process with the svn repo, and there's some content that seems to have been added and abandoned.
+No one will tell me about it, including the person who put it there.
+
+As a result, a requirement in my mind is that publishing the website needs to start with deleting everything previously there.
+The next step is adding the entire current content.
+
+Also, "publishing straight to git" actually means committing to a local repository (with tooling this could be bare).
+This gives a preview opportunity, followed by pushing to the apache repo.
+
+'''
+
+== Kill	all use	and trace of the Apache	CMS
 TODO
 
-## Publish html directly to git
+=== DJ
+
+I think that my antora preview is 99% there.
+Having a second opinion would be valuable, but that could be a time consuming endeavor.
+
+'''
+
+== Publish html directly to git
 
 Apache allows a project to designate a git repository as their
 "website."  All files in that repository are published as-is to the
@@ -49,24 +85,65 @@ internet as the project's website.  HTML must be committed to this
 repository as it does not offer any generation of any kind.
 
 TODO: what is the process for getting one of these repos?
+
 TODO: can we get Infra to do a svn-git migration of our current flat-html?
 
-## Allow for several sources to publish html
+=== DJ
+
+IMO having the git repo as anything but "staging" will make the process 100% headed for disaster.
+What is this html content?
+
+'''
+
+== Allow for several sources to publish html
 
 In the new architecture each content generator publishes rendered html
 directly to the site git.
 
+=== DJ
+Perhaps....
+I think that something more like a maven build is more likely to be useful.
+If there needs to be more than one content generator, then there should be some sort of process to build the entire site and push it to git.
+Without this, no one will be able to understand how the site is built.
+
+For Antora, it's easy to set up a gitlab ci pipeline that builds a site and publishies it on netlify.
+I don't know if anything similar is possible for github, but I thnk it's worth investigating.
+My idea is something like any commit results in updating a preview site.
+If you like it you can push to "master", so asf shows it.
+
+'''
+
 The following is a rough outline of the types of content:
 
- - Versioned documentation for a software distribution
- - Community/Developer documentation
- - Website front-page and "marketing" pages such as major features, benefits, etc
- - Examples
- - Javadoc
- - Release notes and download pages
- - Contributors page
+* Versioned documentation for a software distribution
+* Community/Developer documentation
+* Website front-page and "marketing" pages such as major features, benefits, etc
+* Examples
+* Javadoc
+* Release notes and download pages
+* Contributors page
 
-### Versioned documentation for a software distribution
+=== DJ
+Another possible division would be
+
+* asciidoc content
+** human written
+** generated
+* non-asciidoc content
+** human written
+** generated
+
+A perpendicular categorization is:
+
+* Stuff that fits well in Antoras's information architecture
+* Stuff that is outside the scope of Antrora's infomration architecture.
+
+While it's easy to regard Antora as an asciidoc processor, IMO its more important contribution is providing a consistent and easy to understand information architecture framework.
+
+
+'''
+
+=== Versioned documentation for a software distribution
 
 All of our "product documentation" efforts to date have been in some
 way wiki-like in nature.  They allow any kind of content to take any
@@ -81,7 +158,13 @@ documentation outline that encourages contribution on-rails. Gaps in
 the documentation should be obvious, which hopefully encourages
 contribution
 
-### Community/Developer documentation
+==== DJ
+I suggest we heavily use Antora's structuring abilities, using components, modules, and topics as much as poosible.
+I suggest that we drop any auto-generated TOC or navigation pages and think carefully about organization.
+
+'''
+
+=== Community/Developer documentation
 
 Learning how our community works and how to contribute (be a
 developer) is also an experience that really needs to be on-rails.
@@ -92,8 +175,12 @@ deliberately smaller outline of how to get involved.
 This content should be very focused on "developer onboarding",
 something all open source projects must nail to grow.
 
+==== DJ
+My idea is that the "common" component ought to be this, but right now it contains "all the old stuff".
+Some of this indeed appears to be community focused, but a lot is earlier versions of what's also in the versioned component.
 
-### Website front-page and "marketing" pages, features, etc
+'''
+=== Website front-page and "marketing" pages, features, etc
 
 When people come to the website they must get a human-perfect
 orientation that gives them the most important information in
@@ -110,7 +197,15 @@ free-form and enforces no structure.  These pages must be enabled to
 continuously discard/reinvent (revolve vs evolve) and keep trying
 different ways to get people's attention.
 
-### Examples
+==== DJ
+I don't know enough about what you have in mind for this content to know what to think.
+There's the front page, which I think is not generated.
+Otherwise, what is this content?
+I'd think if people write it, it will be in asciidoc, and can be rendered with Antora.
+
+'''
+
+=== Examples
 
 The examples section of the website are arguably the only truly
 successful part of the site in its current form.  Both the Front-page
@@ -126,11 +221,16 @@ The proposal for this is to continue the existing Jbake setup as it
 has proven to be very successful for this application and more
 enhancements are planned, such as:
 
- - Adding contributors faces to each example page
- - Automatically linking code to related online javadoc
- - Automatically suggesting related examples
+* Adding contributors faces to each example page
+* Automatically linking code to related online javadoc
+* Automatically suggesting related examples
 
-### Javadoc
+==== DJ
+I'm biased, but how is the jboake setup better than the Antora setup, which I've spent about 0 time on yet?
+Running everything through Antora will assure a uniform appearance and unified navigation.
+
+'''
+=== Javadoc
 
 The current "tomee-site-generator" will clone 34 repositories and
 branches across TomEE, Jakarta EE and MicroProfile to generate clean
@@ -153,17 +253,17 @@ MicroProfile 2.0 and combining it together into one fully-linked
 Several motivations exist to grabbing the Jakarta EE and MicroProfile
 javadoc and publishing it on the TomEE site.
 
- - Oracle will no longer publish "javaee" docs.  There is no plan
+* Oracle will no longer publish "javaee" docs.  There is no plan
    current in the Jakarta EE side of the fence to publish unified
    javadoc. There is an industry gap we can fill that will generate
    website traffic to TomEE.
- - MicroProfile does not current publish fully-combined javadoc.
+* MicroProfile does not current publish fully-combined javadoc.
    There is a gab currently.  We can fill this as well to provide
    value to the industry and generate traffic to TomEE.
- - A future plan for our examples is to link code to javadoc.  Linking
+* A future plan for our examples is to link code to javadoc.  Linking
    to javadoc on our own site has the advantage that they never leave
    the site and links are guaranteed stable.
- - Reverse linking.  The javadoc itself can have links to the relevant
+* Reverse linking.  The javadoc itself can have links to the relevant
    examples that show how that class is used.  This can be done having
    an index of each example, what api classes it uses and then
    inserting multiple `@see` links in the source prior to javadoc
@@ -175,7 +275,15 @@ very long time to generate, and following the spirit of this overall
 proposal should be fully independent and not be mixed in with anything
 JBake-related.
 
-### Release notes and download pages
+==== DJ
+I applaud this.
+Once the javadoc is generated, which I would expect only really needs to happen for a release, there's the question of how to get it into the site.
+An advantage of including it in the Antora processed content is that links into it will be checked by Antora while building the site.
+However, at the moment including pregenerated javadoc is not built into Antora although it's an experiment I plan to make soon, and definitely in Antora's future.
+
+'''
+
+=== Release notes and download pages
 
 The release notes and download page data at one point came entirely
 from https://svn.apache.org/repos/asf/tomee/sandbox/release-tools/
@@ -202,7 +310,12 @@ The automated job will run on a timer and simply check dist.apache.org
 for a new release.  It can also be manually triggered and re-run at any
 time via the corresponding CI job.
 
-### Contributors page
+==== DJ
+I wondered where those came from, I'll have to look into this.
+Another workflow would be to have the tool generate asciidoc and commit it to a repository that is an Antora site source, so site builds will automatically include it and it will have consistent appearance.
+
+'''
+=== Contributors page
 
 We have had several attempts at maintaining a contributors page, none
 of them successful.
@@ -214,7 +327,7 @@ The proposal is to create code to run via a CI job triggered via a git
 webhook that simply screen-scrapes this page when the TomEE repo is
 updated:
 
- - https://github.com/apache/tomee/graphs/contributors
+* https://github.com/apache/tomee/graphs/contributors
 
 This will allow us to ensure all 98 and growing contributors are
 listed and the page is updated when the contributor list changes as
@@ -222,3 +335,11 @@ PRs are merged.
 
 In the future we can potentially do more to encourage contributors by
 highlighting them on the TomEE website.
+
+==== DJ
+A better contributors page would be great!
+Screen scraping that github page strikes me as exceedingly fragile.
+Linking to it might be an option!
+I suspect easier than screen-scraping would be extracting the info from git ourselves.
+
+'''
