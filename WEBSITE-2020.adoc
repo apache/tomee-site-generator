@@ -1,12 +1,12 @@
-# Proposal: Website 2020
+= Proposal: Website 2020
 
 This will hopefully serve as the documentation for the website once/if executed.
 
 High-level plan
 
- - Kill all use and trace of the Apache CMS
- - Publish html directly to git
- - Allow for several sources to publish html
+* Kill all use and trace of the Apache CMS
+* Publish html directly to git
+* Allow for several sources to publish html
 
 The result will be several sources, that can be run and managed
 independently, feeding content into the git repo housing our live html
@@ -15,13 +15,13 @@ website.
 This is a pragmatic perspective that sets us up to get a best-of-breed
 outcome acknowledging trends in all our website endevors:
  
- - All tools we've used have been heavily extended
- - Content takes a hit each tool change
- - All tools have limitations (strenghts/weaknesses)
- - Filling gaps involves extensions (bullet one)
- - Tools last on average 2-5 years
- - Many types of content actually exist: javadoc, release notes, download pages
- - We will always be in a hybrid situation
+* All tools we've used have been heavily extended
+* Content takes a hit each tool change
+* All tools have limitations (strenghts/weaknesses)
+* Filling gaps involves extensions (bullet one)
+* Tools last on average 2-5 years
+* Many types of content actually exist: javadoc, release notes, download pages
+* We will always be in a hybrid situation
 
 Think of it as "microservices for content" and avoiding a monolith.
 
@@ -37,11 +37,11 @@ directly to html directly to our site git.
 
 As long as we maintain a common CSS and look and feel, we're good.
 
-## Kill	all use	and trace of the Apache	CMS
+== Kill	all use	and trace of the Apache	CMS
 
 TODO
 
-## Publish html directly to git
+== Publish html directly to git
 
 Apache allows a project to designate a git repository as their
 "website."  All files in that repository are published as-is to the
@@ -51,22 +51,22 @@ repository as it does not offer any generation of any kind.
 TODO: what is the process for getting one of these repos?
 TODO: can we get Infra to do a svn-git migration of our current flat-html?
 
-## Allow for several sources to publish html
+== Allow for several sources to publish html
 
 In the new architecture each content generator publishes rendered html
 directly to the site git.
 
 The following is a rough outline of the types of content:
 
- - Versioned documentation for a software distribution
- - Community/Developer documentation
- - Website front-page and "marketing" pages such as major features, benefits, etc
- - Examples
- - Javadoc
- - Release notes and download pages
- - Contributors page
+* Versioned documentation for a software distribution
+* Community/Developer documentation
+* Website front-page and "marketing" pages such as major features, benefits, etc
+* Examples
+* Javadoc
+* Release notes and download pages
+* Contributors page
 
-### Versioned documentation for a software distribution
+=== Versioned documentation for a software distribution
 
 All of our "product documentation" efforts to date have been in some
 way wiki-like in nature.  They allow any kind of content to take any
@@ -81,7 +81,7 @@ documentation outline that encourages contribution on-rails. Gaps in
 the documentation should be obvious, which hopefully encourages
 contribution
 
-### Community/Developer documentation
+=== Community/Developer documentation
 
 Learning how our community works and how to contribute (be a
 developer) is also an experience that really needs to be on-rails.
@@ -93,7 +93,7 @@ This content should be very focused on "developer onboarding",
 something all open source projects must nail to grow.
 
 
-### Website front-page and "marketing" pages, features, etc
+=== Website front-page and "marketing" pages, features, etc
 
 When people come to the website they must get a human-perfect
 orientation that gives them the most important information in
@@ -110,7 +110,7 @@ free-form and enforces no structure.  These pages must be enabled to
 continuously discard/reinvent (revolve vs evolve) and keep trying
 different ways to get people's attention.
 
-### Examples
+=== Examples
 
 The examples section of the website are arguably the only truly
 successful part of the site in its current form.  Both the Front-page
@@ -126,11 +126,11 @@ The proposal for this is to continue the existing Jbake setup as it
 has proven to be very successful for this application and more
 enhancements are planned, such as:
 
- - Adding contributors faces to each example page
- - Automatically linking code to related online javadoc
- - Automatically suggesting related examples
+* Adding contributors faces to each example page
+* Automatically linking code to related online javadoc
+* Automatically suggesting related examples
 
-### Javadoc
+=== Javadoc
 
 The current "tomee-site-generator" will clone 34 repositories and
 branches across TomEE, Jakarta EE and MicroProfile to generate clean
@@ -153,17 +153,17 @@ MicroProfile 2.0 and combining it together into one fully-linked
 Several motivations exist to grabbing the Jakarta EE and MicroProfile
 javadoc and publishing it on the TomEE site.
 
- - Oracle will no longer publish "javaee" docs.  There is no plan
+* Oracle will no longer publish "javaee" docs.  There is no plan
    current in the Jakarta EE side of the fence to publish unified
    javadoc. There is an industry gap we can fill that will generate
    website traffic to TomEE.
- - MicroProfile does not current publish fully-combined javadoc.
+* MicroProfile does not current publish fully-combined javadoc.
    There is a gab currently.  We can fill this as well to provide
    value to the industry and generate traffic to TomEE.
- - A future plan for our examples is to link code to javadoc.  Linking
+* A future plan for our examples is to link code to javadoc.  Linking
    to javadoc on our own site has the advantage that they never leave
    the site and links are guaranteed stable.
- - Reverse linking.  The javadoc itself can have links to the relevant
+* Reverse linking.  The javadoc itself can have links to the relevant
    examples that show how that class is used.  This can be done having
    an index of each example, what api classes it uses and then
    inserting multiple `@see` links in the source prior to javadoc
@@ -175,7 +175,7 @@ very long time to generate, and following the spirit of this overall
 proposal should be fully independent and not be mixed in with anything
 JBake-related.
 
-### Release notes and download pages
+=== Release notes and download pages
 
 The release notes and download page data at one point came entirely
 from https://svn.apache.org/repos/asf/tomee/sandbox/release-tools/
@@ -202,7 +202,7 @@ The automated job will run on a timer and simply check dist.apache.org
 for a new release.  It can also be manually triggered and re-run at any
 time via the corresponding CI job.
 
-### Contributors page
+=== Contributors page
 
 We have had several attempts at maintaining a contributors page, none
 of them successful.
@@ -214,7 +214,7 @@ The proposal is to create code to run via a CI job triggered via a git
 webhook that simply screen-scrapes this page when the TomEE repo is
 updated:
 
- - https://github.com/apache/tomee/graphs/contributors
+* https://github.com/apache/tomee/graphs/contributors
 
 This will allow us to ensure all 98 and growing contributors are
 listed and the page is updated when the contributor list changes as
