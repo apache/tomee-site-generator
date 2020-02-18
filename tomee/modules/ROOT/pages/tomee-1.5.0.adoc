@@ -12,6 +12,6 @@ In addition to the previously supported Apache Commons-DBCP, the 1.5 release add
 The two additional pools offer great alternatives to applications under heavy load.
 JMX instrumentation and statistics have also been added generically to all pools and provide a great level of monitoring and management.
 
-Other major features include deploy-time enhancement for JPA Entities via Apache OpenJPA, support including JPA providers in webapps, ability to mock and inject mocks in unit tests and a powerful new xref:maven/index.adoc[TomEE Maven Plugin] which can provision servers, install libraries, deploy webapps and more.
+Other major features include deploy-time enhancement for JPA Entities via Apache OpenJPA, support including JPA providers in webapps, ability to mock and inject mocks in unit tests and a powerful new xref:{tomee-latest-vc}::maven/index.adoc[TomEE Maven Plugin] which can provision servers, install libraries, deploy webapps and more.
 
 We'd like to thank everyone who gave feedback and contibuted to improve Apache TomEE on a daily basis!
