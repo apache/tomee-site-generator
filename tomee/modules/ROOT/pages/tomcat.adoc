@@ -12,7 +12,7 @@ The OpenEJB plugin for Tomcat makes all of the OpenEJB features available to Ser
 
 In addition, WAR files can contain EJB modules and JPA persistence units eliminating the annoying construction of .ear files.
 Adding EJBs and JPA Persistence beans to your application is as simple as adding the @Stateless, @Stateful, @MessageDriven or @Entity to a class.
-The packaging is refered to as xref:openejb:collapsed-ear.adoc[OPENEJB:Collapsed EAR]  style as the war file, ejb jar, and persistence unit files are merged into one archive and share the same classloader.
+The packaging is refered to as xref:collapsed-ear.adoc[Collapsed EAR]  style as the war file, ejb jar, and persistence unit files are merged into one archive and share the same classloader.
 
 _Requirements:_
 
@@ -24,7 +24,7 @@ _Requirements:_
 
 Assuming you have a xref:tomcat-installation.adoc[normal working Tomcat 6.x or 5.5 installation] :
 
-. Download xref:openejb:download.adoc[openejb.war]
+. Download xref:downloads-ng.adoc[openejb.war]
 . Copy openejb.war to ${catalina.base}/webapps/openejb.war (Note: the file _must_ be named openejb.war)
 . Start Tomcat if it is not already running
 . (optional) Visit http://localhost:8080/openejb/installer  and click the 'install' button
@@ -33,7 +33,7 @@ Assuming you have a xref:tomcat-installation.adoc[normal working Tomcat 6.x or 5
 
 === ejb-examples.war
 
-See the webapps/ejb-examples/ directory in the xref:openejb:download.adoc[openejb-examples zip] .
+See the webapps/ejb-examples/ directory in the xref:downloads-ng.adoc[openejb-examples zip] .
 
 == Problems?
 
