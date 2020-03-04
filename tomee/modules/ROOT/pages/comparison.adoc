@@ -1,158 +1,165 @@
-Title: Comparison
+= Comparison
+:index-group: General Information
+:jbake-date: 2018-12-05
+:jbake-type: page
+:jbake-status: published
+:icons: font
+:y: icon:check[role="green"]
+:n: icon:times[role="red"]
+:c: icon:file-text-o[role="blue"
+
+//in site-generator
 
 Apache OpenEJB and Apache TomEE are born from the same project and community.
 They differ in two major ways, only one of them technical:
 
-* TomEE incorporates two additional projects;
-Tomcat and MyFaces
+* TomEE incorporates two additional projects; Tomcat and MyFaces
 * TomEE, as a name, more easily implies the breadth of technologies included
 
-Effectively, TomEE is a superset of OpenEJB.
-They share the same code and TomEE grew out of OpenEJB.
+Effectively, TomEE is a superset of OpenEJB. They share the same code and TomEE grew out of OpenEJB.
 
-NOTE: this table is for TomEE 1.x, TomEE 7 comments are under it.+++<table>++++++<tr>++++++<th>++++++</th>+++
-+++<th>+++Tomcat+++</th>+++
-+++<th>+++TomEE+++</th>+++
-+++<th>+++TomEE JAX-RS (~ Microprofile)+++</th>+++
-+++<th>+++TomEE++++</th>+++
-+++<th>+++TomEE PluME+++</th>+++
-+++<th>+++OpenEJB+++</th>++++++</tr>+++
+Note: this table is for TomEE 1.x, TomEE 7 comments are under it.
 
-+++<tr>++++++<td>+++Java Servlets+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>++++++</td>++++++</tr>+++
+[cols="4,6*^1"]
+|===
+| |Tomcat |TomEE |TomEE JAX-RS (~ Microprofile) |TomEE+ |TomEE PluME |OpenEJB
 
-+++<tr>++++++<td>+++Java ServerPages (JSP)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>++++++</td>++++++</tr>+++
+|Java Servlets
+| {y}
+| {y}
+| {y}
+| {y}
+| {y}
+|
 
-+++<tr>++++++<td>+++Java ServerFaces (JSF)+++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>++++++</td>++++++</tr>+++
+|Java ServerPages (JSP)
+| {y}
+| {y}
+| {y}
+| {y}
+| {y}
+|
 
-+++<tr>++++++<td>+++Java Transaction API (JTA)+++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|Java ServerFaces (JSF)
+|
+| {y}
+| {y}
+| {y}
+| {y}
+|
 
-+++<tr>++++++<td>+++Java Persistence API (JPA)+++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|Java Transaction API (JTA)
+|
+| {y}
+| {y}
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++Java Contexts and Dependency Injection (CDI)+++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|Java Persistence API (JPA)
+|
+| {y}
+| {y}
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++Java Authentication and Authorization Service (JAAS)+++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|Java Contexts and Dependency Injection (CDI)
+|
+| {y}
+| {y}
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++Java Authorization Contract for Containers (JACC)+++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|Java Authentication and Authorization Service (JAAS)
+|
+| {y}
+| {y}
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++JavaMail API+++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|Java Authorization Contract for Containers (JACC)
+|
+| {y}
+| {y}
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++Bean Validation+++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|JavaMail API
+|
+| {y}
+| {y}
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++Enterprise JavaBeans+++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|Bean Validation
+|
+| {y}
+| {y}
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++Java API for RESTful Web Services (JAX-RS)+++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|Enterprise JavaBeans
+|
+| {y}
+| {y}
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++Java API for XML Web Services (JAX-WS)+++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|Java API for RESTful Web Services (JAX-RS)
+|
+|
+| {y}
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++Java EE Connector Architecture+++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|Java API for XML Web Services (JAX-WS)
+|
+|
+|
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++Java Messaging Service (JMS)+++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>+++(/)+++</td>++++++</tr>+++
+|Java EE Connector Architecture
+|
+|
+|
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++EclipseLink+++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>++++++</td>++++++</tr>+++
+|Java Messaging Service (JMS)
+|
+|
+|
+| {y}
+| {y}
+| {y}
 
-+++<tr>++++++<td>+++Mojarra+++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>++++++</td>+++
-+++<td>+++(/)+++</td>+++
-+++<td>++++++</td>++++++</tr>++++++</table>+++
+|EclipseLink
+|
+|
+|
+| {y}
+|
+|
+
+|Mojarra
+|
+|
+|
+| {y}
+|
+|
+|===
 
 TomEE 7 targets JavaEE 7 and implements these specifications (in parenthesis the distibution(s) containing it if not part of the basic packages):
 

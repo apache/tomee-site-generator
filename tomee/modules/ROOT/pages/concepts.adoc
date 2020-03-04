@@ -1,4 +1,12 @@
-Title: Concepts OpenEJB was founded on the idea that it would be embedded into third-party environments whom would likely already have three things:
+= Concepts
+:index-group: Unrevised
+:jbake-date: 2018-12-05
+:jbake-type: page
+:jbake-status: published
+
+//in site-generator
+
+OpenEJB was founded on the idea that it would be embedded into third-party environments whom would likely already have three things:
 
 * their one "server" platform with existing clients and protocols
 * their own way to configure their platform
@@ -26,8 +34,7 @@ The same implementation of a service can be declared several times in a service-
 This allows for you to setup several several different profiles or pre-configured versions of the services you provide each with a different name and different set of default values for its properties.
 
 In your openejb.conf file when you declare Containers and Connectors, we are actually hooking you up with Service Providers automatically.
-You get what is in the org/apache/openejb/service-jar.xml by default, but you are able to point specifically to a specific Service Provider by the 'provider' attribute on the Container, Connector, TransactionManager, SecurityService, etc.
-elements of the openejb.conf file.
+You get what is in the org/apache/openejb/service-jar.xml by default, but you are able to point specifically to a specific Service Provider by the 'provider' attribute on the Container, Connector, TransactionManager, SecurityService, etc. elements of the openejb.conf file.
 When you declare a service (Container, Connector, etc.) in your openejb.conf file the properties you supply override the properties supplied by the Service Provider, thus you only need to specify the properties you'd like to change and can have your openejb.conf file as large or as small as you would like it.
 The act of doing this can be thought of as essentially instantiating the Service Provider and configuring that instance for inclusion in the runtime system.
 
