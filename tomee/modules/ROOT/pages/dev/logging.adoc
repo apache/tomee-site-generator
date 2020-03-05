@@ -1,6 +1,4 @@
-:doctype: book
-
-Title: Logging +++<a name="Logging-LoggingforUsers">++++++</a>+++
+= Logging +++<a name="Logging-LoggingforUsers">++++++</a>+++
 
 == Logging for Users
 

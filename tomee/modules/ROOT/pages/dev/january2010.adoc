@@ -1,4 +1,4 @@
-Title: January2010 Main areas of development activity include OSGi support, upgrading JAX-WS and potential support for JAX-RS, and Java EE 6 @ManagedBean support.
+= January2010 Main areas of development activity include OSGi support, upgrading JAX-WS and potential support for JAX-RS, and Java EE 6 @ManagedBean support.
 More detailed planning has also begun for the remaining EJB 3.1 work.
 
 Overall user list activity continues to increase with October and November both being record months in terms of volume.

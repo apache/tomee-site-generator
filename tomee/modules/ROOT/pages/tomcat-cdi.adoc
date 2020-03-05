@@ -64,6 +64,4 @@ Spend your time learning and having fun and writing your app, don't spend it cha
 
 xref:download-ng.adoc[Download] TomEE and you're minutes away from having fun with CDI on Tomcat.
 
-TODO what?
-
-include::apache-tomee.adoc
+include::apache-tomee.adoc[leveloffset=+1]

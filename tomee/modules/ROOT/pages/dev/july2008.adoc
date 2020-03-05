@@ -1,4 +1,4 @@
-Title: July2008 The OpenEJB 3.0 Final release in mid April brought some good attention to the project and more new users.
+= July2008 The OpenEJB 3.0 Final release in mid April brought some good attention to the project and more new users.
 User list traffic showed a small increase in April and May and a sharp spike in June.
 July looks to be a slow month so far.
 Many users are content and anxiously awaiting the next release.

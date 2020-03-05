@@ -54,4 +54,4 @@ In the above scenario even the "foo" Topic and the "bar" Queue would be automati
 
 xref:download-ng.adoc[Download] TomEE and you're minutes away from a functioning JMS application on Tomcat.
 
-{include:apache-tomee.mdtext}
+include::apache-tomee.adoc[leveloffset=+1]

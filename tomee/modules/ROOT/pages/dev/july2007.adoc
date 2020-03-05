@@ -1,4 +1,4 @@
-Title: July2007 CURRENT FOCUS
+= July2007 CURRENT FOCUS
 
 Primary activities in the project are around polishing up features, user-facing code, reducing dependencies, documentation, and taking care of legal in preparation for the coming 3.0 release.
 No real issues stand in the way at this point, builds and voting should start soon.

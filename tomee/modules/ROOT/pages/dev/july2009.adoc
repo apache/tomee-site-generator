@@ -1,4 +1,4 @@
-Title: July2009 OpenEJB 3.1.1 was released in June.
+= July2009 OpenEJB 3.1.1 was released in June.
 The release contained a mix of improvements and fixes.
 Overall it was very well received and very anticipated as the last trunk release was in October 2008.
 More frequent dot releases are planned and a 3.1.2 will hopefully be not too far behind.

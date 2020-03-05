@@ -1,4 +1,4 @@
-=Tomcat JPA
+= Tomcat JPA
 
 Tomcat + Java EE = TomEE, the Java Enterprise Edition of Tomcat.
 With TomEE you get Tomcat with JPA added and integrated and ready to go!
@@ -62,4 +62,4 @@ DataSources will automatically be created if they haven't be configured explicit
 
 xref:download-ng.adoc[Download] TomEE and you're minutes away from a functioning JPA application on Tomcat.
 
-{include:apache-tomee.mdtext}
+include::apache-tomee.adoc[leveloffset=+1]

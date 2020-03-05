@@ -18,21 +18,21 @@ If you just want to build the source version then you can download (aka clone) t
 
 Performing the checkout from a command line using the GIT client (recommended) is as easy as executing the following command:
 
-____
+----
 git clone https://gitbox.apache.org/repos/asf/tomee.git tomee
-____
+----
 
 If you want to checkout a specific branch then you can just change that in the command:
 
-____
+----
 git clone -b tomee-1.7.x https://gitbox.apache.org/repos/asf/tomee.git tomee-1.7.x
-____
+----
 
 Or alternatively with Apache Maven 3.0.5 or later:
 
-____
+----
 mvn scm:checkout -DconnectionUrl=scm:git:https://gitbox.apache.org/repos/asf/tomee.git -DcheckoutDirectory=tomee
-____
+----
 
 NOTE: This method does not require the GIT client.
 
@@ -66,15 +66,15 @@ To build the code, you'll need to grab a copy of http://maven.apache.org[Apache 
 It is pretty much guaranteed that you will need to give Maven an increase on the available memory.
 + Depending on the OS you are working on the fix can be as easy as (Note: _-XX:MaxPermSize=256M_ is ignored by Java 8):
 
-____
+----
 export MAVEN_OPTS="-Xmx768m -XX:MaxPermSize=256M -XX:ReservedCodeCacheSize=64m -Xss2048k"
-____
+----
 
 on MacOS and Unices or
 
-____
+----
 set "MAVEN_OPTS=-Xmx768m -XX:MaxPermSize=256M -XX:ReservedCodeCacheSize=64m -Xss2048k"
-____
+----
 
 on MS Windows.
 
@@ -82,15 +82,15 @@ on MS Windows.
 
 A fast build that skips all tests, generates no reports and creates full distribution archives is as follows:
 
-____
+----
 mvn -Dsurefire.useFile=false -DdisableXmlReport=true -DuniqueVersion=false -ff -Dassemble -DskipTests -DfailIfNoTests=false clean install
-____
+----
 
 The full build with tests takes around 2 hours:
 
-____
+----
 mvn -Dassemble clean install
-____
+----
 
 The output of those commands should end with "BUILD SUCCESSFUL"
 
@@ -101,9 +101,9 @@ Just change to the module directory and run the same commands as above.
 
 If you are in real a hurry (and let's face it most of us are) you can run a quick build without the examples using the _quick_ profile:
 
-____
+----
 mvn -Pquick -Dsurefire.useFile=false -DdisableXmlReport=true -DuniqueVersion=false -ff -Dassemble -DskipTests -DfailIfNoTests=false clean install
-____
+----
 
 == Binary locations
 

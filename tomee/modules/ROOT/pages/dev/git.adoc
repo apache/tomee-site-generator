@@ -17,67 +17,67 @@ Run commands in the directory of the project you are working on, for example 'to
 
 Always create a feature branch from _develop_ using an '_extremely_' descriptive name, this should usually be the https://issues.apache.org/jira/browse/TOMEE[JIRA] id or task name you want to work on:
 
-____
+----
 git checkout -b TOMEE-007 develop
 
 Switched to a new branch 'TOMEE-007'
-____
+----
 
-____
+----
 git status
 
 nothing to commit, working directory clean
-____
+----
 
 Immediately push the new branch to the repository so everyone can see it remotely (and possibly collaborate):
 
-____
+----
 git push -u origin TOMEE-007
 
 Branch TOMEE-007 set up to track remote branch TOMEE-007 from origin.
-____
+----
 
 Once that is done then you just need the simple push for subsequent calls on this branch:
 
-____
+----
 git push
-____
+----
 
 Work like mad on the JIRA issue calling commit and add as often as you like...
 
 If others are working on your branch also remember to pull their changes (Or just as good practice):
 
-____
+----
 git pull
 
 git commit
 
 git push
-____
+----
 
 Finally, to push the completed (or significant non-breaking progress on the) feature to _develop_ at any time (ensuring _develop_ is up to date first):
 
-____
+----
 git pull origin develop
-____
+----
 
-____
+----
 git checkout develop
-____
+----
 
-____
+----
 git merge --no-ff TOMEE-007
-____
+----
 
 Once the completed feature is merged and the JIRA resolved then the branch can and 'should' be deleted before pushing:
 
-____
+----
 git branch -d TOMEE-007
-____
+----
 
-____
+----
 git push origin develop
-____
+----
 
 +++<a name="git-gui">++++++</a>+++ *** The GUI Way
 

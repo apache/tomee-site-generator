@@ -1,4 +1,4 @@
-Title: October2008 The user base has grown significantly.
+= October2008 The user base has grown significantly.
 The primary areas seem to be people replacing the JBoss Embedded platform with OpenEJB as an embedded container for either testing or Swing/GUI work and people using OpenEJB in Tomcat for web work.
 There have also been some reports of very large applications getting ported to OpenEJB.
 External signs of adoption have increased as well with some OpenEJB users popping up in other communities such as Maven asking for OpenEJB focused improvements in their tools, a half dozen or so very favorable blog entries from people outside the project and a recent thread on TheServerSide where many users expressed they were considering leaving Spring for OpenEJB/Tomcat or Glassfish.

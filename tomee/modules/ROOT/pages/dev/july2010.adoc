@@ -1,4 +1,4 @@
-Title: July2010 Work on the 3.1.next development has slowed and a release of that codebase (3.1.3) is likely to come out soon.
+= July2010 Work on the 3.1.next development has slowed and a release of that codebase (3.1.3) is likely to come out soon.
 
 Activity on the 3.2 codebase is going strong with significant progress on EJB 3.1 features, specifically;
 @AccessTimeout, @AfterBegin, @BeforeCompletion, @AfterCompletion and some support for the @Asynchronous method invocations.

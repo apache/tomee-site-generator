@@ -1,4 +1,4 @@
-Title: Team
+= Team
 
 [cols=6*]
 |===

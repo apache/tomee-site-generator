@@ -1,4 +1,4 @@
-Title: January2008 The release of OpenEJB 3.0 beta 1 at the end of September showed an mild but noticeable increase in user traffic which has continued since.
+= January2008 The release of OpenEJB 3.0 beta 1 at the end of September showed an mild but noticeable increase in user traffic which has continued since.
 Several usability improvements and related new features have been added, particularly around a returning user from years ago Alex St.
 Croix.
 Alex has already written some blog entries, created a couple video tutorials, and has a downloadable PDF of using OpenEJB embedded in Tomcat which is a dozen pages and growing.

@@ -1,4 +1,4 @@
-Title: Apache TomEE 1.5.1 Release Notes
+= Apache TomEE 1.5.1 Release Notes
 
 == Upgrades
 
