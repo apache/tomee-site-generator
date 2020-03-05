@@ -5,9 +5,10 @@ Some great links for getting involved
 
 * xref:dev/source-code.adoc[Source Code]
 * xref:dev/contribution-tips.adoc[Contribution Tips]
-* xref:dev/index.adoc[Developer Documentation]
+* xref:developer/index.adoc[Developer Documentation]
 
-*** Contributing doesn't always mean code.
+== Contributing doesn't always mean code.
+
 If you love the project and want to see it grow, follow it on Facebook and Twitter.
 
 * http://twitter.com/ApacheTomEE
@@ -24,13 +25,15 @@ The more people we reach the more the project grows.
 Doing these things as often as possible are simple and powerful ways to help.
 Do your part and watch the project grow grow grow!
 
-*** Edit This Site Top right, next to the Twitter symbol, there is an edit symbol <<edit,contribute>>.
+== Edit This Site
+
+Top right, next to the Twitter symbol, there is an edit symbol <<edit,contribute>>.
 Most of the pages on this site can be edited by you.
 If you find a spelling mistake, or just want to improve the documentation then please do!
 
-If you want to edit the xref:examples-trunk/index.adoc[Examples Documentation] then check-out the xref:dev/source-code.adoc[Source Code] and edit or create the README.md in the example directory you want to improve.
+If you want to edit the xref:{examples-vc}::index.adoc[Examples Documentation] then check-out the xref:dev/source-code.adoc[Source Code] and edit or create the README.md in the example directory you want to improve.
 
-*** Committers
+== Committers
 
 [cols=4*]
 |===

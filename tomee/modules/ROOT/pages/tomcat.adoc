@@ -24,7 +24,7 @@ _Requirements:_
 
 Assuming you have a xref:tomcat-installation.adoc[normal working Tomcat 6.x or 5.5 installation] :
 
-. Download xref:downloads-ng.adoc[openejb.war]
+. Download xref:download-ng.adoc[openejb.war]
 . Copy openejb.war to ${catalina.base}/webapps/openejb.war (Note: the file _must_ be named openejb.war)
 . Start Tomcat if it is not already running
 . (optional) Visit http://localhost:8080/openejb/installer  and click the 'install' button
@@ -33,7 +33,7 @@ Assuming you have a xref:tomcat-installation.adoc[normal working Tomcat 6.x or 5
 
 === ejb-examples.war
 
-See the webapps/ejb-examples/ directory in the xref:downloads-ng.adoc[openejb-examples zip] .
+See the webapps/ejb-examples/ directory in the xref:download-ng.adoc[openejb-examples zip] .
 
 == Problems?
 

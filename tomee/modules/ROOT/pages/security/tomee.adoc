@@ -10,7 +10,7 @@ NOTE: Vulnerabilities that are not TomEE vulnerabilities but have either been in
 
 Please note that binary patches are never provided.
 If you need to apply a source code patch, use the building instructions for the Apache TomEE version that you are using.
-For TomEE 1.x those are xref:../dev/building-tomee-1.adoc[Building TomEE 1.x].
+For TomEE 1.x those are xref:/dev/building-tomee-from-source.adoc[Building TomEE from source].
 
 If you need help on building or configuring TomEE or other help on following the instructions to mitigate the known vulnerabilities listed here, please send your questions to the public xref:../support.adoc[Users mailing list]
 

@@ -1,9 +1,6 @@
 = Apache TomEE 7.0.1 released, June 27th 2016
 
-The Apache TomEE community is proud to announce the release of 
-//FIXME CHOOSE ONE
-xref:tomee-7.0.1.adoc[]
-xref:tomee-7.0.1.adoc[Apache TomEE 7.0.1], which is based on http://tomcat.apache.org/tomcat-8.5-doc/index.html[Apache Tomcat 8.5.3] and mainly aims to fix a security issue found in Tomcat 8.5.2.
+The Apache TomEE community is proud to announce the release of xref:tomee-7.0.1.adoc[Apache TomEE 7.0.1], which is based on http://tomcat.apache.org/tomcat-8.5-doc/index.html[Apache Tomcat 8.5.3] and mainly aims to fix a security issue found in Tomcat 8.5.2.
 
 Please feel free to check out and xref:contribute.adoc[contribute to the developer branch] - We are always interested in any help from the community that we can get.
 
@@ -19,7 +16,8 @@ xref:download/tomee-7.0.1.adoc[http://tomee.apache.org/download/tomee-7.0.1.html
 
 Simply update your existing Maven JavaEE-API, OpenEJB and or TomEE pom.xml entries to point to the latest versions:
 
-....
+[source,xml]
+----
 <dependency>
 	<groupId>org.apache.tomee</groupId>
 	<artifactId>javaee-api</artifactId>
@@ -38,7 +36,7 @@ Simply update your existing Maven JavaEE-API, OpenEJB and or TomEE pom.xml entri
 	<artifactId>tomee</artifactId>
 	<version>7.0.1</version>
 </dependency>
-....
+----
 
 A complete xref:tomee-7.0.1-release-notes.adoc[Changelog] can be viewed here:
 
