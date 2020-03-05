@@ -13,11 +13,20 @@ Then quarterly after that starting the month after:
 * xref:dev/april2008.adoc[April 14, 2008]
 * xref:dev/july2008.adoc[July 14, 2008]
 * xref:dev/october2008.adoc[October 13, 2008]
-* xref:january2009.adoc[January 19, 2009]
+
+NOTE: january2009 is missing
+
+* xref:dev/january2009.adoc[January 19, 2009]
 * xref:dev/april2009.adoc[April 13, 2009]
 * xref:dev/july2009.adoc[July 13, 2009]
 * xref:dev/october2009.adoc[October 21, 2009]
 * xref:dev/january2010.adoc[January 20, 2010]
-* xref:april2010.adoc[April 21, 2010]
+
+NOTE: april2010 is missing
+
+* xref:dev/april2010.adoc[April 21, 2010]
 * xref:dev/july2010.adoc[July 21, 2010]
-* xref:october2010.adoc[October 20, 2010]
+
+NOTE: october2010 is missing
+
+* xref:dev/october2010.adoc[October 20, 2010]
