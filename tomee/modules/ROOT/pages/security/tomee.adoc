@@ -1,6 +1,4 @@
-Title: Apache TomEE
-
-== Apache TomEE vulnerabilities
+= Apache TomEE Security Vulnerabilities
 
 This page lists all security vulnerabilities fixed in maintenance releases or interim builds of Apache TomEE 1.x.
 Each vulnerability is given a security impact rating by either the Apache TomEE team or by the dependent project supplying the fix - please note that this rating is not uniform and will vary from project to project.
@@ -10,7 +8,7 @@ NOTE: Vulnerabilities that are not TomEE vulnerabilities but have either been in
 
 Please note that binary patches are never provided.
 If you need to apply a source code patch, use the building instructions for the Apache TomEE version that you are using.
-For TomEE 1.x those are xref:/dev/building-tomee-from-source.adoc[Building TomEE from source].
+For TomEE 1.x those are xref:/dev/building-from-source.adoc[Building TomEE from source].
 
 If you need help on building or configuring TomEE or other help on following the instructions to mitigate the known vulnerabilities listed here, please send your questions to the public xref:../support.adoc[Users mailing list]
 

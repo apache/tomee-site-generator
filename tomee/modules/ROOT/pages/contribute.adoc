@@ -5,7 +5,10 @@ Some great links for getting involved
 
 * xref:dev/source-code.adoc[Source Code]
 * xref:dev/contribution-tips.adoc[Contribution Tips]
-* xref:developer/index.adoc[Developer Documentation]
+
+NOTE: The next (broken) link on the current site points to an apparently generated list of pages in dev.
+
+* xref:dev/index.adoc[Developer Documentation]
 
 == Contributing doesn't always mean code.
 
