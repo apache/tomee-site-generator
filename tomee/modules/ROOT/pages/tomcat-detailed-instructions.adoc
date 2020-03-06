@@ -8,31 +8,50 @@ If you do not have an existing Tomcat installation, or want to start with a fres
 === Add openejb.war to Tomcat
 
 The TomEE plugin for Tomcat is distributed as a standalone war file containing all of the necessary files and an installer Servlet.
-The war can be obtained from the xref:download-ng.adoc[download page] .  Once downloaded, simply copy the file into the Tomcat webapps directory.
+The war can be obtained from the xref:download-ng.adoc[download page].
+Once downloaded, simply copy the file into the Tomcat webapps directory.
 
-{deck:id=Copy openejb.war} {card:label=Windows}{noformat:nopanel=true} C:>copy openejb.war apache-tomcat-6.0.14\webapps\openejb.war 	1 file(s) copied.
+{deck:id=Copy openejb.war} {card:label=Windows}{noformat:nopanel=true}
+
+[source,console]
+----
+C:>copy openejb.war apache-tomcat-6.0.14\webapps\openejb.war
+1 file(s) copied.
 
 C:>dir apache-tomcat-6.0.14\webapps  Volume in drive C has no label.
 Volume Serial Number is 0000-0000
 
 Directory of C:\apache-tomcat-6.0.14\webapps
 
-09/20/2007  03:03 PM	+++<DIR>+++.
-09/20/2007 03:03 PM +++<DIR>+++..
-09/20/2007 03:02 PM +++<DIR>+++docs 09/20/2007 03:01 PM +++<DIR>+++examples 09/20/2007 03:01 PM +++<DIR>+++host-manager 09/20/2007 03:03 PM +++<DIR>+++manager 09/19/2007 09:31 AM 13,394,733 openejb.war 09/20/2007 03:01 PM +++<DIR>+++ROOT 1 File(s) 13,394,733 bytes 7 Dir(s) 5,100,126,208 bytes free+++</DIR>++++++</DIR>++++++</DIR>++++++</DIR>++++++</DIR>++++++</DIR>++++++</DIR>+++
+09/20/2007 03:03 PM	.
+09/20/2007 03:03 PM ..
+09/20/2007 03:02 PM docs
+09/20/2007 03:01 PM examples
+09/20/2007 03:01 PM host-manager
+09/20/2007 03:03 PM manager
+09/19/2007 09:31 AM 13,394,733 openejb.war
+09/20/2007 03:01 PM ROOT 1 File(s) 13,394,733 bytes 7 Dir(s) 5,100,126,208 bytes free
+----
 
-....
+[source,console]
+----
 $ cp openejb.war apache-tomcat-6.0.14/webapps/openejb.war
 
 $ ls apache-tomcat-6.0.14/webapps/
-ROOT/	      docs/	    examples/	  host-manager/ manager/      openejb.war
-....
+ROOT/
+docs/
+examples/
+host-manager/
+manager/
+openejb.war
+----
 
 === Run Installer Servlet
 
 The OpenEJB Plugin for Tomcat contains an installer servlet which adds the OpenEJB listener and JavaAgent to the Tomcat installation.
 To run the installer, you must first start Tomcat.
 
+[source,console]
 ----
 C:>set JRE_HOME=C:\Program Files\Java\jre1.5.0_06
 
@@ -41,6 +60,7 @@ C:>cd apache-tomcat-6.0.14\bin
 C:\apache-tomcat-6.0.14\bin>startup.bat Using CATALINA_BASE:   C:\apache-tomcat-6.0.14 Using CATALINA_HOME:   C:\apache-tomcat-6.0.14 Using CATALINA_TMPDIR: C:\apache-tomcat-6.0.14\temp Using JRE_HOME:        C:\your\java\installation
 ----
 
+[source,console]
 ----
 $ cd apache-tomcat-6.0.14/bin
 
@@ -69,6 +89,7 @@ OpenEJB uses OpenJPA for persistence and OpenJPA currently requires a JavaAgent 
 Unfortunately, there is no way to install a JavaAgent at runtime, so you will have to restart Tomcat to enable the JavaAgent.
 Simply execute the shutdown command, wait 5-60 seconds (depending on the speed of your computer) for Tomcat to fully stop, and run the startup command to restart Tomcat.
 
+[source,console]
 ----
 C:>cd apache-tomcat-6.0.14\bin
 
@@ -78,6 +99,7 @@ C:\apache-tomcat-6.0.14\bin>startup.bat Using CATALINA_BASE:   C:\apache-tomcat-
 
 ----
 
+[source,console]
 ----
 $ cd apache-tomcat-6.0.14/bin
 
@@ -96,51 +118,52 @@ Using JRE_HOME:        /your/java/installation
 
 NOTE: Your output will be different from the example above due to differences in installation locations.
 
-Once Tomcat is fully started, simply visit http://localhost:8080/openejb/installer  to verify the installation is complete.
+Once Tomcat is fully started, simply visit link:http://localhost:8080/openejb/installer[]  to verify the installation is complete.
 
 == Examples, Tutorials and Tests
 
 === ejb-examples.war
 
-Download the http://people.apache.org/~dain/openejb-temp/examples[ejb-examples.war] , copy it into the Tomcat webapps directory, and visit [http://localhost:8080/ejb-examples] .
+Download the link:http://people.apache.org/~dain/openejb-temp/examples[ejb-examples.war] , copy it into the Tomcat webapps directory, and visit link:http://localhost:8080/ejb-examples[] .
 
 === OpenEJB iTests
 
 OpenEJB uses a large test suite to verify the final server assembly, and you can use this to verify your OpenEJB installation.
-Simply download the http://people.apache.org/~dain/openejb-temp/itests[openejb-itests.war and openejb-standalone-client.jar]  and copy it the war into the Tomcat webapps directory.
+Simply download the link:http://people.apache.org/~dain/openejb-temp/itests[openejb-itests.war and openejb-standalone-client.jar]  and copy it the war into the Tomcat webapps directory.
 It will take a bit to load the application because it contains a huge number of EJBs.
 Finally, run the test client executable jar.
 
-.Start Tomcat
+==== Start Tomcat
+
+.Windows
+[source,console]
 ----
-C:>java -jar openejb-itests-standalone-client.jar tomcat *__**__**__**__**__**__**__***__**_
-[cols=24*]
-|===
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-| _
-|===
+C:>java -jar openejb-itests-standalone-client.jar tomcat
+_________________
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
+ _
 
 Running EJB compliance tests on HTTP/Tomcat Server *__**__**__**__**__**__**__***__**_
 WARNING: No test suite configuration file specified, assuming system properties contain all  needed information.
@@ -178,10 +201,11 @@ CLIENT JNDI PROPERTIES java.naming.provider.url = http://127.0.0.1:8080/openejb/
 
 
 .Unix
+[source,console]
 ----
 $ java -jar openejb-itests-standalone-client.jar tomcat
 _________________________________________________
-|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
+________________________
 
 Running EJB compliance tests on HTTP/Tomcat Server
 _________________________________________________

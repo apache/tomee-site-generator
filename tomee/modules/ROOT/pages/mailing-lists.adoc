@@ -1,4 +1,7 @@
 = Mailing Lists
+:mailing-list-table-layout: cols="1,1,2,5",options="header"
+:y: icon:check[role="green"]
+:n: icon:times[role="red"]
 
 == User Mailing List
 
@@ -11,34 +14,35 @@ Medium volume mailing list, dedicated to the  TomEE community.
 * link:mailto:users-unsubscribe@tomee.apache.org[Unsubscribe]
 
 TomEE Users Online Archives/Forums:
+[{mailing-list-table-layout}]
 |===
 |Search
 |Post
 |Depth
 |Archive URL
 
-|(/)
-|(x)
+|{y}
+|{n}
 |2002
 |http://openejb.markmail.org/search/?q=type:users
 
-|(/)
-|(x)
+|{y}
+|{n}
 |2002
 |http://marc.info/?l=openejb-user
 
-|(x)
-|(x)
+|{n}
+|{n}
 |2006
 |http://mail-archives.apache.org/mod_mbox/TomEE-users/
 
-|(/)
-|(/)
+|{y}
+|{y}
 |2006
 |http://n4.nabble.com/OpenEJB-User-f979441.html
 
-|(/)
-|(x)
+|{y}
+|{n}
 |2007
 |http://www.mail-archive.com/users@tomee.apache.org
 |===
@@ -54,34 +58,36 @@ Get the scoop on the changes that take place in TomEE as our team is hard at wor
 * link:mailto:dev-unsubscribe@tomee.apache.org[Unsubscribe]
 
 TomEE Developers Online Archives/Forums:
+
+[{mailing-list-table-layout}]
 |===
 |Search
 |Post
 |Depth
 |Archive URL
 
-|(/)
-|(x)
+|{y}
+|{n}
 |2002
 |http://openejb.markmail.org/search/?q=type:development
 
-|(/)
-|(x)
+|{y}
+|{n}
 |2002
 |http://marc.info/?l=openejb-development
 
-|(x)
-|(x)
+|{n}
+|{n}
 |2006
 |http://mail-archives.apache.org/mod_mbox/tomee-dev/
 
-|(/)
-|(/)
+|{y}
+|{y}
 |2006
 |http://n4.nabble.com/OpenEJB-Dev-f982480.html
 
-|(/)
-|(x)
+|{y}
+|{n}
 |2007
 |http://www.mail-archive.com/dev@tomee.apache.org
 |===
@@ -97,29 +103,31 @@ This new list provides you with as-it-happens information regarding TomEE develo
 * link:mailto:commits-unsubscribe@tomee.apache.org[Unsubscribe]
 
 TomEE Commits Online Archives/Forums:
+
+[{mailing-list-table-layout}]
 |===
 |Search
 |Post
 |Depth
 |Archive URL
 
-|(/)
-|(x)
+|{y}
+|{n}
 |2002
 |http://openejb.markmail.org/search/?q=type:checkins
 
-|(/)
-|(x)
+|{y}
+|{n}
 |2004
 |http://marc.info/?l=openejb-cvs
 
-|(x)
-|(x)
+|{n}
+|{n}
 |2006
 |http://mail-archives.apache.org/mod_mbox/TomEE-commits/
 
-|(/)
-|(x)
+|{y}
+|{n}
 |2007
 |http://www.mail-archive.com/commits@tomee.apache.org
 |===

@@ -1,8 +1,9 @@
 = Lightning Demos
+:properties-table-layout: cols="3a,2a,5a",options="header"
 
 == Lightning Demos Details
 
-[cols="3*"]
+[{properties-table-layout}]
 |===
 |Demo Name
 |Sponsor
@@ -10,47 +11,63 @@
 
 |TestCase Injection
 |David Blevins
-|<a rel="nofollow" class="external-link" href="http://www.youtube.com/watch?v=g5l14G9RBCM">Youtube </a>, <a rel="nofollow" class="external-link" href="http://vimeo.com/16876983">Vimeo </a>
+|video::g5l14G9RBCM[youtube]
+
+video::16876983[vimeo]
 
 |Simple @WebService
 |David Blevins
-|<a rel="nofollow" class="external-link" href="http://www.youtube.com/watch?v=ZcSnhVlOxJc">Youtube </a>, <a rel="nofollow" class="external-link" href="http://vimeo.com/16876894">Vimeo </a>
+|video::ZcSnhVlOxJc[youtube]
+
+video::16876894[vimeo]
 
 |Simple @Stateless bean
 |David Blevins
-|<a rel="nofollow" class="external-link" href="http://www.youtube.com/watch?v=aLx2jta96xU">Youtube </a>, <a rel="nofollow" class="external-link" href="http://vimeo.com/16876787">Vimeo </a>
+|video::aLx2jta96xU[youtube]
+
+video::16876787[vimeo]
 
 |Simple @Stateful bean
 |David Blevins
-|<a rel="nofollow" class="external-link" href="http://www.youtube.com/watch?v=9JqxbfzsWOQ">Youtube </a>, <a rel="nofollow" class="external-link" href="http://vimeo.com/16876733">Vimeo </a>
+|video::9JqxbfzsWOQ[youtube]
+
+video::16876733[vimeo]
 
 |Simple @MessageDriven bean
 |David Blevins
-|<a rel="nofollow" class="external-link" href="http://www.youtube.com/watch?v=HmXFxMDLCJQ">Youtube </a>, <a rel="nofollow" class="external-link" href="http://vimeo.com/16876667">Vimeo </a>
+|video::HmXFxMDLCJQ[youtube]
+
+video::16876667[vimeo]
 
 |EntityManager injection and usage
 |David Blevins
-|<a rel="nofollow" class="external-link" href="http://www.youtube.com/watch?v=s4uiIoAehgQ">Youtube </a>, <a rel="nofollow" class="external-link" href="http://vimeo.com/16876564">Vimeo </a>
+|video::s4uiIoAehgQ[youtube]
+
+video::16876564[vimeo]
 
 |DataSource injection and usage
 |David Blevins
-|<a rel="nofollow" class="external-link" href="http://www.youtube.com/watch?v=g3lIPlegDJk">Youtube </a>, <a rel="nofollow" class="external-link" href="http://vimeo.com/16876492">Vimeo </a>
+|video::g3lIPlegDJk[youtube]
+
+video::16876492[vimeo]
 
 |Alternate Descriptors
 |David Blevins
-|<a rel="nofollow" class="external-link" href="http://www.youtube.com/watch?v=r1lDC40ESug">Youtube </a>, <a rel="nofollow" class="external-link" href="http://vimeo.com/16876426">Vimeo </a>
+|video::r1lDC40ESug[youtube]
+
+video::16876426[vimeo]
 
 |Getting started with the OpenEJB Eclipse Plugin
 |David Blevins
-|<a rel="nofollow" class="external-link" href="http://vimeo.com/7393498">Vimeo </a>
+|video::7393498[vimeo]
 
 |EJB Unit Testing with Eclipse and OpenEJB
 |David Blevins
-|<a rel="nofollow" class="external-link" href="http://vimeo.com/6149008">Vimeo </a>
+|video::6149008[vimeo]
 
 |ScreenFlow720
 |David Blevins
-|<a rel="nofollow" class="external-link" href="http://vimeo.com/16872034">Vimeo </a></tbody></table></div>
+|video::16872034[vimeo]
 |===
 
 NOTE: For more details about the idea behind Lightening Demos, please read link:http://markmail.org/message/5jq5xun44kt7tcni.adoc[this]  e-mail thread.

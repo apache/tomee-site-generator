@@ -30,7 +30,8 @@
 
 * [https://issues.apache.org/jira/browse/TOMEE-1338[TOMEE-1338]] - Create tests for DeployerEjb
 
-     Release Notes - OpenEJB - Version 4.7.1
+
+== Release Notes - OpenEJB - Version 4.7.1
 
 == Bug
 
