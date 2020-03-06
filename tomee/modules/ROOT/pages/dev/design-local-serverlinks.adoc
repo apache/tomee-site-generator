@@ -1,3 +1,3 @@
 = Design - Local ServerLinks
 
-include:design-application-serverlinks.adoc[leveloffset=+1]
+include::design-application-serverlinks.adoc[leveloffset=+1]

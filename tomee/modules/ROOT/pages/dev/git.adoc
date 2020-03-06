@@ -79,7 +79,7 @@ git branch -d TOMEE-007
 git push origin develop
 ----
 
-+++<a name="git-gui">++++++</a>+++ *** The GUI Way
+== The GUI Way
 
 Now we have learned to do it the hard way, time to look at the simplified version.
 The GitHub native tools!
@@ -97,11 +97,10 @@ The steps are and remain as described above:
 . Work on the branch and commit regularly
 . Synchronize (pull and push) changes in the the branch when stable
 . Switch to _develop_ and synchronize (pull)
-. Merge the branch into _develop_, i.e.
-'TOMEE-007' + 'develop'  = 'develop' *See note below
+. Merge the branch into _develop_, i.e. 'TOMEE-007' + 'develop'  = 'develop' *See note below
 . Commit _develop_
 . Synchronize _develop_ (pull and push)
 . Delete the branch TOMEE-007
 
-_Note</span>: You can actually merge the current *develop_ (or any other 'synchronized' branch) into your branch first to make sure it is stable,i.e.
+NOTE: You can actually merge the current *develop_ (or any other 'synchronized' branch) into your branch first to make sure it is stable,i.e.
 'develop' + 'TOMEE-007' = 'TOMEE-007' - This is really cool!

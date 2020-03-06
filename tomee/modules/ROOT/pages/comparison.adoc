@@ -6,7 +6,7 @@
 :icons: font
 :y: icon:check[role="green"]
 :n: icon:times[role="red"]
-:c: icon:file-text-o[role="blue"
+:c: icon:file-text-o[role="blue"]
 
 //in site-generator
 

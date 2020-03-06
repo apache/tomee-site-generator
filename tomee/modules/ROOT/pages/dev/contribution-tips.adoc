@@ -11,22 +11,22 @@
 Play around with the examples under the examples/ directory.
 Some of the neater ones are (ordered simple to complex):
 
-* http://tomee.apache.org/examples-trunk/simple-stateless/README.html[simple-stateless]
-* http://tomee.apache.org/examples-trunk/simple-stateful/README.html[simple-stateful]
-* http://tomee.apache.org/examples-trunk/simple-singleton/README.html[simple-singleton]
-* http://tomee.apache.org/examples-trunk/simple-mdb/README.html[simple-mdb]
-* http://tomee.apache.org/examples-trunk/async-methods/README.html[async-methods]
-* http://tomee.apache.org/examples-trunk/schedule-methods/README.html[schedule-methods]
-* http://tomee.apache.org/examples-trunk/injection-of/README.html[injection-of-env-entry]
-* http://tomee.apache.org/examples-trunk/injection-of/README.html[injection-of-ejbs]
-* http://tomee.apache.org/examples-trunk/injection-of-datasource/README.html[injection-of-datasource]
-* http://tomee.apache.org/examples-trunk/injection-of-entitymanager/README.html[injection-of-entitymanager]
-* http://tomee.apache.org/examples-trunk/testcase-injection/README.html[testcase-injection]
-* http://tomee.apache.org/examples-trunk/testing-transactions/README.html[testing-transactions]
-* http://tomee.apache.org/examples-trunk/transaction-rollback/README.html[transaction-rollback]
-* http://tomee.apache.org/examples-trunk/testing-security/README.html[testing-security]
-* http://tomee.apache.org/examples-trunk/testing-security-2/README.html[testing-security-2]
-* http://tomee.apache.org/examples-trunk/simple-webservice/README.html[simple-webservice]
+* xref:{examples-vc}::simple-stateless.adoc[simple-stateless]
+* xref:{examples-vc}::simple-stateful.adoc[simple-stateful]
+* xref:{examples-vc}::simple-singleton.adoc[simple-singleton]
+* xref:{examples-vc}::simple-mdb.adoc[simple-mdb]
+* xref:{examples-vc}::async-methods.adoc[async-methods]
+* xref:{examples-vc}::schedule-methods.adoc[schedule-methods]
+* xref:{examples-vc}::injection-of-env-entry.adoc[injection-of-env-entry]
+* xref:{examples-vc}::injection-of-ejbs.adoc[injection-of-ejbs]
+* xref:{examples-vc}::injection-of-datasource.adoc[injection-of-datasource]
+* xref:{examples-vc}::injection-of-entitymanager.adoc[injection-of-entitymanager]
+* xref:{examples-vc}::testcase-injection.adoc[testcase-injection]
+* xref:{examples-vc}::testing-transactions.adoc[testing-transactions]
+* xref:{examples-vc}::transaction-rollback.adoc[transaction-rollback]
+* xref:{examples-vc}::testing-security.adoc[testing-security]
+* xref:{examples-vc}::testing-security-2.adoc[testing-security-2]
+* xref:{examples-vc}::simple-webservice.adoc[simple-webservice]
 
 == What is the process?
 
