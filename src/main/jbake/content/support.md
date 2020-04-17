@@ -15,8 +15,8 @@ Title: Getting Support
 {span-one-third
 ## Forums
 
-* [User Forum](http://openejb.979440.n4.nabble.com/OpenEJB-User-f979441.html)
-* [Dev Forum](http://openejb.979440.n4.nabble.com/OpenEJB-Dev-f982480.html)
+* [User Forum](http://www.mail-archive.com/users@tomee.apache.org)
+* [Dev Forum](http://www.mail-archive.com/dev@tomee.apache.org)
 
 }
 
