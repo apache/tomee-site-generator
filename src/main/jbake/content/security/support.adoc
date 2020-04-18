@@ -12,18 +12,16 @@ Joining the link:../community/index.html[Community] as a volunteer and helping y
 
 === Mailing Lists
 
-- mailto:users@tomee.apache.org[User Mailing List] (mailto:users-subscribe@tomee.apache.org[Subscribe now] | mailto:users-unsubscribe@tomee.apache.org[Unsubscribe]): for all your questions or to share the issues you can meet
-- mailto:dev@tomee.apache.org[Dev Mailing List] (mailto:dev-subscribe@tomee.apache.org[Subscribe now] | mailto:dev-unsubscribe@tomee.apache.org[Unsubscribe]): to speak about the project and developments
-- mailto:commits@tomee.apache.org[Commits Mailing List] (mailto:commits-subscribe@tomee.apache.org[Subscribe now] | mailto:commits-unsubscribe@tomee.apache.org[Unsubscribe]): receive commits by mail
+mailto:users@tomee.apache.org[User Mailing List] (mailto:users-subscribe@tomee.apache.org[Subscribe now] | mailto:users-unsubscribe@tomee.apache.org[Unsubscribe] | http://www.mail-archive.com/users@tomee.apache.org[Archive]): for all your questions or to share the issues you can meet
+
+mailto:dev@tomee.apache.org[Dev Mailing List] (mailto:dev-subscribe@tomee.apache.org[Subscribe now] | mailto:dev-unsubscribe@tomee.apache.org[Unsubscribe] | http://www.mail-archive.com/dev@tomee.apache.org[Archive]): to speak about the project and developments
+
+mailto:commits@tomee.apache.org[Commits Mailing List] (mailto:commits-subscribe@tomee.apache.org[Subscribe now] | mailto:commits-unsubscribe@tomee.apache.org[Unsubscribe] | http://www.mail-archive.com/commits@tomee.apache.org[Archives]): receive commits by mail
 
 
 === IRC
 
 http://webchat.freenode.net/?channels=openejb[openejb @ freenode] is the channel most of us use.
-
-=== Forums
-
-Our forum (mailing lists archives) can be accessed through http://tomee-openejb.979440.n4.nabble.com/[Nabble].
 
 === Bugtracker/JIRA
 
