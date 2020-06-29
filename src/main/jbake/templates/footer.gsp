@@ -13,7 +13,7 @@
 				<div class="col-sm-6 text-center-mobile">
 					<div class="row opening-hours">
 						<div class="col-sm-3 text-center-mobile">
-							<h5><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/documentation.html" class="white">Documentation</a></h5>
+							<h5><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/" class="white">Documentation</a></h5>
 							<ul class="list-unstyled">
 								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/admin/configuration/index.html" class="regular light-white">How to configure</a></li>
 								<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>latest/docs/admin/file-layout.html" class="regular light-white">Dir. Structure</a></li>
