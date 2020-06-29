@@ -24,6 +24,7 @@ import org.apache.openejb.util.Pipe;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -42,6 +43,7 @@ import static org.apache.openejb.loader.Files.mkdirs;
 public class Javadocs {
 
     private final Sources sources;
+    private final List<JavadocSource> javadocSources = new ArrayList<>();
 
     public Javadocs(final Sources sources) {
         this.sources = sources;
@@ -84,45 +86,52 @@ public class Javadocs {
             copySource(related, javaSources);
         }
 
-        final File javadocOutput = sources.getGeneratedDestFor(source, "javadoc");
-        final ProcessBuilder cmd = new ProcessBuilder(
-                getJavadocCommand().getAbsolutePath(),
-                "-sourcepath",
-                javaSources.getAbsolutePath(),
-                "-d",
-                javadocOutput.getAbsolutePath()
-        );
+        // This part will be completed later when the perform stage is executed
+        source.addPerform(() -> {
+            final File javadocOutput = sources.getGeneratedDestFor(source, "javadoc");
+            final ProcessBuilder cmd = new ProcessBuilder(
+                    getJavadocCommand().getAbsolutePath(),
+                    "-sourcepath",
+                    javaSources.getAbsolutePath(),
+                    "-d",
+                    javadocOutput.getAbsolutePath()
+            );
 
-        Stream.of(javaSources.listFiles())
-                .filter(File::isDirectory)
-                .forEach(file -> {
-                    cmd.command().add("-subpackages");
-                    cmd.command().add(file.getName());
-                });
+            Stream.of(javaSources.listFiles())
+                    .filter(File::isDirectory)
+                    .forEach(file -> {
+                        cmd.command().add("-subpackages");
+                        cmd.command().add(file.getName());
+                    });
 
-        try {
-            final Process process = cmd.start();
-            Pipe.pipe(process);
-            process.waitFor();
-        } catch (IOException e) {
-            throw new IllegalStateException("Command failed");
-        } catch (InterruptedException e) {
-            Thread.interrupted();
-            throw new IllegalStateException("Command failed");
-        }
+            try {
+                final Process process = cmd.start();
+                Pipe.pipe(process);
+                process.waitFor();
+            } catch (IOException e) {
+                throw new IllegalStateException("Command failed");
+            } catch (InterruptedException e) {
+                Thread.interrupted();
+                throw new IllegalStateException("Command failed");
+            }
 
-        // Scrub generated timestamps as it causes 26k needless file updates
-        // on the svn commit for every time the generator runs
-        try {
-            java.nio.file.Files.walk(javadocOutput.toPath())
-                    .map(Path::toFile)
-                    .filter(File::isFile)
-                    .filter(this::isHtml)
-                    .forEach(Javadocs::removeGeneratedDate);
-        } catch (IOException e) {
-            throw new IllegalStateException("Failed to remove timestamp from generated javadoc html");
-        }
+            // Scrub generated timestamps as it causes 26k needless file updates
+            // on the svn commit for every time the generator runs
+            try {
+                java.nio.file.Files.walk(javadocOutput.toPath())
+                        .map(Path::toFile)
+                        .filter(File::isFile)
+                        .filter(this::isHtml)
+                        .forEach(Javadocs::removeGeneratedDate);
+            } catch (IOException e) {
+                throw new IllegalStateException("Failed to remove timestamp from generated javadoc html");
+            }
 
+        });
+    }
+
+    public List<JavadocSource> getJavadocSources() {
+        return javadocSources;
     }
 
     public static void removeGeneratedDate(final File file) {
@@ -142,6 +151,9 @@ public class Javadocs {
     }
 
     private void copySource(final Source source, final File javaSources) {
+        final JavadocSources javadocSources = new JavadocSources();
+        source.setComponent(JavadocSources.class, javadocSources);
+
         try {
             java.nio.file.Files.walk(source.getDir().toPath())
                     .map(Path::toFile)
@@ -155,6 +167,7 @@ public class Javadocs {
                             final File dest = new File(javaSources, relativePath);
                             Files.mkdirs(dest.getParentFile());
                             IO.copy(file, dest);
+                            javadocSources.add(new JavadocSource(relativePath, dest));
                         } catch (IOException e) {
                             throw new IllegalStateException(e);
                         }
@@ -196,6 +209,7 @@ public class Javadocs {
     private boolean isJava(final File file) {
         return file.getName().endsWith(".java");
     }
+
     private boolean isHtml(final File file) {
         return file.getName().endsWith(".html");
     }

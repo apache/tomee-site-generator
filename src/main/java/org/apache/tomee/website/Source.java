@@ -19,9 +19,45 @@ package org.apache.tomee.website;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
+/**
+ * A Source largely maps to a git repo we will checkout and use to build content
+ * to publish to the website.
+ * 
+ * Currently we have the following notable sources:
+ *
+ *  - tomee-8.0
+ *  - tomee-7.1
+ *  - tomee-7.0
+ *  - microprofile-2.0
+ *  - jakartaee-8.0
+ *  - master
+ *  - latest
+ *
+ * Each of these sources are given its own section on the website, for example:
+ *
+ *  - http://tomee.apache.org/jakartaee-8.0/javadoc/
+ *  - http://tomee.apache.org/tomee-8.0/javadoc/
+ *  - http://tomee.apache.org/tomee-8.0/examples/
+ *
+ * Sources may include content from other git repos and this act like an aggregator.
+ * For example the microprofile-2.0 Source has 8 related Source trees, one for each
+ * API in MicroProfile 2.0.  Each git reference includes the right tag information
+ * so we are able to get the source (and therefore javadoc) for the exact version in
+ * MicroProfile 2.0.
+ *
+ * We intentionally want the javadoc on our site to keep our links stable and not
+ * depending on third-party sites that could change and break our links.  It also
+ * allows us to enhance the javadoc to include links to and from our examples.
+ * And finally many of these javadocs are not online anywhere, so it allows us to
+ * bring some unique value to the world and increase our website traffic.
+ */
 public class Source {
     private final String name;
     private final String scmUrl;
@@ -30,6 +66,26 @@ public class Source {
     private final List<Source> related = new ArrayList<>();
     private File dir;
     private Filter javadocFilter = new Filter(".*/src/main/java/.*", ".*/(tck|itests|examples|archetype-resources|.*-example)/.*");
+
+    /**
+     * This allows us to attach a handful of finishing actions to
+     * each Source that get executed after any 'prepare' methods
+     * are called.  This will most likely consist of Lambdas and
+     * is effectively a very simple way to split our logic into
+     * two phases: prepare, perform.
+     */
+    private final List<Runnable> perform = new ArrayList<>();
+
+    /**
+     * The components map is a simple technique to allow us to attach
+     * objects to the Source in various "prepare" phases.  It was initially
+     * added to allow {@link Javadocs} to pass data to  {@link LearningLinks}
+     * without making the two directly reference on each other.
+     *
+     * It also allows us to prepare some data that is specific to the Source
+     * instance and not see by other Source instances.
+     */
+    private final Map<Class, Object> components = new HashMap();
 
     public Source(final String scmUrl, final String branch, final String name) {
         this(scmUrl, branch, name, false);
@@ -40,6 +96,29 @@ public class Source {
         this.branch = branch;
         this.name = name;
         this.latest = latest;
+    }
+
+    public List<Runnable> getPerform() {
+        return perform;
+    }
+
+    public boolean addPerform(final Runnable runnable) {
+        return perform.add(runnable);
+    }
+
+    public <T> T setComponent(Class<T> type, T value) {
+        return (T) this.components.put(type, value);
+    }
+
+    public <T> Optional<T> getComponent(Class<T> type) {
+        return Optional.ofNullable((T) this.components.get(type));
+    }
+
+    /**
+     * Returns stream of this source and all related sources
+     */
+    public Stream<Source> stream() {
+        return Stream.concat(Stream.of(this), this.getRelated().stream());
     }
 
     public boolean isLatest() {

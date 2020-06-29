@@ -21,6 +21,7 @@ import org.apache.openejb.loader.IO;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -119,6 +120,7 @@ public class Sources {
         final Javadocs javadocs = new Javadocs(this);
         final Examples examples = new Examples(this);
         final VersionIndex versionIndex = new VersionIndex(this);
+        final LearningLinks learningLinks = new LearningLinks(examples);
 
         try {
             IO.copyDirectory(mainSource, jbake);
@@ -126,20 +128,30 @@ public class Sources {
             throw new RuntimeException(e);
         }
 
+        // Download the git repo associated with each Source
+        // including any related Source/git repos
         sources.stream()
-                .flatMap(source -> source.getRelated().stream())
+                .flatMap(Source::stream)
                 .peek(source -> source.setDir(new File(repos, source.getName())))
                 .forEach(Repos::download);
 
+        // Run any initial steps to process each
+        // source root (excluding the related repos)
         sources.stream()
-                .peek(source -> source.setDir(new File(repos, source.getName())))
-                .peek(Repos::download)
                 .peek(docs::prepare)
                 .peek(javadocs::prepare)
                 .peek(examples::prepare)
                 .peek(versionIndex::prepare)
-                .forEach(Sources::done);
+                .peek(learningLinks::prepare)
+                .forEach(Sources::prepared);
 
+        // Run any final tasks that have been registered
+        // with any Source instance during the prepare phase
+        sources.stream()
+                .flatMap(Source::stream)
+                .map(Source::getPerform)
+                .flatMap(Collection::stream)
+                .forEach(Runnable::run);
 
         VersionsIndex.prepare(this);
     }
@@ -153,7 +165,7 @@ public class Sources {
 
         sources.stream()
                 .peek(javadocs::prepare)
-                .forEach(Sources::done);
+                .forEach(Sources::prepared);
         ;
     }
 
@@ -184,7 +196,8 @@ public class Sources {
         return dir;
     }
 
-    private static void done(final Source source) {
-        System.out.println("Done " + source);
+    private static void prepared(final Source source) {
+        System.out.println("Prepared " + source);
     }
+
 }

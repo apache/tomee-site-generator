@@ -16,6 +16,16 @@
  */
 package org.apache.tomee.website;
 
+/**
+ * This very well could be a json file or some other externalized format.
+ *
+ * For the moment it is kept in code simply to keep complexity low.  That said,
+ * please do not add "logic" here (no loops, if statements, string concatenation, etc)
+ * and try to keep the code here limited to simple structure.
+ *
+ * We may very well turn this into a json or yaml file that defines an array of sources.
+ * The simpler we keep this code, the easier that will be (when or if the time is right).
+ */
 public class Configuration {
     public static Source[] getSources() {
         final Source[] microProfile2 = new Source[]{

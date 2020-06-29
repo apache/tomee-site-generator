@@ -22,12 +22,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Examples {
 
     private final Sources sources;
+    private final List<Example> examples = new ArrayList<>();
 
     public Examples(final Sources sources) {
         this.sources = sources;
@@ -40,7 +39,6 @@ public class Examples {
         // If we don't have examples in this codebase, skip
         if (!srcDir.exists()) return;
 
-        final List<Example> examples = new ArrayList<>();
         for (File file : srcDir.listFiles()) {
             if (file.isDirectory()) {
                 if (hasReadme(file)) {
@@ -63,6 +61,10 @@ public class Examples {
 
         GroupedIndex.process(destDir, "examplesindex"); //Creates the index.html for each example folder
 //        https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/HttpServletMapping.html
+    }
+
+    public List<Example> getExamples() {
+        return examples;
     }
 
     /**
