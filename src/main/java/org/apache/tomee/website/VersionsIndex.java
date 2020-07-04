@@ -31,9 +31,9 @@ public class VersionsIndex {
         try {
             final StringBuilder index = new StringBuilder();
             index.append(":jbake-type: page\n")
-                 .append(":jbake-status: published\n")
-                 .append(":jbake-title: Apache TomEE Documentation\n")
-                 .append("\n")
+                    .append(":jbake-status: published\n")
+                    .append(":jbake-title: Apache TomEE Documentation\n")
+                    .append("\n")
             ;
 
 
@@ -42,6 +42,12 @@ public class VersionsIndex {
                 if ("latest".equals(source.getName())) continue;
 
                 index.append("*").append(source.getName());
+
+                if (source.getLabel() != null) {
+                    final String label = source.getLabel();
+                    index.append(" (").append(label).append(")");
+                }
+                
                 if (source.isLatest()) {
                     index.append(" (latest)");
                 }
@@ -64,13 +70,13 @@ public class VersionsIndex {
                     for (String LanguageDir : listOfLanguagesDirs) {
                         if (!LanguageDir.equalsIgnoreCase("en")) {
                             index.append(" link:")
-                                 .append(source.getName())
-                                 .append("/")
-                                 .append(LanguageDir)
-                                 .append("/examples/")
-                                 .append("[ [")
-                                 .append(LanguageDir)
-                                 .append("\\] ]");
+                                    .append(source.getName())
+                                    .append("/")
+                                    .append(LanguageDir)
+                                    .append("/examples/")
+                                    .append("[ [")
+                                    .append(LanguageDir)
+                                    .append("\\] ]");
                         }
                     }
 

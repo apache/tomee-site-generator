@@ -91,7 +91,7 @@ public class Configuration {
 
         return new Source[]{
 //                new Source("https://github.com/apache/tomee.git", "master", "tomee-8.0"),
-                new Source("https://github.com/apache/tomee.git", "master", "tomee-9.0").related(microProfile2).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "master", "tomee-9.0").label("milestone").related(microProfile2).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
                 new Source("https://github.com/apache/tomee.git", "master", "tomee-8.0", true).related(microProfile2).related(jakartaEE8).javadoc("^org.apache.(openejb|tomee).*"),
                 new Source("https://github.com/apache/tomee.git", "tomee-7.1.0", "tomee-7.1").javadoc("^org.apache.(openejb|tomee).*"),
                 new Source("https://github.com/apache/tomee.git", "tomee-7.0.5", "tomee-7.0").javadoc("^org.apache.(openejb|tomee).*"),

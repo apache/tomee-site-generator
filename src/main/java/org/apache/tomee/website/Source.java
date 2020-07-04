@@ -60,6 +60,7 @@ import java.util.stream.Stream;
  */
 public class Source {
     private final String name;
+    private String label;
     private final String scmUrl;
     private final String branch;
     private final boolean latest;
@@ -177,6 +178,14 @@ public class Source {
         return this;
     }
 
+    public String getLabel() {
+        return this.label;
+    }
+
+    public Source label(final String label) {
+        this.label = label;
+        return this;
+    }
 
     @Override
     public String toString() {
