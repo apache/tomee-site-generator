@@ -21,8 +21,8 @@ import org.apache.openejb.loader.IO;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -74,6 +74,10 @@ public class Sources {
     private final List<Source> sources = new ArrayList<>();
 
     public Sources(final File jbake, final File repos, final File mainSource, final File generated, final Source... sources) {
+        this(jbake, repos, mainSource, generated, Arrays.asList(sources));
+    }
+
+    public Sources(final File jbake, final File repos, final File mainSource, final File generated, final List<Source> sources) {
         this.generated = generated;
         this.jbake = jbake;
         this.repos = repos;
@@ -82,7 +86,7 @@ public class Sources {
         jbake.mkdirs();
         repos.mkdirs();
 
-        Collections.addAll(this.sources, sources);
+        this.sources.addAll(sources);
         for (final Source source : sources) {
             if (source.isLatest()) {
                 this.sources.add(new Source(source.getScmUrl(), source.getBranch(), "latest"));

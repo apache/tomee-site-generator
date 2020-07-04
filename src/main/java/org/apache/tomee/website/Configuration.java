@@ -64,14 +64,41 @@ public class Configuration {
                 new Source("https://github.com/eclipse-ee4j/websocket-api.git", "EE4J_8", "websocket-api-EE4J_81.0")
         };
 
+        final Source[] jakartaEE9 = {
+                new Source("https://github.com/eclipse-ee4j/common-annotations-api.git", "master", "common-annotations-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/concurrency-api.git", "master", "concurrency-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/ejb-api.git", "master", "ejb-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/interceptor-api.git", "master", "interceptor-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jax-rpc-api.git", "master", "jax-rpc-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jax-ws-api.git", "master", "jax-ws-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jaxb-api.git", "master", "jaxb-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jaxr-api.git", "master", "jaxr-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jaxrs-api.git", "master", "jaxrs-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jca-api.git", "master", "jca-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jms-api.git", "master", "jms-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jpa-api.git", "master", "jpa-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jsonb-api.git", "master", "jsonb-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jsp-api.git", "master", "jsp-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jstl-api.git", "master", "jstl-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jta-api.git", "master", "jta-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/jws-api.git", "master", "jws-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/management-api.git", "master", "management-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/saaj-api.git", "master", "saaj-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/security-api.git", "master", "security-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/servlet-api.git", "master", "servlet-api-ee9"),
+                new Source("https://github.com/eclipse-ee4j/websocket-api.git", "master", "websocket-api-ee9")
+        };
+
         return new Source[]{
 //                new Source("https://github.com/apache/tomee.git", "master", "tomee-8.0"),
+                new Source("https://github.com/apache/tomee.git", "master", "tomee-9.0").related(microProfile2).related(jakartaEE9),
                 new Source("https://github.com/apache/tomee.git", "master", "tomee-8.0", true).related(microProfile2).related(jakartaEE8),
                 new Source("https://github.com/apache/tomee.git", "tomee-7.1.0", "tomee-7.1"),
                 new Source("https://github.com/apache/tomee.git", "tomee-7.0.5", "tomee-7.0"),
                 new Source("https://github.com/apache/tomee.git", "master", "master"),
                 new Source("https://github.com/eclipse/microprofile-bom.git", "master", "microprofile-2.0").related(microProfile2),
-                new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "master", "jakartaee-8.0").related(jakartaEE8)
+                new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v8", "jakartaee-8.0").related(jakartaEE8),
+                new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "master", "jakartaee-9.0").related(jakartaEE9)
         };
     }
 }
