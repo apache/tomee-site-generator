@@ -112,6 +112,11 @@
       <artifactId>tomitribe-tio</artifactId>
       <version>0.5</version>
     </dependency>
+    <dependency>
+      <groupId>org.tomitribe</groupId>
+      <artifactId>swizzle</artifactId>
+      <version>1.1</version>
+    </dependency>
   </dependencies>
 
   <build>

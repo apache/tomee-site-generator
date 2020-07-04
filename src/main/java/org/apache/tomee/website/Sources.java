@@ -125,6 +125,7 @@ public class Sources {
         final Examples examples = new Examples(this);
         final VersionIndex versionIndex = new VersionIndex(this);
         final LearningLinks learningLinks = new LearningLinks(examples);
+        final Jakartize jakartize = new Jakartize();
 
         try {
             IO.copyDirectory(mainSource, jbake);
@@ -142,6 +143,7 @@ public class Sources {
         // Run any initial steps to process each
         // source root (excluding the related repos)
         sources.stream()
+                .peek(jakartize::prepare)
                 .peek(docs::prepare)
                 .peek(javadocs::prepare)
                 .peek(examples::prepare)
