@@ -169,10 +169,6 @@ public class Source {
         return javadocPackages;
     }
 
-    public void setJavadocPackages(final Pattern javadocPackages) {
-        this.javadocPackages = javadocPackages;
-    }
-
     public Source javadoc(final String include) {
         this.javadocPackages = Pattern.compile(include);
         return this;

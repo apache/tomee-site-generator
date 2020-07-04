@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -83,11 +82,9 @@ public class Javadocs {
     public void prepare(final Source source) {
         final File javaSources = mkdirs(new File(String.format("target/javadocs/%s-src", source.getName())));
 
-        setDefaults(source);
-
-        copySource(source, javaSources);
+        copySource(source, source, javaSources);
         for (final Source related : source.getRelated()) {
-            copySource(related, javaSources);
+            copySource(source, related, javaSources);
         }
 
         // This part will be completed later when the perform stage is executed
@@ -134,13 +131,6 @@ public class Javadocs {
         });
     }
 
-    private void setDefaults(final Source source) {
-        final Pattern defaultPattern = source.getJavadocPackages() != null ? source.getJavadocPackages() : Pattern.compile(".*");
-        source.stream()
-                .filter(src -> src.getJavadocPackages() == null)
-                .forEach(src -> src.setJavadocPackages(defaultPattern));
-    }
-
     public List<JavadocSource> getJavadocSources() {
         return javadocSources;
     }
@@ -161,11 +151,11 @@ public class Javadocs {
         }
     }
 
-    private void copySource(final Source source, final File javaSources) {
+    private void copySource(final Source parent, final Source source, final File javaSources) {
         final JavadocSources javadocSources = new JavadocSources();
         source.setComponent(JavadocSources.class, javadocSources);
 
-        final Predicate<String> wanted = source.getJavadocPackages().asPredicate();
+        final Predicate<String> wanted = wanted(parent, source);
 
         try {
             java.nio.file.Files.walk(source.getDir().toPath())
@@ -191,6 +181,12 @@ public class Javadocs {
         } catch (IOException e) {
             throw new IllegalStateException("Failed to aggregate java sources");
         }
+    }
+
+    private Predicate<String> wanted(final Source parent, final Source source) {
+        if (source.getJavadocPackages() != null) return source.getJavadocPackages().asPredicate();
+        if (parent.getJavadocPackages() != null) return parent.getJavadocPackages().asPredicate();
+        return s -> true;
     }
 
     public static File getJavadocCommand() {
