@@ -26,7 +26,9 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -81,6 +83,8 @@ public class Javadocs {
     public void prepare(final Source source) {
         final File javaSources = mkdirs(new File(String.format("target/javadocs/%s-src", source.getName())));
 
+        setDefaults(source);
+
         copySource(source, javaSources);
         for (final Source related : source.getRelated()) {
             copySource(related, javaSources);
@@ -130,6 +134,13 @@ public class Javadocs {
         });
     }
 
+    private void setDefaults(final Source source) {
+        final Pattern defaultPattern = source.getJavadocPackages() != null ? source.getJavadocPackages() : Pattern.compile(".*");
+        source.stream()
+                .filter(src -> src.getJavadocPackages() == null)
+                .forEach(src -> src.setJavadocPackages(defaultPattern));
+    }
+
     public List<JavadocSource> getJavadocSources() {
         return javadocSources;
     }
@@ -154,6 +165,8 @@ public class Javadocs {
         final JavadocSources javadocSources = new JavadocSources();
         source.setComponent(JavadocSources.class, javadocSources);
 
+        final Predicate<String> wanted = source.getJavadocPackages().asPredicate();
+
         try {
             java.nio.file.Files.walk(source.getDir().toPath())
                     .map(Path::toFile)
@@ -164,6 +177,9 @@ public class Javadocs {
                     .forEach(file -> {
                         try {
                             final String relativePath = file.getAbsolutePath().replaceAll(".*/src/main/java/", "");
+
+                            if (!wanted.test(relativePath)) return;
+
                             final File dest = new File(javaSources, relativePath);
                             Files.mkdirs(dest.getParentFile());
                             IO.copy(file, dest);

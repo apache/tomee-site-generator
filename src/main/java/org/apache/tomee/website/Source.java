@@ -29,7 +29,7 @@ import java.util.stream.Stream;
 /**
  * A Source largely maps to a git repo we will checkout and use to build content
  * to publish to the website.
- * 
+ *
  * Currently we have the following notable sources:
  *
  *  - tomee-8.0
@@ -66,6 +66,7 @@ public class Source {
     private final List<Source> related = new ArrayList<>();
     private File dir;
     private Filter javadocFilter = new Filter(".*/src/main/java/.*", ".*/(tck|itests|examples|archetype-resources|.*-example)/.*");
+    private Pattern javadocPackages;
 
     /**
      * This allows us to attach a handful of finishing actions to
@@ -160,6 +161,19 @@ public class Source {
 
     public Source filterJavadoc(final String include, final String exclude) {
         this.javadocFilter = new Filter(include, exclude);
+        return this;
+    }
+
+    public Pattern getJavadocPackages() {
+        return javadocPackages;
+    }
+
+    public void setJavadocPackages(final Pattern javadocPackages) {
+        this.javadocPackages = javadocPackages;
+    }
+
+    public Source javadoc(final String include) {
+        this.javadocPackages = Pattern.compile(include);
         return this;
     }
 
