@@ -27,7 +27,15 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class GroupedIndex {
@@ -67,22 +75,22 @@ public class GroupedIndex {
         final Map<String, List<Doc>> sections = new HashMap<>();
 
         //filtering only documents with the same language for: target/jbake/<tomeeBranch>/docs
-        if(this.type.equalsIgnoreCase("docsindex")){
+        if (this.type.equalsIgnoreCase("docsindex")) {
 
             for (Doc doc1 : docs) {
                 if (doc1.language.equalsIgnoreCase(language)) {
                     sections.computeIfAbsent(doc1.getGroup(), k -> new ArrayList<>()).add(doc1);
                 }
             }
-        }else{
+        } else {
 
-            if(this.type.equalsIgnoreCase("examplesindex")){
+            if (this.type.equalsIgnoreCase("examplesindex")) {
                 for (Doc doc1 : docs) { //filtering only documents with the same language for: target/jbake/<tomeeBranch> and type = examplesindex
                     if (doc1.language.equalsIgnoreCase(language) && doc1.source.getParentFile().getName().equalsIgnoreCase("examples")) {
                         sections.computeIfAbsent(doc1.getGroup(), k -> new ArrayList<>()).add(doc1);
                     }
                 }
-            }else{//any type (used in GroupedIndexTest.java
+            } else {//any type (used in GroupedIndexTest.java
                 for (Doc doc1 : docs) {
                     if (doc1.language.equalsIgnoreCase(language)) {
                         sections.computeIfAbsent(doc1.getGroup(), k -> new ArrayList<>()).add(doc1);
@@ -156,9 +164,9 @@ public class GroupedIndex {
                         out.printf("        </div>\n");
 
                         final ListIterator<Doc> iterator = entry.getValue().stream()
-                                                                .sorted()
-                                                                .collect(Collectors.toList())
-                                                                .listIterator();
+                                .sorted()
+                                .collect(Collectors.toList())
+                                .listIterator();
 
                         final int i = (int) Math.ceil(entry.getValue().size() / 3f);
 
@@ -190,17 +198,17 @@ public class GroupedIndex {
         try {
             File fileParentFolder = null;
 
-            if(type.equalsIgnoreCase("docsindex")){
+            if (type.equalsIgnoreCase("docsindex")) {
                 fileParentFolder = new File(directory);
-            }else {
-                if(type.equalsIgnoreCase("examplesindex")){
-                    if(language.equalsIgnoreCase("en")){
-                        fileParentFolder = new File(directory +  File.separator + "examples");
-                    }else{
-                         fileParentFolder = new File(directory +  File.separator + language + File.separator + "examples");
+            } else {
+                if (type.equalsIgnoreCase("examplesindex")) {
+                    if (language.equalsIgnoreCase("en")) {
+                        fileParentFolder = new File(directory + File.separator + "examples");
+                    } else {
+                        fileParentFolder = new File(directory + File.separator + language + File.separator + "examples");
 
                     }
-                }else{
+                } else {
                     fileParentFolder = new File(directory);
                 }
             }
@@ -214,24 +222,24 @@ public class GroupedIndex {
     public List<Doc> list(final File directory) {//target/jbake/<tomeeBranch>
         try {
             return Files.walk(directory.toPath())
-                        .map(Path::toFile)
-                        .filter(File::isFile)
-                        .filter(Docs::isRendered)
-                        .map(this::parse)
-                        .collect(Collectors.toList());
+                    .map(Path::toFile)
+                    .filter(File::isFile)
+                    .filter(Docs::isRendered)
+                    .map(this::parse)
+                    .collect(Collectors.toList());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     private static String getLanguageFromPath(File file, String type) { //target/jbake/<tomeeBranch>/fr/examples/index.html
-        if(type.equalsIgnoreCase("docsindex")){ //ToDo: this needs to be updated when we are going to proccess docs internationalization too.
+        if (type.equalsIgnoreCase("docsindex")) { //ToDo: this needs to be updated when we are going to proccess docs internationalization too.
             return "";
-        }else { //examplesindex
+        } else { //examplesindex
 
-            if(file.getParentFile().getParentFile().getName().length() > 3){  // target/jbake/<tomeeBranchLengthIsGratherThan3>/examples/index.html
+            if (file.getParentFile().getParentFile().getName().length() > 3) {  // target/jbake/<tomeeBranchLengthIsGratherThan3>/examples/index.html
                 return "en";
-            }else{
+            } else {
                 return file.getParentFile().getParentFile().getName();  // target/jbake/<tomeeBranch>/fr/examples/index.html
             }
 
@@ -260,12 +268,12 @@ public class GroupedIndex {
 
          */
         if (type.equalsIgnoreCase("examplesindex") && file.getParentFile().getName().equalsIgnoreCase("examples")) {
-            String detectedLanguage = getLanguageFromPath(file,this.type);
+            String detectedLanguage = getLanguageFromPath(file, this.type);
 
-            if(detectedLanguage.equalsIgnoreCase("en")){
-                return new Doc(group, title, Docs.href(new File (directory + File.separator + "examples"), file), file, detectedLanguage);
-            }else{
-                return new Doc(group, title, Docs.href(new File (directory + File.separator + detectedLanguage + File.separator + "examples"), file), file, detectedLanguage);
+            if (detectedLanguage.equalsIgnoreCase("en")) {
+                return new Doc(group, title, Docs.href(new File(directory + File.separator + "examples"), file), file, detectedLanguage);
+            } else {
+                return new Doc(group, title, Docs.href(new File(directory + File.separator + detectedLanguage + File.separator + "examples"), file), file, detectedLanguage);
             }
 
         } else {
