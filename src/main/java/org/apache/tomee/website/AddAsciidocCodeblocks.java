@@ -21,6 +21,7 @@ import org.apache.openejb.util.Join;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -35,14 +36,29 @@ public class AddAsciidocCodeblocks {
 
     public static void main(String[] args) throws Exception {
 
-        final File docs = new File("repos/tomee-8.0/docs/");
+        final File docs = new File("repos/master/examples/");
 
         Files.walk(docs.toPath())
                 .map(Path::toFile)
                 .filter(File::isFile)
                 .filter(path -> path.getName().endsWith(".adoc"))
-                .forEach(AddAsciidocCodeblocks::process);
+                .peek(AddAsciidocCodeblocks::process)
+                .forEach(AddAsciidocCodeblocks::fixLanguage);
+        ;
 
+    }
+
+    private static void fixLanguage(final File file) {
+        try {
+            String contents = IO.slurp(file);
+
+            contents = contents.replace("[source,java]\n----\n<", "[source,xml]\n----\n<");
+            contents = contents.replace("[source,java]\n----\n----", "[source,console]\n----\n----");
+
+            IO.copy(IO.read(contents), file);
+        } catch (IOException e) {
+            throw new UncheckedIOException("Failed to process file: " + file.getAbsolutePath(), e);
+        }
     }
 
     public static void process(final File destReadme) {
