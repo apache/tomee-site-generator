@@ -24,6 +24,7 @@ import org.tomitribe.tio.lang.JvmLang;
 import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -80,7 +81,9 @@ public class LearningLinks {
         if (!source.getName().contains("jakarta")) return;
         final Map<String, JavadocSource> sources = getJavadocSources(source.stream());
 
-        for (final Example example : examples.getExamples()) {
+        final List<Example> examples = sort(this.examples.getExamples());
+
+        for (final Example example : examples) {
             final List<String> apisUsed = getImports(example).stream()
                     .filter(sources::containsKey)
                     .collect(Collectors.toList());
@@ -99,6 +102,40 @@ public class LearningLinks {
             addApisUsed(example, apisUsed, sources, source);
 
         }
+    }
+
+    protected static List<Example> sort(final List<Example> list) {
+        final List<Example> examples = new ArrayList<>(list);
+
+        // Sort by size of example description (favor better documented examples)
+        examples.sort(LearningLinks::compareBySize);
+
+        // Sort by TomEE version
+        examples.sort(LearningLinks::compareByVersion);
+
+        // Sort "latest" to the top
+        examples.sort(LearningLinks::compareByLatest);
+
+        return examples;
+    }
+
+    protected static int compareByLatest(final Example a, final Example b) {
+        return Integer.compare(rankLatest(b), rankLatest(a));
+    }
+
+    protected static int compareByVersion(final Example a, final Example b) {
+        return pathFromContentRoot(b.getDestReadme()).compareTo(pathFromContentRoot(a.getDestReadme()));
+    }
+
+    protected static int compareBySize(final Example a, final Example b) {
+        return Long.compare(b.getDestReadme().length(), a.getDestReadme().length());
+    }
+
+    private static int rankLatest(final Example example) {
+        final String path = pathFromContentRoot(example.getDestReadme());
+        if (path.startsWith("latest/")) return 1;
+        if (path.startsWith("master/")) return -1;
+        return 0;
     }
 
     private void addApisUsed(final Example example, final List<String> apisUsed, final Map<String, JavadocSource> sources, final Source source) {
