@@ -78,6 +78,23 @@ public class SeeLinksTest {
      * Test we can insert several @see links into the same javadoc
      */
     @Test
+    public void noDuplicates() throws IOException {
+        final Scenario scenario = scenario(SeeLinksTest.class, "noDuplicates");
+
+        final String input = scenario.get("before.java");
+
+        final String after1 = SeeLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
+        assertEquals(scenario.get("after.java"), after1);
+
+        // The second insert should be ignored as it has the same title "Orange Example"
+        final String after2 = SeeLinks.insertHref(after1, "http://example.org/foo.html", "Orange Example");
+        assertEquals(scenario.get("after.java"), after2);
+    }
+
+    /**
+     * Test we can insert several @see links into the same javadoc
+     */
+    @Test
     public void hasAnnotations() throws IOException {
         final Scenario scenario = scenario(SeeLinksTest.class, "hasAnnotations");
 
