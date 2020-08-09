@@ -17,12 +17,15 @@
 package javax.persistence;
 
 /**
- * @see <a href="http://example.org/orange.html">Orange Example</a>
- * @see <a href="http://example.org/red.html">Red Sample</a>
- * @see <a href="http://example.org/yellow.html">yellow</a>
+ * @example <a href="http://example.org/orange.html">Orange Example</a>
  */
-public enum Shapes {
-    CIRCLE,
-    TRIANGLE,
-    SQUARE
+public @interface Entity {
+
+    /**
+     * (Optional) The entity name. Defaults to the unqualified
+     * name of the entity class. This name is used to refer to the
+     * entity in queries. The name must not be a reserved literal
+     * in the Java Persistence query language.
+     */
+    String name() default "";
 }

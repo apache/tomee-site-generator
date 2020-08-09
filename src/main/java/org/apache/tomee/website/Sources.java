@@ -157,6 +157,7 @@ public class Sources {
                 .flatMap(Source::stream)
                 .map(Source::getPerform)
                 .flatMap(Collection::stream)
+                .peek(runnable -> System.out.println("Running Hook " + runnable))
                 .forEach(Runnable::run);
 
         VersionsIndex.prepare(this);

@@ -23,12 +23,12 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * @see <a href="http://example.org/orange.html">Orange Example</a>
+ * Specifies that the class is an entity. This annotation is applied to the
+ * entity class.
+ *
+ * @since Java Persistence 1.0
  */
-@Documented
-@Target(TYPE)
-@Retention(RUNTIME)
-public @interface Entity {
+final public interface Entity {
 
         /**
          * (Optional) The entity name. Defaults to the unqualified
@@ -36,5 +36,5 @@ public @interface Entity {
          * entity in queries. The name must not be a reserved literal
          * in the Java Persistence query language.
          */
-        String name() default "";
+        String name();
 }

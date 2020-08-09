@@ -21,11 +21,14 @@ import org.tomitribe.tio.Dir;
 import org.tomitribe.tio.Match;
 import org.tomitribe.tio.lang.JvmLang;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -99,7 +102,60 @@ public class LearningLinks {
     }
 
     private void addApisUsed(final Example example, final List<String> apisUsed, final Map<String, JavadocSource> sources, final Source source) {
-        // TODO
+        Collections.sort(apisUsed);
+
+        String content = null;
+        try {
+            content = IO.slurp(example.getDestReadme());
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+
+        final String basePath = pathToContentRoot(example.getDestReadme());
+
+        final List<JavadocSource> list = apisUsed.stream()
+                .map(sources::get)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+
+        for (JavadocSource javadocSource : list) {
+            final String link = String.format("%s%s/javadoc/%s.html",
+                    basePath,
+                    source.getName(),
+                    javadocSource.getClassName().replace(".", "/"));
+
+            content = ApisUsed.insertHref(content, link, javadocSource.getClassName());
+        }
+
+        try {
+            IO.copy(IO.read(content), example.getDestReadme());
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
+
+    static String pathToContentRoot(final File file) {
+        final StringBuilder sb = new StringBuilder();
+
+        File parent = file;
+        while ((parent = parent.getParentFile()) != null && !parent.getName().equals("content")) {
+            sb.append("../");
+        }
+
+        return sb.toString();
+    }
+
+    static String pathFromContentRoot(final File file) {
+        final String absolutePath = file.getAbsolutePath();
+
+        final String content = "/content/";
+        final int indexOfContent = absolutePath.indexOf(content);
+
+        if (indexOfContent == -1) {
+            throw new IllegalStateException("Expected '/content/' section of path not found: " + absolutePath);
+        }
+
+        return absolutePath.substring(indexOfContent + content.length());
     }
 
 
@@ -107,18 +163,23 @@ public class LearningLinks {
         try {
             final String content = IO.slurp(javadocSource.getSourceFile());
 
-            // TODO this link won't resolve as-is, it needs to be relative
-            final String link = example.getHref();
+            final String toContentRoot = pathToContentRoot(javadocSource.getSourceFile());
+            final String fromContentRoot = pathFromContentRoot(example.getDestReadme())
+                    .replace(".adoc", ".html")
+                    .replace(".md", ".html");
+
+            final String link = toContentRoot + fromContentRoot;
 
             final String name = example.getName();
 
+
             // Update the source contents to include an href link
-            final String modified = SeeLinks.insertHref(content, link, name);
+            final String modified = ExampleLinks.insertHref(content, link, name);
 
             // Overwrite the source with the newly linked version
             IO.copy(IO.read(modified), javadocSource.getSourceFile());
-        } catch (IOException e) {
-            throw new UncheckedIOException("Unable to add link to example: " + example.getName(), e);
+        } catch (Exception e) {
+            throw new IllegalStateException("Unable to add link to java source: " + javadocSource.getSourceFile().getAbsolutePath(), e);
         }
     }
 
@@ -161,5 +222,6 @@ public class LearningLinks {
                 .collect(Collectors.toMap(JavadocSource::getClassName, Function.identity()));
 
     }
+
 
 }

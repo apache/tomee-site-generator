@@ -16,18 +16,26 @@
  */
 package org.apache.tomee.website;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import org.tomitribe.swizzle.stream.StreamLexer;
+import org.tomitribe.util.IO;
+import org.tomitribe.util.Join;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
- * Utility class to insert additional @see links into java source code.
+ * Utility class to insert additional @example links into java source code.
  * If no Javadoc exists at the class level, some will be added.
+ *
+ * The @example tag is a custom javadoc tag that creates various "Examples" sections
+ * in the generated javadoc.
  */
-public class SeeLinks {
+public class ExampleLinks {
 
     public static String insertHref(final String source, final String link, final String linkText) {
         final int start = Math.max(source.lastIndexOf("\nimport "), source.indexOf("\npackage "));
-        final int end = min(source.indexOf("\npublic "), source.indexOf("\n@"));
+        final int end = min(min(source.indexOf("\npublic "), source.indexOf("\n@")), source.indexOf("\nfinal"));
 
         final String header = source.substring(start, end);
 
@@ -38,7 +46,10 @@ public class SeeLinks {
         }
     }
 
-    private static int min(final int a, final int b) {
+    /**
+     * Returns the lowest viable index
+     */
+    public static int min(final int a, final int b) {
         if (a == -1) return b;
         if (b == -1) return a;
         return Math.min(a, b);
@@ -46,7 +57,7 @@ public class SeeLinks {
 
     private static String addComment(final String source, final String link, final String linkText, final String header) {
         final String href = href(link, linkText);
-        final String comment = header + "\n/**" + href + "\n */";
+        final String comment = header + "\n/**\n" + href + "\n */";
         return source.replace(header, comment);
     }
 
@@ -56,22 +67,27 @@ public class SeeLinks {
          */
         if (header.contains(String.format(">%s</a>", linkText))) return source;
 
-        final Pattern commentPattern = Pattern.compile("/\\*\\*(.*\n*)*?\n *\\*/");
-        final Matcher matcher = commentPattern.matcher(header);
-        if (!matcher.find()) return source;
-
-        final String comment = matcher.group(0);
+        final StreamLexer lexer = new StreamLexer(IO.read(header));
+        final String comment;
+        try {
+            comment = lexer.readToken("/**", "*/");
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        }
 
         final String href = href(link, linkText);
 
-        final String updatedComment = comment.replaceFirst("(\n *\\*/)", href + "$1");
+        final List<String> lines = new ArrayList<>(Arrays.asList(comment.split("\n")));
+        lines.add(lines.size() - 1, href);
+
+        final String updatedComment = Join.join("\n", lines);
 
         // TODO
         return source.replace(comment, updatedComment);
     }
 
     private static String href(final String link, final String linkText) {
-        final String href = String.format("\n * @see <a href=\"%s\">%s</a>", link, linkText);
+        final String href = String.format(" * @example <a href=\"%s\">%s</a>", link, linkText);
         return href;
     }
 }

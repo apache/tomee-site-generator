@@ -92,6 +92,8 @@ public class Javadocs {
             final File javadocOutput = sources.getGeneratedDestFor(source, "javadoc");
             final ProcessBuilder cmd = new ProcessBuilder(
                     getJavadocCommand().getAbsolutePath(),
+                    "-tag",
+                    "example:a:Examples:",
                     "-sourcepath",
                     javaSources.getAbsolutePath(),
                     "-d",

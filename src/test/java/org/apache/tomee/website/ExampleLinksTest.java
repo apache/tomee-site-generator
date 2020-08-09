@@ -25,18 +25,18 @@ import static org.apache.tomee.website.Scenario.scenario;
 import static org.junit.Assert.assertEquals;
 
 @Ignore
-public class SeeLinksTest {
+public class ExampleLinksTest {
 
     /**
      * Test we can insert an @see link into some code that already has some javadoc
      */
     @Test
     public void insertHref() throws IOException {
-        final Scenario scenario = scenario(SeeLinksTest.class, "insertHref");
+        final Scenario scenario = scenario(ExampleLinksTest.class, "insertHref");
 
         final String input = scenario.get("before.java");
 
-        final String actual = SeeLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
+        final String actual = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
 
         assertEquals(scenario.get("after.java"), actual);
     }
@@ -46,11 +46,11 @@ public class SeeLinksTest {
      */
     @Test
     public void noJavadoc() throws IOException {
-        final Scenario scenario = scenario(SeeLinksTest.class, "noJavadoc");
+        final Scenario scenario = scenario(ExampleLinksTest.class, "noJavadoc");
 
         final String input = scenario.get("before.java");
 
-        final String actual = SeeLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
+        final String actual = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
 
         assertEquals(scenario.get("after.java"), actual);
     }
@@ -60,17 +60,17 @@ public class SeeLinksTest {
      */
     @Test
     public void multipleInserts() throws IOException {
-        final Scenario scenario = scenario(SeeLinksTest.class, "multipleInserts");
+        final Scenario scenario = scenario(ExampleLinksTest.class, "multipleInserts");
 
         final String input = scenario.get("before.java");
 
-        final String after1 = SeeLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
+        final String after1 = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
         assertEquals(scenario.get("after1.java"), after1);
 
-        final String after2 = SeeLinks.insertHref(after1, "http://example.org/red.html", "Red Sample");
+        final String after2 = ExampleLinks.insertHref(after1, "http://example.org/red.html", "Red Sample");
         assertEquals(scenario.get("after2.java"), after2);
 
-        final String after3 = SeeLinks.insertHref(after2, "http://example.org/yellow.html", "yellow");
+        final String after3 = ExampleLinks.insertHref(after2, "http://example.org/yellow.html", "yellow");
         assertEquals(scenario.get("after3.java"), after3);
     }
 
@@ -79,15 +79,15 @@ public class SeeLinksTest {
      */
     @Test
     public void noDuplicates() throws IOException {
-        final Scenario scenario = scenario(SeeLinksTest.class, "noDuplicates");
+        final Scenario scenario = scenario(ExampleLinksTest.class, "noDuplicates");
 
         final String input = scenario.get("before.java");
 
-        final String after1 = SeeLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
+        final String after1 = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
         assertEquals(scenario.get("after.java"), after1);
 
         // The second insert should be ignored as it has the same title "Orange Example"
-        final String after2 = SeeLinks.insertHref(after1, "http://example.org/foo.html", "Orange Example");
+        final String after2 = ExampleLinks.insertHref(after1, "http://example.org/foo.html", "Orange Example");
         assertEquals(scenario.get("after.java"), after2);
     }
 
@@ -96,11 +96,11 @@ public class SeeLinksTest {
      */
     @Test
     public void hasAnnotations() throws IOException {
-        final Scenario scenario = scenario(SeeLinksTest.class, "hasAnnotations");
+        final Scenario scenario = scenario(ExampleLinksTest.class, "hasAnnotations");
 
         final String input = scenario.get("before.java");
 
-        final String actual = SeeLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
+        final String actual = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
         assertEquals(scenario.get("after.java"), actual);
     }
 

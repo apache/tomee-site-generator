@@ -17,7 +17,7 @@
 package javax.persistence;
 
 /**
- * @see <a href="http://example.org/orange.html">Orange Example</a>
+ * @example <a href="http://example.org/orange.html">Orange Example</a>
  */
 public enum Shapes {
     CIRCLE,
