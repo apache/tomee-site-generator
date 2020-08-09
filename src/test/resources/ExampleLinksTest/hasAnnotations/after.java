@@ -23,7 +23,7 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * @example <a href="http://example.org/orange.html">Orange Example</a>
+ * @example.en <a href="http://example.org/orange.html">Orange Example</a>
  */
 @Documented
 @Target(TYPE)

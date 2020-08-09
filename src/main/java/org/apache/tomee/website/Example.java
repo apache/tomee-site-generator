@@ -56,14 +56,12 @@ public class Example {
     public void updateDestination(final File examplesDir) { //target/jbake/<tomeeBranch>
 
 
-
-
-        if (this.language.equalsIgnoreCase("")) {
+        if (this.language.equalsIgnoreCase("") || this.language.equalsIgnoreCase("en")) {
             File languageDir = new File(examplesDir + File.separator + "examples");
             if (!languageDir.exists()) {
                 languageDir.mkdirs();    //tomee8.0/examples
             }
-            this.setDestReadme(new File(examplesDir+File.separator+"examples", this.getName() + "." + this.getExt()));
+            this.setDestReadme(new File(examplesDir + File.separator + "examples", this.getName() + "." + this.getExt()));
         } else {
 
             File languageDir = new File(examplesDir + File.separator + getLanguage() + File.separator + "examples");
@@ -108,10 +106,22 @@ public class Example {
         final String exampleName = readme.getParentFile().getName();
         final String language = getLanguage(readme);
 
-        if (exampleName.equalsIgnoreCase("")) {
-            return new Example(readme, exampleName, ext, exampleName + ".html", "Example");
-        } else {
+        if (language.equalsIgnoreCase("") || language.equalsIgnoreCase("en")) {
+
+            return new Example(readme, exampleName, ext, exampleName + ".html", "Examples", "en");
+
+        } else if (language.equalsIgnoreCase("es")) {
+
             return new Example(readme, exampleName, ext, exampleName + ".html", "Ejemplos", language);
+
+        } else if (language.equalsIgnoreCase("pt")) {
+
+            return new Example(readme, exampleName, ext, exampleName + ".html", "Exemplos", language);
+
+        } else {
+
+            return new Example(readme, exampleName, ext, exampleName + ".html", "Examples", language);
+
         }
     }
 
@@ -127,5 +137,15 @@ public class Example {
 
     public static String getExtension(final File readme) {
         return readme.getName().replaceFirst("[^.]+\\.", "");
+    }
+
+    @Override
+    public String toString() {
+        return "Example{" +
+                "name='" + name + '\'' +
+                ", language='" + language + '\'' +
+                ", category='" + category + '\'' +
+                ", destReadme=" + destReadme +
+                '}';
     }
 }

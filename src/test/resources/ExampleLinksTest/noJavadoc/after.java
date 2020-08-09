@@ -17,7 +17,7 @@
 package javax.persistence;
 
 /**
- * @example <a href="http://example.org/orange.html">Orange Example</a>
+ * @example.en <a href="http://example.org/orange.html">Orange Example</a>
  */
 public @interface Entity {
 

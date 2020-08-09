@@ -27,7 +27,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * entity class.
  *
  * @since Java Persistence 1.0
- * @example <a href="http://example.org/orange.html">Orange Example</a>
+ * @example.en <a href="http://example.org/orange.html">Orange Example</a>
  */
 final public interface Entity {
 

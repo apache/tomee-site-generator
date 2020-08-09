@@ -36,7 +36,7 @@ public class ExampleLinksTest {
 
         final String input = scenario.get("before.java");
 
-        final String actual = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
+        final String actual = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example", "en");
 
         assertEquals(scenario.get("after.java"), actual);
     }
@@ -50,7 +50,7 @@ public class ExampleLinksTest {
 
         final String input = scenario.get("before.java");
 
-        final String actual = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
+        final String actual = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example", "en");
 
         assertEquals(scenario.get("after.java"), actual);
     }
@@ -64,13 +64,32 @@ public class ExampleLinksTest {
 
         final String input = scenario.get("before.java");
 
-        final String after1 = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
+        final String after1 = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example", "en");
         assertEquals(scenario.get("after1.java"), after1);
 
-        final String after2 = ExampleLinks.insertHref(after1, "http://example.org/red.html", "Red Sample");
+        final String after2 = ExampleLinks.insertHref(after1, "http://example.org/red.html", "Red Sample", "en");
         assertEquals(scenario.get("after2.java"), after2);
 
-        final String after3 = ExampleLinks.insertHref(after2, "http://example.org/yellow.html", "yellow");
+        final String after3 = ExampleLinks.insertHref(after2, "http://example.org/yellow.html", "yellow", "en");
+        assertEquals(scenario.get("after3.java"), after3);
+    }
+
+    /**
+     * Test we can insert several @see links into the same javadoc
+     */
+    @Test
+    public void multipleLanguages() throws IOException {
+        final Scenario scenario = scenario(ExampleLinksTest.class, "multipleLanguages");
+
+        final String input = scenario.get("before.java");
+
+        final String after1 = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example", "en");
+        assertEquals(scenario.get("after1.java"), after1);
+
+        final String after2 = ExampleLinks.insertHref(after1, "http://example.org/es/orange.html", "Orange Example", "es");
+        assertEquals(scenario.get("after2.java"), after2);
+
+        final String after3 = ExampleLinks.insertHref(after2, "http://example.org/pt/orange.html", "Orange Example", "pt");
         assertEquals(scenario.get("after3.java"), after3);
     }
 
@@ -83,11 +102,11 @@ public class ExampleLinksTest {
 
         final String input = scenario.get("before.java");
 
-        final String after1 = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
+        final String after1 = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example", "en");
         assertEquals(scenario.get("after.java"), after1);
 
         // The second insert should be ignored as it has the same title "Orange Example"
-        final String after2 = ExampleLinks.insertHref(after1, "http://example.org/foo.html", "Orange Example");
+        final String after2 = ExampleLinks.insertHref(after1, "http://example.org/foo.html", "Orange Example", "en");
         assertEquals(scenario.get("after.java"), after2);
     }
 
@@ -100,7 +119,7 @@ public class ExampleLinksTest {
 
         final String input = scenario.get("before.java");
 
-        final String actual = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example");
+        final String actual = ExampleLinks.insertHref(input, "http://example.org/orange.html", "Orange Example", "en");
         assertEquals(scenario.get("after.java"), actual);
     }
 

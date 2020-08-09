@@ -98,6 +98,9 @@ public class LearningLinks {
                 addSeeLink(sources.get(api), example);
             }
 
+            // Don't add any links if the source format is markdown
+            if (!example.getSrcReadme().getName().endsWith(".adoc")) continue;
+
             // Add APIs Used links to Example
             addApisUsed(example, apisUsed, sources, source);
 
@@ -211,7 +214,7 @@ public class LearningLinks {
 
 
             // Update the source contents to include an href link
-            final String modified = ExampleLinks.insertHref(content, link, name);
+            final String modified = ExampleLinks.insertHref(content, link, name, example.getLanguage());
 
             // Overwrite the source with the newly linked version
             IO.copy(IO.read(modified), javadocSource.getSourceFile());

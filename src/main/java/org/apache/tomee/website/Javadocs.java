@@ -93,7 +93,11 @@ public class Javadocs {
             final ProcessBuilder cmd = new ProcessBuilder(
                     getJavadocCommand().getAbsolutePath(),
                     "-tag",
-                    "example:a:Examples:",
+                    "example.en:a:Examples (en):",
+                    "-tag",
+                    "example.es:a:Examples (es):",
+                    "-tag",
+                    "example.pt:a:Examples (pt):",
                     "-sourcepath",
                     javaSources.getAbsolutePath(),
                     "-d",

@@ -23,6 +23,7 @@ import org.tomitribe.util.Join;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Utility class to insert additional @example links into java source code.
@@ -33,16 +34,16 @@ import java.util.List;
  */
 public class ExampleLinks {
 
-    public static String insertHref(final String source, final String link, final String linkText) {
+    public static String insertHref(final String source, final String link, final String linkText, final String language) {
         final int start = Math.max(source.lastIndexOf("\nimport "), source.indexOf("\npackage "));
         final int end = min(min(source.indexOf("\npublic "), source.indexOf("\n@")), source.indexOf("\nfinal"));
 
         final String header = source.substring(start, end);
 
         if (header.contains("/**")) {
-            return updateComment(source, link, linkText, header);
+            return updateComment(source, link, linkText, language, header);
         } else {
-            return addComment(source, link, linkText, header);
+            return addComment(source, link, linkText, language, header);
         }
     }
 
@@ -55,17 +56,17 @@ public class ExampleLinks {
         return Math.min(a, b);
     }
 
-    private static String addComment(final String source, final String link, final String linkText, final String header) {
-        final String href = href(link, linkText);
+    private static String addComment(final String source, final String link, final String linkText, final String language, final String header) {
+        final String href = href(link, linkText, language);
         final String comment = header + "\n/**\n" + href + "\n */";
         return source.replace(header, comment);
     }
 
-    private static String updateComment(final String source, final String link, final String linkText, final String header) {
+    private static String updateComment(final String source, final String link, final String linkText, final String language, final String header) {
         /*
          * If we already have a link to this example, don't add it again
          */
-        if (header.contains(String.format(">%s</a>", linkText))) return source;
+        if (exists(linkText, language, header)) return source;
 
         final StreamLexer lexer = new StreamLexer(IO.read(header));
         final String comment;
@@ -75,7 +76,7 @@ public class ExampleLinks {
             throw new IllegalStateException(e);
         }
 
-        final String href = href(link, linkText);
+        final String href = href(link, linkText, language);
 
         final List<String> lines = new ArrayList<>(Arrays.asList(comment.split("\n")));
         lines.add(lines.size() - 1, href);
@@ -86,8 +87,16 @@ public class ExampleLinks {
         return source.replace(comment, updatedComment);
     }
 
-    private static String href(final String link, final String linkText) {
-        final String href = String.format(" * @example <a href=\"%s\">%s</a>", link, linkText);
+    private static boolean exists(final String linkText, final String language, final String header) {
+        final long count = Stream.of(header.split("\n"))
+                .filter(s -> s.contains("@example." + language))
+                .filter(s -> s.contains(">" + linkText + "<"))
+                .count();
+        return count > 0;
+    }
+
+    private static String href(final String link, final String linkText, final String language) {
+        final String href = String.format(" * @example.%s <a href=\"%s\">%s</a>", language, link, linkText);
         return href;
     }
 }
