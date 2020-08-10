@@ -28,7 +28,7 @@ public class ApisUsed {
     public static String insertHref(String source, final String link, final String linkText) {
         source = normalize(source);
 
-        if (source.contains("\n= APIs Used\n")) {
+        if (source.contains("\n== APIs Used\n")) {
             return updateApiList(source, link, linkText);
         } else {
             return addApiList(source, link, linkText);
@@ -38,7 +38,7 @@ public class ApisUsed {
     private static String addApiList(final String source, final String link, final String linkText) {
         final PrintString out = new PrintString();
         out.println("");
-        out.println("= APIs Used");
+        out.println("== APIs Used");
         out.println("");
         out.printf("- link:%s[%s]%n", link, linkText);
 
@@ -46,7 +46,7 @@ public class ApisUsed {
     }
 
     private static String updateApiList(final String source, final String link, final String linkText) {
-        final int start = source.indexOf("\n= APIs Used\n");
+        final int start = source.indexOf("\n== APIs Used\n");
         final int end = ExampleLinks.min(source.indexOf("\n=", start + 1), source.length());
         final String content = source.substring(start, end);
 
@@ -64,6 +64,6 @@ public class ApisUsed {
         final Matcher matcher = HEADER.matcher(source);
         if (!matcher.find()) return source;
 
-        return matcher.replaceAll("\n= APIs Used\n");
+        return matcher.replaceAll("\n== APIs Used\n");
     }
 }

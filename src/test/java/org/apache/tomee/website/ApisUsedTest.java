@@ -121,7 +121,7 @@ public class ApisUsedTest {
 
     @Test
     public void normalize() throws Exception {
-        assertEquals("\n= APIs Used\n- link", ApisUsed.normalize("\n====  ApIs usEd\n- link"));
+        assertEquals("\n== APIs Used\n- link", ApisUsed.normalize("\n====  ApIs usEd\n- link"));
     }
 
 }

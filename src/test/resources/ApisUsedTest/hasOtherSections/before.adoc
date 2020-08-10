@@ -225,7 +225,7 @@ Results :
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 ----
 
-= APIs Used
+== APIs Used
 
 - link:../../../jakartaee-9.0/javadoc/jakarta/persistence/Entity.html[jakarta.persistence.Entity]
 
