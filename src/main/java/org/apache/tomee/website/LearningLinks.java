@@ -78,7 +78,6 @@ public class LearningLinks {
      * @see Configuration for the full list of Sources that will be seen here
      */
     public void prepare(final Source source) {
-        if (!source.getName().contains("jakarta")) return;
         final Map<String, JavadocSource> sources = getJavadocSources(source.stream());
 
         final List<Example> examples = sort(this.examples.getExamples());
