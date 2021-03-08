@@ -149,7 +149,7 @@ public class Downloads {
                 "|" + new SimpleDateFormat("d MMM yyyy").format(Date.from(LocalDateTime.parse(d.date, RFC_1123_DATE_TIME).toInstant(ZoneOffset.UTC))) +
                 "|" + d.size + " MB " +
                 "|" + d.format.toUpperCase() +
-                "| " + d.url + "[icon:download[] " + d.format.toUpperCase() + "] " + d.sha1 + "[icon:download[] SHA1] " + d.md5 + "[icon:download[] MD5]" + d.asc + "[icon:download[] PGP]");
+                "| " + d.url + "[icon:download[] " + d.format.toUpperCase() + "] " + d.sha1 + "[icon:download[] SHA1] " + d.md5 + "[icon:download[] MD5] " + d.asc + "[icon:download[] PGP]");
     }
 
     private static void checkMaxVersion(AtomicReference<String> version1, AtomicReference<String> version7, Download o1, int versionComp) {
