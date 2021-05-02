@@ -5,10 +5,10 @@
 :jbake-tomeepdf:
 :icons: font
 
-=== Apache TomEE 9.0.0 , Jakarta EE 9.1 TCK Certification Summary
+=== Apache TomEE 9.0.0-M7 , Jakarta EE 9.1 TCK Certification Summary
 ----
-Date:  April 30, 2021
-Product Name, Version: Apache TomEE 9.0.0
+Date:  May 2, 2021
+Product Name, Version: Apache TomEE 9.0.0-M7
 URL to product download page: https://tomee.apache.org/download-ng.html
 
 Product Description: An implementation of the Jakarta EE 9.1 Web Profile Specifications
