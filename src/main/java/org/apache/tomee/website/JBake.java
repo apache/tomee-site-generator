@@ -4,12 +4,17 @@ import com.orientechnologies.orient.core.Orient;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.configuration.CompositeConfiguration;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.DirectoryFileFilter;
+import org.apache.commons.io.filefilter.FileFileFilter;
+import org.apache.commons.io.filefilter.FileFilterUtils;
+import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.tomee.embedded.Configuration;
 import org.apache.tomee.embedded.Container;
 import org.jbake.app.ConfigUtil;
 import org.jbake.app.Oven;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 import java.nio.file.ClosedWatchServiceException;
 import java.nio.file.Path;
@@ -45,6 +50,22 @@ public class JBake {
 
 
         sources.prepare();
+
+
+        //ToDo: Refactor pending
+        //Move the content of src/main/jbake/content/certifications into
+        // target/jbake/content  AND target/site-1.0-SNAPSHOT
+        final IOFileFilter txtSuffixFilter = FileFilterUtils.suffixFileFilter(".adoc");
+        final IOFileFilter txtFiles = FileFilterUtils.andFileFilter(FileFileFilter.FILE, txtSuffixFilter);
+        final FileFilter JointFilter = FileFilterUtils.orFileFilter(DirectoryFileFilter.DIRECTORY, txtFiles);
+
+        final File srcDir = new File(source.getAbsolutePath()+"/content/certifications");
+        final File destJbakeDir = new File("target/jbake/content");
+
+        FileUtils.copyDirectory(srcDir, destJbakeDir, JointFilter, true);
+        // for future: automate the creation of target/jbake/content/certifications.adoc
+        FileUtils.deleteDirectory(new File (destJbakeDir+"/certifications"));
+
 
 
         final Runnable build = () -> {
