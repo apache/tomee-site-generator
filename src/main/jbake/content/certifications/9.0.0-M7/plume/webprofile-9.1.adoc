@@ -4,10 +4,18 @@
 :jbake-status: published
 :jbake-tomeepdf:
 :icons: font
+:imagesdir: ../../img
+
+image:apache_tomee-logo.jpg[TomEE, align="center"]
+
+== Introduction
+As required by the https://www.eclipse.org/legal/tck.php[Eclipse Foundation Technology Compatibility Kit License], following is a summary of the TCK results for releases of Jakarta EE Web Profile 9.1.
+
+
 
 === Apache TomEE 9.0.0-M7 , Jakarta EE 9.1 TCK Certification Summary
 ----
-Date:  May 2, 2021
+Date:  May 3, 2021
 Product Name, Version: Apache TomEE 9.0.0-M7
 URL to product download page: https://tomee.apache.org/download-ng.html
 
@@ -17,14 +25,15 @@ OS version: Linux 4.14.225-169.362.amzn2.aarch64
 Database version:   Apache Derby Network Server 10.14.2.0
 Database JDBC Driver and version:  Apache Derby 10.14.2.0
 ----
+
 Specification Name, Version and download URL:
-https://jakarta.ee/specifications/webprofile/9/[Jakarta EE Web Profile, 9.1]
+https://jakarta.ee/specifications/webprofile/9.1/[Jakarta EE Platform, Web Profile 9.1]
 
 TCK Version, digital SHA-256 fingerprint and download URL:
-https://download.eclipse.org/jakartaee/platform/9/jakarta-jakartaeetck-9.0.0.zip[Jakarta EE Platform TCK 9.1.0, 75b2493a117e7f8fe775cc7e2e8a605a203611895091f4bb9aaabed57f813392 ]
+https://download.eclipse.org/ee4j/jakartaee-tck/jakartaee9-eftl/promoted/jakarta-jakartaeetck-9.1.0.zip[Jakarta EE Platform TCK 9.1.0, 16904b7ccd7ae61287b763587e8bfbff50608ab09f3876bb41af65d043263ca7 ]
 
 Public URL of TCK Results Summary:
-link:tck-results.html[Apache TomEE TCK results]
+link:https://tomee.apache.org/9.0.0-M7/plume/webprofile-9.1.html[Apache TomEE 9.0.0-M7 TCK results]
 
 Any Additional Specification Certification Requirements:
 ----
