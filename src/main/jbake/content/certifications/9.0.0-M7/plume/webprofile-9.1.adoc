@@ -44,176 +44,26 @@ Jakarta Bean Validation 3.0.0 TCK
 
 === Web Profile TCK Test results
 Test results:
-----
-Test name: connector
-[javatest.batch] Completed running 252 tests.
-[javatest.batch] Number of Tests Passed      = 252
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: ejb30_lite
-[javatest.batch] Completed running 1873 tests.
-[javatest.batch] Number of Tests Passed      = 1873
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: ejb32_lite
-[javatest.batch] Completed running 456 tests.
-[javatest.batch] Number of Tests Passed      = 456
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: el
-[javatest.batch] Completed running 667 tests.
-[javatest.batch] Number of Tests Passed      = 667
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jaxrs
-[javatest.batch] Completed running 974 tests.
-[javatest.batch] Number of Tests Passed      = 974
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jdbc_ee_batchUpdate
-[javatest.batch] Completed running 34 tests.
-[javatest.batch] Number of Tests Passed      = 34
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jdbc_ee_callStmt
-[javatest.batch] Completed running 796 tests.
-[javatest.batch] Number of Tests Passed      = 796
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jdbc_ee_connection
-[javatest.batch] Completed running 18 tests.
-[javatest.batch] Number of Tests Passed      = 18
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jdbc_ee_dateTime
-[javatest.batch] Completed running 76 tests.
-[javatest.batch] Number of Tests Passed      = 76
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jdbc_ee_dbMeta
-[javatest.batch] Completed running 470 tests.
-[javatest.batch] Number of Tests Passed      = 470
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jdbc_ee_escapeSyntax
-[javatest.batch] Completed running 162 tests.
-[javatest.batch] Number of Tests Passed      = 162
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jdbc_ee_exception
-[javatest.batch] Completed running 28 tests.
-[javatest.batch] Number of Tests Passed      = 28
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jdbc_ee_prepStmt
-[javatest.batch] Completed running 542 tests.
-[javatest.batch] Number of Tests Passed      = 542
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jdbc_ee_resultSet
-[javatest.batch] Completed running 228 tests.
-[javatest.batch] Number of Tests Passed      = 228
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jdbc_ee_rsMeta
-[javatest.batch] Completed running 42 tests.
-[javatest.batch] Number of Tests Passed      = 42
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jdbc_ee_stmt
-[javatest.batch] Completed running 66 tests.
-[javatest.batch] Number of Tests Passed      = 66
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jpa_core
-[javatest.batch] Completed running 1841 tests.
-[javatest.batch] Number of Tests Passed      = 1841
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jpa_ee
-[javatest.batch] Completed running 38 tests.
-[javatest.batch] Number of Tests Passed      = 38
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jsf
-[javatest.batch] Completed running 5526 tests.
-[javatest.batch] Number of Tests Passed      = 5526
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jsonb
-[javatest.batch] Completed running 532 tests.
-[javatest.batch] Number of Tests Passed      = 532
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jsonp
-[javatest.batch] Completed running 372 tests.
-[javatest.batch] Number of Tests Passed      = 372
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jsp
-[javatest.batch] Completed running 720 tests.
-[javatest.batch] Number of Tests Passed      = 720
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jstl
-[javatest.batch] Completed running 541 tests.
-[javatest.batch] Number of Tests Passed      = 541
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: jta
-[javatest.batch] Completed running 154 tests.
-[javatest.batch] Number of Tests Passed      = 154
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: securityapi
-[javatest.batch] Completed running 84 tests.
-[javatest.batch] Number of Tests Passed      = 84
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: servlet
-[javatest.batch] Completed running 1640 tests.
-[javatest.batch] Number of Tests Passed      = 1640
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: signaturetest_javaee
-[javatest.batch] Completed running 2 tests.
-[javatest.batch] Number of Tests Passed      = 2
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-Test name: websocket
-[javatest.batch] Completed running 745 tests.
-[javatest.batch] Number of Tests Passed      = 745
-[javatest.batch] Number of Tests Failed      = 0
-[javatest.batch] Number of Tests with Errors = 0
-
-----
+[width="100%",options="header]
+|=======
+|section|tests|passed|failed
+|ejb32|809|809|0
+|el|667|667|0
+|jaspic|68|68|0
+|jaxrs|2622|2622|0
+|jdbc|4924|4924|0
+|jpa|11025|11025|0
+|jsf|5517|5517|0
+|jsonb|232|232|0
+|jsonp|744|744|0
+|jsp|730|730|0
+|jstl|541|541|0
+|jta|195|195|0
+|securityapi|85|85|0
+|servlet|1700|1700|0
+|signaturetest|2|0|0
+|websocket|725|725|0
+|=======
 
 === Additional standalone TCK Test results
 Standalone test results:
