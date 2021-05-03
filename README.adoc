@@ -71,6 +71,10 @@ Finally note that the site generation will rely on the cache as well to generate
 
 == Publish (needs an ASF account)
 
+- To publish the website, you have to add and push the related content to the https://github.com/apache/tomee-site-pub[TomEE Site Pub] repository.
+
+== Legacy SVN Publish (not working anymore)
+
 `SvnPub` is a main to push to the staging the site content once built, you need to set the system properties (or properties in ~/.m2/settings.xml)
 `site.password` to your asf password and `site.username` if you user name is not `USER` environment variable for it to work.
 
