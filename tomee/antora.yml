@@ -1,0 +1,7 @@
+name: common
+title: TomEE Common Information
+version: master
+start_page: ROOT:contribute.adoc
+nav:
+- modules/ROOT/nav.adoc
+- modules/ROOT/nav0.adoc

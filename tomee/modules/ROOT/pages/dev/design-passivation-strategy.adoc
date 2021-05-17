@@ -1,0 +1,22 @@
+= Design - Passivation Strategy
+
+== Passivation Strategy
+
+Sub-component of xref:dev/design-stateful-sessionbean-container.adoc[Stateful SessionBean Container]
+
+== Definition
+
+Used by the Stateful Container to passivate and activate stateful session beans to a temporary storage.
+
+== Responsibilities
+
+* Store and retrieve instances
+
+== Related Classes
+
+* org.apache.openejb.core.stateful.PassivationStrategy
+
+== Implementations
+
+* xref:dev/design-random-access-file-passivater.adoc[Random Access File Passivater]
+* xref:dev/design-simple-passivater.adoc[Simple Passivater]

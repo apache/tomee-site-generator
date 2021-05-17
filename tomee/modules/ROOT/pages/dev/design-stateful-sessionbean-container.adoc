@@ -1,0 +1,22 @@
+= Design - Stateful SessionBean Container
+
+== Stateful SessionBean Container
+
+Implementation of xref:dev/design-container.adoc[Container]
+
+== Description
+
+Container that implements the EJB defined bean-container contract for Stateful SessionBeans.
+
+== Also Known As
+
+* Stateful Session Container
+* Stateful Container
+
+== Related Classes
+
+* org.apache.openejb.core.stateful.StatefulContainer
+
+== Sub-components
+
+* xref:dev/design-passivation-strategy.adoc[Passivation Strategy]

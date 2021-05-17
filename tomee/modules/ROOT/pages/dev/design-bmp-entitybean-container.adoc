@@ -1,0 +1,18 @@
+= Design - BMP EntityBean Container
+
+== BMP EntityBean Container
+
+Implementation of xref:dev/design-container.adoc[Container]
+
+== Description
+
+Container that implements the EJB defined bean-container contract for EntityBeans with bean-managed persistence.
+
+== Also Known As
+
+* BMP Entity Container
+* BMP Container
+
+== Related Classes
+
+* org.apache.openejb.core.entity.EntityContainer
