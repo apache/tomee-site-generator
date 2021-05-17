@@ -1,4 +1,6 @@
 = Linux/OSX awesomeness
+:jbake-type: page
+:jbake-status: published
 
 
 Not specific to this projec, but can be incredibly useful ways to maximizes your time.

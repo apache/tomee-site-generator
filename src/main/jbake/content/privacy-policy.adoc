@@ -1,4 +1,7 @@
 = Privacy Policy Information about your use of this website is collected using server access logs and a tracking cookie.
+:jbake-type: page
+:jbake-status: published
+
 The collected information consists of the following:
 
 . The IP address from which you access the website;

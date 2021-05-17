@@ -1,4 +1,6 @@
 = Release Notes - TomEE - Version 1.7.2
+:jbake-type: page
+:jbake-status: published
 
 == Upgrades
 

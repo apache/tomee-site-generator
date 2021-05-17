@@ -1,4 +1,6 @@
 = Design - BMP EntityBean Container
+:jbake-type: page
+:jbake-status: published
 
 == BMP EntityBean Container
 

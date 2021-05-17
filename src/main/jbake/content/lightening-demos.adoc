@@ -1,4 +1,6 @@
 = Lightning Demos
+:jbake-type: page
+:jbake-status: published
 :properties-table-layout: cols="3a,2a,5a",options="header"
 
 == Lightning Demos Details

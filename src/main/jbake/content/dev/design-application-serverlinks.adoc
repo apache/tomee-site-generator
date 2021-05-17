@@ -1,4 +1,6 @@
 = Design - Application ServerLinks
+:jbake-type: page
+:jbake-status: published
 
 NOTE: this image is not present in source nor on the current site
 

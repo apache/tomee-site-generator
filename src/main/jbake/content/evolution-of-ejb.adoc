@@ -1,4 +1,6 @@
 = Evolution of EJB
+:jbake-type: page
+:jbake-status: published
 :icons: font
 :y: icon:check[role="green"]
 :n: icon:times[role="red"]

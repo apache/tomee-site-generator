@@ -1,4 +1,6 @@
 = Rules of Thumb
+:jbake-type: page
+:jbake-status: published
 
 == Configuration
 

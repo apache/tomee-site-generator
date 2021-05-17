@@ -1,4 +1,6 @@
 = Contributing
+:jbake-type: page
+:jbake-status: published
 
 Contributing to the project is a great way to support the community.
 Some great links for getting involved

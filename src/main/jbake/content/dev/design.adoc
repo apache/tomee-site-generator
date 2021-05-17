@@ -1,4 +1,6 @@
 = Design
+:jbake-type: page
+:jbake-status: published
 
 == OpenEJB
 

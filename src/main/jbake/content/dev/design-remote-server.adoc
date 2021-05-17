@@ -1,4 +1,6 @@
 = Design - Remote Server
+:jbake-type: page
+:jbake-status: published
 
 == Remote Server
 

@@ -1,4 +1,6 @@
 = ASF ASF Board meetings are the third Wednesday of each month:
+:jbake-type: page
+:jbake-status: published
 
 Reports must be filed monthly for the first three months after Incubation:
 

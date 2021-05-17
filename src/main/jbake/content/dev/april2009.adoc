@@ -1,4 +1,8 @@
-= April2009 A patch release of OpenEJB 3.0 (3.0.1) was released with fixes aimed to support the Geronimo 2.1.4 release.
+= April 2009
+:jbake-type: page
+:jbake-status: published
+
+A patch release of OpenEJB 3.0 (3.0.1) was released with fixes aimed to support the Geronimo 2.1.4 release.
 Talk has started on a release of the current 3.1 branch (to be OpenEJB 3.1.1), which already contains several fixes and improvements over the 3.1 version released in November.
 
 List traffic has continued to increase.

@@ -1,4 +1,6 @@
 = Tomcat
+:jbake-type: page
+:jbake-status: published
 
 == Introduction
 

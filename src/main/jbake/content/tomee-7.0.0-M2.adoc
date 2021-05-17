@@ -1,4 +1,6 @@
 = Apache TomEE 7.0.0-M2 released, Feb 29th 2016
+:jbake-type: page
+:jbake-status: published
 
 The Apache TomEE community is proud to announce the release of 
 //FIXME CHOOSE ONE

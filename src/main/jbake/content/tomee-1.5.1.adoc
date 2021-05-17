@@ -1,4 +1,6 @@
 = Apache TomEE 1.5.1 Released!
+:jbake-type: page
+:jbake-status: published
 
 
 We are excited to announce the release of xref:download-archive.adoc[Apache TomEE 1.5.1].

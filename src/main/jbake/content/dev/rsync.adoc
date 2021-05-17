@@ -1,4 +1,6 @@
 = rsync
+:jbake-type: page
+:jbake-status: published
 
 `rsync` is basically the only copy command you'll ever need on a linux/unix system.
 It can copy in the same machine or across machines.

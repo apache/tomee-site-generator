@@ -1,4 +1,6 @@
 = Building from source
+:jbake-type: page
+:jbake-status: published
 
 == Building from source
 

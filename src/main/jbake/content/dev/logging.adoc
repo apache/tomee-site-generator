@@ -1,4 +1,6 @@
-= Logging +++<a name="Logging-LoggingforUsers">++++++</a>+++
+= Logging
+:jbake-type: page
+:jbake-status: published
 
 == Logging for Users
 

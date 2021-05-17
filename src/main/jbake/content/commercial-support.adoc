@@ -1,4 +1,6 @@
 = Apache TomEE Commercial Support
+:jbake-type: page
+:jbake-status: published
 
 This page is dedicated to companies offering products and services around or including Apache TomEE.
 

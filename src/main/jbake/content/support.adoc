@@ -1,4 +1,6 @@
 = Getting Support
+:jbake-type: page
+:jbake-status: published
 
 == Mailing Lists
 

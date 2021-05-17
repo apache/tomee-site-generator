@@ -1,4 +1,6 @@
 = Apache TomEE 7.0.1 released, June 27th 2016
+:jbake-type: page
+:jbake-status: published
 
 The Apache TomEE community is proud to announce the release of xref:tomee-7.0.1.adoc[Apache TomEE 7.0.1], which is based on http://tomcat.apache.org/tomcat-8.5-doc/index.html[Apache Tomcat 8.5.3] and mainly aims to fix a security issue found in Tomcat 8.5.2.
 

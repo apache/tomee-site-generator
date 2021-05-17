@@ -1,4 +1,6 @@
 = Design - Passivation Strategy
+:jbake-type: page
+:jbake-status: published
 
 == Passivation Strategy
 

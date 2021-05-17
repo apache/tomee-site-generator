@@ -1,4 +1,6 @@
 = iTests Overview
+:jbake-type: page
+:jbake-status: published
 
 == Motivation
 

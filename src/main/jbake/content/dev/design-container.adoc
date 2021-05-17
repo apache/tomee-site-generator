@@ -1,4 +1,6 @@
 = Design - Container
+:jbake-type: page
+:jbake-status: published
 
 == Container
 

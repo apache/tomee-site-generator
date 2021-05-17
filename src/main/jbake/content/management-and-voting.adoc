@@ -1,4 +1,6 @@
 =  Management and Voting
+:jbake-type: page
+:jbake-status: published
 
 ==  Basic info
 

@@ -1,4 +1,6 @@
 = Working on the Website
+:jbake-type: page
+:jbake-status: published
 
 The easiest way to edit is to simply click the blue pencil icon in the upper right.
 Have fun!

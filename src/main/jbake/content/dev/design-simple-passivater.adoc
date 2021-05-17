@@ -1,4 +1,6 @@
 = Design - Simple Passivater
+:jbake-type: page
+:jbake-status: published
 
 == Simple Passivater
 

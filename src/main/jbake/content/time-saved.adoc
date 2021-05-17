@@ -1,4 +1,6 @@
 = Time Saved
+:jbake-type: page
+:jbake-status: published
 
 Ever wonder exactly how much time you might be saving being able to quickly
 compile and test code with OpenEJB?  Well, find out!

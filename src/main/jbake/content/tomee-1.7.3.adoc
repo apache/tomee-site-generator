@@ -1,4 +1,6 @@
 = Apache TomEE 1.7.3 released, Dec 9th 2015
+:jbake-type: page
+:jbake-status: published
 
 The Apache TomEE community is pleased to announce the release of http://tomee.apache.org/downloads.html[Apache TomEE 1.7.3], which is based on http://tomcat.apache.org/tomcat-7.0-doc/index.html[Apache Tomcat 7.0.65], including numerous fixes and updates.
 We know this has been a long time coming, so we thank you for your patience and support.

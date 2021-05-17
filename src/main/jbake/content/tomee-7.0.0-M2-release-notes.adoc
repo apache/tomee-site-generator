@@ -1,4 +1,6 @@
 = Release Notes - TomEE - Version 7.0.0-M2
+:jbake-type: page
+:jbake-status: published
 
 == Bug
 

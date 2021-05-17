@@ -1,5 +1,6 @@
 = Releasing TomEE
-:experimental:
+:jbake-type: page
+:jbake-status: published
 
  This document is aimed at guiding a release manager through the general release process. You will need either a Linux, Mac, or failing that a Linux Virtual (with at least a 50GB Drive) on Win.
 

@@ -1,4 +1,6 @@
 = Validation Keys Audit Report
+:jbake-type: page
+:jbake-status: published
 
 Warning: This page is auto-generated.
 Any manual changes would be over-written the next time this page is regenerated

@@ -1,4 +1,6 @@
- Design - Classic Assembler
+= Design - Classic Assembler
+:jbake-type: page
+:jbake-status: published
 
 == Classic Assembler
 

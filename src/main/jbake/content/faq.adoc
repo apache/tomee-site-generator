@@ -1,4 +1,6 @@
 = FAQ
+:jbake-type: page
+:jbake-status: published
 
 == General
 

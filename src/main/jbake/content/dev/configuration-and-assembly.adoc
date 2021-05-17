@@ -1,4 +1,6 @@
 = Configuration and Assembly
+:jbake-type: page
+:jbake-status: published
 
 Disclaimer that we do tweak and change this code frequently, without notice.
 It is the very heart of OpenEJB.

@@ -1,4 +1,6 @@
 = Apache TomEE 1.7.1 Released!
+:jbake-type: page
+:jbake-status: published
 
 After the huge buzz getting version 1.7.0 off the press it is time to get back to the day to day.
 As promised we are committed to providing the best for our community, and so without further a do here is TomEE 1.7.1 - This is a maintenance release that fixes some minor issues and a few tweaks (We understand it is not so minor if you are waiting for it, so thanks for your patience).

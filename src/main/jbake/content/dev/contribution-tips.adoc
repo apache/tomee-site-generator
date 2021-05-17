@@ -1,4 +1,6 @@
 = Contribution Tips
+:jbake-type: page
+:jbake-status: published
 
 == First steps
 

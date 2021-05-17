@@ -1,4 +1,6 @@
 = Mailing Lists
+:jbake-type: page
+:jbake-status: published
 :mailing-list-table-layout: cols="1,1,2,5",options="header"
 :y: icon:check[role="green"]
 :n: icon:times[role="red"]

@@ -1,4 +1,6 @@
 = Design - Transaction Service
+:jbake-type: page
+:jbake-status: published
 
 == Transaction Service
 

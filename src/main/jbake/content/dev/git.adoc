@@ -1,4 +1,6 @@
 = GIT for TomEE Developers
+:jbake-type: page
+:jbake-status: published
 
 == The GitFlow Workflow
 

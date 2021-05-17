@@ -1,4 +1,9 @@
-= April2008 The highlight of early February was the release of OpenEJB 3.0 beta 2 which was very well received and triggered another small increase in overall users@openejb.a.o traffic.
+= April 2008
+:jbake-type: page
+:jbake-status: published
+
+The highlight of early February was the release of OpenEJB 3.0 beta 2 which was very well received and triggered another small increase in overall users@openejb.a.o traffic.
+
 We've also seen some encouraging growth signs we haven't seen for quite a while: users answering each other's questions;
 first time posters saying "we've added this feature, do you want it?";
 more questions answerable with documentation links;

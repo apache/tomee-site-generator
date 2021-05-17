@@ -1,4 +1,6 @@
 = Design - Stateful SessionBean Container
+:jbake-type: page
+:jbake-status: published
 
 == Stateful SessionBean Container
 

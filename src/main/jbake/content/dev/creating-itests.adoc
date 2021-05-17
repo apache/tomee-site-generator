@@ -1,4 +1,6 @@
- Creating itests
+= Creating itests
+:jbake-type: page
+:jbake-status: published
 
 == OpenEJB itests
 

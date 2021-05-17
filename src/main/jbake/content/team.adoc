@@ -1,4 +1,6 @@
 = Team
+:jbake-type: page
+:jbake-status: published
 
 [cols=6*]
 |===

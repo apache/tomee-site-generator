@@ -1,4 +1,6 @@
 = Thread Dumps
+:jbake-type: page
+:jbake-status: published
 
 == Java 5 tools
 

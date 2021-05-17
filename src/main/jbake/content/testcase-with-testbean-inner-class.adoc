@@ -1,4 +1,6 @@
 = TestCase with TestBean inner-class The use of an inner-class annotated as an EJB can get you all the resources you may need to run your test case such as a UserTransaction, EntityManager, JMS Topic or Queue, DataSource, references to other EJBs, etc.
+:jbake-type: page
+:jbake-status: published
 
 Simply add a _META-INF/ejb-jar.xml_ to your _test_ _sources_ and start annotating your inner class as needed.
 

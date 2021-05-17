@@ -1,4 +1,6 @@
 = Tomcat Installation
+:jbake-type: page
+:jbake-status: published
 
 == Overview
 

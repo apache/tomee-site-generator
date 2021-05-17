@@ -1,4 +1,6 @@
 = OpenEJB Release Process
+:jbake-type: page
+:jbake-status: published
 
  Note: This information is largely obsolete and remains here for reference only.
 

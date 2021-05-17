@@ -1,4 +1,6 @@
 = Design - Nova Configuration Factory
+:jbake-type: page
+:jbake-status: published
 
 == Nova Configuration Factory
 

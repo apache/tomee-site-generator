@@ -1,4 +1,6 @@
 = Apache TomEE Security Vulnerabilities
+:jbake-type: page
+:jbake-status: published
 
 This page lists all security vulnerabilities fixed in maintenance releases or interim builds of Apache TomEE 1.x.
 Each vulnerability is given a security impact rating by either the Apache TomEE team or by the dependent project supplying the fix - please note that this rating is not uniform and will vary from project to project.

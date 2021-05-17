@@ -1,4 +1,6 @@
 = Arquillian Test Porting Initiative
+:jbake-type: page
+:jbake-status: published
 
 First things, first.
 You can contribute your ideas by clicking the blue pencile icon in the upper right.

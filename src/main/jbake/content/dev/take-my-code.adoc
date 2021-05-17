@@ -1,4 +1,6 @@
 = Take My Code Gladly!
+:jbake-type: page
+:jbake-status: published
 
 We (the individuals who makeup the community) will happily take your code.
 

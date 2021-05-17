@@ -1,4 +1,6 @@
 = Design - Security Service
+:jbake-type: page
+:jbake-status: published
 
 == Security Service
 

@@ -1,4 +1,6 @@
 = Writing Validation Tests
+:jbake-type: page
+:jbake-status: published
 
 
 == Summary

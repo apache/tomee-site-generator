@@ -1,4 +1,6 @@
 = Tomcat Detailed Instructions
+:jbake-type: page
+:jbake-status: published
 
 == Detailed Installation Instructions
 

@@ -1,4 +1,6 @@
 = Downloads
+:jbake-type: page
+:jbake-status: published
 
 * Release Date: October 6th, 2011
 

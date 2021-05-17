@@ -1,4 +1,6 @@
 = Webadmin
+:jbake-type: page
+:jbake-status: published
 
 The Webadmin is a new addition to OpenEJB 1.0 and very innovative in that it lets you plug-in your own admin beans.
 Here are some screenshots:

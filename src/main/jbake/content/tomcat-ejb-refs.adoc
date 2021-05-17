@@ -1,4 +1,6 @@
 = Tomcat ejb-refs
+:jbake-type: page
+:jbake-status: published
 
 == Via @EJB Annotation
 

@@ -1,4 +1,6 @@
 = Source Code
+:jbake-type: page
+:jbake-status: published
 
 *We have moved to GIT.
 This means that anything you may find elsewhere on the site about SVN is no longer valid!*

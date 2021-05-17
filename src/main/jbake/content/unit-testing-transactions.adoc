@@ -1,4 +1,6 @@
 = Unit Testing Transactions
+:jbake-type: page
+:jbake-status: published
 
 
 == Basic setup

@@ -1,4 +1,6 @@
-     Release Notes - TomEE - Version 1.7.0
+= Release Notes - TomEE - Version 1.7.0
+:jbake-type: page
+:jbake-status: published
 
 == Sub-task
 

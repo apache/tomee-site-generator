@@ -1,4 +1,6 @@
 = Design - Assembler
+:jbake-type: page
+:jbake-status: published
 
 == Assembler
 

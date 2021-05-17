@@ -1,4 +1,6 @@
 = Apache TomEE 1.0.0-beta-2 Release Notes
+:jbake-type: page
+:jbake-status: published
 
 
 2012-01-23

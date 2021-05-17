@@ -1,4 +1,6 @@
 = xbean-finder
+:jbake-type: page
+:jbake-status: published
 
 == AnnotationFinder
 

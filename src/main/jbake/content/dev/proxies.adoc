@@ -1,4 +1,6 @@
 = Proxies
+:jbake-type: page
+:jbake-status: published
 
 == Where's the Java source for the proxies?
 

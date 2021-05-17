@@ -1,4 +1,6 @@
 = Apache TomEE 7.0.0-M3 released, Mar 06th 2016
+:jbake-type: page
+:jbake-status: published
 
 The Apache TomEE community is proud to announce the release of xref:tomee-7.0.0-M3.adoc[Apache TomEE 7.0.0-M3], which is based on http://tomcat.apache.org/tomcat-8.0-doc/index.html[Apache Tomcat 8.0.32] and is our first milestone release towards EE7.
 Part of this release an important security fix is included if EJBd is active on your instance (true by default).

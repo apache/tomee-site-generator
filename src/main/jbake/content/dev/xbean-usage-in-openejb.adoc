@@ -1,4 +1,6 @@
 = Xbean usage in OpenEJB
+:jbake-type: page
+:jbake-status: published
 
 == How XBean is used in OpenEJB
 

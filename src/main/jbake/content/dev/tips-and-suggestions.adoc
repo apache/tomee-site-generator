@@ -1,4 +1,6 @@
 = Tips and Suggestions
+:jbake-type: page
+:jbake-status: published
 
 
 == Useful information for contributors

@@ -1,4 +1,6 @@
 = Design - Resource Manager
+:jbake-type: page
+:jbake-status: published
 
 == Resource Manager
 

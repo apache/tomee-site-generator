@@ -1,4 +1,6 @@
 = Apache TomEE 1.6.0.2 Release Notes
+:jbake-type: page
+:jbake-status: published
 
 == Upgrades
 

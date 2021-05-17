@@ -1,4 +1,6 @@
 = WebObjects
+:jbake-type: page
+:jbake-status: published
 
 We don't officially support the WebObjects OpenEJB integration, but we are happy to offer up this page for those users to place information on usage of EJBs in WebObjects 5.1.
 

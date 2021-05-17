@@ -1,4 +1,6 @@
 = TomEE and Eclipse using Webby
+:jbake-type: page
+:jbake-status: published
 
 If you want to use Eclipse and WTP (the classic way), please read this xref:tomee-and-eclipse.adoc[docs].
 

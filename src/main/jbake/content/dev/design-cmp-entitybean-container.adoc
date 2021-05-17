@@ -1,4 +1,6 @@
 = Design - CMP EntityBean Container
+:jbake-type: page
+:jbake-status: published
 
 == CMP EntityBean Container
 

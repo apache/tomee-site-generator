@@ -1,4 +1,6 @@
 = High level goals
+:jbake-type: page
+:jbake-status: published
 
 * Pre Certification
  ** pass the tcks

@@ -1,4 +1,6 @@
 = CDI TCK status with webapps deployer
+:jbake-type: page
+:jbake-status: published
 
 To run the TCK with the webapps/ directory deployer:
 

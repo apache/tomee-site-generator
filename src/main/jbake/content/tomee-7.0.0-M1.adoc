@@ -1,4 +1,6 @@
 = Apache TomEE 7.0.0-M1 released, Dec 11th 2015
+:jbake-type: page
+:jbake-status: published
 
 The Apache TomEE community is proud to announce the release of xref:tomee-7.0.0-M1.adoc[Apache TomEE 7.0.0-M1], which is based on link:http://tomcat.apache.org/tomcat-8.0-doc/index.html[Apache Tomcat 8.0.30] and is our first milestone release towards EE7.
 We know this has been a long time coming, so we thank you for your patience and support.

@@ -1,4 +1,6 @@
 = Design - Random Access File Passivater
+:jbake-type: page
+:jbake-status: published
 
 == Random Access File Passivater
 

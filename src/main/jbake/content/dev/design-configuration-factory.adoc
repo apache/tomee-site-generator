@@ -1,4 +1,6 @@
- Design - Configuration Factory
+= Design - Configuration Factory
+:jbake-type: page
+:jbake-status: published
 
 == Configuration Factory
 

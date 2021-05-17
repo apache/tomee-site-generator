@@ -1,4 +1,6 @@
 = Writing Presentable Examples
+:jbake-type: page
+:jbake-status: published
 
 Writing an example is easy.
 Any example is a good one.

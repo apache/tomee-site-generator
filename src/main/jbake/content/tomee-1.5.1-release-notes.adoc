@@ -1,4 +1,6 @@
 = Apache TomEE 1.5.1 Release Notes
+:jbake-type: page
+:jbake-status: published
 
 == Upgrades
 

@@ -1,4 +1,6 @@
 = Apache TomEE 1.5 Released!
+:jbake-type: page
+:jbake-status: published
 
 We are excited to announce the release of http://tomee.apache.org/downloads.html[Apache TomEE 1.5].
 The volume of feedback on the 1.0.0 Final drove such an impressive number of fixes and features into TomEE that the release number has been updated to reflect xref:tomee-1.5.0-release-notes.adoc[the changes].

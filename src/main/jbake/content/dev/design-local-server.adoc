@@ -1,4 +1,6 @@
 = Design - Local Server
+:jbake-type: page
+:jbake-status: published
 
 == Local Server
 
