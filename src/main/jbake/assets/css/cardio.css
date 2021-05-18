@@ -1279,7 +1279,15 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 span.icon > [class^="icon-"], span.icon > [class*=" icon-"] {
   cursor: default;
 }
-
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
+.blue {
+  color: blue;
+}
 .admonitionblock td.icon [class^="fa icon-"]:before {
   font-size: 2.5em;
   text-shadow: 1px 1px 2px #e6e6e6;
