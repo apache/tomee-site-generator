@@ -22,7 +22,7 @@ Note: this table is for TomEE 1.x, TomEE 7 comments are under it.
 
 [cols="4,6*^1",options="header"]
 |===
-| |Tomcat |TomEE |TomEE JAX-RS (~ Microprofile) |TomEE+ |TomEE PluME |OpenEJB
+| |Tomcat |TomEE WebProfile |TomEE MicroProfile |TomEE Plus |TomEE Plume |OpenEJB
 
 |Java Servlets
 | {y}
@@ -114,7 +114,7 @@ Note: this table is for TomEE 1.x, TomEE 7 comments are under it.
 
 |Java API for RESTful Web Services (JAX-RS)
 |
-|
+| {y}
 | {y}
 | {y}
 | {y}
