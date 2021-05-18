@@ -4,6 +4,7 @@
 
 == Bug
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-1296[TOMEE-1296]] - org.apache.openejb.jpa.integration.eclipselink.OpenEJBServerPlatform mbeanServer name is wrong
 * [https://issues.apache.org/jira/browse/TOMEE-1324[TOMEE-1324]] - Problem with TomEE Maven archetype
 * [https://issues.apache.org/jira/browse/TOMEE-1325[TOMEE-1325]] - Dynamic subclassing doesn&#39;t support interfaces (@Local)
@@ -16,24 +17,28 @@
 
 == Dependency upgrade
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-1326[TOMEE-1326]] - Upgrade to Mojarra 2.1.29
 
 == Improvement
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-1339[TOMEE-1339]] - [JAXRS] try static resources first
 
 == New Feature
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-1295[TOMEE-1295]] - openjpa.EntityManagerFactoryPool support for container persistence unit
 * [https://issues.apache.org/jira/browse/TOMEE-1297[TOMEE-1297]] - add @Jars annotation to ApplicationComposer
 * [https://issues.apache.org/jira/browse/TOMEE-1341[TOMEE-1341]] - Arquillian support for Suite testing
 
 == Test
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-1338[TOMEE-1338]] - Create tests for DeployerEjb
 
 
-== Release Notes - OpenEJB - Version 4.7.1
+= Release Notes - OpenEJB - Version 4.7.1
 
 == Bug
 

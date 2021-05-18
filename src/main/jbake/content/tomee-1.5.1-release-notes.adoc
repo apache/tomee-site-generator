@@ -4,6 +4,7 @@
 
 == Upgrades
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-571[TOMEE-571] Update to OWB 1.1.7
 * link:https://issues.apache.org/jira/browse/TOMEE-629[TOMEE-629] myfaces 2.1.10
 * link:https://issues.apache.org/jira/browse/TOMEE-472[TOMEE-472] XBean 3.12
@@ -20,6 +21,7 @@
 
 == New Features
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-630[TOMEE-630] add a maven archetype to start a project with tomee
 * link:https://issues.apache.org/jira/browse/TOMEE-440[TOMEE-440] add a tomee test enricher for arquillian tomee adapters
 * link:https://issues.apache.org/jira/browse/TOMEE-600[TOMEE-600] ability to inject remote initial context in tomee clients
@@ -45,6 +47,7 @@
 
 == Improvements
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-633[TOMEE-633] More understandable 'tomee.autoconfig' property to control automatic creation of resources
 * link:https://issues.apache.org/jira/browse/TOMEE-488[TOMEE-488] Js JNDI Panel
 * link:https://issues.apache.org/jira/browse/TOMEE-486[TOMEE-486] ability to override properties values (system.properties + services) by environment
@@ -173,6 +176,7 @@
 
 == Bugs
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-578[TOMEE-578] Tomee Drop-in WARs installer "install" button points to a bad path
 * link:https://issues.apache.org/jira/browse/TOMEE-487[TOMEE-487] deployerejb uses home to create unique file, it should be base if temp dir is not writable
 * link:https://issues.apache.org/jira/browse/TOMEE-483[TOMEE-483] plus and jaxrs webapp doesn't have classes in web-inf/classes
@@ -395,6 +399,7 @@
 
 == Tasks & Sub-Tasks
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-442[TOMEE-442] valid using hostname in webapp id is fine
 * link:https://issues.apache.org/jira/browse/TOMEE-439[TOMEE-439] refactor DeployerEjb to be able to deploy war as Tomcat
 * link:https://issues.apache.org/jira/browse/OPENEJB-1922[OPENEJB-1922] [KARAFEE] see how to take into account cdi dependencies

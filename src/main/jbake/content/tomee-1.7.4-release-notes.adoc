@@ -4,6 +4,7 @@
 
 == Bug
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1638[TOMEE-1638] - tomee:exec on Windows produces invalid tomee.zip due to backslash directory separators
 * link:https://issues.apache.org/jira/browse/TOMEE-1686[TOMEE-1686] - org.apache.openejb.core.cmp.CmpContainer#findEJBObject supposes args array is not empty
 * link:https://issues.apache.org/jira/browse/TOMEE-1705[TOMEE-1705] - Destroy application attempts to initialize lazily loaded resources

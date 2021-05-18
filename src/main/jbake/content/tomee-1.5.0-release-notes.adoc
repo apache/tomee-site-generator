@@ -4,6 +4,7 @@
 
 == Upgrades
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-243[TOMEE-243] HSQLDB 2.2.8
 * link:https://issues.apache.org/jira/browse/TOMEE-431[TOMEE-431] Shrinkwrap Descriptor 2.0.0-alpha-3
 * link:https://issues.apache.org/jira/browse/TOMEE-378[TOMEE-378] Quartz 2.1.6
@@ -18,6 +19,7 @@
 
 == New Features
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-347[TOMEE-347] Allow switching datasource connection pool
 * link:https://issues.apache.org/jira/browse/TOMEE-331[TOMEE-331] Optimized scanning via exclusions.list in WEB-INF allows
 * link:https://issues.apache.org/jira/browse/TOMEE-266[TOMEE-266] Internal EJBs can be secured
@@ -36,6 +38,7 @@
 
 == Improvements
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-235[TOMEE-235] ability to provide a custom server.xml using arquillian adapters
 * link:https://issues.apache.org/jira/browse/TOMEE-194[TOMEE-194] managing pathparam at class level
 * link:https://issues.apache.org/jira/browse/TOMEE-346[TOMEE-346] providing log4j in a webapp needs to set openejb.skip.log4j=false
@@ -161,6 +164,7 @@
 
 == Bugs
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-12[TOMEE-12] org.apache.openejb.config.AnnotationDeployer throws InstantiationException on com.sun.jersey.api.core.ApplicationAdapter
 * link:https://issues.apache.org/jira/browse/TOMEE-193[TOMEE-193] soap webservices are now deployed by default in the webapp context but what if the webservice is not in a webapp?
 * link:https://issues.apache.org/jira/browse/TOMEE-199[TOMEE-199] tomcat deployer doesnt work well for cdi apps
@@ -250,6 +254,7 @@
 
 == Tasks & Sub-Tasks
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-342[TOMEE-342] webservice with configured deployment url example
 * link:https://issues.apache.org/jira/browse/TOMEE-335[TOMEE-335] Create a new JIRA saying: checking and closing JIRAs
 * link:https://issues.apache.org/jira/browse/TOMEE-129[TOMEE-129] Tweak TCK setup for JAX-RS tests

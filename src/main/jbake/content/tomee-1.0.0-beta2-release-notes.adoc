@@ -5,8 +5,9 @@
 
 2012-01-23
 
-== Upgrades:
+== Upgrades
 
+[.compact]
   * [TOMEE-81] Upgrade HSQLDB to 2.2.4
   * [TOMEE-109] Upgrade to XBean 3.9
   * [TOMEE-112] Upgrade wss4j to 1.6.3
@@ -17,8 +18,9 @@
   * [TOMEE-114] Upgrade Commons Discovery to 0.5
   * [TOMEE-116] Upgrade Commons Pool to 1.5.7
 
-== New Features:
+== New Features
 
+[.compact]
   * [TOMEE-6] Arquillian adapter
   * [TOMEE-84] TomEE Embedded Container
   * [TOMEE-86] Implementation of EJBContainer.createEJBContainer for TomEE Embedded
@@ -45,8 +47,9 @@
   * [OPENEJB-1453] Metatyping for EJB and Dependency Injection Annotations
   * [OWB-621] Alternative configuration method for buggy container or pre servlet api 2.5 container
 
-== Improvements:
+== Improvements
 
+[.compact]
   * [TOMEE-102] Cleaned up error handling of closed jars at shutdown
   * [TOMEE-107] Reduced logging of harmless "Could not install our singleton service" message
   * [TOMEE-106] Better handling of DataSource "maxWait" property, supports ints
@@ -82,8 +85,9 @@
   * [OWB-627] Automatically destroy @Dependent contextual instances created with Instance<T>
   * [OWB-475] support for optional beans
 
-== Bugs:
+== Bugs
 
+[.compact]
   * [TOMEE-56] jsp group properties order not respected
   * [TOMEE-103] Further reduction of possible LinkageError in log files
   * [TOMEE-105] fixing contextroot in TomcatWebAppBuilder for windows
@@ -149,8 +153,9 @@
   * [OWB-629] NoClassDefFoundError for optional dependencies
   * [OWB-515] interceptors don't support inheritance without an overridden method annotated with @AroundInvoke
 
-== Tasks & Sub-Tasks:
+== Tasks & Sub-Tasks
 
+[.compact]
   * [TOMEE-31] upgrade hsqldb to version 2.2.4
   * [TOMEE-122] WebService subcontext mapping adjustable with tomee.jaxws.subcontext property
   * [TOMEE-121] WebServices mapped into /<webappcontext>/webservices/<name>

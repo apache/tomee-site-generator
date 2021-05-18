@@ -8,6 +8,7 @@
 
 == Bug
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1071[TOMEE-1071] - NoClassDefFoundError - SVGDocument
 * link:https://issues.apache.org/jira/browse/TOMEE-1265[TOMEE-1265] - Can not start tomee when using conf/catalina.policy
 * link:https://issues.apache.org/jira/browse/TOMEE-1266[TOMEE-1266] - Unable to configure a datasource with TomEE in context of Oracle Wallet
@@ -118,6 +119,7 @@
 
 == Dependency upgrade
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1277[TOMEE-1277] - cxf 3
 * link:https://issues.apache.org/jira/browse/TOMEE-1368[TOMEE-1368] - upgrade arquillian-transaction-impl-base to 1.0.1.Final
 * link:https://issues.apache.org/jira/browse/TOMEE-1369[TOMEE-1369] - arquillian persistence sample
@@ -134,11 +136,13 @@
 
 == Documentation
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1264[TOMEE-1264] - Doc issue with &quot;cxf.jaxrs.providers&quot;
 * link:https://issues.apache.org/jira/browse/TOMEE-1605[TOMEE-1605] - Status Page for Java EE 7
 
 == Improvement
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1269[TOMEE-1269] - if a @Path interface has a single implementation add it as rest service
 * link:https://issues.apache.org/jira/browse/TOMEE-1270[TOMEE-1270] - exclude from scanning @Deprecated @Providers
 * link:https://issues.apache.org/jira/browse/TOMEE-1272[TOMEE-1272] - Do not force use of system property &#39;com.sun.management.jmxremote&#39;
@@ -195,6 +199,7 @@ for comp/env/openejb/Resource/<id>
 
 == New Feature
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1274[TOMEE-1274] - support additionalLibs in arquillian.xml to add libs from mvn coordinates to tomee/lib
 * link:https://issues.apache.org/jira/browse/TOMEE-1282[TOMEE-1282] - basic @Transactional @TransactionScoped support
 * link:https://issues.apache.org/jira/browse/TOMEE-1285[TOMEE-1285] - allow jaxrs providers to be CDI bean
@@ -257,6 +262,7 @@ for comp/env/openejb/Resource/<id>
 
 == Task
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1276[TOMEE-1276] - rework TimerExecutor
 * link:https://issues.apache.org/jira/browse/TOMEE-1278[TOMEE-1278] - tomcat 8.0.x
 * link:https://issues.apache.org/jira/browse/TOMEE-1279[TOMEE-1279] - integrate batchee
@@ -270,6 +276,7 @@ for comp/env/openejb/Resource/<id>
 
 == Test
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1290[TOMEE-1290] - Source build profile &#39;hibernate&#39;
 requires junit dependency
 * link:https://issues.apache.org/jira/browse/TOMEE-1338[TOMEE-1338] - Create tests for DeployerEjb

@@ -4,6 +4,7 @@
 
 == Bug
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1813[TOMEE-1813] - tomee.sh fails on cygwin
 * link:https://issues.apache.org/jira/browse/TOMEE-1817[TOMEE-1817] - java.lang.NullPointerException in Connector Resource Adapter deploy
 * link:https://issues.apache.org/jira/browse/TOMEE-1819[TOMEE-1819] - OWB configuration not respected
@@ -19,10 +20,12 @@
 
 == Dependency upgrade
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1850[TOMEE-1850] - Tomcat 8.5.3
 
 == Improvement
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1821[TOMEE-1821] - Allow to filter CDI extensions
 * link:https://issues.apache.org/jira/browse/TOMEE-1823[TOMEE-1823] - double johnzon max size (8k) and add a comment in system.properties
 * link:https://issues.apache.org/jira/browse/TOMEE-1824[TOMEE-1824] - support date configuration for johnzon
@@ -34,6 +37,7 @@
 
 == New Feature
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1812[TOMEE-1812] - add reload command to tomee embedded maven plugin
 * link:https://issues.apache.org/jira/browse/TOMEE-1818[TOMEE-1818] - add depends-on to Resource
 * link:https://issues.apache.org/jira/browse/TOMEE-1826[TOMEE-1826] - [CXF] openejb.cxf.monitoring.jmx config entry to activate counter repository
@@ -48,4 +52,5 @@
 
 == Task
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1814[TOMEE-1814] - upgrade copyright year to 2016

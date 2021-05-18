@@ -4,6 +4,7 @@
 
 == Bug
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-1465[TOMEE-1465]] - org.apache.openejb.util.PropertyPlaceHolderHelper.PropertiesLookup caches properties
 * [https://issues.apache.org/jira/browse/TOMEE-1585[TOMEE-1585]] - org.apache.openejb.core.ivm.BaseEjbProxyHandler.ProxyRegistry#liveHandleRegistry not thread safe
 * [https://issues.apache.org/jira/browse/TOMEE-1587[TOMEE-1587]] - merge arquillian tomee ear support from 7.x to 1.7.x
@@ -19,6 +20,7 @@
 
 == Dependency upgrade
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-1611[TOMEE-1611]] - Tomcat 7.0.63
 * [https://issues.apache.org/jira/browse/TOMEE-1678[TOMEE-1678]] - Tomcat 7.0.65
 * [https://issues.apache.org/jira/browse/TOMEE-1633[TOMEE-1633]] - upgrade javamail to 1.9.0-alpha-2
@@ -26,6 +28,7 @@
 
 == Improvement
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-1428[TOMEE-1428]] - improve the performance of TempClassLoader$ResourceComparator
 * [https://issues.apache.org/jira/browse/TOMEE-1455[TOMEE-1455]] - for resource local pu try to guess if datasource is configured in persistence unit properties
 * [https://issues.apache.org/jira/browse/TOMEE-1461[TOMEE-1461]] - Need a machine global mechanism for &#39;get next available port&#39;
@@ -38,6 +41,7 @@ issues
 
 == New Feature
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-1442[TOMEE-1442]] - Show list of deployed applications (including EARs) in the console
 * [https://issues.apache.org/jira/browse/TOMEE-1456[TOMEE-1456]] - Support endorsed libs in the TomEE Maven Plugin
 

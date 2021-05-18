@@ -1398,3 +1398,8 @@ table > thead > tr > td {
   border-bottom-width: 2px;
   padding: 8px;
 }
+
+div.compact > ul > li,
+div.compact > ul > li > p {
+  margin: 0px;
+}

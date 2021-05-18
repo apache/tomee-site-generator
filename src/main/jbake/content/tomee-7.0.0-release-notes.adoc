@@ -8,6 +8,7 @@
 
 == Bug
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1266[TOMEE-1266] - Unable to configure a datasource with TomEE in context of Oracle Wallet
 * link:https://issues.apache.org/jira/browse/TOMEE-1268[TOMEE-1268] - Auto scanning of @Provider
 * link:https://issues.apache.org/jira/browse/TOMEE-1275[TOMEE-1275] - TimerExecutor as compoenent doesn&#39;t follow executor lifecycle (stop/start)
@@ -67,6 +68,7 @@
 
 == Dependency upgrade
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1391[TOMEE-1391] - Use maven-filtering:1.2 to fix MSHARED-319 when compiling under JDK8
 * link:https://issues.apache.org/jira/browse/TOMEE-1754[TOMEE-1754] - Tomcat 8.5.2
 * link:https://issues.apache.org/jira/browse/TOMEE-1757[TOMEE-1757] - [plume] eclipselinks 2.6.3
@@ -77,6 +79,7 @@
 
 == Improvement
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1269[TOMEE-1269] - if a @Path interface has a single implementation add it as rest service
 * link:https://issues.apache.org/jira/browse/TOMEE-1270[TOMEE-1270] - exclude from scanning @Deprecated @Providers
 * link:https://issues.apache.org/jira/browse/TOMEE-1273[TOMEE-1273] - fix SslTomEETest to work with JDK 8 keytool
@@ -104,6 +107,7 @@ must fail-fast
 
 == New Feature
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1274[TOMEE-1274] - support additionalLibs in arquillian.xml to add libs from mvn coordinates to tomee/lib
 * link:https://issues.apache.org/jira/browse/TOMEE-1282[TOMEE-1282] - basic @Transactional @TransactionScoped support
 * link:https://issues.apache.org/jira/browse/TOMEE-1288[TOMEE-1288] - supports default in out propertyplaceholding
@@ -132,6 +136,7 @@ must fail-fast
 
 == Task
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1276[TOMEE-1276] - rework TimerExecutor
 * link:https://issues.apache.org/jira/browse/TOMEE-1279[TOMEE-1279] - integrate batchee
 * link:https://issues.apache.org/jira/browse/TOMEE-1280[TOMEE-1280] - myfaces 2.2.x
@@ -143,6 +148,7 @@ must fail-fast
 
 == Test
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1290[TOMEE-1290] - Source build profile &#39;hibernate&#39;
 requires junit dependency
 * link:https://issues.apache.org/jira/browse/TOMEE-1338[TOMEE-1338] - Create tests for DeployerEjb

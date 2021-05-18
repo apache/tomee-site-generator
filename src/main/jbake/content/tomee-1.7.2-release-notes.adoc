@@ -4,6 +4,7 @@
 
 == Upgrades
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1426[TOMEE-1426] xbean 4.1
 * link:https://issues.apache.org/jira/browse/TOMEE-1554[TOMEE-1554] Upgrade OpenJPA to 2.4.0
 * link:https://issues.apache.org/jira/browse/TOMEE-1391[TOMEE-1391] Use maven-filtering:1.2 to fix MSHARED-319 when compiling under JDK8
@@ -16,6 +17,7 @@
 
 == New Features
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1552[TOMEE-1552] add openejb.activemq.deploymentId-as-clientId flag to not force AMQ clientId to ejb deploymentId
 * link:https://issues.apache.org/jira/browse/TOMEE-1444[TOMEE-1444] allow extensions through openejb extensions of cxf-rs
 * link:https://issues.apache.org/jira/browse/TOMEE-1440[TOMEE-1440] support singleDeploymentByArchiveName in tomee arquillian adapters (remote/embedded)
@@ -38,6 +40,7 @@
 
 == Improvements
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1425[TOMEE-1425] better JMX naming for cxf jaxrs endpoint
 * link:https://issues.apache.org/jira/browse/TOMEE-1434[TOMEE-1434] wire roles/users to tomee embedded arquillian adapter
 * link:https://issues.apache.org/jira/browse/TOMEE-1430[TOMEE-1430] add support for users/roles for tomee embedded
@@ -67,6 +70,7 @@
 
 == Bugs
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1433[TOMEE-1433] Prevent error output on tomee:run+++<Enter>+++</li>
 * link:https://issues.apache.org/jira/browse/TOMEE-1553[TOMEE-1553] EJBContainerRunner broken with junit 4.12
 * link:https://issues.apache.org/jira/browse/TOMEE-1551[TOMEE-1551] URLClassLoaderFirst uses its own lock and not classloader one
@@ -144,5 +148,6 @@
 
 == Tasks & Sub-Tasks
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1410[TOMEE-1410] Cleanup poms to update the filtering of EXE files.
 * link:https://issues.apache.org/jira/browse/TOMEE-1356[TOMEE-1356] tomcat resources are not always well created and can return a Context instead of the real instance+++</args>++++++</Enter>+++

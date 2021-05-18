@@ -4,10 +4,12 @@
 
 == Sub-task
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-659[TOMEE-659]] - TomEE new logo
 
 == Bug
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-836[TOMEE-836]] - ReportValidationResults should log.info about the root cause
 * [https://issues.apache.org/jira/browse/TOMEE-885[TOMEE-885]] - Cannot inject no-interface groovy local bean
 * [https://issues.apache.org/jira/browse/TOMEE-926[TOMEE-926]] - arquillian adaptors can fail replacing port if a port includes another one
@@ -78,6 +80,7 @@
 
 == Dependency upgrade
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-1104[TOMEE-1104]] - Tomcat 7.0.53
 * [https://issues.apache.org/jira/browse/TOMEE-1108[TOMEE-1108]] - myfaces 2.1.15
 * [https://issues.apache.org/jira/browse/TOMEE-1115[TOMEE-1115]] - xbean 3.16
@@ -103,6 +106,7 @@
 
 == Improvement
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-898[TOMEE-898]] - Bean Validation Test (bean-validation-design-by-contract) is in the wrong package
 * [https://issues.apache.org/jira/browse/TOMEE-904[TOMEE-904]] - Try to unwrap the URL from UrlAsset instead of creating a new one
 * [https://issues.apache.org/jira/browse/TOMEE-1090[TOMEE-1090]] - tomee-catalina PMD
@@ -130,6 +134,7 @@
 
 == New Feature
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-651[TOMEE-651]] - DataSource is such a common resource type that it should be possible to not specify it in tomee.xml
 * [https://issues.apache.org/jira/browse/TOMEE-662[TOMEE-662]] - Support aliases on resources
 * [https://issues.apache.org/jira/browse/TOMEE-1074[TOMEE-1074]] - Manage Sessions
@@ -173,6 +178,7 @@ property (configurable in application.properties) to deactivate timers
 
 == Task
 
+[.compact]
 * [https://issues.apache.org/jira/browse/TOMEE-1160[TOMEE-1160]] - Track AppContext start time
 * [https://issues.apache.org/jira/browse/TOMEE-1177[TOMEE-1177]] - Include Apache Tomcat Native library 1.1.30
 * [https://issues.apache.org/jira/browse/TOMEE-1178[TOMEE-1178]] - Please create a DOAP file for your TLP
@@ -181,10 +187,11 @@ property (configurable in application.properties) to deactivate timers
 
 * [https://issues.apache.org/jira/browse/TOMEE-1253[TOMEE-1253]] - add tests based on the test-control module to the deltaspike fullstack example
 
-     Release Notes - OpenEJB - Version 4.7.0
+# Release Notes - OpenEJB - Version 4.7.0
 
 == Sub-task
 
+[.compact]
 * [https://issues.apache.org/jira/browse/OPENEJB-120[OPENEJB-120]] - Port CMP Container
 * [https://issues.apache.org/jira/browse/OPENEJB-145[OPENEJB-145]] - iTest: StatelessRemoteJndiTests
 * [https://issues.apache.org/jira/browse/OPENEJB-146[OPENEJB-146]] - iTest: StatelessLocalJndiTests
@@ -240,6 +247,7 @@ property (configurable in application.properties) to deactivate timers
 
 == Bug
 
+[.compact]
 * [https://issues.apache.org/jira/browse/OPENEJB-6[OPENEJB-6]] - Wrong Exceptions thrown for unimplemented features
 * [https://issues.apache.org/jira/browse/OPENEJB-23[OPENEJB-23]] - OpenEJB protocol hangs in ObjectInputStream
 * [https://issues.apache.org/jira/browse/OPENEJB-75[OPENEJB-75]] - itests broken when Geronimo moved to v1.0
@@ -350,6 +358,7 @@ leaves the standalone java process running but broken
 
 == Improvement
 
+[.compact]
 * [https://issues.apache.org/jira/browse/OPENEJB-38[OPENEJB-38]] - The loader jar not installable or deployable to a maven repo
 * [https://issues.apache.org/jira/browse/OPENEJB-305[OPENEJB-305]] - Update itest plans
 * [https://issues.apache.org/jira/browse/OPENEJB-309[OPENEJB-309]] - Implement support for JNDI_LIST and JNDI_LIST_BINDINGS methods in org.openejb.server.ejbd.JndiRequestHandler
@@ -398,6 +407,7 @@ event
 
 == New Feature
 
+[.compact]
 * [https://issues.apache.org/jira/browse/OPENEJB-63[OPENEJB-63]] - New Castor CMP Container
 * [https://issues.apache.org/jira/browse/OPENEJB-565[OPENEJB-565]] - Basic support for JAX-WS invocations
 * [https://issues.apache.org/jira/browse/OPENEJB-569[OPENEJB-569]] - @Resource WebServiceContext injection
@@ -413,6 +423,7 @@ event
 
 == Task
 
+[.compact]
 * [https://issues.apache.org/jira/browse/OPENEJB-20[OPENEJB-20]] - org.openejb.util.Logger uses deprecated log4j.Category class
 * [https://issues.apache.org/jira/browse/OPENEJB-36[OPENEJB-36]] - Automated test of tomcat integration
 * [https://issues.apache.org/jira/browse/OPENEJB-81[OPENEJB-81]] - ejb3 specs module
@@ -443,6 +454,7 @@ from version number
 
 == Test
 
+[.compact]
 * [https://issues.apache.org/jira/browse/OPENEJB-450[OPENEJB-450]] - Potentially use xbean-naming
 * [https://issues.apache.org/jira/browse/OPENEJB-519[OPENEJB-519]] - Annotated test clients enablement
 * [https://issues.apache.org/jira/browse/OPENEJB-563[OPENEJB-563]] - Test Case for Jax-RPC
@@ -450,5 +462,6 @@ from version number
 
 == Wish
 
+[.compact]
 * [https://issues.apache.org/jira/browse/OPENEJB-2077[OPENEJB-2077]] - Do not require openejb.json/openejb.xml
 * [https://issues.apache.org/jira/browse/OPENEJB-2092[OPENEJB-2092]] - Allow easy offsetting of all OpenEJB ports

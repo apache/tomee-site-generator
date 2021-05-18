@@ -5,6 +5,7 @@
 
 == Dependency upgrade
 
+[.compact]
  - link:https://issues.apache.org/jira/browse/TOMEE-2990[TOMEE-2990] BatchEE 0.6
  - link:https://issues.apache.org/jira/browse/TOMEE-2996[TOMEE-2996] CXF 3.3.10 / 3.4.3
  - link:https://issues.apache.org/jira/browse/TOMEE-2987[TOMEE-2987] CXF 3.4.x (Java 16 support)
@@ -20,6 +21,7 @@
 
 == New Feature
 
+[.compact]
  - link:https://issues.apache.org/jira/browse/TOMEE-3730[TOMEE-3730] Add JSONP and JSONB Providers JAX-RS Client
  - link:https://issues.apache.org/jira/browse/TOMEE-2365[TOMEE-2365] Implement Java EE Security API from EE 8
  - link:https://issues.apache.org/jira/browse/TOMEE-2966[TOMEE-2966] Provide a pure JUnit5 OpenEJB Extension
@@ -28,6 +30,7 @@
 
 == Improvement
 
+[.compact]
  - link:https://issues.apache.org/jira/browse/TOMEE-2957[TOMEE-2957] Fix OWASP Checks on ASF Jenkins Environment
  - link:https://issues.apache.org/jira/browse/TOMEE-2974[TOMEE-2974] CI Build Environment ISO-8859-1 versus UTF-8
  - link:https://issues.apache.org/jira/browse/TOMEE-2973[TOMEE-2973] TomEE :: Examples :: JSF2/CDI/BV/JPA/DeltaSpike uses too old version of commons-lang3
@@ -42,11 +45,13 @@
 
 == Task
 
+[.compact]
  - link:https://issues.apache.org/jira/browse/TOMEE-3140[TOMEE-3140] Jakarta EE 9.1 TCK Failures
  - link:https://issues.apache.org/jira/browse/TOMEE-3721[TOMEE-3721] Remove dependencies between tomee-webapp modules
 
 == Sub-task
 
+[.compact]
  - link:https://issues.apache.org/jira/browse/TOMEE-3210[TOMEE-3210] securityapi.idstore.idstorepermission testIdentityStore_customHandlerWithoutIDStorePermission
  - link:https://issues.apache.org/jira/browse/TOMEE-3177[TOMEE-3177] jaxrs.spec.filter.interceptor fileReaderContainerInterceptorTest
  - link:https://issues.apache.org/jira/browse/TOMEE-3211[TOMEE-3211] securityapi.securitycontext.callerdata testSecurityContextHasAccessToWebResource

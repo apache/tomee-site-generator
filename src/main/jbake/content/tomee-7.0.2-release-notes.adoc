@@ -4,6 +4,7 @@
 
 == Bug
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1545[TOMEE-1545] - Problem with parallel deployment + REST
 * link:https://issues.apache.org/jira/browse/TOMEE-1778[TOMEE-1778] - XAPoolTest fails because lock on XA log file cannot be acquired
 * link:https://issues.apache.org/jira/browse/TOMEE-1851[TOMEE-1851] - ear classloading can&#39;t be webapp first without a custom classloader
@@ -55,6 +56,7 @@
 
 == Dependency upgrade
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1864[TOMEE-1864] - tomcat 8.5.6
 * link:https://issues.apache.org/jira/browse/TOMEE-1869[TOMEE-1869] - upgrade xmlsec to 2.0.6
 * link:https://issues.apache.org/jira/browse/TOMEE-1880[TOMEE-1880] - johnzon 0.9.4
@@ -66,6 +68,7 @@
 
 == Improvement
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1855[TOMEE-1855] - JSP can leak under no luck conditions
 * link:https://issues.apache.org/jira/browse/TOMEE-1861[TOMEE-1861] - org.apache.tomee.jul.formatter.AsyncConsoleHandler not configurable
 * link:https://issues.apache.org/jira/browse/TOMEE-1870[TOMEE-1870] - Don&#39;t scan jars if scan.xml is used with classes only
@@ -82,6 +85,7 @@
 
 == New Feature
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1810[TOMEE-1810] - Default context should be &#39;/&#39;
 or ROOT if --context is not specified for embedded tomee
 * link:https://issues.apache.org/jira/browse/TOMEE-1872[TOMEE-1872] - Map tomee embedded Configuration to its main

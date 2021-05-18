@@ -4,6 +4,7 @@
 
 == Bug
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1640[TOMEE-1640] - TomEE should &quot;scan&quot;
 a possible CDI beans if a NoClassDefFoundError occurs before registering it
 * link:https://issues.apache.org/jira/browse/TOMEE-1644[TOMEE-1644] - synchronization ignored for entity managers using extended contexts
@@ -35,6 +36,7 @@ property in openejb.pom to 3.1.3
 
 == Dependency upgrade
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1633[TOMEE-1633] - upgrade javamail to 1.9.0-alpha-2
 * link:https://issues.apache.org/jira/browse/TOMEE-1659[TOMEE-1659] - upgrade to mojarra 2.2.9
 * link:https://issues.apache.org/jira/browse/TOMEE-1670[TOMEE-1670] - xbean 4.5
@@ -50,6 +52,7 @@ property in openejb.pom to 3.1.3
 
 == Improvement
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1642[TOMEE-1642] - Would be nice that tomee logs JAXRS configuration in use (was: sends an INFO when not found the relative class for pojo-deployment in configuration [openejb-jar.xml])
 * link:https://issues.apache.org/jira/browse/TOMEE-1643[TOMEE-1643] - XADataSource can leak connections/skip the pool
 * link:https://issues.apache.org/jira/browse/TOMEE-1650[TOMEE-1650] - ignore tomee webapp and internal application by default
@@ -60,6 +63,7 @@ property in openejb.pom to 3.1.3
 
 == New Feature
 
+[.compact]
 * link:https://issues.apache.org/jira/browse/TOMEE-1651[TOMEE-1651] - support char[] password decryption (not String)
 * link:https://issues.apache.org/jira/browse/TOMEE-1652[TOMEE-1652] - add cdiStereotypes() to @Classes in ApplicationComposer API
 * link:https://issues.apache.org/jira/browse/TOMEE-1653[TOMEE-1653] - add hooks in tomee:exec runner

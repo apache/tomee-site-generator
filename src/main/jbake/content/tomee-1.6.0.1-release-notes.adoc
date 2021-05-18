@@ -6,17 +6,9 @@
 
 * https://issues.apache.org/jira/browse/TOMEE-1104[TOMEE-1104] Tomcat 7.0.53
 
-== New Features
-
-
-== Improvements
-
-
-== Bugs
-
-
 == Tasks & Sub-Tasks
 
+[.compact]
 * https://issues.apache.org/jira/browse/TOMEE-1176[TOMEE-1176] Add missing ASF headers
 * https://issues.apache.org/jira/browse/TOMEE-1177[TOMEE-1177] Include Apache Tomcat Native library 1.1.30
 
