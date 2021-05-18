@@ -15,7 +15,7 @@ You **must** link:https://www.apache.org/info/verification.html[verify] the inte
 
 IMPORTANT: Note: TomEE 9.0.0-M are milestone releases, which target the `jakarta` namespace. Applications using `javax` will not work on this release of TomEE 9. You may encounter issues - feedback on this release is encouraged
 and appreciated.
-[.table.table-bordered,options="header"]
+[cols="2,3*^1,2",options="header"]
 |===
 |Name|Version|Date|Size|Signatures & Hashes
 | https://archive.apache.org/dist/tomee/tomee-9.0.0-M3/apache-tomee-9.0.0-M3-plume.zip[icon:download[]TomEE plume ZIP]|9.0.0-M3|25 Jan 2021|65 MB | https://archive.apache.org/dist/tomee/tomee-9.0.0-M3/apache-tomee-9.0.0-M3-plume.zip.asc[icon:download[] PGP] https://archive.apache.org/dist/tomee/tomee-9.0.0-M3/apache-tomee-9.0.0-M3-plume.zip.sha256[icon:download[] SHA256] https://archive.apache.org/dist/tomee/tomee-9.0.0-M3/apache-tomee-9.0.0-M3-plume.zip.sha512[icon:download[] SHA512]
@@ -36,7 +36,8 @@ and appreciated.
 
 IMPORTANT: Note: Only the TomEE 1.x WebProfile and JAX-RS distributions are certified.
 IMPORTANT: Note: Please note the 8.0.0-M releases are milestone releases intended for evaluation purposes and should not be used in production.
-[.table.table-bordered,options="header"]
+
+[cols="2,3*^1,2",options="header"]
 |===
 |Name|Version|Date|Size|Signatures & Hashes
 | https://archive.apache.org/dist/tomee/tomee-8.0.5/apache-tomee-8.0.5-plume.tar.gz[icon:download[]TomEE plume TAR.GZ]|8.0.5|24 Nov 2020|65 MB | https://archive.apache.org/dist/tomee/tomee-8.0.5/apache-tomee-8.0.5-plume.tar.gz.asc[icon:download[] PGP] https://archive.apache.org/dist/tomee/tomee-8.0.5/apache-tomee-8.0.5-plume.tar.gz.sha256[icon:download[] SHA256] https://archive.apache.org/dist/tomee/tomee-8.0.5/apache-tomee-8.0.5-plume.tar.gz.sha512[icon:download[] SHA512]

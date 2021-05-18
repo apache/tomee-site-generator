@@ -20,7 +20,7 @@ Effectively, TomEE is a superset of OpenEJB. They share the same code and TomEE 
 
 Note: this table is for TomEE 1.x, TomEE 7 comments are under it.
 
-[cols="4,6*^1"]
+[cols="4,6*^1",options="header"]
 |===
 | |Tomcat |TomEE |TomEE JAX-RS (~ Microprofile) |TomEE+ |TomEE PluME |OpenEJB
 
