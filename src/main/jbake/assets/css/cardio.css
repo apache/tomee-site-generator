@@ -1403,3 +1403,7 @@ div.compact > ul > li,
 div.compact > ul > li > p {
   margin: 0px;
 }
+
+li > p {
+    margin-bottom: 10px;
+}
