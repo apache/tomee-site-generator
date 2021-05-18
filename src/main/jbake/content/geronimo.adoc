@@ -1,0 +1,7 @@
+= Geronimo OpenEJB is the EJB Container implementation for http://geronimo.apache.org[Apache Geronimo] .  That integration is quite a bit different than what OpenEJB users are familiar with.
+:jbake-type: page
+:jbake-status: published
+
+The best source of documentation on Geronimo and it's usage of OpenEJB is here:
+
+* http://geronimo.apache.org/documentation.html

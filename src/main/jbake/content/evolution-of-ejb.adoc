@@ -1,0 +1,99 @@
+= Evolution of EJB
+:jbake-type: page
+:jbake-status: published
+:icons: font
+:y: icon:check[role="green"]
+:n: icon:times[role="red"]
+:c: icon:file-text-o[role="blue"]
+
+The following is a view of how EJB has evolved strictly in terms of the other specifications EJB incorporates.
+Despite how people think of EJB, EJB is the union of all of the following APIs.
+
+Commonly misunderstood or oversimplified, it really is the integration of many things into one place that drives EJB.
+
+[cols="8,5*1",options="header"]
+|===
+|
+|1.1
+|2.0
+|2.1
+|3.0
+|3.1
+
+|Java Transaction API (JTA)
+|{y}
+|{y}
+|{y}
+|{y}
+|{y}
+
+|JavaMail API
+|{y}
+|{y}
+|{y}
+|{y}
+|{y}
+
+|Java EE Connector Architecture
+|
+|{y}
+|{y}
+|{y}
+|{y}
+
+|Java Messaging Service (JMS)
+|
+|{y}
+|{y}
+|{y}
+|{y}
+
+|Java Authentication and Authorization Service (JAAS)
+|
+|{y}
+|{y}
+|{y}
+|{y}
+
+|Java Authorization Contract for Containers (JACC)
+|
+|
+|{y}
+|{y}
+|{y}
+
+|Java Persistence API (JPA)
+|
+|
+|
+|{y}
+|{y}
+
+|Java API for XML Web Services (JAX-WS)
+|
+|
+|
+|{y}
+|{y}
+
+|Java API for RESTful Web Services (JAX-RS)
+|
+|
+|
+|
+|{y}
+
+|Java Contexts and Dependency Injection (CDI)
+|
+|
+|
+|
+|{y}
+
+|Bean Validation
+|
+|
+|
+|
+|{y}
+|===

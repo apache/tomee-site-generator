@@ -1,0 +1,25 @@
+= Design - Resource Manager
+:jbake-type: page
+:jbake-status: published
+
+== Resource Manager
+
+Sub-component of xref:-design.adoc[OpenEJB]
+
+== Definition
+
+Provides the container with managed connections to transactional data sources required by beans
+
+== Also Known As
+
+* Connector
+* Connection Manager
+
+== Responsibilities
+
+* Provides beans with connection handles
+* Manages pysical connections
+
+== Related Packages
+
+* javax.resource.spi

@@ -1,0 +1,14 @@
+= Take My Code Gladly!
+:jbake-type: page
+:jbake-status: published
+
+We (the individuals who makeup the community) will happily take your code.
+
+The easiest way for us to take code both legally and practically is by:
+
+. Create a patch and attach it in a https://issues.apache.org/jira/browse/OPENEJB[new JIRA issue]
+. Send a note to the dev list
+
+Anyone who is a committer has already signed a http://apache.org/licenses/#clas[Contributor License Agreement]  (CLA) stating that the code they contribute is intended to be licensed under the Apache Public License.
+If you intend to contribute a lot, consider sending one in as it will make things go faster.
+The next best thing to having a CLA on file.

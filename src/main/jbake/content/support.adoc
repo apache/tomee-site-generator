@@ -1,0 +1,30 @@
+= Getting Support
+:jbake-type: page
+:jbake-status: published
+
+== Mailing Lists
+
+* link:mailto:users@tomee.apache.org[Users] (link:mailto:users-subscribe@tomee.apache.org[Subscribe], link:mailto:users-unsubscribe@tomee.apache.org[Unsubscribe])
+* link:mailto:dev@tomee.apache.org[Developers] (link:mailto:dev-subscribe@tomee.apache.org[Subscribe], link:mailto:dev-unsubscribe@tomee.apache.org[Unsubscribe])
+* link:mailto:commits@tomee.apache.org[Commits] (link:mailto:commits-subscribe@tomee.apache.org[Subscribe], link:mailto:commits-unsubscribe@tomee.apache.org[Unsubscribe])
+* link:http://webchat.freenode.net/?channels=openejb[IRC]
+
+
+== Forums
+
+* link:http://openejb.979440.n4.nabble.com/OpenEJB-User-f979441.html[User Forum]
+* link:http://openejb.979440.n4.nabble.com/OpenEJB-Dev-f982480.html[Dev Forum]
+
+
+== JIRA
+
+* link:https://issues.apache.org/jira/browse/TOMEE[TOMEE]
+* link:https://issues.apache.org/jira/browse/OPENEJB[OPENEJB]
+
+
+Support for Apache TomEE is given freely by the community.
+Please be aware when asking questions that the Apache Software Foundation does not have paid developers or dedicated support staff.
+All community support comes from volunteers on a volunteer basis.
+Joining the community as a volunteer and helping your fellow users is highly encouraged!
+
+For commercial support or to commercially support the community see xref:commercial-support.adoc[Commercial Support] page.

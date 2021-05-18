@@ -1,0 +1,7 @@
+= Setting up Apache TomEE on Microsoft Azure
+:jbake-type: page
+:jbake-status: published
+
+This page will detail instructions to setup TomEE on Microsoft Azure.
+
+Write me!

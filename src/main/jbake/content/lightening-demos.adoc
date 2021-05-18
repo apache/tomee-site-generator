@@ -1,0 +1,75 @@
+= Lightning Demos
+:jbake-type: page
+:jbake-status: published
+:properties-table-layout: cols="3a,2a,5a",options="header"
+
+== Lightning Demos Details
+
+[{properties-table-layout}]
+|===
+|Demo Name
+|Sponsor
+|Links/Comments
+
+|TestCase Injection
+|David Blevins
+|video::g5l14G9RBCM[youtube]
+
+video::16876983[vimeo]
+
+|Simple @WebService
+|David Blevins
+|video::ZcSnhVlOxJc[youtube]
+
+video::16876894[vimeo]
+
+|Simple @Stateless bean
+|David Blevins
+|video::aLx2jta96xU[youtube]
+
+video::16876787[vimeo]
+
+|Simple @Stateful bean
+|David Blevins
+|video::9JqxbfzsWOQ[youtube]
+
+video::16876733[vimeo]
+
+|Simple @MessageDriven bean
+|David Blevins
+|video::HmXFxMDLCJQ[youtube]
+
+video::16876667[vimeo]
+
+|EntityManager injection and usage
+|David Blevins
+|video::s4uiIoAehgQ[youtube]
+
+video::16876564[vimeo]
+
+|DataSource injection and usage
+|David Blevins
+|video::g3lIPlegDJk[youtube]
+
+video::16876492[vimeo]
+
+|Alternate Descriptors
+|David Blevins
+|video::r1lDC40ESug[youtube]
+
+video::16876426[vimeo]
+
+|Getting started with the OpenEJB Eclipse Plugin
+|David Blevins
+|video::7393498[vimeo]
+
+|EJB Unit Testing with Eclipse and OpenEJB
+|David Blevins
+|video::6149008[vimeo]
+
+|ScreenFlow720
+|David Blevins
+|video::16872034[vimeo]
+|===
+
+NOTE: For more details about the idea behind Lightening Demos, please read link:http://markmail.org/message/5jq5xun44kt7tcni.adoc[this]  e-mail thread.

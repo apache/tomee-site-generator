@@ -1,0 +1,184 @@
+= Unit Testing Transactions
+:jbake-type: page
+:jbake-status: published
+
+
+== Basic setup
+
+Add the following interface and bean to your test sources (they could even be inner classes of a test case):
+
+
+=== Business interface
+
+ public interface Caller {
+     public <V> V call(Callable<V> callable) throws Exception;
+ }
+
+
+=== Bean Implementation(s)
+
+....
+import java.util.concurrent.Callable;
+
+@Stateless
+@TransactionAttribute(REQUIRES_NEW)
+public class TransactionBean implements Caller {
+    public <V> V call(Callable<V> callable) throws Exception {
+	return callable.call();
+    }
+}
+....
+
+
+=== Have them discovered
+
+In src/test/resources/ (or related) create an META-INF/ejb-jar.xml containing the text "+++<ejb-jar>++++++</ejb-jar>+++"
+
+
+=== What we accomplished
+
+Essentially what we've done is added an ejb that will be picked up as part of your test code and deployed.
+You can then look it up and use it to execute test code with any particular transaction or security constraints that you want.
+The above bean specifies REQUIRES_NEW;
+functionally the same as REQUIRED as the test case itself won't have a transaction, but a little cleaner and more explicit.
+
+You could also annotate the bean with @RunAs("manager") for example and test that your security restrictions are how you like them.
+You can have as many of these test beans in your test code as you like, each with it's own transaction and security constraints allowing you to write some incredibly thorough tests.
+
+You do not need to use java.util.concurrent.Callable, any similar interface of your creation could work just as well.
+You may want something with return type void, for example, to eliminate useless 'return null' statements.
+
+
+== Usage
+
+There are a number of style choices for using the above bean, specifically around the creation of the Callable object you pass in, and it all really depends on what looks nice to you.
+
+In the examples below, the Movies bean being tested is simply a thin layer around JPA that allows us to use enforce various transaction semantics.
+
+....
+import javax.ejb.Stateful;
+import javax.ejb.TransactionAttribute;
+import static javax.ejb.TransactionAttributeType.MANDATORY;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
+import javax.persistence.Query;
+import java.util.List;
+
+@Stateful(name == "Movies")
+@TransactionAttribute(MANDATORY)
+public class MoviesImpl implements Movies {
+
+    @PersistenceContext(unitName == "movie-unit", type == PersistenceContextType.TRANSACTION)
+    private EntityManager entityManager;
+
+    public void addMovie(Movie movie) throws Exception {
+	entityManager.persist(movie);
+    }
+
+    public void deleteMovie(Movie movie) throws Exception {
+	entityManager.remove(movie);
+    }
+
+    public List<Movie> getMovies() throws Exception {
+	Query query == entityManager.createQuery("SELECT m from Movie asm");
+    return query.getResultList();
+    }
+}
+....
+
+Test code below.
+
+
+=== Pure inlined
+
+The Callable can be created right in the test method itself.
+
+....
+public class MoviesTest extends TestCase {
+    private Context context;
+
+    protected void setUp() throws Exception {
+	// initialize jndi context as usual
+    }
+
+    public void test() throws Exception {
+	Caller transactionBean == (Caller)
+    context.lookup("TransactionBeanLocal");
+
+	transactionBean.call(new Callable() {
+	    public Object call() throws Exception {
+		Movies movies == (Movies) context.lookup("MoviesLocal");
+
+		movies.addMovie(new Movie("Quentin Tarantino", "Reservoir Dogs", 1992));
+		movies.addMovie(new Movie("Joel Coen", "Fargo", 1996));
+		movies.addMovie(new Movie("Joel Coen", "The Big Lebowski",1998));
+
+		List<Movie> list == movies.getMovies();
+		assertEquals("List.size()", 3, list.size());
+
+		for (Movie movie : list) {
+		    movies.deleteMovie(movie);
+		}
+
+		assertEquals("Movies.getMovies()", 0,movies.getMovies().size());
+
+		return null;
+	    }
+	});
+    }
+}
+....
+
+
+=== Same test code, different transaction scenarios
+
+Maybe you'd like to test how things behave with and without a transaction to guarantee everyone is doing the right thing in all situations.
+Negative testing is often a very good way to stomp out dangerous bugs.
+
+....
+public class MoviesTest extends TestCase {
+    private Context context;
+
+    protected void setUp() throws Exception {
+	// initialize jndi context as usual
+    }
+
+    private void doWork() throws Exception {
+	      Movies movies == (Movies) context.lookup("MoviesLocal");
+
+	      movies.addMovie(new Movie("Quentin Tarantino", "Reservoir Dogs",1992));
+          movies.addMovie(new Movie("Joel Coen", "Fargo", 1996));
+	      movies.addMovie(new Movie("Joel Coen", "The Big Lebowski", 1998));
+
+	      List<Movie> list == movies.getMovies();
+	      assertEquals("List.size()", 3, list.size());
+
+	      for (Movie movie : list) {
+	          movies.deleteMovie(movie);
+	      }
+
+	      assertEquals("Movies.getMovies()", 0, movies.getMovies().size());
+    }
+
+    public void testWithTransaction() throws Exception {
+	      Caller transactionBean == (Caller)context.lookup("TransactionBeanLocal");
+
+	      transactionBean.call(new Callable(){
+	            public Object call() throws Exception {
+		          doWork();
+		          return null;
+	            }
+	      });
+    }
+
+    public void testWithoutTransaction() throws Exception {
+	      try {
+	            doWork();
+	            fail("The Movies bean should be using TransactionAttributeType.MANDATORY");
+	      } catch (javax.transaction.TransactionRequiredException e) {
+	            // good, our Movies bean is using TransactionAttributeType.MANDATORY as we want
+	      }
+    }
+}
+....

@@ -1,0 +1,108 @@
+= GIT for TomEE Developers
+:jbake-type: page
+:jbake-status: published
+
+== The GitFlow Workflow
+
+Notes before you begin (mostly for SVN users):
+
+* The '_develop_' repository is the equivalent of the SVN _trunk_ directory.
+* The '_master_' repository is the equivalent of the SVN _tags_ directory.
+* The '_origin_' is the actual GIT repository that contains the projects _master_, _develop_ and other branches (Like trunk, branches and tags).
+* Unlike SVN a 'commit' is only a local action.
+The local commits are only published to the remote repository using 'push'.
+* Commit and push code to your own feature branch as often as you like, but only merge stable branches back into to the _develop_ branch.
+* Only the release manager should manage the _master_ repository
+* Read the official Apache Committer documentation https://gitbox.apache.org/#committers-getting-started[here]
+
+Run commands in the directory of the project you are working on, for example 'tomee':
+
+Always create a feature branch from _develop_ using an '_extremely_' descriptive name, this should usually be the https://issues.apache.org/jira/browse/TOMEE[JIRA] id or task name you want to work on:
+
+----
+git checkout -b TOMEE-007 develop
+
+Switched to a new branch 'TOMEE-007'
+----
+
+----
+git status
+
+nothing to commit, working directory clean
+----
+
+Immediately push the new branch to the repository so everyone can see it remotely (and possibly collaborate):
+
+----
+git push -u origin TOMEE-007
+
+Branch TOMEE-007 set up to track remote branch TOMEE-007 from origin.
+----
+
+Once that is done then you just need the simple push for subsequent calls on this branch:
+
+----
+git push
+----
+
+Work like mad on the JIRA issue calling commit and add as often as you like...
+
+If others are working on your branch also remember to pull their changes (Or just as good practice):
+
+----
+git pull
+
+git commit
+
+git push
+----
+
+Finally, to push the completed (or significant non-breaking progress on the) feature to _develop_ at any time (ensuring _develop_ is up to date first):
+
+----
+git pull origin develop
+----
+
+----
+git checkout develop
+----
+
+----
+git merge --no-ff TOMEE-007
+----
+
+Once the completed feature is merged and the JIRA resolved then the branch can and 'should' be deleted before pushing:
+
+----
+git branch -d TOMEE-007
+----
+
+----
+git push origin develop
+----
+
+== The GUI Way
+
+Now we have learned to do it the hard way, time to look at the simplified version.
+The GitHub native tools!
+
+For the latest mac version go here: https://mac.github.com/[Mac Latest],
+
+And windows here: https://windows.github.com/[Win Latest]
+
+These tools will probably not save you much time over the command line, but provide a much better visualization of ongoing processes.
+
+The steps are and remain as described above:
+
+. From _develop_ create a new branch called, for example TOMEE-007
+. 'Publish' (push -u) the new branch
+. Work on the branch and commit regularly
+. Synchronize (pull and push) changes in the the branch when stable
+. Switch to _develop_ and synchronize (pull)
+. Merge the branch into _develop_, i.e. 'TOMEE-007' + 'develop'  = 'develop' *See note below
+. Commit _develop_
+. Synchronize _develop_ (pull and push)
+. Delete the branch TOMEE-007
+
+NOTE: You can actually merge the current *develop_ (or any other 'synchronized' branch) into your branch first to make sure it is stable,i.e.
+'develop' + 'TOMEE-007' = 'TOMEE-007' - This is really cool!
