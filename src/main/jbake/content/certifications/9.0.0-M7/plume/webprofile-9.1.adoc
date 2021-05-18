@@ -2,7 +2,6 @@
 :jbake-date: 2021-04-29
 :jbake-type: page
 :jbake-status: published
-:jbake-tomeepdf:
 :icons: font
 :imagesdir: ../../img
 
