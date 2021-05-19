@@ -1612,8 +1612,8 @@ div.compact > ul > li > p {
   width: 100%;
   color: var(--violet);
   background: rgba(28, 36, 65, 0.93);
-  background: linear-gradient(150deg, rgba(212, 105, 128, 0.95), rgba(240, 160, 110, 0.95)), url('../img/commiters-info-back.png');
-  background-size: cover, cover;
+  background: url('../img/commiters-info-back.jpg');
+  background-size: cover;
   text-align: center;
   padding: 25px 0;
 }
