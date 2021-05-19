@@ -22,7 +22,7 @@
                     <% } %>
 
                     </span>
-				    Apache TomEE
+				    <b>Apache</b>TomEE
                 </a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,7 +31,7 @@
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>docs.html">Documentation</a></li>
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>community/index.html">Community</a></li>
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>security/security.html">Security</a></li>
-					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>download-ng.html">Downloads</a></li>
+					<li><a class="btn btn-accent accent-orange no-shadow" href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>download-ng.html">Downloads</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
