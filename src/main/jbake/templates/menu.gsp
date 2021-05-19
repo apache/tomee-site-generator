@@ -10,19 +10,25 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">
+				<a class="navbar-brand" href="/" title="Apache TomEE">
 				    <span>
 
 				    <% if (content.uri && content.uri == '/index.html') { %>
 				        <img
-                            src="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>img/logo.png"
-                            data-active-url="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>img/logo-active.png">
+                            src="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>img/apache_tomee-logo-white.svg"
+                            data-active-url="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>img/apache_tomee-logo.svg"
+							onerror="this.src='<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>img/apache_tomee-logo.jpg'"
+							height="50"
+							>
                     <% } else { %>
-                        <img src="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>img/logo-active.png">
+                        <img 
+							src="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>img/apache_tomee-logo.svg"
+							onerror="this.src='<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>img/apache_tomee-logo.jpg'"
+							height="50"
+							>
                     <% } %>
 
                     </span>
-				    Apache TomEE
                 </a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,7 +37,7 @@
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>docs.html">Documentation</a></li>
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>community/index.html">Community</a></li>
 					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>security/security.html">Security</a></li>
-					<li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>download-ng.html">Downloads</a></li>
+					<li><a class="btn btn-accent accent-orange no-shadow" href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>download-ng.html">Downloads</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
