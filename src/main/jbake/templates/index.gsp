@@ -10,14 +10,14 @@
                             Apache TomEE
                         </div>
                         <div class="col-md-12 text-center">
-                            <h2 class="white">Annoucment of compatibility</h2>
+                            <h2 class="white">Now Jakarta EE 9.1 Web Profile Certified!</h2>
                         </div>
                     </div>
                     <div style="opacity: 0;" class="row animated fadeInUp text-left header-links">
                         <div class="col-md-3 no-padding">
                         </div>
                         <div class="col-md-3 no-padding">
-                            <a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/docs.html">
+                            <a href="docs.html">
                                 <div class="link-block">
                                     <i class="icon_documents_alt white circled-icon"></i>
                                     <div class="bottom">
@@ -28,7 +28,7 @@
                             </a>
                         </div>
                         <div class="col-md-3 no-padding">
-                            <a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/community/index.html">
+                            <a href="community/index.html">
                                 <div class="link-block">
                                     <i class="icon_group white circled-icon"></i>
                                     <div class="bottom">
@@ -39,7 +39,7 @@
                             </a>
                         </div>
                         <div class="col-md-3 no-padding">
-                            <a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html">
+                            <a href="download.html">
                                 <div class="link-block">
                                     <i class="icon_download white circled-icon"></i>
                                     <div class="bottom">
@@ -66,22 +66,22 @@
 				<div class="col-md-6 d-flex f-column-start accented-block accent-violet f-space-between">
                     <div class="block-content">
                         <h5 class="muted">Final Release - javax namespace</h5>
-                        <h4 class="muted">apache-tomee-8.0.4</h4>
-                        <p>More academics should blog, post videos, post audio, post lectures, offer articles and more. You'll enjoy it: I've had threats and blackmail, abuse, smears and formal complaints with forged documentation.</p>
+                        <h4 class="muted">apache-tomee-8.0.6</h4>
+                        <p>Stable and ready for production, Apache TomEE 8.0 implements Java EE 8 / Jakarta EE 8 and supports the javax namespace.  Runs on Java 8 or higher.</p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"  href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html"><i class="icon_plus"></i>Learn more</a>
+                    <a class="btn btn-accent btn-primary square"  href="download.html"><i class="icon_plus"></i>Download</a>
 				</div>
                 <div class="col-md-6 d-flex f-column-end accented-block accent-red f-space-between">
                     <div class="block-content">
-                        <h5 class="muted">Latest Release - Jakarta namespace</h5>
-                        <h4 class="muted">apache-tomee-9.0.0-M1</h4>
+                        <h5 class="muted">Latest Milestone - Jakarta namespace</h5>
+                        <h4 class="muted">apache-tomee-9.0.0-M7</h4>
                         <p>
-                            More academics should blog, post videos, post audio, post lectures, offer articles and more.
+                            Jakarta EE 9.1 Web Profile compliant and supports the new jakarta namespace.  Runs on Java 8 or higher.
                             <br>
                             <div class="compatible-badge">Jakarte EE Compatible</div>
                         </p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"  href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html"><i class="icon_plus"></i>Learn more</a>
+                    <a class="btn btn-accent btn-primary square"  href="download.html"><i class="icon_plus"></i>Download</a>
 				</div>
 			</div>
             <div class="row animated fadeInUp d-flex section" style="opacity: 0;">  
@@ -125,10 +125,10 @@
                         <h5 class="muted">What is your flavor?</h5>
                         <h4 class="muted">TomEE Flavors</h4>
                         <p>
-                            Apache TomEE comes with four different flavors, Web Profile, Plus and Plume. Apache TomEE Web Profile delivers Servlets, JSP, JSF, JTA, JPA, CDI, Bean Validation and EJB Lite. Apache TomEE JAX-RS (RESTfull Services) delivers the Web Profile plus JAX-RS (RESTfull Services).
+                            Apache TomEE comes with four different flavors, Web Profile, MicroProfile, Plus and Plume. Apache TomEE Web Profile delivers Servlets, JSP, JSF, JTA, JPA, CDI, Bean Validation and EJB Lite. Apache TomEE MicroProfile adds support for MicroProfile.  Apache TomEE Plus and Plume add support for JMS, JAX-WS and more.
                         </p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"  href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html"><i class="icon_plus"></i>Learn more</a>
+                    <a class="btn btn-accent btn-primary square"  href="comparison.html"><i class="icon_plus"></i>See Comparison</a>
 				</div>
 			</div>    
         </div>
@@ -137,19 +137,19 @@
         <div class="container">
             <div class="row animated fadeInUp" style="opacity: 0;">  
 				<div class="col-md-3">
-                    <div class="info-count">450</div>
-                    <div class="info-title">Committers</div>
+                    <div class="info-count">100</div>
+                    <div class="info-title">Contributors</div>
 				</div>
                 <div class="col-md-3">
                     <div class="info-count">10k</div>
                     <div class="info-title">Coffees</div>
 				</div>
                 <div class="col-md-3">
-                    <div class="info-count">300k</div>
+                    <div class="info-count">800k</div>
                     <div class="info-title">Lines of code</div>
 				</div>
                 <div class="col-md-3">
-                    <div class="info-count">120k</div>
+                    <div class="info-count">13k</div>
                     <div class="info-title">Commits</div>
 				</div>
 			</div>
@@ -164,7 +164,7 @@
                         <div class="jakarta-ee-logo"></div>
                         <p>Jakarta EE, powered by participation, is focused on enabling community-driven collaboration and open innovation for the cloud. </p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"  href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html"><i class="icon_plus"></i>Learn more</a>
+                    <a class="btn btn-accent btn-primary square"  href="latest/examples/"><i class="icon_plus"></i>Examples</a>
 				</div>
                 <div class="col-md-6 d-flex f-column-end accented-block accent-red f-space-between">
                     <div class="block-content">
@@ -174,7 +174,7 @@
                             MicroProfile is an open forum that optimizes Enterprise Java for a microservice architecture by innovating across multiple implementations and collaborating on common areas of interest with a goal of standardization.
                         </p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"  href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html"><i class="icon_plus"></i>Learn more</a>
+                    <a class="btn btn-accent btn-primary square"  href="latest/examples/"><i class="icon_plus"></i>Examples</a>
 				</div>
 			</div>
 		</div>
