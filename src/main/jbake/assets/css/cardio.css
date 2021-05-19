@@ -1170,6 +1170,11 @@ a.light-white:hover, a.light-white:active {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
   border-radius: 4px;
   padding: 4px;
+  margin-top: 10px;
+}
+
+.photo img {
+  max-width: 100%;
 }
 
 .bs-callout {
