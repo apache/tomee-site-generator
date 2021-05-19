@@ -69,7 +69,7 @@
                         <h4 class="muted">apache-tomee-8.0.4</h4>
                         <p>More academics should blog, post videos, post audio, post lectures, offer articles and more. You'll enjoy it: I've had threats and blackmail, abuse, smears and formal complaints with forged documentation.</p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"><i class="icon_plus"></i>Learn more</a>
+                    <a class="btn btn-accent btn-primary square"  href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html"><i class="icon_plus"></i>Learn more</a>
 				</div>
                 <div class="col-md-6 d-flex f-column-end accented-block accent-red f-space-between">
                     <div class="block-content">
@@ -81,7 +81,7 @@
                             <div class="compatible-badge">Jakarte EE Compatible</div>
                         </p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"><i class="icon_plus"></i>Learn more</a>
+                    <a class="btn btn-accent btn-primary square"  href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html"><i class="icon_plus"></i>Learn more</a>
 				</div>
 			</div>
             <div class="row animated fadeInUp d-flex section" style="opacity: 0;">  
@@ -128,7 +128,7 @@
                             Apache TomEE comes with four different flavors, Web Profile, Plus and Plume. Apache TomEE Web Profile delivers Servlets, JSP, JSF, JTA, JPA, CDI, Bean Validation and EJB Lite. Apache TomEE JAX-RS (RESTfull Services) delivers the Web Profile plus JAX-RS (RESTfull Services).
                         </p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"><i class="icon_plus"></i>Learn more</a>
+                    <a class="btn btn-accent btn-primary square"  href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html"><i class="icon_plus"></i>Learn more</a>
 				</div>
 			</div>    
         </div>
@@ -164,7 +164,7 @@
                         <div class="jakarta-ee-logo"></div>
                         <p>Jakarta EE, powered by participation, is focused on enabling community-driven collaboration and open innovation for the cloud. </p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"><i class="icon_plus"></i>Learn more</a>
+                    <a class="btn btn-accent btn-primary square"  href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html"><i class="icon_plus"></i>Learn more</a>
 				</div>
                 <div class="col-md-6 d-flex f-column-end accented-block accent-red f-space-between">
                     <div class="block-content">
@@ -174,7 +174,7 @@
                             MicroProfile is an open forum that optimizes Enterprise Java for a microservice architecture by innovating across multiple implementations and collaborating on common areas of interest with a goal of standardization.
                         </p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"><i class="icon_plus"></i>Learn more</a>
+                    <a class="btn btn-accent btn-primary square"  href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>/download-ng.html"><i class="icon_plus"></i>Learn more</a>
 				</div>
 			</div>
 		</div>
