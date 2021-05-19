@@ -1618,7 +1618,7 @@ div.compact > ul > li > p {
   padding: 25px 0;
 }
 
-.committers-info-section .info-count { 
+.committers-info-section .info-count {
   display: block;
   font-weight: bold;
   font-size: 60px;
@@ -1759,4 +1759,8 @@ div.compact > ul > li > p {
 
 .navbar-brand img {
   margin: -5px 0;
+}
+
+h2 > a, h3 > a, h4 > a {
+  padding-top: 155px;
 }

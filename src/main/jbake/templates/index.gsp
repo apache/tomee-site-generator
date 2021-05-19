@@ -69,7 +69,7 @@
                         <h4 class="muted">apache-tomee-8.0.6</h4>
                         <p>Stable and ready for production, Apache TomEE 8.0 implements Java EE 8 / Jakarta EE 8 and supports the javax namespace.  Runs on Java 8 or higher.</p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"  href="download.html"><i class="icon_plus"></i>Download</a>
+                    <a class="btn btn-accent btn-primary square"  href="download.html#tomee-8.0"><i class="icon_plus"></i>Download</a>
 				</div>
                 <div class="col-md-6 d-flex f-column-end accented-block accent-red f-space-between">
                     <div class="block-content">
@@ -81,7 +81,7 @@
                             <div class="compatible-badge">Jakarte EE Compatible</div>
                         </p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"  href="download.html"><i class="icon_plus"></i>Download</a>
+                    <a class="btn btn-accent btn-primary square"  href="download.html#tomee-9.0"><i class="icon_plus"></i>Download</a>
 				</div>
 			</div>
             <div class="row animated fadeInUp d-flex section" style="opacity: 0;">  
