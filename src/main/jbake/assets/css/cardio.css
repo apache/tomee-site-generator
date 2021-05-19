@@ -1756,3 +1756,7 @@ div.compact > ul > li > p {
   padding: 7px 16px;
   text-transform: initial;
 }
+
+.navbar-brand img {
+  margin: -5px 0;
+}
