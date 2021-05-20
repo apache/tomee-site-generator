@@ -4,7 +4,7 @@
 
 == Random Access File Passivater
 
-Implementation of xref:dev/design-passivation-strategy.adoc[Passivation Strategy]
+Implementation of xref:design-passivation-strategy.adoc[Passivation Strategy]
 
 == Description
 

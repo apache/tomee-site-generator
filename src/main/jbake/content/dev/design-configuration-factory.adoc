@@ -4,7 +4,7 @@
 
 == Configuration Factory
 
-Sub-component of xref:dev/design-classic-assembler.adoc[Classic Assembler]
+Sub-component of xref:design-classic-assembler.adoc[Classic Assembler]
 
 == Definition
 
@@ -30,4 +30,4 @@ The Configuration Factory can construct, retreive, or populate the InfoObjects f
 == Implementations
 
 * XML Configuration Factory _(no longer supported)_
-* xref:dev/design-nova-configuration-factory.adoc[Nova Configuration Factory]
+* xref:design-nova-configuration-factory.adoc[Nova Configuration Factory]

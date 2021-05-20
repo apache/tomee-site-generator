@@ -4,7 +4,7 @@
 
 == Application Server
 
-Sub-component of xref:dev/design.adoc[OpenEJB]
+Sub-component of xref:design.adoc[OpenEJB]
 
 
 == Definition
@@ -34,5 +34,5 @@ Any component wishing to serve or deliver Enterprise JavaBeans.
 
 == Implementations
 
-* xref:dev/design-local-server.adoc[Local Server]
-* xref:dev/design-remote-server.adoc[Remote Server]
+* xref:design-local-server.adoc[Local Server]
+* xref:design-remote-server.adoc[Remote Server]

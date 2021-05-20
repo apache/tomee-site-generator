@@ -4,7 +4,7 @@
 
 == Stateful SessionBean Container
 
-Implementation of xref:dev/design-container.adoc[Container]
+Implementation of xref:design-container.adoc[Container]
 
 == Description
 
@@ -21,4 +21,4 @@ Container that implements the EJB defined bean-container contract for Stateful S
 
 == Sub-components
 
-* xref:dev/design-passivation-strategy.adoc[Passivation Strategy]
+* xref:design-passivation-strategy.adoc[Passivation Strategy]
