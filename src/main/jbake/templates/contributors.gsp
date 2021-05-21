@@ -16,23 +16,18 @@
         </div>
         <div class="row">
             <div class="col-md-12 contributors">
-              <div class="text-center" style="padding-bottom: 2em;">A <i class="fa fa-star-o" style="color:#F38F24;"></i> means the contributor is also a committer.</div>
+              <div class="text-center" style="padding-bottom: 2em;">We want to thank the following individuals for contributing to Apache TomEE. An up to date contributor list can be found <a href="https://github.com/apache/tomee/graphs/contributors">here</a>. The current list of committers can be found <a href="https://projects.apache.org/committee.html?tomee">here</a>.</div>
               <ul>
                 <%
                     org.apache.tomee.website.Contributors.load(content.body).each {contributor ->
                 %>
                   <div class="col-sm-4">
                     <div class="photo col-sm-5">
-                      <img alt="${contributor.name}" src="${contributor.gravatar}" style="width:140px">
-                      <% if (contributor.committer){ %><i class="pull-right fa fa-star-o" style="color:#F38F24;"></i><% } %>
+                      <img src="${contributor.avatar}" style="width:140px">
                     </div>
                     <div class="col-sm-7">
-                      <h3 class="contributor-name" style="font-size:1.4em;">${contributor.name}</h3>
+                        <h5 class="contributor-name" style="font-size:1.0em;"><a href="${contributor.github}">${contributor.name}</a></h5>
                       <p></p>
-                      <ul class="list-inline">
-                      <%contributor.link.each {l ->%>
-                      <li><a href="${l.url}">${l.name}</a></li>
-                      <%}%>
                     </div>
                   </div>
               <% } %>
