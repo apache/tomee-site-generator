@@ -8,9 +8,9 @@
 
 * xref:contributing/contribution-tips.adoc[Contribution tips]
 * xref:contributing/workflow.adoc[Contribution workflow]
-* xref:sources.adoc[Apache TomEE]
-* xref:contributing/website.adoc[This website]
-* xref:contributors.adoc[TomEE Wall Of Fame]
+* xref:sources.adoc[Contribute to Apache TomEE]
+* xref:contributing/website.adoc[Contribute to this Website]
+* xref:contributors.adoc[Apache TomEE - Wall Of Fame]
 
 == Social Media: cause contributing is not only about coding
 
