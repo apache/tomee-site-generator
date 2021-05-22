@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.tomee.website;
+package org.apache.tomee.website.contributors;
 
 import lombok.Builder;
 import lombok.Data;

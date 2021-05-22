@@ -19,7 +19,7 @@
               <div class="text-center" style="padding-bottom: 2em;">We want to thank the following individuals for contributing to Apache TomEE. An up to date contributor list can be found <a href="https://github.com/apache/tomee/graphs/contributors">here</a>. The current list of committers can be found <a href="https://projects.apache.org/committee.html?tomee">here</a>.</div>
               <ul>
                 <%
-                    org.apache.tomee.website.Contributors.load(content.body).each {contributor ->
+                    org.apache.tomee.website.contributors.Contributors.load(content.body).each { contributor ->
                 %>
                   <div class="col-sm-4">
                     <div class="photo col-sm-5">
