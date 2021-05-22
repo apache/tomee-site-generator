@@ -58,7 +58,7 @@ public class ContributorData {
                 .id(author.getId() + "")
                 .name(author.getLogin())
                 .github("https://github.com/" + author.getLogin())
-                .avatar(author.getAvatar())
+                .avatar("https://avatars.githubusercontent.com/u/" + author.getId() + "?v=4")
                 .stats(this.getStats())
                 .build();
     }

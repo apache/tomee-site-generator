@@ -27,8 +27,12 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Contributors {
+    private static final Logger log = Logger.getLogger(Github.class.getName());
+
     private Contributors() {
         // no-op
     }
@@ -47,6 +51,18 @@ public class Contributors {
     }
 
     public static Collection<Contributor> load(final String contributorsList) throws IOException { // used in page.gsp
+        /*
+         * Try getting the full list from Github across all repositories
+         */
+        try {
+            return new Github().getContributors();
+        } catch (Exception e) {
+            log.log(Level.SEVERE, "Unable to fetch contributors from github.com", e);
+        }
+
+        /*
+         * Fallback to our cached list
+         */
         final List<Contributor> contributors = new ArrayList<>();
         final ExecutorService es = Executors.newFixedThreadPool(16);
         final String rawList = contributorsList.substring(contributorsList.indexOf("<pre>") + "<pre>".length(), contributorsList.indexOf("</pre>"));
