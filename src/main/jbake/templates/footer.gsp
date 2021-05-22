@@ -8,7 +8,6 @@
 					<ul class="social-footer">
 						<li><a href="https://www.facebook.com/ApacheTomEE/"><i class="fa fa-facebook"></i></a></li>
 						<li><a href="https://twitter.com/apachetomee"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="https://plus.google.com/communities/105208241852045684449"><i class="fa fa-google-plus"></i></a></li>
 					</ul>
 				</div>
 				<div class="col-sm-6 text-center-mobile">
@@ -52,7 +51,7 @@
 			</div>
 			<div class="row bottom-footer text-center-mobile">
 				<div class="col-sm-12 light-white">
-					<p>Copyright &copy; 1999-2016 The Apache Software Foundation, Licensed under the Apache License, Version 2.0. Apache TomEE, TomEE, Apache, the Apache feather logo, and the Apache TomEE project logo are trademarks of The Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+					<p>Copyright &copy; 1999-2021 The Apache Software Foundation, Licensed under the Apache License, Version 2.0. Apache TomEE, TomEE, Apache, the Apache feather logo, and the Apache TomEE project logo are trademarks of The Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
 				</div>
 			</div>
 		</div>
