@@ -43,4 +43,21 @@ public class ContributorDataTest {
         assertEquals(6, data[3].getWeeks().get(135).getC());
     }
 
+    @Test
+    public void getStats() throws Exception {
+
+        final URL resource = this.getClass().getClassLoader().getResource("contributor-data.json");
+        final String json = IO.slurp(resource);
+        final Jsonb jsonb = JsonbBuilder.create();
+        final ContributorData[] data = jsonb.fromJson(json, ContributorData[].class);
+
+        assertEquals(12, data.length);
+        assertEquals("djencks", data[3].getAuthor().getLogin());
+
+        final Stats stats = data[3].getStats();
+        assertEquals(36, stats.getCommits());
+        assertEquals(35243, stats.getLinesAdded());
+        assertEquals(25020, stats.getLinesRemoved());
+    }
+
 }

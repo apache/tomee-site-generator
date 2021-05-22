@@ -41,6 +41,13 @@ public class ContributorData {
     @JsonbProperty("weeks")
     private List<Week> weeks;
 
+    public Stats getStats() {
+        return weeks.stream()
+                .map(week -> new Stats(week.c, week.a, week.d))
+                .reduce(Stats::add)
+                .orElse(new Stats(0, 0, 0));
+    }
+
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
