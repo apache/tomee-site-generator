@@ -16,9 +16,6 @@
  */
 package org.apache.tomee.website.contributors;
 
-import lombok.Builder;
-import lombok.Data;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
@@ -77,17 +74,8 @@ public class Contributors {
             Thread.interrupted();
             return Collections.emptyList();
         }
-        Collections.sort(contributors, Comparator.comparing(o -> o.name));
+        Collections.sort(contributors, Comparator.comparing(Contributor::getName));
         return contributors;
     }
 
-    @Data
-    @Builder
-    public static class Contributor {
-        private String id;
-        private boolean committer;
-        private String name;
-        private String github;
-        private String avatar;
-    }
 }
