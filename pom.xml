@@ -47,6 +47,11 @@
       <version>1.2.11</version>
     </dependency>
     <dependency>
+      <groupId>org.apache.johnzon</groupId>
+      <artifactId>johnzon-jsonb</artifactId>
+      <version>1.2.11</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-rs-client</artifactId>
       <version>3.4.3</version>
