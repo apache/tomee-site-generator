@@ -48,6 +48,21 @@ public class ContributorData {
                 .orElse(new Stats(0, 0, 0));
     }
 
+    /**
+     * Convert the ContributorData to a Contributor instance
+     */
+    public Contributor asContributor() {
+        final ContributorData.Author author = this.getAuthor();
+
+        return Contributor.builder()
+                .id(author.getId() + "")
+                .name(author.getLogin())
+                .github("https://github.com/" + author.getLogin())
+                .avatar(author.getAvatar())
+                .stats(this.getStats())
+                .build();
+    }
+
     @Data
     @NoArgsConstructor
     @AllArgsConstructor

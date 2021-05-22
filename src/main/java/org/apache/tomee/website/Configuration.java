@@ -89,7 +89,7 @@ public class Configuration {
                 new Source("https://github.com/eclipse-ee4j/websocket-api.git", "master", "websocket-api-ee9")
         };
 
-//        if (1 == 1) return new Source[0];
+        if (1 == 1) return new Source[0];
         return new Source[]{
 //                new Source("https://github.com/apache/tomee.git", "master", "tomee-8.0"),
                 new Source("https://github.com/apache/tomee.git", "master", "tomee-9.0").label("milestone").related(microProfile2).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),

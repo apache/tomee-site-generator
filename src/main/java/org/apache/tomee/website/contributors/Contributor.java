@@ -19,6 +19,10 @@ package org.apache.tomee.website.contributors;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 @Data
 @Builder
 public class Contributor {
@@ -27,4 +31,31 @@ public class Contributor {
     private String name;
     private String github;
     private String avatar;
+    private Stats stats;
+
+    public Contributor add(final Contributor that) {
+        return new Contributor(id, committer, name, github, avatar, stats.add(that.stats));
+    }
+
+    /**
+     * Take the specified list of Contributors, which may have duplicates, and
+     * combine each duplicate down to one Contributor instance while keeping a
+     * total of all their stats.
+     */
+    public static List<Contributor> unique(final List<Contributor> listWithDuplicates) {
+        final Map<String, List<Contributor>> map = listWithDuplicates.stream()
+                .collect(Collectors.groupingBy(Contributor::getName));
+
+        return map.values().stream()
+                .map(Contributor::reduce)
+                .collect(Collectors.toList());
+    }
+
+    private static Contributor reduce(final List<Contributor> instances) {
+        return instances.stream()
+                .reduce(Contributor::add)
+                .orElseThrow(IllegalStateException::new);
+    }
+
+
 }
