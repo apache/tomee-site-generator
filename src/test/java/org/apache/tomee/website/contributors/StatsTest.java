@@ -49,9 +49,9 @@ public class StatsTest {
         final Stats max = new Stats(157, 241, 37);
 
         assertEquals(0, max.score(new Stats(0, 0, 0)));
-        assertEquals(33, max.score(new Stats(157, 0, 0)));
-        assertEquals(67, max.score(new Stats(157, 241, 0)));
-        assertEquals(100, max.score(new Stats(157, 241, 37)));
-        assertEquals(43, max.score(new Stats(50, 40, 30)));
+        assertEquals(333333, max.score(new Stats(157, 0, 0)));
+        assertEquals(666667, max.score(new Stats(157, 241, 0)));
+        assertEquals(1000000, max.score(new Stats(157, 241, 37)));
+        assertEquals(431752, max.score(new Stats(50, 40, 30)));
     }
 }

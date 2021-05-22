@@ -55,7 +55,8 @@ public class Contributors {
          * Try getting the full list from Github across all repositories
          */
         try {
-            return new Github().getContributors();
+            final List<Contributor> contributors = new Github().getContributors();
+            return sort(contributors);
         } catch (Exception e) {
             log.log(Level.SEVERE, "Unable to fetch contributors from github.com", e);
         }
@@ -94,4 +95,24 @@ public class Contributors {
         return contributors;
     }
 
+    public static List<Contributor> sort(final List<Contributor> list) {
+        final Stats max = list.stream()
+                .map(Contributor::getStats)
+                .reduce(Stats::max)
+                .orElse(new Stats(0, 0, 0));
+
+        list.sort(Comparator.<Contributor, Integer>comparing(contributor -> max.score(contributor.getStats())).reversed());
+
+        final boolean debug = false;
+        if (debug){
+            for (final Contributor contributor : list) {
+                final Stats stats = contributor.getStats();
+                System.out.printf("Contributor: %-7s %-20s %5s %7s %7s%n",
+                        max.score(contributor.getStats()), contributor.getName(),
+                        stats.getCommits(), stats.getLinesAdded(),
+                        stats.getLinesRemoved());
+            }
+        }
+        return list;
+    }
 }

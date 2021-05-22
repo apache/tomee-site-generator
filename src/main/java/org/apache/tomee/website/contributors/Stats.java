@@ -61,6 +61,6 @@ public class Stats {
         final double linesRemovedPercentage = that.linesRemoved / (double) this.linesRemoved;
         final double average = (commitsPercentage + linesAddedPercentage + linesRemovedPercentage) / 3;
 
-        return (int) Math.round(average * 100);
+        return (int) Math.round(average * 1000000);
     }
 }
