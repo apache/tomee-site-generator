@@ -8,15 +8,15 @@ This website is a simple link:http://jbake.org/[JBake] project you can find at:
 
  - https://gitbox.apache.org/repos/asf/tomee-site-generator.git. (Apache)
 
- - https://github.com/apache/tomee-site-generator.git (Github mirror)
+ - https://github.com/apache/tomee-site-generator.git (GitHub mirror)
 
 To submit a change do the following:
 
-- Create a ticket on http://issues.apache.org/jira/browse/TOMEE
+- Create a ticket on https://issues.apache.org/jira/browse/TOMEE
 
-- Open a PR in the Gihub mirror with the ticket number e.g `TOMEE-1000 - Ticket Description`
+- Open a PR in the GitHub mirror with the ticket number e.g `TOMEE-1000 - Ticket Description`
 
-A committer will review it and redeploy the website using Apache CMS.
+A committer will review it and redeploy the website using a Jenkins CI build job.
 
 Building the website is mainly about running `mvn compile`, note you can use `JBake` main to develop.
 Publishing the website is about running `mvn pre-site` - needs to be a TomEE committer.

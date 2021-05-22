@@ -4,7 +4,7 @@
 
 == Transaction Service
 
-Sub-component of xref:dev/design.adoc[OpenEJB]
+Sub-component of xref:design.adoc[OpenEJB]
 
 == Definition
 

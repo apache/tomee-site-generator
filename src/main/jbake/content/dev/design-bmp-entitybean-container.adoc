@@ -4,7 +4,7 @@
 
 == BMP EntityBean Container
 
-Implementation of xref:dev/design-container.adoc[Container]
+Implementation of xref:design-container.adoc[Container]
 
 == Description
 

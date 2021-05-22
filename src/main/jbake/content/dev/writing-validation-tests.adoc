@@ -106,7 +106,7 @@ Simply invoke the following maven command
 mvn test -Dtest=ValidationKeysAuditorTest -DconfluenceUsername=YourConfluenceUsername -DconfluencePassword=YourConfluencePassword
 ----
 
-The above command will create a complete test coverage report and post it to this location xref:dev/validation-keys-audit-report.adoc[Validation Keys Audit Report]
+The above command will create a complete test coverage report and post it to this location xref:validation-keys-audit-report.adoc[Validation Keys Audit Report]
 
 === Quick facts about ValidationRunner and things to keep in mind while writing tests
 

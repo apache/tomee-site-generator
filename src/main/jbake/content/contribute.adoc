@@ -18,13 +18,11 @@ If you love the project and want to see it grow, follow it on Facebook and Twitt
 
 * http://twitter.com/ApacheTomEE
 * http://facebook.com/ApacheTomEE
-* https://plus.google.com/118203123063829126066
 
 The more people we reach the more the project grows.
 
 * Become an active retweeter + +++<a onclick="javascript:twshare()" class="tw-share sprite" title="share on Twitter">+++share [tw]+++</a>+++
 * Share pages you like on Facebook + +++<a onclick="javascript:fbshare()" class="fb-share sprite" title="share on Facebook">+++share [fb]+++</a>+++
-* Share pages you like on Google+ + +++<a onclick="javascript:gpshare()" class="gp-share sprite" title="share on Google+">+++share [gp]+++</a>+++
 * Share pages you like on Pinterest + +++<a onclick="javascript:pinshare()" class="pin-share sprite" title="Share on Pinterest">+++share [pin]+++</a>+++
 
 Doing these things as often as possible are simple and powerful ways to help.

@@ -27,4 +27,4 @@ The Apache TomEE PMC does not and cannot endorse or recommend any products or se
 
 All submitted information must be factual and informational in nature and not be a marketing statement. Statements that promote your products and services over other offerings on the page will not be tolerated and will be removed. Such marketing statements can be added to your own pages on your own site.
 
-When in doubt, email the Apache TomEE PMC list (see xref:../security/support.adoc[Mailing Lists]) and ask. We are be happy to help.
+When in doubt, email the Apache TomEE PMC list (see xref:../security/support.adoc[Mailing Lists]) and ask. We are happy to help.

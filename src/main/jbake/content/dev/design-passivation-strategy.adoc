@@ -4,7 +4,7 @@
 
 == Passivation Strategy
 
-Sub-component of xref:dev/design-stateful-sessionbean-container.adoc[Stateful SessionBean Container]
+Sub-component of xref:design-stateful-sessionbean-container.adoc[Stateful SessionBean Container]
 
 == Definition
 
@@ -20,5 +20,5 @@ Used by the Stateful Container to passivate and activate stateful session beans 
 
 == Implementations
 
-* xref:dev/design-random-access-file-passivater.adoc[Random Access File Passivater]
-* xref:dev/design-simple-passivater.adoc[Simple Passivater]
+* xref:design-random-access-file-passivater.adoc[Random Access File Passivater]
+* xref:design-simple-passivater.adoc[Simple Passivater]

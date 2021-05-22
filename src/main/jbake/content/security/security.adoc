@@ -66,7 +66,7 @@ There is an Apache Software Foundation vendor declared so you can follow all vul
 
 == Links
 
-- http://apache.org/security/
-- http://apache.org/security/projects.html
-- http://apache.org/security/committers.html
-- http://cve.mitre.org/[Common Vulnerabilities and Exposures database]
+- https://apache.org/security/
+- https://apache.org/security/projects.html
+- https://apache.org/security/committers.html
+- https://cve.mitre.org/[Common Vulnerabilities and Exposures database]

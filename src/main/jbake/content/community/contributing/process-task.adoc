@@ -20,11 +20,11 @@ If you need help or want to have feedback for your ideas write to the developes 
 == Hands on
 Work on the code. Use local commit as often as you want.
 Use push (to your own forked repository) as often as you like.
-Consider the xref:community/contributing/contribution-tips.adoc[contribution tips].
+Consider the xref:contribution-tips.adoc[contribution tips].
 If a task is to hard to get it done: no problem. Just ask for help.
 If you want to cancel working on a task, don't forget to unassign the JIRA ticket!
 
 == Comments in JIRA
 Use comments for the JIRA ticket to document your work.
 
-(xref:community/contributing/workflow.adoc[back to Contribution workflow])
+(xref:workflow.adoc[back to Contribution workflow])

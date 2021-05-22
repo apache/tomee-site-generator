@@ -279,7 +279,7 @@ list_mirrors | while read n; do
 done | sort | grep 'http'
 ....
 
-Commit and publish changes to the site, see xref:dev/release-tomee.adoc#staging[Site Staging]
+Commit and publish changes to the site, see xref:release-tomee.adoc#staging[Site Staging]
 
  https://cms.apache.org/tomee/publish
 
@@ -287,4 +287,4 @@ Commit and publish changes to the site, see xref:dev/release-tomee.adoc#staging[
 
 Announce to the world that TomEE has new bells and whistles!
 
-https://blogs.apache.org/roller-ui/login.rol + http://twitter.com/ApacheTomEE + http://facebook.com/ApacheTomEE + https://plus.google.com/118203123063829126066
+https://blogs.apache.org/roller-ui/login.rol + http://twitter.com/ApacheTomEE + http://facebook.com/ApacheTomEE
