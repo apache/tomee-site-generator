@@ -7,8 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Apache TomEE</title>
 	<meta name="description"
-		  content="Apache TomEE is a lightweight, yet powerful, JavaEE / JakartaEE Application server with feature rich tooling." />
-	<meta name="keywords" content="tomee,asf,apache,javaee,jakartaee,jee,shade,embedded,test,junit,applicationcomposer,maven,arquillian" />
+		  content="Apache TomEE is a lightweight, yet powerful, JavaEE Application server with feature rich tooling." />
+	<meta name="keywords" content="tomee,asf,apache,javaee,jee,shade,embedded,test,junit,applicationcomposer,maven,arquillian" />
 	<meta name="author" content="Luka Cvetinovic for Codrops" />
 	<link rel="icon" href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>favicon.ico">
 	<link rel="icon"  type="image/png" href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>favicon.png">
@@ -23,6 +23,21 @@
 	<link rel="stylesheet" type="text/css" href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>css/jqtree.css">
 	<link rel="stylesheet" type="text/css" href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>css/idea.css">
 	<link rel="stylesheet" type="text/css" href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>css/cardio.css">
+
+	<script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2717626-1']);
+      _gaq.push(['_setDomainName', 'apache.org']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
 </head>
 
 <body>
