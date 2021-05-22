@@ -19,11 +19,9 @@ package org.apache.tomee.website.contributors;
 import org.apache.johnzon.jaxrs.JohnzonProvider;
 import org.apache.openejb.loader.IO;
 import org.tomitribe.swizzle.stream.StreamBuilder;
-import sun.rmi.runtime.Log;
 
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
-import javax.json.bind.JsonbException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
