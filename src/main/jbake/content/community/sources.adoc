@@ -3,11 +3,11 @@
 :jbake-type: page
 :jbake-status: published
 
-== Github
+== GitHub
 
-TomEE is on Github at https://github.com/apache/tomee . The sources are synchronized by Apache on Github
+TomEE is on GitHub at https://github.com/apache/tomee . The sources are synchronized by Apache on GitHub
 but Pull/Requests are integrated with Apache Infrastructure which means you can just submit us a patch as
-you would do on any Github project and Apache takes care of the rest of the process.
+you would do on any other GitHub project and Apache takes care of the rest of the process.
 
 == Apache Git
 
@@ -27,7 +27,7 @@ If you are interested in 1.7.x branch only just checkout the `tomee-1.7.x` branc
 git clone -b tomee-1.7.x https://gitbox.apache.org/repos/asf/tomee.git tomee-1.7.x
 ----
 
-Master branch is the more up to date version of the codebase and currently targets TomEE 7.x branch.
+Master branch is the more up to date version of the codebase and currently targets TomEE 8.x branch.
 
 == Building
 
@@ -57,15 +57,14 @@ Then TomEE archives are at `tomee/apache/tomee/target/apache-tomee-$\{classifier
 
 == Continuous Integration
 
-TomEE is using Buildbot for its continuous integration. You can access main builds (Ubuntu ones) at these address:
+TomEE is using Jenkins CI for its continuous integration. You can access builds at these address:
 
-- https://ci.apache.org/builders/tomee-trunk-ubuntu-jvm8[TomEE Master]
-- https://ci.apache.org/builders/tomee-1.7.x-ubuntu[TomEE 1.7.x]
+- https://ci-builds.apache.org/job/Tomee/[TomEE @ Jenkins CI]
 
 == Issues
 
-Tomee uses Jira for issues, if you are looking for a problem or reporting one, use the following address:
+TomEE uses Jira for issues, if you are looking for a problem or reporting one, use the following address:
 
-- Create a ticket on http://issues.apache.org/jira/browse/TOMEE
+- Create a ticket on https://issues.apache.org/jira/browse/TOMEE
 
-- Open a PR in the Gihub mirror with the ticket number e.g `TOMEE-1000 - Ticket Description`
+- Open a PR in the GitHub mirror with the ticket number e.g. `TOMEE-1000 - Ticket Description`

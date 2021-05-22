@@ -6,15 +6,15 @@
 
 == Contribute
 
-* xref:community/contributing/contribution-tips.adoc[Contribution tips]
-* xref:community/contributing/workflow.adoc[Contribution workflow]
-* xref:community/sources.adoc[Apache TomEE]
-* xref:community/contributing/website.adoc[This website]
-* xref:community/contributors.adoc[TomEE Wall Of Fame]
+* xref:contributing/contribution-tips.adoc[Contribution tips]
+* xref:contributing/workflow.adoc[Contribution workflow]
+* xref:sources.adoc[Contribute to Apache TomEE]
+* xref:contributing/website.adoc[Contribute to this Website]
+* xref:contributors.adoc[Apache TomEE - Wall Of Fame]
 
 == Social Media: cause contributing is not only about coding
 
-Facebook, Twitter, Google+: if that speaks to you just follow this xref:community/social.adoc[TomEE on Social Media].
+Facebook or Twitter: if that speaks to you just follow this xref:social.adoc[TomEE on Social Media].
 
 == Support
 

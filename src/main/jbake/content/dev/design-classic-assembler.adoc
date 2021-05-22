@@ -4,7 +4,7 @@
 
 == Classic Assembler
 
-Implementation of xref:dev/design-assembler.adoc[Assembler]
+Implementation of xref:design-assembler.adoc[Assembler]
 
 == Description
 
@@ -23,4 +23,4 @@ It is assumed the meta-data has been checked and validated, all links and refere
 
 == Sub-components
 
-* xref:dev/design-configuration-factory.adoc[Configuration Factory]
+* xref:design-configuration-factory.adoc[Configuration Factory]
