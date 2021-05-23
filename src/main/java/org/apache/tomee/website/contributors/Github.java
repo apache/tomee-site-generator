@@ -68,6 +68,7 @@ public class Github {
             return links.stream()
                     .filter(s -> !s.contains("/"))
                     .filter(s -> !s.equals("-site-pub"))
+                    .filter(s -> !s.equals("-site"))
                     .distinct()
                     .map(s -> "https://github.com/apache/tomee" + s)
                     .map(URI::create)
