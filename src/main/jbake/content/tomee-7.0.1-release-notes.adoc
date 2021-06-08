@@ -1,0 +1,56 @@
+= Release Notes - TomEE - Version 7.0.1
+:jbake-type: page
+:jbake-status: published
+
+== Bug
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1813[TOMEE-1813] - tomee.sh fails on cygwin
+* link:https://issues.apache.org/jira/browse/TOMEE-1817[TOMEE-1817] - java.lang.NullPointerException in Connector Resource Adapter deploy
+* link:https://issues.apache.org/jira/browse/TOMEE-1819[TOMEE-1819] - OWB configuration not respected
+* link:https://issues.apache.org/jira/browse/TOMEE-1822[TOMEE-1822] - SecurityService not available in TomEERealm: Principal can be the default one instead of the logged one
+* link:https://issues.apache.org/jira/browse/TOMEE-1827[TOMEE-1827] - Possible java.util.ConcurrentModificationException with ValidatingGenericConnectionManager
+* link:https://issues.apache.org/jira/browse/TOMEE-1828[TOMEE-1828] - OpenEJB application fails to find singleton container when openejb.offline = true
+* link:https://issues.apache.org/jira/browse/TOMEE-1829[TOMEE-1829] - com.sun.mail doesn&#39;t work in webapp out of the box
+* link:https://issues.apache.org/jira/browse/TOMEE-1832[TOMEE-1832] - dbcp2 datasource lock contention on createDataSource + illogical locking
+* link:https://issues.apache.org/jira/browse/TOMEE-1839[TOMEE-1839] - TomEE doesn&#39;t work with Arquillian servlet module 1.1.11.Final
+* link:https://issues.apache.org/jira/browse/TOMEE-1841[TOMEE-1841] - webapp version ignored
+* link:https://issues.apache.org/jira/browse/TOMEE-1844[TOMEE-1844] - bval can conflict with JAXRS bval integration
+* link:https://issues.apache.org/jira/browse/TOMEE-1845[TOMEE-1845] - dbcp2 openejb datasource JMX warning message at datasource unregistration
+
+== Dependency upgrade
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1850[TOMEE-1850] - Tomcat 8.5.3
+
+== Improvement
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1821[TOMEE-1821] - Allow to filter CDI extensions
+* link:https://issues.apache.org/jira/browse/TOMEE-1823[TOMEE-1823] - double johnzon max size (8k) and add a comment in system.properties
+* link:https://issues.apache.org/jira/browse/TOMEE-1824[TOMEE-1824] - support date configuration for johnzon
+* link:https://issues.apache.org/jira/browse/TOMEE-1825[TOMEE-1825] - allow to configure converters for johnzon jaxrs provider
+* link:https://issues.apache.org/jira/browse/TOMEE-1830[TOMEE-1830] - Set TomEEJarScanner TomEEFilter to delegate to standard jar scan filter as default
+* link:https://issues.apache.org/jira/browse/TOMEE-1838[TOMEE-1838] - (Un)DeployMojo not supporting HTTPS
+* link:https://issues.apache.org/jira/browse/TOMEE-1843[TOMEE-1843] - resources.xml errors unclear about the file
+* link:https://issues.apache.org/jira/browse/TOMEE-1849[TOMEE-1849] - JaccProvider hard to override
+
+== New Feature
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1812[TOMEE-1812] - add reload command to tomee embedded maven plugin
+* link:https://issues.apache.org/jira/browse/TOMEE-1818[TOMEE-1818] - add depends-on to Resource
+* link:https://issues.apache.org/jira/browse/TOMEE-1826[TOMEE-1826] - [CXF] openejb.cxf.monitoring.jmx config entry to activate counter repository
+* link:https://issues.apache.org/jira/browse/TOMEE-1831[TOMEE-1831] - Enrich failover router to support error handling
+* link:https://issues.apache.org/jira/browse/TOMEE-1833[TOMEE-1833] - add ExceptionSelector to Router (dynamic datasource routing)
+* link:https://issues.apache.org/jira/browse/TOMEE-1834[TOMEE-1834] - Add an all in one routed datasource and failover router
+* link:https://issues.apache.org/jira/browse/TOMEE-1835[TOMEE-1835] - add openshift properties provider for mysql and postgresql
+* link:https://issues.apache.org/jira/browse/TOMEE-1836[TOMEE-1836] - add create/destroy server events for resource
+* link:https://issues.apache.org/jira/browse/TOMEE-1846[TOMEE-1846] - allow to fully configure a resource programmatically
+* link:https://issues.apache.org/jira/browse/TOMEE-1847[TOMEE-1847] - allow to control API used to export a resource using classpath attribute
+* link:https://issues.apache.org/jira/browse/TOMEE-1848[TOMEE-1848] - add @Configuration support for TomEEEmbeddedSingleRunner
+
+== Task
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1814[TOMEE-1814] - upgrade copyright year to 2016

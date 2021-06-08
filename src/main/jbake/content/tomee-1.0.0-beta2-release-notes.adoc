@@ -1,0 +1,168 @@
+= Apache TomEE 1.0.0-beta-2 Release Notes
+:jbake-type: page
+:jbake-status: published
+
+
+2012-01-23
+
+== Upgrades
+
+[.compact]
+  * [TOMEE-81] Upgrade HSQLDB to 2.2.4
+  * [TOMEE-109] Upgrade to XBean 3.9
+  * [TOMEE-112] Upgrade wss4j to 1.6.3
+  * [TOMEE-117] Upgrade OpenWebBeans to 1.1.3
+  * [TOMEE-118] Upgrade CXF to 2.5.1
+  * [TOMEE-119] Upgrade ActiveMQ to 5.5.1
+  * [TOMEE-113] Upgrade Commons Fileupload to 1.2.2
+  * [TOMEE-114] Upgrade Commons Discovery to 0.5
+  * [TOMEE-116] Upgrade Commons Pool to 1.5.7
+
+== New Features
+
+[.compact]
+  * [TOMEE-6] Arquillian adapter
+  * [TOMEE-84] TomEE Embedded Container
+  * [TOMEE-86] Implementation of EJBContainer.createEJBContainer for TomEE Embedded
+  * [TOMEE-96] All-in-one TomEE Embedded jar
+  * [TOMEE-95] Command line 'java -jar tomee-embedded.jar myAwesome.war' launching
+  * [TOMEE-58] New concept of persistence-fragment.xml file
+  * [TOMEE-71] Ability to reload Persistence units via JMX
+  * [TOMEE-72] Example: Reloading Persistence unit properties dynamically
+  * [TOMEE-104] Allow custom JAX-RS providers to be used
+  * [TOMEE-99] Example: CDI @Alternative and @Stereotype
+  * [TOMEE-101] Example: CDI Events and @Observes
+  * [TOMEE-97] Beginning documentation for Meta-Annotation support
+  * [TOMEE-37] TomEE webapps based Deployer implementation
+  * [OPENEJB-1454] Meta Annotation Support
+  * [OPENEJB-1691] Dynamic @Proxy beans
+  * [OPENEJB-1430] Scanning an JMX Registration of @ObjectName mbeans in applications
+  * [OPENEJB-1737] Example: Dynamic JMX MBean example
+  * [OPENEJB-1517] EJBContainer.createEJBContainer MODULES supports various org.apache.openejb.jee.* types
+  * [OPENEJB-1571] CDI Injection for clients of EJBContainer and tests using ApplicationComposer
+  * [OPENEJB-1706] CDI Injection support for MDBs
+  * [OPENEJB-1744] Example: MDBs as CDI beans
+  * [OPENEJB-1654] System property overrides for MDB ActivationConfig
+  * [OPENEJB-1690] Ability to define DataSources, Topics, Queues and other resources in applications with a META-INF/resources.xml file
+  * [OPENEJB-1453] Metatyping for EJB and Dependency Injection Annotations
+  * [OWB-621] Alternative configuration method for buggy container or pre servlet api 2.5 container
+
+== Improvements
+
+[.compact]
+  * [TOMEE-102] Cleaned up error handling of closed jars at shutdown
+  * [TOMEE-107] Reduced logging of harmless "Could not install our singleton service" message
+  * [TOMEE-106] Better handling of DataSource "maxWait" property, supports ints
+  * [TOMEE-108] Smarter default of Log4j, Slf4j and JULI logging implementation selection
+  * [TOMEE-100] Trim internal objects from logging
+  * [TOMEE-93] Ensure JAX-RS @HeaderParam matching is case insensitive 
+  * [TOMEE-91] Improved error handling and resolving of REST @Path URLs
+  * [TOMEE-82] SQLLoginModule support for HSQLDB 2.x
+  * [TOMEE-83] Improved ability to imply type of <env-entry>
+  * [TOMEE-87] Expanded scope of Global JNDI
+  * [TOMEE-123] Eliminate webapp lib scanning from known libs
+  * [TOMEE-73] Example: JAX-RS example with Application
+  * [TOMEE-60] More Optimization in scanning of webapp libs
+  * [OPENEJB-1746] More helpful information on ConcurrentAccessTimeoutException
+  * [OPENEJB-48] Log the location of the openejb.conf file being used
+  * [OPENEJB-1747] Avoid NPE when a custom mdb container uses badly defined activation properties
+  * [OPENEJB-1749] Better logging of @Stateful @PreDestroy exceptions
+  * [OPENEJB-1701] Improved Multipoint and Multicast discovery logging
+  * [OPENEJB-1750] Improved documentation on Windows Service installer
+  * [OPENEJB-1700] deploying rest ejb as ejb when it is returned by Application.getClasses()/getSingletons()
+  * [OPENEJB-1754] Reduce logging of failed security checks due to being unauthorized
+  * [OPENEJB-1753] New 'openejb.descriptors.output.folder' property for location of generated descriptors
+  * [OPENEJB-1722] manage JtaPlatform instead of TransactionManagerLookup when hibernate 4 as JPA provider
+  * [OPENEJB-1752] Tolerate toString() issues with ejb method return values when logging on DEBUG
+  * [OPENEJB-1751] Ability to deactivate all internal JMX MBeans
+  * [OPENEJB-1742] Respect 'openjpa.Specification' persistence.xml property
+  * [OPENEJB-1743] Better MDB/CDI support 
+  * [OPENEJB-1741] Faster jar scanning at deploy
+  * [OPENEJB-1699] managing @ApplicationPath for rest
+  * [OPENEJB-1738] MDB Queue/Topic name defaults to MappedName
+  * [OPENEJB-1715] Add ServiceTracker in Activator class to wait till we find the ServiceManagerProxy
+  * [OWB-623] Relax check on @AroundInvoke Interceptors 'throws Exception' 
+  * [OWB-627] Automatically destroy @Dependent contextual instances created with Instance<T>
+  * [OWB-475] support for optional beans
+
+== Bugs
+
+[.compact]
+  * [TOMEE-56] jsp group properties order not respected
+  * [TOMEE-103] Further reduction of possible LinkageError in log files
+  * [TOMEE-105] fixing contextroot in TomcatWebAppBuilder for windows
+  * [TOMEE-51] Deployment without web.xml not possible. With web.xml, tests do not run.
+  * [TOMEE-11] conf/logging.properties conflicts with juli configuration for Tomcat
+  * [TOMEE-10] JNDI Browser in the openejb.war does not show @LocalBean views as EJBs
+  * [TOMEE-94] context.xml ignored in internally created Tomcat StandardContexts
+  * [TOMEE-90] Fixed REST Service undeployment issue
+  * [TOMEE-98] Possible name conflict with internal "Comp" bean
+  * [TOMEE-47] ServletContext.getResource(path).getInputStream() fails
+  * [TOMEE-43] library-directory ignored
+  * [TOMEE-42] TCCL.getResources() returns duplicated when deploying with OpenEJB deployer
+  * [TOMEE-80] Avoid hibernate HHH015010 at startup
+  * [TOMEE-89] Fixed lifecycle issue in CDI BeforeBeanDiscovery
+  * [TOMEE-85] Fixed issues with rootUrl in persistence units of webapps
+  * [TOMEE-39] context.xml of WAR not loaded
+  * [TOMEE-88] Possible EL related issue prevents startup
+  * [TOMEE-30] OpenEJBLifecycle.startApplication brutly cast Object in StartupObject
+  * [TOMEE-33] seam-international-timeanddate fails to deploy
+  * [TOMEE-34] seam-remoting-helloworld fails to deploy
+  * [TOMEE-35] Unable to lookup BeanManager from JNDI
+  * [TOMEE-36] NullPointerException when Missing required persistence.xml for @PersistenceUnit
+  * [TOMEE-120] Fixed issue preventing serveral Web Service applications from being deployed simultaneously
+  * [TOMEE-77] Ignore REST Applications without default constructor
+  * [TOMEE-1] TomEE Beta 1.0.0 doesn't start with MyFaces CODI
+  * [TOMEE-27] UnknownModuleTypeException thrown when no-web.xml webapp deployed
+  * [TOMEE-76] Avoid NullPointerException in no-web.xml applications
+  * [TOMEE-29] Applications always seem to be refreshed/redployed
+  * [TOMEE-74] Fixed serialization issue with ValidationFactory references
+  * [TOMEE-79] Fixed "no root logger" warning
+  * [TOMEE-78] Issue finding openejb.war in Tomcat
+  * [TOMEE-110] Fixed Tomcat issue with JSF code/prelude ordering
+  * [TOMEE-111] Avoid overriting files in Tomcat installer if already installed
+  * [TOMEE-61] allow ROOT to contain rest service
+  * [TOMEE-115] Issue in OWB preventing CDI Extensions from adding Interceptors to EJBs
+  * [OPENEJB-1523] TomEE 6.0.26 / 3.1.4: NPE in org.apache.catalina.startup.HostConfig.manageApp
+  * [OPENEJB-1730] Reliability of multipoint discovery heartrates less than 1 second
+  * [OPENEJB-1745] Fix null pointer in discardInstance when releaseInstance has already been called
+  * [OPENEJB-1748] Fixed undeploy race condition
+  * [OPENEJB-1710] ClassCastException when deploying ear files containing persistence.xml
+  * [OPENEJB-1709] TomEE webapps (See rest-example) doesn't work under Windows (Path - Problem with backslash "\")
+  * [OPENEJB-1708] Servlet Injection
+  * [OPENEJB-1443] EntityManager in non-transactional business methods using queries can be used only once
+  * [OPENEJB-1729] Reliability of Multipoint remove event when last peer disappears
+  * [OPENEJB-1702] Multicast and Multipoint 'heart_rate' property ignored
+  * [OPENEJB-1704] undeploy or shutdown call ejbCreate() on stateless session beans
+  * [OPENEJB-1711] Multithreaded filling of @Stateless pools to PoolMin at bean startup
+  * [OPENEJB-1733] Parameters are not always available in custom interceptor when the bean is a webservice
+  * [OWB-620] any disabled bean of passivating scope will wrongly be detected as 'not passivatable'
+  * [OWB-622] beanmanager injection in afterBeanDiscovery method parameter
+  * [OWB-624] AnnotatedTypes registered in BeforeBeanDiscovery might get processed twice
+  * [OWB-615] remove @Overrides for interfaces to be java5 compatible
+  * [OWB-597] StackOverFlow when injecting product in same bean where @Produces is placed
+  * [OWB-589] " ... requires a passivation capable dependency ..." for producer method with return type String and non serializable injected dependency
+  * [OWB-616] javax.el.ExpressionFactory has final methods! CDI doesn't allow that. - Test on final **PRIVATE** methods too?
+  * [OWB-619] @New beans must only exist if there is at least one injection point for them 
+  * [OWB-618] we sometimes invoke a dispose method without having created the bean upfront
+  * [OWB-562] non-enabled alternative beans with passivating scope fail validation during deployment
+  * [OWB-630] AmbiguousResolutionException thrown for Decorators that Decorate multiple beans where any of those beans are passivation capable.
+  * [OWB-631] openwebbeans-resource misses openwebbeans.properties
+  * [OWB-565] missing check for producer methods
+  * [OWB-625] BeanManager.resolve throw java.util.NoSuchElementException with an empty set parameter
+  * [OWB-629] NoClassDefFoundError for optional dependencies
+  * [OWB-515] interceptors don't support inheritance without an overridden method annotated with @AroundInvoke
+
+== Tasks & Sub-Tasks
+
+[.compact]
+  * [TOMEE-31] upgrade hsqldb to version 2.2.4
+  * [TOMEE-122] WebService subcontext mapping adjustable with tomee.jaxws.subcontext property
+  * [TOMEE-121] WebServices mapped into /<webappcontext>/webservices/<name>
+  * [TOMEE-75] Resolve default persistence provider before Assembly
+  * [OPENEJB-1638] Add Readme.md files for examples 
+  * [OPENEJB-1723] Unit tests and changes for ActivationConfigOverride
+  * [OPENEJB-1755] Repackaging LocalInitialContextFactory into org.apache.openejb.core
+  * [OPENEJB-1697] TomEE related renaming
+  * [OPENEJB-1705] Example: Simple CDI Interceptor
+

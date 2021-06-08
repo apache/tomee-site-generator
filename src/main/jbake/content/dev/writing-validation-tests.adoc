@@ -1,0 +1,128 @@
+= Writing Validation Tests
+:jbake-type: page
+:jbake-status: published
+
+
+== Summary
+
+Validation is a critical and integral part of the project.
+If you are writing some code which validates some rules, you should definitely write a test for it.
+A little validation test framework is available to write tests specifically for Validation.
+This page explains the details of writing such tests using example snippets.
+
+
+== The Validation Framework
+
+. `org.apache.openejb.config.ConfigurationFactory` uses a chain of `org.apache.openejb.config.DynamicDeployer` implementations.
+One of the implementations in the chain is `org.apache.openejb.config.ValidateModules`.
+`ValidateModules` is conditionally added to the _chain_ if the property `openejb.validation.skip=true|false`.
+If this property is false, then `ValidateModules` is used to kick off the Validation Framework
+
+link:https://github.com/apache/openejb/tree/trunk/openejb/container/openejb-core/src/main/java/org/apache/openejb/config/ConfigurationFactory.java[Configuration Factory]
+
+[start=2]
+. Internally ValidateModules uses the link:https://github.com/apache/openejb/tree/trunk/openejb/container/openejb-core/src/main/java/org/apache/openejb/config/ValidateModules.java[_AppValidator.validate()_ method]
+. This method then performs validation using a number of rules.
+A validation rule/s is represented by a class implementing ValidationRule.
+In fact, all the classes checking the validation rules, extend ValidationBase, which further implements ValidationRule.
+
+image::ClassDiagram.png[]
+
+The _list of rules_ being executed can actually be found in the following method of link:https://github.com/apache/openejb/tree/trunk/openejb/container/openejb-core/src/main/java/org/apache/openejb/config/AppValidator.java[AppValidator]
+
+[start=4]
+. The above rules are then executed one by one
+. Each module has an attached ValidationContext, which maintains a list of failures, warnings and errors.
+As the above rules are being invoked, the failure/errors/warnings for a module are being added to its ValidationContext.
+Every Validation failure has an associated message which can be found in `org/apache/openejb/config/rules/messages.properties`.
+A message has three levels as explained below:
+
+Format for the different levels follows this spirit:
+
+ .. Should be short and fixed such that someone could search/grep for it  without having to know/use regular expressions.
+These tend to be similar  to the message key.
+ .. Intended to contain the issue expressed in 1 with only the essential  details, should not line wrap if possible.
+Be terse.
+ .. Teacher's assistant.
+A much more conversational and possibly more detailed  explanation of the issue, should tell the user what to do to fix the problem.
+I.e.
+don't just point out what is wrong, also point out what is right.
+Use  several lines if needed.
+
+Here is an _example validation message_
+
+[source,console]
+----
+ # 0 - method name
+ # 1 - full method
+ # 2 - remote|home
+ # 3 - interface name
+ # 4 - EJB Class name
+ 1.no.busines.method	  No such business method
+ 2.no.busines.method	  Business method {0} not implemented.
+ 3.no.busines.method	  Business method {1} not implemented. The method was declared in the {2} interface {3}, but not implemented in the ejb class {4}
+----
+
+[start=6]
+. The validation framework does not stop processing on the first validation failure, but keeps going and checking for other validation errors and reports them all to the user.
+This allows the user to fix all errors in one go and re-attempt deploying the application.
+
+== The Validation Test Framework
+
+The test framework is specifically written with the following goals in mind:
+
+. It should be easy to write the test, and the framework should do the boiler-plate work, the test author just needs to provide the relevant info
+. It should report the test coverage i.e.
+the framework should generate a report regarding which keys in messages.properties have tests written for them and what is the corresponding Test class/es which test for the validation rule associated with that key
+. It should ensure that if a test is being written for a specific message key, then that key should exist in the messages.properties file
+. Lets break down the framework by using an https://github.com/apache/openejb/tree/trunk/openejb/container/openejb-core/src/test/java/org/apache/openejb/config/rules/CheckInjectionTargetsTest.java[example]
+ .. The first thing to note is that we are running the test using our own custom runner i.e.
+`@RunWith(ValidationRunner.class)`.
+This runner ensures that the keys we are testing, actually exist in the messages.properties file.
+It does a lot more, as we shall see later
+ .. The test method
+ .. Can be given any name
+ .. Must be annotated with @Keys and CANNOT be annotated with @Test.
+The rest of the JUnit annotations can be used
+ .. Must return one of EjbJar / EjbModule / AppModule.
+The returned EjbJar/EjbModule/AppModule will be specifically created to cause one or more validation errors/warnings/failures.
+ .. Following annotations are provided by the framework
+ .. @Keys : is a collection of zero or more @Key
+ .. @Key : represents a key for which this test is being written.
+A @Key can be of type FAILURE or WARNING or ERROR.
+Default value is FAILURE.
+As seen in the example above, the test() method is expecting two warnings for the key injectionTarget.nameContainsSet.
+If count is not equal to 2 or some other Validation Failure/Warning/Error was also thrown from the method, then the test fails.
+
+NOTE: Be Careful The test must cause a Validation Failure otherwise the test framework does not get invoked.
+For example, in the above code, a Key of type WARNING is being tested, however the test is purposely being failed by putting an `@AroundInvoke` around the method with zero arguments
+
+[start=5]
+. Once you have written the test and successfully run it, you now need to generate the report.
+Simply invoke the following maven command
+
+[source,console]
+----
+mvn test -Dtest=ValidationKeysAuditorTest -DconfluenceUsername=YourConfluenceUsername -DconfluencePassword=YourConfluencePassword
+----
+
+The above command will create a complete test coverage report and post it to this location xref:validation-keys-audit-report.adoc[Validation Keys Audit Report]
+
+=== Quick facts about ValidationRunner and things to keep in mind while writing tests
+
+This class is created specifically to write tests which test OpenEjb validation code.
+Specifically, it is used to check the usage of keys defined in `org.apache.openejb.config.rules.Messages.properties`.
+To use this runner, simply annotate your test case with `@RunWith(ValidationRunner.class`).
+Here are some things to keep in mind when writing tests:
+
+. A test method needs to be annotated with `org.apache.openejb.config.rules.Keys` instead of the `org.junit.Test`
+. Any usage of the @Test annotation will be ignored.
+. If the @Keys and @Test annotation are used together on a test method, then the TestCase will error out.
+. Every test method should create a EjbJar or EjbModule or AppModule and return it from the method.
+It should list the keys being tested in the @Keys annotation
+. The runner will invoke the test method and use the Assembler and ConfigurationFactory to create the application.
+. This will kick off validation and this Runner will catch ValidationFailureException and make sure that all the keys specified in the @Keys annotation show up in the ValidationFailureException.
+. If the keys listed in the @Keys annotation match the keys found in the ValidationFailureException, the test passes, else the test fails.
+. This Runner also validates that the keys specified in the @Keys annotation are also available in the org.apache.openejb.config.rules.Messages.properties file.
+If the key is not found, then the Runner throws and exception resulting in your test case not being allowed to run.
+. Sometimes you want to write a test where you do not want any ValidationFailureException to be thrown, in those scenarios, simply annotate your test with @Keys and do not specify any @Key in it.

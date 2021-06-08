@@ -1,0 +1,23 @@
+= Design - Local Server
+:jbake-type: page
+:jbake-status: published
+
+== Local Server
+
+Implementation of xref:design-application-server.adoc[Application Server]
+
+
+== Description
+
+Allows for optimized interaction among beans and clients in the same virtual machine.
+
+
+== Also Known As
+
+* IntraVM
+* IntraVM Server
+
+
+== Related Packages
+
+* org.apache.openejb.core.ivm

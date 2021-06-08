@@ -1,0 +1,467 @@
+= Release Notes - TomEE - Version 1.7.0
+:jbake-type: page
+:jbake-status: published
+
+== Sub-task
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-659[TOMEE-659]] - TomEE new logo
+
+== Bug
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-836[TOMEE-836]] - ReportValidationResults should log.info about the root cause
+* [https://issues.apache.org/jira/browse/TOMEE-885[TOMEE-885]] - Cannot inject no-interface groovy local bean
+* [https://issues.apache.org/jira/browse/TOMEE-926[TOMEE-926]] - arquillian adaptors can fail replacing port if a port includes another one
+* [https://issues.apache.org/jira/browse/TOMEE-953[TOMEE-953]] - tolerate javax. classes from app when not in server
+* [https://issues.apache.org/jira/browse/TOMEE-982[TOMEE-982]] - JAXRS @ApplicationPath deployment fails if path starts with http and is not a URL
+* [https://issues.apache.org/jira/browse/TOMEE-1054[TOMEE-1054]] - catalina.sh created by installer is not executable
+* [https://issues.apache.org/jira/browse/TOMEE-1075[TOMEE-1075]] - openejb.home system properties not correctly set
+* [https://issues.apache.org/jira/browse/TOMEE-1076[TOMEE-1076]] - integrate tomee with spring-web SCI
+* [https://issues.apache.org/jira/browse/TOMEE-1079[TOMEE-1079]] - destroy resource adapter after connection factories
+* [https://issues.apache.org/jira/browse/TOMEE-1082[TOMEE-1082]] - openejb-javaagent missing from service.bat
+* [https://issues.apache.org/jira/browse/TOMEE-1083[TOMEE-1083]] - when using tccl for quartz avoid to set our quartz impl to avoid classloading issues (if the user does it he has to solve it himself)
+* [https://issues.apache.org/jira/browse/TOMEE-1084[TOMEE-1084]] - webservice (soap) undeployment doesn&#39;t use same id as deployment -> can deploy/undeploy (in tests) the same WS
+* [https://issues.apache.org/jira/browse/TOMEE-1085[TOMEE-1085]] - jaxrs application are scanned and kept even if not instantiable
+* [https://issues.apache.org/jira/browse/TOMEE-1086[TOMEE-1086]] - @WebServiceRef(MyServiceImpl.class) doesn&#39;t work as expected
+* [https://issues.apache.org/jira/browse/TOMEE-1088[TOMEE-1088]] - classpaths can be null in stop mojo
+* [https://issues.apache.org/jira/browse/TOMEE-1089[TOMEE-1089]] - driverDelegateInitString should be set only if job store class is a JobStoreSupport
+* [https://issues.apache.org/jira/browse/TOMEE-1093[TOMEE-1093]] - wrong filtering of slf4j bindings
+* [https://issues.apache.org/jira/browse/TOMEE-1094[TOMEE-1094]] - allow derby to be in webapps
+* [https://issues.apache.org/jira/browse/TOMEE-1099[TOMEE-1099]] - arquillian adapter supposes war contained in ear are named as the ear
+* [https://issues.apache.org/jira/browse/TOMEE-1101[TOMEE-1101]] - Test methods are not getting enriched when run via Arquillian
+* [https://issues.apache.org/jira/browse/TOMEE-1106[TOMEE-1106]] - infinite loop detected while destroying bean XYService under load
+* [https://issues.apache.org/jira/browse/TOMEE-1110[TOMEE-1110]] - Datasources declared in context.xml doesn&#39;t work when the application is redeployed
+* [https://issues.apache.org/jira/browse/TOMEE-1119[TOMEE-1119]] - Duplicate servlets with embedded container
+* [https://issues.apache.org/jira/browse/TOMEE-1122[TOMEE-1122]] - @Timeout & @TA(NOT_SUPPORTED) methods in @Singleton beans run with transactional context
+* [https://issues.apache.org/jira/browse/TOMEE-1125[TOMEE-1125]] - stateful not clean up on discardInstance (@Remove)
+* [https://issues.apache.org/jira/browse/TOMEE-1134[TOMEE-1134]] - activemq-webconsole doesn&#39;t work
+* [https://issues.apache.org/jira/browse/TOMEE-1135[TOMEE-1135]] - jaxrs beans lifecycle not well handled when relying on @Dependent
+* [https://issues.apache.org/jira/browse/TOMEE-1136[TOMEE-1136]] - Context.stop() destroy the context (manager is broken)
+* [https://issues.apache.org/jira/browse/TOMEE-1137[TOMEE-1137]] - Mark all apache-tomee pom dependencies provided
+* [https://issues.apache.org/jira/browse/TOMEE-1138[TOMEE-1138]] - Cannot reference @Stateful @ConversationScoped bean in JSF page
+* [https://issues.apache.org/jira/browse/TOMEE-1139[TOMEE-1139]] - RESTService fails to check for BasicAuthHttpListenerWrapper
+* [https://issues.apache.org/jira/browse/TOMEE-1147[TOMEE-1147]] - tld can&#39;t be in WEB-INF/classes/META-INF
+* [https://issues.apache.org/jira/browse/TOMEE-1157[TOMEE-1157]] - OpenJPA metadata shoudln&#39;t be cleaned up for classes of the jvm
+* [https://issues.apache.org/jira/browse/TOMEE-1161[TOMEE-1161]] - mapping of a jaxrs application with @ApplicationPath doesnt work
+* [https://issues.apache.org/jira/browse/TOMEE-1162[TOMEE-1162]] - embedded jaxrs/http layer is broken and then for not simple cases urls are wrong
+* [https://issues.apache.org/jira/browse/TOMEE-1164[TOMEE-1164]] - avoid tomcat classloader to get a parent null after reloading
+* [https://issues.apache.org/jira/browse/TOMEE-1165[TOMEE-1165]] - cxf context not cleaned up
+* [https://issues.apache.org/jira/browse/TOMEE-1169[TOMEE-1169]] - better support of XaDataSource
+* [https://issues.apache.org/jira/browse/TOMEE-1172[TOMEE-1172]] - support jta wrapping (ManagedDataSource) of a custom datasource
+* [https://issues.apache.org/jira/browse/TOMEE-1175[TOMEE-1175]] - BaseEjbProxyHandler equals is is wrong - can lead to perf issues with cmp beans
+* [https://issues.apache.org/jira/browse/TOMEE-1179[TOMEE-1179]] - would be great to support property on provide fields for @DataSourceDefinition
+* [https://issues.apache.org/jira/browse/TOMEE-1183[TOMEE-1183]] - docBase (tomcat) and webAppInfo.path (tomee) doesn&#39;t use same separator
+* [https://issues.apache.org/jira/browse/TOMEE-1190[TOMEE-1190]] - TomEE maven plugin must supported Tomcat based distros
+* [https://issues.apache.org/jira/browse/TOMEE-1199[TOMEE-1199]] - arquillian embedded deploy as testable not testable archives if context is not cleaned up by arquillian
+* [https://issues.apache.org/jira/browse/TOMEE-1200[TOMEE-1200]] - arquillian adapters should tolerate more than a single test class as injectable test
+* [https://issues.apache.org/jira/browse/TOMEE-1203[TOMEE-1203]] - stateful can&#39;t be checkouted by multiple threads
+* [https://issues.apache.org/jira/browse/TOMEE-1205[TOMEE-1205]] - TomEE webprofile 1.6.0.1 and 1.6.0.2 breaks java subtyping
+* [https://issues.apache.org/jira/browse/TOMEE-1207[TOMEE-1207]] - support additionalSystemProperties for mvn tomee:exec even for java as script command
+* [https://issues.apache.org/jira/browse/TOMEE-1208[TOMEE-1208]] - Arquillian should replace server.xml port even if we provide it in the project
+* [https://issues.apache.org/jira/browse/TOMEE-1214[TOMEE-1214]] - tomee should pick up conf/log4j.xml
+* [https://issues.apache.org/jira/browse/TOMEE-1215[TOMEE-1215]] - Log4jLogStreamFactory picks up wrong conf directory
+* [https://issues.apache.org/jira/browse/TOMEE-1217[TOMEE-1217]] - toUrl in PerisstenceUnitInfoImpl can create weird url when file is not a file but a jar link
+* [https://issues.apache.org/jira/browse/TOMEE-1218[TOMEE-1218]] - mixed scope-handling in CdiAppContextsService
+* [https://issues.apache.org/jira/browse/TOMEE-1219[TOMEE-1219]] - org.apache.quartz.threadPool.threadCount and openejb.timer.pool.size ignored
+* [https://issues.apache.org/jira/browse/TOMEE-1223[TOMEE-1223]] - tomee embedded EJBContainer doesn&#39;t close on error
+* [https://issues.apache.org/jira/browse/TOMEE-1226[TOMEE-1226]] - ensure when wrapping Tomcat Realms with TomEERealm that the delegates are in the right state
+* [https://issues.apache.org/jira/browse/TOMEE-1228[TOMEE-1228]] - tomee maven plugin doesn&#39;t deploy jar/ear if a custom tomee.xml is not provided
+* [https://issues.apache.org/jira/browse/TOMEE-1234[TOMEE-1234]] - arquillian tomee embedded : ensure test classloader is the app one
+* [https://issues.apache.org/jira/browse/TOMEE-1241[TOMEE-1241]] - clean up openejb.loader property when shuttingdown to allow reboot
+* [https://issues.apache.org/jira/browse/TOMEE-1242[TOMEE-1242]] - allow arquillian tomee embedded container to be rebooted (manual mode)
+* [https://issues.apache.org/jira/browse/TOMEE-1248[TOMEE-1248]] - Security identity initialized twice when using preemptive mode
+* [https://issues.apache.org/jira/browse/TOMEE-1255[TOMEE-1255]] - allow TomEE Maven Plugin to specify additional docBase
+* [https://issues.apache.org/jira/browse/TOMEE-1256[TOMEE-1256]] - allow tomee maven plugin to skip war resources
+* [https://issues.apache.org/jira/browse/TOMEE-1257[TOMEE-1257]] - undeployment remove all validator/validatorfactory (not only the undeployed app ones)
+* [https://issues.apache.org/jira/browse/TOMEE-1260[TOMEE-1260]] - allow CDI contructor injections for JAX-RS endpoints
+* [https://issues.apache.org/jira/browse/TOMEE-1261[TOMEE-1261]] - soap binding annotation not read for ejbs
+* [https://issues.apache.org/jira/browse/TOMEE-1262[TOMEE-1262]] - JAX RS Autoscanning from Web XML
+
+== Dependency upgrade
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-1104[TOMEE-1104]] - Tomcat 7.0.53
+* [https://issues.apache.org/jira/browse/TOMEE-1108[TOMEE-1108]] - myfaces 2.1.15
+* [https://issues.apache.org/jira/browse/TOMEE-1115[TOMEE-1115]] - xbean 3.16
+* [https://issues.apache.org/jira/browse/TOMEE-1131[TOMEE-1131]] - OpenWebBeans 1.2.4
+* [https://issues.apache.org/jira/browse/TOMEE-1142[TOMEE-1142]] - CXF 2.6.14
+* [https://issues.apache.org/jira/browse/TOMEE-1158[TOMEE-1158]] - Arquillian 1.1.5.Final
+* [https://issues.apache.org/jira/browse/TOMEE-1193[TOMEE-1193]] - examples/groovy-spock groovy-all dependency update
+* [https://issues.apache.org/jira/browse/TOMEE-1194[TOMEE-1194]] - examples/groovy-cdi groovy-all dependency update
+* [https://issues.apache.org/jira/browse/TOMEE-1195[TOMEE-1195]] - examples/groovy-jpa groovy-all dependency update
+* [https://issues.apache.org/jira/browse/TOMEE-1196[TOMEE-1196]] - examples/lookup-of-ejbs junit dependency update
+* [https://issues.apache.org/jira/browse/TOMEE-1197[TOMEE-1197]] - examples/lookup-of-ejbs-with-descriptor junit dependency update
+* [https://issues.apache.org/jira/browse/TOMEE-1232[TOMEE-1232]] - update examples using myfaces extval
+* [https://issues.apache.org/jira/browse/TOMEE-1236[TOMEE-1236]] - Use Tomcat 7.0.54
+* [https://issues.apache.org/jira/browse/TOMEE-1237[TOMEE-1237]] - Mojarra 2.1.x
+* [https://issues.apache.org/jira/browse/TOMEE-1238[TOMEE-1238]] - EclipseLink 2.4.2
+* [https://issues.apache.org/jira/browse/TOMEE-1245[TOMEE-1245]] - activemq 5.10.0
+* [https://issues.apache.org/jira/browse/TOMEE-1252[TOMEE-1252]] - upgrade deltaspike fullstack example to deltaspike v1
+
+== Documentation
+
+* [https://issues.apache.org/jira/browse/TOMEE-1154[TOMEE-1154]] - port myfaces-codi fullstack demo to deltaspike
+* [https://issues.apache.org/jira/browse/TOMEE-1155[TOMEE-1155]] - upgrade myfaces-codi fullstack demo for tomee 1.6.x
+
+== Improvement
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-898[TOMEE-898]] - Bean Validation Test (bean-validation-design-by-contract) is in the wrong package
+* [https://issues.apache.org/jira/browse/TOMEE-904[TOMEE-904]] - Try to unwrap the URL from UrlAsset instead of creating a new one
+* [https://issues.apache.org/jira/browse/TOMEE-1090[TOMEE-1090]] - tomee-catalina PMD
+* [https://issues.apache.org/jira/browse/TOMEE-1100[TOMEE-1100]] - enhance error message in PersistenceUnitLinkResolver.extractWebApp when uri is illegal
+* [https://issues.apache.org/jira/browse/TOMEE-1105[TOMEE-1105]] - JAX-WS Endpoint CDI Support
+* [https://issues.apache.org/jira/browse/TOMEE-1111[TOMEE-1111]] - Expand SQL logging capability to include failed statements as well
+* [https://issues.apache.org/jira/browse/TOMEE-1126[TOMEE-1126]] - Add property for loading dynamic CXF providers
+* [https://issues.apache.org/jira/browse/TOMEE-1151[TOMEE-1151]] - @Observes optimization
+* [https://issues.apache.org/jira/browse/TOMEE-1152[TOMEE-1152]] - Failure related @Observes infinite loops protection
+* [https://issues.apache.org/jira/browse/TOMEE-1163[TOMEE-1163]] - ApplicationComposer: Process @Module annotations in parent classes
+* [https://issues.apache.org/jira/browse/TOMEE-1168[TOMEE-1168]] - subclass dynamic (ejb implementing invocation handler) are not deterministic wirh cxf-rs
+* [https://issues.apache.org/jira/browse/TOMEE-1185[TOMEE-1185]] - option to deactivate DataSourcePlugins
+* [https://issues.apache.org/jira/browse/TOMEE-1186[TOMEE-1186]] - allow to add at runtime system properties using execmojo (java -jar myapp.jar)
+* [https://issues.apache.org/jira/browse/TOMEE-1187[TOMEE-1187]] - disable tomcat reloading with tomee maven plugin to avoid reloading on update only extensions
+* [https://issues.apache.org/jira/browse/TOMEE-1192[TOMEE-1192]] - LazyRealm doesn&#39;t support Lifecycle hooks
+* [https://issues.apache.org/jira/browse/TOMEE-1201[TOMEE-1201]] - Allow dynamic configuration of, and log, thread pool sizes.
+* [https://issues.apache.org/jira/browse/TOMEE-1210[TOMEE-1210]] - Create Assemblies that honour OS specific line endings
+* [https://issues.apache.org/jira/browse/TOMEE-1211[TOMEE-1211]] - Reduce wrapping of SQLException in DBCP usage
+* [https://issues.apache.org/jira/browse/TOMEE-1221[TOMEE-1221]] - Unused code segment on tomee-catalina TomcatWebAppBuilder.java
+* [https://issues.apache.org/jira/browse/TOMEE-1227[TOMEE-1227]] - add a tomee-overlay-runner module to ease overlay creation
+* [https://issues.apache.org/jira/browse/TOMEE-1230[TOMEE-1230]] - Start and stop monitor logic should not just monitor shutdown port.
+* [https://issues.apache.org/jira/browse/TOMEE-1233[TOMEE-1233]] - update deltaspike example
+* [https://issues.apache.org/jira/browse/TOMEE-1239[TOMEE-1239]] - Update HttpsConnectionTest to support jdk8 - KeyTool changes
+* [https://issues.apache.org/jira/browse/TOMEE-1240[TOMEE-1240]] - Allow to choose Host when deploying a webapp (WebAppDeployer)
+
+== New Feature
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-651[TOMEE-651]] - DataSource is such a common resource type that it should be possible to not specify it in tomee.xml
+* [https://issues.apache.org/jira/browse/TOMEE-662[TOMEE-662]] - Support aliases on resources
+* [https://issues.apache.org/jira/browse/TOMEE-1074[TOMEE-1074]] - Manage Sessions
+* [https://issues.apache.org/jira/browse/TOMEE-1077[TOMEE-1077]] - add a &quot;openejb.timers.on&quot;
+property (configurable in application.properties) to deactivate timers
+* [https://issues.apache.org/jira/browse/TOMEE-1080[TOMEE-1080]] - properties as resource
+* [https://issues.apache.org/jira/browse/TOMEE-1081[TOMEE-1081]] - support WebServiceContext for pojos
+* [https://issues.apache.org/jira/browse/TOMEE-1092[TOMEE-1092]] - shade quartz in org.apache.openejb.quartz
+* [https://issues.apache.org/jira/browse/TOMEE-1097[TOMEE-1097]] - allow to define urls as resource
+* [https://issues.apache.org/jira/browse/TOMEE-1103[TOMEE-1103]] - tomeeAlreadyInstalled option to tomee mvn plugin to not modify tomee (no conf, no lib, no app) when starting
+* [https://issues.apache.org/jira/browse/TOMEE-1107[TOMEE-1107]] - support org.hibernate.jpa.HibernatePersistenceProvider out of the box
+* [https://issues.apache.org/jira/browse/TOMEE-1109[TOMEE-1109]] - Potential TomEE distribution with Mojarra and EclipseLink
+* [https://issues.apache.org/jira/browse/TOMEE-1113[TOMEE-1113]] - support leveldb and custom amq persistence adapter
+* [https://issues.apache.org/jira/browse/TOMEE-1114[TOMEE-1114]] - TomEE Maven Plugin should support OpenEJB standalone
+* [https://issues.apache.org/jira/browse/TOMEE-1121[TOMEE-1121]] - add openejb.cxf-rs.wadl-generator.ignoreRequests to configure and not force ignoreRequests on wadlgenerator
+* [https://issues.apache.org/jira/browse/TOMEE-1127[TOMEE-1127]] - New Event: @Observes LifecycleEvent
+* [https://issues.apache.org/jira/browse/TOMEE-1132[TOMEE-1132]] - add javaagents parameter to xref:{tomee-latest-vc}::maven/index.adoc[tomee-maven-plugin]
+* [https://issues.apache.org/jira/browse/TOMEE-1133[TOMEE-1133]] - support @CdiExtensions on test class for ApplicationComposer
+* [https://issues.apache.org/jira/browse/TOMEE-1140[TOMEE-1140]] - Support CDI LoginModule
+* [https://issues.apache.org/jira/browse/TOMEE-1144[TOMEE-1144]] - provide an exec war goal to tomee plugin
+* [https://issues.apache.org/jira/browse/TOMEE-1145[TOMEE-1145]] - <Resource classpath=&quot;&quot;> attribute
+* [https://issues.apache.org/jira/browse/TOMEE-1146[TOMEE-1146]] - Support multiple JDBC Driver class versions
+* [https://issues.apache.org/jira/browse/TOMEE-1149[TOMEE-1149]] - @Observes BeforeEvent & AfterEvent
+* [https://issues.apache.org/jira/browse/TOMEE-1150[TOMEE-1150]] - @Observes Event type inheritance
+* [https://issues.apache.org/jira/browse/TOMEE-1159[TOMEE-1159]] - support jaxrs to be overriden by the webapp
+* [https://issues.apache.org/jira/browse/TOMEE-1166[TOMEE-1166]] - activate cxf jmx by default
+* [https://issues.apache.org/jira/browse/TOMEE-1170[TOMEE-1170]] - Investigate the use of the Win platform daemon tool (prunmgr.exe)
+* [https://issues.apache.org/jira/browse/TOMEE-1184[TOMEE-1184]] - TomEE Remote should support empty/null classifier
+* [https://issues.apache.org/jira/browse/TOMEE-1212[TOMEE-1212]] - allow to configure async pool by remote initial context
+* [https://issues.apache.org/jira/browse/TOMEE-1213[TOMEE-1213]] - Add support for <security-role-ref>
+* [https://issues.apache.org/jira/browse/TOMEE-1220[TOMEE-1220]] - if jaxrs.txt is in <tomee>/conf add libraries in container
+* [https://issues.apache.org/jira/browse/TOMEE-1222[TOMEE-1222]] - allow JarLocation (of ziplock) to get jar file from resource name and jar name
+* [https://issues.apache.org/jira/browse/TOMEE-1224[TOMEE-1224]] - TomEE Remote EJBContainer
+* [https://issues.apache.org/jira/browse/TOMEE-1247[TOMEE-1247]] - allow internal datasources to be flushable (swap delegate)
+* [https://issues.apache.org/jira/browse/TOMEE-1249[TOMEE-1249]] - add LockFactory API in StatefulContainer
+* [https://issues.apache.org/jira/browse/TOMEE-1250[TOMEE-1250]] - support resource references in resources.xml Service using @ prefix
+* [https://issues.apache.org/jira/browse/TOMEE-1251[TOMEE-1251]] - Add ability to configure HTTPS port
+* [https://issues.apache.org/jira/browse/TOMEE-1258[TOMEE-1258]] - allow tomee maven plugin to configure externalRepositories
+* [https://issues.apache.org/jira/browse/TOMEE-1259[TOMEE-1259]] - add webappDefaultConfig to tomee maven plugin to auto configure the plugin for default webapp dev setup
+* [https://issues.apache.org/jira/browse/TOMEE-1263[TOMEE-1263]] - Add a REST Exception mapper for EJBAccessException
+
+== Task
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-1160[TOMEE-1160]] - Track AppContext start time
+* [https://issues.apache.org/jira/browse/TOMEE-1177[TOMEE-1177]] - Include Apache Tomcat Native library 1.1.30
+* [https://issues.apache.org/jira/browse/TOMEE-1178[TOMEE-1178]] - Please create a DOAP file for your TLP
+
+== Test
+
+* [https://issues.apache.org/jira/browse/TOMEE-1253[TOMEE-1253]] - add tests based on the test-control module to the deltaspike fullstack example
+
+# Release Notes - OpenEJB - Version 4.7.0
+
+== Sub-task
+
+[.compact]
+* [https://issues.apache.org/jira/browse/OPENEJB-120[OPENEJB-120]] - Port CMP Container
+* [https://issues.apache.org/jira/browse/OPENEJB-145[OPENEJB-145]] - iTest: StatelessRemoteJndiTests
+* [https://issues.apache.org/jira/browse/OPENEJB-146[OPENEJB-146]] - iTest: StatelessLocalJndiTests
+* [https://issues.apache.org/jira/browse/OPENEJB-147[OPENEJB-147]] - iTest: StatelessHomeIntfcTests
+* [https://issues.apache.org/jira/browse/OPENEJB-148[OPENEJB-148]] - iTest: StatelessEjbHomeTests
+* [https://issues.apache.org/jira/browse/OPENEJB-149[OPENEJB-149]] - iTest: StatelessEjbObjectTests
+* [https://issues.apache.org/jira/browse/OPENEJB-150[OPENEJB-150]] - iTest: StatelessEjbLocalHomeTests
+* [https://issues.apache.org/jira/browse/OPENEJB-151[OPENEJB-151]] - iTest: StatelessEjbLocalObjectTests
+* [https://issues.apache.org/jira/browse/OPENEJB-152[OPENEJB-152]] - iTest: StatelessRemoteIntfcTests
+* [https://issues.apache.org/jira/browse/OPENEJB-153[OPENEJB-153]] - iTest: StatelessLocalIntfcTests
+* [https://issues.apache.org/jira/browse/OPENEJB-154[OPENEJB-154]] - iTest: StatelessHomeHandleTests
+* [https://issues.apache.org/jira/browse/OPENEJB-155[OPENEJB-155]] - iTest: StatelessHandleTests
+* [https://issues.apache.org/jira/browse/OPENEJB-156[OPENEJB-156]] - iTest: StatelessEjbMetaDataTests
+* [https://issues.apache.org/jira/browse/OPENEJB-157[OPENEJB-157]] - iTest: StatelessLocalBusinessIntfcTests
+* [https://issues.apache.org/jira/browse/OPENEJB-158[OPENEJB-158]] - iTest: StatelessRemoteBusinessIntfcTests
+* [https://issues.apache.org/jira/browse/OPENEJB-159[OPENEJB-159]] - iTest: StatelessBeanJndiEncTests
+* [https://issues.apache.org/jira/browse/OPENEJB-160[OPENEJB-160]] - iTest: StatelessBeanSetterInjectionTests
+* [https://issues.apache.org/jira/browse/OPENEJB-161[OPENEJB-161]] - iTest: StatelessBeanPublicFieldInjectionTests
+* [https://issues.apache.org/jira/browse/OPENEJB-171[OPENEJB-171]] - iTest: StatefulRemoteJndiTests
+* [https://issues.apache.org/jira/browse/OPENEJB-172[OPENEJB-172]] - iTest: StatefulLocalJndiTests
+* [https://issues.apache.org/jira/browse/OPENEJB-173[OPENEJB-173]] - iTest: StatefulHomeIntfcTests
+* [https://issues.apache.org/jira/browse/OPENEJB-174[OPENEJB-174]] - iTest: StatefulEjbHomeTests
+* [https://issues.apache.org/jira/browse/OPENEJB-175[OPENEJB-175]] - iTest: StatefulEjbObjectTests
+* [https://issues.apache.org/jira/browse/OPENEJB-176[OPENEJB-176]] - iTest: StatefulEjbLocalHomeTests
+* [https://issues.apache.org/jira/browse/OPENEJB-177[OPENEJB-177]] - iTest: StatefulEjbLocalObjectTests
+* [https://issues.apache.org/jira/browse/OPENEJB-179[OPENEJB-179]] - iTest: StatefulLocalIntfcTests
+* [https://issues.apache.org/jira/browse/OPENEJB-180[OPENEJB-180]] - iTest: StatefulHomeHandleTests
+* [https://issues.apache.org/jira/browse/OPENEJB-181[OPENEJB-181]] - iTest: StatefulHandleTests
+* [https://issues.apache.org/jira/browse/OPENEJB-183[OPENEJB-183]] - iTest: StatefulLocalBusinessIntfcTests
+* [https://issues.apache.org/jira/browse/OPENEJB-184[OPENEJB-184]] - iTest: StatefulRemoteBusinessIntfcTests
+* [https://issues.apache.org/jira/browse/OPENEJB-185[OPENEJB-185]] - iTest: StatefulBeanJndiEncTests
+* [https://issues.apache.org/jira/browse/OPENEJB-186[OPENEJB-186]] - iTest: StatefulBeanSetterInjectionTests
+* [https://issues.apache.org/jira/browse/OPENEJB-187[OPENEJB-187]] - iTest: StatefulBeanPublicFieldInjectionTests
+* [https://issues.apache.org/jira/browse/OPENEJB-201[OPENEJB-201]] - iTest: InterceptorInvocationContextTests
+* [https://issues.apache.org/jira/browse/OPENEJB-316[OPENEJB-316]] - ASL Headers: openejb3/assembly
+* [https://issues.apache.org/jira/browse/OPENEJB-317[OPENEJB-317]] - ASL Headers: openejb3/container
+* [https://issues.apache.org/jira/browse/OPENEJB-318[OPENEJB-318]] - ASL Headers: openejb3/examples
+* [https://issues.apache.org/jira/browse/OPENEJB-319[OPENEJB-319]] - ASL Headers: openejb3/itests
+* [https://issues.apache.org/jira/browse/OPENEJB-320[OPENEJB-320]] - ASL Headers: openejb3/server
+* [https://issues.apache.org/jira/browse/OPENEJB-328[OPENEJB-328]] - openejb3 license and notice files do not end with .txt
+* [https://issues.apache.org/jira/browse/OPENEJB-329[OPENEJB-329]] - openejb3/itests/openejb-itests-app/
+* [https://issues.apache.org/jira/browse/OPENEJB-330[OPENEJB-330]] - openejb3/assembly/openejb-standalone
+* [https://issues.apache.org/jira/browse/OPENEJB-331[OPENEJB-331]] - openejb3/assembly/openejb-tomcat
+* [https://issues.apache.org/jira/browse/OPENEJB-343[OPENEJB-343]] - Example: Minimal Statetless Bean via a deployment descriptor
+* [https://issues.apache.org/jira/browse/OPENEJB-345[OPENEJB-345]] - Example: Minimal MessageDriven Bean via a deployment descriptor
+* [https://issues.apache.org/jira/browse/OPENEJB-636[OPENEJB-636]] - doc: deploy-tool.html
+* [https://issues.apache.org/jira/browse/OPENEJB-658[OPENEJB-658]] - doc: quickstart.html
+* [https://issues.apache.org/jira/browse/OPENEJB-660[OPENEJB-660]] - doc: startup.html
+* [https://issues.apache.org/jira/browse/OPENEJB-678[OPENEJB-678]] - Validation: Explicit check for InvocationContext incorrectly used in bean callbacks
+* [https://issues.apache.org/jira/browse/OPENEJB-1419[OPENEJB-1419]] - Add a related documentation page
+* [https://issues.apache.org/jira/browse/OPENEJB-1836[OPENEJB-1836]] - Validation: @Local on bean with no-interface should use @LocalBean
+* [https://issues.apache.org/jira/browse/OPENEJB-2071[OPENEJB-2071]] - Validation: Check for proper @Asynchronous usage
+
+== Bug
+
+[.compact]
+* [https://issues.apache.org/jira/browse/OPENEJB-6[OPENEJB-6]] - Wrong Exceptions thrown for unimplemented features
+* [https://issues.apache.org/jira/browse/OPENEJB-23[OPENEJB-23]] - OpenEJB protocol hangs in ObjectInputStream
+* [https://issues.apache.org/jira/browse/OPENEJB-75[OPENEJB-75]] - itests broken when Geronimo moved to v1.0
+* [https://issues.apache.org/jira/browse/OPENEJB-207[OPENEJB-207]] - Need to put the most updated EJB\JPA specs onto one of our repos
+* [https://issues.apache.org/jira/browse/OPENEJB-208[OPENEJB-208]] - NoClassDefFound exception is thrown when OpenEJB3.0 server is starting
+* [https://issues.apache.org/jira/browse/OPENEJB-259[OPENEJB-259]] - Session bean &quot;setSessionContext&quot;
+method should not be required for POJO EJBs
+* [https://issues.apache.org/jira/browse/OPENEJB-290[OPENEJB-290]] - Executing an ejbSelect that does not return a cmp bean throw NullPointerException
+* [https://issues.apache.org/jira/browse/OPENEJB-291[OPENEJB-291]] - SessionContext getRollbackOnly and setRollbackOnly should throw an IllegalArgumentException when there is no transaction in progress
+* [https://issues.apache.org/jira/browse/OPENEJB-292[OPENEJB-292]] - SessionSynchronization should not be called on a SFSB when ejbCreate is called
+* [https://issues.apache.org/jira/browse/OPENEJB-293[OPENEJB-293]] - beforeCommit should not be called when the transaction is marked rollback only
+* [https://issues.apache.org/jira/browse/OPENEJB-296[OPENEJB-296]] - EJBQL query with many-to-many join clause causes an AssertionError
+* [https://issues.apache.org/jira/browse/OPENEJB-303[OPENEJB-303]] - EJBLocalObject.getEJBLocalHome throws exception
+* [https://issues.apache.org/jira/browse/OPENEJB-322[OPENEJB-322]] - JeeTests fail due to bad descriptors
+* [https://issues.apache.org/jira/browse/OPENEJB-339[OPENEJB-339]] - NPE in class AnnotationDeployer during deployment of annotated beans
+* [https://issues.apache.org/jira/browse/OPENEJB-391[OPENEJB-391]] - openejb-itests-core does not start
+* [https://issues.apache.org/jira/browse/OPENEJB-392[OPENEJB-392]] - Patch to fix broken itests
+* [https://issues.apache.org/jira/browse/OPENEJB-394[OPENEJB-394]] - javax.naming.NameNotFoundException Name &quot;client/tools/DatabaseHome&quot;
+not found
+* [https://issues.apache.org/jira/browse/OPENEJB-397[OPENEJB-397]] - Fix DummyTest.java in itests.
+* [https://issues.apache.org/jira/browse/OPENEJB-409[OPENEJB-409]] - NullPointer Exception on trying to deploy MessageDrivenBean
+* [https://issues.apache.org/jira/browse/OPENEJB-410[OPENEJB-410]] - Executing bin/openejb with no parameters causes usage to be printed 4 times
+* [https://issues.apache.org/jira/browse/OPENEJB-411[OPENEJB-411]] - IvmContext.listBindings returns an enumeration of NameClassPair insted of Bindings
+* [https://issues.apache.org/jira/browse/OPENEJB-413[OPENEJB-413]] - @EJB Resource injection does not work when there are both Local and Remote interface
+* [https://issues.apache.org/jira/browse/OPENEJB-430[OPENEJB-430]] - Transaction support not wired in MDB Container
+* [https://issues.apache.org/jira/browse/OPENEJB-444[OPENEJB-444]] - Starting and ending spaces not trimmed in openejb during unmarshalling of descriptors.
+* [https://issues.apache.org/jira/browse/OPENEJB-461[OPENEJB-461]] - Workaround for maven misresolving ${pom.version}
+* [https://issues.apache.org/jira/browse/OPENEJB-463[OPENEJB-463]] - Examples use a different version for geronimo-ejb_3.0_spec than the one used in the main build.
+* [https://issues.apache.org/jira/browse/OPENEJB-467[OPENEJB-467]] - Lookup of EntityManagerFactories failing in Windows
+* [https://issues.apache.org/jira/browse/OPENEJB-471[OPENEJB-471]] - CMP beans in an EJB 1.1 jar are assumed to be CMP 2.0
+* [https://issues.apache.org/jira/browse/OPENEJB-513[OPENEJB-513]] - Missing OpenEJB icon on &quot;Define New Server&quot;
+Page of &quot;New Server&quot;
+wizard
+* [https://issues.apache.org/jira/browse/OPENEJB-515[OPENEJB-515]] - openejb2/geronimo jaxb tree cannot handle persistence-unit-ref
+* [https://issues.apache.org/jira/browse/OPENEJB-539[OPENEJB-539]] - Fix NPE in InterceptorStack
+* [https://issues.apache.org/jira/browse/OPENEJB-540[OPENEJB-540]] - Rolling back a transaction in which a Timer is cancelled results in a non-functional timer
+* [https://issues.apache.org/jira/browse/OPENEJB-545[OPENEJB-545]] - PortableRemoteObject instances not getting marshaled correctly on EJB calls.
+* [https://issues.apache.org/jira/browse/OPENEJB-546[OPENEJB-546]] - Timer operations are improperly allowed in some methods
+* [https://issues.apache.org/jira/browse/OPENEJB-549[OPENEJB-549]] - JndiEncBuilder is inserting bad comp/ORB and comp/HandleDelegate references into jndi tree.
+* [https://issues.apache.org/jira/browse/OPENEJB-551[OPENEJB-551]] - ClassNotFoundExceptions can occur during method argument or return value marshalling/unmarshalling
+* [https://issues.apache.org/jira/browse/OPENEJB-553[OPENEJB-553]] - EjbObjectProxyHandler and EjbHomeProxyHandler serialization using wrong server context.
+* [https://issues.apache.org/jira/browse/OPENEJB-554[OPENEJB-554]] - WebServiceBindingType.ejbName not set in ReadDescriptors.java
+* [https://issues.apache.org/jira/browse/OPENEJB-555[OPENEJB-555]] - Don&#39;t ship files with Sun copyright statements
+* [https://issues.apache.org/jira/browse/OPENEJB-556[OPENEJB-556]] - HSQL ServerService fails to start when there are no connectors bound into the system
+* [https://issues.apache.org/jira/browse/OPENEJB-557[OPENEJB-557]] - Throw EJBAccessException not RemoteException when you&#39;re unauthorized
+* [https://issues.apache.org/jira/browse/OPENEJB-562[OPENEJB-562]] - WebServiceRef annotation processing does not check for existing service-ref elements in DD
+* [https://issues.apache.org/jira/browse/OPENEJB-564[OPENEJB-564]] - JAX-RPC fixes
+* [https://issues.apache.org/jira/browse/OPENEJB-566[OPENEJB-566]] - geronimo security type not copied correctly
+* [https://issues.apache.org/jira/browse/OPENEJB-567[OPENEJB-567]] - EjbJarBuilder.build() should not &quot;deploy&quot;
+beans
+* [https://issues.apache.org/jira/browse/OPENEJB-570[OPENEJB-570]] - NotSerializableException passivating a session
+* [https://issues.apache.org/jira/browse/OPENEJB-578[OPENEJB-578]] - Register SERVICE_ENDPOINT last so it doesn&#39;t get overriden
+* [https://issues.apache.org/jira/browse/OPENEJB-579[OPENEJB-579]] - Persistenceunit refs with no name should get resolved to a unique persistence unit
+* [https://issues.apache.org/jira/browse/OPENEJB-581[OPENEJB-581]] - EjbModule URL not valid should be squashed
+* [https://issues.apache.org/jira/browse/OPENEJB-582[OPENEJB-582]] - Lifecycle interceptor defined on a superclass breaks the chain
+* [https://issues.apache.org/jira/browse/OPENEJB-587[OPENEJB-587]] - wrong main.class value for deploy and validate options
+* [https://issues.apache.org/jira/browse/OPENEJB-588[OPENEJB-588]] - OpenJPA graduated from incubator, need to upgrade to 1.0.0-SNAPSHOT
+* [https://issues.apache.org/jira/browse/OPENEJB-589[OPENEJB-589]] - MalformedURLException during deployment of Geronimo MEJBGBean
+* [https://issues.apache.org/jira/browse/OPENEJB-590[OPENEJB-590]] - mvn -Dassemble does not create bin directory in the assembly of module openejb-standalone
+* [https://issues.apache.org/jira/browse/OPENEJB-593[OPENEJB-593]] - Fix build error
+* [https://issues.apache.org/jira/browse/OPENEJB-595[OPENEJB-595]] - maven assembly plugin does not filter resources
+* [https://issues.apache.org/jira/browse/OPENEJB-601[OPENEJB-601]] - broken logging
+* [https://issues.apache.org/jira/browse/OPENEJB-622[OPENEJB-622]] - EntityEJBObjectHandler memory leak
+* [https://issues.apache.org/jira/browse/OPENEJB-623[OPENEJB-623]] - Apply container-transaction delcarations in proper order
+* [https://issues.apache.org/jira/browse/OPENEJB-625[OPENEJB-625]] - RedeployTest does not search for maven repository properly
+* [https://issues.apache.org/jira/browse/OPENEJB-666[OPENEJB-666]] - openejb start --help command prints out property values.
+* [https://issues.apache.org/jira/browse/OPENEJB-667[OPENEJB-667]] - OpenEJB server prints logging messages to console.
+* [https://issues.apache.org/jira/browse/OPENEJB-672[OPENEJB-672]] - Running the command &quot;openejb stop --help&quot;
+throws a null pointer exception
+* [https://issues.apache.org/jira/browse/OPENEJB-792[OPENEJB-792]] - Failure in RedeployTest on Windows.
+* [https://issues.apache.org/jira/browse/OPENEJB-889[OPENEJB-889]] - javax.jms.JMSException: Failed to build body from bytes.
+* [https://issues.apache.org/jira/browse/OPENEJB-1022[OPENEJB-1022]] - Test case org.apache.openejb.config.ConfigurationFactoryTest#testConfigureApplicationWebModule fails while building OEJB
+* [https://issues.apache.org/jira/browse/OPENEJB-1131[OPENEJB-1131]] - JDK 1.6.0 u18 has a ClassCastException in ClassLoaderUtil.clearSunJarFileFactoryCache
+* [https://issues.apache.org/jira/browse/OPENEJB-1246[OPENEJB-1246]] - Committed timers are not visible between transactions
+* [https://issues.apache.org/jira/browse/OPENEJB-1263[OPENEJB-1263]] - IllegalAccessException with TomcatThreadContextListener
+* [https://issues.apache.org/jira/browse/OPENEJB-1287[OPENEJB-1287]] - java.lang.NullPointerException: null: null at org.apache.openejb.assembler.classic.Assembler.createApplication
+* [https://issues.apache.org/jira/browse/OPENEJB-1305[OPENEJB-1305]] - Standalone Server shutdown fails
+* [https://issues.apache.org/jira/browse/OPENEJB-1347[OPENEJB-1347]] - ClassCastException in ClassLoaderUtil.clearSunJarFileFactoryCache
+* [https://issues.apache.org/jira/browse/OPENEJB-1349[OPENEJB-1349]] - No interceptor of type org.apache.openejb.cdi.CdiInterceptor
+* [https://issues.apache.org/jira/browse/OPENEJB-1405[OPENEJB-1405]] - WS Security mustUnderstand flag not treated when handlers are used
+* [https://issues.apache.org/jira/browse/OPENEJB-1417[OPENEJB-1417]] - webservices.xml not read when embedded in Tomcat
+* [https://issues.apache.org/jira/browse/OPENEJB-1422[OPENEJB-1422]] - fix compile error caused by OWB-503
+* [https://issues.apache.org/jira/browse/OPENEJB-1622[OPENEJB-1622]] - Adding more boundary condition handling in cron calendar timer.
+* [https://issues.apache.org/jira/browse/OPENEJB-1918[OPENEJB-1918]] - Build relies on <repositories> and <pluginRepositories>
+* [https://issues.apache.org/jira/browse/OPENEJB-1962[OPENEJB-1962]] - Filter out known directories from EAR scanning
+* [https://issues.apache.org/jira/browse/OPENEJB-1963[OPENEJB-1963]] - Only fail security on bad deployment directory
+* [https://issues.apache.org/jira/browse/OPENEJB-1967[OPENEJB-1967]] - SocketConnectionFactory not honouring lock request and soLinger
+* [https://issues.apache.org/jira/browse/OPENEJB-1986[OPENEJB-1986]] - Deployment of web application with white spaces in its name fails due to unencoded characters
+* [https://issues.apache.org/jira/browse/OPENEJB-1994[OPENEJB-1994]] - App directory with space in name fails on Win platforms
+* [https://issues.apache.org/jira/browse/OPENEJB-1995[OPENEJB-1995]] - Scheduler does not respect TimeZone property if specified
+* [https://issues.apache.org/jira/browse/OPENEJB-2004[OPENEJB-2004]] - EjbTimerService fails to shut down after recent changes
+* [https://issues.apache.org/jira/browse/OPENEJB-2047[OPENEJB-2047]] - ignore com.sun in PersistenceUnitInfoImpl
+* [https://issues.apache.org/jira/browse/OPENEJB-2055[OPENEJB-2055]] - openejb-core PMD - basic.xml
+* [https://issues.apache.org/jira/browse/OPENEJB-2063[OPENEJB-2063]] - Failure to start cxf-rs service due to simple logging call
+* [https://issues.apache.org/jira/browse/OPENEJB-2064[OPENEJB-2064]] - @DenyAll not handled at class level
+* [https://issues.apache.org/jira/browse/OPENEJB-2065[OPENEJB-2065]] - Change 1482211 causes shell error if bin/openejb is given more than one argument
+* [https://issues.apache.org/jira/browse/OPENEJB-2066[OPENEJB-2066]] - &quot;openejb stop&quot;
+leaves the standalone java process running but broken
+* [https://issues.apache.org/jira/browse/OPENEJB-2067[OPENEJB-2067]] - Wrong URL when hot-deploying @WebService to TomEE+ 1.6.0
+* [https://issues.apache.org/jira/browse/OPENEJB-2068[OPENEJB-2068]] - OpenEJB runs EJB Business Interface Method on Proxy instead of Bean
+* [https://issues.apache.org/jira/browse/OPENEJB-2070[OPENEJB-2070]] - Potential deadlock in URLClassLoaderFirst
+* [https://issues.apache.org/jira/browse/OPENEJB-2072[OPENEJB-2072]] - Fix OSGI import for commons-lang and commons-lang3
+* [https://issues.apache.org/jira/browse/OPENEJB-2078[OPENEJB-2078]] - add pojo-deployment to openejb-jar.xsd
+* [https://issues.apache.org/jira/browse/OPENEJB-2080[OPENEJB-2080]] - EJB @LocalBean reference serialization issue
+* [https://issues.apache.org/jira/browse/OPENEJB-2081[OPENEJB-2081]] - Fix @Event AssemblerAfterApplicationCreated location
+* [https://issues.apache.org/jira/browse/OPENEJB-2085[OPENEJB-2085]] - Interceptor extension not recognized
+* [https://issues.apache.org/jira/browse/OPENEJB-2093[OPENEJB-2093]] - Testing a WebService through ApplicationComposer may lead to a null WebServiceContext
+
+== Improvement
+
+[.compact]
+* [https://issues.apache.org/jira/browse/OPENEJB-38[OPENEJB-38]] - The loader jar not installable or deployable to a maven repo
+* [https://issues.apache.org/jira/browse/OPENEJB-305[OPENEJB-305]] - Update itest plans
+* [https://issues.apache.org/jira/browse/OPENEJB-309[OPENEJB-309]] - Implement support for JNDI_LIST and JNDI_LIST_BINDINGS methods in org.openejb.server.ejbd.JndiRequestHandler
+* [https://issues.apache.org/jira/browse/OPENEJB-321[OPENEJB-321]] - Add ASF license header to all source files
+* [https://issues.apache.org/jira/browse/OPENEJB-514[OPENEJB-514]] - Introduce UI plugin + minor fixes to core plugin
+* [https://issues.apache.org/jira/browse/OPENEJB-568[OPENEJB-568]] - JAX-RPC integration improvements
+* [https://issues.apache.org/jira/browse/OPENEJB-626[OPENEJB-626]] - Rename default.logging.conf to embedded.logging.properties and also change appenders for embedded.logging.properties
+* [https://issues.apache.org/jira/browse/OPENEJB-630[OPENEJB-630]] - Add search to home page
+* [https://issues.apache.org/jira/browse/OPENEJB-669[OPENEJB-669]] - remove hsql log messages from server startup
+* [https://issues.apache.org/jira/browse/OPENEJB-684[OPENEJB-684]] - Upgrade org.apache.axis2:axis2-jaxws-api to 1.3
+* [https://issues.apache.org/jira/browse/OPENEJB-685[OPENEJB-685]] - Use Maven 2 Remote Resources Plugin to manage LICENSE/NOTICE files
+* [https://issues.apache.org/jira/browse/OPENEJB-925[OPENEJB-925]] - Improved scanning for ejbs in webapps while in Tomcat
+* [https://issues.apache.org/jira/browse/OPENEJB-1081[OPENEJB-1081]] - Find most specific setter in ClientInjectionProcessor.findSetter
+* [https://issues.apache.org/jira/browse/OPENEJB-1265[OPENEJB-1265]] - TempClassLoader buffer reuse reduces memory requirements
+* [https://issues.apache.org/jira/browse/OPENEJB-1346[OPENEJB-1346]] - Improve @AccessTimeout annotation processing
+* [https://issues.apache.org/jira/browse/OPENEJB-1413[OPENEJB-1413]] - Support interesting module types in DeploymentLoader
+* [https://issues.apache.org/jira/browse/OPENEJB-1418[OPENEJB-1418]] - Refactor TomcatWebAppBuilder
+* [https://issues.apache.org/jira/browse/OPENEJB-1838[OPENEJB-1838]] - Add &#39;MultiPulse&#39;
+discovery - An alternative multicast discovery option
+* [https://issues.apache.org/jira/browse/OPENEJB-1839[OPENEJB-1839]] - Configrable TCP Socket connect timeout for ejbd and ejbds
+* [https://issues.apache.org/jira/browse/OPENEJB-1854[OPENEJB-1854]] - Multicast discovery collides with a configured localhost service
+* [https://issues.apache.org/jira/browse/OPENEJB-1969[OPENEJB-1969]] - OpenEJBDeployableContainer has InstanceProducer<Context>
+* [https://issues.apache.org/jira/browse/OPENEJB-1996[OPENEJB-1996]] - Configure QuartzResourceAdapter start and stop timeouts and logging
+* [https://issues.apache.org/jira/browse/OPENEJB-1999[OPENEJB-1999]] - Update to ActiveMQ 5.8.x
+* [https://issues.apache.org/jira/browse/OPENEJB-2000[OPENEJB-2000]] - Add &#39;ignore&#39;
+property to MulticastPulseAgent
+* [https://issues.apache.org/jira/browse/OPENEJB-2030[OPENEJB-2030]] - Default include exclude order should be exclude-include
+* [https://issues.apache.org/jira/browse/OPENEJB-2049[OPENEJB-2049]] - openejb-core PMD - EmptyCatchBlock
+* [https://issues.apache.org/jira/browse/OPENEJB-2050[OPENEJB-2050]] - openejb-core PMD - EmptyStatementNotInLoop
+* [https://issues.apache.org/jira/browse/OPENEJB-2051[OPENEJB-2051]] - openejb-core PMD - EmptyWhileStmt
+* [https://issues.apache.org/jira/browse/OPENEJB-2052[OPENEJB-2052]] - openejb-core PMD - EmptyIfStmt
+* [https://issues.apache.org/jira/browse/OPENEJB-2053[OPENEJB-2053]] - openejb-core PMD - finalizers.xml and imports.xml
+* [https://issues.apache.org/jira/browse/OPENEJB-2054[OPENEJB-2054]] - openejb-core PMD - unusedcode.xml
+* [https://issues.apache.org/jira/browse/OPENEJB-2056[OPENEJB-2056]] - openejb-loader PMD
+* [https://issues.apache.org/jira/browse/OPENEJB-2057[OPENEJB-2057]] - openejb-core checkstyle
+* [https://issues.apache.org/jira/browse/OPENEJB-2060[OPENEJB-2060]] - openejb-core checkstyle [FinalClass]
+* [https://issues.apache.org/jira/browse/OPENEJB-2061[OPENEJB-2061]] - openejb-core checkstyle [SimplifyBooleanExpression, SimplifyBooleanReturn]
+* [https://issues.apache.org/jira/browse/OPENEJB-2062[OPENEJB-2062]] - openejb-core checkstyle [ArrayTypeStyle]
+* [https://issues.apache.org/jira/browse/OPENEJB-2073[OPENEJB-2073]] - openejb-core PMD - LocalVariableCouldBeFinal
+* [https://issues.apache.org/jira/browse/OPENEJB-2079[OPENEJB-2079]] - Use system property &#39;derby.system.home&#39;
+if supplied
+* [https://issues.apache.org/jira/browse/OPENEJB-2084[OPENEJB-2084]] - Move Server Services to a dedicated &quot;Start&quot;
+event
+* [https://issues.apache.org/jira/browse/OPENEJB-2088[OPENEJB-2088]] - Allow injection of (SOAP)Handlers
+* [https://issues.apache.org/jira/browse/OPENEJB-2089[OPENEJB-2089]] - Provide ApplicationComposer feature as a JUnit @Rule
+
+== New Feature
+
+[.compact]
+* [https://issues.apache.org/jira/browse/OPENEJB-63[OPENEJB-63]] - New Castor CMP Container
+* [https://issues.apache.org/jira/browse/OPENEJB-565[OPENEJB-565]] - Basic support for JAX-WS invocations
+* [https://issues.apache.org/jira/browse/OPENEJB-569[OPENEJB-569]] - @Resource WebServiceContext injection
+* [https://issues.apache.org/jira/browse/OPENEJB-924[OPENEJB-924]] - Adding APIs for new EJB 3.1 features
+* [https://issues.apache.org/jira/browse/OPENEJB-1230[OPENEJB-1230]] - Webapp scanning include/exclude via context.xml settings
+* [https://issues.apache.org/jira/browse/OPENEJB-1410[OPENEJB-1410]] - Dynamic data source (using more than one data source as one)
+* [https://issues.apache.org/jira/browse/OPENEJB-1525[OPENEJB-1525]] - bean validation for parameters and returned values
+* [https://issues.apache.org/jira/browse/OPENEJB-1528[OPENEJB-1528]] - allowing the user to add default interceptors
+* [https://issues.apache.org/jira/browse/OPENEJB-1958[OPENEJB-1958]] - Add compression to the ejbd protocol.
+* [https://issues.apache.org/jira/browse/OPENEJB-2048[OPENEJB-2048]] - Implement a simplified direct connection factory
+* [https://issues.apache.org/jira/browse/OPENEJB-2082[OPENEJB-2082]] - Allow to call an observer after another one
+* [https://issues.apache.org/jira/browse/OPENEJB-2090[OPENEJB-2090]] - provide junit rules for EJBContainer
+
+== Task
+
+[.compact]
+* [https://issues.apache.org/jira/browse/OPENEJB-20[OPENEJB-20]] - org.openejb.util.Logger uses deprecated log4j.Category class
+* [https://issues.apache.org/jira/browse/OPENEJB-36[OPENEJB-36]] - Automated test of tomcat integration
+* [https://issues.apache.org/jira/browse/OPENEJB-81[OPENEJB-81]] - ejb3 specs module
+* [https://issues.apache.org/jira/browse/OPENEJB-110[OPENEJB-110]] - JPA Spec - ClassTransformer missing method patch
+* [https://issues.apache.org/jira/browse/OPENEJB-111[OPENEJB-111]] - JPA - persistence.xml parser and skeleton provider
+* [https://issues.apache.org/jira/browse/OPENEJB-112[OPENEJB-112]] - Port HTTP server support from 2
+* [https://issues.apache.org/jira/browse/OPENEJB-113[OPENEJB-113]] - Port CORBA server code from openejb 2
+* [https://issues.apache.org/jira/browse/OPENEJB-114[OPENEJB-114]] - Port Axis server support from 2
+* [https://issues.apache.org/jira/browse/OPENEJB-115[OPENEJB-115]] - Port/rewrite the XFire server support from 2 into 3
+* [https://issues.apache.org/jira/browse/OPENEJB-116[OPENEJB-116]] - Port EJB Containers from 2 into 3
+* [https://issues.apache.org/jira/browse/OPENEJB-122[OPENEJB-122]] - JCA Support via Jencks project
+* [https://issues.apache.org/jira/browse/OPENEJB-135[OPENEJB-135]] - Castor 1.0 upgrade
+* [https://issues.apache.org/jira/browse/OPENEJB-258[OPENEJB-258]] - Documentation about XBean and its use
+* [https://issues.apache.org/jira/browse/OPENEJB-264[OPENEJB-264]] - iTests broken - missing spring2.xml
+* [https://issues.apache.org/jira/browse/OPENEJB-272[OPENEJB-272]] - Change packages to org.apache.openejb in openejb3 trunk
+* [https://issues.apache.org/jira/browse/OPENEJB-281[OPENEJB-281]] - Remove dependencies with groupId=geronimo from poms
+* [https://issues.apache.org/jira/browse/OPENEJB-282[OPENEJB-282]] - Both EJBHome and EJBLocalHome remove(Object primaryKey) methods should throw javax.ejb.RemoveException when used with Sessions beans
+* [https://issues.apache.org/jira/browse/OPENEJB-311[OPENEJB-311]] - Add ASL License Headers
+* [https://issues.apache.org/jira/browse/OPENEJB-323[OPENEJB-323]] - Add ASL License and Notice
+* [https://issues.apache.org/jira/browse/OPENEJB-387[OPENEJB-387]] - Adding support for &quot;openejb.deployments.classpath.include&quot;
+* [https://issues.apache.org/jira/browse/OPENEJB-448[OPENEJB-448]] - Move duplicate app checking into the assembler
+* [https://issues.apache.org/jira/browse/OPENEJB-449[OPENEJB-449]] - Non-finder based ServerService creation
+* [https://issues.apache.org/jira/browse/OPENEJB-524[OPENEJB-524]] - Geronimo 2.0 Integration
+* [https://issues.apache.org/jira/browse/OPENEJB-585[OPENEJB-585]] - [GRADUATION] Yank the DISCLAIMER.txt that says we are incubating
+* [https://issues.apache.org/jira/browse/OPENEJB-586[OPENEJB-586]] - [GRADUATION] Drop &quot;incubating&quot;
+from version number
+* [https://issues.apache.org/jira/browse/OPENEJB-1054[OPENEJB-1054]] - Investigate App Client Main-Class handling
+
+== Test
+
+[.compact]
+* [https://issues.apache.org/jira/browse/OPENEJB-450[OPENEJB-450]] - Potentially use xbean-naming
+* [https://issues.apache.org/jira/browse/OPENEJB-519[OPENEJB-519]] - Annotated test clients enablement
+* [https://issues.apache.org/jira/browse/OPENEJB-563[OPENEJB-563]] - Test Case for Jax-RPC
+* [https://issues.apache.org/jira/browse/OPENEJB-676[OPENEJB-676]] - [BUILD FAILURE : There are test failures] OpenejbJarTest and ConversionTest are failing when building the code.
+
+== Wish
+
+[.compact]
+* [https://issues.apache.org/jira/browse/OPENEJB-2077[OPENEJB-2077]] - Do not require openejb.json/openejb.xml
+* [https://issues.apache.org/jira/browse/OPENEJB-2092[OPENEJB-2092]] - Allow easy offsetting of all OpenEJB ports

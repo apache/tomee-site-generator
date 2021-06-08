@@ -31,6 +31,8 @@ ul.jqtree-tree {
       margin-left: 0.5em; }
   ul.jqtree-tree .jqtree-element {
     cursor: pointer;
+    padding: 0 10px;
+    border: 1px solid transparent;
     position: relative; }
   ul.jqtree-tree .jqtree-title {
     color: #1C4257;
@@ -83,12 +85,11 @@ ul.jqtree-tree {
     box-sizing: content-box; }
   ul.jqtree-tree li.jqtree-selected > .jqtree-element,
   ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
-    background-color: #97BDD6;
-    background: -webkit-gradient(linear, left top, left bottom, from(#BEE0F5), to(#89AFCA));
-    background: -moz-linear-gradient(top, #BEE0F5, #89AFCA);
-    background: -ms-linear-gradient(top, #BEE0F5, #89AFCA);
-    background: -o-linear-gradient(top, #BEE0F5, #89AFCA);
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7); }
+    border: 1px solid #97BDD6;
+  }
+  ul.jqtree-tree li.jqtree-selected > .jqtree-element .fa-folder-o::before {
+      content: "\f115";
+  }
   ul.jqtree-tree .jqtree-moving > .jqtree-element .jqtree-title {
     outline: dashed 1px #0000ff; }
 

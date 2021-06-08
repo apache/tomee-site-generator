@@ -1,0 +1,26 @@
+= Design - Classic Assembler
+:jbake-type: page
+:jbake-status: published
+
+== Classic Assembler
+
+Implementation of xref:design-assembler.adoc[Assembler]
+
+== Description
+
+The standard assembler supported by the OpenEJB team.
+Uses meta-data supplied via the Configuration Factory to create all components in the system.
+It is assumed the meta-data has been checked and validated, all links and references will resolve, all classes are present, and all apps compliant.
+
+== Related Classes
+
+* org.apache.openejb.assembler.classic.Assembler
+* org.apache.openejb.assembler.classic.OpenEjbConfiguration
+
+== Related Packages
+
+* org.apache.openejb.assembler.classic
+
+== Sub-components
+
+* xref:design-configuration-factory.adoc[Configuration Factory]

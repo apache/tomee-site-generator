@@ -1,0 +1,177 @@
+= Contributing
+:jbake-type: page
+:jbake-status: published
+
+Contributing to the project is a great way to support the community.
+Some great links for getting involved
+
+* xref:dev/source-code.adoc[Source Code]
+* xref:dev/contribution-tips.adoc[Contribution Tips]
+
+NOTE: The next (broken) link on the current site points to an apparently generated list of pages in dev.
+
+* xref:dev/index.adoc[Developer Documentation]
+
+== Contributing doesn't always mean code.
+
+If you love the project and want to see it grow, follow it on Facebook and Twitter.
+
+* http://twitter.com/ApacheTomEE
+* http://facebook.com/ApacheTomEE
+
+The more people we reach the more the project grows.
+
+* Become an active retweeter + +++<a onclick="javascript:twshare()" class="tw-share sprite" title="share on Twitter">+++share [tw]+++</a>+++
+* Share pages you like on Facebook + +++<a onclick="javascript:fbshare()" class="fb-share sprite" title="share on Facebook">+++share [fb]+++</a>+++
+* Share pages you like on Pinterest + +++<a onclick="javascript:pinshare()" class="pin-share sprite" title="Share on Pinterest">+++share [pin]+++</a>+++
+
+Doing these things as often as possible are simple and powerful ways to help.
+Do your part and watch the project grow grow grow!
+
+== Edit This Site
+
+Top right, next to the Twitter symbol, there is an edit symbol <<edit,contribute>>.
+Most of the pages on this site can be edited by you.
+If you find a spelling mistake, or just want to improve the documentation then please do!
+
+If you want to edit the xref:{examples-vc}::index.adoc[Examples Documentation] then check-out the xref:dev/source-code.adoc[Source Code] and edit or create the README.md in the example directory you want to improve.
+
+== Committers
+
+[cols=4*]
+|===
+| link:mailto:adc@apache.org[Alan Cabrera]
+| Committer, PMC
+| http://people.apache.org/~adc[adc]
+| http://people.apache.org/map.html?adc[map]
+
+| link:mailto:ammulder@apache.org[Aaron Mulder]
+| Committer
+| http://people.apache.org/~ammulder[ammulder]
+| http://people.apache.org/map.html?ammulder[map]
+
+| link:mailto:andygumbrecht@apache.org[Andrew Gumbrecht]
+| Committer
+| http://people.apache.org/~andygumbrecht[andygumbrecht]
+| http://people.apache.org/map.html?andygumbrecht[map]
+
+| link:mailto:dain@apache.org[Dain Sundstrom]
+| Committer, PMC
+| http://people.apache.org/~dain[dain]
+| http://people.apache.org/map.html?dain[map]
+
+| link:mailto:dblevins@apache.org[David Blevins]
+| Founder, Chair
+| http://people.apache.org/~dblevins[dblevins]
+| http://people.apache.org/map.html?dblevins[map]
+
+| link:mailto:djencks@apache.org[David Jencks]
+| Committer, PMC
+| http://people.apache.org/~djencks[djencks]
+| http://people.apache.org/map.html?djencks[map]
+
+| link:mailto:dsh@apache.org[Daniel Stefan Haischt]
+| Committer
+| http://people.apache.org/~dsh[dsh]
+| http://people.apache.org/map.html?dsh[map]
+
+| link:mailto:gawor@apache.org[Jarek Gawor]
+| Committer
+| http://people.apache.org/~gawor[gawor]
+| http://people.apache.org/map.html?gawor[map]
+
+| link:mailto:gdamour@apache.org[Gianny Damour]
+| Committer
+| http://people.apache.org/~gdamour[gdamour]
+| http://people.apache.org/map.html?gdamour[map]
+
+| link:mailto:genspring@apache.org[Lin Quan Jiang]
+| Committer
+| http://people.apache.org/~genspring[genspring]
+| http://people.apache.org/map.html?genspring[map]
+
+| link:mailto:hogstrom@apache.org[Matt Richard Hogstrom]
+| Committer
+| http://people.apache.org/~hogstrom[hogstrom]
+| http://people.apache.org/map.html?hogstrom[map]
+
+| link:mailto:jgallimore@apache.org[Jonathan Gallimore]
+| Committer, PMC
+| http://people.apache.org/~jgallimore[jgallimore]
+| http://people.apache.org/map.html?jgallimore[map]
+
+| link:mailto:jgenender@apache.org[Jeff Genender]
+| Committer
+| http://people.apache.org/~jgenender[jgenender]
+| http://people.apache.org/map.html?jgenender[map]
+
+| link:mailto:jlaskowski@apache.org[Jacek Laskowski]
+| Committer, PMC
+| http://people.apache.org/~jlaskowski[jlaskowski]
+| http://people.apache.org/map.html?jlaskowski[map]
+
+| link:mailto:jlmonteiro@apache.org[Jean-Louis Monteiro]
+| Committer, PMC
+| http://people.apache.org/~jlmonteiro[jlmonteiro]
+| http://people.apache.org/map.html?jlmonteiro[map]
+
+| link:mailto:jvanzyl@apache.org[Jason van Zyl]
+| Committer
+| http://people.apache.org/~jvanzyl[jvanzyl]
+| http://people.apache.org/map.html?jvanzyl[map]
+
+| link:mailto:jwhitlock@apache.org[Jeremy Whitlock]
+| Committer
+| http://people.apache.org/~jwhitlock[jwhitlock]
+| http://people.apache.org/map.html?jwhitlock[map]
+
+| link:mailto:kevan@apache.org[Kevan Lee Miller]
+| Committer, PMC
+| http://people.apache.org/~kevan[kevan]
+| http://people.apache.org/map.html?kevan[map]
+
+| link:mailto:kmalhi@apache.org[Karan Singh Malhi]
+| Committer
+| http://people.apache.org/~kmalhi[kmalhi]
+| http://people.apache.org/map.html?kmalhi[map]
+
+| link:mailto:lajos@apache.org[Lajos Moczar]
+| Committer
+| http://people.apache.org/~lajos[lajos]
+| http://people.apache.org/map.html?lajos[map]
+
+| link:mailto:manugeorge@apache.org[Manu George]
+| Committer
+| http://people.apache.org/~manugeorge[manugeorge]
+| http://people.apache.org/map.html?manugeorge[map]
+
+| link:mailto:struberg@apache.org[Mark Struberg]
+| Committer, PMC
+| http://people.apache.org/~struberg[struberg]
+| http://people.apache.org/map.html?struberg[map]
+
+| link:mailto:mnour@apache.org[Mohammad Nour El-Din]
+| Committer
+| http://people.apache.org/~mnour[mnour]
+| http://people.apache.org/map.html?mnour[map]
+
+| link:mailto:rickmcguire@apache.org[Richard McGuire]
+| Committer
+| http://people.apache.org/~rickmcguire[rickmcguire]
+| http://people.apache.org/map.html?rickmcguire[map]
+
+| link:mailto:rmannibucau@apache.org[Romain Manni-Bucau]
+| Committer
+| http://people.apache.org/~rmannibucau[rmannibucau]
+| http://people.apache.org/map.html?rmannibucau[map]
+
+| link:mailto:tveronezi@apache.org[Thiago Veronezi]
+| Committer
+| http://people.apache.org/~tveronezi[tveronezi]
+| http://people.apache.org/map.html?tveronezi[map]
+
+| link:mailto:xuhaihong@apache.org[Haihong Xu]
+| Committer
+| http://people.apache.org/~xuhaihong[xuhaihong]
+| http://people.apache.org/map.html?xuhaihong[map]
+|===

@@ -7,34 +7,34 @@
 
 
 
-=== JIRA ticket
+== JIRA ticket
 - create ticket in JIRA, if not already existing
 - if ticket already assigned to someone else => talk
 - assign ticket to contributor, if not already assigned +
-  (link:jira-ticket.html[more details])
+  (xref:jira-ticket.adoc[more details])
 
 
 
-=== Process Task
+== Process Task
 - fork repository
 - create branch in own repository (name = JIRA ticket id)
 - discuss on mailing list
 - work on code
 - document work in JIRA ticket +
-  (link:process-task.html[more details])
+  (xref:process-task.adoc[more details])
 
-=== Submit Changes
+== Submit Changes
 - ensure code compiles 
 - ensure tests passes
 - create PR (pull request)
 - ask for review on mailing list +
-  (link:submit-changes.html[more details])
+  (xref:submit-changes.adoc[more details])
 
-=== Merge Changes (done by a committer)
+== Merge Changes (done by a committer)
 - review changes
 - merge code
 - change JIRA ticket status / close ticket +
 
-=== Cleanup
+== Cleanup
 - wait until PR is merged (ticket status change)
 - remove branch in own repository +

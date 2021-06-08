@@ -1,0 +1,24 @@
+= Design - Transaction Service
+:jbake-type: page
+:jbake-status: published
+
+== Transaction Service
+
+Sub-component of xref:design.adoc[OpenEJB]
+
+== Definition
+
+Provides the container with transactional integrity.
+
+== Also Known As
+
+* Transaction Manager
+
+== Responsibilities
+
+* To give OpenEJB a reference to a valid implementation of javax.transaction.TransactionManager
+
+== Related Classes
+
+* org.apache.openejb.spi.TransactionService
+* javax.transaction.TransactionManager

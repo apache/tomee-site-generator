@@ -10,7 +10,7 @@
   <name>Apache TomEE :: WebSite NG</name>
 
   <properties>
-    <tomee.version>7.0.3</tomee.version>
+    <tomee.version>8.0.6</tomee.version>
     <jbake.http>false</jbake.http>
     <jbake.pdf>false</jbake.pdf>
 
@@ -20,15 +20,15 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>org.asciidoctor</groupId>
-      <artifactId>asciidoctorj-pdf</artifactId>
-      <version>1.5.0-alpha.11</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.asciidoctor</groupId>-->
+<!--      <artifactId>asciidoctorj-pdf</artifactId>-->
+<!--      <version>1.5.0-alpha.11</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>org.asciidoctor</groupId>
       <artifactId>asciidoctorj</artifactId>
-      <version>1.5.4</version>
+      <version>1.5.8.1</version>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -38,23 +38,28 @@
     </dependency>
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-json_1.0_spec</artifactId>
-      <version>1.0-alpha-1</version>
+      <artifactId>geronimo-json_1.1_spec</artifactId>
+      <version>1.5</version>
     </dependency>
     <dependency>
       <groupId>org.apache.johnzon</groupId>
       <artifactId>johnzon-jaxrs</artifactId>
-      <version>0.9.5</version>
+      <version>1.2.11</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.johnzon</groupId>
+      <artifactId>johnzon-jsonb</artifactId>
+      <version>1.2.11</version>
     </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-rs-client</artifactId>
-      <version>3.1.8</version>
+      <version>3.4.3</version>
     </dependency>
     <dependency>
       <groupId>org.apache.tomee</groupId>
       <artifactId>javaee-api</artifactId>
-      <version>7.0-1</version>
+      <version>8.0-5</version>
     </dependency>
     <dependency>
       <groupId>org.apache.tomee</groupId>

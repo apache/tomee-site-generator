@@ -1,0 +1,25 @@
+= Design - Security Service
+:jbake-type: page
+:jbake-status: published
+
+== Security Service
+
+Sub-component of xref:-design.adoc[OpenEJB]
+
+== Definition
+
+Provides the container with an authenticated client identity.
+
+== Also Known As
+
+* Security Provider
+
+== Responsibilities
+
+* Authenticate the user in an implementation specific way
+* Provides OpenEJB a reference to the current security identity of the client
+* Assists OpenEJB with role-based authorization control
+
+== Related Classes
+
+* org.apache.openejb.spi.SecurityService

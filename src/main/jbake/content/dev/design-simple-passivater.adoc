@@ -1,0 +1,15 @@
+= Design - Simple Passivater
+:jbake-type: page
+:jbake-status: published
+
+== Simple Passivater
+
+Implementation of xref:design-passivation-strategy.adoc[Passivation Strategy]
+
+== Description
+
+A PassivationStrategy that idividually passivates bean instances to a binary file.
+
+== Related Classes
+
+* org.apache.openejb.core.stateful.SimplePassivater

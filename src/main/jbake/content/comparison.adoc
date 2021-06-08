@@ -1,0 +1,49 @@
+= Comparison
+:index-group: General Information
+:jbake-date: 2018-12-05
+:jbake-type: page
+:jbake-status: published
+:icons: font
+:y: icon:check[role="green"]
+:n: icon:times[role="red"]
+:c: icon:file-text-o[role="blue"]
+
+Apache TomEE has four distributions, each supporting a slightly different set of technologies and aimed to give you a choice in what you want included out-of-the-box.  When in doubt, chose Apache TomEE Plume.
+
+[cols="4,5*^1",options="header"]
+|===
+||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plume|TomEE Plus
+|Jakarta Annotations|{y}|{y}|{y}|{y}|{y}
+|Jakarta Debugging Support for Other Languages|{y}|{y}|{y}|{y}|{y}
+|Jakarta Security (Java EE Enterprise Security)|{y}|{y}|{y}|{y}|{y}
+|Jakarta Server Pages (JSP)|{y}|{y}|{y}|{y}|{y}
+|Jakarta Servlet|{y}|{y}|{y}|{y}|{y}
+|Jakarta Standard Tag Library (JSTL)|{y}|{y}|{y}|{y}|{y}
+|Jakarta WebSocket|{y}|{y}|{y}|{y}|{y}
+|Jakarta Expression Language (EL)|{y}|{y}|{y}|{y}|{y}
+|Jakarta Activation||{y}|{y}|{y}|{y}
+|Jakarta Bean Validation||{y}|{y}|{y}|{y}
+|Jakarta Contexts and Dependency Injection (CDI)||{y}|{y}|{y}|{y}
+|Jakarta Dependency Injection (@Inject)||{y}|{y}|{y}|{y}
+|Jakarta Enterprise Beans (EJB)||{y}|{y}|{y}|{y}
+|Jakarta Interceptors||{y}|{y}|{y}|{y}
+|Jakarta JSON Binding (JSON-B)||{y}|{y}|{y}|{y}
+|Jakarta JSON Processing (JSON-P)||{y}|{y}|{y}|{y}
+|Jakarta Mail (JavaMail)||{y}|{y}|{y}|{y}
+|Jakarta Managed Beans||{y}|{y}|{y}|{y}
+|Jakarta Persistence (JPA)||{y}|{y}|{y}|{y}
+|Jakarta RESTful Web Services (JAX-RS)||{y}|{y}|{y}|{y}
+|Jakarta Server Faces (JSF)||{y}|{y}|{y}|{y}
+|Jakarta Transactions (JTA)||{y}|{y}|{y}|{y}
+|Jakarta XML Binding (JAXB)||{y}|{y}|{y}|{y}
+|Jakarta Authentication (JAAS)||||{y}|{y}
+|Jakarta Authorization (JACC)||||{y}|{y}
+|Jakarta Concurrency||||{y}|{y}
+|Jakarta Connectors||||{y}|{y}
+|Jakarta Enterprise Web Services||||{y}|{y}
+|Jakarta Messaging (JMS)||||{y}|{y}
+|Jakarta SOAP with Attachments||||{y}|{y}
+|Jakarta Web Services Metadata||||{y}|{y}
+|Jakarta XML Web Services (JAX-WS)||||{y}|{y}
+|Jakarta Batch (JBatch)|||||{y}
+|===

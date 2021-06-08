@@ -1,0 +1,38 @@
+= Design - Application Server
+:jbake-type: page
+:jbake-status: published
+
+== Application Server
+
+Sub-component of xref:design.adoc[OpenEJB]
+
+
+== Definition
+
+Any component wishing to serve or deliver Enterprise JavaBeans.
+
+
+== Also Known As
+
+* Server Adapter
+* Server Provider
+
+
+== Responsibilities
+
+* Remote client access to OpenEJB
+* Implement the bean's remote and home interfaces.
+* Distribute its implementation of the remote and home interfaces.
+* Provide clients with a JNDI name space for looking up beans.
+* Delegate method invocations to the container.
+
+
+== Related Classes
+
+* org.apache.openejb.spi.ApplicationServer
+
+
+== Implementations
+
+* xref:design-local-server.adoc[Local Server]
+* xref:design-remote-server.adoc[Remote Server]

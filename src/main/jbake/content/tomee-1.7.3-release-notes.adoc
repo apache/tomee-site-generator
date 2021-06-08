@@ -1,0 +1,50 @@
+= Release Notes - TomEE - Version 1.7.3
+:jbake-type: page
+:jbake-status: published
+
+== Bug
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-1465[TOMEE-1465]] - org.apache.openejb.util.PropertyPlaceHolderHelper.PropertiesLookup caches properties
+* [https://issues.apache.org/jira/browse/TOMEE-1585[TOMEE-1585]] - org.apache.openejb.core.ivm.BaseEjbProxyHandler.ProxyRegistry#liveHandleRegistry not thread safe
+* [https://issues.apache.org/jira/browse/TOMEE-1587[TOMEE-1587]] - merge arquillian tomee ear support from 7.x to 1.7.x
+* [https://issues.apache.org/jira/browse/TOMEE-1590[TOMEE-1590]] - WsFactory: ClassCastException: java.util.HashSet cannot be cast to java.util.List
+* [https://issues.apache.org/jira/browse/TOMEE-1596[TOMEE-1596]] - AutoDeployer buggy is not using hot deploy
+* [https://issues.apache.org/jira/browse/TOMEE-1610[TOMEE-1610]] - [OSGi] Version range problem in openejb-core on bean-asm5
+* [https://issues.apache.org/jira/browse/TOMEE-1614[TOMEE-1614]] - Netbeans Tomcat Plugin Integration Does Not Detected TomeeStarted
+* [https://issues.apache.org/jira/browse/TOMEE-1622[TOMEE-1622]] - TomEE SystemInstance unsafely iterates over the System.getProperties()
+* [https://issues.apache.org/jira/browse/TOMEE-1631[TOMEE-1631]] - Basic Rotating JUL Handler
+* [https://issues.apache.org/jira/browse/TOMEE-1636[TOMEE-1636]] - BrokerXmlConfig xbean:file: does not accept a relative path
+* [https://issues.apache.org/jira/browse/TOMEE-1638[TOMEE-1638]] - tomee:exec on Windows produces invalid tomee.zip due to backslash directory separators
+* [https://issues.apache.org/jira/browse/TOMEE-1655[TOMEE-1655]] - ApplicationComposers not isolating @Configuration for each test class.
+
+== Dependency upgrade
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-1611[TOMEE-1611]] - Tomcat 7.0.63
+* [https://issues.apache.org/jira/browse/TOMEE-1678[TOMEE-1678]] - Tomcat 7.0.65
+* [https://issues.apache.org/jira/browse/TOMEE-1633[TOMEE-1633]] - upgrade javamail to 1.9.0-alpha-2
+* [https://issues.apache.org/jira/browse/TOMEE-1673[TOMEE-1673]] - Upgrade commons-collections to 3.2.2
+
+== Improvement
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-1428[TOMEE-1428]] - improve the performance of TempClassLoader$ResourceComparator
+* [https://issues.apache.org/jira/browse/TOMEE-1455[TOMEE-1455]] - for resource local pu try to guess if datasource is configured in persistence unit properties
+* [https://issues.apache.org/jira/browse/TOMEE-1461[TOMEE-1461]] - Need a machine global mechanism for &#39;get next available port&#39;
+to prevent &#39;address in use&#39;
+issues
+* [https://issues.apache.org/jira/browse/TOMEE-1547[TOMEE-1547]] - Use application classloader for resources defined in resources.xml
+* [https://issues.apache.org/jira/browse/TOMEE-1557[TOMEE-1557]] - Support AMQ plugin config on amq5factory
+* [https://issues.apache.org/jira/browse/TOMEE-1642[TOMEE-1642]] - Would be nice that tomee logs JAXRS configuration in use (was: sends an INFO when not found the relative class for pojo-deployment in configuration [openejb-jar.xml])
+* [https://issues.apache.org/jira/browse/TOMEE-1662[TOMEE-1662]] - Ensure dangling JMS connections are closed on shutdown
+
+== New Feature
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-1442[TOMEE-1442]] - Show list of deployed applications (including EARs) in the console
+* [https://issues.apache.org/jira/browse/TOMEE-1456[TOMEE-1456]] - Support endorsed libs in the TomEE Maven Plugin
+
+== Test
+
+* [https://issues.apache.org/jira/browse/TOMEE-1412[TOMEE-1412]] - Extra unversioned context displayed when using parallel deployment

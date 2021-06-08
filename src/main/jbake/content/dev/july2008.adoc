@@ -1,0 +1,17 @@
+= July 2008
+:jbake-type: page
+:jbake-status: published
+
+The OpenEJB 3.0 Final release in mid April brought some good attention to the project and more new users.
+User list traffic showed a small increase in April and May and a sharp spike in June.
+July looks to be a slow month so far.
+Many users are content and anxiously awaiting the next release.
+
+Planning for the next release has begun.
+The list of fixes and improvements is growing very large.
+If all goes well 3.1 it won't be too much longer before we start spinning binaries for 3.1.
+Major new features will include more EJB 3.1 support, jaxb performance increases through the SXC project, network performance increases in client/server communication, cmp and jpa conversion improvements, tomcat console improvements, and fixes in the jdbc connection pooling.
+
+Jonathan Gallimore was voted in as a committer with great support.
+Jonathan is not just a new committer to OpenEJB but to the ASF.
+A very warm welcome to Jonathan!

@@ -1,0 +1,20 @@
+= Design - Stateless SessionBean Container
+:jbake-type: page
+:jbake-status: published
+
+== Stateless SessionBean Container
+
+Implementation of xref:design-container.adoc[Container]
+
+== Description
+
+Container that implements the EJB defined bean-container contract for stateless SessionBeans.
+
+== Also Known As
+
+* Stateless Session Container
+* Stateless Container
+
+== Related Classes
+
+* org.apache.openejb.core.stateless.StatelessContainer

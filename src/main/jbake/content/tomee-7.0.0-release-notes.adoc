@@ -1,0 +1,154 @@
+= Release Notes - TomEE - Version 7.0.0
+:jbake-type: page
+:jbake-status: published
+
+== Sub-task
+
+* link:https://issues.apache.org/jira/browse/TOMEE-1322[TOMEE-1322] - Client API
+
+== Bug
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1266[TOMEE-1266] - Unable to configure a datasource with TomEE in context of Oracle Wallet
+* link:https://issues.apache.org/jira/browse/TOMEE-1268[TOMEE-1268] - Auto scanning of @Provider
+* link:https://issues.apache.org/jira/browse/TOMEE-1275[TOMEE-1275] - TimerExecutor as compoenent doesn&#39;t follow executor lifecycle (stop/start)
+* link:https://issues.apache.org/jira/browse/TOMEE-1281[TOMEE-1281] - JAXRS doesn&#39;t work with deltaspike in Application#getSingleton
+* link:https://issues.apache.org/jira/browse/TOMEE-1296[TOMEE-1296] - org.apache.openejb.jpa.integration.eclipselink.OpenEJBServerPlatform mbeanServer name is wrong
+* link:https://issues.apache.org/jira/browse/TOMEE-1324[TOMEE-1324] - Problem with TomEE Maven archetype
+* link:https://issues.apache.org/jira/browse/TOMEE-1325[TOMEE-1325] - Dynamic subclassing doesn&#39;t support interfaces (@Local)
+* link:https://issues.apache.org/jira/browse/TOMEE-1329[TOMEE-1329] - jars.txt doesn&#39;t support empty lines
+* link:https://issues.apache.org/jira/browse/TOMEE-1330[TOMEE-1330] - Support to include container urls in scanning
+* link:https://issues.apache.org/jira/browse/TOMEE-1334[TOMEE-1334] - cdi lazy realm throws NPE cause of init handling (too early)
+* link:https://issues.apache.org/jira/browse/TOMEE-1335[TOMEE-1335] - openejb.deployer.save-deployments broken on war
+* link:https://issues.apache.org/jira/browse/TOMEE-1342[TOMEE-1342] - OutputGeneratedDescriptors doesn&#39;t output complete ejb-jar.xml
+* link:https://issues.apache.org/jira/browse/TOMEE-1343[TOMEE-1343] - HSQL server shuts down saying no databases available
+* link:https://issues.apache.org/jira/browse/TOMEE-1364[TOMEE-1364] - When using the tomee-maven-plugins stop goal tomee seems to hang forever
+* link:https://issues.apache.org/jira/browse/TOMEE-1376[TOMEE-1376] - Invalid package within groovy script
+* link:https://issues.apache.org/jira/browse/TOMEE-1398[TOMEE-1398] - The project maven-util doesn&#39;t contain the Log interface on it&#39;s classpath
+* link:https://issues.apache.org/jira/browse/TOMEE-1400[TOMEE-1400] - Potential NPE in TomeeAnnotationProvider
+* link:https://issues.apache.org/jira/browse/TOMEE-1408[TOMEE-1408] - Incorrect assertions within the testcode
+* link:https://issues.apache.org/jira/browse/TOMEE-1409[TOMEE-1409] - Invalid configuration in module openejb-junit
+* link:https://issues.apache.org/jira/browse/TOMEE-1509[TOMEE-1509] - PropertyPlaceHolderHelper does not work with cipher:
+* link:https://issues.apache.org/jira/browse/TOMEE-1519[TOMEE-1519] - SetupCommand fails to delete file/dir on Windows
+* link:https://issues.apache.org/jira/browse/TOMEE-1606[TOMEE-1606] - Bad conversion of DataSource password containing special characters
+* link:https://issues.apache.org/jira/browse/TOMEE-1626[TOMEE-1626] - Maven Tomee Exec Mojo failed when provided server.xml use env vars
+* link:https://issues.apache.org/jira/browse/TOMEE-1725[TOMEE-1725] - ManagedConnection#equals broken when not using dbcp
+* link:https://issues.apache.org/jira/browse/TOMEE-1726[TOMEE-1726] - StreamOutput not considered as a stream
+* link:https://issues.apache.org/jira/browse/TOMEE-1727[TOMEE-1727] - Application.getSingletons doesn&#39;t handle @Provider right creating warnings
+* link:https://issues.apache.org/jira/browse/TOMEE-1728[TOMEE-1728] - ApplicationComposers.run calls twice @PostConstruct of the application
+* link:https://issues.apache.org/jira/browse/TOMEE-1729[TOMEE-1729] - empty context path for application composer applications can lead to wrong http routing
+* link:https://issues.apache.org/jira/browse/TOMEE-1730[TOMEE-1730] - bad regex for embedded http layer and filter mapping when ending by *
+* link:https://issues.apache.org/jira/browse/TOMEE-1731[TOMEE-1731] - web.xml should override @ApplicationPath and not concatenate both paths
+* link:https://issues.apache.org/jira/browse/TOMEE-1739[TOMEE-1739] - Javaagent arguments ignored by tomee-maven-plugin
+* link:https://issues.apache.org/jira/browse/TOMEE-1740[TOMEE-1740] - Ensure Contexts propagates in ManagedExecutors the exchange to be able to inject RS @Context in async endpoints
+* link:https://issues.apache.org/jira/browse/TOMEE-1741[TOMEE-1741] - Incorrect log message
+* link:https://issues.apache.org/jira/browse/TOMEE-1742[TOMEE-1742] - application composer mvn plugins don&#39;t work with maven > 3.0
+* link:https://issues.apache.org/jira/browse/TOMEE-1748[TOMEE-1748] - managed executor factory should support a Threadfactory (not a Managed one) as thread factory
+* link:https://issues.apache.org/jira/browse/TOMEE-1751[TOMEE-1751] - RemoteServer doesnt support system properties with equals in values
+* link:https://issues.apache.org/jira/browse/TOMEE-1759[TOMEE-1759] - JSF NPE in FashImpl with nested/forward request
+* link:https://issues.apache.org/jira/browse/TOMEE-1764[TOMEE-1764] - JSP @Resource not honored if only in JSP
+* link:https://issues.apache.org/jira/browse/TOMEE-1765[TOMEE-1765] - @Transactional doesn&#39;t throw as cause synchronization exceptions
+* link:https://issues.apache.org/jira/browse/TOMEE-1767[TOMEE-1767] - @DataSourceDefinition doesn&#39;t support XADataSource
+* link:https://issues.apache.org/jira/browse/TOMEE-1770[TOMEE-1770] - @Initialized(AppScoped) not using the right classloader in tomee-embedded
+* link:https://issues.apache.org/jira/browse/TOMEE-1772[TOMEE-1772] - Singleton DependsOnTest fails most of the times
+* link:https://issues.apache.org/jira/browse/TOMEE-1777[TOMEE-1777] - some resources are not properly removed from OpenEjbConfiguration
+* link:https://issues.apache.org/jira/browse/TOMEE-1785[TOMEE-1785] - activate bean validation with jaxrs by default
+* link:https://issues.apache.org/jira/browse/TOMEE-1786[TOMEE-1786] - BvalCdiFilter is not active
+* link:https://issues.apache.org/jira/browse/TOMEE-1787[TOMEE-1787] - EJBExceptionMapper can end up in a NPE
+* link:https://issues.apache.org/jira/browse/TOMEE-1788[TOMEE-1788] - TomEE fails to start embedded ActiveMQ
+* link:https://issues.apache.org/jira/browse/TOMEE-1791[TOMEE-1791] - property-provider should be properties-provider for tomee.xml on resources
+* link:https://issues.apache.org/jira/browse/TOMEE-1792[TOMEE-1792] - Eclipselink integration not working in flat classloader mode
+* link:https://issues.apache.org/jira/browse/TOMEE-1796[TOMEE-1796] - dont add war resources when running a .war with tomee embedded
+* link:https://issues.apache.org/jira/browse/TOMEE-1799[TOMEE-1799] - Java 8 : java.lang.IllegalArgumentException: Comparison method violates its general contract!
+* link:https://issues.apache.org/jira/browse/TOMEE-1800[TOMEE-1800] - SystemProperty not merged when using Import in tomee.xml
+* link:https://issues.apache.org/jira/browse/TOMEE-1805[TOMEE-1805] - HttpServletRequest#logout doesn&#39;t clear authenticated identity in EJB
+* link:https://issues.apache.org/jira/browse/TOMEE-1806[TOMEE-1806] - GeronimoConnectionManager background connection validation not working
+* link:https://issues.apache.org/jira/browse/TOMEE-1811[TOMEE-1811] - IllegalArgumentException - File [xxxxxx.jar!/META-INF/persistence.xml] does not exist:
+* link:https://issues.apache.org/jira/browse/TOMEE-1816[TOMEE-1816] - java.lang.NoSuchFieldException: pool in Connector Resource Adapter deploy
+
+== Dependency upgrade
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1391[TOMEE-1391] - Use maven-filtering:1.2 to fix MSHARED-319 when compiling under JDK8
+* link:https://issues.apache.org/jira/browse/TOMEE-1754[TOMEE-1754] - Tomcat 8.5.2
+* link:https://issues.apache.org/jira/browse/TOMEE-1757[TOMEE-1757] - [plume] eclipselinks 2.6.3
+* link:https://issues.apache.org/jira/browse/TOMEE-1760[TOMEE-1760] - CXf 3.1.6
+* link:https://issues.apache.org/jira/browse/TOMEE-1776[TOMEE-1776] - myfaces 2.2.10
+* link:https://issues.apache.org/jira/browse/TOMEE-1781[TOMEE-1781] - slf4j 1.7.21
+* link:https://issues.apache.org/jira/browse/TOMEE-1803[TOMEE-1803] - upgrade to AMQ 5.13.3
+
+== Improvement
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1269[TOMEE-1269] - if a @Path interface has a single implementation add it as rest service
+* link:https://issues.apache.org/jira/browse/TOMEE-1270[TOMEE-1270] - exclude from scanning @Deprecated @Providers
+* link:https://issues.apache.org/jira/browse/TOMEE-1273[TOMEE-1273] - fix SslTomEETest to work with JDK 8 keytool
+* link:https://issues.apache.org/jira/browse/TOMEE-1328[TOMEE-1328] - Arquillian.xml &#39;additionalLibs&#39;
+must fail-fast
+* link:https://issues.apache.org/jira/browse/TOMEE-1336[TOMEE-1336] - Support classname.activated = true/false for auto discovered providers
+* link:https://issues.apache.org/jira/browse/TOMEE-1339[TOMEE-1339] - [JAXRS] try static resources first
+* link:https://issues.apache.org/jira/browse/TOMEE-1365[TOMEE-1365] - Updated to use try statement RemoteServer
+* link:https://issues.apache.org/jira/browse/TOMEE-1367[TOMEE-1367] - add singleDumpByArchiveName parameter to arquillian tomee adapters
+* link:https://issues.apache.org/jira/browse/TOMEE-1736[TOMEE-1736] - more explicit message if ejbd fails cause of class filtering (introduced for 0-day vulnerability fixed in previous release)
+* link:https://issues.apache.org/jira/browse/TOMEE-1737[TOMEE-1737] - activating default EE resources in the distribution but not in others modes
+* link:https://issues.apache.org/jira/browse/TOMEE-1738[TOMEE-1738] - basic configuration for TomEEJarScanner
+* link:https://issues.apache.org/jira/browse/TOMEE-1744[TOMEE-1744] - Ensure tomee embedded uses default tomcat connector by default (nio)
+* link:https://issues.apache.org/jira/browse/TOMEE-1745[TOMEE-1745] - allow to configure on command line server.xml and tomee.xml to use for tomee embedded provided main(String[])
+* link:https://issues.apache.org/jira/browse/TOMEE-1746[TOMEE-1746] - support connector configuration for tomee embedded with properties starting with connector.xxx (xxx being a connector option)
+* link:https://issues.apache.org/jira/browse/TOMEE-1747[TOMEE-1747] - for managed executor, thread factory option should support resource name
+* link:https://issues.apache.org/jira/browse/TOMEE-1749[TOMEE-1749] - [ApplicationComposer] support Gradle test/main as we support Maven for @Default
+* link:https://issues.apache.org/jira/browse/TOMEE-1750[TOMEE-1750] - support Gradle as invalid folders (for name identification)
+* link:https://issues.apache.org/jira/browse/TOMEE-1766[TOMEE-1766] - ensure default org.apache.johnzon.max-string-length size is 4k
+* link:https://issues.apache.org/jira/browse/TOMEE-1784[TOMEE-1784] - try to force persistence enhancement in tomee-embedded
+* link:https://issues.apache.org/jira/browse/TOMEE-1789[TOMEE-1789] - Expose Pool flush() through JMX
+* link:https://issues.apache.org/jira/browse/TOMEE-1790[TOMEE-1790] - Allow primitive arrays to be serialized/deserialized over (http)ejbd
+* link:https://issues.apache.org/jira/browse/TOMEE-1802[TOMEE-1802] - support network connector configuration on AMQ uri syntax (tomee.xml)
+* link:https://issues.apache.org/jira/browse/TOMEE-1807[TOMEE-1807] - exclude jaxb and junit from tomee embedded
+
+== New Feature
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1274[TOMEE-1274] - support additionalLibs in arquillian.xml to add libs from mvn coordinates to tomee/lib
+* link:https://issues.apache.org/jira/browse/TOMEE-1282[TOMEE-1282] - basic @Transactional @TransactionScoped support
+* link:https://issues.apache.org/jira/browse/TOMEE-1288[TOMEE-1288] - supports default in out propertyplaceholding
+* link:https://issues.apache.org/jira/browse/TOMEE-1289[TOMEE-1289] - allow user to provide a properties-provider on resources
+* link:https://issues.apache.org/jira/browse/TOMEE-1294[TOMEE-1294] - Allow to set System-Property in tomee.xml
+* link:https://issues.apache.org/jira/browse/TOMEE-1295[TOMEE-1295] - openjpa.EntityManagerFactoryPool support for container persistence unit
+* link:https://issues.apache.org/jira/browse/TOMEE-1297[TOMEE-1297] - add @Jars annotation to ApplicationComposer
+* link:https://issues.apache.org/jira/browse/TOMEE-1298[TOMEE-1298] - Support JSR 107: JCACHE - Java Temporary Caching API
+* link:https://issues.apache.org/jira/browse/TOMEE-1332[TOMEE-1332] - support @Startup on CDI beans (@ApplicationScoped or normal scoped beans if the context is active at boot time)
+* link:https://issues.apache.org/jira/browse/TOMEE-1341[TOMEE-1341] - Arquillian support for Suite testing
+* link:https://issues.apache.org/jira/browse/TOMEE-1487[TOMEE-1487] - CDI Event based realm
+* link:https://issues.apache.org/jira/browse/TOMEE-1735[TOMEE-1735] - basic JMSContext implementation
+* link:https://issues.apache.org/jira/browse/TOMEE-1755[TOMEE-1755] - add tomee.tomcat.cookieProcessor to be able to use old cookie behavior
+* link:https://issues.apache.org/jira/browse/TOMEE-1756[TOMEE-1756] - add ConfigurationCustomizer for tomee embedded configuration
+* link:https://issues.apache.org/jira/browse/TOMEE-1758[TOMEE-1758] - support remove:prefix in additionalLibs in remote arquillian adapter
+* link:https://issues.apache.org/jira/browse/TOMEE-1761[TOMEE-1761] - allow to take a thread dump if a resource takes more than X to be destroyed
+* link:https://issues.apache.org/jira/browse/TOMEE-1769[TOMEE-1769] - Allow to configure formatter pattern on LocalfileHandler
+* link:https://issues.apache.org/jira/browse/TOMEE-1771[TOMEE-1771] - Expose Deployer reload() function through JMX
+* link:https://issues.apache.org/jira/browse/TOMEE-1775[TOMEE-1775] - tomee embedded single instance runner
+* link:https://issues.apache.org/jira/browse/TOMEE-1780[TOMEE-1780] - basic tomee-embedded gradle plugin
+* link:https://issues.apache.org/jira/browse/TOMEE-1783[TOMEE-1783] - allow tomee embedded (+maven + gradle) to force the webapp loader to be the boot one for deploy classpath method
+* link:https://issues.apache.org/jira/browse/TOMEE-1798[TOMEE-1798] - can&#39;t load JTA and Common annotation on Java 9
+* link:https://issues.apache.org/jira/browse/TOMEE-1804[TOMEE-1804] - add Monkey tomee-maven-plugin customizer
+* link:https://issues.apache.org/jira/browse/TOMEE-1808[TOMEE-1808] - create a tomee embedded shade jaxrs oriented (without activemq)
+* link:https://issues.apache.org/jira/browse/TOMEE-1809[TOMEE-1809] - Run jaxws webservices using tomee embedded using --path parameter
+
+== Task
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1276[TOMEE-1276] - rework TimerExecutor
+* link:https://issues.apache.org/jira/browse/TOMEE-1279[TOMEE-1279] - integrate batchee
+* link:https://issues.apache.org/jira/browse/TOMEE-1280[TOMEE-1280] - myfaces 2.2.x
+* link:https://issues.apache.org/jira/browse/TOMEE-1317[TOMEE-1317] - Ensure full support of JSR-349 Bean Validation 1.1
+* link:https://issues.apache.org/jira/browse/TOMEE-1327[TOMEE-1327] - log4j2 integration
+* link:https://issues.apache.org/jira/browse/TOMEE-1331[TOMEE-1331] - rework ProvisiningUtil to allow it to support more resolvers
+* link:https://issues.apache.org/jira/browse/TOMEE-1410[TOMEE-1410] - Cleanup poms to update the filtering of EXE files.
+* link:https://issues.apache.org/jira/browse/TOMEE-1572[TOMEE-1572] - adopt latest OWB-1.6.0 changes
+
+== Test
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1290[TOMEE-1290] - Source build profile &#39;hibernate&#39;
+requires junit dependency
+* link:https://issues.apache.org/jira/browse/TOMEE-1338[TOMEE-1338] - Create tests for DeployerEjb

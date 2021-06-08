@@ -4,20 +4,20 @@
 :jbake-status: published
 
 
-=== Contribute
+== Contribute
 
-- link:contributing/contribution-tips.html[Contribution tips]
-- link:contributing/workflow.html[Contribution workflow]
-- link:sources.html[Apache TomEE]
-- link:contributing/website.html[This website]
-- link:contributors.html[TomEE Wall Of Fame]
+* xref:contributing/contribution-tips.adoc[Contribution tips]
+* xref:contributing/workflow.adoc[Contribution workflow]
+* xref:sources.adoc[Contribute to Apache TomEE]
+* xref:contributing/website.adoc[Contribute to this Website]
+* xref:contributors.adoc[Apache TomEE - Wall Of Fame]
 
-=== Social Media: cause contributing is not only about coding
+== Social Media: cause contributing is not only about coding
 
-Facebook, Twitter, Google+: if that speaks to you just follow this link:social.html[TomEE on Social Media].
+Facebook or Twitter: if that speaks to you just follow this xref:social.adoc[TomEE on Social Media].
 
-=== Support
+== Support
 
-For more information about available support for TomEE please have a look on link:../security/support.html[Support] page.
+For more information about available support for TomEE please have a look on xref:../security/support.adoc[Support] page.
 
 

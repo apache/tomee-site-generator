@@ -1,0 +1,43 @@
+= Design
+:jbake-type: page
+:jbake-status: published
+
+== OpenEJB
+
+System Design
+
+
+== Definition
+
+A modular, configurable, customizable, embeddable open source EJB container system
+
+
+== Also Known As
+
+* container system
+
+
+== Responsibilities
+
+* Implement EJB 3.0 Specification
+
+
+== Related Classes
+
+* org.apache.openejb.OpenEJB
+
+
+== Required Libraries
+
+* openejb-javaagent-3.0.x.jar
+* openejb-jee-3.0.x.jar
+* openejb-core-3.0.x.jar
+
+== Sub-components
+
+* xref:design-application-server.adoc[Application Server]
+* xref:design-transaction-service.adoc[Transaction Service]
+* xref:design-security-service.adoc[Security Service]
+* xref:design-resource-manager.adoc[Resource Manager]
+* xref:design-container.adoc[Container]
+* xref:design-assembler.adoc[Assembler]

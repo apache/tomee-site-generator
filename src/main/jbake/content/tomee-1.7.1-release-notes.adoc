@@ -1,0 +1,45 @@
+= Release Notes - TomEE - Version 1.7.1
+:jbake-type: page
+:jbake-status: published
+
+== Bug
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-1296[TOMEE-1296]] - org.apache.openejb.jpa.integration.eclipselink.OpenEJBServerPlatform mbeanServer name is wrong
+* [https://issues.apache.org/jira/browse/TOMEE-1324[TOMEE-1324]] - Problem with TomEE Maven archetype
+* [https://issues.apache.org/jira/browse/TOMEE-1325[TOMEE-1325]] - Dynamic subclassing doesn&#39;t support interfaces (@Local)
+* [https://issues.apache.org/jira/browse/TOMEE-1329[TOMEE-1329]] - jars.txt doesn&#39;t support empty lines
+* [https://issues.apache.org/jira/browse/TOMEE-1330[TOMEE-1330]] - Support to include container urls in scanning
+* [https://issues.apache.org/jira/browse/TOMEE-1334[TOMEE-1334]] - cdi lazy realm throws NPE cause of init handling (too early)
+* [https://issues.apache.org/jira/browse/TOMEE-1335[TOMEE-1335]] - openejb.deployer.save-deployments broken on war
+* [https://issues.apache.org/jira/browse/TOMEE-1342[TOMEE-1342]] - OutputGeneratedDescriptors doesn&#39;t output complete ejb-jar.xml
+* [https://issues.apache.org/jira/browse/TOMEE-1343[TOMEE-1343]] - HSQL server shuts down saying no databases available
+
+== Dependency upgrade
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-1326[TOMEE-1326]] - Upgrade to Mojarra 2.1.29
+
+== Improvement
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-1339[TOMEE-1339]] - [JAXRS] try static resources first
+
+== New Feature
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-1295[TOMEE-1295]] - openjpa.EntityManagerFactoryPool support for container persistence unit
+* [https://issues.apache.org/jira/browse/TOMEE-1297[TOMEE-1297]] - add @Jars annotation to ApplicationComposer
+* [https://issues.apache.org/jira/browse/TOMEE-1341[TOMEE-1341]] - Arquillian support for Suite testing
+
+== Test
+
+[.compact]
+* [https://issues.apache.org/jira/browse/TOMEE-1338[TOMEE-1338]] - Create tests for DeployerEjb
+
+
+= Release Notes - OpenEJB - Version 4.7.1
+
+== Bug
+
+* [https://issues.apache.org/jira/browse/OPENEJB-2100[OPENEJB-2100]] - Context Classloader not restored in org.apache.openejb.client.EJBObjectHandler.createEJBObjectProxy

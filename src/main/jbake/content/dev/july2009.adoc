@@ -1,0 +1,23 @@
+= July 2009
+:jbake-type: page
+:jbake-status: published
+
+OpenEJB 3.1.1 was released in June.
+The release contained a mix of improvements and fixes.
+Overall it was very well received and very anticipated as the last trunk release was in October 2008.
+More frequent dot releases are planned and a 3.1.2 will hopefully be not too far behind.
+
+Project participation in blogs.apache.org started up in April and has been fairly successful with about seven posts so far.
+Some effort has gone into creating a convenient way that blog posts can be staged for community review before being posted.
+The result has proven to be very easy and not cumbersome which directly contributes to the number of posts in the last two months or so.
+Two screencasts, the first of many hopefully, were also added and published through the blog.
+
+Jean-Louis Monteiro was voted in as a committer in June.
+The project is extremely happy to have him as a committer and very much enjoys his work and overall contributions in the community.
+Congratulations, Jean-Louis!
+
+Preparation has been underway to do a first release of the OpenEJB Eclipse Plugin.
+As part of the work in preparing the release files, discussion started at the beginning of the month on adding the release manager and majority contributor to the plugin, Jonathan Gallimore, to the project PMC for better oversight.
+The discussion was started on the dev list carefully and deliberately with so far very healthy and positive results.
+A vote for his addition to the PMC is now underway on the dev list, the first of hopefully many open PMC votes.
+A big compliment to the community to whose amazing openness, mutual respect, and overall friendliness makes this kind of thing possible.

@@ -1,0 +1,31 @@
+= Design - Assembler
+:jbake-type: page
+:jbake-status: published
+
+== Assembler
+
+Sub-component of xref:design.adoc[OpenEJB]
+
+== Definition
+
+Instantiates and assembles a configured, runnable, instance of the container system and all sub-components.
+Vendors needing extreme control over the construction of the container system can get it by implementing this class.
+Doing this comes with large amounts of resposibility and complexity and should not be done without a deep understanding of OpenEJB.
+
+== Responsibilities
+
+* Instantiate and initialize all Container implementations
+* Instantiate and initialize TransactionService implementation
+* Instantiate and initialize SecurityService implementation
+* Instantiate and initialize all ResourceManagers
+* Load all deployed beans
+* Populate each deployment's JNDI ENC
+* Populate the IntraVM Server's global, client, JNDI namespace
+
+== Related Packages
+
+* org.apache.openejb.spi.Assembler
+
+== Implementations
+
+* xref:design-classic-assembler.adoc[Classic Assembler]

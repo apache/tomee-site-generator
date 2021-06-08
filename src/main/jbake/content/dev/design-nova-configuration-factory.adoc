@@ -1,0 +1,24 @@
+= Design - Nova Configuration Factory
+:jbake-type: page
+:jbake-status: published
+
+== Nova Configuration Factory
+
+Implementation of xref:design-configuration-factory.adoc[Configuration Factory]
+
+== Description
+
+Populates an OpenEjbConfiguration object by combining the data from an openejb.xml file, the ejb-jar.xml and openejb-jar.xml from deployed bean jars, and service-jar.xml containing OpenEJB service implementations.
+
+== Also Known As
+
+* New Configuration Factory
+* Modular Configuration Factory
+
+== Related Classes
+
+* org.apache.openejb.config.ConfigurationFactory
+
+== Related Packages
+
+* org.apache.openejb.alt.config

@@ -1,0 +1,101 @@
+= Apache TomEE 9.0.0-M7 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+== Dependency upgrade
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-2990[TOMEE-2990] BatchEE 0.6
+ - link:https://issues.apache.org/jira/browse/TOMEE-2987[TOMEE-2987] CXF 3.4.3
+ - link:https://issues.apache.org/jira/browse/TOMEE-3747[TOMEE-3747] EclipseLink 3.0.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-3749[TOMEE-3749] Hibernate Validator 5.1.3.Final
+ - link:https://issues.apache.org/jira/browse/TOMEE-3748[TOMEE-3748] Mojarra 3.0.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-3732[TOMEE-3732] MyFaces 2.3.9
+ - link:https://issues.apache.org/jira/browse/TOMEE-2997[TOMEE-2997] OpenSAML V3.4.6
+ - link:https://issues.apache.org/jira/browse/TOMEE-2809[TOMEE-2809] OpenWebBeans 2.0.22
+ - link:https://issues.apache.org/jira/browse/TOMEE-3746[TOMEE-3746] Tomcat 10.0.4
+ - link:https://issues.apache.org/jira/browse/TOMEE-2939[TOMEE-2939] bcprov-jdk15on 1.67
+ - link:https://issues.apache.org/jira/browse/TOMEE-2988[TOMEE-2988] xbean 4.18+ (Java 16 support)
+
+== New Feature
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-3730[TOMEE-3730] Add JSONP and JSONB Providers JAX-RS Client
+ - link:https://issues.apache.org/jira/browse/TOMEE-2365[TOMEE-2365] Implement Java EE Security API from EE 8
+ - link:https://issues.apache.org/jira/browse/TOMEE-2966[TOMEE-2966] Provide a pure JUnit5 OpenEJB Extension
+ - link:https://issues.apache.org/jira/browse/TOMEE-2977[TOMEE-2977] Provide a ApplicationComposer JUnit 5 Extension
+ - link:https://issues.apache.org/jira/browse/TOMEE-2993[TOMEE-2993] API pom for each TomEE distribution
+
+== Improvement
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-2957[TOMEE-2957] Fix OWASP Checks on ASF Jenkins Environment
+ - link:https://issues.apache.org/jira/browse/TOMEE-2974[TOMEE-2974] CI Build Environment ISO-8859-1 versus UTF-8
+ - link:https://issues.apache.org/jira/browse/TOMEE-2973[TOMEE-2973] TomEE :: Examples :: JSF2/CDI/BV/JPA/DeltaSpike uses too old version of commons-lang3
+ - link:https://issues.apache.org/jira/browse/TOMEE-2976[TOMEE-2976] Provide Examples for TomEE Arquillian with JUnit 5
+ - link:https://issues.apache.org/jira/browse/TOMEE-2705[TOMEE-2705] TomEE Plus BOM
+ - link:https://issues.apache.org/jira/browse/TOMEE-2704[TOMEE-2704] TomEE Plume BOM
+ - link:https://issues.apache.org/jira/browse/TOMEE-2703[TOMEE-2703] TomEE WebProfile BOM
+ - link:https://issues.apache.org/jira/browse/TOMEE-2702[TOMEE-2702] TomEE MicroProfile BOM
+ - link:https://issues.apache.org/jira/browse/TOMEE-2995[TOMEE-2995] Support constructor injection of JAX-RS Application 
+ - link:https://issues.apache.org/jira/browse/TOMEE-2994[TOMEE-2994] JAX-RS Provider construction favors constructor with the most args
+ - link:https://issues.apache.org/jira/browse/TOMEE-2992[TOMEE-2992] [Certification/TCK] Tomcat Callback handler not consistent with authenticator
+
+== Task
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-3140[TOMEE-3140] Jakarta EE 9.1 TCK Failures
+ - link:https://issues.apache.org/jira/browse/TOMEE-3721[TOMEE-3721] Remove dependencies between tomee-webapp modules
+
+== Sub-task
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-3210[TOMEE-3210] securityapi.idstore.idstorepermission testIdentityStore_customHandlerWithoutIDStorePermission
+ - link:https://issues.apache.org/jira/browse/TOMEE-3211[TOMEE-3211] securityapi.securitycontext.callerdata testSecurityContextHasAccessToWebResource
+ - link:https://issues.apache.org/jira/browse/TOMEE-3212[TOMEE-3212] securityapi.securitycontext.getprincipalsbytype testSecurityContextGetPrincipalsByType
+ - link:https://issues.apache.org/jira/browse/TOMEE-3213[TOMEE-3213] servlet.api.jakarta_servlet.asynccontext forwardTest1
+ - link:https://issues.apache.org/jira/browse/TOMEE-3214[TOMEE-3214] servlet.api.jakarta_servlet.asynccontext originalRequestTest4
+ - link:https://issues.apache.org/jira/browse/TOMEE-3215[TOMEE-3215] servlet.api.jakarta_servlet.srevent getServletRequestTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3216[TOMEE-3216] servlet.ee.spec.security.permissiondd ValidateLocalPermsInvalidName
+ - link:https://issues.apache.org/jira/browse/TOMEE-3206[TOMEE-3206] jsp.spec.configuration.general identicalMappingTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3207[TOMEE-3207] jsp.spec.configuration.general moreSpecificMappingTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3208[TOMEE-3208] jsp.spec.configuration.general mostSpecificMappingTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3209[TOMEE-3209] jstl.spec.core.urlresource.importtag positiveImportEncodingNotSpecifiedTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3181[TOMEE-3181] jaxrs.spec.provider.jaxbcontext readWriteProviderTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3182[TOMEE-3182] jaxrs.spec.provider.standard fileProviderTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3183[TOMEE-3183] jaxrs.spec.provider.standardhaspriority readWriteBooleanProviderTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3184[TOMEE-3184] jaxrs.spec.provider.standardhaspriority readWriteCharacterProviderTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3185[TOMEE-3185] jaxrs.spec.provider.standardhaspriority readWriteJaxbProviderTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3186[TOMEE-3186] jaxrs.spec.provider.standardhaspriority readWriteMapProviderTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3220[TOMEE-3220] servlet.ee.spec.security.runAs web_to_ejb_annotation_runAs
+ - link:https://issues.apache.org/jira/browse/TOMEE-3187[TOMEE-3187] jaxrs.spec.provider.standardnotnull clientDataSourceProviderTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3221[TOMEE-3221] servlet.ee.spec.security.runAs web_to_ejb_dd_runAs
+ - link:https://issues.apache.org/jira/browse/TOMEE-3188[TOMEE-3188] jaxrs.spec.provider.standardnotnull clientJaxbProviderTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3222[TOMEE-3222] servlet.spec.defaultcontextpath getDefaultContextPathTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3189[TOMEE-3189] jaxrs.spec.provider.standardnotnull serverFileProviderTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3223[TOMEE-3223] websocket.ee.jakarta.websocket.session getRequestURITest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3224[TOMEE-3224] websocket.ee.jakarta.websocket.session setTimeout1Test
+ - link:https://issues.apache.org/jira/browse/TOMEE-2967[TOMEE-2967] Translate to Spanish: examples/xa-datasource
+ - link:https://issues.apache.org/jira/browse/TOMEE-3225[TOMEE-3225] websocket.spec.servercontainer.addendpoint getRequestURITest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3226[TOMEE-3226] websocket.spec.servercontainer.addendpoint setTimeout1Test
+ - link:https://issues.apache.org/jira/browse/TOMEE-2964[TOMEE-2964] Translate to Portuguese: examples/serverless-tomee-webprofile
+ - link:https://issues.apache.org/jira/browse/TOMEE-3217[TOMEE-3217] servlet.ee.spec.security.permissiondd ValidateLocalPermsInvalidNameInLib
+ - link:https://issues.apache.org/jira/browse/TOMEE-3218[TOMEE-3218] servlet.ee.spec.security.permissiondd ValidateMissingPermFails
+ - link:https://issues.apache.org/jira/browse/TOMEE-3219[TOMEE-3219] servlet.ee.spec.security.permissiondd ValidateMissingPermFailsInLib
+ - link:https://issues.apache.org/jira/browse/TOMEE-3190[TOMEE-3190] jpa.core.entityManager setPropertyTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3191[TOMEE-3191] jpa.core.entityManagerFactoryCloseExceptions exceptionsTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3192[TOMEE-3192] jpa.core.enums setgetFlushModeEntityManagerTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3193[TOMEE-3193] jpa.ee.packaging.appclient.annotation test1
+ - link:https://issues.apache.org/jira/browse/TOMEE-3194[TOMEE-3194] jpa.ee.packaging.appclient.descriptor test1
+ - link:https://issues.apache.org/jira/browse/TOMEE-3195[TOMEE-3195] jpa.ee.packaging.ejb.standalone test1
+ - link:https://issues.apache.org/jira/browse/TOMEE-3196[TOMEE-3196] jpa.ee.packaging.jar JarFileElementsTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3197[TOMEE-3197] jpa.ee.packaging.jar JarFileElementsTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3198[TOMEE-3198] jpa.ee.packaging.jar JarFileElementsTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3199[TOMEE-3199] jpa.ee.packaging.jar JarFileElementsTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3200[TOMEE-3200] jpa.jpa22.datetime dateTimeTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3201[TOMEE-3201] jpa.jpa22.datetime dateTimeTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3202[TOMEE-3202] jpa.jpa22.datetime dateTimeTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3203[TOMEE-3203] jpa.jpa22.datetime dateTimeTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3204[TOMEE-3204] jpa.jpa22.datetime dateTimeTest
+ - link:https://issues.apache.org/jira/browse/TOMEE-3205[TOMEE-3205] jpa.jpa22.datetime dateTimeTest

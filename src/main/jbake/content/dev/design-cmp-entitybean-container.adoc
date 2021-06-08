@@ -1,0 +1,21 @@
+= Design - CMP EntityBean Container
+:jbake-type: page
+:jbake-status: published
+
+== CMP EntityBean Container
+
+Implementation of xref:design-container.adoc[Container]
+
+== Description
+
+Container that implements the bean-container contract for CMP 1.1 and CMP 2.1 EntityBeans.
+The container adapts these old CMP EntityBeans to the new JPA Entity bean model and persists them using a JPA Persistence Provider.
+
+== Also Known As
+
+* CMP Entity Container
+* CMP Container
+
+== Formerly Known As
+
+* Castor Container

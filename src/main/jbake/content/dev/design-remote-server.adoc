@@ -1,0 +1,30 @@
+= Design - Remote Server
+:jbake-type: page
+:jbake-status: published
+
+== Remote Server
+
+Implementation of xref:design-application-server.adoc[Application Server]
+
+== Description
+
+Distributes EJB interface implementations to remote clients using a conversational serialization-based protocol.
+
+== Also Known As
+
+* EJBd Protocol
+
+== Related Classes
+
+* org.apache.openejb.server.EjbDaemon
+
+== Related Packages
+
+* org.apache.openejb.client
+* org.apache.openejb.server
+
+== Required Libraries
+
+* openejb-server-3.0.x.jar
+* openejb-ejbd-3.0.x.jar
+* openejb-client-3.0.x.jar

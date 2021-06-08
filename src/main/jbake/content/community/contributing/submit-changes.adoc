@@ -3,10 +3,10 @@
 :jbake-type: page
 :jbake-status: published
 
-=== Ensure code compiles
+== Ensure code compiles
 Actually no need to be mentioned ... 
 
-=== Ensure tests passes
+== Ensure tests passes
 On the build system for TomEE additional tests are run. If your changes cause them to fail, the build will not succeed.
 This can be avoided by running the tests before submitting the changes, the commands are:
 [source]
@@ -16,21 +16,21 @@ mvn -Pstyle pmd:check
 ----
 These are relatively quick to run - about a minute or so. 
 
-=== Smoke test
+== Smoke test
 Check at least if the server ist still starting with your changes ...
 
-=== Pull request
+== Pull request
 If you're confident of your work, the next step is to push your changes into your repository on github.
 To get your changes back into the TomEE repository you have to create a PR (pull request): on github go to your repository and select the branch where you have worked on.
 Click on "New pull request" and then on "Create pull request".
 
-=== Request review
+== Request review
 The changes in your PR can only be merged by a committer who will do a review before merging. 
 So ask on the developers mailing list for review of your PR. 
 These emails for PRs should have a description of the work in the subject line.  
 Here are some examples and why:
 
-==== Bad 
+=== Bad
 - This is an email about PR #451
 - See PR #451
 - Review PR #451
@@ -38,18 +38,18 @@ Here are some examples and why:
 
 With this style you'll get low participation on the thread as the subject is hidden.  You yourself will curse these emails in six months or a year in the future when you're looking for that valuable thread you remember, but your search reveals 10 threads all with basically only a number as the subject.  You'll either click and read all 10 PRs and email threads, or you'll more likely just give up.  Worse, you may read all 10 and not find what you're looking for.  Do your future self a favor and help him/her find the valuable discussions.
 
-==== Ok ...
+=== Ok ...
 - Options pertaining to the configuration of Javamail - PR# 451
 - Fixing issues on failover of JMS messages - PR# 451
 - Documenting deployment of JCA Connectors - PR# 451 +
 
 These are ok, much better than just a number.  Subjects are often truncated.  The real "meat" is at the end of the sentence which makes it the first to go.  Not a show-stopper, but can make your life hard when searching or scanning.
 
-==== Best!
+=== Best!
 - Javamail configuration options - PR# 451
 - JMS Failover issues - PR# 451
 - JCA connector deployment - PR# 451 +
 
 Here we flip it.  The real subject as at the beginning.  The verbs and generic nouns like "options" come after.  When you can pull it off, huge respect. 
 
-(link:workflow.html[back to Contribution workflow])
+(xref:workflow.adoc[back to Contribution workflow])

@@ -1,0 +1,17 @@
+= Apache TomEE 1.6.0.1 Release Notes
+:jbake-type: page
+:jbake-status: published
+
+== Upgrades
+
+* https://issues.apache.org/jira/browse/TOMEE-1104[TOMEE-1104] Tomcat 7.0.53
+
+== Tasks & Sub-Tasks
+
+[.compact]
+* https://issues.apache.org/jira/browse/TOMEE-1176[TOMEE-1176] Add missing ASF headers
+* https://issues.apache.org/jira/browse/TOMEE-1177[TOMEE-1177] Include Apache Tomcat Native library 1.1.30
+
+To see the full http://tomcat.apache.org/tomcat-7.0-doc/changelog.html[Changelog] of Apache Tomcat since version 7.0.51 follow this link:
+
+http://tomcat.apache.org/tomcat-7.0-doc/changelog.html

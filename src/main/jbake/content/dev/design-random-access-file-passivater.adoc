@@ -1,0 +1,19 @@
+= Design - Random Access File Passivater
+:jbake-type: page
+:jbake-status: published
+
+== Random Access File Passivater
+
+Implementation of xref:design-passivation-strategy.adoc[Passivation Strategy]
+
+== Description
+
+A PassivationStrategy that bulk passivates bean instances to a random access file.
+
+== Also Known As
+
+* RAF Passivater
+
+== Related Classes
+
+* org.apache.openejb.core.stateful.RAFPassivater

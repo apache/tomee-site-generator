@@ -1,0 +1,150 @@
+= Tomcat Installation
+:jbake-type: page
+:jbake-status: published
+
+== Overview
+
+Tomcat installation is very simple, and can be describes as "Unpack and Run".
+These instructions were written using Tomcat 6.0.14 but any recent 6.x version should work.
+If you are comfortable with the CLI, these the following quick instructions will get you going ASAP;
+otherwise skip to the <<Download Tomcat>>  section.
+
+. Download Tomcat zip or tar.gz
+. Unpack archive
+. Platform specific setup
+** <<OpenEJB - Unix>>.
+If zip was unpacked, _chmod u+x bin/_.sh*
+** <<OpenEJB - Windows>> _set JAVA_HOME =C:\your\java\installation_
+. Run bin/startup.sh or bin/startup.bat
+. Visit http://localhost:8080/
+. Run bin/shutdown.sh or bin/shutdown.bat
+
+== Download Tomcat
+
+Download Tomcat 6 zip file from link:http://tomcat.apache.org/download-60.cgi#6.0.14[here] .
+
+== Unpack Tomcat
+
+Unpack the Tomcat zip file  which will create a new directory containing the complete Tomcat installation.
+
+[source,console]
+----
+C:>jar -xvf apache-tomcat-6.0.14.zip
+created: apache-tomcat-6.0.14/
+created: apache-tomcat-6.0.14/bin/
+created: apache-tomcat-6.0.14/conf/
+...snip...
+
+C:>dir apache-tomcat-6.0.14  Volume in drive C has no label.
+Volume Serial Number is 0000-0000
+
+Directory of C:\apache-tomcat-6.0.14
+
+09/20/2007  09:14 PM	.
+09/20/2007 09:14 PM ..
+09/20/2007 09:15 PM bin
+09/20/2007 09:15 PM conf
+09/20/2007 09:15 PM lib
+07/20/2007 04:20 AM 11,560 LICENSE
+09/20/2007 09:14 PM logs
+07/20/2007 04:20 AM 556 NOTICE
+07/20/2007 04:20 AM 6,656 RELEASE-NOTES
+07/20/2007 04:20 AM 5,829 RUNNING.txt
+09/20/2007 09:14 PM temp
+09/20/2007 09:14 PM webapps
+09/20/2007 09:14 PM work
+4 File(s) 24,601 bytes 9 Dir(s) 5,085,085,696 bytes free
+----
+
+[source,console]
+----
+$ jar -xvf apache-tomcat-6.0.14.zip
+  created: apache-tomcat-6.0.14/
+  created: apache-tomcat-6.0.14/bin/
+  created: apache-tomcat-6.0.14/conf/
+...snip...
+
+$ ls apache-tomcat-6.0.14/
+LICENSE        RELEASE-NOTES  bin/	     lib/	    temp/	   work/
+NOTICE	       RUNNING.txt    conf/	     logs/	    webapps/
+----
+
+== OpenEJB - Windows
+
+Set JAVA_HOME environment variable
+
+For Windows users, the Tomcat shell scripts must know the location of the Java installation, and this is done with environment variables.
+The following command will set the JAVA_HOME environment variable:
+
+[source,console]
+----
+C:>set JAVA_HOME =C:\your\java\installation
+----
+
+== OpenEJB - Unix
+
+Make shell scripts executable
+
+For Unix users, the shell scripts in the Tomcat installation are not executable by default, so in order to execute them, you must set mark them as executable.
+If you unpacked the Tomcat tar.gz file, the scripts are already executable.  The following command will make all shell scripts executable:
+
+[source,console]
+----
+apache-tomcat-6.0.14$ chmod u+x bin/*.sh
+----
+
+== Start Tomcat
+
+Execute the following command to start the Tomcat server:
+
+[source,console]
+----
+C:>cd apache-tomcat-6.0.14\bin
+
+C:\apache-tomcat-6.0.14\bin>startup.bat
+Using CATALINA_BASE:   C:\apache-tomcat-6.0.14
+Using CATALINA_HOME:   C:\apache-tomcat-6.0.14
+Using CATALINA_TMPDIR: C:\apache-tomcat-6.0.14\temp
+Using JRE_HOME:        C:\your\java\installation
+----
+
+[source,console]
+----
+$ cd apache-tomcat-6.0.14/bin
+
+apache-tomcat-6.0.14/bin$ ./startup.sh
+Using CATALINA_BASE:   /your/tomcat/installation/apache-tomcat-6.0.14
+Using CATALINA_HOME:   /your/tomcat/installation/apache-tomcat-6.0.14
+Using CATALINA_TMPDIR: /your/tomcat/installation/apache-tomcat-6.0.14/temp
+Using JRE_HOME:        /your/java/installation
+----
+
+_NOTE:_ Your output will be different from the example above due to differences in installation location.
+
+== Verify Tomcat is Running
+
+Visit link:http://localhost:8080/[]  and you should see the Tomcat welcome page.
+
+== Stop Tomcat
+
+Shutdown Tomcat by executing the following command:
+
+[source,console]
+----
+C:\apache-tomcat-6.0.14\bin>shutdown.bat
+Using CATALINA_BASE:   C:\apache-tomcat-6.0.14
+Using CATALINA_HOME:   C:\apache-tomcat-6.0.14
+Using CATALINA_TMPDIR: C:\apache-tomcat-6.0.14\temp
+Using JRE_HOME:        C:\your\java\installation
+----
+
+[source,console]
+----
+ apache-tomcat-6.0.14/bin$ ./shutdown.sh
+ Using CATALINA_BASE:   /your/tomcat/installation/apache-tomcat-6.0.14
+ Using CATALINA_HOME:   /your/tomcat/installation/apache-tomcat-6.0.14
+ Using CATALINA_TMPDIR: /your/tomcat/installation/apache-tomcat-6.0.14/temp
+ Using JRE_HOME:        /your/java/installation
+----
+
+_NOTE:_ Your output will be different from the example above due to differences in installation locations.

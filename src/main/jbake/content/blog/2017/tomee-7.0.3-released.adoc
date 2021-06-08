@@ -3,7 +3,6 @@
 :jbake-type: post
 :jbake-tags: website
 :jbake-status: published
-:jbake-tomeepdf:
 
 Aapche TomEE 7.0.3 just got released. It is available as usual on central
 or our download page.

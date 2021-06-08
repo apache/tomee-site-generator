@@ -1,0 +1,34 @@
+= ASF ASF Board meetings are the third Wednesday of each month:
+:jbake-type: page
+:jbake-status: published
+
+Reports must be filed monthly for the first three months after Incubation:
+
+* xref:june2007.adoc[June 18, 2007]
+* xref:july2007.adoc[July 16, 2007]
+* xref:august2007.adoc[August 13, 2007]
+
+Then quarterly after that starting the month after:
+
+* xref:october2007.adoc[October 15, 2007]
+* xref:january2008.adoc[January 14, 2008]
+* xref:april2008.adoc[April 14, 2008]
+* xref:july2008.adoc[July 14, 2008]
+* xref:october2008.adoc[October 13, 2008]
+
+NOTE: january2009 is missing
+
+* xref:january2009.adoc[January 19, 2009]
+* xref:april2009.adoc[April 13, 2009]
+* xref:july2009.adoc[July 13, 2009]
+* xref:october2009.adoc[October 21, 2009]
+* xref:january2010.adoc[January 20, 2010]
+
+NOTE: april2010 is missing
+
+* xref:april2010.adoc[April 21, 2010]
+* xref:july2010.adoc[July 21, 2010]
+
+NOTE: october2010 is missing
+
+* xref:october2010.adoc[October 20, 2010]

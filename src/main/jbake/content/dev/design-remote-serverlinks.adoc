@@ -1,0 +1,5 @@
+= Design - Remote ServerLinks
+:jbake-type: page
+:jbake-status: published
+
+include::design-application-serverlinks.adoc[leveloffset=+1]

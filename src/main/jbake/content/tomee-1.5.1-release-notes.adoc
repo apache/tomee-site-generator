@@ -1,0 +1,420 @@
+= Apache TomEE 1.5.1 Release Notes
+:jbake-type: page
+:jbake-status: published
+
+== Upgrades
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-571[TOMEE-571] Update to OWB 1.1.7
+* link:https://issues.apache.org/jira/browse/TOMEE-629[TOMEE-629] myfaces 2.1.10
+* link:https://issues.apache.org/jira/browse/TOMEE-472[TOMEE-472] XBean 3.12
+* link:https://issues.apache.org/jira/browse/TOMEE-516[TOMEE-516] ShrinkWrap 1.1.1-alpha-1
+* link:https://issues.apache.org/jira/browse/TOMEE-513[TOMEE-513] arquillian 1.0.3.Final
+* link:https://issues.apache.org/jira/browse/TOMEE-512[TOMEE-512] Shrinkwrap Descriptors 2.0.0.alpha-4
+* link:https://issues.apache.org/jira/browse/TOMEE-511[TOMEE-511] Arquilliant Transaction 1.0.0.Alpha2
+* link:https://issues.apache.org/jira/browse/TOMEE-494[TOMEE-494] Slf4j 1.7.2
+* link:https://issues.apache.org/jira/browse/TOMEE-453[TOMEE-453] Tomcat 7.0.34
+* link:https://issues.apache.org/jira/browse/TOMEE-457[TOMEE-457] cxf 2.6.3
+* link:https://issues.apache.org/jira/browse/TOMEE-455[TOMEE-455] Was not able to use CXF SOAP client with SalesForce until JAXB upgraded to 2.2.6
+* link:https://issues.apache.org/jira/browse/TOMEE-454[TOMEE-454] ActiveMQ 5.7.0
+* link:https://issues.apache.org/jira/browse/OPENEJB-1927[OPENEJB-1927] Hibernate 4.1.8.Final
+
+== New Features
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-630[TOMEE-630] add a maven archetype to start a project with tomee
+* link:https://issues.apache.org/jira/browse/TOMEE-440[TOMEE-440] add a tomee test enricher for arquillian tomee adapters
+* link:https://issues.apache.org/jira/browse/TOMEE-600[TOMEE-600] ability to inject remote initial context in tomee clients
+* link:https://issues.apache.org/jira/browse/TOMEE-473[TOMEE-473] ability to customize a bit more the classloaders
+* link:https://issues.apache.org/jira/browse/TOMEE-460[TOMEE-460] allow tomee maven plugin to reload application (war)
+* link:https://issues.apache.org/jira/browse/TOMEE-566[TOMEE-566] ability to let openejb/tomee scan entities instead of letting the jpa provider doing it
+* link:https://issues.apache.org/jira/browse/OPENEJB-1902[OPENEJB-1902] support shrinkwrap archive as library in openejb arquillian embedded adapter
+* link:https://issues.apache.org/jira/browse/OPENEJB-1906[OPENEJB-1906] active by default karaf webconsole in KarafEE
+* link:https://issues.apache.org/jira/browse/OPENEJB-1929[OPENEJB-1929] add an openejb lightweight web module to be able to write web tests more easily in embedded mode
+* link:https://issues.apache.org/jira/browse/OPENEJB-1931[OPENEJB-1931] support servlet deployment in embedded mode
+* link:https://issues.apache.org/jira/browse/AMQ-4005[AMQ-4005] Implement pluggable broker lockers
+* link:https://issues.apache.org/jira/browse/AMQ-3787[AMQ-3787] useCompression on server side specially on network of brokers
+* link:https://issues.apache.org/jira/browse/AMQ-3880[AMQ-3880] WSS transport
+* link:https://issues.apache.org/jira/browse/AMQ-3298[AMQ-3298] Cannot create bridge to WebSphere queue using default messaging provider
+* link:https://issues.apache.org/jira/browse/AMQ-3894[AMQ-3894] Add support for Broker based redelivery
+* link:https://issues.apache.org/jira/browse/AMQ-2106[AMQ-2106] Allow broker to evenly distribute message groups among consumers
+* link:https://issues.apache.org/jira/browse/AMQ-3917[AMQ-3917] ActiveMQ should support multiple durable subscriptions per Stomp client
+* link:https://issues.apache.org/jira/browse/AMQ-3924[AMQ-3924] Allow REST API to connect to the secured broker
+* link:https://issues.apache.org/jira/browse/AMQ-4065[AMQ-4065] Add optional destination suffix for the IndividualDeadLetterStrategy
+* link:https://issues.apache.org/jira/browse/CXF-4460[CXF-4460] Support static claims globally and per endpoint
+* link:https://issues.apache.org/jira/browse/MYFACES-3612[MYFACES-3612] [perf] compress/remove spaces for facelets html markup
+* link:https://issues.apache.org/jira/browse/MYFACES-3636[MYFACES-3636] Add new Web Context Parameter to set Resource Buffer Size
+
+== Improvements
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-633[TOMEE-633] More understandable 'tomee.autoconfig' property to control automatic creation of resources
+* link:https://issues.apache.org/jira/browse/TOMEE-488[TOMEE-488] Js JNDI Panel
+* link:https://issues.apache.org/jira/browse/TOMEE-486[TOMEE-486] ability to override properties values (system.properties + services) by environment
+* link:https://issues.apache.org/jira/browse/TOMEE-481[TOMEE-481] RemoteServer should stop tomcat with Bootstrap stop and not with only the socket
+* link:https://issues.apache.org/jira/browse/TOMEE-482[TOMEE-482] Split the "dangerous" parts of the tomee webapp into a secure subdir
+* link:https://issues.apache.org/jira/browse/TOMEE-480[TOMEE-480] deploy SOAP webservices using the classloader of the app/webapp containing it
+* link:https://issues.apache.org/jira/browse/TOMEE-500[TOMEE-500] tomee-jdbc doesn't handle passwordcipher
+* link:https://issues.apache.org/jira/browse/TOMEE-447[TOMEE-447] Using Handlebars
+* link:https://issues.apache.org/jira/browse/TOMEE-627[TOMEE-627] when an @Resource injection can't be statisfied the error message is not always explicit
+* link:https://issues.apache.org/jira/browse/TOMEE-476[TOMEE-476] Update Bootstrap
+* link:https://issues.apache.org/jira/browse/TOMEE-477[TOMEE-477] In Arquillian TomEE ensure test class is useable when using our custom enricher (not only load it)
+* link:https://issues.apache.org/jira/browse/TOMEE-478[TOMEE-478] JS should load WebServiceHelperImpl info
+* link:https://issues.apache.org/jira/browse/TOMEE-474[TOMEE-474] not persistent amq brokers shouldnt need to specify an empty Datasource parameter in AMQ RA
+* link:https://issues.apache.org/jira/browse/TOMEE-470[TOMEE-470] Use less.js
+* link:https://issues.apache.org/jira/browse/TOMEE-559[TOMEE-559] TomEE should be able to support the tomee. prefix for properties
+* link:https://issues.apache.org/jira/browse/TOMEE-617[TOMEE-617] Have a look if warning due to load webapp classes from tempclassloader couldnt be avoided
+* link:https://issues.apache.org/jira/browse/TOMEE-514[TOMEE-514] JSONProvider - default setting of serializeAsArray is true, leading to marshaling error in out-of-the-box CXF configuration
+* link:https://issues.apache.org/jira/browse/TOMEE-510[TOMEE-510] shade javax.management.* from mbean annotation api to openejb-api to be able to use it even in OSGi and show it is not (yet) standard
+* link:https://issues.apache.org/jira/browse/TOMEE-596[TOMEE-596] provide a way to limit package took into account when using openejb to scan jpa entities
+* link:https://issues.apache.org/jira/browse/TOMEE-462[TOMEE-462] avoid to reload classes from appclassloader in tempclassloader
+* link:https://issues.apache.org/jira/browse/TOMEE-464[TOMEE-464] lazystopclassloader should call stop after destroyapplication to allow reload without memory leak
+* link:https://issues.apache.org/jira/browse/TOMEE-468[TOMEE-468] skip sub folders properly when synchronizing conf/lib/bin in arquillian adapter
+* link:https://issues.apache.org/jira/browse/TOMEE-467[TOMEE-467] ability to specify CATALINA_OPTS in arquillian.xml
+* link:https://issues.apache.org/jira/browse/TOMEE-498[TOMEE-498] tomee maven plugin can't use removeDefaultWebapps if adding a custom webapp
+* link:https://issues.apache.org/jira/browse/TOMEE-569[TOMEE-569] cdi resolution in ear are not complete from webapp
+* link:https://issues.apache.org/jira/browse/TOMEE-499[TOMEE-499] OpenEJBContextConfig doesn't handle correctly ROOT webapp
+* link:https://issues.apache.org/jira/browse/TOMEE-565[TOMEE-565] set tomee serverinfo
+* link:https://issues.apache.org/jira/browse/TOMEE-567[TOMEE-567] Check for invalid attributes in tomee.xml file
+* link:https://issues.apache.org/jira/browse/TOMEE-560[TOMEE-560] allow to use a custom bean validation impl in webapps
+* link:https://issues.apache.org/jira/browse/TOMEE-525[TOMEE-525] set openejb.jmx.active to false by default
+* link:https://issues.apache.org/jira/browse/TOMEE-490[TOMEE-490] Use regular xmlhttp requests is the browser does not support websockets
+* link:https://issues.apache.org/jira/browse/TOMEE-561[TOMEE-561] Rethink arquillian-tomee-webapp-remote adapter to reflect user experience with installer
+* link:https://issues.apache.org/jira/browse/TOMEE-563[TOMEE-563] better mapping of openejb bootstrap in tomee.sh (to get cipher command\...)
+* link:https://issues.apache.org/jira/browse/TOMEE-495[TOMEE-495] if a bean is @Local and @LocalBean local business interface are ignored in CDI resolution
+* link:https://issues.apache.org/jira/browse/TOMEE-496[TOMEE-496] expose a Single Line Formatter useable with arquillian tomee remote adapter
+* link:https://issues.apache.org/jira/browse/TOMEE-497[TOMEE-497] arquillian tomee remote should expose a simpleLog attribute to get more readable log (embedded mode like)
+* link:https://issues.apache.org/jira/browse/TOMEE-452[TOMEE-452] resource in context.xml not available
+* link:https://issues.apache.org/jira/browse/TOMEE-612[TOMEE-612] use javax.persistence.validation.mode is validationMode is not set in persistence.xml
+* link:https://issues.apache.org/jira/browse/TOMEE-615[TOMEE-615] ear cdi and specializations/alternatives
+* link:https://issues.apache.org/jira/browse/TOMEE-611[TOMEE-611] if validation mode of jpa is none we shouldn't pass the validation factory to the emf
+* link:https://issues.apache.org/jira/browse/OPENEJB-1924[OPENEJB-1924] in arquillian-openejb-embedded release creational context of test class
+* link:https://issues.apache.org/jira/browse/OPENEJB-1925[OPENEJB-1925] don't suppose openejb (embedded) is started from app classloader for JULI classes
+* link:https://issues.apache.org/jira/browse/OPENEJB-1926[OPENEJB-1926] ignore org.scalatest interfaces
+* link:https://issues.apache.org/jira/browse/OPENEJB-1920[OPENEJB-1920] [KARAFEE] imported services in cdi should only be the service on the deployed bundle
+* link:https://issues.apache.org/jira/browse/OPENEJB-1903[OPENEJB-1903] managing ShrinkWrap resources in embedded openejb adapter
+* link:https://issues.apache.org/jira/browse/OPENEJB-1921[OPENEJB-1921] [KARAFEE] getResources should aggregate instead of returning the first value
+* link:https://issues.apache.org/jira/browse/OPENEJB-1908[OPENEJB-1908] [KarafEE] use a transaction manager from OSGi registry
+* link:https://issues.apache.org/jira/browse/OPENEJB-1909[OPENEJB-1909] try etc folder if conf folder is not available
+* link:https://issues.apache.org/jira/browse/OPENEJB-1911[OPENEJB-1911] ProxyEJB shouldnt add IvmProxy and Serializable interface for all localbean proxies
+* link:https://issues.apache.org/jira/browse/OPENEJB-1912[OPENEJB-1912] KarafEE logs
+* link:https://issues.apache.org/jira/browse/OPENEJB-1933[OPENEJB-1933] When implicitely creating a non jta or jta datasource for a persistence unit the max initial size should be 5 and not the same than the model to avoid too much netweork bandwith usage
+* link:https://issues.apache.org/jira/browse/OPENEJB-1915[OPENEJB-1915] ignore net.sourceforge.cobertura.coveragedata.HasBeenInstrumented for ejb interfaces
+* link:https://issues.apache.org/jira/browse/OPENEJB-1916[OPENEJB-1916] KarafEE distribution should come with its bundle in system repo
+* link:https://issues.apache.org/jira/browse/OPENEJB-1913[OPENEJB-1913] avoid NPE in OSGi Deployer
+* link:https://issues.apache.org/jira/browse/OPENEJB-1932[OPENEJB-1932] basic filter + servletcontextinitializer support for applicationcomposer
+* link:https://issues.apache.org/jira/browse/OPENEJB-1914[OPENEJB-1914] revisit slightly the way bundle are retrieved in felix (karafee)
+* link:https://issues.apache.org/jira/browse/OPENEJB-1956[OPENEJB-1956] try to get rootUrl for persistence units even with ApplicationComposer
+* link:https://issues.apache.org/jira/browse/AMQ-4003[AMQ-4003] Add option to PooledConnectionFactory to control if connection should be created on startup or not
+* link:https://issues.apache.org/jira/browse/AMQ-4004[AMQ-4004] activemq-pool - Rename maximumActive option maximumActiveSessionPerConnection
+* link:https://issues.apache.org/jira/browse/AMQ-4008[AMQ-4008] Tomcat WARN on shutdown about ThreadLocal not cleared from log4j
+* link:https://issues.apache.org/jira/browse/AMQ-3986[AMQ-3986] Allow optimizeDurableTopicPrefetch to be set using resource adapter properties
+* link:https://issues.apache.org/jira/browse/AMQ-3983[AMQ-3983] Fix osgi dependency
+* link:https://issues.apache.org/jira/browse/AMQ-3980[AMQ-3980] Websocket transport: support increasing the max size of websocket messages
+* link:https://issues.apache.org/jira/browse/AMQ-3696[AMQ-3696] Slave broker cannot be stopped in a JDBC Master/Slave configuration within OSGi
+* link:https://issues.apache.org/jira/browse/AMQ-3890[AMQ-3890] Turn dependency on fusemq-leveldb optional
+* link:https://issues.apache.org/jira/browse/AMQ-3893[AMQ-3893] Adjust topic policy entry in default configuration
+* link:https://issues.apache.org/jira/browse/AMQ-3991[AMQ-3991] Output version number in started log line to be consistent
+* link:https://issues.apache.org/jira/browse/AMQ-4027[AMQ-4027] Add support for java 7 in AbstractJmxCommand
+* link:https://issues.apache.org/jira/browse/AMQ-4026[AMQ-4026] Refactor logic to shutdown thread pools using a single API to ensure better shutdown and offer logging et all
+* link:https://issues.apache.org/jira/browse/AMQ-4029[AMQ-4029] Unregistering mbean should handle null mbean names
+* link:https://issues.apache.org/jira/browse/AMQ-4028[AMQ-4028] Add support for testing secured web sockets
+* link:https://issues.apache.org/jira/browse/AMQ-3861[AMQ-3861] Offer a way to not set a transaction manager in activemq-camel
+* link:https://issues.apache.org/jira/browse/AMQ-4012[AMQ-4012] Use english locale for introspection support when discovering setter/getter method names
+* link:https://issues.apache.org/jira/browse/AMQ-4011[AMQ-4011] Refactor IntrospectionSupport to avoid using java bean property editors
+* link:https://issues.apache.org/jira/browse/AMQ-4010[AMQ-4010] Use pre compiled patterns for JMX ObjectName encoder
+* link:https://issues.apache.org/jira/browse/AMQ-4019[AMQ-4019] Make better use of commons-pool in activemq-pool
+* link:https://issues.apache.org/jira/browse/AMQ-4016[AMQ-4016] org.apache.activemq.ActiveMQConnectionFactory - Seems like static thread pool is not used
+* link:https://issues.apache.org/jira/browse/AMQ-4015[AMQ-4015] Add uptime to broker mbean and when stopping broker to report its uptime
+* link:https://issues.apache.org/jira/browse/AMQ-3877[AMQ-3877] Add ability to set a timeout for the calls made to Broker MBeans
+* link:https://issues.apache.org/jira/browse/AMQ-3878[AMQ-3878] Reset stats automatically without dependancy on JMX / Java APIs
+* link:https://issues.apache.org/jira/browse/AMQ-3224[AMQ-3224] Redelivery per destination
+* link:https://issues.apache.org/jira/browse/AMQ-3770[AMQ-3770] Generalize LDAP group processing / LDAP group expansion
+* link:https://issues.apache.org/jira/browse/AMQ-3534[AMQ-3534] Fixes to poms to allow eclipse indigo and m2eclipse to not show errors.
+* link:https://issues.apache.org/jira/browse/AMQ-3902[AMQ-3902] Documentation for JMS Bridge With Oracle AQ
+* link:https://issues.apache.org/jira/browse/AMQ-3813[AMQ-3813] limit the number of producers and consumers created by a Connection
+* link:https://issues.apache.org/jira/browse/AMQ-3815[AMQ-3815] Hybrid Master Slave Architecture
+* link:https://issues.apache.org/jira/browse/AMQ-3918[AMQ-3918] Expose transport connector URIs in uniform fashion
+* link:https://issues.apache.org/jira/browse/AMQ-3913[AMQ-3913] Stomp Spec allows for stomp headers to have spaces in key or value we currently trim.
+* link:https://issues.apache.org/jira/browse/AMQ-3914[AMQ-3914] Add support for MS SQL JDBC driver 4.0
+* link:https://issues.apache.org/jira/browse/AMQ-3940[AMQ-3940] REST API - support application/json response type
+* link:https://issues.apache.org/jira/browse/AMQ-4049[AMQ-4049] Polish the AMQ start|stop logging
+* link:https://issues.apache.org/jira/browse/AMQ-3847[AMQ-3847] Optional import for org.apache.activemq.pool in activemq-camel should be required
+* link:https://issues.apache.org/jira/browse/AMQ-3060[AMQ-3060] java.lang.ClassCastException: org.apache.activemq.broker.region.QueueSubscription cannot be cast to org.apache.activemq.broker.region.DurableTopicSubscription
+* link:https://issues.apache.org/jira/browse/AMQ-3950[AMQ-3950] Blueprint version should be [0.3,2)
+* link:https://issues.apache.org/jira/browse/AMQ-3859[AMQ-3859] To tight version range in activemq features file
+* link:https://issues.apache.org/jira/browse/AMQ-3822[AMQ-3822] The current sslContext element does not provide the ability to define the keystore key password key.
+* link:https://issues.apache.org/jira/browse/AMQ-3960[AMQ-3960] Update 5.7 to use Apache Camel 2.10.x
+* link:https://issues.apache.org/jira/browse/AMQ-4069[AMQ-4069] Upgrade Maven Plugins
+* link:https://issues.apache.org/jira/browse/AMQ-4066[AMQ-4066] Cleanup of old deprecated methods and classes from the code base.
+* link:https://issues.apache.org/jira/browse/AMQ-4067[AMQ-4067] Prefix Thread names with ActiveMQ
+* link:https://issues.apache.org/jira/browse/AMQ-3554[AMQ-3554] activemq:create command should use name as argument in place of option
+* link:https://issues.apache.org/jira/browse/AMQ-4063[AMQ-4063] Trim RAR to not included Derby JAR
+* link:https://issues.apache.org/jira/browse/AMQ-4060[AMQ-4060] activemq-optional - Upgrade Spring OXM to Spring 3 version
+* link:https://issues.apache.org/jira/browse/AMQ-3972[AMQ-3972] Add an 'isDisposed' check before calling 'propagateFailureToExceptionListener' in FailoverTransport
+* link:https://issues.apache.org/jira/browse/AMQ-3444[AMQ-3444] Fail Fast or Warn on using fileCursors/fileQueueCursors when+++<broker persistent="false">+++</li>
+* link:https://issues.apache.org/jira/browse/AMQ-4057[AMQ-4057] activemq-option - Upgrade to http client 4.2
+* link:https://issues.apache.org/jira/browse/CXF-4488[CXF-4488] Making importing com.sun.tools* packages by cxf-rf-databinding-jaxb optional in CXF 2.6
+* link:https://issues.apache.org/jira/browse/CXF-4485[CXF-4485] Provide optional support for inheriting WADL resource parameters
+* link:https://issues.apache.org/jira/browse/CXF-4501[CXF-4501] AtomPojoProvider should be able to get the entry content directly from POJO
+* link:https://issues.apache.org/jira/browse/CXF-4497[CXF-4497] Configure WSDL generation to ignore jaxb.index and ObjectFactory
+* link:https://issues.apache.org/jira/browse/CXF-4495[CXF-4495] Extend SimpleAuthorizingInterceptor to check only configured roles
+* link:https://issues.apache.org/jira/browse/CXF-4490[CXF-4490] cxf-codegen-plugin does not detect changes in WSDL loaded from classpath
+* link:https://issues.apache.org/jira/browse/CXF-4506[CXF-4506] support to set the username and password on the wsn service configuration
+* link:https://issues.apache.org/jira/browse/CXF-4521[CXF-4521] Optimization for other stax implementations
+* link:https://issues.apache.org/jira/browse/CXF-4519[CXF-4519] Make it possible to specify schemas specific to individual types
+* link:https://issues.apache.org/jira/browse/CXF-3813[CXF-3813] Possibiblity to only validate requests and/or responses
+* link:https://issues.apache.org/jira/browse/CXF-4515[CXF-4515] maven java2ws plugin address configuration
+* link:https://issues.apache.org/jira/browse/CXF-4479[CXF-4479] Improve "No namespace on "\{0}" element" error message.
+* link:https://issues.apache.org/jira/browse/CXF-4532[CXF-4532] Java First @Policy support bean references
+* link:https://issues.apache.org/jira/browse/CXF-4431[CXF-4431] Add support for OAuth2 'mac' token type
+* link:https://issues.apache.org/jira/browse/MYFACES-3623[MYFACES-3623] [perf] avoid use HashSet for check empty html elements in HtmlResponseWriterImpl
+* link:https://issues.apache.org/jira/browse/MYFACES-3635[MYFACES-3635] [perf] Improvements over #\{cc} and #{cc.attrs} evaluation
+* link:https://issues.apache.org/jira/browse/MYFACES-3619[MYFACES-3619] Define a special property to specify when a component is created by facelets ( oam.vf.addedByHandler )
+* link:https://issues.apache.org/jira/browse/MYFACES-3628[MYFACES-3628] [perf] do not calculate facelets view mappings and context suffixes if not necessary
+* link:https://issues.apache.org/jira/browse/MYFACES-3645[MYFACES-3645] review/refactor/document ViewState handling </ul>
+
+== Bugs
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-578[TOMEE-578] Tomee Drop-in WARs installer "install" button points to a bad path
+* link:https://issues.apache.org/jira/browse/TOMEE-487[TOMEE-487] deployerejb uses home to create unique file, it should be base if temp dir is not writable
+* link:https://issues.apache.org/jira/browse/TOMEE-483[TOMEE-483] plus and jaxrs webapp doesn't have classes in web-inf/classes
+* link:https://issues.apache.org/jira/browse/TOMEE-441[TOMEE-441] TomEE doesn't stop with arquillian adapter (remote) under windows
+* link:https://issues.apache.org/jira/browse/TOMEE-444[TOMEE-444] tomee webapp enricher suppose tomee libs are in+++<tomee>+++/lib folder (not the case when using tomcat+tomee webapp)</li>
+* link:https://issues.apache.org/jira/browse/TOMEE-443[TOMEE-443] MyFaces does not integrate with OWB EL resolver
+* link:https://issues.apache.org/jira/browse/TOMEE-446[TOMEE-446] Failed to service TomEE as a service on Windows
+* link:https://issues.apache.org/jira/browse/TOMEE-445[TOMEE-445] @RequestScoped @Stateful EJB beans are not destroyed after request completes
+* link:https://issues.apache.org/jira/browse/TOMEE-479[TOMEE-479] Can't use custom typed resource references and factories
+* link:https://issues.apache.org/jira/browse/TOMEE-475[TOMEE-475] tomcat request.isCallerInRole doesn't work
+* link:https://issues.apache.org/jira/browse/TOMEE-436[TOMEE-436] Getting SEVERE: OpenEJBContextConfig.processAnnotationsFile: failed. on Windows
+* link:https://issues.apache.org/jira/browse/TOMEE-515[TOMEE-515] NoClassDefFoundError Exception while marshaling data in CXF RS to JSON
+* link:https://issues.apache.org/jira/browse/TOMEE-508[TOMEE-508] EntityManager dependency considered not passivation capable (CDI spec violation)
+* link:https://issues.apache.org/jira/browse/TOMEE-461[TOMEE-461] faces-config.xml can't be empty
+* link:https://issues.apache.org/jira/browse/TOMEE-466[TOMEE-466] "Activation failed" messages for @ConversationScoped @Stateful bean
+* link:https://issues.apache.org/jira/browse/TOMEE-624[TOMEE-624] ?hen webapp is ROOT rest services can't find the webapp
+* link:https://issues.apache.org/jira/browse/TOMEE-598[TOMEE-598] (cdi) appscope and singleton are not well destroyed
+* link:https://issues.apache.org/jira/browse/TOMEE-469[TOMEE-469] Hotkeys listener
+* link:https://issues.apache.org/jira/browse/TOMEE-568[TOMEE-568] TomEE doesn't support WARDirContext
+* link:https://issues.apache.org/jira/browse/TOMEE-564[TOMEE-564] Installation page for drop war does not work (old style web ui)
+* link:https://issues.apache.org/jira/browse/TOMEE-524[TOMEE-524] EARs not re-unpacked on startup when changed
+* link:https://issues.apache.org/jira/browse/TOMEE-493[TOMEE-493] Regression on TomEE vs Tomcat 7 on Windows native library loading
+* link:https://issues.apache.org/jira/browse/TOMEE-521[TOMEE-521] EAR modules' default name should not contain the .jar or .war extension
+* link:https://issues.apache.org/jira/browse/TOMEE-523[TOMEE-523] EAR war file context path should default to /+++<ear-name>+++/+++<module-name>+++/+++<servlets>+++*</li>
+* link:https://issues.apache.org/jira/browse/TOMEE-522[TOMEE-522] EAR modules'+++<module-name>+++ignored</li>
+* link:https://issues.apache.org/jira/browse/TOMEE-451[TOMEE-451] CDI injection in servlet of a webapp included in an ear doesn't work
+* link:https://issues.apache.org/jira/browse/TOMEE-456[TOMEE-456] some jndi names are not unbound
+* link:https://issues.apache.org/jira/browse/TOMEE-459[TOMEE-459] exclusions.list not working properly
+* link:https://issues.apache.org/jira/browse/TOMEE-610[TOMEE-610] when using <Deployment \...> TomcatJndiBinder doesn't find webcontext in general
+* link:https://issues.apache.org/jira/browse/OPENEJB-1905[OPENEJB-1905] karafee version is not well filtered in rebranding module
+* link:https://issues.apache.org/jira/browse/OPENEJB-1923[OPENEJB-1923] openejb main doesn't support parameter with -D inside (A-D for instance)
+* link:https://issues.apache.org/jira/browse/OPENEJB-1907[OPENEJB-1907] revisit KarafEE import package and shade
+* link:https://issues.apache.org/jira/browse/OPENEJB-1928[OPENEJB-1928] avoid to load openejb classes with multiple classloader in karafee
+* link:https://issues.apache.org/jira/browse/OPENEJB-1930[OPENEJB-1930] serialization of timerdata is too strict for manual timers
+* link:https://issues.apache.org/jira/browse/OPENEJB-1938[OPENEJB-1938] Embedded ActiveMQ broker startup and shutdown fails to observe configured timeout
+* link:https://issues.apache.org/jira/browse/OPENEJB-1910[OPENEJB-1910] IvmProxy shouldnt be used when creating ejb as OSGi services in KarafEE
+* link:https://issues.apache.org/jira/browse/OPENEJB-1934[OPENEJB-1934] arquillian-openejb-embedded-4 doesn't manage properly war libraries regarding cdi
+* link:https://issues.apache.org/jira/browse/OPENEJB-1954[OPENEJB-1954] Arquillian tests don't fail immediately if Test cannot be enriched
+* link:https://issues.apache.org/jira/browse/OPENEJB-1959[OPENEJB-1959] DeploymentListenerObserver should be public
+* link:https://issues.apache.org/jira/browse/OPENEJB-1961[OPENEJB-1961] Classloader memory leak by Threads which is started by org.apache.openejb.loader.Files
+* link:https://issues.apache.org/jira/browse/OWB-719[OWB-719] @Named qualifier is not adhering to CDI spec default naming conventions
+* link:https://issues.apache.org/jira/browse/OWB-718[OWB-718] Decorator can't call two methods of the delegate object in the same method
+* link:https://issues.apache.org/jira/browse/OWB-711[OWB-711] Specialization does not deactivate Observer methods in parent class
+* link:https://issues.apache.org/jira/browse/OWB-720[OWB-720] injections using generic not well managed
+* link:https://issues.apache.org/jira/browse/OWB-732[OWB-732] ClassLoader leak in WebBeansUtil.isScopeTypeNormalCache
+* link:https://issues.apache.org/jira/browse/OWB-713[OWB-713] Static observer methods of superclasses are not called when a method with the same name and parameters exists in the subclass
+* link:https://issues.apache.org/jira/browse/OWB-725[OWB-725] Beans containing a producerMethod are using the wrong CreationalContext
+* link:https://issues.apache.org/jira/browse/OWB-734[OWB-734] CLONE - AbstractProducer stores CreationalContext
+* link:https://issues.apache.org/jira/browse/OWB-724[OWB-724] Ambiguous producer methods and fields are not detected due to bug in AbstractProducerBean equals and hashCode
+* link:https://issues.apache.org/jira/browse/OWB-722[OWB-722] @Typed not respected for beans using generics
+* link:https://issues.apache.org/jira/browse/AMQ-4001[AMQ-4001] activemq karaf feature uses different commons-lang than pom
+* link:https://issues.apache.org/jira/browse/AMQ-4002[AMQ-4002] Instance of BlobTransferPolicy and its URL are being shared among multiple messages
+* link:https://issues.apache.org/jira/browse/AMQ-4007[AMQ-4007] BrokerService TempUsage and StoreUsage Default Values Are Incorrect
+* link:https://issues.apache.org/jira/browse/AMQ-3785[AMQ-3785] ActiveMQSslConnectionFactory does not detect ssl request in failover URIs when creating transports
+* link:https://issues.apache.org/jira/browse/AMQ-3989[AMQ-3989] ActiveMQSslConnectionFactory.setKeyAndTrustManagers does not work with failover enabled using 5.7 snapshot Jars
+* link:https://issues.apache.org/jira/browse/AMQ-3988[AMQ-3988] PooledSession throw Exception at closing
+* link:https://issues.apache.org/jira/browse/AMQ-3987[AMQ-3987] For JMSUsecaseTest, incompatible types found : javax.jms.Message required: org.apache.activemq.Message
+* link:https://issues.apache.org/jira/browse/AMQ-3985[AMQ-3985] ActiveMQConnection temp advisory consumer should use asyncDispatch - can cause deadlock with slow consumers
+* link:https://issues.apache.org/jira/browse/AMQ-3882[AMQ-3882] Broker should not send advisories for slow consumers or fast producers if the destination in question is an advisory destination already.
+* link:https://issues.apache.org/jira/browse/AMQ-3881[AMQ-3881] Handy diagnostic script for troubleshooting ActiveMQ problems
+* link:https://issues.apache.org/jira/browse/AMQ-3982[AMQ-3982] Overlapping PList iterators can read wrong data or throw exceptions about chunk streams not existing.
+* link:https://issues.apache.org/jira/browse/AMQ-3981[AMQ-3981] ActiveMQSslConnectionFactory.java now has apache commons dependency
+* link:https://issues.apache.org/jira/browse/AMQ-3885[AMQ-3885] ActiveMQ java client doesn't scale to thousands of queues
+* link:https://issues.apache.org/jira/browse/AMQ-3889[AMQ-3889] Body Preview of BytesMessages change when browsed multiple times from QueueViewMbean
+* link:https://issues.apache.org/jira/browse/AMQ-3887[AMQ-3887] Occasional Null Pointer Exception during NetworkConnector connection
+* link:https://issues.apache.org/jira/browse/AMQ-3791[AMQ-3791] Flexibility, concurrency, security, and compatibility issues in CachedLDAPAuthorizationMap
+* link:https://issues.apache.org/jira/browse/AMQ-3797[AMQ-3797] org.apache.activemq.util.StringArrayEditor causes classloader leaks
+* link:https://issues.apache.org/jira/browse/AMQ-3998[AMQ-3998] Incorrect reporting of pendingQueueSize of durable subs after reconnect with unacked
+* link:https://issues.apache.org/jira/browse/AMQ-3997[AMQ-3997] Memory leak in activemq-pool
+* link:https://issues.apache.org/jira/browse/AMQ-3999[AMQ-3999] Unsubscribing durable subs can be blocked on calls to determine store size, contending with active subs
+* link:https://issues.apache.org/jira/browse/AMQ-3994[AMQ-3994] DefaultDatabaseLocker will leak pooled connections on link failure
+* link:https://issues.apache.org/jira/browse/AMQ-3891[AMQ-3891] Durable subscribers receiving duplicate messages
+* link:https://issues.apache.org/jira/browse/AMQ-3995[AMQ-3995] PListTest.testSerialAddIterate runs for over 30 minutes on Hudson nodes
+* link:https://issues.apache.org/jira/browse/AMQ-3895[AMQ-3895] Broker sends a STOMP RECEIPT frame although the subscription fails
+* link:https://issues.apache.org/jira/browse/AMQ-3992[AMQ-3992] Zero Prefetch consumers increment the Enqueue Counter when the pull times out
+* link:https://issues.apache.org/jira/browse/AMQ-3897[AMQ-3897] Stomp 1.1 keep alive does not work with stomp+nio
+* link:https://issues.apache.org/jira/browse/AMQ-3896[AMQ-3896] AMQ3622Test throws NumberFormatException on ec2/ubuntu 10.04
+* link:https://issues.apache.org/jira/browse/AMQ-3669[AMQ-3669] Pending producer with qMirror, messages are not spooled to disk
+* link:https://issues.apache.org/jira/browse/AMQ-3664[AMQ-3664] Not all messages will be acknowledged when optimizeAcknowledge is true
+* link:https://issues.apache.org/jira/browse/AMQ-3860[AMQ-3860] doAddMessageReference missing setting priority into prepared statement therefore using wrong index for message itself
+* link:https://issues.apache.org/jira/browse/AMQ-3868[AMQ-3868] ActiveMQ 5.6 - RAR deployment is not working on JBoss6
+* link:https://issues.apache.org/jira/browse/AMQ-3867[AMQ-3867] Unable to delete messages whose original destination is virtual topic from web console
+* link:https://issues.apache.org/jira/browse/AMQ-3865[AMQ-3865] AjaxTest fails all tests due to line ending differences
+* link:https://issues.apache.org/jira/browse/AMQ-3863[AMQ-3863] XA session is returned twice to the pool
+* link:https://issues.apache.org/jira/browse/AMQ-4017[AMQ-4017] Demand Forwarding Bridge uses value of asyncDispatch for advisory consumers
+* link:https://issues.apache.org/jira/browse/AMQ-3871[AMQ-3871] Problem in OrderPendingList can lead to message not being deliver after durable sub reconnect.
+* link:https://issues.apache.org/jira/browse/AMQ-3870[AMQ-3870] ArrayIndexOutOfBoundsException when using Multi kahaDB (mKahaDB) adapter, per-destination adapters and Topics
+* link:https://issues.apache.org/jira/browse/AMQ-3879[AMQ-3879] Temporary queues may be deleted by the wrong connection
+* link:https://issues.apache.org/jira/browse/AMQ-3873[AMQ-3873] Occasional deadlock during startup
+* link:https://issues.apache.org/jira/browse/AMQ-3872[AMQ-3872] Implement "exactly once" delivery with JDBC and XA in the event of a failure post prepare
+* link:https://issues.apache.org/jira/browse/AMQ-2521[AMQ-2521] Some JMX operations fail with SecurityException with secured broker
+* link:https://issues.apache.org/jira/browse/AMQ-3654[AMQ-3654] JDBC Master/Slave : Slave cannot acquire lock when the master loose database connection.
+* link:https://issues.apache.org/jira/browse/AMQ-3633[AMQ-3633] [OSGi] activemq-web-console: exception after restart container
+* link:https://issues.apache.org/jira/browse/AMQ-2453[AMQ-2453] start/control-script is not suitable for professional environments
+* link:https://issues.apache.org/jira/browse/AMQ-4090[AMQ-4090] Missing svn:ignores
+* link:https://issues.apache.org/jira/browse/AMQ-4084[AMQ-4084] Linux/Unix Files Have Incorrect EOL When Packaged
+* link:https://issues.apache.org/jira/browse/AMQ-3807[AMQ-3807] MBeans are not unregistered under WebSphere
+* link:https://issues.apache.org/jira/browse/AMQ-3908[AMQ-3908] StompSslAuthTest.testSubscribeWithReceiptNotAuthorized() fails
+* link:https://issues.apache.org/jira/browse/AMQ-2656[AMQ-2656] ActiveMQInitialConnectionFactory cannot return an XAConnectionFactory
+* link:https://issues.apache.org/jira/browse/AMQ-3909[AMQ-3909] Messages sometimes not received by active topic subscriptions
+* link:https://issues.apache.org/jira/browse/AMQ-3903[AMQ-3903] Failed to fire fast producer advisory, reason: java.lang.NullPointerException
+* link:https://issues.apache.org/jira/browse/AMQ-3905[AMQ-3905] Karaf: activemq:create-broker results in only locally visible broker
+* link:https://issues.apache.org/jira/browse/AMQ-3912[AMQ-3912] Durable subs store messages in error with broker attribute persistent="false"
+* link:https://issues.apache.org/jira/browse/AMQ-4081[AMQ-4081] favicon should be handled as binary file in assembly
+* link:https://issues.apache.org/jira/browse/AMQ-4083[AMQ-4083] Consumers in Client Ack sessions can fail to ack expired messages in some cases
+* link:https://issues.apache.org/jira/browse/AMQ-4076[AMQ-4076] sizePrefixDisabled and/or maxFrameSize change in AcriveMq 5.6 broke FilePendingMessageCursor for big messages
+* link:https://issues.apache.org/jira/browse/AMQ-3919[AMQ-3919] getDestinationMap does not return temp destinations
+* link:https://issues.apache.org/jira/browse/AMQ-3915[AMQ-3915] JMX connector does not bind to a specific host when a connectHost is specified on the managementContext
+* link:https://issues.apache.org/jira/browse/AMQ-2665[AMQ-2665] Durable subscription re-activation failed when keepDurableSubsActive=true.
+* link:https://issues.apache.org/jira/browse/AMQ-3727[AMQ-3727] activemq-web-console: AjaxServlet not working in OSGi container
+* link:https://issues.apache.org/jira/browse/AMQ-3921[AMQ-3921] Duplicated durable subscriptions after broker retart with option keepDurableSubsActive=true
+* link:https://issues.apache.org/jira/browse/AMQ-3920[AMQ-3920] Performance issue with delay policy in DestinationBridge.onMessage
+* link:https://issues.apache.org/jira/browse/AMQ-3923[AMQ-3923] Webconsole should import javax.servlet.* too
+* link:https://issues.apache.org/jira/browse/AMQ-3925[AMQ-3925] Advisory messages/topics not generated for ActiveMQ.Advisory.FULL or ActiveMQ.Advisory.FastProducer.Queue
+* link:https://issues.apache.org/jira/browse/AMQ-3927[AMQ-3927] can't connect to stomp protocol 1.1 using telnet
+* link:https://issues.apache.org/jira/browse/AMQ-3929[AMQ-3929] STOMP multiple header handling incorrect per the 1.1 spec
+* link:https://issues.apache.org/jira/browse/AMQ-2488[AMQ-2488] Unable to access Serializable class when receiving ObjectMessage in OSGi environment
+* link:https://issues.apache.org/jira/browse/AMQ-3934[AMQ-3934] QueueViewMBean.getMessage throws NullPointerException when message not found
+* link:https://issues.apache.org/jira/browse/AMQ-3932[AMQ-3932] receiveNoWait hangs when broker is down, using failover and prefetch=0
+* link:https://issues.apache.org/jira/browse/AMQ-3931[AMQ-3931] Memory problems with large transactions
+* link:https://issues.apache.org/jira/browse/AMQ-3935[AMQ-3935] JConsole browse() function does not work if useCache=false
+* link:https://issues.apache.org/jira/browse/AMQ-3936[AMQ-3936] activemq status return codes should be LSB compliant
+* link:https://issues.apache.org/jira/browse/AMQ-3939[AMQ-3939] FailoverTransport never closes backup connections
+* link:https://issues.apache.org/jira/browse/AMQ-3841[AMQ-3841] mKahaDB causes ArrayIndexOutOfBoundsException on restart after deleting existing queues
+* link:https://issues.apache.org/jira/browse/AMQ-3845[AMQ-3845] CachedLDAPAuthorizationMap doesn't handle the ldap connectino dying
+* link:https://issues.apache.org/jira/browse/AMQ-3846[AMQ-3846] The JMX message move, copy and remove operation do not take messages in FIFO order
+* link:https://issues.apache.org/jira/browse/AMQ-3943[AMQ-3943] Connect to ActiveMQ server's jmx feature,but failed.
+* link:https://issues.apache.org/jira/browse/AMQ-4042[AMQ-4042] Rest MessageServlet on osgi failes to start
+* link:https://issues.apache.org/jira/browse/AMQ-3848[AMQ-3848] Messages Are Not Read With Multiple Consumers
+* link:https://issues.apache.org/jira/browse/AMQ-4043[AMQ-4043] Web demo - Receive a message page renders an error page
+* link:https://issues.apache.org/jira/browse/AMQ-3849[AMQ-3849] Typos in protobuf specs + generated Java code for KahaDB
+* link:https://issues.apache.org/jira/browse/AMQ-4047[AMQ-4047] activemq-optional - Should include the JARs it needs
+* link:https://issues.apache.org/jira/browse/AMQ-4044[AMQ-4044] Shutting down AcitveMQ broker started in foreground logs 2 times
+* link:https://issues.apache.org/jira/browse/AMQ-3852[AMQ-3852] Stomp transport allows durable topic subscriber to subscribe to a queue
+* link:https://issues.apache.org/jira/browse/AMQ-3853[AMQ-3853] Missing import in activemq-web-console
+* link:https://issues.apache.org/jira/browse/AMQ-3856[AMQ-3856] MessageServlet assumes TextMessages contain Text
+* link:https://issues.apache.org/jira/browse/AMQ-3857[AMQ-3857] MessageServlet get messages does not return JMS Message Properties
+* link:https://issues.apache.org/jira/browse/AMQ-3854[AMQ-3854] Referencing old spring xsd in configuration files
+* link:https://issues.apache.org/jira/browse/AMQ-3855[AMQ-3855] MQTT doesn't translate wildcards to ActiveMQ wildcards
+* link:https://issues.apache.org/jira/browse/AMQ-3955[AMQ-3955] WebSocket Transport - Race condition starting transport
+* link:https://issues.apache.org/jira/browse/AMQ-3956[AMQ-3956] KahaDB pagefile (db.data) steady growth - BTreeIndex page leak
+* link:https://issues.apache.org/jira/browse/AMQ-3953[AMQ-3953] org.apache.activemq.util.URISupport.isCompositeURI doesn't work properly.
+* link:https://issues.apache.org/jira/browse/AMQ-3954[AMQ-3954] Intended delivery mode for JMSUsecaseTest is not tested
+* link:https://issues.apache.org/jira/browse/AMQ-3951[AMQ-3951] LDAP Connection Timeouts in CachedLDAPAuthorizationMap
+* link:https://issues.apache.org/jira/browse/AMQ-3958[AMQ-3958] META-INF/spring.schemas does not contain a reference to 5.6.0 schema
+* link:https://issues.apache.org/jira/browse/AMQ-4030[AMQ-4030] Tomcat7 with ActiveMQ-5.6 or ActiveMQ-5.7 starts with error
+* link:https://issues.apache.org/jira/browse/AMQ-4031[AMQ-4031] BrokerFactoryBean logs error when starting a non persistent broker
+* link:https://issues.apache.org/jira/browse/AMQ-3858[AMQ-3858] Failure to resolve local jmx url for sunJvm can result in npe
+* link:https://issues.apache.org/jira/browse/AMQ-4033[AMQ-4033] AMQ Broker - Uses custom RMIServerSocketFactory class which cannot be unloaded due socket reuse
+* link:https://issues.apache.org/jira/browse/AMQ-4035[AMQ-4035] Null pointer in class KahaDBStore programmed
+* link:https://issues.apache.org/jira/browse/AMQ-4070[AMQ-4070] catstomp.rb does not work anymore
+* link:https://issues.apache.org/jira/browse/AMQ-3961[AMQ-3961] Durable subscriber only receives part of the persisted messages on re-connect
+* link:https://issues.apache.org/jira/browse/AMQ-3962[AMQ-3962] Memory leak bacause of InactivityMonitor thread
+* link:https://issues.apache.org/jira/browse/AMQ-2170[AMQ-2170] Incoherent documentation / strange property names for advisory messages
+* link:https://issues.apache.org/jira/browse/AMQ-3965[AMQ-3965] Expired msgs not getting acked to broker causing consumer to fill up its prefetch and not getting more msgs.
+* link:https://issues.apache.org/jira/browse/AMQ-3594[AMQ-3594] Stuck messages in topic after restart of ActiveMQ
+* link:https://issues.apache.org/jira/browse/AMQ-3557[AMQ-3557] Performance of consumption with JDBC persistance and Microsoft SQL Server
+* link:https://issues.apache.org/jira/browse/AMQ-4062[AMQ-4062] durableTopicPrefetch attribute in policyEntry in activemq.xml dont take effect
+* link:https://issues.apache.org/jira/browse/AMQ-3828[AMQ-3828] URISupport incorrectly handles parenthesis
+* link:https://issues.apache.org/jira/browse/AMQ-3451[AMQ-3451] Tomcat 6.0.32 complains that ActiveMQ 5.5 doesn't shutdown a thread
+* link:https://issues.apache.org/jira/browse/AMQ-3827[AMQ-3827] The SslContext definition is not used by the https transport protocol.
+* link:https://issues.apache.org/jira/browse/AMQ-3832[AMQ-3832] Upgrade maven-bundle-plugin
+* link:https://issues.apache.org/jira/browse/AMQ-3831[AMQ-3831] Exit code is not properly returned when using RUN_AS_USER
+* link:https://issues.apache.org/jira/browse/AMQ-3973[AMQ-3973] data.db size is not included in calculation to monitor systemUsage settings
+* link:https://issues.apache.org/jira/browse/AMQ-3976[AMQ-3976] ActiveMQMessageProducer::send uses == instead of equals to compare destinations
+* link:https://issues.apache.org/jira/browse/AMQ-3979[AMQ-3979] AjaxServlet preventing Tomcat Container from shutting down.
+* link:https://issues.apache.org/jira/browse/AMQ-4058[AMQ-4058] http transport should remove options in uri
+* link:https://issues.apache.org/jira/browse/AMQ-4052[AMQ-4052] When consumers was killed and restarted frequently, some messages could not be consumed by consumer but they were still in pending messages.
+* link:https://issues.apache.org/jira/browse/AMQ-3837[AMQ-3837] BrokerFacade returns more connections than expect when call getConnections by connector name
+* link:https://issues.apache.org/jira/browse/AMQ-3836[AMQ-3836] STOMP 1.0 protocol (SUBSCRIBE destination) broken on ActiveMQ 5.6.0
+* link:https://issues.apache.org/jira/browse/CXF-4541[CXF-4541] idl2wsdl not finding properly scoped structure elements
+* link:https://issues.apache.org/jira/browse/CXF-4542[CXF-4542] @XmlJavaTypeAdapter ignored on exception classes
+* link:https://issues.apache.org/jira/browse/CXF-4540[CXF-4540] Colon character in the password is not hanled properly in AbstractHTTPDestination class
+* link:https://issues.apache.org/jira/browse/CXF-4545[CXF-4545] ut_sign + sign_enc samples broken in last releases
+* link:https://issues.apache.org/jira/browse/CXF-4484[CXF-4484] Claims to SAML attribute encoding wrong
+* link:https://issues.apache.org/jira/browse/CXF-4487[CXF-4487] cxf-codegen-plugin: Error resolving component warnings for imported types
+* link:https://issues.apache.org/jira/browse/CXF-4481[CXF-4481] unable to generate WADL to java
+* link:https://issues.apache.org/jira/browse/CXF-4500[CXF-4500] Evaluate jaxrs:schemaLocations after jaxrs:providers
+* link:https://issues.apache.org/jira/browse/CXF-4539[CXF-4539] WS-Security inbound performance regression
+* link:https://issues.apache.org/jira/browse/CXF-4537[CXF-4537] XmlAdapter Not Being Used
+* link:https://issues.apache.org/jira/browse/CXF-4552[CXF-4552] typical HTML form payload does not seem to work when HTML form is used
+* link:https://issues.apache.org/jira/browse/CXF-4499[CXF-4499] wrong charset encoding in FormEncodingProvider
+* link:https://issues.apache.org/jira/browse/CXF-4496[CXF-4496] find of ResponseExceptionMapper do not handle runtime exceptions
+* link:https://issues.apache.org/jira/browse/CXF-4494[CXF-4494] JMSDestination need set binary mode if server send MTOM message back
+* link:https://issues.apache.org/jira/browse/CXF-4493[CXF-4493] If javax.jws.Oneway annotation is specified for a SOAP interface method a NPE occurs
+* link:https://issues.apache.org/jira/browse/CXF-4511[CXF-4511] WS-RM Sequence header should have mustUnderstand attribute
+* link:https://issues.apache.org/jira/browse/CXF-4503[CXF-4503] TransformOutInterceptor may lose namespace declarations in some elements
+* link:https://issues.apache.org/jira/browse/CXF-4505[CXF-4505] Invalid WS-RM messages may not be correctly rejected by WS-RM destination
+* link:https://issues.apache.org/jira/browse/CXF-4507[CXF-4507] bug in SchemaJavascriptBuilder while deserializing an Array
+* link:https://issues.apache.org/jira/browse/CXF-4508[CXF-4508] @Context fails to inject SearchContext into JAX-RS resource bean
+* link:https://issues.apache.org/jira/browse/CXF-4523[CXF-4523] Unclosed XMLStreamReader/Writer causes leaking
+* link:https://issues.apache.org/jira/browse/CXF-4522[CXF-4522] The logicalHandler could not modify the soap:body content if provider uses the SOAPMessage
+* link:https://issues.apache.org/jira/browse/CXF-4520[CXF-4520] XMLStreamException about namespace has not been bound to a prefix with other stax implemenation
+* link:https://issues.apache.org/jira/browse/CXF-4518[CXF-4518] CXF bundle jax-ws-catalog.xml doesn't include mapping of "http://www.w3.org/2006/03/addressing"
+* link:https://issues.apache.org/jira/browse/CXF-4517[CXF-4517] ClassCastException in WS-RM when RMP 200702 assertions are used
+* link:https://issues.apache.org/jira/browse/CXF-4514[CXF-4514] JAXRS client ignores enum properties when populating request URI from beans
+* link:https://issues.apache.org/jira/browse/CXF-4476[CXF-4476] Content-Disposition header may be incorrectly set in MTOM under windows
+* link:https://issues.apache.org/jira/browse/CXF-4475[CXF-4475] LoggingInInterceptor throws when pretty printing MTOM messages
+* link:https://issues.apache.org/jira/browse/CXF-4477[CXF-4477] [WADL2JAVA] Generate incorrect primitive parameter type
+* link:https://issues.apache.org/jira/browse/CXF-4533[CXF-4533] Encoding error in CachedOutputStream when double-byte char is on 1024 byte boundary
+* link:https://issues.apache.org/jira/browse/CXF-4535[CXF-4535] SOAP fault XML is invalid when a details element exists
+* link:https://issues.apache.org/jira/browse/CXF-4534[CXF-4534] SortedMap is returned as HashMap
+* link:https://issues.apache.org/jira/browse/CXF-4526[CXF-4526] PolicyAnnotationListener throws NPE in jar
+* link:https://issues.apache.org/jira/browse/CXF-4528[CXF-4528] WebApplicationExceptionMapper is too shy
+* link:https://issues.apache.org/jira/browse/MYFACES-3620[MYFACES-3620] jsf.js: @this results in a javascript error
+* link:https://issues.apache.org/jira/browse/MYFACES-3638[MYFACES-3638] NPE in ServerSideStateCacheImpl
+* link:https://issues.apache.org/jira/browse/MYFACES-3646[MYFACES-3646] remove unused src/main/old from core-impl
+* link:https://issues.apache.org/jira/browse/MYFACES-3637[MYFACES-3637] jsf.js: All Script Tags are Evaluated (wrong behavior)
+* link:https://issues.apache.org/jira/browse/MYFACES-3649[MYFACES-3649] myfaces-shaded-impl always unpacks myfaces-2.1.1
+* link:https://issues.apache.org/jira/browse/MYFACES-3630[MYFACES-3630] PartialViewContextImpl.findHeadComponent and findBodyComponent does not take into account h:head or h:body inside child of UIViewRoot
+* link:https://issues.apache.org/jira/browse/MYFACES-3617[MYFACES-3617] NullPointerException occurs when using an EL Expression in f:viewParam name attribute
+* link:https://issues.apache.org/jira/browse/MYFACES-3641[MYFACES-3641] ViewDeclarationLanguageFactoryImpl.getViewDeclarationLanguage(String viewId) should not throw exception if no associate VDL can be found
+* link:https://issues.apache.org/jira/browse/MYFACES-3618[MYFACES-3618] jsf.js: ajax response is missing a param in the error handing of replaceHtmlItem
+* link:https://issues.apache.org/jira/browse/MYFACES-3616[MYFACES-3616] Javascript: Method call with wrong argument size after error in AJAX request/response
+* link:https://issues.apache.org/jira/browse/MYFACES-3613[MYFACES-3613] NPE in composite component when ActionListener is missing in the source
+* link:https://issues.apache.org/jira/browse/MYFACES-3626[MYFACES-3626] f:ajax execute '@none' submitted as explicit request param, firing source listeners
+* link:https://issues.apache.org/jira/browse/MYFACES-3632[MYFACES-3632] resource bundle name with bean property collition when trying to set value
+* link:https://issues.apache.org/jira/browse/MYFACES-3631[MYFACES-3631] Malformed Ajax XML Response with duplicated IDs
+* link:https://issues.apache.org/jira/browse/MYFACES-3627[MYFACES-3627] jsf.js: DomExperimental.js isMultipartCandidate fails on older IE Versions </ul>
+
+== Tasks & Sub-Tasks
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-442[TOMEE-442] valid using hostname in webapp id is fine
+* link:https://issues.apache.org/jira/browse/TOMEE-439[TOMEE-439] refactor DeployerEjb to be able to deploy war as Tomcat
+* link:https://issues.apache.org/jira/browse/OPENEJB-1922[OPENEJB-1922] [KARAFEE] see how to take into account cdi dependencies
+* link:https://issues.apache.org/jira/browse/AMQ-4006[AMQ-4006] activemq-pool - Upgrade to commons-pool 1.6.0
+* link:https://issues.apache.org/jira/browse/AMQ-3784[AMQ-3784] Download page lists lots of releases; they are not in order and most of the pages point to the wrong location
+* link:https://issues.apache.org/jira/browse/AMQ-4013[AMQ-4013] Upgrade to xbean 3.11
+* link:https://issues.apache.org/jira/browse/AMQ-4041[AMQ-4041] Upgrade ActiveMQ karaf feature
+* link:https://issues.apache.org/jira/browse/AMQ-4045[AMQ-4045] Unit test shows NPE in BrokerService
+* link:https://issues.apache.org/jira/browse/AMQ-4038[AMQ-4038] Favor using JARs from Maven central
+* link:https://issues.apache.org/jira/browse/AMQ-4039[AMQ-4039] Upgrade 3rd party dependency JARs and align with SMX/Camel
+* link:https://issues.apache.org/jira/browse/AMQ-4056[AMQ-4056] Remove activemq-jmdns module
+* link:https://issues.apache.org/jira/browse/AMQ-4053[AMQ-4053] Cleanup duplicate JARs in ActiveMQ distro
+* link:https://issues.apache.org/jira/browse/AMQ-3945[AMQ-3945] QueueBrowser missing messages on first browse.
+* link:https://issues.apache.org/jira/browse/AMQ-3947[AMQ-3947] ActiveMQConnectionFactory doesn't set the nestedMapAndListEnabled property on new Connections
+* link:https://issues.apache.org/jira/browse/AMQ-3967[AMQ-3967] ActiveMQJmsHeaderRouteTest doesn't work with Apache Camel 2.10
+* link:https://issues.apache.org/jira/browse/AMQ-3969[AMQ-3969] ActiveMQJmsHeaderRouteTest doesn't work with Apache Camel 2.10
+* link:https://issues.apache.org/jira/browse/AMQ-3968[AMQ-3968] ActiveMQJmsHeaderRouteTest doesn't work with Apache Camel 2.10
+* link:https://issues.apache.org/jira/browse/AMQ-3970[AMQ-3970] ActiveMQJmsHeaderRouteTest doesn't work with Apache Camel 2.10+++</module-name>++++++</servlets>++++++</module-name>++++++</ear-name>++++++</tomee>++++++</broker>+++

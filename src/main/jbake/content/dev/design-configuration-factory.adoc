@@ -1,0 +1,33 @@
+= Design - Configuration Factory
+:jbake-type: page
+:jbake-status: published
+
+== Configuration Factory
+
+Sub-component of xref:design-classic-assembler.adoc[Classic Assembler]
+
+== Definition
+
+Creates an instance of the OpenEjbConfiguration class that contains all the data and configuration information the Classic assembler needs to construct the container system.
+The object structure in the OpenEjbConfiguration class is refered to as the InfoObjects.
+The Configuration Factory can construct, retreive, or populate the InfoObjects from any data source it chooses or by any means it chooses.
+
+== Also Known As
+
+* Config Factory
+* InfoObject Factory
+
+== Responsibilities
+
+* Creates an instance of the OpenEjbConfiguration
+* The data in the InfoObjects must be validated and accurately represent the system, services, jars, and beans to be constructed
+
+== Related Classes
+
+* org.apache.openejb.assembler.classic.OpenEjbConfigurationFactory
+* org.apache.openejb.assembler.classic.OpenEjbConfiguration
+
+== Implementations
+
+* XML Configuration Factory _(no longer supported)_
+* xref:design-nova-configuration-factory.adoc[Nova Configuration Factory]

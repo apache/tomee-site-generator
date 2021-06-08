@@ -4,24 +4,27 @@
 :jbake-status: published
 
 
-=== Fork project repository
-You can work on the link:../sources.html[source code of TomEE] using github. If you don't have a github account, you can link:https://github.com/[sign up here]. +
-To create your own working area, go to the project link:https://github.com/apache/tomee[TomEE on github] and click on the link "Fork". A forked repository will be created for your account and you will be redirected to it.
+== Fork project repository
+You can work on the xref:community/sources.adoc[source code of TomEE] using github.
+If you don't have a github account, you can link:https://github.com/[sign up here].
+To create your own working area, go to the project link:https://github.com/apache/tomee[TomEE on github] and click on the link "Fork".
+A forked repository will be created for your account and you will be redirected to it.
 
-=== One branch for each ticket
+== One branch for each ticket
 Although you can work on the master branch it is advisable to create a new branch for each ticket you start to work on - even if it's only one.
 Use the JIRA id and title as name of the branch. 
 
-=== Get help
+== Get help
 If you need help or want to have feedback for your ideas write to the developes mailing list.
 
-=== Hands on
-Work on the code. Use local commit as often as you want. Use push (to your own forked repository) as often as you like. +
-Consider the link:contribution-tips.html[contribution tips]. +
-If a task is to hard to get it done: no problem. Just ask for help. +
+== Hands on
+Work on the code. Use local commit as often as you want.
+Use push (to your own forked repository) as often as you like.
+Consider the xref:contribution-tips.adoc[contribution tips].
+If a task is to hard to get it done: no problem. Just ask for help.
 If you want to cancel working on a task, don't forget to unassign the JIRA ticket!
 
-=== Comments in JIRA
+== Comments in JIRA
 Use comments for the JIRA ticket to document your work.
 
-(link:workflow.html[back to Contribution workflow])
+(xref:workflow.adoc[back to Contribution workflow])

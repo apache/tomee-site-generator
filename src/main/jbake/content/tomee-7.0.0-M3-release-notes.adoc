@@ -1,0 +1,12 @@
+= Release Notes - TomEE - Version 7.0.0-M3
+:jbake-type: page
+:jbake-status: published
+
+== Bug
+
+[.compact]
+* link:https://issues.apache.org/jira/browse/TOMEE-1638[TOMEE-1638] - tomee:exec on Windows produces invalid tomee.zip due to backslash directory separators
+* link:https://issues.apache.org/jira/browse/TOMEE-1718[TOMEE-1718] - Potential NPE when servlet class is not set defining a JAXRS application mapping
+* link:https://issues.apache.org/jira/browse/TOMEE-1719[TOMEE-1719] - support application/*+json by default
+* link:https://issues.apache.org/jira/browse/TOMEE-1721[TOMEE-1721] - no module (webapp here) webservices can lead to NPE
+* link:https://issues.apache.org/jira/browse/TOMEE-1724[TOMEE-1724] - BVal enforces java 8 usage

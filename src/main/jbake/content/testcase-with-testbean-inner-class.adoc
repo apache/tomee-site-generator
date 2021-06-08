@@ -1,0 +1,73 @@
+= TestCase with TestBean inner-class The use of an inner-class annotated as an EJB can get you all the resources you may need to run your test case such as a UserTransaction, EntityManager, JMS Topic or Queue, DataSource, references to other EJBs, etc.
+:jbake-type: page
+:jbake-status: published
+
+Simply add a _META-INF/ejb-jar.xml_ to your _test_ _sources_ and start annotating your inner class as needed.
+
+The test logic can be placed inside the inner-class EJB or you can setup the EJB to pass the required resources to the outer class.
+
+....
+import junit.framework.TestCase;
+
+import javax.ejb.Stateless;
+import javax.ejb.TransactionManagement;
+import static javax.ejb.TransactionManagementType.BEAN;
+import javax.annotation.Resource;
+import javax.transaction.UserTransaction;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
+import javax.persistence.EntityManager;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import java.util.Properties;
+
+public class MyTest extends TestCase {
+
+   private EntityManager entityManager;
+   private UserTransaction userTransaction;
+
+   @Override
+   protected void setUp() throws Exception {
+       Properties p = new Properties();
+       p.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.openejb.client.LocalInitialContextFactory");
+       // set any other properties
+
+       InitialContext initialContext = new InitialContext(p);
+       TestLocal testLocal = (TestLocal) initialContext.lookup("TestBeanLocal");
+
+       entityManager = testLocal.getEntityManager();
+       userTransaction = testLocal.getUserTransaction();
+   }
+
+
+   /**
+    * The src/test/resource/META-INF/ejb-jar.xml will cause this
+    * EJB to be automatically discovered and deployed when
+    * OpenEJB boots up.
+    */
+   @Stateless
+   @TransactionManagement(BEAN)
+   public static class TestBean implements TestLocal {
+
+       @Resource
+       private UserTransaction userTransaction;
+
+       @PersistenceContext(type = PersistenceContextType.EXTENDED)
+       private EntityManager entityManager;
+
+       public UserTransaction getUserTransaction() {
+	   return userTransaction;
+       }
+
+       public EntityManager getEntityManager() {
+	   return entityManager;
+       }
+   }
+
+   public static interface TestLocal {
+       EntityManager getEntityManager();
+       UserTransaction getUserTransaction();
+   }
+
+}
+....
