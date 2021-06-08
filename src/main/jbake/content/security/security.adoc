@@ -33,24 +33,24 @@ Note that all networked servers are subject to denial of service attacks, and we
 
 === Third-party projects
 
-Apache is built with the following components. Please see the security advisories information for each component for more information on the security vulnerabilities and issues that may affect that component.
+Apache TomEE is built with the following components. Please see the security advisories information for each component for more information on the security vulnerabilities and issues that may affect that component.
 
-- Apache Tomcat 7.x: Tomcat 7 security advisories
+- Apache Tomcat: Tomcat security advisories
 - Apache OpenJPA
 - Apache CXF: CXF Security Advisories
 - Apache OpenWebBeans
 - Apache MyFaces
 - Apache Bean Validation
 
-By default any regular TomEE releases uses latest sub project releases, so that we can follow all security fixes as much as possible.
+By default, any regular TomEE releases uses the latest sub-project releases, so that we can follow all security fixes as much as possible.
 
 === Apache TomEE versioning details
 
-As security is a key concern in many companies, TomEE team also considers to deliver specific security fixes for those external projects being fixed. For instance, if Tomcat fixes a security issue in Tomcat x.y.z, used in TomEE a.b.c, we will consider packaging a new security update release using the new Tomcat release.
+As security is a key concern in many companies, TomEE team also considers delivering specific security fixes for those external projects being fixed. For instance, if Tomcat fixes a security issue in Tomcat x.y.z, used in TomEE a.b.c, we will consider packaging a new security update release using the new Tomcat release.
 
-In order to achieve a smoothly migration patch between a TomEE version and a security update, the TomEE team has decided to adopt the following versioning major.minor.patch[.security update]
+In order to achieve a smooth migration patch between a TomEE version and a security update, the TomEE team has decided to adopt the following versioning major.minor.patch[.security update]
 
-- major ([0-9]+): it refers mainly to the Java EE version we implement. 1.x for Java EE 6 for example.
+- major ([0-9]+): it refers mainly to the Java EE version we implement. 8.x for Java EE 8 / Jakarta EE 8 for example.
 - minor ([0-9]+): contains features, bugfixes and security fixes (internal or third-party)
 - patch ([0-9]+): only bugfixes applied
 
@@ -62,7 +62,7 @@ Optionally we can concatenate a security update to the version if TomEE source b
 
 Secunia is an international IT security company specialising in vulnerability management based in Copenhagen, Denmark.
 
-There is an Apache Software Foundation vendor declared so you can follow all vulnerabilities related to Apache products. Of course, a Apache TomEE product is also available so you can search for know advisories.
+There is an Apache Software Foundation vendor declared, so you can follow all vulnerabilities related to Apache products. Of course, an Apache TomEE product is also available, so you can search for know advisories.
 
 === Links
 
