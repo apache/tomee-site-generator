@@ -27,7 +27,7 @@ Questions about:
 
 should be addressed to the link:support.html[users mailing list].
 
-The private security mailing address is: security (at) apache (dot) org
+The private security mailing address is: **security (at) apache (dot) org**
 
 Note that all networked servers are subject to denial of service attacks, and we cannot promise magic workarounds to generic problems (such as a client streaming lots of data to your server, or re-requesting the same URL repeatedly). In general our philosophy is to avoid any attacks which can cause the server to consume resources in a non-linear relationship to the size of inputs.
 
