@@ -30,4 +30,4 @@ If you encounter a bug or want to submit a patch just go on our https://issues.a
 
 == Commercial Support
 
-If you need advanced support with SLA please have a look to our xref:community/commercial.adoc[Commercial] page.
+If you need advanced support with SLA please have a look to our xref:../community/commercial.adoc[Commercial] page.
