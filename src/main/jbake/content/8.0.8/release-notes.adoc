@@ -1,0 +1,85 @@
+= Apache TomEE 8.0.8 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-2990[TOMEE-2990] BatchEE 0.6
+- link:https://issues.apache.org/jira/browse/TOMEE-3750[TOMEE-3750] BatchEE 1.0.0
+- link:https://issues.apache.org/jira/browse/TOMEE-2987[TOMEE-2987] CXF 3.4.3
+- link:https://issues.apache.org/jira/browse/TOMEE-3756[TOMEE-3756] HSQLDB 2.3.4
+- link:https://issues.apache.org/jira/browse/TOMEE-3772[TOMEE-3772] JUnit 4.13.2
+- link:https://issues.apache.org/jira/browse/TOMEE-3734[TOMEE-3734] Johnzon 1.2.11
+- link:https://issues.apache.org/jira/browse/TOMEE-3755[TOMEE-3755] Johnzon 1.2.13
+- link:https://issues.apache.org/jira/browse/TOMEE-3770[TOMEE-3770] Johnzon 1.2.14
+- link:https://issues.apache.org/jira/browse/TOMEE-3732[TOMEE-3732] MyFaces 2.3.9
+- link:https://issues.apache.org/jira/browse/TOMEE-3753[TOMEE-3753] OpenJPA 3.2.0
+- link:https://issues.apache.org/jira/browse/TOMEE-2997[TOMEE-2997] OpenSAML V3.4.6
+- link:https://issues.apache.org/jira/browse/TOMEE-2809[TOMEE-2809] OpenWebBeans 2.0.22
+- link:https://issues.apache.org/jira/browse/TOMEE-2998[TOMEE-2998] Tomcat 9.0.45
+- link:https://issues.apache.org/jira/browse/TOMEE-3760[TOMEE-3760] Tomcat 9.0.48
+- link:https://issues.apache.org/jira/browse/TOMEE-3773[TOMEE-3773] Tomcat 9.0.50
+- link:https://issues.apache.org/jira/browse/TOMEE-3787[TOMEE-3787] Tomcat 9.0.52
+- link:https://issues.apache.org/jira/browse/TOMEE-2939[TOMEE-2939] bcprov-jdk15on 1.67
+- link:https://issues.apache.org/jira/browse/TOMEE-3765[TOMEE-3765] bountycastle 1.69
+- link:https://issues.apache.org/jira/browse/TOMEE-3764[TOMEE-3764] commons-dbcp 2.3.0
+- link:https://issues.apache.org/jira/browse/TOMEE-3759[TOMEE-3759] commons-io 2.10.0
+- link:https://issues.apache.org/jira/browse/TOMEE-2972[TOMEE-2972] latest OWB version run on Java16
+- link:https://issues.apache.org/jira/browse/TOMEE-2988[TOMEE-2988] xbean 4.18+ (Java 16 support)
+
+== New Feature
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3730[TOMEE-3730] Add JSONP and JSONB Providers JAX-RS Client
+- link:https://issues.apache.org/jira/browse/TOMEE-2365[TOMEE-2365] Implement Java EE Security API from EE 8
+- link:https://issues.apache.org/jira/browse/TOMEE-2966[TOMEE-2966] Provide a pure JUnit5 OpenEJB Extension
+- link:https://issues.apache.org/jira/browse/TOMEE-2977[TOMEE-2977] Provide a ApplicationComposer JUnit 5 Extension
+- link:https://issues.apache.org/jira/browse/TOMEE-2993[TOMEE-2993] API pom for each TomEE distribution
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3774[TOMEE-3774] Problems with master branch in Windows 10
+- link:https://issues.apache.org/jira/browse/TOMEE-3731[TOMEE-3731] Remove non-compliant JAX-RS Provider sorting
+- link:https://issues.apache.org/jira/browse/TOMEE-2125[TOMEE-2125] Datasource config: MaxWait, timeBetweenEvictionRunsMillis and MinEvictableIdleTimeMillis are ignored
+- link:https://issues.apache.org/jira/browse/TOMEE-3727[TOMEE-3727] Ensure java.io.File is not seen as a JSONB serializable type
+- link:https://issues.apache.org/jira/browse/TOMEE-3728[TOMEE-3728] Ensure java.io.Reader is not seen as a JSONB serializable type
+- link:https://issues.apache.org/jira/browse/TOMEE-3729[TOMEE-3729] Do not scan classpath for @Provider when there is a JAX-RS Application
+- link:https://issues.apache.org/jira/browse/TOMEE-2968[TOMEE-2968] Postgres connection error when a password contains "}"
+- link:https://issues.apache.org/jira/browse/TOMEE-3740[TOMEE-3740] Fix Test Failures in "openejb-core" introduced during TCK work
+- link:https://issues.apache.org/jira/browse/TOMEE-3743[TOMEE-3743] TomEEJsonbProvider not registered anymore as of TomEE 8.0.7? Causes failing REST-services.
+- link:https://issues.apache.org/jira/browse/TOMEE-3739[TOMEE-3739] Fix JAX-RS landscape / regressions introduced during TCK Work
+- link:https://issues.apache.org/jira/browse/TOMEE-3752[TOMEE-3752] Field injection of @Resource WebServiceContext fails when endpoint uses CDI interceptor
+- link:https://issues.apache.org/jira/browse/TOMEE-2975[TOMEE-2975] Download page must provide sigs for all release artifacts
+- link:https://issues.apache.org/jira/browse/TOMEE-3718[TOMEE-3718] Missing mime mappings
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-2957[TOMEE-2957] Fix OWASP Checks on ASF Jenkins Environment
+- link:https://issues.apache.org/jira/browse/TOMEE-2974[TOMEE-2974] CI Build Environment ISO-8859-1 versus UTF-8
+- link:https://issues.apache.org/jira/browse/TOMEE-2973[TOMEE-2973] TomEE :: Examples :: JSF2/CDI/BV/JPA/DeltaSpike uses too old version of commons-lang3
+- link:https://issues.apache.org/jira/browse/TOMEE-2976[TOMEE-2976] Provide Examples for TomEE Arquillian with JUnit 5
+- link:https://issues.apache.org/jira/browse/TOMEE-2705[TOMEE-2705] TomEE Plus BOM
+- link:https://issues.apache.org/jira/browse/TOMEE-3761[TOMEE-3761] Jakarta Security example with custom identity store
+- link:https://issues.apache.org/jira/browse/TOMEE-2704[TOMEE-2704] TomEE Plume BOM
+- link:https://issues.apache.org/jira/browse/TOMEE-2703[TOMEE-2703] TomEE WebProfile BOM
+- link:https://issues.apache.org/jira/browse/TOMEE-2702[TOMEE-2702] TomEE MicroProfile BOM
+- link:https://issues.apache.org/jira/browse/TOMEE-2995[TOMEE-2995] Support constructor injection of JAX-RS Application
+- link:https://issues.apache.org/jira/browse/TOMEE-2994[TOMEE-2994] JAX-RS Provider construction favors constructor with the most args
+- link:https://issues.apache.org/jira/browse/TOMEE-3758[TOMEE-3758] Jakarta Security example with tomcat-users.xml identity store
+- link:https://issues.apache.org/jira/browse/TOMEE-2992[TOMEE-2992] [Certification/TCK] Tomcat Callback handler not consistent with authenticator
+
+== Task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3140[TOMEE-3140] Jakarta EE 9.1 TCK Failures
+- link:https://issues.apache.org/jira/browse/TOMEE-3721[TOMEE-3721] Remove dependencies between tomee-webapp modules
+
+== Sub-task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-2967[TOMEE-2967] Translate to Spanish: examples/xa-datasource
+- link:https://issues.apache.org/jira/browse/TOMEE-2964[TOMEE-2964] Translate to Portuguese: examples/serverless-tomee-webprofile
