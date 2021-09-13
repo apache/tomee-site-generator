@@ -43,7 +43,6 @@
 [.compact]
 - link:https://issues.apache.org/jira/browse/TOMEE-3774[TOMEE-3774] Problems with master branch in Windows 10
 - link:https://issues.apache.org/jira/browse/TOMEE-3731[TOMEE-3731] Remove non-compliant JAX-RS Provider sorting
-- link:https://issues.apache.org/jira/browse/TOMEE-3768[TOMEE-3768] TomEE plus is affected by CVE-CVE-2021-30468 vulnerability related to Apache CXF
 - link:https://issues.apache.org/jira/browse/TOMEE-2125[TOMEE-2125] Datasource config: MaxWait, timeBetweenEvictionRunsMillis and MinEvictableIdleTimeMillis are ignored
 - link:https://issues.apache.org/jira/browse/TOMEE-3727[TOMEE-3727] Ensure java.io.File is not seen as a JSONB serializable type
 - link:https://issues.apache.org/jira/browse/TOMEE-3728[TOMEE-3728] Ensure java.io.Reader is not seen as a JSONB serializable type
