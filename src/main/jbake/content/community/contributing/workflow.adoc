@@ -8,33 +8,31 @@
 
 
 == JIRA ticket
-- create ticket in JIRA, if not already existing
-- if ticket already assigned to someone else => talk
-- assign ticket to contributor, if not already assigned +
+- Create a ticket in link:https://issues.apache.org/jira/browse/TOMEE[Jira], if it does not already exist.
+- If the ticket is already assigned to someone else => **talk** (e.g. via the mailing list)
+- Assign the ticket to the contributor, if it is not already assigned +
   (xref:jira-ticket.adoc[more details])
 
-
-
 == Process Task
-- fork repository
-- create branch in own repository (name = JIRA ticket id)
-- discuss on mailing list
-- work on code
-- document work in JIRA ticket +
+- Fork the repository on GitHub
+- Create a branch in your forked repository (name = JIRA ticket id)
+- Discuss on mailing list
+- Work on the code
+- Document work in JIRA ticket +
   (xref:process-task.adoc[more details])
 
 == Submit Changes
-- ensure code compiles 
-- ensure tests passes
-- create PR (pull request)
-- ask for review on mailing list +
+- Ensure code compiles
+- Ensure tests passes
+- Create PR (pull request)
+- Ask for review on mailing list +
   (xref:submit-changes.adoc[more details])
 
 == Merge Changes (done by a committer)
-- review changes
-- merge code
-- change JIRA ticket status / close ticket +
+- Review changes
+- Merge code
+- Change JIRA ticket status / close ticket
 
 == Cleanup
-- wait until PR is merged (ticket status change)
-- remove branch in own repository +
+- Wait until PR is merged (ticket status change)
+- Remove branch in own repository

@@ -17,11 +17,11 @@ mvn -Pstyle pmd:check
 These are relatively quick to run - about a minute or so. 
 
 == Smoke test
-Check at least if the server ist still starting with your changes ...
+Check at least if the server is still starting with your changes ...
 
 == Pull request
-If you're confident of your work, the next step is to push your changes into your repository on github.
-To get your changes back into the TomEE repository you have to create a PR (pull request): on github go to your repository and select the branch where you have worked on.
+If you're confident of your work, the next step is to push your changes into your repository on GitHub.
+To get your changes back into the TomEE repository you have to create a PR (pull request): on GitHub go to your repository and select the branch where you have worked on.
 Click on "New pull request" and then on "Create pull request".
 
 == Request review

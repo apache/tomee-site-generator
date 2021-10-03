@@ -5,7 +5,7 @@
 
 == GitHub
 
-TomEE is on GitHub at https://github.com/apache/tomee . The sources are synchronized by Apache on GitHub
+TomEE is on GitHub at link:https://github.com/apache/tomee[https://github.com/apache/tomee]. The sources are synchronized by Apache on GitHub
 but Pull/Requests are integrated with Apache Infrastructure which means you can just submit us a patch as
 you would do on any other GitHub project and Apache takes care of the rest of the process.
 
@@ -38,13 +38,13 @@ TomEE is a standard Maven project and to build it you just have to use the follo
 mvn clean install
 ----
 
-TIP: you can need to tune your environment variable `MAVEN_OPTS`, a commonly use value is `-Xmx1536m -XX:PermSize=64m -XX:MaxPermSize=384m`
+TIP: You might need to tune your environment variable `MAVEN_OPTS`, a commonly used value is `-Xmx1536m -XX:PermSize=64m -XX:MaxPermSize=384m`
 
-NOTE: if you are interested in testing arquillian tests with all adapters of tomee you will need to activate the dedicated profile: `-Pall-adapters`.
+NOTE: If you are interested in testing arquillian tests with all adapters of tomee you will need to activate the dedicated profile: `-Pall-adapters`.
 
 === Fast build
 
-Here are some shortcut builds if you just want to create a specific artifact (note it skips tests but removing `-DskipTests` you will execute them):
+Here are some shortcut builds if you just want to create a specific artifact (note it skips tests but if you remove `-DskipTests` you will execute them):
 
 - TomEE zip/tar.gz:
 
@@ -65,6 +65,7 @@ TomEE is using Jenkins CI for its continuous integration. You can access builds 
 
 TomEE uses Jira for issues, if you are looking for a problem or reporting one, use the following address:
 
-- Create a ticket on https://issues.apache.org/jira/browse/TOMEE
+- Create a ticket on link:https://issues.apache.org/jira/browse/TOMEE[https://issues.apache.org/jira/browse/TOMEE]
+- If you like to submit a patch: Open a PR in the GitHub mirror with the ticket number e.g. `TOMEE-1000 - Ticket Description`
 
-- Open a PR in the GitHub mirror with the ticket number e.g. `TOMEE-1000 - Ticket Description`
+You can also check the xref:contributing/workflow.adoc[contribution workflow] for further information.

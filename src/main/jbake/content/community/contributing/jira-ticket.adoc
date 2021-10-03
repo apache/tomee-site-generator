@@ -9,11 +9,11 @@ Before you can create tickets, you have to link:https://issues.apache.org/jira/s
 
 == No task without a ticket
 Before you start working on a task you should ensure that there is a ticket for your task. +
-Browse JIRA and use the search funktion to find out if there is already a ticket for what you want to pick up.
+Browse JIRA and use the search function to find out if there is already a ticket for what you want to pick up.
 If not, create a new one.
 
 == Avoiding conflicts and wasted effort
-If a ticket already exists and is assign to someone you should not start working on this task. +
+If a ticket already exists and is assigned to someone you should not start working on this task. +
 If you want to help, contact the assigned person using the mailing list or write a comment in the JIRA ticket.
 
 == Pick up a task

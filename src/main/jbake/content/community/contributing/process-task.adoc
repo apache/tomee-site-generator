@@ -5,9 +5,9 @@
 
 
 == Fork project repository
-You can work on the xref:community/sources.adoc[source code of TomEE] using github.
-If you don't have a github account, you can link:https://github.com/[sign up here].
-To create your own working area, go to the project link:https://github.com/apache/tomee[TomEE on github] and click on the link "Fork".
+You can work on the xref:../sources.adoc[source code of TomEE] using GitHub.
+If you don't have a GitHub account, you can link:https://GitHub.com/[sign up here].
+To create your own working area, go to the project link:https://github.com/apache/tomee[TomEE on GitHub] and click on the link "Fork".
 A forked repository will be created for your account and you will be redirected to it.
 
 == One branch for each ticket

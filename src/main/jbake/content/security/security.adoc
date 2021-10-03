@@ -8,7 +8,7 @@
 
 Please note that, except in rare circumstances, binary patches are not produced for individual vulnerabilities. To obtain the binary fix for a particular vulnerability you should upgrade to an Apache TomEE version where that vulnerability has been fixed.
 
-Source patches, usually in the form of references to SVN commits, may be provided in either in a vulnerability announcement and/or the vulnerability details listed on these pages. These source patches may be used by users wishing to build their own local version of TomEE with just that security patch rather than upgrade.
+Source patches, usually in the form of references to `git` commits, may be provided in either in a vulnerability announcement and/or the vulnerability details listed on these pages. These source patches may be used by users wishing to build their own local version of TomEE with just that security patch rather than upgrade.
 
 The Apache Software Foundation takes a very active stance in eliminating security problems and denial of service attacks against Apache projects.
 
@@ -35,9 +35,9 @@ Note that all networked servers are subject to denial of service attacks, and we
 
 Apache TomEE is built with the following components. Please see the security advisories information for each component for more information on the security vulnerabilities and issues that may affect that component.
 
-- Apache Tomcat: Tomcat security advisories
+- Apache Tomcat: link:https://tomcat.apache.org/security.html[Tomcat Security Advisories]
 - Apache OpenJPA
-- Apache CXF: CXF Security Advisories
+- Apache CXF: link:https://cxf.apache.org/security-advisories.html[CXF Security Advisories]
 - Apache OpenWebBeans
 - Apache MyFaces
 - Apache Bean Validation
