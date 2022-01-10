@@ -1,0 +1,62 @@
+= Apache TomEE 8.0.9 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 8.0.9 has been released. It contains several bug fixes, enhancements and dependency upgrades.
+Notably, Apache TomEE 8.0.9 can now be run with Java 17.
+
+In addition, it provides an upgrade of Geronimo Java Mail, which now allows configuring TLS/SSL protocol version as well as TLS/SSL ciphers for a given mail session.
+
+Thank you to everyone who contributed to this release, including all of our users and the people who submitted bug reports, contributed code or documentation changes in this release.
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3819[TOMEE-3819] Tomcat 9.0.56
+- link:https://issues.apache.org/jira/browse/TOMEE-3789[TOMEE-3789] ActiveMQ 5.16.3
+- link:https://issues.apache.org/jira/browse/TOMEE-3810[TOMEE-3810] Geronimo Java Mail 1.6 1.0.1
+- link:https://issues.apache.org/jira/browse/TOMEE-3809[TOMEE-3809] Johnzon 1.2.15
+- link:https://issues.apache.org/jira/browse/TOMEE-3820[TOMEE-3820] OpenWebBeans 2.0.24 (superceded by TOMEE-3821)
+- link:https://issues.apache.org/jira/browse/TOMEE-3821[TOMEE-3821] OpenWebBeans 2.0.25
+- link:https://issues.apache.org/jira/browse/TOMEE-3799[TOMEE-3799] Tomcat 9.0.53 (superceded by TOMEE-3819)
+- link:https://issues.apache.org/jira/browse/TOMEE-3806[TOMEE-3806] Tomcat 9.0.54 (superceded by TOMEE-3819)
+- link:https://issues.apache.org/jira/browse/TOMEE-3817[TOMEE-3817] Tomcat 9.0.55 (superceded by TOMEE-3819)
+- link:https://issues.apache.org/jira/browse/TOMEE-3771[TOMEE-3771] openwebbeans 2.0.24
+- link:https://issues.apache.org/jira/browse/TOMEE-3793[TOMEE-3793] xbean 4.20
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3791[TOMEE-3791] Ajax JSF not provided in 8.0.8 builds
+- link:https://issues.apache.org/jira/browse/TOMEE-3792[TOMEE-3792] Missing Public key in KEYS for Tomee
+- link:https://issues.apache.org/jira/browse/TOMEE-3794[TOMEE-3794] javaVersion() in org.apache.openejb.arquillian.common.Setup breaks for version strings with length lower than 3
+- link:https://issues.apache.org/jira/browse/TOMEE-3795[TOMEE-3795] Proxy class definition does not work in Java 17+
+- link:https://issues.apache.org/jira/browse/TOMEE-3796[TOMEE-3796] myfaces-api-2.3.9.jar is modified.
+- link:https://issues.apache.org/jira/browse/TOMEE-3803[TOMEE-3803] RES_NOT_FOUND in Plume 8.0.8 JSF 2.3
+- link:https://issues.apache.org/jira/browse/TOMEE-3818[TOMEE-3818] Double url-decode of form parameters
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3805[TOMEE-3805] Website improvements - Release notes & CVEs
+- link:https://issues.apache.org/jira/browse/TOMEE-3000[TOMEE-3000] Run BOM Generation in every build
+
+== Documentation
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3811[TOMEE-3811] Provide E-Mail Example with Velocity
+
+== Sub-task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3596[TOMEE-3596] Update example 'injection-of-connectionfactory' to use Server/API Bom
+- link:https://issues.apache.org/jira/browse/TOMEE-3652[TOMEE-3652] Update example 'quartz-app' to use Server/API Bom
+- link:https://issues.apache.org/jira/browse/TOMEE-3682[TOMEE-3682] Update example 'simple-mdb-and-cdi' to use Server/API Bom
+- link:https://issues.apache.org/jira/browse/TOMEE-3683[TOMEE-3683] Update example 'simple-mdb-with-descriptor' to use Server/API Bom
+- link:https://issues.apache.org/jira/browse/TOMEE-3684[TOMEE-3684] Update example 'simple-mdb' to use Server/API Bom
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3798[TOMEE-3798] TomEE (8.0.8) is affected by CVE-2021-40690 vulnerability
