@@ -68,6 +68,7 @@ public class Source {
     private File dir;
     private Filter javadocFilter = new Filter(".*/src/main/java/.*", ".*/(tck|itests|examples|archetype-resources|.*-example)/.*");
     private Pattern javadocPackages;
+    private String version;
 
     /**
      * This allows us to attach a handful of finishing actions to
@@ -98,6 +99,11 @@ public class Source {
         this.branch = branch;
         this.name = name;
         this.latest = latest;
+    }
+
+    public Source(final String scmUrl, final String branch, final String name, final boolean latest, final String version) {
+        this(scmUrl, branch, name, latest);
+        this.version = version;
     }
 
     public List<Runnable> getPerform() {
@@ -180,6 +186,15 @@ public class Source {
 
     public Source label(final String label) {
         this.label = label;
+        return this;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public Source version(final String version) {
+        this.version = version;
         return this;
     }
 

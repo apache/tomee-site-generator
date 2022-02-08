@@ -126,6 +126,7 @@ public class Sources {
         final VersionIndex versionIndex = new VersionIndex(this);
         final LearningLinks learningLinks = new LearningLinks(examples);
         final Jakartize jakartize = new Jakartize();
+        final TomEEVersionReplacement versionReplacement = new TomEEVersionReplacement();
 
         try {
             IO.copyDirectory(mainSource, jbake);
@@ -144,6 +145,7 @@ public class Sources {
         // source root (excluding the related repos)
         sources.stream()
                 .peek(jakartize::prepare)
+                .peek(versionReplacement::prepare)
                 .peek(docs::prepare)
                 .peek(javadocs::prepare)
                 .peek(examples::prepare)
