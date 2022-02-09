@@ -49,7 +49,7 @@ public class TomEEVersionReplacement {
     private void replaceVersions(final File file, final String version) {
         try {
             final InputStream inputStream = StreamBuilder.create(IO.read(file))
-                    .replace("${tomee.version}", version)
+                    .replace("${TOMEE_VERSION}", version)
                     .get();
 
             final String content = IO.slurp(inputStream);
