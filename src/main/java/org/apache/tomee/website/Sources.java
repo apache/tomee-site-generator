@@ -89,7 +89,7 @@ public class Sources {
         this.sources.addAll(sources);
         for (final Source source : sources) {
             if (source.isLatest()) {
-                this.sources.add(new Source(source.getScmUrl(), source.getBranch(), "latest"));
+                this.sources.add(new Source(source.getScmUrl(), source.getBranch(), "latest", source.isLatest(), source.getVersion()));
                 break;
             }
         }

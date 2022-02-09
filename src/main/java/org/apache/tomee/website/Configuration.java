@@ -92,11 +92,11 @@ public class Configuration {
 //        if (1 == 1) return new Source[0];
         return new Source[]{
 //                new Source("https://github.com/apache/tomee.git", "master", "tomee-8.0"),
-                new Source("https://github.com/apache/tomee.git", "master", "tomee-9.0").label("milestone").related(microProfile2).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
-                new Source("https://github.com/apache/tomee.git", "master", "tomee-8.0", true).related(microProfile2).related(jakartaEE8).javadoc("^org.apache.(openejb|tomee).*"),
-                new Source("https://github.com/apache/tomee.git", "tomee-7.1.0", "tomee-7.1").javadoc("^org.apache.(openejb|tomee).*"),
-                new Source("https://github.com/apache/tomee.git", "tomee-7.0.5", "tomee-7.0").javadoc("^org.apache.(openejb|tomee).*"),
-                new Source("https://github.com/apache/tomee.git", "master", "master").javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "master", "tomee-9.0", false, "8.0.9").label("milestone").related(microProfile2).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "master", "tomee-8.0", true, "8.0.9").related(microProfile2).related(jakartaEE8).javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "tomee-7.1.0", "tomee-7.1", false, "7.1.4").javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "tomee-7.0.5", "tomee-7.0", false, "7.0.9").javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "master", "master", false, "8.0.9").javadoc("^org.apache.(openejb|tomee).*"),
                 new Source("https://github.com/eclipse/microprofile-bom.git", "master", "microprofile-2.0").related(microProfile2).javadoc("^org.eclipse.microprofile.*"),
                 new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v8", "jakartaee-8.0").related(jakartaEE8).javadoc("^javax.*"),
                 new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "master", "jakartaee-9.0").related(jakartaEE9).javadoc("^jakarta.*")
