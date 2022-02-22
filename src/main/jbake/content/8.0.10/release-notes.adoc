@@ -1,0 +1,39 @@
+= Apache TomEE 8.0.10 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 8.0.10 has been released. It contains several bug fixes, enhancements and dependency upgrades.
+
+Thank you to everyone who contributed to this release, including all of our users and the people who submitted bug reports, contributed code or documentation changes in this release.
+
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3830[TOMEE-3830] BatchEE 1.0.1
+- link:https://issues.apache.org/jira/browse/TOMEE-3836[TOMEE-3836] Johnzon 1.2.16
+- link:https://issues.apache.org/jira/browse/TOMEE-3829[TOMEE-3829] Log4J2 2.17.1 in log4j2-tomee utils module
+- link:https://issues.apache.org/jira/browse/TOMEE-3837[TOMEE-3837] OpenJPA 3.2.1
+- link:https://issues.apache.org/jira/browse/TOMEE-3835[TOMEE-3835] OpenWebBeans 2.0.26
+- link:https://issues.apache.org/jira/browse/TOMEE-3828[TOMEE-3828] Tomcat 9.0.58
+- link:https://issues.apache.org/jira/browse/TOMEE-3723[TOMEE-3723] commons-lang3 3.12.0
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3832[TOMEE-3832] JAX-RS TomEEJsonbProvider not registered in tomee-embedded-maven-plugin when MicroProfile is present
+- link:https://issues.apache.org/jira/browse/TOMEE-3777[TOMEE-3777] <openjpa-3.1.2-r66d2a72 fatal user error> org.apache.openjpa.persistence.ArgumentException: The persistence provider is attempting to use properties in the persistence.xml file to resolve the data source ...
+- link:https://issues.apache.org/jira/browse/TOMEE-3823[TOMEE-3823] TomEE and Java 17 compatibility issue with Windows Service Tooling
+- link:https://issues.apache.org/jira/browse/TOMEE-3825[TOMEE-3825] TomEE Maven Plugin does not wait for container startup, if "checkStarted" is set to true
+- link:https://issues.apache.org/jira/browse/TOMEE-3816[TOMEE-3816] Return "this" on stateless EJB method looses container transaction management
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3826[TOMEE-3826] Add exclusion list maven config for patch plugin to preserve jars with signature
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3829[TOMEE-3829] Upgrade Log4J2 to 2.17.1 in log4j2-tomee utils module
