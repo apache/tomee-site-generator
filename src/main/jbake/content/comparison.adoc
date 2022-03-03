@@ -8,7 +8,18 @@
 :n: icon:times[role="red"]
 :c: icon:file-text-o[role="blue"]
 
-Apache TomEE has four distributions, each supporting a slightly different set of technologies and aimed to give you a choice in what you want included out-of-the-box.  When in doubt, chose Apache TomEE Plume.
+Apache TomEE has four distributions, each supporting a slightly different set of technologies and aimed to give you a choice in what you want included out-of-the-box.  When in doubt, choose Apache TomEE Plume.
+
+[cols="4,5*^1",options="header"]
+|===
+||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plume|TomEE Plus
+|Jakarta Annotations, Servlet, JSP, JSTL, EL, ... Jakarta{nbsp}WebSocket|{y}|{y}|{y}|{y}|{y}
+|Jakarta CDI, DI, EJB, JPA, JTA, JSF, JSON, JAXB, ... Jakarta{nbsp}RESTful Web Services (JAX-RS)||{y}|{y}|{y}|{y}
+|MicroProfile Config, Metrics, OpenAPI, OpenTracing, ... MicroProfile{nbsp}Type-safe Rest Client|||{y}|{y}|{y}
+|Jakarta JAAS, JACC, Connectors, Messaging (JMS), ... Jakarta{nbsp}SOAP Web Services (JAX-WS)||||{y}|{y}
+|Jakarta Batch (JBatch)|||||{y}
+|EclispeLink (JPA Persistence Provider)||||{y}|
+|===
 
 [cols="4,5*^1",options="header"]
 |===
@@ -19,8 +30,8 @@ Apache TomEE has four distributions, each supporting a slightly different set of
 |Jakarta Server Pages (JSP)|{y}|{y}|{y}|{y}|{y}
 |Jakarta Servlet|{y}|{y}|{y}|{y}|{y}
 |Jakarta Standard Tag Library (JSTL)|{y}|{y}|{y}|{y}|{y}
-|Jakarta WebSocket|{y}|{y}|{y}|{y}|{y}
 |Jakarta Expression Language (EL)|{y}|{y}|{y}|{y}|{y}
+|Jakarta WebSocket|{y}|{y}|{y}|{y}|{y}
 |Jakarta Activation||{y}|{y}|{y}|{y}
 |Jakarta Bean Validation||{y}|{y}|{y}|{y}
 |Jakarta Contexts and Dependency Injection (CDI)||{y}|{y}|{y}|{y}
@@ -46,4 +57,5 @@ Apache TomEE has four distributions, each supporting a slightly different set of
 |Jakarta Web Services Metadata||||{y}|{y}
 |Jakarta XML Web Services (JAX-WS)||||{y}|{y}
 |Jakarta Batch (JBatch)|||||{y}
+|EclipseLink (JPA Persistence Provider)||||{y}|
 |===
