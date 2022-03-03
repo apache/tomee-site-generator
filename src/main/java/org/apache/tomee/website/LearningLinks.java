@@ -185,7 +185,7 @@ public class LearningLinks {
     }
 
     static String pathFromContentRoot(final File file) {
-        final String absolutePath = file.getAbsolutePath();
+        final String absolutePath = file.getAbsolutePath().replace(File.separatorChar, '/');
 
         final String content = "/content/";
         final int indexOfContent = absolutePath.indexOf(content);
