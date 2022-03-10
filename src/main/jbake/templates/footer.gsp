@@ -41,9 +41,9 @@
 						<div class="col-sm-3 text-center-mobile">
 							<h5><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>security/index.html" class="white">Security</a></h5>
 							<ul class="list-unstyled">
-								<li><a href="http://apache.org/security" target="_blank" class="regular light-white">Apache Security</a></li>
-								<li><a href="http://apache.org/security/projects.html" target="_blank" class="regular light-white">Security Projects</a></li>
-								<li><a href="http://cve.mitre.org" target="_blank" class="regular light-white">CVE</a></li>
+								<li><a href="https://apache.org/security" target="_blank" class="regular light-white">Apache Security</a></li>
+								<li><a href="https://apache.org/security/projects.html" target="_blank" class="regular light-white">Security Projects</a></li>
+								<li><a href="https://cve.mitre.org" target="_blank" class="regular light-white">CVE</a></li>
 							</ul>
 						</div>
 					</div>
@@ -51,7 +51,7 @@
 			</div>
 			<div class="row bottom-footer text-center-mobile">
 				<div class="col-sm-12 light-white">
-					<p>Copyright &copy; 1999-2021 The Apache Software Foundation, Licensed under the Apache License, Version 2.0. Apache TomEE, TomEE, Apache, the Apache feather logo, and the Apache TomEE project logo are trademarks of The Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+					<p>Copyright &copy; 1999-2022 The Apache Software Foundation, Licensed under the Apache License, Version 2.0. Apache TomEE, TomEE, Apache, the Apache feather logo, and the Apache TomEE project logo are trademarks of The Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
 				</div>
 			</div>
 		</div>
