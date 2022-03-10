@@ -9,6 +9,9 @@
 						<li><a href="https://www.facebook.com/ApacheTomEE/"><i class="fa fa-facebook"></i></a></li>
 						<li><a href="https://twitter.com/apachetomee"><i class="fa fa-twitter"></i></a></li>
 					</ul>
+					<h5 class="light regular light-white">
+						<a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>privacy-policy.html" class="white">Privacy Policy</a>
+					</h5>
 				</div>
 				<div class="col-sm-6 text-center-mobile">
 					<div class="row opening-hours">
