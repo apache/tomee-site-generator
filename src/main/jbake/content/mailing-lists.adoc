@@ -33,15 +33,10 @@ TomEE Users Online Archives/Forums:
 |2002
 |http://marc.info/?l=openejb-user
 
-|{n}
-|{n}
-|2006
-|http://mail-archives.apache.org/mod_mbox/TomEE-users/
-
 |{y}
 |{y}
 |2006
-|http://n4.nabble.com/OpenEJB-User-f979441.html
+|link:++https://lists.apache.org/list.html?users@tomee.apache.org++[++https://lists.apache.org/list.html?users@tomee.apache.org++]
 
 |{y}
 |{n}
@@ -78,15 +73,10 @@ TomEE Developers Online Archives/Forums:
 |2002
 |http://marc.info/?l=openejb-development
 
-|{n}
-|{n}
-|2006
-|http://mail-archives.apache.org/mod_mbox/tomee-dev/
-
 |{y}
 |{y}
 |2006
-|http://n4.nabble.com/OpenEJB-Dev-f982480.html
+|link:++https://lists.apache.org/list.html?users@tomee.apache.org++[++https://lists.apache.org/list.html?dev@tomee.apache.org++]
 
 |{y}
 |{n}
@@ -123,10 +113,10 @@ TomEE Commits Online Archives/Forums:
 |2004
 |http://marc.info/?l=openejb-cvs
 
-|{n}
-|{n}
+|{y}
+|{y}
 |2006
-|http://mail-archives.apache.org/mod_mbox/TomEE-commits/
+|link:++https://lists.apache.org/list.html?commits@tomee.apache.org++[++https://lists.apache.org/list.html?commits@tomee.apache.org++]
 
 |{y}
 |{n}

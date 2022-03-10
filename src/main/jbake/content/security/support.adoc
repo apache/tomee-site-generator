@@ -15,14 +15,9 @@ Joining the xref:../community/index.adoc[Community] as a volunteer and helping y
 - mailto:dev@tomee.apache.org[Dev Mailing List] (mailto:dev-subscribe@tomee.apache.org[Subscribe now] | mailto:dev-unsubscribe@tomee.apache.org[Unsubscribe]): to speak about the project and developments
 - mailto:commits@tomee.apache.org[Commits Mailing List] (mailto:commits-subscribe@tomee.apache.org[Subscribe now] | mailto:commits-unsubscribe@tomee.apache.org[Unsubscribe]): receive commits by mail
 
-
-== IRC
-
-http://webchat.freenode.net/?channels=openejb[openejb @ freenode] is the channel most of us use.
-
 == Forums
 
-Our forum (mailing lists archives) can be accessed through http://tomee-openejb.979440.n4.nabble.com/[Nabble].
+Our forum (mailing lists archives) can be accessed through link:++https://lists.apache.org/list.html?dev@tomee.apache.org++[ASF Forum and Archive].
 
 == Bugtracker/JIRA
 
