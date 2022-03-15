@@ -25,6 +25,7 @@ Most of them are mirrored to link:https://github.com/search?q=org%3Aapache+tomee
 - link:https://github.com/apache/tomee-jakartaee-api[JakartaEE API Uber JAR]
 - link:https://github.com/apache/tomee-patch-plugin[Patch Plugin]
 - link:https://github.com/apache/tomee-tck[TCK Harness]
+- link:https://github.com/dblevins/sxc[SXC Source Code]
 
 ==== Tools
 
