@@ -11,6 +11,7 @@
 * xref:sources.adoc[Contribute to Apache TomEE]
 * xref:contributing/website.adoc[Contribute to this Website]
 * xref:contributors.adoc[Apache TomEE - Wall Of Fame]
+* xref:contributor-resources.adoc[Contributor and Committer Resources]
 
 == Social Media: cause contributing is not only about coding
 

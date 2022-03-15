@@ -1,0 +1,45 @@
+= Contributor and Committer Resources
+:jbake-date: 2022-03-15
+:jbake-type: page
+:jbake-status: published
+
+This page serves as a link collector to different resources available to contributors and/or committers.
+
+== Issue Tracker
+
+- link:https://issues.apache.org/jira/browse/TOMEE[Apache Jira]
+
+== Repositories
+
+An overview over all TomEE repositories hosted at the ASF infrastructure can be found link:https://gitbox.apache.org/repos/asf#tomee[here].
+Most of them are mirrored to link:https://github.com/search?q=org%3Aapache+tomee[GitHub]. Some legacy code is served from link:http://svn.apache.org/viewvc/tomee/[SVN].
+
+=== Quick Links
+==== TomEE 8
+- link:https://github.com/apache/tomee[Main Repository]
+
+==== TomEE 9
+- link:https://github.com/apache/tomee-jakarta[TomEE 9.x ] - will be soon available in the link:https://github.com/apache/tomee[Main Repository].
+
+==== Misc
+- link:https://github.com/apache/tomee-jakartaee-api[JakartaEE API Uber JAR]
+- link:https://github.com/apache/tomee-patch-plugin[Patch Plugin]
+- link:https://github.com/apache/tomee-tck[TCK Harness]
+
+==== Tools
+
+- link:https://github.com/apache/tomee-release-tools[Release Tools]
+
+==== Website
+
+- link:https://github.com/apache/tomee-site-generator[Website Generator]
+- link:https://github.com/apache/tomee-site-pub[Generated Website Code]
+
+== CI / CD
+
+- link:https://ci-builds.apache.org/job/Tomee/[Jenkins Build Server]
+
+== Misc
+
+- link:https://matomo.privacy.apache.org/index.php?module=CoreHome&action=index&date=yesterday&period=day&idSite=5[ASF Matomo Tracking]
+- link:https://tck.work/tomee/projects[TCK Runs & Results by Tomitribe]
