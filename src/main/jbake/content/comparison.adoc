@@ -10,6 +10,8 @@
 
 Apache TomEE has four distributions, each supporting a slightly different set of technologies and aimed to give you a choice in what you want included out-of-the-box.  When in doubt, choose Apache TomEE Plume.
 
+== Synthesis of differences between flavors
+
 [cols="4,5*^1",options="header"]
 |===
 ||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plume|TomEE Plus
@@ -19,7 +21,10 @@ Apache TomEE has four distributions, each supporting a slightly different set of
 |Jakarta JAAS, JACC, Connectors, Messaging (JMS), ... Jakarta{nbsp}SOAP Web Services (JAX-WS)||||{y}|{y}
 |Jakarta Batch (JBatch)|||||{y}
 |EclispeLink (JPA Persistence Provider)||||{y}|
+|Jakarta JSF implementation||MyFaces|MyFaces|Mojarra|MyFaces
 |===
+
+== Detailed list of functionalities
 
 [cols="4,5*^1",options="header"]
 |===
@@ -47,6 +52,11 @@ Apache TomEE has four distributions, each supporting a slightly different set of
 |Jakarta Server Faces (JSF)||{y}|{y}|{y}|{y}
 |Jakarta Transactions (JTA)||{y}|{y}|{y}|{y}
 |Jakarta XML Binding (JAXB)||{y}|{y}|{y}|{y}
+|MicroProfile Config|||{y}|{y}|{y}
+|MicroProfile Metrics|||{y}|{y}|{y}
+|MicroProfile OpenAPI|||{y}|{y}|{y}
+|MicroProfile OpenTracing|||{y}|{y}|{y}
+|MicroProfile Type-safe Rest Client|||{y}|{y}|{y}
 |Jakarta Authentication (JAAS)||||{y}|{y}
 |Jakarta Authorization (JACC)||||{y}|{y}
 |Jakarta Concurrency||||{y}|{y}
@@ -58,4 +68,7 @@ Apache TomEE has four distributions, each supporting a slightly different set of
 |Jakarta XML Web Services (JAX-WS)||||{y}|{y}
 |Jakarta Batch (JBatch)|||||{y}
 |EclipseLink (JPA Persistence Provider)||||{y}|
+|Jakarta JSF implementation||Apache MyFaces|Apache MyFaces|GlassFish Mojarra|Apache MyFaces
+|Jakarta EJB implementation||OpenEJB|OpenEJB|OpenEJB|OpenEJB
+|Jakarta JPA implementation(s)||OpenJPA|OpenJPA|OpenJPA, EclipseLink|OpenJPA
 |===
