@@ -15,14 +15,16 @@ Joining the xref:../community/index.adoc[Community] as a volunteer and helping y
 - mailto:dev@tomee.apache.org[Dev Mailing List] (mailto:dev-subscribe@tomee.apache.org[Subscribe now] | mailto:dev-unsubscribe@tomee.apache.org[Unsubscribe]): to speak about the project and developments
 - mailto:commits@tomee.apache.org[Commits Mailing List] (mailto:commits-subscribe@tomee.apache.org[Subscribe now] | mailto:commits-unsubscribe@tomee.apache.org[Unsubscribe]): receive commits by mail
 
+== Slack
 
-== IRC
+The ASF Slack is an invite-only slack workspace. Anyone
+with an *@apache.org* address can invite you.
 
-http://webchat.freenode.net/?channels=openejb[openejb @ freenode] is the channel most of us use.
+If you're interested in contributing, please ask to join by dropping a mail to mailto:dev@tomee.apache.org[dev@tomee.apache.org].
 
 == Forums
 
-Our forum (mailing lists archives) can be accessed through http://tomee-openejb.979440.n4.nabble.com/[Nabble].
+Our forum (mailing lists archives) can be accessed through link:++https://lists.apache.org/list.html?dev@tomee.apache.org++[ASF Forum and Archive].
 
 == Bugtracker/JIRA
 
