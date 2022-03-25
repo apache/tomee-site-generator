@@ -12,23 +12,26 @@ Apache TomEE has four distributions, each supporting a slightly different set of
 
 == Synthesis of differences between flavors
 
-[cols="4,5*^1",options="header"]
+[cols="5,5*^1",options="header"]
 |===
-||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plume|TomEE Plus
-|Jakarta Annotations, Servlet, JSP, JSTL, EL, ... Jakarta{nbsp}WebSocket|{y}|{y}|{y}|{y}|{y}
-|Jakarta CDI, DI, EJB, JPA, JTA, JSF, JSON, JAXB, ... Jakarta{nbsp}RESTful Web Services (JAX-RS)||{y}|{y}|{y}|{y}
-|MicroProfile Config, Metrics, OpenAPI, OpenTracing, ... MicroProfile{nbsp}Type-safe Rest Client|||{y}|{y}|{y}
-|Jakarta JAAS, JACC, Connectors, Messaging (JMS), ... Jakarta{nbsp}SOAP Web Services (JAX-WS)||||{y}|{y}
-|Jakarta Batch (JBatch)|||||{y}
-|EclispeLink (JPA Persistence Provider)||||{y}|
-|Jakarta JSF implementation||MyFaces|MyFaces|Mojarra|MyFaces
+||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plus|TomEE Plume
+|Jakarta Annotations, Servlet, JSP, JSTL, EL, ... +
+Jakarta WebSocket|{y}|{y}|{y}|{y}|{y}
+|Jakarta CDI, DI, EJB, JPA, JTA, JSF, JSON, JAXB, ... +
+Jakarta RESTful Web Services (JAX-RS)||{y}|{y}|{y}|{y}
+|MicroProfile Config, Metrics, OpenAPI, OpenTracing, ... +
+MicroProfile Type-safe Rest Client|||{y}|{y}|{y}
+|Jakarta JAAS, JACC, Batch, Connectors, Messaging (JMS), ... +
+Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
+|Jakarta Server Faces (JSF) implementation||MyFaces|MyFaces|MyFaces|*Mojarra*
+|Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
 |===
 
-== Detailed list of functionalities
+== Detailed list of functionalities (Jakarta Specifications)
 
-[cols="4,5*^1",options="header"]
+[cols="5,5*^1",options="header"]
 |===
-||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plume|TomEE Plus
+||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plus|TomEE Plume
 |Jakarta Annotations|{y}|{y}|{y}|{y}|{y}
 |Jakarta Debugging Support for Other Languages|{y}|{y}|{y}|{y}|{y}
 |Jakarta Security (Java EE Enterprise Security)|{y}|{y}|{y}|{y}|{y}
@@ -59,6 +62,7 @@ Apache TomEE has four distributions, each supporting a slightly different set of
 |MicroProfile Type-safe Rest Client|||{y}|{y}|{y}
 |Jakarta Authentication (JAAS)||||{y}|{y}
 |Jakarta Authorization (JACC)||||{y}|{y}
+|Jakarta Batch (JBatch)||||{y}|{y}
 |Jakarta Concurrency||||{y}|{y}
 |Jakarta Connectors||||{y}|{y}
 |Jakarta Enterprise Web Services||||{y}|{y}
@@ -66,9 +70,33 @@ Apache TomEE has four distributions, each supporting a slightly different set of
 |Jakarta SOAP with Attachments||||{y}|{y}
 |Jakarta Web Services Metadata||||{y}|{y}
 |Jakarta XML Web Services (JAX-WS)||||{y}|{y}
-|Jakarta Batch (JBatch)|||||{y}
-|EclipseLink (JPA Persistence Provider)||||{y}|
-|Jakarta JSF implementation||Apache MyFaces|Apache MyFaces|GlassFish Mojarra|Apache MyFaces
-|Jakarta EJB implementation||OpenEJB|OpenEJB|OpenEJB|OpenEJB
-|Jakarta JPA implementation(s)||OpenJPA|OpenJPA|OpenJPA, EclipseLink|OpenJPA
+|Jakarta Server Faces (JSF) implementation||MyFaces|MyFaces|MyFaces|*Mojarra*
+|Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
+|===
+
+== Implementations of Jakarta functionalities in Tomee
+
+[cols="<3,<4",options="header"]
+|===
+|Specifications|Implementations included by Tomee
+|Jakarta Servlet, +
+Jakarta Server Pages (JSP), +
+Jakarta Standard Tag Library (JSTL), +
+Jakarta Expression Language (EL), ...|Apache Tomcat web containers
+|Jakarta Server Faces (JSF)|Apache MyFaces (in all Tomee flavors except Plume), +
+*Eclipse Mojarra (in Tomee Plume only)*
+|Jakarta Bean Validation|BVal
+|Jakarta Contexts and Dependency Injection (CDI)|Apache OpenWebBeans
+|Jakarta Enterprise Beans (EJB)|Apache OpenEJB
+|Jakarta Persistence (JPA)|Apache OpenJPA (in all Tomee flavors), +
+*EclipseLink (in Tomee Plume only)*
+|Jakarta Transactions (JTA)|Apache Geronimo Transaction Manager
+|Jakarta Mail (JavaMail)|Apache Geronimo JavaMail
+|MicroProfile|Apache Geronimo MicroProfile
+|Jakarta JSON Binding (JSON-B), +
+Jakarta JSON Processing (JSON-P)|Jackson, Apache Johnzon
+|Jakarta XML Binding (JAXB)|JAXB runtime
+|Web Services|Apache CXF
+|Jakarta Batch (JBatch)|Apache BatchEE
+|Jakarta Messaging (JMS)|Apache ActiveMQ
 |===
