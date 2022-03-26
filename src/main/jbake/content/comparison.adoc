@@ -27,7 +27,7 @@ Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 |Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
 |===
 
-== Detailed list of functionalities (Jakarta Specifications)
+== Detailed list of Jakarta EE and MicroProfile Specifications
 
 [cols="5,5*^1",options="header"]
 |===
@@ -74,27 +74,27 @@ Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 |Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
 |===
 
-== Implementations of Jakarta functionalities in Tomee
+== Implementations of Jakarta EE and MicroProfile functionalities in TomEE
 
 [cols="<3,<4",options="header"]
 |===
-|Specifications|Implementations included by Tomee
+|Specifications|Implementations included by TomEE
 |Jakarta Servlet, Jakarta Server Pages (JSP), +
 Jakarta Expression Language (EL), ...|Apache Tomcat (web containers)
 |Jakarta Standard Tag Library (JSTL)|Apache Standard Taglib Implementation
-|Jakarta Server Faces (JSF)|Apache MyFaces (in all Tomee flavors except Plume), +
-*Eclipse (GlassFish) Mojarra (in Tomee Plume only)*
+|Jakarta Server Faces (JSF)|Apache MyFaces (in all TomEE flavors except Plume), +
+*Eclipse Mojarra (in TomEE Plume only)*
 |Jakarta Bean Validation|Apache BVal
 |Jakarta Contexts and Dependency Injection (CDI)|Apache OpenWebBeans
 |Jakarta Enterprise Beans (EJB)|Apache OpenEJB
-|Jakarta Persistence (JPA)|Apache OpenJPA (in all Tomee flavors), +
-*EclipseLink (in Tomee Plume only)*
+|Jakarta Persistence (JPA)|Apache OpenJPA (in all TomEE flavors), +
+*EclipseLink (in TomEE Plume only)*
 |Jakarta Transactions (JTA)|Apache Geronimo Transaction Manager
 |Jakarta Mail (JavaMail)|Apache Geronimo JavaMail
 |MicroProfile|Apache Geronimo MicroProfile
 |Jakarta JSON Binding (JSON-B), +
 Jakarta JSON Processing (JSON-P)|Jackson, Apache Johnzon
-|Jakarta XML Binding (JAXB)|Eclipse (GlassFish) JAXB Runtime
+|Jakarta XML Binding (JAXB)|Eclipse JAXB Runtime
 |Web Services|Apache CXF Runtime
 |Jakarta Batch (JBatch)|Apache BatchEE
 |Jakarta Messaging (JMS)|Apache ActiveMQ
