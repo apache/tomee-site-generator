@@ -8,19 +8,38 @@
 :n: icon:times[role="red"]
 :c: icon:file-text-o[role="blue"]
 
-Apache TomEE has four distributions, each supporting a slightly different set of technologies and aimed to give you a choice in what you want included out-of-the-box.  When in doubt, chose Apache TomEE Plume.
+Apache TomEE has four distributions, each supporting a slightly different set of technologies and aimed to give you a choice in what you want included out-of-the-box.  When in doubt, choose Apache TomEE Plume.
 
-[cols="4,5*^1",options="header"]
+== Synthesis of differences between flavors
+
+[cols="5,5*^1",options="header"]
 |===
-||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plume|TomEE Plus
+||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plus|TomEE Plume
+|Jakarta Annotations, Servlet, JSP, JSTL, EL, ... +
+Jakarta WebSocket|{y}|{y}|{y}|{y}|{y}
+|Jakarta CDI, DI, EJB, JPA, JTA, JSF, JSON, JAXB, ... +
+Jakarta RESTful Web Services (JAX-RS)||{y}|{y}|{y}|{y}
+|MicroProfile Config, Metrics, OpenAPI, OpenTracing, ... +
+MicroProfile Type-safe Rest Client|||{y}|{y}|{y}
+|Jakarta JAAS, JACC, Batch, Connectors, Messaging (JMS), ... +
+Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
+|Jakarta Server Faces (JSF) implementation||MyFaces|MyFaces|MyFaces|*Mojarra*
+|Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
+|===
+
+== Detailed list of functionalities (Jakarta Specifications)
+
+[cols="5,5*^1",options="header"]
+|===
+||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plus|TomEE Plume
 |Jakarta Annotations|{y}|{y}|{y}|{y}|{y}
 |Jakarta Debugging Support for Other Languages|{y}|{y}|{y}|{y}|{y}
 |Jakarta Security (Java EE Enterprise Security)|{y}|{y}|{y}|{y}|{y}
 |Jakarta Server Pages (JSP)|{y}|{y}|{y}|{y}|{y}
 |Jakarta Servlet|{y}|{y}|{y}|{y}|{y}
 |Jakarta Standard Tag Library (JSTL)|{y}|{y}|{y}|{y}|{y}
-|Jakarta WebSocket|{y}|{y}|{y}|{y}|{y}
 |Jakarta Expression Language (EL)|{y}|{y}|{y}|{y}|{y}
+|Jakarta WebSocket|{y}|{y}|{y}|{y}|{y}
 |Jakarta Activation||{y}|{y}|{y}|{y}
 |Jakarta Bean Validation||{y}|{y}|{y}|{y}
 |Jakarta Contexts and Dependency Injection (CDI)||{y}|{y}|{y}|{y}
@@ -36,8 +55,14 @@ Apache TomEE has four distributions, each supporting a slightly different set of
 |Jakarta Server Faces (JSF)||{y}|{y}|{y}|{y}
 |Jakarta Transactions (JTA)||{y}|{y}|{y}|{y}
 |Jakarta XML Binding (JAXB)||{y}|{y}|{y}|{y}
+|MicroProfile Config|||{y}|{y}|{y}
+|MicroProfile Metrics|||{y}|{y}|{y}
+|MicroProfile OpenAPI|||{y}|{y}|{y}
+|MicroProfile OpenTracing|||{y}|{y}|{y}
+|MicroProfile Type-safe Rest Client|||{y}|{y}|{y}
 |Jakarta Authentication (JAAS)||||{y}|{y}
 |Jakarta Authorization (JACC)||||{y}|{y}
+|Jakarta Batch (JBatch)||||{y}|{y}
 |Jakarta Concurrency||||{y}|{y}
 |Jakarta Connectors||||{y}|{y}
 |Jakarta Enterprise Web Services||||{y}|{y}
@@ -45,5 +70,32 @@ Apache TomEE has four distributions, each supporting a slightly different set of
 |Jakarta SOAP with Attachments||||{y}|{y}
 |Jakarta Web Services Metadata||||{y}|{y}
 |Jakarta XML Web Services (JAX-WS)||||{y}|{y}
-|Jakarta Batch (JBatch)|||||{y}
+|Jakarta Server Faces (JSF) implementation||MyFaces|MyFaces|MyFaces|*Mojarra*
+|Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
+|===
+
+== Implementations of Jakarta functionalities in Tomee
+
+[cols="<3,<4",options="header"]
+|===
+|Specifications|Implementations included by Tomee
+|Jakarta Servlet, Jakarta Server Pages (JSP), +
+Jakarta Expression Language (EL), ...|Apache Tomcat (web containers)
+|Jakarta Standard Tag Library (JSTL)|Apache Standard Taglib Implementation
+|Jakarta Server Faces (JSF)|Apache MyFaces (in all Tomee flavors except Plume), +
+*Eclipse (GlassFish) Mojarra (in Tomee Plume only)*
+|Jakarta Bean Validation|Apache BVal
+|Jakarta Contexts and Dependency Injection (CDI)|Apache OpenWebBeans
+|Jakarta Enterprise Beans (EJB)|Apache OpenEJB
+|Jakarta Persistence (JPA)|Apache OpenJPA (in all Tomee flavors), +
+*EclipseLink (in Tomee Plume only)*
+|Jakarta Transactions (JTA)|Apache Geronimo Transaction Manager
+|Jakarta Mail (JavaMail)|Apache Geronimo JavaMail
+|MicroProfile|Apache Geronimo MicroProfile
+|Jakarta JSON Binding (JSON-B), +
+Jakarta JSON Processing (JSON-P)|Jackson, Apache Johnzon
+|Jakarta XML Binding (JAXB)|Eclipse (GlassFish) JAXB Runtime
+|Web Services|Apache CXF Runtime
+|Jakarta Batch (JBatch)|Apache BatchEE
+|Jakarta Messaging (JMS)|Apache ActiveMQ
 |===
