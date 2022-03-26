@@ -83,7 +83,7 @@ Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 Jakarta Expression Language (EL), ...|Apache Tomcat (web containers)
 |Jakarta Standard Tag Library (JSTL)|Apache Standard Taglib Implementation
 |Jakarta Server Faces (JSF)|Apache MyFaces (in all Tomee flavors except Plume), +
-*Eclipse Mojarra (in Tomee Plume only)*
+*Eclipse (GlassFish) Mojarra (in Tomee Plume only)*
 |Jakarta Bean Validation|Apache BVal
 |Jakarta Contexts and Dependency Injection (CDI)|Apache OpenWebBeans
 |Jakarta Enterprise Beans (EJB)|Apache OpenEJB
@@ -94,7 +94,7 @@ Jakarta Expression Language (EL), ...|Apache Tomcat (web containers)
 |MicroProfile|Apache Geronimo MicroProfile
 |Jakarta JSON Binding (JSON-B), +
 Jakarta JSON Processing (JSON-P)|Jackson, Apache Johnzon
-|Jakarta XML Binding (JAXB)|Eclipse JAXB Runtime
+|Jakarta XML Binding (JAXB)|Eclipse (GlassFish) JAXB Runtime
 |Web Services|Apache CXF Runtime
 |Jakarta Batch (JBatch)|Apache BatchEE
 |Jakarta Messaging (JMS)|Apache ActiveMQ
