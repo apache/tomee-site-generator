@@ -84,7 +84,7 @@ Jakarta Expression Language (EL), ...|Apache Tomcat (web containers)
 |Jakarta Standard Tag Library (JSTL)|Apache Standard Taglib Implementation
 |Jakarta Server Faces (JSF)|Apache MyFaces (in all Tomee flavors except Plume), +
 *Eclipse Mojarra (in Tomee Plume only)*
-|Jakarta Bean Validation|BVal
+|Jakarta Bean Validation|Apache BVal
 |Jakarta Contexts and Dependency Injection (CDI)|Apache OpenWebBeans
 |Jakarta Enterprise Beans (EJB)|Apache OpenEJB
 |Jakarta Persistence (JPA)|Apache OpenJPA (in all Tomee flavors), +
