@@ -61,7 +61,7 @@ Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 |MicroProfile OpenAPI|||{y}|{y}|{y}
 |MicroProfile OpenTracing|||{y}|{y}|{y}
 |MicroProfile Type-safe Rest Client|||{y}|{y}|{y}
-|Jakarta Authentication (JASPIC, JAAS)||||{y}|{y}
+|Jakarta Authentication (JASPIC)||||{y}|{y}
 |Jakarta Authorization (JACC)||||{y}|{y}
 |Jakarta Batch (JBatch)||||{y}|{y}
 |Jakarta Concurrency||||{y}|{y}
