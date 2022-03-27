@@ -15,16 +15,15 @@ Apache TomEE has four distributions, each supporting a slightly different set of
 [cols="5,5*^1",options="header"]
 |===
 ||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plus|TomEE Plume
-|Jakarta Annotations, Servlet, JSP, JSTL, EL, ... +
-Jakarta WebSocket|{y}|{y}|{y}|{y}|{y}
+|Jakarta Annotations, Servlet, JSP, JSTL, EL, WebSocket, +
+Jakarta Authentication, Security, ...|{y}|{y}|{y}|{y}|{y}
 |Jakarta CDI, DI, EJB, JPA, JTA, JSF, JSON, JAXB, ... +
 Jakarta RESTful Web Services (JAX-RS)||{y}|{y}|{y}|{y}
 |MicroProfile Config, Metrics, OpenAPI, OpenTracing, ... +
 MicroProfile Type-safe Rest Client|||{y}|{y}|{y}
-|Jakarta Authentication (JASPIC), Authorization (JACC), +
-Jakarta Batch, Connectors, Messaging (JMS), ... +
+|Jakarta Authorization, Batch, Connectors, Messaging (JMS), ... +
 Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
-|Jakarta Server Faces (JSF) implementation||MyFaces|MyFaces|MyFaces|*Mojarra*
+|Jakarta Faces (JSF) implementation||MyFaces|MyFaces|MyFaces|*Mojarra*
 |Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
 |===
 
@@ -53,7 +52,7 @@ Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 |Jakarta Managed Beans||{y}|{y}|{y}|{y}
 |Jakarta Persistence (JPA)||{y}|{y}|{y}|{y}
 |Jakarta RESTful Web Services (JAX-RS)||{y}|{y}|{y}|{y}
-|Jakarta Server Faces (JSF)||{y}|{y}|{y}|{y}
+|Jakarta Faces (JSF)||{y}|{y}|{y}|{y}
 |Jakarta Transactions (JTA)||{y}|{y}|{y}|{y}
 |Jakarta XML Binding (JAXB)||{y}|{y}|{y}|{y}
 |MicroProfile Config|||{y}|{y}|{y}
@@ -71,19 +70,20 @@ Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 |Jakarta SOAP with Attachments||||{y}|{y}
 |Jakarta Web Services Metadata||||{y}|{y}
 |Jakarta XML Web Services (JAX-WS)||||{y}|{y}
-|Jakarta Server Faces (JSF) implementation||MyFaces|MyFaces|MyFaces|*Mojarra*
+|Jakarta Faces (JSF) implementation||MyFaces|MyFaces|MyFaces|*Mojarra*
 |Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
 |===
 
 == Implementations of Jakarta EE and MicroProfile functionalities in TomEE
 
-[cols="<3,<4",options="header"]
+[cols="<4,<4",options="header"]
 |===
 |Specifications|Implementations included by TomEE
-|Jakarta Servlet, Jakarta Server Pages (JSP), +
-Jakarta Expression Language (EL), ...|Apache Tomcat (web containers)
+|Jakarta Annotations, Servlet, Server Pages (JSP), +
+Jakarta Expression Language (EL), WebSocket, +
+Jakarta Authentication (JASPIC), Security, ...|Apache Tomcat
 |Jakarta Standard Tag Library (JSTL)|Apache Standard Taglib Implementation
-|Jakarta Server Faces (JSF)|Apache MyFaces (in all TomEE flavors except Plume), +
+|Jakarta Faces (JSF)|Apache MyFaces (in all TomEE flavors except Plume), +
 *Eclipse Mojarra (in TomEE Plume only)*
 |Jakarta Bean Validation|Apache BVal
 |Jakarta Contexts and Dependency Injection (CDI)|Apache OpenWebBeans
@@ -93,8 +93,7 @@ Jakarta Expression Language (EL), ...|Apache Tomcat (web containers)
 |Jakarta Transactions (JTA)|Apache Geronimo Transaction Manager
 |Jakarta Mail (JavaMail)|Apache Geronimo JavaMail
 |MicroProfile|Apache Geronimo MicroProfile
-|Jakarta JSON Binding (JSON-B), +
-Jakarta JSON Processing (JSON-P)|Jackson, Apache Johnzon
+|Jakarta JSON Binding (JSON-B), JSON Processing (JSON-P)|Jackson, Apache Johnzon
 |Jakarta XML Binding (JAXB)|Eclipse JAXB Runtime
 |Web Services|Apache CXF Runtime
 |Jakarta Batch (JBatch)|Apache BatchEE
