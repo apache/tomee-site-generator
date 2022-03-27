@@ -46,6 +46,7 @@ Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 |Jakarta Contexts and Dependency Injection (CDI)||{y}|{y}|{y}|{y}
 |Jakarta Dependency Injection (@Inject)||{y}|{y}|{y}|{y}
 |Jakarta Enterprise Beans (EJB)||{y}|{y}|{y}|{y}
+|Jakarta Faces (JSF)||{y}|{y}|{y}|{y}
 |Jakarta Interceptors||{y}|{y}|{y}|{y}
 |Jakarta JSON Binding (JSON-B)||{y}|{y}|{y}|{y}
 |Jakarta JSON Processing (JSON-P)||{y}|{y}|{y}|{y}
@@ -53,7 +54,6 @@ Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 |Jakarta Managed Beans||{y}|{y}|{y}|{y}
 |Jakarta Persistence (JPA)||{y}|{y}|{y}|{y}
 |Jakarta RESTful Web Services (JAX-RS)||{y}|{y}|{y}|{y}
-|Jakarta Faces (JSF)||{y}|{y}|{y}|{y}
 |Jakarta Transactions (JTA)||{y}|{y}|{y}|{y}
 |Jakarta XML Binding (JAXB)||{y}|{y}|{y}|{y}
 |MicroProfile Config|||{y}|{y}|{y}
