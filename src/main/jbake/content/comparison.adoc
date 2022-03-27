@@ -21,7 +21,8 @@ Jakarta WebSocket|{y}|{y}|{y}|{y}|{y}
 Jakarta RESTful Web Services (JAX-RS)||{y}|{y}|{y}|{y}
 |MicroProfile Config, Metrics, OpenAPI, OpenTracing, ... +
 MicroProfile Type-safe Rest Client|||{y}|{y}|{y}
-|Jakarta JAAS, JACC, Batch, Connectors, Messaging (JMS), ... +
+|Jakarta Authentication (JAAS), Authorization (JACC), +
+Jakarta Batch, Connectors, Messaging (JMS), ... +
 Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 |Jakarta Server Faces (JSF) implementation||MyFaces|MyFaces|MyFaces|*Mojarra*
 |Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
