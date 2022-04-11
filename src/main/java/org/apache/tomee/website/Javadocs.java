@@ -94,16 +94,12 @@ public class Javadocs {
             final File javadocOutput = sources.getGeneratedDestFor(source, "javadoc");
             final ProcessBuilder cmd = new ProcessBuilder(
                     getJavadocCommand().getAbsolutePath(),
-                    "-tag",
-                    "example.en:a:Examples (en):",
-                    "-tag",
-                    "example.es:a:Examples (es):",
-                    "-tag",
-                    "example.pt:a:Examples (pt):",
-                    "-sourcepath",
-                    javaSources.getAbsolutePath(),
-                    "-d",
-                    javadocOutput.getAbsolutePath()
+                    "-tag", "example.en:a:Examples (en):",
+                    "-tag", "example.es:a:Examples (es):",
+                    "-tag", "example.pt:a:Examples (pt):",
+                    "-sourcepath", javaSources.getAbsolutePath(),
+                    "-d", javadocOutput.getAbsolutePath(),
+                    "-encoding", "utf-8"
             );
 
             Stream.of(javaSources.listFiles())
@@ -216,7 +212,7 @@ public class Javadocs {
                     .filter(source.getJavadocFilter()::exclude)
                     .forEach(file -> {
                         try {
-                            final String relativePath = file.getAbsolutePath().replaceAll(".*/src/main/java/", "");
+                            final String relativePath = file.getAbsolutePath().replace(File.separatorChar, '/').replaceAll(".*/src/main/java/", "");
 
                             if (!wanted.test(relativePath)) return;
 

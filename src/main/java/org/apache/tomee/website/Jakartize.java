@@ -52,7 +52,7 @@ public class Jakartize {
     }
 
     private boolean isDocsOrExamples(final File file) {
-        final String path = file.getAbsolutePath();
+        final String path = file.getAbsolutePath().replace(File.separatorChar, '/');
         return path.contains("/docs/") || path.contains("/examples/");
     }
 
