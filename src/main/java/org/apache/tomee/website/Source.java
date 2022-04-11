@@ -225,11 +225,11 @@ public class Source {
         }
 
         public boolean include(final File file) {
-            return include.matcher(file.getAbsolutePath()).matches();
+            return include.matcher(file.getAbsolutePath().replace(File.separatorChar, '/')).matches();
         }
 
         public boolean exclude(final File file) {
-            return !exclude.matcher(file.getAbsolutePath()).matches();
+            return !exclude.matcher(file.getAbsolutePath().replace(File.separatorChar, '/')).matches();
         }
     }
 }
