@@ -32,13 +32,16 @@ import java.util.stream.Stream;
  *
  * Currently we have the following notable sources:
  *
+ *  - latest
+ *  - tomee-9.0
  *  - tomee-8.0
  *  - tomee-7.1
  *  - tomee-7.0
- *  - microprofile-2.0
+ *  - jakartaee-9.1
  *  - jakartaee-8.0
- *  - master
- *  - latest
+ *  - microprofile-5.0
+ *  - microprofile-4.1
+ *  - microprofile-2.0
  *
  * Each of these sources are given its own section on the website, for example:
  *
