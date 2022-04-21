@@ -1,0 +1,60 @@
+= Apache TomEE 8.0.11 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 8.0.11 has been released. It contains several bug fixes, enhancements and dependency upgrades.
+
+Thank you to everyone who contributed to this release, including all of our users and the people who submitted bug reports, contributed code or documentation enhancements.
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3872[TOMEE-3872] Hibernate Integration 5.6.7
+- link:https://issues.apache.org/jira/browse/TOMEE-3858[TOMEE-3858] OpenJPA 3.2.2
+- link:https://issues.apache.org/jira/browse/TOMEE-3841[TOMEE-3841] SLF4J 1.7.36
+- link:https://issues.apache.org/jira/browse/TOMEE-3845[TOMEE-3845] Tomcat 9.0.59
+- link:https://issues.apache.org/jira/browse/TOMEE-3855[TOMEE-3855] Tomcat 9.0.60
+- link:https://issues.apache.org/jira/browse/TOMEE-3856[TOMEE-3856] jackson 2.13.2
+- link:https://issues.apache.org/jira/browse/TOMEE-3893[TOMEE-3893] jackson 2.13.2.2
+- link:https://issues.apache.org/jira/browse/TOMEE-3886[TOMEE-3886] tomcat 9.0.62
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3892[TOMEE-3892] TomEE Maven Plugin does not allow to override default "-ea" in RemoteServer
+- link:https://issues.apache.org/jira/browse/TOMEE-3871[TOMEE-3871] TomEE Plume is missing BatchEE / JCS Cache
+- link:https://issues.apache.org/jira/browse/TOMEE-3876[TOMEE-3876] BOM generation corrupted under windows (slash problems)
+- link:https://issues.apache.org/jira/browse/TOMEE-3848[TOMEE-3848] Apache TomEE 8.0.6 onwards is packaged with quartz-2.2.4.jar
+- link:https://issues.apache.org/jira/browse/TOMEE-3840[TOMEE-3840] TomEE WebProfile 8.0.9 does not start with security enabled
+- link:https://issues.apache.org/jira/browse/TOMEE-3860[TOMEE-3860] Upgrade jackson-databind for CVE-2020-36518
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3851[TOMEE-3851] Replace Google Analytics with ASF Matomo
+- link:https://issues.apache.org/jira/browse/TOMEE-3842[TOMEE-3842] GitHub Actions fails for PullRequest Builds due to BOM auto generation
+- link:https://issues.apache.org/jira/browse/TOMEE-3859[TOMEE-3859] Update tomee.xml file so it refers to the right location
+
+== Task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3852[TOMEE-3852] Review the website in regard to external embedding of resources (JS, Fonts, CSS)
+- link:https://issues.apache.org/jira/browse/TOMEE-3853[TOMEE-3853] Link ASF Privacy Policy from TomEE Website
+
+== Documentation
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3894[TOMEE-3894] website generation broken under windows
+- link:https://issues.apache.org/jira/browse/TOMEE-3854[TOMEE-3854] Provide a first draft of a link collection page targeting contributor/committer resources
+- link:https://issues.apache.org/jira/browse/TOMEE-3888[TOMEE-3888] Cleanup documentation
+- link:https://issues.apache.org/jira/browse/TOMEE-3846[TOMEE-3846] Inconsistence between tomee flavors comparison in website and actual jars
+- link:https://issues.apache.org/jira/browse/TOMEE-3847[TOMEE-3847] Exception when building website from windows os
+- link:https://issues.apache.org/jira/browse/TOMEE-3814[TOMEE-3814] Commented SSL Connector fix for tomee server.xml
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3893[TOMEE-3893] Upgrade to jackson 2.13.2.2
+- link:https://issues.apache.org/jira/browse/TOMEE-3856[TOMEE-3856] Upgrade to jackson 2.13.2
+- link:https://issues.apache.org/jira/browse/TOMEE-3860[TOMEE-3860] Upgrade jackson-databind for CVE-2020-36518
