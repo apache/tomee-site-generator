@@ -123,7 +123,7 @@ Jakarta Expression Language (EL), WebSocket, +
 Jakarta Authentication (JASPIC), Security, ...|https://tomcat.apache.org/[Apache Tomcat^]
 |Jakarta{nbsp}Standard{nbsp}Tag{nbsp}Library{nbsp}(JSTL)|https://tomcat.apache.org/taglibs.html[Apache Standard Taglib Implementation^]
 |Jakarta Faces (JSF)|https://myfaces.apache.org/[Apache MyFaces^] *(in all TomEE flavors except Plume)* +
-https://projects.eclipse.org/projects/ee4j.mojarra[Eclipse GlassFish Mojarra^] *(in TomEE Plume only)*
+https://projects.eclipse.org/projects/ee4j.mojarra[Eclipse Mojarra^] *(in TomEE Plume only)*
 |Jakarta Bean Validation|https://bval.apache.org/[Apache BVal^] *(in TomEE 8.x and earlier)* +
 https://hibernate.org/validator/[Hibernate Validator^] *(in TomEE 9.x and later)*
 |Jakarta Contexts and Dependency Injection (CDI)|https://openwebbeans.apache.org/[Apache OpenWebBeans^]
@@ -132,13 +132,12 @@ https://hibernate.org/validator/[Hibernate Validator^] *(in TomEE 9.x and later)
 https://www.eclipse.org/eclipselink/[EclipseLink^] *(in TomEE Plume only)*
 |Jakarta Transactions (JTA)|Apache{nbsp}Geronimo{nbsp}Transaction{nbsp}Manager
 |Jakarta Mail (JavaMail)|Apache Geronimo JavaMail
-|MicroProfile|Apache Geronimo MicroProfile *(in TomEE 8.x and earlier)* +
+|MicroProfile|Apache Geronimo MicroProfile *(in TomEE 7.1.x and 8.x)* +
 https://smallrye.io/[SmallRye MicroProfile^] *(in TomEE 9.x and later)*
 |Jakarta JSON Binding (JSON-B), +
-Jakarta JSON Processing (JSON-P)|https://github.com/FasterXML/jackson[Jackson^] +
-https://johnzon.apache.org/[Apache Johnzon^]
-|Jakarta XML Binding (JAXB)|https://projects.eclipse.org/projects/ee4j.jaxb-impl[Eclipse GlassFish JAXB Runtime^]
-|Web Services|https://cxf.apache.org/[Apache CXF Runtime^]
+Jakarta JSON Processing (JSON-P)|https://johnzon.apache.org/[Apache Johnzon^]
+|Jakarta XML Binding (JAXB)|https://projects.eclipse.org/projects/ee4j.jaxb-impl[Eclipse Implementation of JAXB^]
+|Web Services|https://cxf.apache.org/[Apache CXF^]
 |Jakarta Batch (JBatch)|https://geronimo.apache.org/batchee/[Apache BatchEE^]
 |Jakarta Messaging (JMS)|https://activemq.apache.org/[Apache ActiveMQ^]
 |===
