@@ -12,8 +12,8 @@ You **must** link:https://www.apache.org/info/verification.html[verify] the inte
 == [[tomee-9.0]]Apache TomEE 9.0
 
 - Jakarta EE 9.1
-- MicroProfile 5.0
-- Java 11 or higher
+- MicroProfile 2.0
+- Java 8 or higher
 - link:9.0.0-M7/release-notes.html[Release Notes]
 - link:9.0.0-M7/plume/webprofile-9.1.html[Jakarta EE 9.1 Web Profile TCK Results for Java 11]
 
