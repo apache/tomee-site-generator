@@ -1,0 +1,51 @@
+= Apache TomEE 8.0.12 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 8.0.12 has been released. It contains some bug fixes, (build related) enhancements and dependency upgrades.
+Please note, that we updated our javaee-api jar to **8.0-6**, which removes non EE APIs such as `javax.cache` and
+`javax.xml`.
+
+Thank you to everyone who contributed to this release, including all of our users and the people who submitted bug reports, contributed code or documentation enhancements.
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3941[TOMEE-3941] ActiveMQ 5.16.5
+- link:https://issues.apache.org/jira/browse/TOMEE-3913[TOMEE-3913] Examples: Upgrade JUnit to 4.13.2
+- link:https://issues.apache.org/jira/browse/TOMEE-3918[TOMEE-3918] Johnzon 1.2.17
+- link:https://issues.apache.org/jira/browse/TOMEE-3934[TOMEE-3934] Johnzon 1.2.18
+- link:https://issues.apache.org/jira/browse/TOMEE-3775[TOMEE-3775] HSQLDB 2.5.2
+- link:https://issues.apache.org/jira/browse/TOMEE-3977[TOMEE-3977] OpenWebBeans 2.0.27
+- link:https://issues.apache.org/jira/browse/TOMEE-3912[TOMEE-3912] TomEE Patch Plugin 0.9
+- link:https://issues.apache.org/jira/browse/TOMEE-3961[TOMEE-3961] Tomcat 9.0.63 (CVE-2022-29885)
+- link:https://issues.apache.org/jira/browse/TOMEE-3911[TOMEE-3911] XBean 4.21
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3935[TOMEE-3935] BOM Regeneration fails due to GitHub Actions permission issue
+- link:https://issues.apache.org/jira/browse/TOMEE-3969[TOMEE-3969] javax.cache API not part of Jakarta EE 8
+- link:https://issues.apache.org/jira/browse/TOMEE-3903[TOMEE-3903] Investigate *.tar.gz distributions aren't installed correctly to Maven Repository
+- link:https://issues.apache.org/jira/browse/TOMEE-3849[TOMEE-3849] EclipseLink JPA provider not discoverable in TomEE Plume libraries
+- link:https://issues.apache.org/jira/browse/TOMEE-3919[TOMEE-3919] Fix GitHub Actions Bom Generation targeting wrong branch
+- link:https://issues.apache.org/jira/browse/TOMEE-3908[TOMEE-3908] CI Job für TomEE Site Publish is failing
+
+== Improvement
+
+[.compact]
+
+- link:https://issues.apache.org/jira/browse/TOMEE-3924[TOMEE-3924] Disable @dependabot via .asf.yaml
+- link:https://issues.apache.org/jira/browse/TOMEE-3861[TOMEE-3861] Upgrade to apache-parent-26
+
+== Documentation
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3846[TOMEE-3846] Inconsistence between tomee flavors comparison in website and actual jars
+- link:https://issues.apache.org/jira/browse/TOMEE-3904[TOMEE-3904] Enhance / Update existing release documentation
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3961[TOMEE-3961] Upgrade to Apache Tomcat 9.0.63 (CVE-2022-29885)
