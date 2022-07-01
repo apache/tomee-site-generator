@@ -1,0 +1,5 @@
+type=securitytxt
+contact=mailto:security@apache.org
+languages=en
+canonical=https://tomee.apache.org/.well-known/security.txt
+policy=https://tomee.apache.org/security/security.html
