@@ -74,11 +74,11 @@
                 <div class="col-md-6 d-flex f-column-end accented-block accent-red f-space-between">
                     <div class="block-content">
                         <h5 class="muted">Latest Milestone - Jakarta namespace</h5>
-                        <h4 class="muted">apache-tomee-9.0.0-M7</h4>
+                        <h4 class="muted">apache-tomee-9.0.0-M8</h4>
                         <p>
-                            Jakarta EE 9.1 Web Profile compliant and supports the new jakarta namespace.  Runs on Java 8 or higher.
+                            Jakarta EE 9.1 Web Profile compliant and supports the new jakarta namespace.  Runs on Java 11 or higher.
                             <br>
-                            <div class="compatible-badge">Jakarte EE Compatible</div>
+                            <!-- <div class="compatible-badge">Jakarte EE Compatible</div> -->
                         </p>
                     </div>
                     <a class="btn btn-accent btn-primary square"  href="download.html#tomee-9.0"><i class="icon_plus"></i>Download</a>
