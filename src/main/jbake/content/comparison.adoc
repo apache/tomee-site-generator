@@ -110,8 +110,6 @@ Messaging (JMS), SOAP Web Services (JAX-WS, JWS, SAAJ), ... ||||{y}|{y}
 |Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
 |===
 
-////
-
 // implementations table moved out to version-specific documentation
 
 == [[implementations]] Implementations of Jakarta EE and MicroProfile features in TomEE
@@ -121,22 +119,28 @@ Messaging (JMS), SOAP Web Services (JAX-WS, JWS, SAAJ), ... ||||{y}|{y}
 |Specifications|Implementations included by TomEE
 |Jakarta Annotations, Servlet, Server Pages (JSP), +
 Jakarta Expression Language (EL), WebSocket, +
-Jakarta Authentication (JASPIC), Security, ...|https://tomcat.apache.org/[Apache Tomcat^]
+Jakarta Authentication (JASPIC), Security, ...|
+https://tomcat.apache.org/[Apache Tomcat^]
 |Jakarta{nbsp}Standard{nbsp}Tag{nbsp}Library{nbsp}(JSTL)|https://tomcat.apache.org/taglibs.html[Apache Standard Taglib Implementation^]
-|Jakarta Faces (JSF)|https://myfaces.apache.org/[Apache MyFaces^] *(in all TomEE flavors except Plume)* +
+|Jakarta Faces (JSF)|
+https://myfaces.apache.org/[Apache MyFaces^] *(in all TomEE flavors except Plume)* +
 https://projects.eclipse.org/projects/ee4j.mojarra[Eclipse Mojarra^] *(in TomEE Plume only)*
-|Jakarta Bean Validation|https://bval.apache.org/[Apache BVal^] *(in TomEE 8.x and earlier)* +
+|Jakarta Bean Validation|
+https://bval.apache.org/[Apache BVal^] *(in TomEE 8.x and earlier)* +
 https://hibernate.org/validator/[Hibernate Validator^] *(in TomEE 9.x and later)*
 |Jakarta Contexts and Dependency Injection (CDI)|https://openwebbeans.apache.org/[Apache OpenWebBeans^]
 |Jakarta Enterprise Beans (EJB)|https://openejb.apache.org/[Apache OpenEJB^]
-|Jakarta Persistence (JPA)|https://openjpa.apache.org/[Apache OpenJPA^] (in all TomEE flavors) +
+|Jakarta Persistence (JPA)|
+https://openjpa.apache.org/[Apache OpenJPA^] (in all TomEE flavors) +
 https://www.eclipse.org/eclipselink/[EclipseLink^] *(in TomEE Plume only)*
 |Jakarta Transactions (JTA)|Apache{nbsp}Geronimo{nbsp}Transaction{nbsp}Manager
 |Jakarta Mail (JavaMail)|Apache Geronimo JavaMail
-|MicroProfile|Apache Geronimo MicroProfile *(in TomEE 7.1.x and 8.x)* +
+|MicroProfile|
+Apache Geronimo MicroProfile *(in TomEE 7.1.x and 8.x)* +
 https://smallrye.io/[SmallRye MicroProfile^] *(in TomEE 9.x and later)*
 |Jakarta JSON Binding (JSON-B), +
-Jakarta JSON Processing (JSON-P)|https://johnzon.apache.org/[Apache Johnzon^]
+Jakarta JSON Processing (JSON-P)|
+https://johnzon.apache.org/[Apache Johnzon^]
 |Jakarta XML Binding (JAXB)|https://projects.eclipse.org/projects/ee4j.jaxb-impl[Eclipse Implementation of JAXB^]
 |Web Services|https://cxf.apache.org/[Apache CXF^]
 |Jakarta Batch (JBatch)|https://geronimo.apache.org/batchee/[Apache BatchEE^]
@@ -144,5 +148,3 @@ Jakarta JSON Processing (JSON-P)|https://johnzon.apache.org/[Apache Johnzon^]
 |===
 
 In bold : Implementations that differ between flavors or between versions
-
-////
