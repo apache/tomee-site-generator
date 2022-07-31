@@ -32,24 +32,27 @@ Tomcat supports only a subset of Jakarta EE while TomEE is fully compliant (see 
 
 Apache TomEE has four distributions, each supporting a slightly different set of technologies and aimed to give you a choice in what you want included out-of-the-box. When in doubt, choose Apache TomEE Plume.
 
-[options="header",cols="5,5*^1"]
+[options="header",cols="7,5*^0"]
 |===
 ||Tomcat|TomEE WebProfile|TomEE MicroProfile|TomEE Plus|TomEE Plume
 |*HTTP Request processing and Response:* +
-Jakarta Annotations, Servlet, JSP, JSTL, EL, WebSocket, +
-Jakarta Authentication, Security, ...|{y}|{y}|{y}|{y}|{y}
-|*Data persistence, ORM, Web Services and more:* +
-Jakarta CDI, DI, EJB, JPA, JTA, JSF, JSON, JAXB, ... +
-Jakarta RESTful Web Services (JAX-RS)||{y}|{y}|{y}|{y}
+Jakarta Servlet, Server Pages (JSP), Expression Language (EL), +
+Annotations, Authentication (JASPIC), WebSocket, ... |{y}|{y}|{y}|{y}|{y}
+|*Data Persistence (ORM), Web Services and more:* +
+Enterprise Beans (EJB), Contexts and Dependency Injection (CDI),
+Data Persistence (JPA), Standard Tag Library (JSTL) *, Faces (JSF),
+Transactions (JTA), RESTful Web Services (JAX-RS, JSON, JAXB), ... ||{y}|{y}|{y}|{y}
 |*Microservices architecture:* +
-MicroProfile Config, Health, Metrics, OpenAPI, OpenTracing, ... +
-MicroProfile Type-safe Rest Client|||{y}|{y}|{y}
+MicroProfile Config, Fault Tolerance, Health, Metrics, OpenAPI, OpenTracing,
+Type-safe Rest Client, ...|||{y}|{y}|{y}
 |*Other features:* +
-Jakarta Authorization, Batch, Connectors, Messaging (JMS), ... +
-Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
+Jakarta Authorization (JACC), Batch, Concurrency, Connectors, +
+Messaging (JMS), SOAP Web Services (JAX-WS, JWS, SAAJ), ... ||||{y}|{y}
 |Jakarta Faces (JSF) implementation||MyFaces|MyFaces|MyFaces|*Mojarra*
 |Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
 |===
+
+* Please note that Tomcat does not ship with the jars for Standard Tag Library (JSTL) nor the security.enterprise.* packages.
 
 == [[specifications]] Detailed list of Jakarta EE and MicroProfile specifications
 
@@ -60,10 +63,8 @@ Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 |https://jakarta.ee/specifications/annotations/[Jakarta Annotations^]|{y}|{y}|{y}|{y}|{y}
 |https://jakarta.ee/specifications/authentication/[Jakarta Authentication^] (JASPIC)|{y}|{y}|{y}|{y}|{y}
 |https://jakarta.ee/specifications/debugging/[Jakarta Debugging Support for Other Languages^]|{y}|{y}|{y}|{y}|{y}
-|https://jakarta.ee/specifications/security/[Jakarta Security^] (Java EE Enterprise Security)|{y}|{y}|{y}|{y}|{y}
 |https://jakarta.ee/specifications/servlet/[Jakarta Servlet^]|{y}|{y}|{y}|{y}|{y}
 |https://jakarta.ee/specifications/pages/[Jakarta Server Pages^] (JSP)|{y}|{y}|{y}|{y}|{y}
-|https://jakarta.ee/specifications/tags/[Jakarta Standard Tag Library^] (JSTL)|{y}|{y}|{y}|{y}|{y}
 |https://jakarta.ee/specifications/expression-language/[Jakarta Expression Language^] (EL)|{y}|{y}|{y}|{y}|{y}
 |https://jakarta.ee/specifications/websocket/[Jakarta WebSocket^]|{y}|{y}|{y}|{y}|{y}
 // WEB PROFILE
@@ -81,6 +82,8 @@ Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 |https://jakarta.ee/specifications/managedbeans/[Jakarta Managed Beans^]||{y}|{y}|{y}|{y}
 |https://jakarta.ee/specifications/persistence/[Jakarta Persistence^] (JPA)||{y}|{y}|{y}|{y}
 |https://jakarta.ee/specifications/restful-ws/[Jakarta RESTful Web Services^] (JAX-RS)||{y}|{y}|{y}|{y}
+|https://jakarta.ee/specifications/security/[Jakarta Security^] (Enterprise Security) *||{y}|{y}|{y}|{y}
+|https://jakarta.ee/specifications/tags/[Jakarta Standard Tag Library^] (JSTL) *||{y}|{y}|{y}|{y}
 |https://jakarta.ee/specifications/transactions/[Jakarta Transactions^] (JTA)||{y}|{y}|{y}|{y}
 |https://jakarta.ee/specifications/xml-binding/[Jakarta XML Binding^] (JAXB)||{y}|{y}|{y}|{y}
 // MICRO PROFILE
@@ -101,47 +104,62 @@ Jakarta SOAP Web Services (JAX-WS)||||{y}|{y}
 |https://jakarta.ee/specifications/connectors/[Jakarta Connectors^]||||{y}|{y}
 |https://jakarta.ee/specifications/enterprise-ws/[Jakarta Enterprise Web Services^]||||{y}|{y}
 |https://jakarta.ee/specifications/messaging/[Jakarta Messaging^] (JMS)||||{y}|{y}
-|https://jakarta.ee/specifications/soap-attachments/[Jakarta SOAP with Attachments^]||||{y}|{y}
-|https://jakarta.ee/specifications/web-services-metadata/[Jakarta Web Services Metadata^]||||{y}|{y}
+|https://jakarta.ee/specifications/soap-attachments/[Jakarta SOAP with Attachments^] (SAAJ)||||{y}|{y}
+|https://jakarta.ee/specifications/web-services-metadata/[Jakarta Web Services Metadata^] (JWS)||||{y}|{y}
 |https://jakarta.ee/specifications/xml-web-services/[Jakarta XML Web Services^] (JAX-WS)||||{y}|{y}
 // IMPLEMENTATIONS
 |Jakarta Faces (JSF) implementation||MyFaces|MyFaces|MyFaces|*Mojarra*
 |Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
 |===
 
-////
-
-// implementations table moved out to version-specific documentation
+* Please note that Tomcat does not ship with the jars for Standard Tag Library (JSTL) nor the security.enterprise.* packages.
 
 == [[implementations]] Implementations of Jakarta EE and MicroProfile features in TomEE
 
 [options="header",cols="1,1"]
 |===
 |Specifications|Implementations included by TomEE
-|Jakarta Annotations, Servlet, Server Pages (JSP), +
-Jakarta Expression Language (EL), WebSocket, +
-Jakarta Authentication (JASPIC), Security, ...|https://tomcat.apache.org/[Apache Tomcat^]
+|Jakarta Servlet, Server Pages (JSP), Expression Language (EL), +
+Jakarta Annotations, Authentication (JASPIC), WebSocket, ... |
+https://tomcat.apache.org/[Apache Tomcat^]
 |Jakarta{nbsp}Standard{nbsp}Tag{nbsp}Library{nbsp}(JSTL)|https://tomcat.apache.org/taglibs.html[Apache Standard Taglib Implementation^]
-|Jakarta Faces (JSF)|https://myfaces.apache.org/[Apache MyFaces^] *(in all TomEE flavors except Plume)* +
-https://projects.eclipse.org/projects/ee4j.mojarra[Eclipse Mojarra^] *(in TomEE Plume only)*
-|Jakarta Bean Validation|https://bval.apache.org/[Apache BVal^] *(in TomEE 8.x and earlier)* +
-https://hibernate.org/validator/[Hibernate Validator^] *(in TomEE 9.x and later)*
+|Jakarta Faces (JSF)|
+https://myfaces.apache.org/[Apache MyFaces^] *(shipped in all TomEE flavors except Plume)* +
+https://projects.eclipse.org/projects/ee4j.mojarra[Eclipse Mojarra^] *(shipped in TomEE Plume)*
 |Jakarta Contexts and Dependency Injection (CDI)|https://openwebbeans.apache.org/[Apache OpenWebBeans^]
 |Jakarta Enterprise Beans (EJB)|https://openejb.apache.org/[Apache OpenEJB^]
-|Jakarta Persistence (JPA)|https://openjpa.apache.org/[Apache OpenJPA^] (in all TomEE flavors) +
-https://www.eclipse.org/eclipselink/[EclipseLink^] *(in TomEE Plume only)*
 |Jakarta Transactions (JTA)|Apache{nbsp}Geronimo{nbsp}Transaction{nbsp}Manager
-|Jakarta Mail (JavaMail)|Apache Geronimo JavaMail
-|MicroProfile|Apache Geronimo MicroProfile *(in TomEE 7.1.x and 8.x)* +
-https://smallrye.io/[SmallRye MicroProfile^] *(in TomEE 9.x and later)*
-|Jakarta JSON Binding (JSON-B), +
-Jakarta JSON Processing (JSON-P)|https://johnzon.apache.org/[Apache Johnzon^]
-|Jakarta XML Binding (JAXB)|https://projects.eclipse.org/projects/ee4j.jaxb-impl[Eclipse Implementation of JAXB^]
+|Jakarta Persistence (JPA)|
+https://openjpa.apache.org/[Apache OpenJPA^] (shipped in all TomEE flavors) +
+https://www.eclipse.org/eclipselink/[EclipseLink^] *(shipped in TomEE Plume)*
+|Jakarta Bean Validation|
+https://bval.apache.org/[Apache BVal^]
 |Web Services|https://cxf.apache.org/[Apache CXF^]
+|Jakarta JSON Binding (JSON-B), +
+Jakarta JSON Processing (JSON-P)|
+https://johnzon.apache.org/[Apache Johnzon^]
+|Jakarta XML Binding (JAXB)|https://projects.eclipse.org/projects/ee4j.jaxb-impl[Eclipse Implementation of JAXB^]
+|Jakarta Mail (JavaMail)|Apache Geronimo JavaMail
+|MicroProfile|
+Apache Geronimo MicroProfile *(ok only with TomEE 7.1.x and 8.x)* +
+https://smallrye.io/[SmallRye MicroProfile^] *(ok with TomEE 9.x and later)*
 |Jakarta Batch (JBatch)|https://geronimo.apache.org/batchee/[Apache BatchEE^]
 |Jakarta Messaging (JMS)|https://activemq.apache.org/[Apache ActiveMQ^]
 |===
 
 In bold : Implementations that differ between flavors or between versions
 
-////
+== [[Compatibility]] Compatibility with other implementations
+
+[options="header",cols="1,1"]
+|===
+|Specifications|Implementations alternatives +
+//(see icons for compatibilities with TomEE)
+|Jakarta Persistence (JPA)|https://hibernate.org/orm/[Hibernate ORM^] {y} +
+|Jakarta MVC|
+https://eclipse-ee4j.github.io/krazo/[Eclipse Krazo^] {y} *(ok with TomEE 8.x and later)* +
+|Other containers (CDI, EJB, JTA, etc.) and frameworks|
+https://spring.io/[Spring^] {y} +
+|===
+
+* Please note that TomEE does not ship with the jars for Hibernate, Jersey, Krazo, Spring.
