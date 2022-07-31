@@ -110,16 +110,13 @@ Messaging (JMS), SOAP Web Services (JAX-WS, JWS, SAAJ), ... ||||{y}|{y}
 |Jakarta Persistence (JPA) implementation(s)||OpenJPA|OpenJPA|OpenJPA|OpenJPA, *EclipseLink*
 |===
 
-// implementations table moved out to version-specific documentation
-
 == [[implementations]] Implementations of Jakarta EE and MicroProfile features in TomEE
 
 [options="header",cols="1,1"]
 |===
 |Specifications|Implementations included by TomEE
-|Jakarta Annotations, Servlet, Server Pages (JSP), +
-Jakarta Expression Language (EL), WebSocket, +
-Jakarta Authentication (JASPIC), Security, ...|
+|Jakarta Servlet, Server Pages (JSP), Expression Language (EL), +
+Jakarta Annotations, Authentication (JASPIC), WebSocket, ... |
 https://tomcat.apache.org/[Apache Tomcat^]
 |Jakarta{nbsp}Standard{nbsp}Tag{nbsp}Library{nbsp}(JSTL)|https://tomcat.apache.org/taglibs.html[Apache Standard Taglib Implementation^]
 |Jakarta Faces (JSF)|
