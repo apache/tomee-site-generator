@@ -60,7 +60,7 @@ public class Configuration {
                 new Source("https://github.com/jakartaee/websocket.git", "2.1.0-RELEASE", "jakartaee-10.0-repos/websocket-api"),
                 new Source("https://github.com/eclipse-ee4j/jaxb-api.git", "4.0.0", "jakartaee-10.0-repos/xml-binding-api"),
                 new Source("https://github.com/eclipse-ee4j/jax-ws-api.git", "4.0.0", "jakartaee-10.0-repos/xml-web-services-api"),
-                new Source("https://github.com/eclipse-ee4j/jws-api.git", "3.0.0", "jakartaee-9.1-repos/xml-ws-annotations-api"),
+                // new Source("https://github.com/eclipse-ee4j/jws-api.git", "3.0.0", "jakartaee-9.1-repos/xml-ws-annotations-api"), // NOW PART OF ANOTHER API
                 new Source("https://github.com/eclipse-ee4j/saaj-api.git", "3.0.0", "jakartaee-10.0-repos/xml-soap-ws-api"),
         };
 
@@ -196,7 +196,7 @@ public class Configuration {
                 new Source("https://github.com/apache/tomee.git", "tomee-7.1.x", "tomee-7.1", false).javadoc("^org.apache.(openejb|tomee).*"),
                 new Source("https://github.com/apache/tomee.git", "tomee-7.0.x", "tomee-7.0", false).javadoc("^org.apache.(openejb|tomee).*"),
                 // JAKARTA EE
-                new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v10.0", "jakartaee-10.0").label("milestone").related(jakartaEE10).javadoc("^jakarta.*"),
+                new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v10.0", "jakartaee-10.0").related(jakartaEE10).javadoc("^jakarta.*"),
                 new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v9.1", "jakartaee-9.1").related(jakartaEE9).javadoc("^jakarta.*"),
                 new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v8", "jakartaee-8.0").related(jakartaEE8).javadoc("^javax.*"),
                 // JAVA EE : no git source for v7 or less, javadoc is at https://docs.oracle.com/javaee/7/api/
