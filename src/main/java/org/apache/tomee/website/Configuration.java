@@ -36,7 +36,7 @@ public class Configuration {
                 new Source("https://github.com/jakartaee/authorization.git", "2.1.0-RELEASE", "jakartaee-10.0-repos/authorization-api"),
                 new Source("https://github.com/eclipse-ee4j/batch-api.git", "2.1.1", "jakartaee-10.0-repos/batch-api"),
                 new Source("https://github.com/jakartaee/cdi.git", "4.0.1", "jakartaee-10.0-repos/cdi-api"),
-                new Source("https://github.com/jakartaee/concurrency.git", "3.0.1", "jakartaee-10.0-repos/concurrency-api"),
+                new Source("https://github.com/jakartaee/concurrency.git", "3.0.2", "jakartaee-10.0-repos/concurrency-api"),
                 new Source("https://github.com/eclipse-ee4j/jca-api.git", "2.1.0-RELEASE", "jakartaee-10.0-repos/connectors-api"),
                 new Source("https://github.com/jakartaee/enterprise-beans.git", "4.0.1-RELEASE", "jakartaee-9.1-repos/enterprise-beans-api"),
                 new Source("https://github.com/jakartaee/expression-language.git", "5.0.1-RELEASE-api", "jakartaee-10.0-repos/expression-language-api"),
