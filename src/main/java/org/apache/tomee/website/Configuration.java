@@ -60,7 +60,7 @@ public class Configuration {
                 new Source("https://github.com/jakartaee/websocket.git", "2.1.0-RELEASE", "jakartaee-10.0-repos/websocket-api"),
                 new Source("https://github.com/eclipse-ee4j/jaxb-api.git", "4.0.0", "jakartaee-10.0-repos/xml-binding-api"),
                 new Source("https://github.com/eclipse-ee4j/jax-ws-api.git", "4.0.0", "jakartaee-10.0-repos/xml-web-services-api"),
-                // new Source("https://github.com/eclipse-ee4j/jws-api.git", "3.0.0", "jakartaee-9.1-repos/xml-ws-annotations-api"), // NOW PART OF ANOTHER API
+                // new Source("https://github.com/eclipse-ee4j/jws-api.git", "3.0.0", "jakartaee-9.1-repos/xml-ws-annotations-api"), // NOW PART OF JAX-WS API
                 new Source("https://github.com/eclipse-ee4j/saaj-api.git", "3.0.0", "jakartaee-10.0-repos/xml-soap-ws-api"),
         };
 
