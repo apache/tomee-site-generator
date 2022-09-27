@@ -150,8 +150,8 @@ public class Configuration {
         };
 
         final Source[] microProfile5 = new Source[]{
-                new Source("https://github.com/eclipse/microprofile-config.git", "3.0.1", "microprofile-5.0-repos/config").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-fault-tolerance", "4.0", "microprofile-5.0-repos/fault-tolerance").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-config.git", "3.0.2", "microprofile-5.0-repos/config").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-fault-tolerance", "4.0.1", "microprofile-5.0-repos/fault-tolerance").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-health", "4.0", "microprofile-5.0-repos/health").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-jwt-auth.git", "2.0", "microprofile-5.0-repos/jwt").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-metrics", "4.0.1", "microprofile-5.0-repos/metrics").filterJavadoc(".*/api/src/main/java/.*", ""),
