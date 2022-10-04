@@ -191,7 +191,7 @@ public class Configuration {
 //                new Source("https://github.com/apache/tomee.git", "tomee-7.1.x", "tomee-7.1", false).javadoc("^org.apache.(openejb|tomee).*"),
 //                new Source("https://github.com/apache/tomee.git", "tomee-7.0.x", "tomee-7.0", false).javadoc("^org.apache.(openejb|tomee).*"),
                 // TOMEE CURRENT
-                new Source("https://github.com/apache/tomee.git", "master", "tomee-9.0", false).label("milestone").related(microProfile5).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "main", "tomee-9.0", false).label("milestone").related(microProfile5).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
                 new Source("https://github.com/apache/tomee.git", "tomee-8.x", "tomee-8.0", true).related(microProfile2).related(jakartaEE8).javadoc("^org.apache.(openejb|tomee).*"),
                 new Source("https://github.com/apache/tomee.git", "tomee-7.1.x", "tomee-7.1", false).javadoc("^org.apache.(openejb|tomee).*"),
                 new Source("https://github.com/apache/tomee.git", "tomee-7.0.x", "tomee-7.0", false).javadoc("^org.apache.(openejb|tomee).*"),
