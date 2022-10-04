@@ -157,7 +157,7 @@ public class Configuration {
                 new Source("https://github.com/eclipse/microprofile-metrics", "4.0.1", "microprofile-5.0-repos/metrics").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-open-api", "3.0", "microprofile-5.0-repos/open-api").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-opentracing", "3.0", "microprofile-5.0-repos/opentracing").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-rest-client", "3.0", "microprofile-5.0-repos/rest-client").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-rest-client", "3.0.1", "microprofile-5.0-repos/rest-client").filterJavadoc(".*/api/src/main/java/.*", ""),
         };
 
         final Source[] microProfile4 = new Source[]{
