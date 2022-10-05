@@ -151,8 +151,8 @@ public class Configuration {
 
         final Source[] microProfile5 = new Source[]{
                 new Source("https://github.com/eclipse/microprofile-config.git", "3.0.2", "microprofile-5.0-repos/config").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-fault-tolerance", "4.0.1", "microprofile-5.0-repos/fault-tolerance").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-health", "4.0", "microprofile-5.0-repos/health").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-fault-tolerance", "4.0.2", "microprofile-5.0-repos/fault-tolerance").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-health", "4.0.1", "microprofile-5.0-repos/health").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-jwt-auth.git", "2.0", "microprofile-5.0-repos/jwt").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-metrics", "4.0.1", "microprofile-5.0-repos/metrics").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-open-api", "3.0", "microprofile-5.0-repos/open-api").filterJavadoc(".*/api/src/main/java/.*", ""),
@@ -185,7 +185,7 @@ public class Configuration {
 //        if (1 == 1) return new Source[0]; // uncomment this line to generate only the main site pages.
         return new Source[]{
                 // TOMEE NEXT
-//                new Source("https://github.com/apache/tomee.git", "master", "tomee-10.0", false).label("milestone").related(microProfile6).related(jakartaEE10).javadoc("^org.apache.(openejb|tomee).*"),
+//                new Source("https://github.com/apache/tomee.git", "main", "tomee-10.0", false).label("milestone").related(microProfile6).related(jakartaEE10).javadoc("^org.apache.(openejb|tomee).*"),
 //                new Source("https://github.com/apache/tomee.git", "tomee-9.0", "tomee-9.0", true).related(microProfile5).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
 //                new Source("https://github.com/apache/tomee.git", "tomee-8.x", "tomee-8.0", false).related(microProfile2).related(jakartaEE8).javadoc("^org.apache.(openejb|tomee).*"),
 //                new Source("https://github.com/apache/tomee.git", "tomee-7.1.x", "tomee-7.1", false).javadoc("^org.apache.(openejb|tomee).*"),
