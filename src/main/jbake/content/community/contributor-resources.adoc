@@ -18,10 +18,10 @@ Some legacy code is served from link:http://svn.apache.org/viewvc/tomee/[SVN].
 
 == Quick Links
 === TomEE 8
-- link:https://github.com/apache/tomee[Main Repository]
+- link:https://github.com/apache/tomee/tree/tomee-8.x[TomEE 8.x Branch]
 
 === TomEE 9
-- link:https://github.com/apache/tomee-jakarta[TomEE 9.x ] - will be soon available in the link:https://github.com/apache/tomee[Main Repository].
+- link:https://github.com/apache/tomee/tree/main[TomEE 9.x Branch]
 
 === Misc
 
