@@ -39,6 +39,7 @@ public class VersionsIndex {
 
             for (final Source source : sources.getSources()) {
                 if ("master".equals(source.getName())) continue;
+                if ("main".equals(source.getName())) continue;
                 if ("latest".equals(source.getName())) continue;
 
                 index.append("*").append(source.getName());

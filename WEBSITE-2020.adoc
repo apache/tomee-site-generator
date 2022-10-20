@@ -109,7 +109,7 @@ Without this, no one will be able to understand how the site is built.
 For Antora, it's easy to set up a gitlab ci pipeline that builds a site and publishies it on netlify.
 I don't know if anything similar is possible for github, but I thnk it's worth investigating.
 My idea is something like any commit results in updating a preview site.
-If you like it you can push to "master", so asf shows it.
+If you like it you can push to "main", so asf shows it.
 
 '''
 
