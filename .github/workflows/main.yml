@@ -22,4 +22,9 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B help:system -U --show-version clean install --file pom.xml
-
+    - name: basic validations
+      run: | 
+          [ -d target/site-1.0-SNAPSHOT/latest/docs ] && echo 'docs exist'
+          [ -d target/site-1.0-SNAPSHOT/latest/examples ] && echo 'examples exist'
+          [ -d target/site-1.0-SNAPSHOT/latest/javadoc] && echo 'javadoc exist'
+          [ -f target/site-1.0-SNAPSHOT/latest/examples/index.html ] && echo 'index.html exist'
