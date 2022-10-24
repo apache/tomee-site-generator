@@ -1,0 +1,84 @@
+= Apache TomEE 8.0.13 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 8.0.13 has been released. It is a maintenance release with some bug fixes and dependencies upgrades.
+
+Thank you to everyone who contributed to this release, including all of our users and the people who submitted bug reports, contributed code or documentation enhancements.
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3985[TOMEE-3985] BatchEE 1.0.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4057[TOMEE-4057] CXF 3.4.8
+- link:https://issues.apache.org/jira/browse/TOMEE-3800[TOMEE-3800] DBCP 2.9.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4059[TOMEE-4059] EclipseLink 2.7.11
+- link:https://issues.apache.org/jira/browse/TOMEE-4063[TOMEE-4063] Geronimo Transaction Manager 3.1.5
+- link:https://issues.apache.org/jira/browse/TOMEE-4019[TOMEE-4019] HSQLDB 2.7.0
+- link:https://issues.apache.org/jira/browse/TOMEE-3986[TOMEE-3986] Hibernate Integration 5.6.9.Final
+- link:https://issues.apache.org/jira/browse/TOMEE-4042[TOMEE-4042] Jackson 2.13.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4067[TOMEE-4067] Jackson 2.14.0-rc1
+- link:https://issues.apache.org/jira/browse/TOMEE-4020[TOMEE-4020] Jakarta Faces 2.3.18
+- link:https://issues.apache.org/jira/browse/TOMEE-4026[TOMEE-4026] Johnzon 1.2.19
+- link:https://issues.apache.org/jira/browse/TOMEE-4030[TOMEE-4030] Log4J2 2.18.0
+- link:https://issues.apache.org/jira/browse/TOMEE-3998[TOMEE-3998] MyFaces 2.3.10
+- link:https://issues.apache.org/jira/browse/TOMEE-4044[TOMEE-4044] Snakeyaml 1.32
+- link:https://issues.apache.org/jira/browse/TOMEE-4054[TOMEE-4054] Snakeyaml 1.33
+- link:https://issues.apache.org/jira/browse/TOMEE-4002[TOMEE-4002] Tomcat 9.0.64
+- link:https://issues.apache.org/jira/browse/TOMEE-4051[TOMEE-4051] Tomcat 9.0.65
+- link:https://issues.apache.org/jira/browse/TOMEE-4060[TOMEE-4060] Tomcat 9.0.67
+- link:https://issues.apache.org/jira/browse/TOMEE-4087[TOMEE-4087] Tomcat 9.0.68
+- link:https://issues.apache.org/jira/browse/TOMEE-4018[TOMEE-4018] bcprov-jdk15on 1.70
+- link:https://issues.apache.org/jira/browse/TOMEE-4085[TOMEE-4085] commons-cli 1.5.0
+
+== New Feature
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3928[TOMEE-3928] Example for properties provider
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4021[TOMEE-4021] Unexpected ehcache 3.8.1 in tomee/lib
+- link:https://issues.apache.org/jira/browse/TOMEE-3850[TOMEE-3850] HTTP(S) connections are not reused
+- link:https://issues.apache.org/jira/browse/TOMEE-4014[TOMEE-4014] Unable to see TomEE version in Tomcat home page with Java 17
+- link:https://issues.apache.org/jira/browse/TOMEE-3979[TOMEE-3979] service.bat issue when using JRE_HOME on Windows
+- link:https://issues.apache.org/jira/browse/TOMEE-4041[TOMEE-4041] 4 CVE Vulnerabilities in snakeyaml-1.30.jar 
+- link:https://issues.apache.org/jira/browse/TOMEE-4001[TOMEE-4001] CVE-2022-34305 displaying user provided data without filtering, exposing a XSS vulnerability
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3878[TOMEE-3878] Backport 'No interface view EJB proxies broken on JDK16+' [TOMEE-3877] to TomEE 8.x
+
+== Task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4064[TOMEE-4064] OpenJPA 3.2.2 (examples), EclipseLink 2.7.11 (examples), Derby 10.14.2.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4022[TOMEE-4022] Move to Apache Rat
+- link:https://issues.apache.org/jira/browse/TOMEE-4056[TOMEE-4056] Log4J2 2.19.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4058[TOMEE-4058] Update Krazo, DeltaSpike and Hibernate
+- link:https://issues.apache.org/jira/browse/TOMEE-3914[TOMEE-3914] Spring 3 Dependencies in TomEE Root POM
+- link:https://issues.apache.org/jira/browse/TOMEE-4088[TOMEE-4088] Add workaround for CVE-2022-41853 (hsqldb)
+
+== Documentation
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4023[TOMEE-4023] Comparison pages with wrong specs per profiles
+- link:https://issues.apache.org/jira/browse/TOMEE-3981[TOMEE-3981] update javadoc to reflect updates on Jakarta EE
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4041[TOMEE-4041] 4 CVE Vulnerabilities in snakeyaml-1.30.jar
+- link:https://issues.apache.org/jira/browse/TOMEE-4001[TOMEE-4001] CVE-2022-34305 displaying user provided data without filtering, exposing a XSS vulnerability
+- link:https://issues.apache.org/jira/browse/TOMEE-4088[TOMEE-4088] Add workaround for CVE-2022-41853 (hsqldb)
+
+== Additional Information
+
+Please note:
+
+- (1) CVE-2022-42003 (jackson-databind): Users are only affected, if `UNWRAP_SINGLE_VALUE_ARRAYS` is enabled. Mitigation is included in 2.14.0-rc1. As per list discussion we are fine shipping an RC version.
+
+- (2) CVE-2022-41853 (hsqldb): As v2.7.1 wasn't available at voting time, TomEE sets "hsqldb.method_class_names" to an invalid value to mitigate the vulnerability. Users can override the property as needed.
