@@ -4,9 +4,6 @@
 #
 # Fixing or deleting these files is a good area for contribution
 #
-features.adoc
-tomee-8.0/docs/documentation.old.adoc
-tomee-8.0/pt/examples/webservice-holder.adoc
 tomee-8.0/pt/examples/webservice-ssl-client-cert.adoc
 tomee-8.0/pt/examples/websocket-tls-basic-auth.adoc
 tomee-8.0/examples/webservice-ws-security.adoc
