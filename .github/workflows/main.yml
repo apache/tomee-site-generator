@@ -1,0 +1,30 @@
+name: Main Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: maven
+    - name: Build with Maven
+      run: mvn -B help:system -U --show-version clean install --file pom.xml
+    - name: basic validations
+      run: | 
+          [ -d target/site-1.0-SNAPSHOT/latest/docs ] && echo 'docs exist'
+          [ -d target/site-1.0-SNAPSHOT/latest/examples ] && echo 'examples exist'
+          [ -d target/site-1.0-SNAPSHOT/latest/javadoc] && echo 'javadoc exist'
+          [ -f target/site-1.0-SNAPSHOT/latest/examples/index.html ] && echo 'index.html exist'
