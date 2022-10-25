@@ -77,8 +77,8 @@ Thank you to everyone who contributed to this release, including all of our user
 
 == Additional Information
 
-Please note:
+**Please note:**
 
-- (1) CVE-2022-42003 (jackson-databind): Users are only affected, if `UNWRAP_SINGLE_VALUE_ARRAYS` is enabled. Mitigation is included in 2.14.0-rc1. As per list discussion we are fine shipping an RC version.
+IMPORTANT: (1) CVE-2022-42003 (jackson-databind): Users are only affected, if `UNWRAP_SINGLE_VALUE_ARRAYS` is enabled. Mitigation is included in 2.14.0-rc1. As per list discussion we are fine shipping an RC version.
 
-- (2) CVE-2022-41853 (hsqldb): As v2.7.1 wasn't available at voting time, TomEE sets "hsqldb.method_class_names" to an invalid value to mitigate the vulnerability. Users can override the property as needed.
+IMPORTANT: (2) CVE-2022-41853 (hsqldb): As v2.7.1 wasn't available at voting time, TomEE sets "hsqldb.method_class_names" to an invalid value to mitigate the vulnerability. Users can override the property as needed.
