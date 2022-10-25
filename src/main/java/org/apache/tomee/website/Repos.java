@@ -51,7 +51,7 @@ public class Repos {
     private static void clone(final Source source) throws Exception {
         System.out.println("  > git clone " + source.getScmUrl());
 
-        jgit("clone", source.getScmUrl(), "-b", source.getBranch(), source.getDir().getAbsolutePath());
+        jgit("clone", "--quiet", source.getScmUrl(), "-b", source.getBranch(), source.getDir().getAbsolutePath());
     }
 
     private static void pull(final Source source) throws IOException, GitAPIException {
