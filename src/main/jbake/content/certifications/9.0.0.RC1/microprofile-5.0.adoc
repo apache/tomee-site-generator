@@ -1,0 +1,124 @@
+= TCK Results
+:jbake-date: 2022-11-03
+:jbake-type: page
+:jbake-status: published
+:icons: font
+:imagesdir: ../../img
+
+image:apache_tomee-logo.jpg[TomEE, align="center"]
+
+== Introduction
+As required by the https://www.eclipse.org/legal/tck.php[Eclipse Foundation Technology Compatibility Kit License], and
+https://github.com/microprofile/microprofile-wg/blob/main/tckprocess.adoc following is a summary of the TCK results for
+releases of MicroProfile 5.0.
+
+=== Apache TomEE 9.0.0.RC1 , Eclipse MicroProfile 5.0 TCK Certification Summary
+----
+Date:  November 3rd, 2022
+Product Name, Version: Apache TomEE 9.0.0.RC1
+URL to product download page: https://tomee.apache.org/download-ng.html
+
+Product Description: An implementation of the Jakarta EE 9.1 Web Profile Specifications and MicroProfile 5.0 Specifications
+Java SE provider and Version tested with: Eclipse Adoptium adoptium-jdk-11.0.16.1+1
+OS version: Linux AMD 64 4.15.0-191-generic
+----
+
+Specification Name, Version and download URL:
+https://microprofile.io/compatible/5-0/[Eclipse MicroProfile 5.0] composed of
+
+* https://github.com/eclipse/microprofile-config/releases/tag/3.0[MicroProfile Config 3.0]
+* https://github.com/eclipse/microprofile-fault-tolerance/releases/tag/4.0[MicroProfile Fault Tolerance 4.0]
+* https://github.com/eclipse/microprofile-jwt-auth/releases/tag/2.0[MicroProfile JWT Auth 2.0]
+* https://github.com/eclipse/microprofile-metrics/releases/tag/4.0[MicroProfile Metrics 4.0]
+* https://github.com/eclipse/microprofile-open-api/releases/tag/3.0[MicroProfile Open API 3.0]
+* https://github.com/eclipse/microprofile-opentracing/releases/tag/3.0[MicroProfile Open Tracing 3.0]
+* https://github.com/eclipse/microprofile-rest-client/releases/tag/3.0[MicroProfile Rest Client 3.0]
+* https://github.com/eclipse/microprofile-health/releases/tag/4.0[MicroProfile Health 4.0]
+
+Public URL of TCK Results Summary:
+link:https://tomee.apache.org/9.0.0.RC1/microprofile-5.0.html[Apache TomEE 9.0.0.RC1 TCK results]
+
+=== MicroProfile TCK Test results
+
+The Jenkins build against the Git Tag tomee-project-9.0.0.RC1 is available at
+https://ci-builds.apache.org/job/Tomee/job/TomEE_Compitable_TCK/2/
+
+==== MicroProfile Config 3.0
+TCK result summary:
+----
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 372, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+----
+
+==== MicroProfile Fault Tolerance 4.0
+TCK result summary:
+----
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 433, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+----
+
+==== MicroProfile JWT Auth 2.0
+TCK result summary:
+----
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 190, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+----
+
+==== MicroProfile Metrics 4.0
+TCK result summary:
+----
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 213, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+----
+
+==== MicroProfile Open API 3.0
+TCK result summary:
+----
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 244, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+----
+
+==== MicroProfile Open Tracing 3.0
+TCK result summary:
+----
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 63, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+----
+
+==== MicroProfile Rest Client 3.0
+TCK result summary:
+----
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 181, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+----
+
+==== MicroProfile Health 3.0
+TCK result summary:
+----
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+----
