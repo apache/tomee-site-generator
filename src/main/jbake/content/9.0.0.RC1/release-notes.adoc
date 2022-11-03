@@ -1,0 +1,102 @@
+= Apache TomEE 9.0.0.RC1 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 9.0.0.RC1 has been released.
+
+This milestone gets us closer to a final 9.0.0 release. The milestone 8 was the first migration from javax to jakarta
+namespace straight in the source code. The release was not production ready and the build was not stable, but the goal
+was to get a base we could build upon.
+
+The journey has been long, after working to stabilize the build and achieve a significant TCK coverage for Jakarta EE 9.1,
+we decided to focus on supporting MicroProfile 5.0. We were still stuck on a very old version. The work we started on
+Milestone 8 to migrate to SmallRye is now complete and we are pleased to announced we reached 100% of MicroProfile 5.0.
+
+[NOTE]
+The MicroProfile JWT implementation is entirely ours and has some great additions such as Bean Validation integration to
+validate JWT tokens.
+
+In terms of Jakarta EE 9.1 TCK, we are 12 failures short, but we are actively working on them so we can have a final release soon.
+
+In addition to the previous work, we fixed a couple of bugs and did some dependency upgrades.
+
+Thank you to everyone who contributed to this release, including all of our users and the people who submitted bug reports,
+contributed code or documentation enhancements.
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4100[TOMEE-4100]  XBean 4.22
+- link:https://issues.apache.org/jira/browse/TOMEE-4083[TOMEE-4083] Commons CLI 1.5.0
+- link:https://issues.apache.org/jira/browse/TOMEE-3800[TOMEE-3800] DBCP 2.9.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4037[TOMEE-4037] Eclipse Mojarra 3.0.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4036[TOMEE-4036] EclipseLink 3.0.3
+- link:https://issues.apache.org/jira/browse/TOMEE-3980[TOMEE-3980] HSQLDB 2.7.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4019[TOMEE-4019] HSQLDB 2.7.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4086[TOMEE-4086] HSQLDB 2.7.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4039[TOMEE-4039] Hibernate 6.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4093[TOMEE-4093] Hibernate 6.1.4.Final
+- link:https://issues.apache.org/jira/browse/TOMEE-4038[TOMEE-4038] Jackson 2.13.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4026[TOMEE-4026] Johnzon 1.2.19
+- link:https://issues.apache.org/jira/browse/TOMEE-4030[TOMEE-4030] Log4J2 2.18.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4097[TOMEE-4097] MicroProfile Fault Tolerance API 4.0.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4098[TOMEE-4098] MicroProfile Health API 4.0.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4099[TOMEE-4099] MicroProfile Rest Client API 3.0.1
+- link:https://issues.apache.org/jira/browse/TOMEE-3999[TOMEE-3999] MyFaces 3.0.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4054[TOMEE-4054] Snakeyaml 1.33
+- link:https://issues.apache.org/jira/browse/TOMEE-3831[TOMEE-3831] TomEE should support library asm9.1 support fully Java 17
+- link:https://issues.apache.org/jira/browse/TOMEE-4040[TOMEE-4040] Tomcat 10.0.23
+- link:https://issues.apache.org/jira/browse/TOMEE-4096[TOMEE-4096] Tomcat 10.0.27
+- link:https://issues.apache.org/jira/browse/TOMEE-4018[TOMEE-4018] bcprov-jdk15on 1.70
+- link:https://issues.apache.org/jira/browse/TOMEE-4006[TOMEE-4006] slf4j 1.7.36
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4101[TOMEE-4101] Typo with EL22Adaptor implementation in openwebbeans.properties
+- link:https://issues.apache.org/jira/browse/TOMEE-4102[TOMEE-4102] TomEE logs SEVERE: Expected ContextBinding to have the method getThreadName()
+- link:https://issues.apache.org/jira/browse/TOMEE-4032[TOMEE-4032] Class cast Exception when undeploying application with @PostConstruct LifeCycle
+- link:https://issues.apache.org/jira/browse/TOMEE-3795[TOMEE-3795] Proxy class definition does not work in Java 17+
+- link:https://issues.apache.org/jira/browse/TOMEE-4014[TOMEE-4014] Unable to see TomEE version in Tomcat home page with Java 17
+- link:https://issues.apache.org/jira/browse/TOMEE-4041[TOMEE-4041] 4 CVE Vulnerabilities in snakeyaml-1.30.jar
+- link:https://issues.apache.org/jira/browse/TOMEE-4001[TOMEE-4001] CVE-2022-34305 displaying user provided data without filtering, exposing a XSS vulnerability
+
+== Task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4022[TOMEE-4022] Move to Apache Rat
+- link:https://issues.apache.org/jira/browse/TOMEE-4028[TOMEE-4028] Replace cucumber shading and replace with cucumber-jakarta-openejb
+- link:https://issues.apache.org/jira/browse/TOMEE-4035[TOMEE-4035] Upgrade SmallRye, Jackson and others
+- link:https://issues.apache.org/jira/browse/TOMEE-3914[TOMEE-3914] Spring 3 Dependencies in TomEE Root POM
+- link:https://issues.apache.org/jira/browse/TOMEE-4088[TOMEE-4088] Add workaround for CVE-2022-41853 (hsqldb)
+
+== Documentation
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4023[TOMEE-4023] Comparison pages with wrong specs per profiles
+
+== Sub-task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3890[TOMEE-3890] Replace Apache Geronimo Microprofile with Smallrye
+- link:https://issues.apache.org/jira/browse/TOMEE-3896[TOMEE-3896] SmallRye Metrics integration
+- link:https://issues.apache.org/jira/browse/TOMEE-3897[TOMEE-3897] SmallRye Health integration
+- link:https://issues.apache.org/jira/browse/TOMEE-3898[TOMEE-3898] SmallRye Config integration
+- link:https://issues.apache.org/jira/browse/TOMEE-3899[TOMEE-3899] SmallRye Fault Tolerant integration
+- link:https://issues.apache.org/jira/browse/TOMEE-4007[TOMEE-4007] Clean up ASM dependency
+- link:https://issues.apache.org/jira/browse/TOMEE-3900[TOMEE-3900] SmallRye OpenAPI integration
+- link:https://issues.apache.org/jira/browse/TOMEE-3947[TOMEE-3947] Elliptic Curve ES256 signature algorithm
+- link:https://issues.apache.org/jira/browse/TOMEE-3948[TOMEE-3948] Decryption of JWTs using RSA-OAEP and A256GCM algorithms
+- link:https://issues.apache.org/jira/browse/TOMEE-3949[TOMEE-3949] Support for JWT audience aud claim
+- link:https://issues.apache.org/jira/browse/TOMEE-3909[TOMEE-3909] Pass MicroProfile Rest Client TCK
+- link:https://issues.apache.org/jira/browse/TOMEE-3910[TOMEE-3910] Pass MicroProfile JWT TCK
+- link:https://issues.apache.org/jira/browse/TOMEE-3955[TOMEE-3955] Fix TomEE :: Examples :: Arquillian Persistence Extension Sample
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4086[TOMEE-4086] HSQLDB 2.7.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4041[TOMEE-4041] 4 CVE Vulnerabilities in snakeyaml-1.30.jar
+- link:https://issues.apache.org/jira/browse/TOMEE-4001[TOMEE-4001] CVE-2022-34305 displaying user provided data without filtering, exposing a XSS vulnerability
+- link:https://issues.apache.org/jira/browse/TOMEE-4088[TOMEE-4088] Add workaround for CVE-2022-41853 (hsqldb)
