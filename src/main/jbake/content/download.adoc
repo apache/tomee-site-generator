@@ -17,7 +17,7 @@ You **must** link:https://www.apache.org/info/verification.html[verify] the inte
 - link:9.0.0.RC1/release-notes.html[Release Notes]
 // Add TCK results, if we pass them (again)
 //- link:9.0.0.RC1/plume/webprofile-9.1.html[Jakarta EE 9.1 Web Profile TCK Results for Java 11]
-- link:9.0.0.RC1/microprofile-5.0.html[Microprofile 5.0 TCK Results]
+- link:9.0.0.RC1/microprofile-5.0.html[MicroProfile 5.0 TCK Results]
 
 [cols="2,4*^1",options="header"]
 |===
