@@ -84,6 +84,7 @@ and appreciated.
 |https://www.apache.org/dyn/closer.cgi/tomee/tomee-7.1.4/tomee-webapp-7.1.4.war[icon:download[] TomEE Webapp WAR] |7.1.4|25 Sep. 2020|29 MB |https://downloads.apache.org/tomee/tomee-7.1.4/tomee-webapp-7.1.4.war.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-7.1.4/tomee-webapp-7.1.4.war.sha512[icon:download[] SHA512]
 |===
 
+IMPORTANT: Note: TomEE 7.1.4 was released two years ago. New releases from this branch are **unlikely**, but we are open for contributors to step up and lead the efforts in fixing CVEs and updating dependencies.
 
 == [[tomee-7.0]]Apache TomEE 7.0
 
@@ -106,6 +107,8 @@ and appreciated.
 |https://www.apache.org/dyn/closer.cgi/tomee/tomee-7.0.9/tomee-project-7.0.9-source-release.zip[icon:download[] TomEE Project Source Release ZIP] |7.0.9|25 Sep. 2020|13 MB |https://downloads.apache.org/tomee/tomee-7.0.9/tomee-project-7.0.9-source-release.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-7.0.9/tomee-project-7.0.9-source-release.zip.sha512[icon:download[] SHA512]
 |https://www.apache.org/dyn/closer.cgi/tomee/tomee-7.0.9/tomee-webapp-7.0.9.war[icon:download[] TomEE Webapp WAR] |7.0.9|25 Sep. 2020|27 MB |https://downloads.apache.org/tomee/tomee-7.0.9/tomee-webapp-7.0.9.war.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-7.0.9/tomee-webapp-7.0.9.war.sha512[icon:download[] SHA512]
 |===
+
+IMPORTANT: Note: TomEE 7.0.9 was released two years ago. New releases from this branch are **unlikely**, but we are open for contributors to step up and lead the efforts in fixing CVEs and updating dependencies.
 
 
 == [[tomee-1.7]]Apache TomEE 1.7
@@ -130,5 +133,7 @@ and appreciated.
 |https://www.apache.org/dyn/closer.cgi/tomee/tomee-1.7.5/tomee-plus-webapp-1.7.5.war[icon:download[] TomEE Plus Webapp WAR] |1.7.5|27 Sep. 2017|34 MB |https://downloads.apache.org/tomee/tomee-1.7.5/tomee-plus-webapp-1.7.5.war.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-1.7.5/tomee-plus-webapp-1.7.5.war.sha1[icon:download[] SHA1]
 |https://www.apache.org/dyn/closer.cgi/tomee/tomee-1.7.5/tomee-webapp-1.7.5.war[icon:download[] TomEE Webapp WAR] |1.7.5|27 Sep. 2017|21 MB |https://downloads.apache.org/tomee/tomee-1.7.5/tomee-webapp-1.7.5.war.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-1.7.5/tomee-webapp-1.7.5.war.sha1[icon:download[] SHA1]
 |===
+
+IMPORTANT: Note: TomEE 1.7.5 was released five years ago. New releases from this branch are **unlikely**, but we are open for contributors to step up and lead the efforts in fixing CVEs and updating dependencies.
 
 - xref:download-archive.adoc[Older versions can be found here]
