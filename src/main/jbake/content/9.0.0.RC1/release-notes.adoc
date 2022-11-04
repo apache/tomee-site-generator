@@ -15,7 +15,7 @@ Milestone 8 to migrate to SmallRye is now complete and we are pleased to announc
 
 [NOTE]
 The MicroProfile JWT implementation is entirely ours and has some great additions such as Bean Validation integration to
-validate JWT tokens.
+validate JWT tokens. The REST Client comes from Apache CXF implementation.
 
 In terms of Jakarta EE 9.1 TCK, we are 12 failures short, but we are actively working on them so we can have a final release soon.
 

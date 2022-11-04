@@ -12,7 +12,7 @@ As required by the https://www.eclipse.org/legal/tck.php[Eclipse Foundation Tech
 https://github.com/microprofile/microprofile-wg/blob/main/tckprocess.adoc following is a summary of the TCK results for
 releases of MicroProfile 5.0.
 
-=== Apache TomEE 9.0.0.RC1 , Eclipse MicroProfile 5.0 TCK Certification Summary
+=== Apache TomEE 9.0.0.RC1 , MicroProfile 5.0 TCK Certification Summary
 ----
 Date:  November 3rd, 2022
 Product Name, Version: Apache TomEE 9.0.0.RC1
@@ -39,9 +39,6 @@ Public URL of TCK Results Summary:
 link:https://tomee.apache.org/9.0.0.RC1/microprofile-5.0.html[Apache TomEE 9.0.0.RC1 TCK results]
 
 === MicroProfile TCK Test results
-
-The Jenkins build against the Git Tag tomee-project-9.0.0.RC1 is available at
-https://ci-builds.apache.org/job/Tomee/job/TomEE_Compitable_TCK/2/
 
 ==== MicroProfile Config 3.0
 TCK result summary:
@@ -122,3 +119,5 @@ TCK result summary:
 [INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0
 [INFO]
 ----
+
+For more details on the complete execution, the logs are available in https://ci-builds.apache.org/job/Tomee/job/TomEE_Compitable_TCK/2/[Jenkins]
