@@ -139,14 +139,14 @@ public class Configuration {
         };
 
         final Source[] microProfile6 = new Source[]{
-                new Source("https://github.com/eclipse/microprofile-config.git", "master", "microprofile-6.0-repos/config").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-fault-tolerance", "master", "microprofile-6.0-repos/fault-tolerance").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-health", "master", "microprofile-6.0-repos/health").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-jwt-auth.git", "master", "microprofile-6.0-repos/jwt").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-metrics", "master", "microprofile-6.0-repos/metrics").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-open-api", "master", "microprofile-6.0-repos/open-api").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-opentracing", "master", "microprofile-6.0-repos/opentracing").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-rest-client", "master", "microprofile-6.0-repos/rest-client").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-config.git", "3.0.2", "microprofile-6.0-repos/config").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-fault-tolerance", "4.0.2", "microprofile-6.0-repos/fault-tolerance").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-health", "4.0.1", "microprofile-6.0-repos/health").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-jwt-auth.git", "2.1-RC6", "microprofile-6.0-repos/jwt").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-metrics", "5.0.0-RC4", "microprofile-6.0-repos/metrics").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-open-api", "3.1-RC4", "microprofile-6.0-repos/open-api").filterJavadoc(".*/api/src/main/java/.*", ""),
+                // new Source("https://github.com/eclipse/microprofile-opentracing", "master", "microprofile-6.0-repos/opentracing").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-rest-client", "3.0.1", "microprofile-6.0-repos/rest-client").filterJavadoc(".*/api/src/main/java/.*", ""),
         };
 
         final Source[] microProfile5 = new Source[]{
@@ -201,7 +201,7 @@ public class Configuration {
                 new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v8", "jakartaee-8.0").related(jakartaEE8).javadoc("^javax.*"),
                 // JAVA EE : no git source for v7 or less, javadoc is at https://docs.oracle.com/javaee/7/api/
                 // MICRO PROFILE
-//                new Source("https://github.com/eclipse/microprofile.git", "6.0", "microprofile-6.0").related(microProfile6).label("milestone").javadoc("^org.eclipse.microprofile.*"),
+                new Source("https://github.com/eclipse/microprofile.git", "6.0", "microprofile-6.0").related(microProfile6).label("milestone").javadoc("^org.eclipse.microprofile.*"),
                 new Source("https://github.com/eclipse/microprofile.git", "5.0", "microprofile-5.0").related(microProfile5).javadoc("^org.eclipse.microprofile.*"),
                 new Source("https://github.com/eclipse/microprofile.git", "4.1", "microprofile-4.1").related(microProfile4).javadoc("^org.eclipse.microprofile.*"),
                 new Source("https://github.com/eclipse/microprofile.git", "2.0", "microprofile-2.0").related(microProfile2).javadoc("^org.eclipse.microprofile.*"),
