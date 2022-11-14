@@ -1,0 +1,122 @@
+= From `javax` to `jakarta` namespace
+:jbake-type: page
+:jbake-status: published
+
+The `javax` to `jakarta` namespace switch is one of the biggest change in Java of the latest 20 years. No doubt. The entire ecosystem is impacted.
+Not only Java EE or Jakarta EE Application servers, but also libraries of any kind (Jackson, CXF, Hibernate, Spring to name a few).
+
+Apache TomEE has been required to switch to `jakarta` namespace and we of course tried different options.
+This page aims at sharing some of our findings from the user perspective, because the shift from `javax` to `jakarta` is as impacting for application
+providers than it is for libraries or application servers.
+
+== Byte code enhancement approach
+
+The first legitimate approach that comes to our mind is the byte code approach. The goal is to keep the `javax` namespace
+as much as possible in the sources and use byte code enhancement to convert binaries.
+
+=== Compile time
+
+It is possible to do a post treatment on the libraries and packages to transform archives such as then are converted to
+`jakarta` namespace.
+
+==== https://maven.apache.org/plugins/maven-shade-plugin/[Maven Shade plugin]
+
+The Maven shade plugin has the ability to relocate package. While the primary purpose isn't to move from `javax` to
+`jakarta` package, it is possible to use it to relocate small libraries when they aren't ready yet. We used this approach
+in TomEE itself or in third party libraries such as Apache Johnzon (JSONB/P implementation).
+
+This approach is not perfect, especially when you have a multimodule library. For example if you have a project with 2
+modules. A depends on B. You can use the shade plugin to convert the 2 modules and publish them using a classifier.
+The issue then is when you need A, you have to exclude B so that you can include it manually with the right classifier.
+
+We'd say it works fine but for simple cases because it breaks the dependency management in Maven, especially with
+transitive dependencies.
+
+==== https://projects.eclipse.org/projects/technology.transformer[Eclipse Transformer]
+
+The Eclipse Transformer is also a generic tool, but it's been heavily developed for the `javax` to `jakarta` namespace
+change. It operates on resources such as
+
+Simple resources:
+
+* Java class files
+* OSGi feature manifest files
+* Properties files
+* Service loader configuration files
+* Text files (of several types: java source, XML, TLD, HTML, and JSP)
+
+Container resources:
+
+* Directories
+* Java archives (JAR, WAR, RAR, and EAR files)
+* ZIP archives
+
+==== https://github.com/apache/tomcat-jakartaee-migration[Apache Tomcat Migration tool]
+
+This tool can operate on a directory or an archive (zip, ear, jar, war), very similar to Eclipse Transformer.
+It can migrate quite easily the set of specifications supported in Tomcat and a few more.
+It has the notion of profile so that you can ask it to convert more, but the configuration is very limited compared to
+the Eclipse Transformer. It is probably easier from the user perspective though.
+
+You can run it using the ANT task (with in Maven or not), and there is also a command line interface to run it easily.
+
+=== Deploy time
+
+When using application server, it is sometimes possible to step in the deployment process and do the conversion of the
+binaries prior to their deployment.
+
+==== https://github.com/apache/tomcat-jakartaee-migration[Apache Tomcat/TomEE migration tool]
+
+Mind that by default, the tool converts only what's being supported by Apache Tomcat and a couple of other APIs. It
+does not convert all specifications supported in TomEE, like JAX RS for example. And Tomcat does not provide yet any
+way to configure it.
+
+One benefit compared to other approaches is that Tomcat does keep the converted archive in the `webapps/` directory
+so it survives after a restart.
+
+=== Runtime
+
+We haven't seen any working solution in this area. Of course, we could imagine a JavaAgent approach that converts the
+bytecode right when it gets loaded by the JVM. The startup time is seriously impacted, and it has to be done everytime
+the JVM restart or loads a class in a classloader. Remember that a class can be loaded multiple times in different classloaders.
+
+== Source code enhancement approach
+
+This may sound like the most impacting but this is probably also the most secured one.
+We also strongly believe that embracing the change sooner is preferable rather than later.
+As mentioned, this is one of the biggest breaking change in Java of the last 20 years.
+Since Java EE moved to Eclipse to become Jakarta, we have noticed a change in the release cadence.
+Releases are not more frequent and more changes are going to happen. Killing the technical depth as soon as possible is
+probably the best way to go.
+
+There are a couple of tools we tried. There are probably more in the ecosystem, and also some in-house developments.
+
+[IMPORTANT]
+This is usually a one shoot operation. It won't be perfect and no doubt it will require adjustment for edge cases.
+
+=== IntelliJ IDEA
+
+IntelliJ IDEA added a refactoring capability to its IDE in order to convert sources to the new `jakarta` namespace.
+I haven’t tested it myself, but it may help to do the first big step when you don’t really master the scripting approach bellow.
+
+=== Scripting approach
+
+For simple case, and we used that approach to do most of the conversion in TomEE, you can create your own simple tool to
+convert sources. For instance, SmallRye does that with their MicroProfile implementations. Here is an example
+https://github.com/smallrye/smallrye-config/blob/main/to-jakarta.sh
+
+Using basic Linux commands, it converts from `javax` to `jakarta` namespace and then the result is pushed to a dedicated
+branch. The benefit is that they have 2 sources trees with different artifacts, the dependency management isn't broken.
+
+=== https://projects.eclipse.org/projects/technology.transformer[Eclipse Transformer]
+
+Because the Eclipse Transformer can operate on text files, it can be easily used to migrate the sources from `javax` to
+`jakarta` namespace.
+
+== Conclusion
+
+We tried the bytecode approach ourselves in TomEE with the hope we could avoid maintaining 2 source trees, one for `javax`
+and the other one for `jakarta` namespace. Unfortunately, as we have seen before the risk is too important and there are
+too many edge cases not covered.
+One very important thing is the testing. No approach is gold and you need a very good test coverage and testing to make sure
+the application works within the new `jakarta` namespace.
