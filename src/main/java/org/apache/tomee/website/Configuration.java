@@ -30,7 +30,7 @@ public class Configuration {
     public static Source[] getSources() {
 
         final Source[] jakartaEE10 = {
-                new Source("https://github.com/eclipse-ee4j/jaf.git", "2.1.0", "jakartaee-10.0-repos/activation-api"),
+                new Source("https://github.com/eclipse-ee4j/jaf.git", "2.1.1", "jakartaee-10.0-repos/activation-api"),
                 new Source("https://github.com/eclipse-ee4j/common-annotations-api.git", "2.1.1", "jakartaee-10.0-repos/annotations-api"),
                 new Source("https://github.com/jakartaee/authentication.git", "3.0.0-RELEASE", "jakartaee-10.0-repos/authentication-api"),
                 new Source("https://github.com/jakartaee/authorization.git", "2.1.0-RELEASE", "jakartaee-10.0-repos/authorization-api"),
@@ -46,7 +46,7 @@ public class Configuration {
                 new Source("https://github.com/jakartaee/interceptors.git", "2.1.0-RELEASE", "jakartaee-10.0-repos/interceptors-api"),
                 new Source("https://github.com/eclipse-ee4j/jsonb-api.git", "3.0.0", "jakartaee-10.0-repos/json-binding-api"),
                 new Source("https://github.com/eclipse-ee4j/jsonp.git", "2.1.1-RELEASE", "jakartaee-10.0-repos/json-processing-api"),
-                new Source("https://github.com/eclipse-ee4j/mail.git", "2.1.0", "jakartaee-10.0-repos/mail-api"),
+                new Source("https://github.com/eclipse-ee4j/mail.git", "2.1.1", "jakartaee-10.0-repos/mail-api"),
                 new Source("https://github.com/jakartaee/messaging.git", "3.1.0-RELEASE", "jakartaee-10.0-repos/messaging-api"),
                 // new Source("https://github.com/eclipse-ee4j/mvc-api.git", "2.0.1", "jakartaee-9.1-repos/mvc-api"), // NOT PART OF JAKARTA EE RELEASE
                 new Source("https://github.com/jakartaee/pages.git", "3.1.0-RELEASE", "jakartaee-10.0-repos/server-pages-api"),
@@ -76,7 +76,7 @@ public class Configuration {
                 new Source("https://github.com/jakartaee/enterprise-beans.git", "4.0.1-RELEASE", "jakartaee-9.1-repos/enterprise-beans-api"),
                 new Source("https://github.com/jakartaee/expression-language.git", "4.0.0-RELEASE", "jakartaee-9.1-repos/expression-language-api"),
                 // new Source("https://github.com/jakartaee/faces.git", "3.0.0-RELEASE", "jakartaee-9.1-repos/faces-api"), // NO JAVA SOURCE, ONLY DOC.
-                new Source("https://github.com/eclipse-ee4j/mojarra", "3.0.2-RELEASE", "jakartaee-9.1-repos/faces-impl"), // TAKE API FROM MOJARRA IMPL.
+                new Source("https://github.com/eclipse-ee4j/mojarra", "3.0.3-RELEASE", "jakartaee-9.1-repos/faces-impl"), // TAKE API FROM MOJARRA IMPL.
                 new Source("https://github.com/eclipse-ee4j/injection-api.git", "2.0.1", "jakartaee-9.1-repos/injection-api"),
                 new Source("https://github.com/jakartaee/interceptors.git", "2.0.1-RELEASE", "jakartaee-9.1-repos/interceptors-api"),
                 new Source("https://github.com/eclipse-ee4j/jsonb-api.git", "2.0.0-RELEASE", "jakartaee-9.1-repos/json-binding-api"),
@@ -142,11 +142,12 @@ public class Configuration {
                 new Source("https://github.com/eclipse/microprofile-config.git", "3.0.2", "microprofile-6.0-repos/config").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-fault-tolerance", "4.0.2", "microprofile-6.0-repos/fault-tolerance").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-health", "4.0.1", "microprofile-6.0-repos/health").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-jwt-auth.git", "2.1-RC6", "microprofile-6.0-repos/jwt").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-metrics", "5.0.0-RC4", "microprofile-6.0-repos/metrics").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-open-api", "3.1-RC4", "microprofile-6.0-repos/open-api").filterJavadoc(".*/api/src/main/java/.*", ""),
-                // new Source("https://github.com/eclipse/microprofile-opentracing", "master", "microprofile-6.0-repos/opentracing").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-jwt-auth.git", "2.1", "microprofile-6.0-repos/jwt").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-metrics", "5.0.0", "microprofile-6.0-repos/metrics").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-open-api", "3.1", "microprofile-6.0-repos/open-api").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-rest-client", "3.0.1", "microprofile-6.0-repos/rest-client").filterJavadoc(".*/api/src/main/java/.*", ""),
+                // new Source("https://github.com/eclipse/microprofile-opentracing", "master", "microprofile-6.0-repos/opentracing").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-telemetry", "1.0", "microprofile-6.0-repos/telemetry").filterJavadoc(".*/api/src/main/java/.*", ""),
         };
 
         final Source[] microProfile5 = new Source[]{
@@ -156,8 +157,8 @@ public class Configuration {
                 new Source("https://github.com/eclipse/microprofile-jwt-auth.git", "2.0", "microprofile-5.0-repos/jwt").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-metrics", "4.0.1", "microprofile-5.0-repos/metrics").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-open-api", "3.0", "microprofile-5.0-repos/open-api").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-opentracing", "3.0", "microprofile-5.0-repos/opentracing").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-rest-client", "3.0.1", "microprofile-5.0-repos/rest-client").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-opentracing", "3.0", "microprofile-5.0-repos/opentracing").filterJavadoc(".*/api/src/main/java/.*", ""),
         };
 
         final Source[] microProfile4 = new Source[]{
@@ -167,8 +168,8 @@ public class Configuration {
                 new Source("https://github.com/eclipse/microprofile-jwt-auth.git", "1.2.2", "microprofile-4.1-repos/jwt").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-metrics", "3.0.1", "microprofile-4.1-repos/metrics").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-open-api", "2.0.1", "microprofile-4.1-repos/open-api").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-opentracing", "2.0", "microprofile-4.1-repos/opentracing").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-rest-client", "2.0", "microprofile-4.1-repos/rest-client").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-opentracing", "2.0", "microprofile-4.1-repos/opentracing").filterJavadoc(".*/api/src/main/java/.*", ""),
         };
 
         final Source[] microProfile2 = new Source[]{
@@ -178,21 +179,17 @@ public class Configuration {
                 new Source("https://github.com/eclipse/microprofile-jwt-auth.git", "1.1.1", "microprofile-2.0-repos/jwt").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-metrics", "1.1.5", "microprofile-2.0-repos/metrics").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-open-api", "1.0.1", "microprofile-2.0-repos/open-api").filterJavadoc(".*/api/src/main/java/.*", ""),
-                new Source("https://github.com/eclipse/microprofile-opentracing", "1.1.2", "microprofile-2.0-repos/opentracing").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-rest-client", "1.1", "microprofile-2.0-repos/rest-client").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-opentracing", "1.1.2", "microprofile-2.0-repos/opentracing").filterJavadoc(".*/api/src/main/java/.*", ""),
         };
 
 //        if (1 == 1) return new Source[0]; // uncomment this line to generate only the main site pages.
         return new Source[]{
                 // TOMEE NEXT
 //                new Source("https://github.com/apache/tomee.git", "main", "tomee-10.0", false).label("milestone").related(microProfile6).related(jakartaEE10).javadoc("^org.apache.(openejb|tomee).*"),
-//                new Source("https://github.com/apache/tomee.git", "tomee-9.0", "tomee-9.0", true).related(microProfile5).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
-//                new Source("https://github.com/apache/tomee.git", "tomee-8.x", "tomee-8.0", false).related(microProfile2).related(jakartaEE8).javadoc("^org.apache.(openejb|tomee).*"),
-//                new Source("https://github.com/apache/tomee.git", "tomee-7.1.x", "tomee-7.1", false).javadoc("^org.apache.(openejb|tomee).*"),
-//                new Source("https://github.com/apache/tomee.git", "tomee-7.0.x", "tomee-7.0", false).javadoc("^org.apache.(openejb|tomee).*"),
                 // TOMEE CURRENT
-                new Source("https://github.com/apache/tomee.git", "main", "tomee-9.0", false).label("milestone").related(microProfile5).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
-                new Source("https://github.com/apache/tomee.git", "tomee-8.x", "tomee-8.0", true).related(microProfile2).related(jakartaEE8).javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "tomee-9.x", "tomee-9.0", true).related(microProfile5).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "tomee-8.x", "tomee-8.0", false).related(microProfile2).related(jakartaEE8).javadoc("^org.apache.(openejb|tomee).*"),
                 new Source("https://github.com/apache/tomee.git", "tomee-7.1.x", "tomee-7.1", false).javadoc("^org.apache.(openejb|tomee).*"),
                 new Source("https://github.com/apache/tomee.git", "tomee-7.0.x", "tomee-7.0", false).javadoc("^org.apache.(openejb|tomee).*"),
                 // JAKARTA EE
@@ -201,7 +198,8 @@ public class Configuration {
                 new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v8", "jakartaee-8.0").related(jakartaEE8).javadoc("^javax.*"),
                 // JAVA EE : no git source for v7 or less, javadoc is at https://docs.oracle.com/javaee/7/api/
                 // MICRO PROFILE
-                new Source("https://github.com/eclipse/microprofile.git", "6.0", "microprofile-6.0").related(microProfile6).label("milestone").javadoc("^org.eclipse.microprofile.*"),
+                // NEXT : new Source("https://github.com/eclipse/microprofile.git", "7.0", "microprofile-7.0").related(microProfile7).label("milestone").javadoc("^org.eclipse.microprofile.*"),
+                new Source("https://github.com/eclipse/microprofile.git", "6.0", "microprofile-6.0").related(microProfile6).javadoc("^org.eclipse.microprofile.*"),
                 new Source("https://github.com/eclipse/microprofile.git", "5.0", "microprofile-5.0").related(microProfile5).javadoc("^org.eclipse.microprofile.*"),
                 new Source("https://github.com/eclipse/microprofile.git", "4.1", "microprofile-4.1").related(microProfile4).javadoc("^org.eclipse.microprofile.*"),
                 new Source("https://github.com/eclipse/microprofile.git", "2.0", "microprofile-2.0").related(microProfile2).javadoc("^org.eclipse.microprofile.*"),
