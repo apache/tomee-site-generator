@@ -1,0 +1,122 @@
+= TCK Results
+:jbake-date: 2023-01-12
+:jbake-type: page
+:jbake-status: published
+:icons: font
+:imagesdir: ../../img
+
+image:apache_tomee-logo.jpg[TomEE, align="center"]
+
+== Introduction
+As required by the https://www.eclipse.org/legal/tck.php[Eclipse Foundation Technology Compatibility Kit License], following is a summary of the TCK results for releases of Jakarta EE Web Profile 9.1.
+
+
+
+=== Apache TomEE 9.0.0 , Jakarta EE 9.1 TCK Certification Summary
+----
+Date:  January 3, 2023
+Product Name, Version: Apache TomEE 9.0.0
+URL to product download page: https://tomee.apache.org/download-ng.html
+
+Product Description: An implementation of the Jakarta EE 9.1 Web Profile Specifications
+Java SE provider and Version tested with: OpenJDK jdk-11.0.10+9
+OS version: Linux 4.14.225-169.362.amzn2.aarch64
+Database version:   Apache Derby Network Server 10.14.2.0
+Database JDBC Driver and version:  Apache Derby 10.14.2.0
+----
+
+Specification Name, Version and download URL:
+https://jakarta.ee/specifications/webprofile/9.1/[Jakarta EE Platform, Web Profile 9.1]
+
+TCK Version, digital SHA-256 fingerprint and download URL:
+https://download.eclipse.org/ee4j/jakartaee-tck/jakartaee9-eftl/promoted/jakarta-jakartaeetck-9.1.0.zip[Jakarta EE Platform TCK 9.1.0, 16904b7ccd7ae61287b763587e8bfbff50608ab09f3876bb41af65d043263ca7 ]
+
+Public URL of TCK Results Summary:
+link:https://tomee.apache.org/9.0.0/plume/webprofile-9.1.html[Apache TomEE 9.0.0 TCK results]
+
+Any Additional Specification Certification Requirements:
+----
+Jakarta Dependency Injection 2.0.1 TCK
+Jakarta Contexts and Dependency Injection 3.0.1 TCK
+Jakarta Bean Validation 3.0.0 TCK
+----
+
+=== Web Profile TCK Test results
+Test results:
+[width="100%",options="header]
+|=======
+|section|tests|passed|failed
+|ejb32|809|809|0
+|el|667|667|0
+|jaspic|68|68|0
+|jaxrs|2622|2622|0
+|jdbc|4924|4924|0
+|jpa|11025|11025|0
+|jsf|5517|5517|0
+|jsonb|232|232|0
+|jsonp|744|744|0
+|jsp|730|730|0
+|jstl|541|541|0
+|jta|195|195|0
+|securityapi|85|85|0
+|servlet|1700|1700|0
+|signaturetest|2|0|0
+|websocket|725|725|0
+|=======
+
+=== Additional standalone TCK Test results
+Standalone test results:
+
+Jakarta Dependency Injection 2.0.1 TCK
+
+Download URL & SHA-256:
+https://download.eclipse.org/jakartaee/dependency-injection/2.0/jakarta.inject-tck-2.0.1-bin.zip[jakarta.inject-tck-2.0.1-bin.zip, 7853d02d372838f8300f5a18cfcc23011c9eb9016cf3980bba9442e4b1f8bfc6 ]
+
+TCK result summary:
+----
+Tests run: 50, Failures: 0, Errors: 0, Skipped: 0
+----
+
+Jakarta Contexts and Dependency Injection 3.0.1 TCK
+
+Download URL & SHA-256
+https://download.eclipse.org/jakartaee/cdi/3.0/cdi-tck-3.0.1-dist.zip[cdi-tck-3.0.1-dist.zip, f0a3bdd81ea552ddf2c2a6cd2576f0d5ca45026665cb4a5c42606a58bf1c133d ]
+
+TCK result summary:
+----
+Tests run: 1796, Failures: 0, Errors: 0, Skipped: 0
+----
+
+Jakarta Bean Validation 3.0.0 TCK
+
+Download URL & SHA-256
+https://download.eclipse.org/jakartaee/bean-validation/3.0/beanvalidation-tck-dist-3.0.0.zip[beanvalidation-tck-dist-3.0.0.zip, c975fd229df0c40947a9f0a69b779ec92bebb3d21e05fdc65fccc1d11ef5525b ]
+
+TCK result summary:
+----
+Tests run: 1045, Failures: 0, Errors: 0, Skipped: 0
+----
+
+Jakarta XML Binding 3.0.1 TCK
+
+Download URL & SHA-256
+https://download.eclipse.org/ee4j/jakartaee-tck/jakartaee9-eftl/promoted/jakarta-xml-binding-tck-3.0.1.zip[jakarta-xml-binding-tck-3.0.1.zip, a9356a2eb989e8cb7f663ed5fd244d8e2d222e2c4108c40c65001bec90f40baf]
+
+TCK result summary:
+----
+Pass: 24,628  Fail: 0  Error: 0  Not-Run: 0
+----
+
+
+Jakarta Debugging TCK
+
+Download URL & SHA-256
+https://download.eclipse.org/jakartaee/debugging/2.0/jakarta-debugging-tck-2.0.0.zip[jakarta-debugging-tck-2.0.0.zip, 71999815418799837dc6f3d0dc40c3dcc4144cd90c7cdfd06aa69270483d78bc ]
+
+TCK result summary:
+----
+java -cp debugging-tck-2.0.0.jar VerifySMAP _Hello.class.smap
+_Hello.class.smap is a correctly formatted SMAP
+----
+
+

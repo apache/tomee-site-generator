@@ -1,0 +1,90 @@
+= Apache TomEE 9.0.0 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 9.0.0 has been released.
+
+We are very proud to release Apache TomEE 9.0.0 It's been
+almost a year since we certified TomEE using a bytecode enhancement
+approach. Even though it worked, it introduced a lot of restrictions
+especially with tooling such as IDE, Arquillian, Embedded container, etc.
+
+Thus, we  started migrating the entire TomEE codebase to the new jakarta namespace
+and 9.0.0 is the result of this work.
+
+We fully pass the entire TCK for the Jakarta EE 9.1 Web Profile and - as a cherry on the cake - we decided to address a long time
+request to support a newer version of MicroProfil. Thus, we are pleased to announce that TomEE 9.0.0 is fully MicroProfile 5.0 compliant.
+
+In addition, we fixed a couple of bugs and did some dependency upgrades.
+
+Thank you to everyone who contributed to this release, including all of our users and the people who submitted bug reports,
+contributed code or documentation enhancements.
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4132[TOMEE-4132]  commons-compress 1.22
+- link:https://issues.apache.org/jira/browse/TOMEE-4127[TOMEE-4127] CXF 3.5.5
+- link:https://issues.apache.org/jira/browse/TOMEE-4125[TOMEE-4125] CXF versions mitigate CVE-2022-46364 and CVE-2022-46363
+- link:https://issues.apache.org/jira/browse/TOMEE-4081[TOMEE-4081] Jackson 2.13.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4107[TOMEE-4107] Jackson 2.14.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4131[TOMEE-4131] Jackson 2.14.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4109[TOMEE-4109] Velocity 2.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4082[TOMEE-4082] Woodstox 6.2.6
+- link:https://issues.apache.org/jira/browse/TOMEE-4110[TOMEE-4110] Woodstox 6.4.0 (CVE-2022-40152)
+- link:https://issues.apache.org/jira/browse/TOMEE-4111[TOMEE-4111] bcel component
+- link:https://issues.apache.org/jira/browse/TOMEE-4103[TOMEE-4103] woodstox-core mitigate CVE-2022-40153
+
+== New Feature
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4123[TOMEE-4123] Implement @AroundConstruct from Interceptor 1.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4068[TOMEE-4068] MicroProfile 5.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4069[TOMEE-4069] MicroProfile Config 3.0
+- link:https://issues.apache.org/jira/browse/TOMEE-3946[TOMEE-3946] MicroProfile JWT 2.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4070[TOMEE-4070] MicroProfile Fault Tolerance 4.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4071[TOMEE-4071] MicroProfile Health 4.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4072[TOMEE-4072] MicroProfile Metrics 4.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4050[TOMEE-4050] Retry and Refresh for MP JWT keys supplied via HTTP
+- link:https://issues.apache.org/jira/browse/TOMEE-4073[TOMEE-4073] MicroProfile Rest Client 3.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4074[TOMEE-4074] MicroProfile OpenAPI 3.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4075[TOMEE-4075] MicroProfile OpenTracing 3.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4076[TOMEE-4076] Public Keys in OpenSSH format
+- link:https://issues.apache.org/jira/browse/TOMEE-4077[TOMEE-4077] Public Keys in SSH2 format
+- link:https://issues.apache.org/jira/browse/TOMEE-4078[TOMEE-4078] RSA keys PKCS 1 format
+- link:https://issues.apache.org/jira/browse/TOMEE-4079[TOMEE-4079] Elliptic Curve JWS and JWE
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4065[TOMEE-4065] LoginToContinue interceptor fails on custom auth mechanism
+- link:https://issues.apache.org/jira/browse/TOMEE-4119[TOMEE-4119] TomEEJsonbProvider triggered for */* mime types
+- link:https://issues.apache.org/jira/browse/TOMEE-4135[TOMEE-4135] Unable to see TomEE version in Tomcat home page with Java 17
+- link:https://issues.apache.org/jira/browse/TOMEE-4117[TOMEE-4117] MicroProfile OpenAPI not generating model
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4124[TOMEE-4124] Remove timing of timing just for logging
+- link:https://issues.apache.org/jira/browse/TOMEE-4080[TOMEE-4080] Improved Logging for Public and Private Key resolution
+
+== Documentation
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4104[TOMEE-4104] Documentation Website: XA DataSource Configuration: Bug in MySQL Sample Code
+- link:https://issues.apache.org/jira/browse/TOMEE-3733[TOMEE-3733] TCK Results page for website
+
+== Sub-task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3950[TOMEE-3950] Support for JWT token cookies
+- link:https://issues.apache.org/jira/browse/TOMEE-3951[TOMEE-3951] JWT token groups claim is now optional
+- link:https://issues.apache.org/jira/browse/TOMEE-3952[TOMEE-3952] Deprecate RSA keys of 1024 bit length
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4125[TOMEE-4125] Update Apache CXF versions to mitigate CVE-2022-46364 and CVE-2022-46363
+- link:https://issues.apache.org/jira/browse/TOMEE-4103[TOMEE-4103] Update woodstox-core to mitigate CVE-2022-40153
+- link:https://issues.apache.org/jira/browse/TOMEE-4111[TOMEE-4111] Upgrade bcel component in TomEE
