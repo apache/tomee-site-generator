@@ -287,6 +287,14 @@ In addition, prepare the download pages and move the old version to the download
  From: https://dist.apache.org/repos/dist/dev/tomee/staging-[stagingId]/tomee-[version]
  To: https://dist.apache.org/repos/dist/release/tomee/tomee-[version]
 
+This step can also be automated by using the release-tools as follows:
+
+ [source,bash]
+----
+# Make sure to replace XXXX with the appropriate value
+./target/release dist dev-to-release --dev-repo=https://dist.apache.org/repos/dist/dev/tomee/staging-XXXX https://dist.apache.org/repos/dist/release/tomee/tomee-XXXX tomee-8.0.14
+----
+
 * Merge the website branch and trigger a https://ci-builds.apache.org/job/Tomee/job/site-publish/[site deploy via Jenkins].
 
 == Spread the word!
