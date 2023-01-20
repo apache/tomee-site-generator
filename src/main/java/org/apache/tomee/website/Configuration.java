@@ -203,6 +203,10 @@ public class Configuration {
                 new Source("https://github.com/eclipse/microprofile.git", "5.0", "microprofile-5.0").related(microProfile5).javadoc("^org.eclipse.microprofile.*"),
                 new Source("https://github.com/eclipse/microprofile.git", "4.1", "microprofile-4.1").related(microProfile4).javadoc("^org.eclipse.microprofile.*"),
                 new Source("https://github.com/eclipse/microprofile.git", "2.0", "microprofile-2.0").related(microProfile2).javadoc("^org.eclipse.microprofile.*"),
+                // JAKARTA MVC
+                new Source("https://github.com/eclipse-ee4j/mvc-api.git", "2.1.0", "jakarta-mvc-api-2.1.x").javadoc("^jakarta.*"),
+                new Source("https://github.com/eclipse-ee4j/mvc-api.git", "2.0.1", "jakarta-mvc-api-2.0.x").javadoc("^jakarta.*"),
+                new Source("https://github.com/eclipse-ee4j/mvc-api.git", "1.1.0-RELEASE", "jakarta-mvc-api-1.1.x").javadoc("^javax.*"),
         };
     }
 }
