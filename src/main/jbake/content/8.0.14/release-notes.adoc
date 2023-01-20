@@ -1,0 +1,67 @@
+= Apache TomEE 8.0.14 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 8.0.14 has been released. It is a maintenance release with some bug fixes and dependencies upgrades.
+
+Thank you to everyone who contributed to this release, including all of our users and the people who submitted bug reports, contributed code or documentation enhancements.
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4100[TOMEE-4100] XBean 4.22
+- link:https://issues.apache.org/jira/browse/TOMEE-4126[TOMEE-4126] CXF 3.4.10
+- link:https://issues.apache.org/jira/browse/TOMEE-4086[TOMEE-4086] HSQLDB 2.7.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4170[TOMEE-4170] Hibernate 5.6.14
+- link:https://issues.apache.org/jira/browse/TOMEE-4129[TOMEE-4129] Jackson 2.14.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4173[TOMEE-4173] Tomcat 9.0.71
+- link:https://issues.apache.org/jira/browse/TOMEE-4109[TOMEE-4109] Velocity 2.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4110[TOMEE-4110] Woodstox 6.4.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4111[TOMEE-4111] bcel component
+- link:https://issues.apache.org/jira/browse/TOMEE-4130[TOMEE-4130] commons-compress 1.22
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4120[TOMEE-4120] Remote EJB2 BMP Memory Leak
+- link:https://issues.apache.org/jira/browse/TOMEE-4122[TOMEE-4122] Performance Regression in bean resolution in EAR files
+- link:https://issues.apache.org/jira/browse/TOMEE-4101[TOMEE-4101] Typo with EL22Adaptor implementation in openwebbeans.properties
+- link:https://issues.apache.org/jira/browse/TOMEE-4102[TOMEE-4102] TomEE logs SEVERE: Expected ContextBinding to have the method getThreadName()
+- link:https://issues.apache.org/jira/browse/TOMEE-4106[TOMEE-4106] TomEE version no longer appearing at default manager page
+- link:https://issues.apache.org/jira/browse/TOMEE-4014[TOMEE-4014] Unable to see TomEE version in Tomcat home page with Java 17
+- link:https://issues.apache.org/jira/browse/TOMEE-4108[TOMEE-4108] Backport TOMEE-4065: LoginToContinue interceptor fails on custom auth mechanism
+- link:https://issues.apache.org/jira/browse/TOMEE-3779[TOMEE-3779] tomee-embedded-maven-plugin fails with NPE
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4124[TOMEE-4124] Remove timing of timing just for logging
+
+== Task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4171[TOMEE-4171] Apache Parent 29
+- link:https://issues.apache.org/jira/browse/TOMEE-4172[TOMEE-4172] JUnit 5.9.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4177[TOMEE-4177] Patch Plugin 0.10
+
+== Documentation
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4104[TOMEE-4104] Documentation Website: XA DataSource Configuration: Bug in MySQL Sample Code
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4086[TOMEE-4086] HSQLDB 2.7.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4125[TOMEE-4125] Update Apache CXF versions to mitigate CVE-2022-46364 and CVE-2022-46363
+- link:https://issues.apache.org/jira/browse/TOMEE-4103[TOMEE-4103] Update woodstox-core to mitigate CVE-2022-40153
+- link:https://issues.apache.org/jira/browse/TOMEE-4111[TOMEE-4111] Upgrade bcel component in TomEE
+- link:https://issues.apache.org/jira/browse/TOMEE-4176[TOMEE-4176] CVE-2022-45143 Apache Tomcat - JsonErrorReportValve injection on TomEE's tomcat-websocket.jar
+- link:https://issues.apache.org/jira/browse/TOMEE-4169[TOMEE-4169] SnakeYAML - CVE-2022-1471
+
+== Additional Information
+
+**Please note:**
+
+IMPORTANT: CVE-2022-1471: Snakeyaml is a transient dependency of `jackson-dataformat-yaml` (which is used in OpenAPI). According to the Jackson people, they are **not** affected: https://github.com/FasterXML/jackson-dataformats-text/issues/361
