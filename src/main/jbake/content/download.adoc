@@ -57,7 +57,7 @@ IMPORTANT: Note: Information on possible ways to migrate from `javax` to `jakart
 |===
 
 
-== [[tomee-7.1]]Apache TomEE 7.1
+== [[tomee-7.1]]Apache TomEE 7.1 (Discontinued)
 
 - Java EE 7
 - MicroProfile 2.0
@@ -83,9 +83,9 @@ IMPORTANT: Note: Information on possible ways to migrate from `javax` to `jakart
 |https://www.apache.org/dyn/closer.cgi/tomee/tomee-7.1.4/tomee-webapp-7.1.4.war[icon:download[] TomEE Webapp WAR] |7.1.4|25 Sep. 2020|29 MB |https://downloads.apache.org/tomee/tomee-7.1.4/tomee-webapp-7.1.4.war.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-7.1.4/tomee-webapp-7.1.4.war.sha512[icon:download[] SHA512]
 |===
 
-IMPORTANT: Note: TomEE 7.1.4 was released two years ago. New releases from this branch are **unlikely**, but we are open for contributors to step up and lead the efforts in fixing CVEs and updating dependencies.
+IMPORTANT: This branch is discontinued. No upcoming releases are planned due to transitive dependencies reached their end of life.
 
-== [[tomee-7.0]]Apache TomEE 7.0
+== [[tomee-7.0]]Apache TomEE 7.0 (Discontinued)
 
 - Java EE 7
 - Java 7 or Java 8
@@ -107,10 +107,10 @@ IMPORTANT: Note: TomEE 7.1.4 was released two years ago. New releases from this 
 |https://www.apache.org/dyn/closer.cgi/tomee/tomee-7.0.9/tomee-webapp-7.0.9.war[icon:download[] TomEE Webapp WAR] |7.0.9|25 Sep. 2020|27 MB |https://downloads.apache.org/tomee/tomee-7.0.9/tomee-webapp-7.0.9.war.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-7.0.9/tomee-webapp-7.0.9.war.sha512[icon:download[] SHA512]
 |===
 
-IMPORTANT: Note: TomEE 7.0.9 was released two years ago. New releases from this branch are **unlikely**, but we are open for contributors to step up and lead the efforts in fixing CVEs and updating dependencies.
+IMPORTANT: This branch is discontinued. No upcoming releases are planned due to transitive dependencies reached their end of life.
 
 
-== [[tomee-1.7]]Apache TomEE 1.7
+== [[tomee-1.7]]Apache TomEE 1.7 (Discontinued)
 
 - Java EE 6
 - Java 6, Java 7 or Java 8
@@ -133,6 +133,6 @@ IMPORTANT: Note: TomEE 7.0.9 was released two years ago. New releases from this 
 |https://www.apache.org/dyn/closer.cgi/tomee/tomee-1.7.5/tomee-webapp-1.7.5.war[icon:download[] TomEE Webapp WAR] |1.7.5|27 Sep. 2017|21 MB |https://downloads.apache.org/tomee/tomee-1.7.5/tomee-webapp-1.7.5.war.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-1.7.5/tomee-webapp-1.7.5.war.sha1[icon:download[] SHA1]
 |===
 
-IMPORTANT: Note: TomEE 1.7.5 was released five years ago. New releases from this branch are **unlikely**, but we are open for contributors to step up and lead the efforts in fixing CVEs and updating dependencies.
+IMPORTANT: This branch is discontinued. No upcoming releases are planned due to transitive dependencies reached their end of life.
 
 - xref:download-archive.adoc[Older versions can be found here]
