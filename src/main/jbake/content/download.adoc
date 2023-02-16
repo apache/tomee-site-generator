@@ -83,7 +83,7 @@ IMPORTANT: Note: Information on possible ways to migrate from `javax` to `jakart
 |https://www.apache.org/dyn/closer.cgi/tomee/tomee-7.1.4/tomee-webapp-7.1.4.war[icon:download[] TomEE Webapp WAR] |7.1.4|25 Sep. 2020|29 MB |https://downloads.apache.org/tomee/tomee-7.1.4/tomee-webapp-7.1.4.war.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-7.1.4/tomee-webapp-7.1.4.war.sha512[icon:download[] SHA512]
 |===
 
-IMPORTANT: This branch is discontinued. No upcoming releases are planned due to transitive dependencies reached their end of life.
+IMPORTANT: This branch is discontinued. No upcoming releases are planned due to transitive dependencies reached their end of life, i.e. they might be affected by security vulnerabilities.
 
 == [[tomee-7.0]]Apache TomEE 7.0 (Discontinued)
 
@@ -107,7 +107,7 @@ IMPORTANT: This branch is discontinued. No upcoming releases are planned due to 
 |https://www.apache.org/dyn/closer.cgi/tomee/tomee-7.0.9/tomee-webapp-7.0.9.war[icon:download[] TomEE Webapp WAR] |7.0.9|25 Sep. 2020|27 MB |https://downloads.apache.org/tomee/tomee-7.0.9/tomee-webapp-7.0.9.war.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-7.0.9/tomee-webapp-7.0.9.war.sha512[icon:download[] SHA512]
 |===
 
-IMPORTANT: This branch is discontinued. No upcoming releases are planned due to transitive dependencies reached their end of life.
+IMPORTANT: This branch is discontinued. No upcoming releases are planned due to transitive dependencies reached their end of life, i.e. they might be affected by security vulnerabilities.
 
 
 == [[tomee-1.7]]Apache TomEE 1.7 (Discontinued)
@@ -133,6 +133,6 @@ IMPORTANT: This branch is discontinued. No upcoming releases are planned due to 
 |https://www.apache.org/dyn/closer.cgi/tomee/tomee-1.7.5/tomee-webapp-1.7.5.war[icon:download[] TomEE Webapp WAR] |1.7.5|27 Sep. 2017|21 MB |https://downloads.apache.org/tomee/tomee-1.7.5/tomee-webapp-1.7.5.war.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-1.7.5/tomee-webapp-1.7.5.war.sha1[icon:download[] SHA1]
 |===
 
-IMPORTANT: This branch is discontinued. No upcoming releases are planned due to transitive dependencies reached their end of life.
+IMPORTANT: This branch is discontinued. No upcoming releases are planned due to transitive dependencies reached their end of life, i.e. they might be affected by security vulnerabilities.
 
 - xref:download-archive.adoc[Older versions can be found here]
