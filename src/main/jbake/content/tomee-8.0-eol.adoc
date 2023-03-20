@@ -1,0 +1,11 @@
+= End of life for Apache TomEE 8.0.x
+:jbake-type: page
+:jbake-status: published
+
+The Apache TomEE team announces that support for Apache TomEE 8.0.x will end on 31 December 2023.
+
+This means that after 31 December 2023:
+
+- releases from the `tomee-8.x` branch are highly unlikely
+- bugs affecting only the `tomee-8.x` branch will not be addressed
+- security vulnerability reports will not be checked against the `tomee-8.x` branch

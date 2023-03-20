@@ -41,6 +41,7 @@ IMPORTANT: Note: Information on possible ways to migrate from `javax` to `jakart
 - MicroProfile 2.0
 - Java 8 or higher
 - link:8.0.14/release-notes.html[Release Notes]
+- link:tomee-8.0-eol.html[End of life Notes]
 
 [cols="2,4*^1",options="header"]
 |===
@@ -62,6 +63,7 @@ IMPORTANT: Note: Information on possible ways to migrate from `javax` to `jakart
 - Java EE 7
 - MicroProfile 2.0
 - Java 7 or Java 8
+- link:tomee-7.1-eol.html[End of life Notes]
 
 [cols="2,4*^1",options="header"]
 |===
@@ -89,6 +91,7 @@ IMPORTANT: This branch is discontinued. No upcoming releases are planned due to 
 
 - Java EE 7
 - Java 7 or Java 8
+- link:tomee-7.0-eol.html[End of life Notes]
 
 [cols="2,4*^1",options="header"]
 |===
@@ -114,6 +117,7 @@ IMPORTANT: This branch is discontinued. No upcoming releases are planned due to 
 
 - Java EE 6
 - Java 6, Java 7 or Java 8
+- link:tomee-1.7-eol.html[End of life Notes]
 
 
 [cols="2,4*^1",options="header"]
