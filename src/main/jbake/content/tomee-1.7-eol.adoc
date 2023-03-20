@@ -1,0 +1,10 @@
+= End of life for Apache TomEE 1.7.x
+:jbake-type: page
+:jbake-status: published
+
+The Apache TomEE team announces that Apache TomEE 1.7.x has reached it's end of life.
+This means:
+
+- Releases from the `tomee-1.7.x` branch are highly unlikely
+- Bugs affecting only the `tomee-1.7.x` branch will not be addressed
+- Security vulnerability reports will not be checked against the `tomee-1.7.x` branch
