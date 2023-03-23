@@ -41,7 +41,7 @@ IMPORTANT: Note: Information on possible ways to migrate from `javax` to `jakart
 - MicroProfile 2.0
 - Java 8 or higher
 - link:8.0.14/release-notes.html[Release Notes]
-- link:tomee-8.0-eol.html[End of life Notes]
+- link:tomee-8.0-eol.html[The support for Apache TomEE 8.0.x will end on 31 December 2023]
 
 [cols="2,4*^1",options="header"]
 |===
