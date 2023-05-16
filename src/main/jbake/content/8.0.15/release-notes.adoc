@@ -1,0 +1,46 @@
+= Apache TomEE 8.0.15 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 8.0.15 has been released. It is a maintenance release with some bug fixes and dependencies upgrades.
+
+Thank you to everyone who contributed to this release, including all of our users and the people who submitted bug reports, contributed code or documentation enhancements.
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4188[TOMEE-4188] ActiveMQ 5.16.6
+- link:https://issues.apache.org/jira/browse/TOMEE-4180[TOMEE-4180] CXF 3.5.5
+- link:https://issues.apache.org/jira/browse/TOMEE-4187[TOMEE-4187] Commons FileUpload 1.5
+- link:https://issues.apache.org/jira/browse/TOMEE-4210[TOMEE-4210] EclipseLink 2.7.12
+- link:https://issues.apache.org/jira/browse/TOMEE-4211[TOMEE-4211] Hibernate Integration 5.6.15.Final
+- link:https://issues.apache.org/jira/browse/TOMEE-4206[TOMEE-4206] Jackson 2.15.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4207[TOMEE-4207] Johnzon 1.2.20
+- link:https://issues.apache.org/jira/browse/TOMEE-4205[TOMEE-4205] Jose4j 0.9.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4209[TOMEE-4209] Mojarra 2.3.19
+- link:https://issues.apache.org/jira/browse/TOMEE-4195[TOMEE-4195] Tomcat 9.0.72 (CVE-2023-28708)
+- link:https://issues.apache.org/jira/browse/TOMEE-4191[TOMEE-4191] Tomcat 9.0.73
+- link:https://issues.apache.org/jira/browse/TOMEE-4201[TOMEE-4201] Tomcat 9.0.74
+- link:https://issues.apache.org/jira/browse/TOMEE-4194[TOMEE-4194] snakeyaml version 2.0 mitigate CVE-2022-1471
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4192[TOMEE-4192] ApplicationComposers do not clear GC references on release
+- link:https://issues.apache.org/jira/browse/TOMEE-4181[TOMEE-4181] BCProv jar loses its signature during the patch process
+- link:https://issues.apache.org/jira/browse/TOMEE-4122[TOMEE-4122] Performance Regression in bean resolution in EAR files
+- link:https://issues.apache.org/jira/browse/TOMEE-4189[TOMEE-4189] java.lang.ClassNotFoundException: org.apache.openejb.loader.SystemInstance
+- link:https://issues.apache.org/jira/browse/TOMEE-4179[TOMEE-4179] Fix creeping in API JARs which should be in javaee-api
+
+== Wish
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4190[TOMEE-4190] RunWithApplicationComposer should support inheritance
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4194[TOMEE-4194] Update snakeyaml version to 2.0 to mitigate CVE-2022-1471
+- link:https://issues.apache.org/jira/browse/TOMEE-4195[TOMEE-4195] Upgrade to Apache Tomcat 9.0.72 (CVE-2023-28708)
+- link:https://issues.apache.org/jira/browse/TOMEE-4187[TOMEE-4187] Commons FileUpload 1.5
