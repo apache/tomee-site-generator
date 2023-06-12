@@ -10,7 +10,7 @@
   <name>Apache TomEE :: WebSite NG</name>
 
   <properties>
-    <tomee.version>8.0.13</tomee.version>
+    <tomee.version>8.0.15</tomee.version>
     <jbake.http>false</jbake.http>
     <jbake.pdf>false</jbake.pdf>
 
