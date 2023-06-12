@@ -120,4 +120,4 @@ TCK result summary:
 [INFO]
 ----
 
-For more details on the complete execution, the logs are available in https://ci-builds.apache.org/job/Tomee/job/TomEE_Compitable_TCK/5/[Jenkins]
+For more details on the complete execution, the logs are available in https://ci-builds.apache.org/job/Tomee/job/TomEE_Compitable_TCK/6/[Jenkins]
