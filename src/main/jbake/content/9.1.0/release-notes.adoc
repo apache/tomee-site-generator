@@ -1,0 +1,67 @@
+= Apache TomEE 9.0.0 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 9.1.0 has been released.
+
+It is a maintenance release with some bug fixes and dependencies upgrades (MicroProfile 5, ActiveMQ, Johnzon, XBean, etc).
+
+It fixes the latest Tomcat vulnerabilities (CVE-2023-28708, CVE-2023-24998, CVE-2023-28709) by back porting and patching Tomcat inside the TomEE build.
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4217[TOMEE-4217] Arquillian 1.7.0.Final
+- link:https://issues.apache.org/jira/browse/TOMEE-4204[TOMEE-4204] Bouncycastle 1.73
+- link:https://issues.apache.org/jira/browse/TOMEE-4187[TOMEE-4187] Commons FileUpload 1.5
+- link:https://issues.apache.org/jira/browse/TOMEE-4218[TOMEE-4218] HSQLDB 2.7.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4221[TOMEE-4221] JUnit 5.9.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4212[TOMEE-4212] Jackson 2.15.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4216[TOMEE-4216] Jackson 2.15.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4208[TOMEE-4208] Johnzon 1.2.20
+- link:https://issues.apache.org/jira/browse/TOMEE-4205[TOMEE-4205] Jose4j 0.9.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4203[TOMEE-4203] Microprofile Config API 3.0.3, Fault Tolerance Impl 6.2.2, OpenTracing Impl 3.0.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4141[TOMEE-4141] SmallRye on 9.x branch
+- link:https://issues.apache.org/jira/browse/TOMEE-4061[TOMEE-4061] Wrap up updates for TomEE 9.x
+- link:https://issues.apache.org/jira/browse/TOMEE-4220[TOMEE-4220] log4j 2.20.0 (integration)
+- link:https://issues.apache.org/jira/browse/TOMEE-4213[TOMEE-4213] snakeyaml version 2.0 mitigate CVE-2022-1471
+- link:https://issues.apache.org/jira/browse/TOMEE-4219[TOMEE-4219] xbeans 4.23
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4181[TOMEE-4181] BCProv jar loses its signature during the patch process
+- link:https://issues.apache.org/jira/browse/TOMEE-4183[TOMEE-4183] TomEE 9.0.0 is not creating service in Windows 10 incompatible software
+- link:https://issues.apache.org/jira/browse/TOMEE-4189[TOMEE-4189] java.lang.ClassNotFoundException: org.apache.openejb.loader.SystemInstance
+- link:https://issues.apache.org/jira/browse/TOMEE-4192[TOMEE-4192] ApplicationComposers do not clear GC references on release
+- link:https://issues.apache.org/jira/browse/TOMEE-4174[TOMEE-4174] Port TOMEE-3779 to 9.x
+- link:https://issues.apache.org/jira/browse/TOMEE-4199[TOMEE-4199] jakartaee-api with tomcat classifier has too much in it
+- link:https://issues.apache.org/jira/browse/TOMEE-4112[TOMEE-4112] Performance Regression in bean resolution in EAR files
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4200[TOMEE-4200] Use ActiveMQ client jakarta instead of shading it in TomEE
+- link:https://issues.apache.org/jira/browse/TOMEE-4202[TOMEE-4202] Backport CVE fixes of Tomcat 10.1.x to 10.0.27
+
+== Task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4053[TOMEE-4053] Dependency properties cleanup
+
+== Documentation
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4186[TOMEE-4186] Update download page for discontinued branches
+
+== Wish
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4190[TOMEE-4190] RunWithApplicationComposer should support inheritance
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4187[TOMEE-4187] Commons FileUpload 1.5
+- link:https://issues.apache.org/jira/browse/TOMEE-4202[TOMEE-4202] Backport CVE fixes of Tomcat 10.1.x to 10.0.27
