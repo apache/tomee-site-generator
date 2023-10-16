@@ -1,9 +1,9 @@
-= Apache TomEE 9.1.1 Release Notes
+= Apache TomEE 9.1.0 Release Notes
 :index-group: Release Notes
 :jbake-type: page
 :jbake-status: published
 
-Apache TomEE 9.1.1 has been released.
+Apache TomEE 9.1.0 has been released.
 
 It is a maintenance release with some bug fixes and dependencies upgrades (MicroProfile 5, ActiveMQ, Johnzon, XBean, etc).
 

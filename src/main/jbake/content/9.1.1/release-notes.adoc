@@ -1,0 +1,52 @@
+= Apache TomEE 9.1.1 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 9.1.1 has been released.
+
+It is a maintenance release with some bug fixes and dependencies upgrades.
+The most notable change is dropping our own cxf-shade in favour of CXF 4.0.
+
+It fixes the latest Tomcat vulnerabilities by back porting and patching Tomcat inside the TomEE build.
+This release still passes the EE9.1 TCK as well as the MicroProfile 5.0 TCK.
+
+== Dependency upgrade
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4246[TOMEE-4246] ActiveMQ 5.18.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4230[TOMEE-4230] Backport fix for CVE-2023-34981
+ - link:https://issues.apache.org/jira/browse/TOMEE-4239[TOMEE-4239] Backport fix for CVE-2023-41080
+ - link:https://issues.apache.org/jira/browse/TOMEE-4235[TOMEE-4235] Bouncy Castle 1.75
+ - link:https://issues.apache.org/jira/browse/TOMEE-4243[TOMEE-4243] Bouncy Castle 1.76
+ - link:https://issues.apache.org/jira/browse/TOMEE-4139[TOMEE-4139] CXF 4.0.3 (jakarta namespace)
+ - link:https://issues.apache.org/jira/browse/TOMEE-4247[TOMEE-4247] Hibernate 6.1.7
+ - link:https://issues.apache.org/jira/browse/TOMEE-4227[TOMEE-4227] Jackson 2.15.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4228[TOMEE-4228] Johnzon 1.2.21
+ - link:https://issues.apache.org/jira/browse/TOMEE-4248[TOMEE-4248] Mojarra 3.0.5
+ - link:https://issues.apache.org/jira/browse/TOMEE-4254[TOMEE-4254] Port fix for CVE-2023-42795
+ - link:https://issues.apache.org/jira/browse/TOMEE-4255[TOMEE-4255] Port fix for CVE-2023-44487
+ - link:https://issues.apache.org/jira/browse/TOMEE-4256[TOMEE-4256] Port fix for CVE-2023-45648
+ - link:https://issues.apache.org/jira/browse/TOMEE-4249[TOMEE-4249] SnakeYAML 2.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4250[TOMEE-4250] WSS4J 3.0.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4232[TOMEE-4232] bcprov-jdk15to18-1.74.jar
+ - link:https://issues.apache.org/jira/browse/TOMEE-4251[TOMEE-4251] xmlsec 3.0.2
+
+== Bug
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4222[TOMEE-4222] @LoginToContinue JSR-375 (JavaEE Security API) causes IllegalArgumentException
+ - link:https://issues.apache.org/jira/browse/TOMEE-4225[TOMEE-4225] Remove commons-net from TomEE distribution
+ - link:https://issues.apache.org/jira/browse/TOMEE-4226[TOMEE-4226] DataSource definition fails when @DataSourceDefinition doesn't define url property
+
+== Improvement
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4031[TOMEE-4031] Improve TomEE Jmx Mbean Support for Parameter Names
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4230[TOMEE-4230] Backport fix for CVE-2023-34981
+ - link:https://issues.apache.org/jira/browse/TOMEE-4254[TOMEE-4254] Port fix for CVE-2023-42795
+ - link:https://issues.apache.org/jira/browse/TOMEE-4227[TOMEE-4227] Jackson 2.15.2
