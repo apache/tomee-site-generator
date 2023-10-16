@@ -1,4 +1,4 @@
-= Apache TomEE 9.0.0 Release Notes
+= Apache TomEE 9.1.0 Release Notes
 :index-group: Release Notes
 :jbake-type: page
 :jbake-status: published
