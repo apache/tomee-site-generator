@@ -1,0 +1,51 @@
+= Apache TomEE 8.0.16 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 8.0.16 has been released. It is a maintenance release with some bug fixes and dependencies upgrades.
+
+Thank you to everyone who contributed to this release, including all of our users and the people who submitted bug reports, contributed code or documentation enhancements.
+
+== Dependency upgrade
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4266[TOMEE-4266] ActiveMQ 5.16.7
+ - link:https://issues.apache.org/jira/browse/TOMEE-4234[TOMEE-4234] Bouncy Castle 1.75
+ - link:https://issues.apache.org/jira/browse/TOMEE-4253[TOMEE-4253] CXF 3.5.7
+ - link:https://issues.apache.org/jira/browse/TOMEE-4218[TOMEE-4218] HSQLDB 2.7.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4221[TOMEE-4221] JUnit 5.9.3
+ - link:https://issues.apache.org/jira/browse/TOMEE-4216[TOMEE-4216] Jackson 2.15.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4227[TOMEE-4227] Jackson 2.15.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4228[TOMEE-4228] Johnzon 1.2.21
+ - link:https://issues.apache.org/jira/browse/TOMEE-4263[TOMEE-4263] Santuario Java (xmlsec) mitigate CVE-2023-44483
+ - link:https://issues.apache.org/jira/browse/TOMEE-4224[TOMEE-4224] Tomcat 9.0.76
+ - link:https://issues.apache.org/jira/browse/TOMEE-4237[TOMEE-4237] Tomcat 9.0.79
+ - link:https://issues.apache.org/jira/browse/TOMEE-4238[TOMEE-4238] Tomcat 9.0.80
+ - link:https://issues.apache.org/jira/browse/TOMEE-4252[TOMEE-4252] Tomcat 9.0.82
+ - link:https://issues.apache.org/jira/browse/TOMEE-4262[TOMEE-4262] eclipselink 2.7.13
+ - link:https://issues.apache.org/jira/browse/TOMEE-4220[TOMEE-4220] log4j 2.20.0 (integration)
+ - link:https://issues.apache.org/jira/browse/TOMEE-4219[TOMEE-4219] xbeans 4.23
+
+== Bug
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4222[TOMEE-4222] @LoginToContinue JSR-375 (JavaEE Security API) causes IllegalArgumentException
+ - link:https://issues.apache.org/jira/browse/TOMEE-4226[TOMEE-4226] DataSource definition fails when @DataSourceDefinition doesn't define url property
+
+== Improvement
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4031[TOMEE-4031] Improve TomEE Jmx Mbean Support for Parameter Names
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4234[TOMEE-4234] Bouncy Castle 1.75
+ - link:https://issues.apache.org/jira/browse/TOMEE-4238[TOMEE-4238] Tomcat 9.0.80
+ - link:https://issues.apache.org/jira/browse/TOMEE-4227[TOMEE-4227] Jackson 2.15.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4229[TOMEE-4229] CVE-2023-34981 in Apache TomEE 8.0.15
+ - link:https://issues.apache.org/jira/browse/TOMEE-4252[TOMEE-4252] Tomcat 9.0.82
+ - link:https://issues.apache.org/jira/browse/TOMEE-4263[TOMEE-4263] Santuario Java (xmlsec) mitigate CVE-2023-44483
+ - link:https://issues.apache.org/jira/browse/TOMEE-4229[TOMEE-4229] CVE-2023-34981 in TomEE 8.0.15
+ - link:https://issues.apache.org/jira/browse/TOMEE-4266[TOMEE-4266] ActiveMQ 5.16.7
