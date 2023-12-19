@@ -1,0 +1,42 @@
+= Apache TomEE 9.1.2 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+== Dependency upgrade
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4266[TOMEE-4266] ActiveMQ 5.16.7 / 5.18.3
+ - link:https://issues.apache.org/jira/browse/TOMEE-4278[TOMEE-4278] Commons CLI 1.6.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4277[TOMEE-4277] Commons Codec 1.16.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4274[TOMEE-4274] Commons DBCP 2.11.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4275[TOMEE-4275] Commons Lang3 3.13.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4276[TOMEE-4276] Jackson 2.15.3
+ - link:https://issues.apache.org/jira/browse/TOMEE-4279[TOMEE-4279] Log4J2 2.21.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4280[TOMEE-4280] WSS4J 3.0.2
+
+== New Feature
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4281[TOMEE-4281] Improve logging when failing to load a class
+ - link:https://issues.apache.org/jira/browse/TOMEE-4268[TOMEE-4268] Create MicroProfile OpenAPI Reader exemple
+
+== Bug
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4267[TOMEE-4267] MicroProfile Metrics JMX Registrar must be initialized once
+
+== Improvement
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4285[TOMEE-4285] Port fix for CVE-2023-46589 for TomEE 9.x
+ - link:https://issues.apache.org/jira/browse/TOMEE-4286[TOMEE-4286] Namespace error when processing web-fragment.xml
+ - link:https://issues.apache.org/jira/browse/TOMEE-4287[TOMEE-4287] Better information when XBean Finder fails to read a class/jar file
+ - link:https://issues.apache.org/jira/browse/TOMEE-4289[TOMEE-4289]  java.util.NoSuchElementException in SystemLogHandler
+ - link:https://issues.apache.org/jira/browse/TOMEE-4269[TOMEE-4269] Enable SLF4J 2.x webapps to include bindings in their WEB-INF/lib
+
+== Task
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4284[TOMEE-4284] Implement tomee.mp.jwt.allow.no-exp property over mp.jwt.tomee.allow.no-exp
+
