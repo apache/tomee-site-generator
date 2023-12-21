@@ -15,7 +15,6 @@ You **must** link:https://www.apache.org/info/verification.html[verify] the inte
 - MicroProfile 5.0
 - Java 11 or higher
 - link:9.1.2/release-notes.html[Release Notes]
-- link:9.1.2/plume/webprofile-9.1.html[Jakarta EE 9.1 Web Profile TCK Results for Java 11]
 - link:9.1.2/microprofile-5.0.html[MicroProfile 5.0 TCK Results]
 
 [cols="2,4*^1",options="header"]
