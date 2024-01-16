@@ -12,6 +12,28 @@ You **must** link:https://www.apache.org/info/verification.html[verify] the inte
 
 IMPORTANT: No upcoming releases are planned for these branches as transitive dependencies reached their end of life, i.e. they might be affected by security vulnerabilities
 
+== [[tomee-8.0]]Apache TomEE 8.0 (Discontinued)
+
+- Jakarta EE 8 / Java EE 8
+- MicroProfile 2.0
+- Java 8 or higher
+- link:8.0.16/release-notes.html[Release Notes]
+- link:tomee-8.0-eol.html[The support for Apache TomEE 8.0.x **ended** on 31 December 2023]
+
+[cols="2,4*^1",options="header"]
+|===
+|Name|Version|Date|Size|Signatures & Hashes
+|https://archive.apache.org/dist/tomee/tomee-8.0.16/apache-tomee-8.0.16-microprofile.tar.gz[icon:download[] TomEE Microprofile TAR.GZ] |8.0.16|29 Oct 2023|62 MB |https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-microprofile.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-microprofile.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-8.0.16/apache-tomee-8.0.16-microprofile.zip[icon:download[] TomEE Microprofile ZIP] |8.0.16|29 Oct 2023|62 MB |https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-microprofile.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-microprofile.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-8.0.16/apache-tomee-8.0.16-plume.tar.gz[icon:download[] TomEE Plume TAR.GZ] |8.0.16|29 Oct 2023|75 MB |https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-plume.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-plume.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-8.0.16/apache-tomee-8.0.16-plume.zip[icon:download[] TomEE Plume ZIP] |8.0.16|29 Oct 2023|75 MB |https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-plume.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-plume.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-8.0.16/apache-tomee-8.0.16-plus.tar.gz[icon:download[] TomEE Plus TAR.GZ] |8.0.16|29 Oct 2023|67 MB |https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-plus.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-plus.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-8.0.16/apache-tomee-8.0.16-plus.zip[icon:download[] TomEE Plus ZIP] |8.0.16|29 Oct 2023|67 MB |https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-plus.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-plus.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-8.0.16/apache-tomee-8.0.16-webprofile.tar.gz[icon:download[] TomEE Webprofile TAR.GZ] |8.0.16|29 Oct 2023|46 MB |https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-webprofile.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-webprofile.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-8.0.16/apache-tomee-8.0.16-webprofile.zip[icon:download[] TomEE Webprofile ZIP] |8.0.16|29 Oct 2023|46 MB |https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-webprofile.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-8.0.16/apache-tomee-8.0.16-webprofile.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-8.0.16/tomee-project-8.0.16-source-release.zip[icon:download[] TomEE Project Source Release ZIP] |8.0.16|29 Oct 2023|17 MB |https://downloads.apache.org/tomee/tomee-8.0.16/tomee-project-8.0.16-source-release.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-8.0.16/tomee-project-8.0.16-source-release.zip.sha512[icon:download[] SHA512]
+|===
+
 == [[tomee-7.1]]Apache TomEE 7.1 (Discontinued)
 
 - Java EE 7
