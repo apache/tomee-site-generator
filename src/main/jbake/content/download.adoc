@@ -33,5 +33,5 @@ You **must** link:https://www.apache.org/info/verification.html[verify] the inte
 
 IMPORTANT: Note: Information on possible ways to migrate from `javax` to `jakarta` can be found link:javax-to-jakarta.html[here].
 
-- xref:download-discontinued.adoc[The last released versions of the TomEE 7.1.x, 7.0.x and 1.7.x series can be found here].
-- xref:download-archive.adoc[Older versions (9.x, 8.x, etc.) can be found here]
+- xref:download-discontinued.adoc[The last released versions of the TomEE 8.x, 7.1.x, 7.0.x and 1.7.x series can be found here].
+- xref:download-archive.adoc[Older versions (9.x, etc.) can be found here]
