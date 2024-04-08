@@ -1,0 +1,147 @@
+= Apache TomEE 10.0.0-M1 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+This release is a first milestone of TomEE 10, aimed at JakartaEE 10.
+Thanks to everyone who contributed code to make this happen.
+
+We would like to highlight and give a shout-out to all our volunteers
+who have been doing the hard work for EE10, which is also being done in all our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, etc.
+
+Please note the 10.0.0-M1 release is a milestone release intended for evaluation purposes and should not be used in production.
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4266[TOMEE-4266]
+ActiveMQ 5.16.7 / 5.18.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4217[TOMEE-4217]
+Arquillian 1.7.0.Final
+- link:https://issues.apache.org/jira/browse/TOMEE-4307[TOMEE-4307]
+BatchEE 1.0.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4235[TOMEE-4235]
+Bouncy Castle 1.75
+- link:https://issues.apache.org/jira/browse/TOMEE-4243[TOMEE-4243]
+Bouncy Castle 1.76
+- link:https://issues.apache.org/jira/browse/TOMEE-4278[TOMEE-4278]
+Commons CLI 1.6.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4277[TOMEE-4277]
+Commons Codec 1.16.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4274[TOMEE-4274]
+Commons DBCP 2.11.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4275[TOMEE-4275]
+Commons Lang3 3.13.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4310[TOMEE-4310]
+Commons Net 3.9.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4308[TOMEE-4308]
+Fileupload 2 (Jakarta
+- link:https://issues.apache.org/jira/browse/TOMEE-4218[TOMEE-4218]
+HSQLDB 2.7.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4221[TOMEE-4221]
+JUnit 5.9.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4212[TOMEE-4212]
+Jackson 2.15.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4216[TOMEE-4216]
+Jackson 2.15.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4227[TOMEE-4227]
+Jackson 2.15.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4276[TOMEE-4276]
+Jackson 2.15.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4208[TOMEE-4208]
+Johnzon 1.2.20
+- link:https://issues.apache.org/jira/browse/TOMEE-4228[TOMEE-4228]
+Johnzon 1.2.21
+- link:https://issues.apache.org/jira/browse/TOMEE-4205[TOMEE-4205]
+Jose4j 0.9.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4279[TOMEE-4279]
+Log4J2 2.21.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4296[TOMEE-4296]
+MicroProfile JWT 2.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4283[TOMEE-4283]
+OWB 4.0.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4282[TOMEE-4282]
+Tomcat 10.1.16
+- link:https://issues.apache.org/jira/browse/TOMEE-4309[TOMEE-4309]
+Tomcat 10.1.20
+- link:https://issues.apache.org/jira/browse/TOMEE-4280[TOMEE-4280]
+WSS4J 3.0.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4313[TOMEE-4313]
+XBean 4.24
+- link:https://issues.apache.org/jira/browse/TOMEE-4232[TOMEE-4232]
+bcprov-jdk15to18-1.74.jar
+- link:https://issues.apache.org/jira/browse/TOMEE-4220[TOMEE-4220]
+log4j 2.20.0 (integration)
+- link:https://issues.apache.org/jira/browse/TOMEE-4311[TOMEE-4311]
+log4j2 2.23.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4312[TOMEE-4312]
+slf4j 2.0.12
+- link:https://issues.apache.org/jira/browse/TOMEE-4213[TOMEE-4213]
+snakeyaml version 2.0 mitigate CVE-2022-1471
+- link:https://issues.apache.org/jira/browse/TOMEE-4219[TOMEE-4219]
+xbeans 4.23
+
+== New Feature
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4268[TOMEE-4268]
+Create MicroProfile OpenAPI Reader exemple
+- link:https://issues.apache.org/jira/browse/TOMEE-4281[TOMEE-4281]
+Improve logging when failing to load a class
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4222[TOMEE-4222]
+@LoginToContinue JSR-375 (JavaEE Security API) causes
+IllegalArgumentException
+- link:https://issues.apache.org/jira/browse/TOMEE-4267[TOMEE-4267]
+MicroProfile Metrics JMX Registrar must be initialized once
+- link:https://issues.apache.org/jira/browse/TOMEE-4225[TOMEE-4225]
+Remove commons-net from TomEE distribution
+- link:https://issues.apache.org/jira/browse/TOMEE-4226[TOMEE-4226]
+DataSource definition fails when @DataSourceDefinition doesn't define
+url property
+- link:https://issues.apache.org/jira/browse/TOMEE-4192[TOMEE-4192]
+ApplicationComposers do not clear GC references on release
+- link:https://issues.apache.org/jira/browse/TOMEE-4199[TOMEE-4199]
+jakartaee-api with tomcat classifier has too much in it
+- link:https://issues.apache.org/jira/browse/TOMEE-4294[TOMEE-4294]
+TomEE doesn't start in tomee-embedded-maven-plugin when mp-common is
+present
+- link:https://issues.apache.org/jira/browse/TOMEE-4295[TOMEE-4295]
+tomee-embedded-maven-plugin does not register microprofile endpoints
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4269[TOMEE-4269]
+Enable SLF4J 2.x webapps to include bindings in their WEB-INF/lib
+- link:https://issues.apache.org/jira/browse/TOMEE-4286[TOMEE-4286]
+Namespace error when processing web-fragment.xml
+- link:https://issues.apache.org/jira/browse/TOMEE-4200[TOMEE-4200]
+Use ActiveMQ client jakarta instead of shading it in TomEE
+
+== Task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4261[TOMEE-4261]
+Upgrade to Jakarta EE 10 APIs + OWB-4
+- link:https://issues.apache.org/jira/browse/TOMEE-4314[TOMEE-4314]
+Fix docker-compose.yml to build TomEE
+- link:https://issues.apache.org/jira/browse/TOMEE-4284[TOMEE-4284]
+Implement tomee.mp.jwt.allow.no-exp property over
+mp.jwt.tomee.allow.no-exp
+
+== Wish
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4190[TOMEE-4190]
+RunWithApplicationComposer should support inheritance
+
+== Fixed Common Vulnerabilities and Exposures (CVEs)
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4227[TOMEE-4227]
+Jackson 2.15.2
+
