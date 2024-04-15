@@ -1,0 +1,38 @@
+= Apache TomEE 9.1.3 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 9.1.3 has been released.
+
+It is a maintenance release with some bug fixes and dependencies upgrades.
+
+It fixes the latest Tomcat vulnerabilities by back porting and patching Tomcat inside the TomEE build.
+
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4305[TOMEE-4305]
+Backport fix for CVE-2024-23672 for TomEE 9.x
+- link:https://issues.apache.org/jira/browse/TOMEE-4306[TOMEE-4306]
+Backport fix for CVE-2024-24549 for TomEE 9.x
+- link:https://issues.apache.org/jira/browse/TOMEE-4316[TOMEE-4316]
+BatchEE 1.0.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4290[TOMEE-4290]
+Jackson 2.16.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4304[TOMEE-4304]
+cxf-core 4.0.4
+
+== New Feature
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3902[TOMEE-3902]
+Introduce placeholder replacement to enable MDB activation properties
+to be more customizable
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4295[TOMEE-4295]
+tomee-embedded-maven-plugin does not register microprofile endpoints
