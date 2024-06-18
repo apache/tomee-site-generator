@@ -8,7 +8,9 @@
 
 You **must** link:https://www.apache.org/info/verification.html[verify] the integrity of the downloaded files. We provide OpenPGP signatures  (*.asc files) for every release file. This signature should be matched against link:https://downloads.apache.org/tomee/KEYS[KEYS] file which contains the OpenPGP keys of TomEE's Release Managers. We also provide SHA-512 checksums for every release file. After you download the file, you should calculate a checksum for your download, and make sure it is the same as ours.
 
-== [[tomee-9.1]]Apache TomEE 10
+*SECURITY NOTICE: This software is developed and maintained by unpaid volunteers who donate time as they have it.  There is no guarantee security vulnerabilities will be fixed on any timeline or at all.*
+
+== [[tomee-10]]Apache TomEE 10
 
 - Jakarta EE 10
 - MicroProfile 6.0
