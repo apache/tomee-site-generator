@@ -1,0 +1,93 @@
+= Apache TomEE 10.0.0-M2 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+This is the second milestone release of TomEE 10 targeting JakartaEE 10.
+
+Thanks to everyone who contributed code to make this happen.
+
+We would like to highlight and give a shout-out to all our volunteers
+who have been doing the hard work for EE10, which is also being done in all our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, etc.
+
+Notable changes:
+
+- This is the first TomEE 10 release to require Java 17 at runtime (due to CXF and ActiveMQ).
+- We are now implementing the OIDC part of the EE Security Spec and passing the corresponding part of the TCK (thanks to Markus Jung).
+- We have integrated some updates in the MicroProfile area (not complete) and passed the related TCKs.
+- It is based on a fork of CXF 4.1.0-SNAPSHOT, see https://issues.apache.org/jira/browse/TOMEE-4353 for details. We pass most of the JAX-RS TCK here.
+- Fixes some bugs and quirks like broken Mojarra (due to CDI spec ambiguity) and others.
+
+Please note the 10.0.0-M2 release is a milestone release intended for evaluation purposes and should not be used in production.
+
+== Dependency upgrade
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4337[TOMEE-4337]  bcprov-jdk15to18-1.76.jar and bcpkix-jdk15to18-1.76.jar
+ - link:https://issues.apache.org/jira/browse/TOMEE-4317[TOMEE-4317] ActiveMQ 6.1.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4359[TOMEE-4359] ActiveMQ 6.1.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4341[TOMEE-4341] Angus Activation 2.0.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4362[TOMEE-4362] Commons IO 2.16.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4346[TOMEE-4346] Commons Lang 3.14.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4345[TOMEE-4345] Commons Logging 1.3.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4339[TOMEE-4339] Compress 1.16.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4363[TOMEE-4363] DBCP 2.12.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4364[TOMEE-4364] Downgrade Mojarra 4.0.0 (cf. TOMEE-4355)
+ - link:https://issues.apache.org/jira/browse/TOMEE-4349[TOMEE-4349] ECJ 3.37.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4360[TOMEE-4360] ECJ 3.38.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4365[TOMEE-4365] EclipseLink 4.0.3
+ - link:https://issues.apache.org/jira/browse/TOMEE-4369[TOMEE-4369] HSQLDB 2.7.3
+ - link:https://issues.apache.org/jira/browse/TOMEE-4367[TOMEE-4367] Hibernate Validator 8.0.1.Final
+ - link:https://issues.apache.org/jira/browse/TOMEE-4361[TOMEE-4361] Jackson 2.17.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4335[TOMEE-4335] Jetty 11.0.20
+ - link:https://issues.apache.org/jira/browse/TOMEE-4340[TOMEE-4340] Jose JWT 9.39.1 (Test)
+ - link:https://issues.apache.org/jira/browse/TOMEE-4113[TOMEE-4113] MP Metrics 5 / SmallRye Metrics 5
+ - link:https://issues.apache.org/jira/browse/TOMEE-4356[TOMEE-4356] Mojarra 4.0.7
+ - link:https://issues.apache.org/jira/browse/TOMEE-4348[TOMEE-4348] Smallrye Config 3.8.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4353[TOMEE-4353] Temporarily switch CXF 4.1.0 fork version have a stable version for a possible TomEE 10-M2 release.
+ - link:https://issues.apache.org/jira/browse/TOMEE-4328[TOMEE-4328] TomEE 10.1.23
+ - link:https://issues.apache.org/jira/browse/TOMEE-4334[TOMEE-4334] Tomcat 10.1.24
+ - link:https://issues.apache.org/jira/browse/TOMEE-4352[TOMEE-4352] Tomcat 10.1.25
+ - link:https://issues.apache.org/jira/browse/TOMEE-4326[TOMEE-4326] XBeans 4.25
+ - link:https://issues.apache.org/jira/browse/TOMEE-4338[TOMEE-4338] Xalan 2.7.3
+
+== New Feature
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4351[TOMEE-4351] Jakarta Security 3.0
+
+== Bug
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4320[TOMEE-4320] TomEE 10 leaks jakarta.json from Smallrye into /lib
+ - link:https://issues.apache.org/jira/browse/TOMEE-4368[TOMEE-4368] Typo in "openejb.placehodler.delimiter"
+ - link:https://issues.apache.org/jira/browse/TOMEE-4347[TOMEE-4347] Smallrye MP Extension are activated even if tomee.mp.scan="none"
+ - link:https://issues.apache.org/jira/browse/TOMEE-4332[TOMEE-4332] Using JAX-RS endpoints with a Spring Application fails
+ - link:https://issues.apache.org/jira/browse/TOMEE-4355[TOMEE-4355] mojarra faces.js is truncated
+ - link:https://issues.apache.org/jira/browse/TOMEE-4333[TOMEE-4333] NotSerializableException with @Inject HttpServletRequest
+
+== Improvement
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4342[TOMEE-4342] ApplicationComposer should inject declared custom resources into tests
+ - link:https://issues.apache.org/jira/browse/TOMEE-4350[TOMEE-4350] mp-jwt: Add qualifier for produced Jsonb
+ - link:https://issues.apache.org/jira/browse/TOMEE-4357[TOMEE-4357] Add a Jandex index cache to TomEEMicroProfileListener
+
+== Task
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4366[TOMEE-4366] Remove "groovy-spock" Example
+ - link:https://issues.apache.org/jira/browse/TOMEE-4344[TOMEE-4344] MP6: OpenAPI 3.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4318[TOMEE-4318] Switch Java Baseline to 17
+ - link:https://issues.apache.org/jira/browse/TOMEE-4330[TOMEE-4330] ActiveMQ 6.1.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4331[TOMEE-4331] BatchEE 2.0.0
+
+== Sub-task
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4164[TOMEE-4164] Jakarta JSON Binding TCK
+ - link:https://issues.apache.org/jira/browse/TOMEE-4165[TOMEE-4165] Jakarta JSON Processing TCK
+ - link:https://issues.apache.org/jira/browse/TOMEE-4166[TOMEE-4166] Jakarta RESTFul Web Services TCK
+ - link:https://issues.apache.org/jira/browse/TOMEE-4325[TOMEE-4325] JAX-RS TCK: Signature Tests
+ - link:https://issues.apache.org/jira/browse/TOMEE-3965[TOMEE-3965] Fix TomEE :: Examples :: JSF2/CDI/BV/JPA/DeltaSpike
+ - link:https://issues.apache.org/jira/browse/TOMEE-4158[TOMEE-4158] Jakarta Bean Validation TCK
