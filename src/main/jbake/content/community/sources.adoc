@@ -27,7 +27,7 @@ If you are interested in 1.7.x branch only just checkout the `tomee-1.7.x` branc
 git clone -b tomee-1.7.x https://gitbox.apache.org/repos/asf/tomee.git tomee-1.7.x
 ----
 
-Master branch is the more up to date version of the codebase and currently targets TomEE 8.x branch.
+Master branch is the more up to date version of the codebase and currently targets TomEE 10.0.x branch.
 
 == Building
 
