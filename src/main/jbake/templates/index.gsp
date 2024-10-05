@@ -66,7 +66,7 @@
 			<div class="col-md-6 d-flex f-column-start accented-block accent-violet f-space-between">
                     <div class="block-content">
                         <h5 class="muted">Milestone Release - Jakarta namespace</h5>
-                        <h4 class="muted">apache-tomee-10.0.0-M2</h4>
+                        <h4 class="muted">apache-tomee-10.0.0-M3</h4>
                         <p>Milestone Release, Apache TomEE 10.0 implements Jakarta EE 10 and supports the new jakarta namespace. Runs on Java 11 or higher.</p>
                     </div>
                     <a class="btn btn-accent btn-primary square"  href="download.html#tomee-8.0"><i class="icon_plus"></i>Download</a>

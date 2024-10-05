@@ -1,0 +1,86 @@
+= Apache TomEE 10.0.0-M3 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+
+This is the third milestone release of TomEE 10 targeting JakartaEE 10.
+
+Thanks to everyone who contributed code to make this happen.
+
+We would like to highlight and give a shout-out to all our volunteers who have been doing the hard work for EE10, which is also being done in all our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, etc.
+
+Notable changes:
+- We are now passing the Jakarta Concurrency 3.0 TCK, making our implementation of this spec complete
+- It is based on a fork of CXF 4.1.0-SNAPSHOT, see https://issues.apache.org/jira/browse/TOMEE-4353 for details. We pass most of the JAX-RS TCK here.
+- Over the months several dependencies have been updated to their latest versions
+- Corba ORB APIs have been removed from the codebase
+- JAX-RS request handling has been reworked which causes servlets to always be invoked before JAX-RS resources
+
+Please note the 10.0.0-M3 release is a milestone release intended for evaluation purposes and should not be used in production.
+
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4379[TOMEE-4379] ActiveMQ 6.1.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4397[TOMEE-4397] Commons CLI 1.9.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4396[TOMEE-4396] Commons Codec 1.17.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4384[TOMEE-4384] Commons Compress 1.27.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4388[TOMEE-4388] Commons Lang3 3.16.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4394[TOMEE-4394] Commons Logging 1.3.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4392[TOMEE-4392] Drop commons-collection 3.2.2 in openejb-core
+- link:https://issues.apache.org/jira/browse/TOMEE-4393[TOMEE-4393] Drop dependency towards commons beanutils
+- link:https://issues.apache.org/jira/browse/TOMEE-4412[TOMEE-4412] ECJ 3.39.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4389[TOMEE-4389] EclipseLink 4.04
+- link:https://issues.apache.org/jira/browse/TOMEE-4381[TOMEE-4381] JLine 2.14.6
+- link:https://issues.apache.org/jira/browse/TOMEE-4405[TOMEE-4405] OpenJPA 4.0.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4383[TOMEE-4383] Parent 33
+- link:https://issues.apache.org/jira/browse/TOMEE-4382[TOMEE-4382] Replace Swizzle Stream with Swizzle
+- link:https://issues.apache.org/jira/browse/TOMEE-4398[TOMEE-4398] SnakeYAML 2.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4371[TOMEE-4371] Switch back CXF 4.1.0-SNAPSHOT
+- link:https://issues.apache.org/jira/browse/TOMEE-4407[TOMEE-4407] Temporarily switch CXF 4.1.0 fork version have a stable version for a possible TomEE 10-M3 release.
+- link:https://issues.apache.org/jira/browse/TOMEE-4372[TOMEE-4372] Tomcat 10.1.26
+- link:https://issues.apache.org/jira/browse/TOMEE-4380[TOMEE-4380] Tomcat 10.1.28
+- link:https://issues.apache.org/jira/browse/TOMEE-4399[TOMEE-4399] Tomcat 10.1.29
+- link:https://issues.apache.org/jira/browse/TOMEE-4403[TOMEE-4403] Tomcat 10.1.30
+- link:https://issues.apache.org/jira/browse/TOMEE-4386[TOMEE-4386] commons-cli 1.8.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4373[TOMEE-4373] commons-compress 1.27.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4374[TOMEE-4374] commons-lang3 3.15.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4411[TOMEE-4411] jboss logging 3.6.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4385[TOMEE-4385] slf4j2 2.0.16
+- link:https://issues.apache.org/jira/browse/TOMEE-4376[TOMEE-4376] Commons Logging 1.3.3
+
+== New Feature
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-1380[TOMEE-1380] study a better data importer for datsources and entitymanagers
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-2934[TOMEE-2934] EJBContainer.createEJBContainer Fails to find public inner classes
+- link:https://issues.apache.org/jira/browse/TOMEE-4404[TOMEE-4404] NPE in TomcatClassPath and TomcatWebAppBuilder
+- link:https://issues.apache.org/jira/browse/TOMEE-4327[TOMEE-4327] Fix BVAL TCK 3.0 under J17: org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.*
+- link:https://issues.apache.org/jira/browse/TOMEE-4390[TOMEE-4390] ClassNotFoundException in webapp that has log4j2 and invokes commons-logging
+- link:https://issues.apache.org/jira/browse/TOMEE-4375[TOMEE-4375] NullPointerException in SavedRequest
+- link:https://issues.apache.org/jira/browse/TOMEE-4406[TOMEE-4406] Faces Resources return 404 if subclass of JAX-RS Application is present
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4395[TOMEE-4395] Debug logging for default properties used to create resources
+- link:https://issues.apache.org/jira/browse/TOMEE-4410[TOMEE-4410] Better Exception when accesing injected HttpServletRequest if no request is active
+
+== Task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4400[TOMEE-4400] Remove openejb.jaxb.fastBoot
+- link:https://issues.apache.org/jira/browse/TOMEE-4402[TOMEE-4402] Remove commons-jcs/JCache
+- link:https://issues.apache.org/jira/browse/TOMEE-2324[TOMEE-2324] Remove Corba ORB APIs from Codebase
+
+== Sub-task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4159[TOMEE-4159] Jakarta Concurrency TCK
+- link:https://issues.apache.org/jira/browse/TOMEE-3942[TOMEE-3942] Update docker-compose.yml to build TomEE 9.x / TomEE 10.x
