@@ -11,6 +11,7 @@ Thanks to everyone who contributed code to make this happen.
 We would like to highlight and give a shout-out to all our volunteers who have been doing the hard work for EE10, which is also being done in all our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, etc.
 
 Notable changes:
+
 - We are now passing the Jakarta Concurrency 3.0 TCK, making our implementation of this spec complete
 - It is based on a fork of CXF 4.1.0-SNAPSHOT, see https://issues.apache.org/jira/browse/TOMEE-4353 for details. We pass most of the JAX-RS TCK here.
 - Over the months several dependencies have been updated to their latest versions
