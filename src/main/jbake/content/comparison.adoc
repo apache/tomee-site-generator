@@ -16,15 +16,15 @@ The mapping between the specifications and the respective Apache TomEE versions 
 [options="header",cols="5*1,2"]
 |===
 |TomEE version|Based on Tomcat|Java{nbsp}SE version|Micro{nbsp}Profile version|Jakarta{nbsp}EE version|Full list of specifications versions and implementations choices
-//|10.x  |10.1.x|11|TBA|10.0|xref:tomee-10.0/docs/comparison.adoc#specifications[specifications versions] tomee-10.0/docs/comparison.adoc#implementations[implementations details]
-| 9.x  |10.0.x|11|5.0| 9.1|xref:tomee-9.0/docs/comparison.adoc#specifications[specifications versions] xref:tomee-9.0/docs/comparison.adoc#implementations[implementations details]
+|10.x  |11.0.x|17|6.0|10.0|//xref:tomee-10.0/docs/comparison.adoc#specifications[specifications versions] xref:tomee-10.0/docs/comparison.adoc#implementations[implementations details]
+| 9.x  |10.1.x|11|5.0| 9.1|xref:tomee-9.0/docs/comparison.adoc#specifications[specifications versions] xref:tomee-9.0/docs/comparison.adoc#implementations[implementations details]
 | 8.x  | 9.0.x| 8|2.0| 8.0|xref:tomee-8.0/docs/comparison.adoc#specifications[specifications versions] xref:tomee-8.0/docs/comparison.adoc#implementations[implementations details]
 | 7.1.x| 8.5.x|7 or 8|1.4| 7.0|xref:tomee-7.1/docs/comparison.adoc#specifications[specifications versions] xref:tomee-7.1/docs/comparison.adoc#implementations[implementations details]
 | 7.0.x| 8.5.x|7 or 8|{n}| 7.0|xref:tomee-7.0/docs/comparison.adoc#specifications[specifications versions] xref:tomee-7.0/docs/comparison.adoc#implementations[implementations details]
 |===
 
 Jakarta EE 9.x introduces breaking changes (relocation from javax.* to jakarta.* namespace). +
-When in doubt choose Jakarta EE 8 and TomEE 8.x
+When in doubt choose Jakarta EE 9.1 (or newer) and TomEE 9.x (or newer)
 
 Tomcat supports only a subset of Jakarta EE while TomEE is fully compliant (see tables below).
 
@@ -44,7 +44,7 @@ Data Persistence (JPA), Standard Tag Library (JSTL) *, Faces (JSF),
 Transactions (JTA), RESTful Web Services (JAX-RS, JSON, JAXB), ... ||{y}|{y}|{y}|{y}
 |*Microservices architecture:* +
 MicroProfile Config, Fault Tolerance, Health, Metrics, OpenAPI, OpenTracing,
-Type-safe Rest Client, ...|||{y}|{y}|{y}
+Type-safe Rest Client, ... |||{y}|{y}|{y}
 |*Other features:* +
 Jakarta Authorization (JACC), Batch, Concurrency, Connectors, +
 Messaging (JMS), SOAP Web Services (JAX-WS, JWS, SAAJ), ... ||||{y}|{y}
@@ -124,14 +124,14 @@ Jakarta Annotations, Authentication (JASPIC), WebSocket, ... |
 https://tomcat.apache.org/[Apache Tomcat^]
 |Jakarta{nbsp}Standard{nbsp}Tag{nbsp}Library{nbsp}(JSTL)|https://tomcat.apache.org/taglibs.html[Apache Standard Taglib Implementation^]
 |Jakarta Faces (JSF)|
-https://myfaces.apache.org/[Apache MyFaces^] *(shipped in all TomEE flavors except Plume)* +
-https://projects.eclipse.org/projects/ee4j.mojarra[Eclipse Mojarra^] *(shipped in TomEE Plume)*
+https://myfaces.apache.org/[Apache MyFaces^] (shipped in all TomEE flavors except Plume) +
+https://projects.eclipse.org/projects/ee4j.mojarra[Eclipse Mojarra^] (shipped in TomEE Plume)
 |Jakarta Contexts and Dependency Injection (CDI)|https://openwebbeans.apache.org/[Apache OpenWebBeans^]
 |Jakarta Enterprise Beans (EJB)|https://openejb.apache.org/[Apache OpenEJB^]
 |Jakarta Transactions (JTA)|Apache{nbsp}Geronimo{nbsp}Transaction{nbsp}Manager
 |Jakarta Persistence (JPA)|
 https://openjpa.apache.org/[Apache OpenJPA^] (shipped in all TomEE flavors) +
-https://www.eclipse.org/eclipselink/[EclipseLink^] *(shipped in TomEE Plume)*
+https://www.eclipse.org/eclipselink/[EclipseLink^] (shipped in TomEE Plume)
 |Jakarta Bean Validation|
 https://bval.apache.org/[Apache BVal^]
 |Web Services|https://cxf.apache.org/[Apache CXF^]
@@ -141,25 +141,28 @@ https://johnzon.apache.org/[Apache Johnzon^]
 |Jakarta XML Binding (JAXB)|https://projects.eclipse.org/projects/ee4j.jaxb-impl[Eclipse Implementation of JAXB^]
 |Jakarta Mail (JavaMail)|Apache Geronimo JavaMail
 |MicroProfile|
-Apache Geronimo MicroProfile *(ok only with TomEE 7.1.x and 8.x)* +
-https://smallrye.io/[SmallRye MicroProfile^] *(ok with TomEE 9.x and later)*
+Apache Geronimo MicroProfile (ok only with TomEE 7.1.x and 8.x) +
+https://smallrye.io/[SmallRye MicroProfile^] (ok with TomEE 9.x and later)
 |Jakarta Batch (JBatch)|https://geronimo.apache.org/batchee/[Apache BatchEE^]
 |Jakarta Messaging (JMS)|https://activemq.apache.org/[Apache ActiveMQ^]
 |===
 
-In bold : Implementations that differ between flavors or between versions
+////
 
-== [[Compatibility]] Compatibility with other implementations
+== [[Compatibility]] Implementations compatibility and alternatives
 
-[options="header",cols="1,1"]
+[options="header",cols="6,10,5"]
 |===
-|Specifications|Implementations alternatives +
-//(see icons for compatibilities with TomEE)
-|Jakarta Persistence (JPA)|https://hibernate.org/orm/[Hibernate ORM^] {y} +
-|Jakarta MVC|
-https://eclipse-ee4j.github.io/krazo/[Eclipse Krazo^] {y} *(ok with TomEE 8.x and later)* +
-|Other containers (CDI, EJB, JTA, etc.) and frameworks|
-https://spring.io/[Spring^] {y} +
+|Features|Implementations|Alternatives
+|https://jakarta.ee/specifications/mvc/[Jakarta MVC^] (Controllers)
+|https://eclipse-ee4j.github.io/krazo/[Eclipse Krazo^] {y} (ok with TomEE 8.x and later) +
+|https://spring.io/[Spring Web MVC^] {y} +
+|https://jakarta.ee/specifications/data/[Jakarta Data^] (Repositories)
+|{n} api released but no implementation released yet|
+https://spring.io/[Spring Data JPA^] {y} +
+https://deltaspike.apache.org/[Apache DeltaSpike^] {y} +
+|https://jakarta.ee/specifications/persistence/[Jakarta Persistence] (ORM)
+|https://hibernate.org/orm/[Hibernate ORM^] {y} +|
 |===
 
-* Please note that TomEE does not ship with the jars for Hibernate, Jersey, Krazo, Spring.
+* Please note that TomEE does not ship with the jars for DeltaSpike, Hibernate, Jersey, Krazo, Spring.
