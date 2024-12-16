@@ -10,7 +10,7 @@
                             Apache TomEE
                         </div>
                         <div class="col-md-12 text-center">
-                            <h2 class="white">Now Jakarta EE 9.1 Web Profile Certified!</h2>
+                            <h2 class="white">Now with Jakarta EE10 Support!</h2>
                         </div>
                     </div>
                     <div style="opacity: 0;" class="row animated fadeInUp text-left header-links">
@@ -58,30 +58,18 @@
 		<div class="container">
 			<div class="row animated fadeInUp d-flex section" style="opacity: 0;">
 				<div class="col-md-9 text-center m-auto">
-                        <h3 class="lead muted">Apache TomEE, pronounced “Tommy”, is an all-Apache Jakarta EE 9.1 certified application server extends Apache Tomcat that is assembled from a vanilla Apache Tomcat zip file. We start with Apache Tomcat, add our jars, and zip up the rest.
+                        <h3 class="lead muted">Apache TomEE, pronounced “Tommy”, is an Jakarta EE 10 application server extends Apache Tomcat that is assembled from a vanilla Apache Tomcat zip file. We start with Apache Tomcat, add our jars, and zip up the rest.
                             The result is Tomcat plus EE features - TomEE.</h3>
 				</div>
 			</div>
             <div class="row animated fadeInUp d-flex section no-padding" style="opacity: 0;">  
-			<div class="col-md-6 d-flex f-column-start accented-block accent-violet f-space-between">
-                    <div class="block-content">
-                        <h5 class="muted">Milestone Release - Jakarta namespace</h5>
-                        <h4 class="muted">apache-tomee-10.0.0-M3</h4>
-                        <p>Milestone Release, Apache TomEE 10.0 implements Jakarta EE 10 and supports the new jakarta namespace. Runs on Java 11 or higher.</p>
-                    </div>
-                    <a class="btn btn-accent btn-primary square"  href="download.html#tomee-8.0"><i class="icon_plus"></i>Download</a>
-				</div>
-                <div class="col-md-6 d-flex f-column-end accented-block accent-red f-space-between">
+			<div class="col-md-12 d-flex f-column-start accented-block accent-violet f-space-between">
                     <div class="block-content">
                         <h5 class="muted">Final Release - Jakarta namespace</h5>
-                        <h4 class="muted">apache-tomee-9.1.3</h4>
-                        <p>
-                            Jakarta EE 9.1 Web Profile & MicroProfile 5 compliant and supports the new jakarta namespace. Runs on Java 11 or higher.
-                            <br>
-                            <div class="compatible-badge">Jakarta EE Compatible</div>
-                        </p>
+                        <h4 class="muted">apache-tomee-10.0.0</h4>
+                        <p>Final Release, Apache TomEE 10.0 implements Jakarta EE 10 with MicroProfile 6. Runs on Java 17 or higher.</p>
                     </div>
-                    <a class="btn btn-accent btn-primary square"  href="download.html#tomee-9.0"><i class="icon_plus"></i>Download</a>
+                    <a class="btn btn-accent btn-primary square"  href="download.html#tomee-10.0"><i class="icon_plus"></i>Download</a>
 				</div>
 			</div>
             <div class="row animated fadeInUp d-flex section" style="opacity: 0;">  

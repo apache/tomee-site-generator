@@ -1,0 +1,4 @@
+= Apache TomEE 10.0.0 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published

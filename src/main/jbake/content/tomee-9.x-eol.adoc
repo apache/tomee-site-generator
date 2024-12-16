@@ -1,0 +1,11 @@
+= End of life for Apache TomEE 9.x
+:jbake-type: page
+:jbake-status: published
+
+The Apache TomEE team announces that support for Apache TomEE 9.x will end on 31 December 2024.
+
+This means that after 31 December 2024:
+
+- releases from the `tomee-9.x` branch are highly unlikely
+- bugs affecting only the `tomee-9.x` branch will not be addressed
+- security vulnerability reports will not be checked against the `tomee-9.x` branch
