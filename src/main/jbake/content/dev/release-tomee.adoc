@@ -15,16 +15,13 @@ Keep in mind, that you have to upload > 1GB of data, that means, ensure to have 
 
 Ensure to build with the correct Java and Maven version.
 
-* TomEE 8.x - Java 8 + Maven 3.3.9
-* TomEE 9.x - Java 11 + Maven 3.8.x
-
-Note: Currently, newer Maven version will fail to deploy `*.tar.gz` files correctly. This is tracked in https://issues.apache.org/jira/browse/TOMEE-3903[TOMEE-3903].
+* TomEE 10.x - Java 17 + Maven 3.9.x
 
 Ensure to setup `JAVA_HOME` and `PATH` correctly, e.g.:
 
 [source,bash]
 ----
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
+export JAVA_HOME=/usr/lib/jvm/java-1.17.0-openjdk-amd64/
 export PATH=$JAVA_HOME/bin:$PATH
 ----
 
