@@ -2,3 +2,163 @@
 :index-group: Release Notes
 :jbake-type: page
 :jbake-status: published
+
+Apache TomEE 10.0.0 has been released
+
+We are excited to announce the release of Apache TomEE 10.0.0! This version represents a significant step forward, bringing new features and improvements to TomEE.
+With TomEE 10.0.0, we finally implement Jakarta EE 10.
+
+While this release successfully passes some standalone TCKs, full certification for Jakarta EE 10 is not yet achieved due to limited volunteer capacity.
+
+In parallel, we’ve made excellent strides in MicroProfile support. TomEE 10.0.0 fully implements MicroProfile 6.0, passing all related TCKs.
+
+However, official compliance claims are deferred until Jakarta EE 10 Core TCK certification is achieved (which depends on volunteer capacity).
+
+This release also introduces compatibility with Java 21, reflecting our dedication to staying up-to-date with the latest Java versions.
+
+Notably, we now leverage the official Apache CXF 4.1.0 artifact, eliminating the need for custom forking.
+
+Please note: TomEE 10 requires a Java 17+ runtime environment.
+
+We extend our deepest gratitude to everyone who contributed to this release, especially our incredible volunteers
+who worked tirelessly on TomEE 10 and on EE10 in our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, and more.
+
+Your efforts made TomEE 10 possible!
+
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4337[TOMEE-4337] bcprov-jdk15to18-1.76.jar and bcpkix-jdk15to18-1.76.jar
+- link:https://issues.apache.org/jira/browse/TOMEE-4317[TOMEE-4317] ActiveMQ 6.1.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4359[TOMEE-4359] ActiveMQ 6.1.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4379[TOMEE-4379] ActiveMQ 6.1.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4426[TOMEE-4426] ActiveMQ 6.1.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4341[TOMEE-4341] Angus Activation 2.0.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4427[TOMEE-4427] BouncyCastle 1.79
+- link:https://issues.apache.org/jira/browse/TOMEE-4435[TOMEE-4435] CXF 4.1.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4319[TOMEE-4319] CXF 4.1.0-SNAPSHOT
+- link:https://issues.apache.org/jira/browse/TOMEE-4397[TOMEE-4397] Commons CLI 1.9.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4396[TOMEE-4396] Commons Codec 1.17.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4384[TOMEE-4384] Commons Compress 1.27.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4433[TOMEE-4433] Commons DBCP 2.13.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4362[TOMEE-4362] Commons IO 2.16.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4429[TOMEE-4429] Commons IO 2.18.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4346[TOMEE-4346] Commons Lang 3.14.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4388[TOMEE-4388] Commons Lang3 3.16.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4345[TOMEE-4345] Commons Logging 1.3.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4376[TOMEE-4376] Commons Logging 1.3.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4394[TOMEE-4394] Commons Logging 1.3.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4339[TOMEE-4339] Compress 1.16.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4363[TOMEE-4363] DBCP 2.12.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4364[TOMEE-4364] Downgrade Mojarra 4.0.0 (cf. TOMEE-4355)
+- link:https://issues.apache.org/jira/browse/TOMEE-4392[TOMEE-4392] Drop commons-collection 3.2.2 in openejb-core
+- link:https://issues.apache.org/jira/browse/TOMEE-4393[TOMEE-4393] Drop dependency towards commons beanutils
+- link:https://issues.apache.org/jira/browse/TOMEE-4349[TOMEE-4349] ECJ 3.37.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4360[TOMEE-4360] ECJ 3.38.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4412[TOMEE-4412] ECJ 3.39.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4365[TOMEE-4365] EclipseLink 4.0.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4389[TOMEE-4389] EclipseLink 4.04
+- link:https://issues.apache.org/jira/browse/TOMEE-4369[TOMEE-4369] HSQLDB 2.7.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4425[TOMEE-4425] HSQLDB 2.7.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4367[TOMEE-4367] Hibernate Validator 8.0.1.Final
+- link:https://issues.apache.org/jira/browse/TOMEE-4381[TOMEE-4381] JLine 2.14.6
+- link:https://issues.apache.org/jira/browse/TOMEE-4361[TOMEE-4361] Jackson 2.17.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4414[TOMEE-4414] Jackson 2.18.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4335[TOMEE-4335] Jetty 11.0.20
+- link:https://issues.apache.org/jira/browse/TOMEE-4340[TOMEE-4340] Jose JWT 9.39.1 (Test)
+- link:https://issues.apache.org/jira/browse/TOMEE-4113[TOMEE-4113] MP Metrics 5 / SmallRye Metrics 5
+- link:https://issues.apache.org/jira/browse/TOMEE-4428[TOMEE-4428] MicroProfile OpenAPI 3.1.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4356[TOMEE-4356] Mojarra 4.0.7
+- link:https://issues.apache.org/jira/browse/TOMEE-4391[TOMEE-4391] Mojarra 4.0.8
+- link:https://issues.apache.org/jira/browse/TOMEE-4405[TOMEE-4405] OpenJPA 4.0.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4437[TOMEE-4437] OpenWebBeans 4.0.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4383[TOMEE-4383] Parent 33
+- link:https://issues.apache.org/jira/browse/TOMEE-4382[TOMEE-4382] Replace Swizzle Stream with Swizzle
+- link:https://issues.apache.org/jira/browse/TOMEE-4421[TOMEE-4421] SmallRye Config 3.10.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4420[TOMEE-4420] SmallRye Fault Tolerance 6.4.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4413[TOMEE-4413] SmallRye OpenAPI 3.13.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4348[TOMEE-4348] Smallrye Config 3.8.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4398[TOMEE-4398] SnakeYAML 2.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4371[TOMEE-4371] Switch back CXF 4.1.0-SNAPSHOT
+- link:https://issues.apache.org/jira/browse/TOMEE-4353[TOMEE-4353] Temporarily switch CXF 4.1.0 fork version have a stable version for a possible TomEE 10-M2 release.
+- link:https://issues.apache.org/jira/browse/TOMEE-4407[TOMEE-4407] Temporarily switch CXF 4.1.0 fork version have a stable version for a possible TomEE 10-M3 release.
+- link:https://issues.apache.org/jira/browse/TOMEE-4328[TOMEE-4328] TomEE 10.1.23
+- link:https://issues.apache.org/jira/browse/TOMEE-4334[TOMEE-4334] Tomcat 10.1.24
+- link:https://issues.apache.org/jira/browse/TOMEE-4352[TOMEE-4352] Tomcat 10.1.25
+- link:https://issues.apache.org/jira/browse/TOMEE-4372[TOMEE-4372] Tomcat 10.1.26
+- link:https://issues.apache.org/jira/browse/TOMEE-4380[TOMEE-4380] Tomcat 10.1.28
+- link:https://issues.apache.org/jira/browse/TOMEE-4399[TOMEE-4399] Tomcat 10.1.29
+- link:https://issues.apache.org/jira/browse/TOMEE-4403[TOMEE-4403] Tomcat 10.1.30
+- link:https://issues.apache.org/jira/browse/TOMEE-4415[TOMEE-4415] Tomcat 10.1.33
+- link:https://issues.apache.org/jira/browse/TOMEE-4434[TOMEE-4434] Tomcat 10.1.34
+- link:https://issues.apache.org/jira/browse/TOMEE-4417[TOMEE-4417] XBean 4.26
+- link:https://issues.apache.org/jira/browse/TOMEE-4326[TOMEE-4326] XBeans 4.25
+- link:https://issues.apache.org/jira/browse/TOMEE-4338[TOMEE-4338] Xalan 2.7.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4386[TOMEE-4386] commons-cli 1.8.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4373[TOMEE-4373] commons-compress 1.27.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4374[TOMEE-4374] commons-lang3 3.15.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4409[TOMEE-4409] commons-lang3 3.17.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4408[TOMEE-4408] commons.io 2.17.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4411[TOMEE-4411] jboss logging 3.6.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4431[TOMEE-4431] neethi 3.2.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4385[TOMEE-4385] slf4j2 2.0.16
+
+== New Feature
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-1380[TOMEE-1380] study a better data importer for datsources and entitymanagers
+- link:https://issues.apache.org/jira/browse/TOMEE-4351[TOMEE-4351] Jakarta Security 3.0
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4424[TOMEE-4424] Request not matched to CXF request has trailing slash and a welcome-file is defined
+- link:https://issues.apache.org/jira/browse/TOMEE-4390[TOMEE-4390] ClassNotFoundException in webapp that has log4j2 and invokes commons-logging
+- link:https://issues.apache.org/jira/browse/TOMEE-4368[TOMEE-4368] Typo in "openejb.placehodler.delimiter"
+- link:https://issues.apache.org/jira/browse/TOMEE-4404[TOMEE-4404] NPE in TomcatClassPath and TomcatWebAppBuilder
+- link:https://issues.apache.org/jira/browse/TOMEE-4375[TOMEE-4375] NullPointerException in SavedRequest
+- link:https://issues.apache.org/jira/browse/TOMEE-4406[TOMEE-4406] Faces Resources return 404 if subclass of JAX-RS Application is present
+- link:https://issues.apache.org/jira/browse/TOMEE-4347[TOMEE-4347] Smallrye MP Extension are activated even if tomee.mp.scan="none"
+- link:https://issues.apache.org/jira/browse/TOMEE-4355[TOMEE-4355] mojarra faces.js is truncated
+- link:https://issues.apache.org/jira/browse/TOMEE-4358[TOMEE-4358] Using JAX-RS endpoints with a Spring Application fails
+- link:https://issues.apache.org/jira/browse/TOMEE-4320[TOMEE-4320] TomEE 10 leaks jakarta.json from Smallrye into /lib
+- link:https://issues.apache.org/jira/browse/TOMEE-2934[TOMEE-2934] EJBContainer.createEJBContainer Fails to find public inner classes
+- link:https://issues.apache.org/jira/browse/TOMEE-4327[TOMEE-4327] Fix BVAL TCK 3.0 under J17: org.hibernate.beanvalidation.tck.tests.constraints.groups.groupconversion.*
+- link:https://issues.apache.org/jira/browse/TOMEE-4332[TOMEE-4332] Using JAX-RS endpoints with a Spring Application fails
+- link:https://issues.apache.org/jira/browse/TOMEE-4333[TOMEE-4333] NotSerializableException with @Inject HttpServletRequest
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4395[TOMEE-4395] Debug logging for default properties used to create resources
+- link:https://issues.apache.org/jira/browse/TOMEE-4410[TOMEE-4410] Better Exception when accesing injected HttpServletRequest if no request is active
+- link:https://issues.apache.org/jira/browse/TOMEE-4342[TOMEE-4342] ApplicationComposer should inject declared custom resources into tests
+- link:https://issues.apache.org/jira/browse/TOMEE-4350[TOMEE-4350] mp-jwt: Add qualifier for produced Jsonb
+- link:https://issues.apache.org/jira/browse/TOMEE-4357[TOMEE-4357] Add a Jandex index cache to TomEEMicroProfileListener
+
+== Task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4423[TOMEE-4423] Use JakartaEE API 10 GA
+- link:https://issues.apache.org/jira/browse/TOMEE-4430[TOMEE-4430] WSS4J 3.0.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4366[TOMEE-4366] Remove "groovy-spock" Example
+- link:https://issues.apache.org/jira/browse/TOMEE-4400[TOMEE-4400] Remove openejb.jaxb.fastBoot
+- link:https://issues.apache.org/jira/browse/TOMEE-4402[TOMEE-4402] Remove commons-jcs/JCache
+- link:https://issues.apache.org/jira/browse/TOMEE-4344[TOMEE-4344] MP6: OpenAPI 3.1
+- link:https://issues.apache.org/jira/browse/TOMEE-2324[TOMEE-2324] Remove Corba ORB APIs from Codebase
+- link:https://issues.apache.org/jira/browse/TOMEE-4318[TOMEE-4318] Switch Java Baseline to 17
+- link:https://issues.apache.org/jira/browse/TOMEE-4330[TOMEE-4330] ActiveMQ 6.1.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4331[TOMEE-4331] BatchEE 2.0.0
+
+== Sub-task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3965[TOMEE-3965] Fix TomEE :: Examples :: JSF2/CDI/BV/JPA/DeltaSpike
+- link:https://issues.apache.org/jira/browse/TOMEE-4158[TOMEE-4158] Jakarta Bean Validation TCK
+- link:https://issues.apache.org/jira/browse/TOMEE-4159[TOMEE-4159] Jakarta Concurrency TCK
+- link:https://issues.apache.org/jira/browse/TOMEE-3942[TOMEE-3942] Update docker-compose.yml to build TomEE 9.x / TomEE 10.x
+- link:https://issues.apache.org/jira/browse/TOMEE-4164[TOMEE-4164] Jakarta JSON Binding TCK
+- link:https://issues.apache.org/jira/browse/TOMEE-4165[TOMEE-4165] Jakarta JSON Processing TCK
+- link:https://issues.apache.org/jira/browse/TOMEE-4166[TOMEE-4166] Jakarta RESTFul Web Services TCK
+- link:https://issues.apache.org/jira/browse/TOMEE-4325[TOMEE-4325] JAX-RS TCK: Signature Tests
