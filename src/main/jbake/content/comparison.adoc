@@ -16,7 +16,7 @@ The mapping between the specifications and the respective Apache TomEE versions 
 [options="header",cols="5*1,2"]
 |===
 |TomEE version|Based on Tomcat|Java{nbsp}SE version|Micro{nbsp}Profile version|Jakarta{nbsp}EE version|Full list of specifications versions and implementations choices
-//|10.x  |10.1.x|11|TBA|10.0|xref:tomee-10.0/docs/comparison.adoc#specifications[specifications versions] tomee-10.0/docs/comparison.adoc#implementations[implementations details]
+|10.x  |10.1.x|11|6.0|10.0|xref:tomee-10.0/docs/comparison.adoc#specifications[specifications versions] xref:tomee-10.0/docs/comparison.adoc#implementations[implementations details]
 | 9.x  |10.0.x|11|5.0| 9.1|xref:tomee-9.0/docs/comparison.adoc#specifications[specifications versions] xref:tomee-9.0/docs/comparison.adoc#implementations[implementations details]
 | 8.x  | 9.0.x| 8|2.0| 8.0|xref:tomee-8.0/docs/comparison.adoc#specifications[specifications versions] xref:tomee-8.0/docs/comparison.adoc#implementations[implementations details]
 | 7.1.x| 8.5.x|7 or 8|1.4| 7.0|xref:tomee-7.1/docs/comparison.adoc#specifications[specifications versions] xref:tomee-7.1/docs/comparison.adoc#implementations[implementations details]
