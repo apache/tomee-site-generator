@@ -23,9 +23,6 @@ The mapping between the specifications and the respective Apache TomEE versions 
 | 7.0.x| 8.5.x|7 or 8|{n}| 7.0|xref:tomee-7.0/docs/comparison.adoc#specifications[specifications versions] xref:tomee-7.0/docs/comparison.adoc#implementations[implementations details]
 |===
 
-Jakarta EE 9.x introduces breaking changes (relocation from javax.* to jakarta.* namespace). +
-When in doubt choose Jakarta EE 8 and TomEE 8.x
-
 Tomcat supports only a subset of Jakarta EE while TomEE is fully compliant (see tables below).
 
 == [[flavors]] Synthesis of differences between flavors
