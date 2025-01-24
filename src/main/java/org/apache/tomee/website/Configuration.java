@@ -186,9 +186,9 @@ public class Configuration {
 //        if (1 == 1) return new Source[0]; // uncomment this line to generate only the main site pages.
         return new Source[]{
                 // TOMEE NEXT
-                new Source("https://github.com/apache/tomee.git", "main", "tomee-10.0", false).related(microProfile6).related(jakartaEE10).javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "main", "tomee-10.0", true).related(microProfile6).related(jakartaEE10).javadoc("^org.apache.(openejb|tomee).*"),
                 // TOMEE CURRENT
-                new Source("https://github.com/apache/tomee.git", "tomee-9.x", "tomee-9.0", true).related(microProfile5).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "tomee-9.x", "tomee-9.0", false).related(microProfile5).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
            //     new Source("https://github.com/apache/tomee.git", "tomee-8.x", "tomee-8.0", false).related(microProfile2).related(jakartaEE8).javadoc("^org.apache.(openejb|tomee).*"),
             //    new Source("https://github.com/apache/tomee.git", "tomee-7.1.x", "tomee-7.1", false).javadoc("^org.apache.(openejb|tomee).*"),
           //      new Source("https://github.com/apache/tomee.git", "tomee-7.0.x", "tomee-7.0", false).javadoc("^org.apache.(openejb|tomee).*"),
