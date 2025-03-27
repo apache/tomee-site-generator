@@ -1,0 +1,47 @@
+= Apache TomEE 10.0.1 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 10.0.1 has been released
+
+We are excited to announce the release of Apache TomEE 10.0.1!
+
+This release includes bug fixes for user-reported issues in bval and mojarra, along with other improvements—one of which resolves a problem that rendered the BOMs ineffective without an exclusion.
+We fixed some issues in the embedded area as well and included the latest versions of our dependencies including some CVE fixes (like in Tomcat, Geronimo Mail or Smallrye).
+
+We extend our deepest gratitude to everyone who contributed to this release, especially our incredible volunteers
+who worked on TomEE 10 and on fixes in our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, and more.
+
+Your efforts made TomEE 10 possible!
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4446[TOMEE-4446] AMQ 6.1.5
+- link:https://issues.apache.org/jira/browse/TOMEE-4467[TOMEE-4467] ActiveMQ 6.1.6
+- link:https://issues.apache.org/jira/browse/TOMEE-4464[TOMEE-4464] CXF 4.1.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4451[TOMEE-4451] Commons Codec 1.18.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4453[TOMEE-4453] Commons Logging 1.3.5
+- link:https://issues.apache.org/jira/browse/TOMEE-4441[TOMEE-4441] EclipseLink 4.0.5
+- link:https://issues.apache.org/jira/browse/TOMEE-4461[TOMEE-4461] Jackson 2.18.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4455[TOMEE-4455] MP Config Impl 3.11.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4463[TOMEE-4463] Mojarra 4.0.11
+- link:https://issues.apache.org/jira/browse/TOMEE-4442[TOMEE-4442] Quartz Shade 2.5.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4468[TOMEE-4468] Smallrye MP Config Impl 3.12.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4462[TOMEE-4462] Tomcat 10.1.39
+- link:https://issues.apache.org/jira/browse/TOMEE-4440[TOMEE-4440] arquillian-tomee-embedded depends on junit 4
+- link:https://issues.apache.org/jira/browse/TOMEE-4444[TOMEE-4444] commons codec 1.17.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4452[TOMEE-4452] commons-pool2 2.12.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4378[TOMEE-4378] geronimo-mail_2.1_spec version 1.0.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4466[TOMEE-4466] smallrye-fault-tolerance-core 6.4.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4445[TOMEE-4445] BouncyCastle 1.80
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4460[TOMEE-4460] Missing service-jar.xml in Serverless Builder and Embedded Scenarios
+- link:https://issues.apache.org/jira/browse/TOMEE-4447[TOMEE-4447] TomEE incorrectly propagates transaction for CDI Async Events
+- link:https://issues.apache.org/jira/browse/TOMEE-4450[TOMEE-4450] EL expressions in Jakarta Faces not working with Mojarra
+- link:https://issues.apache.org/jira/browse/TOMEE-4454[TOMEE-4454] Missing artifact org.apache.tomee:tomee-microprofile-webapp:jar:10.0.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4459[TOMEE-4459] Running AppComposer with LogLevel.FINE and OpenJPA results in an exception
