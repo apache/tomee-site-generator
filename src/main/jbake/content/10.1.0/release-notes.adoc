@@ -1,0 +1,47 @@
+= Apache TomEE 10.1.0 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 10.1.0 has been released
+
+We are excited to announce the release of Apache TomEE 10.1.0!
+
+This release includes an update to MicroProfile 6.1. In addition, we fixed some issues included the latest versions of our dependencies including some CVE fixes (like in Tomcat, Geronimo Mail or Smallrye).
+
+We extend our deepest gratitude to everyone who contributed to this release, especially our incredible volunteers
+who worked on TomEE 10 and on fixes in our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, and more.
+
+Your efforts made TomEE 10 possible!
+
+== Dependency upgrade
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4492[TOMEE-4492] BouncyCastle 1.81
+ - link:https://issues.apache.org/jira/browse/TOMEE-4487[TOMEE-4487] CXF 4.1.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4476[TOMEE-4476] EclipseLink 4.0.6
+ - link:https://issues.apache.org/jira/browse/TOMEE-4482[TOMEE-4482] Jackson 2.19.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4491[TOMEE-4491] Johnzon 2.0.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4472[TOMEE-4472] MP Config 3.12.4
+ - link:https://issues.apache.org/jira/browse/TOMEE-4490[TOMEE-4490] Omnifaces 4.6.3
+ - link:https://issues.apache.org/jira/browse/TOMEE-4486[TOMEE-4486] OpenJPA 4.1.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4488[TOMEE-4488] SmallRye Config 3.13.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4493[TOMEE-4493] Smallrye MP Config 3.13.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4494[TOMEE-4494] Tomcat 10.1.42
+ - link:https://issues.apache.org/jira/browse/TOMEE-4477[TOMEE-4477] XBean 4.27
+ - link:https://issues.apache.org/jira/browse/TOMEE-4489[TOMEE-4489] commons-fileupload2-core 2.0.0-M3 (Note: This is an **optional dependency, so latest CVE does not directly apply to TomEE (ensure to update if you are using it though)!)
+
+== Bug
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4483[TOMEE-4483] Transaction propagated to executor threads through ThreadContext.enter()
+ - link:https://issues.apache.org/jira/browse/TOMEE-4484[TOMEE-4484] A runtime exception in ejbCreate method exposes InvalidateReferenceException to remote client
+ - link:https://issues.apache.org/jira/browse/TOMEE-4456[TOMEE-4456] beans.xml <trim/> doesn't work in openejb-core boot
+
+== Improvement
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4432[TOMEE-4432] MicroProfile 6.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4480[TOMEE-4480] Metrics 5.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4478[TOMEE-4478] OpenTelemetry 1.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4479[TOMEE-4479] Config 3.1
