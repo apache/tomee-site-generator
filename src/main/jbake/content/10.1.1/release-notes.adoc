@@ -1,0 +1,49 @@
+= Apache TomEE 10.1.1 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 10.1.1 has been released
+
+We are excited to announce the release of Apache TomEE 10.1.1!
+
+This release mainly features dependency upgrades and ensures Apache TomEE runs on Java versions beyond 21 in preperation for the upcoming Java 25 LTS release. *Please note that Jakarta Authorization checks do not work on Java 21+ becasue the SecurityManager has been removed*
+
+We extend our deepest gratitude to everyone who contributed to this release, especially our incredible volunteers
+who worked on TomEE 10 and on fixes in our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, and more.
+
+Your efforts made TomEE 10.1.1 possible!
+
+== Dependency upgrade
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4495[TOMEE-4495] Jackson 2.19.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4497[TOMEE-4497] MyFaces 4.0.3
+ - link:https://issues.apache.org/jira/browse/TOMEE-4498[TOMEE-4498] EclipseLink 4.0.7
+ - link:https://issues.apache.org/jira/browse/TOMEE-4499[TOMEE-4499] ActiveMQ 6.1.7
+ - link:https://issues.apache.org/jira/browse/TOMEE-4500[TOMEE-4500] SmallRye Config 3.13.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4501[TOMEE-4501] ECJ 3.42.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4504[TOMEE-4504] Tomcat 10.1.44
+ - link:https://issues.apache.org/jira/browse/TOMEE-4506[TOMEE-4506] commons-lang3 3.18.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4507[TOMEE-4507] Log4J2 2.25.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4510[TOMEE-4510] MP Config 3.13.3
+ - link:https://issues.apache.org/jira/browse/TOMEE-4511[TOMEE-4511] Jackson 2.19.2
+ - link:https://issues.apache.org/jira/browse/TOMEE-4512[TOMEE-4512] commons-io 2.20.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4513[TOMEE-4513] Commons Lang3 2.18.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4514[TOMEE-4514] Commons Codec 1.19.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4515[TOMEE-4515] Smallrye Config 3.13.4
+ - link:https://issues.apache.org/jira/browse/TOMEE-4519[TOMEE-4519] Use JartaEE API 10.0.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4520[TOMEE-4520] Commons CLI 1.10.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4521[TOMEE-4521] CXF 4.1.3
+
+== Bug
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4483[TOMEE-4474] TomEE does not launch on Java 24
+ - link:https://issues.apache.org/jira/browse/TOMEE-4484[TOMEE-4509] line ending issues with JaccPermissionServletTest on Windows
+
+== Task
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4432[TOMEE-4496] Convert GH Action Tags into Pinned SHA
+ - link:https://issues.apache.org/jira/browse/TOMEE-4480[TOMEE-4503] Replace wsdl4j 1.6.3 with libre-wsdl4j
