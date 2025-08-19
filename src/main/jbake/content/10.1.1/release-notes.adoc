@@ -39,11 +39,11 @@ Your efforts made TomEE 10.1.1 possible!
 == Bug
 
 [.compact]
- - link:https://issues.apache.org/jira/browse/TOMEE-4483[TOMEE-4474] TomEE does not launch on Java 24
- - link:https://issues.apache.org/jira/browse/TOMEE-4484[TOMEE-4509] line ending issues with JaccPermissionServletTest on Windows
+ - link:https://issues.apache.org/jira/browse/TOMEE-4474[TOMEE-4474] TomEE does not launch on Java 24
+ - link:https://issues.apache.org/jira/browse/TOMEE-4509[TOMEE-4509] line ending issues with JaccPermissionServletTest on Windows
 
 == Task
 
 [.compact]
- - link:https://issues.apache.org/jira/browse/TOMEE-4432[TOMEE-4496] Convert GH Action Tags into Pinned SHA
- - link:https://issues.apache.org/jira/browse/TOMEE-4480[TOMEE-4503] Replace wsdl4j 1.6.3 with libre-wsdl4j
+ - link:https://issues.apache.org/jira/browse/TOMEE-4496[TOMEE-4496] Convert GH Action Tags into Pinned SHA
+ - link:https://issues.apache.org/jira/browse/TOMEE-4503[TOMEE-4503] Replace wsdl4j 1.6.3 with libre-wsdl4j
