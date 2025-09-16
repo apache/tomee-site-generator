@@ -66,7 +66,7 @@
 			<div class="col-md-12 d-flex f-column-start accented-block accent-violet f-space-between">
                     <div class="block-content">
                         <h5 class="muted">Final Release - Jakarta namespace</h5>
-                        <h4 class="muted">apache-tomee-10.1.1</h4>
+                        <h4 class="muted">apache-tomee-10.1.2</h4>
                         <p>Final Release, Apache TomEE 10.1 implements Jakarta EE 10 with MicroProfile 6.1. It runs on Java 17 or higher.</p>
                     </div>
                     <a class="btn btn-accent btn-primary square"  href="download.html#tomee-10"><i class="icon_plus"></i>Download</a>

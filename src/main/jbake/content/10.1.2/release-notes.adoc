@@ -1,0 +1,35 @@
+= Apache TomEE 10.1.2 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 10.1.2 has been released
+
+We are excited to announce the release of Apache TomEE 10.1.2!
+
+This release resolves issues with classes with @FacesBehavior not being deployed, cleaner logging when dependencies of beans are missing and ThreadContexts possibly being entered multiple times.
+As always, it also includes dependency upgrades to the latest versions.
+
+We extend our deepest gratitude to everyone who contributed to this release, especially our incredible volunteers
+who worked on TomEE 10 and on fixes in our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, and more.
+
+Your efforts made TomEE 10.1.2 possible!
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4525[TOMEE-4525] ECJ 3.43.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4522[TOMEE-4522] Jackson 2.20.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4523[TOMEE-4523] Snakeyaml 2.5
+- link:https://issues.apache.org/jira/browse/TOMEE-4529[TOMEE-4529] Tomcat 10.1.46
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4527[TOMEE-4527] ApplicationThreadContextProvider enters a ThreadContext that has already been entered
+- link:https://issues.apache.org/jira/browse/TOMEE-4524[TOMEE-4524] @FacesBehavior does not work in TomEE
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4526[TOMEE-4526] CdiScanner don't log stracktrace when dependencies are missing
