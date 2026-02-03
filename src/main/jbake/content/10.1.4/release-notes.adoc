@@ -1,0 +1,44 @@
+= Apache TomEE 10.1.4 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+Apache TomEE 10.1.4 has been released
+
+We are excited to announce the release of Apache TomEE 10.1.4!
+
+This release features updated Resource handling to allow for more explicit constructor selection using parameter type, fixes the TomEE Maven plugin on Java 22+, some minor fixes in the OpenID Authentication mechanism, and the usual dependency upgrades.
+
+We extend our deepest gratitude to everyone who contributed to this release, especially our incredible volunteers
+who worked on TomEE 10 and on fixes in our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, and more.
+
+Your efforts made TomEE 10.1.4 possible!
+
+== Bug
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4561[TOMEE-4561] Session not passivatable when using OpenID authentication mechanism
+ - link:https://issues.apache.org/jira/browse/TOMEE-4569[TOMEE-4569] TomEE Maven Plugin fails in debug mode in Java 22+
+
+== Improvement
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4574[TOMEE-4574] Add exception details to Assembler#postConstructResources(...)
+
+== Task
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4570[TOMEE-4570] Align resource and services-jar.xml type definitions with XBean 4.30 fix to prevent implicit resolution
+
+== Dependency upgrade
+
+[.compact]
+ - link:https://issues.apache.org/jira/browse/TOMEE-4562[TOMEE-4562] commons-pool2 2.13.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4563[TOMEE-4563] Tomcat 10.1.50
+ - link:https://issues.apache.org/jira/browse/TOMEE-4564[TOMEE-4564] commons-dbcp2 2.14.0
+ - link:https://issues.apache.org/jira/browse/TOMEE-4565[TOMEE-4565] Mojarra 4.0.14
+ - link:https://issues.apache.org/jira/browse/TOMEE-4566[TOMEE-4566] Apache Geronimo XBean 4.30
+ - link:https://issues.apache.org/jira/browse/TOMEE-4568[TOMEE-4568] SmallRye Config 3.15.1
+ - link:https://issues.apache.org/jira/browse/TOMEE-4572[TOMEE-4572] Eclipselink 4.0.9
+ - link:https://issues.apache.org/jira/browse/TOMEE-4575[TOMEE-4575] Tomcat 10.1.52
+ - link:https://issues.apache.org/jira/browse/TOMEE-4576[TOMEE-4576] jboss-logging 3.6.2
