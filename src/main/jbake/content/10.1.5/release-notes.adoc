@@ -1,0 +1,40 @@
+= Apache TomEE 10.1.5 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+We are excited to announce the release of Apache TomEE 10.1.5!
+
+This releases ships related to our implementation of the `@OpenIdAuthenticationMechanismDefinition`, fixes an issue with resource construction, has a small improvement in logging and features the usual dependency upgrades.
+
+We extend our deepest gratitude to everyone who contributed to this release, especially our incredible volunteers
+who worked on TomEE 10 and on fixes in our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, and more.
+
+Your efforts made TomEE 10.1.5 possible!
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4585[TOMEE-4585] ActiveMQ 6.2.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4601[TOMEE-4601] Bouncycastle 1.84
+- link:https://issues.apache.org/jira/browse/TOMEE-4598[TOMEE-4598] Commons Logging 1.3.6
+- link:https://issues.apache.org/jira/browse/TOMEE-4587[TOMEE-4587] Jackson 2.21.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4599[TOMEE-4599] Mojarra 4.0.15
+- link:https://issues.apache.org/jira/browse/TOMEE-4579[TOMEE-4579] SmallRye Config 3.17.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4597[TOMEE-4597] Tomcat 10.1.54
+- link:https://issues.apache.org/jira/browse/TOMEE-4578[TOMEE-4578] commons-codec 1.21.0
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4592[TOMEE-4592] OpenIdAuthenticationMechanism throws exception when token refresh fails
+- link:https://issues.apache.org/jira/browse/TOMEE-4595[TOMEE-4595] OpenIdAuthenticationMechanism tokenAutoRefresh expression eval fails randomly
+- link:https://issues.apache.org/jira/browse/TOMEE-4584[TOMEE-4584] OpenIdAuthenticationMechanism redirectToOriginalResource does not restore parameterMap
+- link:https://issues.apache.org/jira/browse/TOMEE-4596[TOMEE-4596] OpenIdAuthenticationMechanism invalidates session too early
+- link:https://issues.apache.org/jira/browse/TOMEE-4577[TOMEE-4577] Resources with explicit contructor-type set to "String" are broken
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4580[TOMEE-4580] Improve clarity of conf.0008 deployment mismatch error
+- link:https://issues.apache.org/jira/browse/TOMEE-4602[TOMEE-4602] Bouncycastle use jdk18on artifacts instead of jdk15to18
