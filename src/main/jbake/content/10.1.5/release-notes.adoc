@@ -5,7 +5,7 @@
 
 We are excited to announce the release of Apache TomEE 10.1.5!
 
-This releases ships fixes related to our implementation of the `@OpenIdAuthenticationMechanismDefinition`, fixes an issue with resource construction, has a small improvement in logging, and features the usual dependency upgrades.
+This release ships fixes related to our implementation of the `@OpenIdAuthenticationMechanismDefinition`, fixes an issue with resource construction, has a small improvement in logging, and features the usual dependency upgrades.
 
 We extend our deepest gratitude to everyone who contributed to this release, especially our incredible volunteers
 who worked on TomEE 10 and on fixes in our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, and more.
