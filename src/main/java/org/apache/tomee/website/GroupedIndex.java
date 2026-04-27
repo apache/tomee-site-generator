@@ -16,12 +16,9 @@
  */
 package org.apache.tomee.website;
 
-import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.CompositeConfiguration;
 import org.apache.openejb.loader.IO;
 import org.jbake.app.Parser;
-import org.jbake.app.configuration.ConfigUtil;
-import org.jbake.app.configuration.DefaultJBakeConfiguration;
-import org.jbake.app.configuration.JBakeConfiguration;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -252,19 +249,7 @@ public class GroupedIndex {
 
 
     public Doc parse(final File file) {
-        // ConfigUtil.loadConfig pulls JBake's bundled default.properties (so destination.folder
-        // and friends are populated). Parser.processFile only reads headers; the destination is
-        // never used, but JBake's DefaultJBakeConfiguration constructor invokes setupPaths()
-        // which NPEs without those defaults.
-        final File parent = file.getParentFile();
-        final JBakeConfiguration config;
-        try {
-            config = new ConfigUtil().loadConfig(parent);
-            ((DefaultJBakeConfiguration) config).setDestinationFolder(parent);
-        } catch (ConfigurationException e) {
-            throw new RuntimeException("Unable to load JBake configuration for " + file, e);
-        }
-        final Parser parser = new Parser(config);
+        final Parser parser = new Parser(new CompositeConfiguration(), file.getAbsolutePath());
         final Map<String, Object> map = parser.processFile(file);
 
         if (map == null) {

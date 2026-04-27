@@ -16,6 +16,7 @@
  */
 package org.apache.tomee.website;
 
+import lombok.RequiredArgsConstructor;
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.AttributesBuilder;
 
@@ -31,13 +32,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import static lombok.AccessLevel.PRIVATE;
 import static org.asciidoctor.OptionsBuilder.options;
 
+@RequiredArgsConstructor(access = PRIVATE)
 public class PDFify {
-
-    private PDFify() {
-    }
-
     public static void generatePdf(final File from, final File targetBase) throws IOException {
         final Path sourceBase = from.toPath();
         final Asciidoctor asciidoctor = Asciidoctor.Factory.create();
