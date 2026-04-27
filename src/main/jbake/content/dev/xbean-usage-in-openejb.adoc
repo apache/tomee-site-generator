@@ -63,7 +63,7 @@ commands by enumerating over all the files he see's in the classpath
 under the "META-INF/org.openejb.cli/" directory.
 See http://svn.apache.org/viewvc/tomee/tomee/trunk/container/openejb-core/src/main/java/org/apache/openejb/cli/MainImpl.java?revision=546308&view=markup[MainImpl.java]
 
-An extra cool thing is that each command has in it's properties a 
+An extra cool thing is that each command has in its properties a
 "description" property.
  This is localized, so if the VM locale is 
 "pl" it will look for a "description.pl" property and use its value 

@@ -25,8 +25,8 @@ The more people we reach the more the project grows.
 * Share pages you like on Facebook + +++<a onclick="javascript:fbshare()" class="fb-share sprite" title="share on Facebook">+++share [fb]+++</a>+++
 * Share pages you like on Pinterest + +++<a onclick="javascript:pinshare()" class="pin-share sprite" title="Share on Pinterest">+++share [pin]+++</a>+++
 
-Doing these things as often as possible are simple and powerful ways to help.
-Do your part and watch the project grow grow grow!
+Doing these things as often as possible is a simple and powerful way to help.
+Do your part and watch the project grow!
 
 == Edit This Site
 

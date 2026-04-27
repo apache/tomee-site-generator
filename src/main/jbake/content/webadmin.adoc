@@ -104,7 +104,7 @@ I'd be hesitant to endorse velocity as we already have a dep on swizzle-stream a
 
 To serve static things like images, we had a "default" HttpBean which searched for the items in the classpath and wrote them into the response setting the mime type, etc.
 correctly.
-One thing that we never did which still needs to happen is that the bean didn't have the logic to set the modification information into the response so the "If modified since" header which would allow the browser to rely on it's cache instead of requesting the same images over and over again.
+One thing that we never did which still needs to happen is that the bean didn't have the logic to set the modification information into the response so the "If modified since" header which would allow the browser to rely on its cache instead of requesting the same images over and over again.
 
 That pretty much covers the way it was put together.
 
@@ -123,7 +123,7 @@ Certainly JSR-77 is one option, but we could do far better with plain old java c
 That tree is the primary source of meta-data for OpenEJB, it's what was used to construct every container, bean, resource adapter, database connector and _everything_ in the system (well, sans the protocols).
 Someone new to the project can look at it and understand it without having to read any abstract specs.
 Something to consider.
-The tree is read only in it's function, however it is possible to copy then edit and make new containers, etc.
+The tree is read only in its function, however it is possible to copy then edit and make new containers, etc.
 based on existing definitions.
 
 Additionally, using this same data structure it's possible to show the potential services available via the service-jar.xml files in the classpath that detail containers, resource adapters, database connectors, etc.

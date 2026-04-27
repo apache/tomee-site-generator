@@ -24,7 +24,7 @@ Be careful not to run anyone over.
 
 We don't focus on the PMC in this project so many may not have a clear concept of it.
 Every project at Apache has a PMC which at minimum represents Apache from a legal perspective.
-The people on it are expected to provide legal oversight, making sure that the legal entity that is Apache has awareness enough to legally protect the code that leaves it's doors, the users that use it, and the people who create it.
+The people on it are expected to provide legal oversight, making sure that the legal entity that is Apache has awareness enough to legally protect the code that leaves its doors, the users that use it, and the people who create it.
 This means making sure any contributions going into the project are clean and can be legally projected and making sure any binaries going out meet the legal requirements so they as well can be legally protected.
 It's a lot of watching all commits, keeping an eye on doc contributions, ensuring CLAs are on file for anything of substantial size, screening release binaries and source for headers, license files, making sure any binaries being widely distributed have been voted on, etc., etc.
 If you are on the PMC and you vote on a release it means _you_ have done all these things to the best of your ability.

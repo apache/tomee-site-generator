@@ -10,7 +10,7 @@ Do not consider it a stable public API.
 == Overview in Code
 
 First a glimpse of how OpenEJB looks internally.
-Here's a test that builds OpenEJB using it's internal API.
+Here's a test that builds OpenEJB using its internal API.
 This is somewhat similar to how you might see people constructing Jetty in code.
 All our internal tests look like this.
 
@@ -155,7 +155,7 @@ It knows all the details on how to build each individual part and in what order 
 
 In OpenEJB, the Assembler is not supposed to be the gem of the project that we keep clean, motivating us to push complex things out into other areas for other people (usually users) to worry about.
 In fact, it's the opposite.
-The runtime system gets top priority on it's architectural needs and the assembler gets last priority.
+The runtime system gets top priority on its architectural needs and the assembler gets last priority.
 If there's something we can do in the Assembler that saves the rest of the system from complexity, we gladly throw the Assembler on that grenade.
 Our philosophy is that you can't make 100% of your system "perfect" all the time and sometime the mess has to go somewhere.
 The assembler is where.

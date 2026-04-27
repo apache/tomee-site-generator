@@ -48,7 +48,7 @@ If your browser is running on the same computer as Tomcat, try accessing OpenEJB
 
 If you want to access the openejb.war from another computer, you will need to either remove the valve, or modify the IP list in the valve declaration.
 
-The easiest way to remove the valve it to simply delete the webapps/openejb/META-INF/context.xml file and the webapps/openejb.war file _while Tomcat is stopped_.
+The easiest way to remove the valve is to simply delete the webapps/openejb/META-INF/context.xml file and the webapps/openejb.war file _while Tomcat is stopped_.
 Warning that Tomcat keeps a copy of all context.xml files under conf/Catalina/localhost/+++<appname>+++.xml, so you may need to delete the conf/Catalina/localhost/openejb.xml file as well.
 The openejb.war file must be removed because some versions of Tomcat will use the context.xml file packed in the openejb.war file regardless of what is in the unpacked directory.+++</appname>+++
 

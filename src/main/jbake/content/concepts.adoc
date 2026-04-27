@@ -18,7 +18,7 @@ Part of achieving that is a drive to be as simple as possible as to not over-def
 Smaller third-party environments could easily 'downscale' OpenEJB in their integrations by replacing standard components with lighter implementations or removing them all together and larger environments could 'upscale' OpenEJB by replacing and adding heavier implementations of those standard components likely tailored to their systems and infrastructure.
 
 Container and Server are mentioned in the EJB spec as being separate things but are never defined formally.
-In our world Containers, which implement the basic component contract and lifecycle of a bean are not coupled to any particular Server, which has the job of providing a naming service and providing a way for it's clients to reference and invoke components (beans) hosted in Containers.
+In our world Containers, which implement the basic component contract and lifecycle of a bean are not coupled to any particular Server, which has the job of providing a naming service and providing a way for its clients to reference and invoke components (beans) hosted in Containers.
 Because Containers have no dependence at all only Server, you can run OpenEJB without any Server at all in an embedded environment for example without any work or any extra overhead.
 Similarly you can add as many new Server components as you want without ever having to modify any Containers.
 
@@ -38,5 +38,5 @@ You get what is in the org/apache/openejb/service-jar.xml by default, but you ar
 When you declare a service (Container, Connector, etc.) in your openejb.conf file the properties you supply override the properties supplied by the Service Provider, thus you only need to specify the properties you'd like to change and can have your openejb.conf file as large or as small as you would like it.
 The act of doing this can be thought of as essentially instantiating the Service Provider and configuring that instance for inclusion in the runtime system.
 
-For example Container(id=NoTimeoutStatefulContainer, provider=DefaultStatefulContainer) could be declared with it's Timeout property set to 0 for never, and a Container(id=ShortTimeoutStatefulContainer, provider=DefaultStatefulContainer) could be declared with it's Timeout property set to 15 minutes.
+For example Container(id=NoTimeoutStatefulContainer, provider=DefaultStatefulContainer) could be declared with its Timeout property set to 0 for never, and a Container(id=ShortTimeoutStatefulContainer, provider=DefaultStatefulContainer) could be declared with its Timeout property set to 15 minutes.
 Both would be instances of the DefaultStatefulContainer Service Provider which is a service of type Container.

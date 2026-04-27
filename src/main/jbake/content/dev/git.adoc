@@ -97,7 +97,7 @@ The steps are and remain as described above:
 . From _develop_ create a new branch called, for example TOMEE-007
 . 'Publish' (push -u) the new branch
 . Work on the branch and commit regularly
-. Synchronize (pull and push) changes in the the branch when stable
+. Synchronize (pull and push) changes in the branch when stable
 . Switch to _develop_ and synchronize (pull)
 . Merge the branch into _develop_, i.e. 'TOMEE-007' + 'develop'  = 'develop' *See note below
 . Commit _develop_

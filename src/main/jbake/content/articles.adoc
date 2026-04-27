@@ -13,7 +13,7 @@
 
 === 1.0
 
-* http://theserverside.com/articles/article.tss?l=ContainerDrivenTestingSeries[Containter Driven Testing with OpenEJB] , by N.
+* http://theserverside.com/articles/article.tss?l=ContainerDrivenTestingSeries[Container Driven Testing with OpenEJB] , by N.
 Alex Rupp, theserverside.com
 * http://www.galatea.com/flashguides/tomcat-openejb1-unix[Using OpenEJB 1.0 with Tomcat on Linux] , by Lajos Moczar, galatea.com
 

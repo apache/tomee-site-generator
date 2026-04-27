@@ -2,6 +2,6 @@
 :jbake-type: page
 :jbake-status: published
 
-The best source of documentation on Geronimo and it's usage of OpenEJB is here:
+The best source of documentation on Geronimo and its usage of OpenEJB is here:
 
 * http://geronimo.apache.org/documentation.html

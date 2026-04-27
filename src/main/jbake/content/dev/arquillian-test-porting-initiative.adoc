@@ -12,10 +12,10 @@ Testing is the most crucial part of any project.
 A project that incorporates as much functionality as TomEE does needs a _lot_ of tests.
 
 There's a saying that if it isn't documented it doesn't exist.
-Likely more true is that if it isn't tested it it might as well not exist, documentation or not.
+Likely more true is that if it isn't tested it might as well not exist, documentation or not.
 
-The simple truth is many of the critical tests that apply to functionality in TomEE actuall exist, but are spread across the numberous projects that TomEE incorporates.
-Just as TomEE is about unifying and integrating all these projects together, the same vision and initative must be given into unifying and integrating all these tests.
+The simple truth is many of the critical tests that apply to functionality in TomEE actually exist, but are spread across the numerous projects that TomEE incorporates.
+Just as TomEE is about unifying and integrating all these projects together, the same vision and initiative must be given into unifying and integrating all these tests.
 
 If we could port them all to a common testing framework like Arquillian and consolidate them all into one codebase, the result would be nothing short of a marvel.
 An unparalleled feat.
@@ -25,7 +25,7 @@ Be ready to blaze some trails and be a pioneer.
 
 == The Kingdoms
 
-There are far more than 3,000 test classes we could port across the various projects, each using it's own flavor of home-made setup code.
+There are far more than 3,000 test classes we could port across the various projects, each using its own flavor of home-made setup code.
 The coverage is also not what you'd expect.
 
 * Activemq 1281

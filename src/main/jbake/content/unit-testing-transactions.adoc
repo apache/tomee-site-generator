@@ -43,7 +43,7 @@ The above bean specifies REQUIRES_NEW;
 functionally the same as REQUIRED as the test case itself won't have a transaction, but a little cleaner and more explicit.
 
 You could also annotate the bean with @RunAs("manager") for example and test that your security restrictions are how you like them.
-You can have as many of these test beans in your test code as you like, each with it's own transaction and security constraints allowing you to write some incredibly thorough tests.
+You can have as many of these test beans in your test code as you like, each with its own transaction and security constraints allowing you to write some incredibly thorough tests.
 
 You do not need to use java.util.concurrent.Callable, any similar interface of your creation could work just as well.
 You may want something with return type void, for example, to eliminate useless 'return null' statements.
