@@ -17,21 +17,25 @@
 package org.apache.tomee.website;
 
 import org.apache.openejb.loader.IO;
-import org.tomitribe.tio.Dir;
-import org.tomitribe.tio.Match;
-import org.tomitribe.tio.lang.JvmLang;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -222,22 +226,38 @@ public class LearningLinks {
         }
     }
 
+    private static final Pattern IMPORT_PATTERN =
+            Pattern.compile("^\\s*import\\s+(?:static\\s+)?([\\w.$]+)\\s*;");
+
     /**
-     * Walk over every file in the example directory and look for import statements.
-     *
-     * Collect each statement and return a unique list of the class names
-     * referenced by each import statement.
+     * Walk over every .java file in the example directory and collect a unique list
+     * of class names referenced by `import` statements.
      */
     private List<String> getImports(final Example example) {
-        final Dir dir = Dir.from(example.getSrcReadme().getParentFile());
+        final Path root = example.getSrcReadme().getParentFile().toPath();
+        final Set<String> imports = new LinkedHashSet<>();
+        try (Stream<Path> files = Files.walk(root)) {
+            files.filter(Files::isRegularFile)
+                    .filter(p -> p.toString().endsWith(".java"))
+                    .forEach(p -> collectImports(p, imports));
+        } catch (IOException e) {
+            throw new UncheckedIOException("Unable to walk " + root, e);
+        }
+        return new ArrayList<>(imports);
+    }
 
-        // Unfiltered list of imported classes used in this example
-        // This list will contain the class names themselves
-        return dir.searchFiles()
-                .flatMap(JvmLang.imports(dir))
-                .map(Match::getMatch)
-                .distinct()
-                .collect(Collectors.toList());
+    private static void collectImports(final Path file, final Set<String> imports) {
+        try (BufferedReader reader = Files.newBufferedReader(file)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                final Matcher m = IMPORT_PATTERN.matcher(line);
+                if (m.find()) {
+                    imports.add(m.group(1));
+                }
+            }
+        } catch (IOException e) {
+            throw new UncheckedIOException("Unable to read " + file, e);
+        }
     }
 
     /**

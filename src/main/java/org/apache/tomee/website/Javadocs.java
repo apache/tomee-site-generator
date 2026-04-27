@@ -16,7 +16,6 @@
  */
 package org.apache.tomee.website;
 
-import lombok.Data;
 import org.apache.openejb.loader.Files;
 import org.apache.openejb.loader.IO;
 import org.apache.openejb.util.Join;
@@ -170,11 +169,7 @@ public class Javadocs {
         return content.modified(content.content.replace("</head>", link + "</head>"));
     }
 
-    @Data
-    @lombok.AllArgsConstructor
-    private static class Content {
-        private final File file;
-        private final String content;
+    private record Content(File file, String content) {
 
         public Content modified(final String newContent) {
             return new Content(file, newContent);
@@ -225,7 +220,7 @@ public class Javadocs {
                         }
                     });
         } catch (IOException e) {
-            throw new IllegalStateException("Failed to aggregate java sources");
+            throw new IllegalStateException("Failed to aggregate java sources from " + source.getDir(), e);
         }
     }
 

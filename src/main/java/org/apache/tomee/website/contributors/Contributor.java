@@ -16,15 +16,10 @@
  */
 package org.apache.tomee.website.contributors;
 
-import lombok.Builder;
-import lombok.Data;
-
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@Data
-@Builder
 public class Contributor {
     private String id;
     private boolean committer;
@@ -32,6 +27,67 @@ public class Contributor {
     private String github;
     private String avatar;
     private Stats stats;
+
+    public Contributor() {
+    }
+
+    public Contributor(final String id, final boolean committer, final String name,
+                       final String github, final String avatar, final Stats stats) {
+        this.id = id;
+        this.committer = committer;
+        this.name = name;
+        this.github = github;
+        this.avatar = avatar;
+        this.stats = stats;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(final String id) {
+        this.id = id;
+    }
+
+    public boolean isCommitter() {
+        return committer;
+    }
+
+    public void setCommitter(final boolean committer) {
+        this.committer = committer;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(final String name) {
+        this.name = name;
+    }
+
+    public String getGithub() {
+        return github;
+    }
+
+    public void setGithub(final String github) {
+        this.github = github;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(final String avatar) {
+        this.avatar = avatar;
+    }
+
+    public Stats getStats() {
+        return stats;
+    }
+
+    public void setStats(final Stats stats) {
+        this.stats = stats;
+    }
 
     public Contributor add(final Contributor that) {
         return new Contributor(id, committer, name, github, avatar, stats.add(that.stats));
@@ -57,5 +113,27 @@ public class Contributor {
                 .orElseThrow(IllegalStateException::new);
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
 
+    public static class Builder {
+        private String id;
+        private boolean committer;
+        private String name;
+        private String github;
+        private String avatar;
+        private Stats stats;
+
+        public Builder id(final String id) { this.id = id; return this; }
+        public Builder committer(final boolean committer) { this.committer = committer; return this; }
+        public Builder name(final String name) { this.name = name; return this; }
+        public Builder github(final String github) { this.github = github; return this; }
+        public Builder avatar(final String avatar) { this.avatar = avatar; return this; }
+        public Builder stats(final Stats stats) { this.stats = stats; return this; }
+
+        public Contributor build() {
+            return new Contributor(id, committer, name, github, avatar, stats);
+        }
+    }
 }

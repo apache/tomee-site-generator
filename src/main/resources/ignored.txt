@@ -40,3 +40,6 @@ tomee-9.0/examples/schedule-methods-meta.adoc
 tomee-9.0/es/examples/vaadin-lts-v10-simple.adoc
 tomee-9.0/es/examples/vaadin-lts-v08-simple.adoc
 tomee-7.0/docs/documentation.old.adoc
+# Comma in filename trips JBake's Oven.bake(); upstream filename is from tomee.git/docs
+tomee-10.1/docs/functional-testing-with-openejb,-jetty-and-selenium.adoc
+latest/docs/functional-testing-with-openejb,-jetty-and-selenium.adoc

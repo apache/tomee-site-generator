@@ -16,20 +16,9 @@
  */
 package org.apache.tomee.website.contributors;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-
-import javax.json.bind.annotation.JsonbProperty;
+import jakarta.json.bind.annotation.JsonbProperty;
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class ContributorData {
 
     @JsonbProperty("total")
@@ -40,6 +29,18 @@ public class ContributorData {
 
     @JsonbProperty("weeks")
     private List<Week> weeks;
+
+    public ContributorData() {
+    }
+
+    public int getTotal() { return total; }
+    public void setTotal(final int total) { this.total = total; }
+
+    public Author getAuthor() { return author; }
+    public void setAuthor(final Author author) { this.author = author; }
+
+    public List<Week> getWeeks() { return weeks; }
+    public void setWeeks(final List<Week> weeks) { this.weeks = weeks; }
 
     public Stats getStats() {
         return weeks.stream()
@@ -63,11 +64,6 @@ public class ContributorData {
                 .build();
     }
 
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Builder
-    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
     public static class Author {
         @JsonbProperty("id")
         private int id;
@@ -83,13 +79,26 @@ public class ContributorData {
 
         @JsonbProperty("hovercard_url")
         private String hovercardUrl;
+
+        public Author() {
+        }
+
+        public int getId() { return id; }
+        public void setId(final int id) { this.id = id; }
+
+        public String getLogin() { return login; }
+        public void setLogin(final String login) { this.login = login; }
+
+        public String getAvatar() { return avatar; }
+        public void setAvatar(final String avatar) { this.avatar = avatar; }
+
+        public String getPath() { return path; }
+        public void setPath(final String path) { this.path = path; }
+
+        public String getHovercardUrl() { return hovercardUrl; }
+        public void setHovercardUrl(final String hovercardUrl) { this.hovercardUrl = hovercardUrl; }
     }
 
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Builder
-    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
     public static class Week {
         @JsonbProperty("w")
         private long w;
@@ -102,5 +111,20 @@ public class ContributorData {
 
         @JsonbProperty("c")
         private int c;
+
+        public Week() {
+        }
+
+        public long getW() { return w; }
+        public void setW(final long w) { this.w = w; }
+
+        public int getA() { return a; }
+        public void setA(final int a) { this.a = a; }
+
+        public int getD() { return d; }
+        public void setD(final int d) { this.d = d; }
+
+        public int getC() { return c; }
+        public void setC(final int c) { this.c = c; }
     }
 }

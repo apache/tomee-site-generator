@@ -16,16 +16,11 @@
  */
 package org.apache.tomee.website;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 import java.io.File;
+import java.util.Objects;
 
-@Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class JavadocSource {
 
-    @EqualsAndHashCode.Include
     private final String className;
     private final File sourceFile;
 
@@ -34,5 +29,30 @@ public class JavadocSource {
         this.className = relativePath
                 .replaceAll("\\.java$", "")
                 .replace("/", ".");
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public File getSourceFile() {
+        return sourceFile;
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (!(o instanceof JavadocSource that)) return false;
+        return Objects.equals(className, that.className);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(className);
+    }
+
+    @Override
+    public String toString() {
+        return "JavadocSource(className=" + className + ", sourceFile=" + sourceFile + ")";
     }
 }

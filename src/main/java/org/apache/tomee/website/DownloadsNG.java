@@ -1,15 +1,9 @@
 package org.apache.tomee.website;
 
-import lombok.RequiredArgsConstructor;
-import org.apache.tika.exception.TikaException;
-import org.xml.sax.SAXException;
-
-import java.io.IOException;
-
-import static lombok.AccessLevel.PUBLIC;
-
-@RequiredArgsConstructor(access = PUBLIC)
 public class DownloadsNG extends AbstractDownloadsNG {
+
+    public DownloadsNG() {
+    }
 
     public static void main(final String[] args) throws Exception {
 

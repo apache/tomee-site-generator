@@ -1,7 +1,5 @@
 package org.apache.tomee.website;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.text.WordUtils;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.ParseContext;
@@ -36,10 +34,11 @@ import java.util.stream.Collectors;
 import static java.time.format.DateTimeFormatter.RFC_1123_DATE_TIME;
 import static java.util.Optional.ofNullable;
 import static java.util.stream.Collectors.toList;
-import static lombok.AccessLevel.PROTECTED;
 
-@RequiredArgsConstructor(access = PROTECTED)
 public class AbstractDownloadsNG {
+
+    protected AbstractDownloadsNG() {
+    }
 
     private static final long MEGA_RATIO = 1024 * 1024;
     protected static final String BASE_URL = "https://downloads.apache.org/tomee/";
@@ -278,7 +277,6 @@ public class AbstractDownloadsNG {
         return t -> seen.add(keyExtractor.apply(t));
     }
 
-    @Data
     public static class Download {
         private final String name;
         private final String version;
@@ -291,6 +289,36 @@ public class AbstractDownloadsNG {
         private String mirrorUrl;
         private String date = "Wed, 05 Aug 2020 16:26:51 GMT";
         private long size = 10;
+
+        public Download(final String name, final String version, final String format, final String url,
+                        final String sha1, final String sha256, final String sha512, final String asc) {
+            this.name = name;
+            this.version = version;
+            this.format = format;
+            this.url = url;
+            this.sha1 = sha1;
+            this.sha256 = sha256;
+            this.sha512 = sha512;
+            this.asc = asc;
+        }
+
+        public String getName() { return name; }
+        public String getVersion() { return version; }
+        public String getFormat() { return format; }
+        public String getUrl() { return url; }
+        public String getSha1() { return sha1; }
+        public String getSha256() { return sha256; }
+        public String getSha512() { return sha512; }
+        public String getAsc() { return asc; }
+
+        public String getMirrorUrl() { return mirrorUrl; }
+        public void setMirrorUrl(final String mirrorUrl) { this.mirrorUrl = mirrorUrl; }
+
+        public String getDate() { return date; }
+        public void setDate(final String date) { this.date = date; }
+
+        public long getSize() { return size; }
+        public void setSize(final long size) { this.size = size; }
     }
 
     private static class QuickDistLinkParser {
@@ -348,11 +376,7 @@ public class AbstractDownloadsNG {
         }
     }
 
-    @Data
-    public static class Results {
-        private final String baseUrl;
-        private final List<Link> links;
-
+    public record Results(String baseUrl, List<Link> links) {
         @Override
         public String toString() {
             return String.format("Results{ %s: %d links }",

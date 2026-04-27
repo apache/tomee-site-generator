@@ -20,7 +20,6 @@ import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.PullResult;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.RefNotAdvertisedException;
-import org.eclipse.jgit.internal.storage.file.FileRepository;
 
 import java.io.File;
 import java.io.IOException;
@@ -48,18 +47,21 @@ public class Repos {
         }
     }
 
-    private static void clone(final Source source) throws Exception {
+    private static void clone(final Source source) throws GitAPIException {
         System.out.println("  > git clone " + source.getScmUrl());
 
-        jgit("clone", "--quiet", source.getScmUrl(), "-b", source.getBranch(), source.getDir().getAbsolutePath());
+        Git.cloneRepository()
+                .setURI(source.getScmUrl())
+                .setDirectory(source.getDir())
+                .setBranch(source.getBranch())
+                .call()
+                .close();
     }
 
     private static void pull(final Source source) throws IOException, GitAPIException {
         System.out.println("  > git pull");
 
-        final Git git = new Git(new FileRepository(source.getDir().getAbsolutePath() + "/.git"));
-
-        try {
+        try (Git git = Git.open(source.getDir())) {
             final PullResult call = git.pull()
                     .setRemote("origin")
                     .setRemoteBranchName(source.getBranch())
@@ -79,10 +81,6 @@ public class Repos {
         } catch (RefNotAdvertisedException ignore) {
             // we are on a tag
         }
-    }
-
-    public static void jgit(final String... args) throws Exception {
-        org.eclipse.jgit.pgm.Main.main(args);
     }
 
     private static boolean deleteDirectory(File dir) {

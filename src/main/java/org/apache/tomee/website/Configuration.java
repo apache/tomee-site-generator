@@ -204,13 +204,13 @@ public class Configuration {
             //    new Source("https://github.com/apache/tomee.git", "tomee-7.1.x", "tomee-7.1", false).javadoc("^org.apache.(openejb|tomee).*"),
           //      new Source("https://github.com/apache/tomee.git", "tomee-7.0.x", "tomee-7.0", false).javadoc("^org.apache.(openejb|tomee).*"),
                 // JAKARTA EE
-                new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v10.0", "jakartaee-10.0").related(jakartaEE10).javadoc("^jakarta.*"),
+                new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v10", "jakartaee-10.0").related(jakartaEE10).javadoc("^jakarta.*"),
             //    new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v9.1", "jakartaee-9.1").related(jakartaEE9).javadoc("^jakarta.*"),
            //     new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v8", "jakartaee-8.0").related(jakartaEE8).javadoc("^javax.*"),
                 // JAVA EE : no git source for v7 or less, javadoc is at https://docs.oracle.com/javaee/7/api/
                 // MICRO PROFILE
                 // NEXT : new Source("https://github.com/eclipse/microprofile.git", "7.0", "microprofile-7.0").related(microProfile7).label("milestone").javadoc("^org.eclipse.microprofile.*"),
-                new Source("https://github.com/eclipse/microprofile.git", "6.1", "microprofile-6.1").related(microProfile6).javadoc("^org.eclipse.microprofile.*"),
+                new Source("https://github.com/eclipse/microprofile.git", "6.1", "microprofile-6.1").related(microProfile61).javadoc("^org.eclipse.microprofile.*"),
                // new Source("https://github.com/eclipse/microprofile.git", "6.0", "microprofile-6.0").related(microProfile6).javadoc("^org.eclipse.microprofile.*"),
                // new Source("https://github.com/eclipse/microprofile.git", "5.0", "microprofile-5.0").related(microProfile5).javadoc("^org.eclipse.microprofile.*"),
            //     new Source("https://github.com/eclipse/microprofile.git", "4.1", "microprofile-4.1").related(microProfile4).javadoc("^org.eclipse.microprofile.*"),
