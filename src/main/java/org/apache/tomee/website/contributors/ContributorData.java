@@ -16,7 +16,7 @@
  */
 package org.apache.tomee.website.contributors;
 
-import javax.json.bind.annotation.JsonbProperty;
+import jakarta.json.bind.annotation.JsonbProperty;
 import java.util.List;
 
 public class ContributorData {

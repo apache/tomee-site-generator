@@ -10,7 +10,10 @@
   <name>Apache TomEE :: WebSite NG</name>
 
   <properties>
-    <tomee.version>8.0.15</tomee.version>
+    <tomee.version>10.1.4</tomee.version>
+    <johnzon.version>2.0.2</johnzon.version>
+    <cxf.version>4.0.5</cxf.version>
+    <tika.version>2.9.4</tika.version>
     <jbake.http>false</jbake.http>
     <jbake.pdf>false</jbake.pdf>
 
@@ -20,40 +23,46 @@
   </properties>
 
   <dependencies>
-<!--    <dependency>-->
-<!--      <groupId>org.asciidoctor</groupId>-->
-<!--      <artifactId>asciidoctorj-pdf</artifactId>-->
-<!--      <version>1.5.0-alpha.11</version>-->
-<!--    </dependency>-->
     <dependency>
       <groupId>org.asciidoctor</groupId>
       <artifactId>asciidoctorj</artifactId>
       <version>2.4.3</version>
     </dependency>
+    <!-- Jakarta EE 10 APIs (jakarta.* namespace) used directly by Github / ContributorData -->
     <dependency>
-      <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-json_1.1_spec</artifactId>
-      <version>1.5</version>
+      <groupId>jakarta.json</groupId>
+      <artifactId>jakarta.json-api</artifactId>
+      <version>2.1.3</version>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.json.bind</groupId>
+      <artifactId>jakarta.json.bind-api</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.ws.rs</groupId>
+      <artifactId>jakarta.ws.rs-api</artifactId>
+      <version>3.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.apache.johnzon</groupId>
       <artifactId>johnzon-jaxrs</artifactId>
-      <version>1.2.11</version>
+      <version>${johnzon.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.johnzon</groupId>
       <artifactId>johnzon-jsonb</artifactId>
-      <version>1.2.11</version>
+      <version>${johnzon.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-rs-client</artifactId>
-      <version>3.4.3</version>
+      <version>${cxf.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.tomee</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>8.0-5</version>
+      <artifactId>jakartaee-api</artifactId>
+      <version>10.0.1</version>
     </dependency>
     <dependency>
       <groupId>org.apache.tomee</groupId>
@@ -156,11 +165,25 @@
       <artifactId>swizzle</artifactId>
       <version>1.3</version>
     </dependency>
-    <!-- required for DownloadsNG.java -->
+    <!-- Tika 2.x split into modular artifacts. DownloadsNG only needs tika-core
+         (Metadata, BodyContentHandler, LinkContentHandler, TeeContentHandler, Link,
+         ParseContext) and the HTML parser module. -->
     <dependency>
       <groupId>org.apache.tika</groupId>
-      <artifactId>tika-parsers</artifactId>
-      <version>1.17</version>
+      <artifactId>tika-core</artifactId>
+      <version>${tika.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tika</groupId>
+      <artifactId>tika-parser-html-module</artifactId>
+      <version>${tika.version}</version>
+    </dependency>
+    <!-- Used by GitHubContributors. Was pulled transitively via Tika 1.17;
+         the modular Tika 2.x split no longer brings it in. -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20240303</version>
     </dependency>
 
     <!-- jffi 1.3.1 (transitive via JRuby/asciidoctorj) ships only i386/x86_64 native stubs.
