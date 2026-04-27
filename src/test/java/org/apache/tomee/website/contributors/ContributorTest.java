@@ -19,8 +19,8 @@ package org.apache.tomee.website.contributors;
 import org.apache.openejb.loader.IO;
 import org.junit.Test;
 
-import javax.json.bind.Jsonb;
-import javax.json.bind.JsonbBuilder;
+import jakarta.json.bind.Jsonb;
+import jakarta.json.bind.JsonbBuilder;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
