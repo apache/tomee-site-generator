@@ -28,13 +28,7 @@
     <dependency>
       <groupId>org.asciidoctor</groupId>
       <artifactId>asciidoctorj</artifactId>
-      <version>1.5.8.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.12</version>
-      <scope>provided</scope>
+      <version>2.4.3</version>
     </dependency>
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
@@ -69,7 +63,7 @@
     <dependency>
       <groupId>org.jbake</groupId>
       <artifactId>jbake-core</artifactId>
-      <version>2.4.0</version>
+      <version>2.6.7</version>
       <exclusions>
         <exclusion>
           <groupId>org.slf4j</groupId>
@@ -77,20 +71,58 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <!-- JBake 2.6 demoted these to runtime scope, but JBake.java / GroupedIndex.java reference them directly -->
+    <dependency>
+      <groupId>commons-configuration</groupId>
+      <artifactId>commons-configuration</artifactId>
+      <version>1.10</version>
+    </dependency>
+    <dependency>
+      <groupId>com.orientechnologies</groupId>
+      <artifactId>orientdb-core</artifactId>
+      <version>3.2.51</version>
+      <exclusions>
+        <!-- GraalVM 21.3.5 calls sun.misc.Unsafe.ensureClassInitialized, removed in JDK 22+.
+             OrientDB only uses it for JS scripting, which JBake does not exercise. -->
+        <exclusion>
+          <groupId>org.graalvm.sdk</groupId>
+          <artifactId>graal-sdk</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.graalvm.truffle</groupId>
+          <artifactId>truffle-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.graalvm.js</groupId>
+          <artifactId>js</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.graalvm.js</groupId>
+          <artifactId>js-scriptengine</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.graalvm.regex</groupId>
+          <artifactId>regex</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.graalvm.tools</groupId>
+          <artifactId>profiler</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.graalvm.tools</groupId>
+          <artifactId>chromeinspector</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy</artifactId>
-      <version>2.3.11</version>
+      <version>3.0.21</version>
     </dependency>
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-templates</artifactId>
-      <version>2.3.11</version>
-    </dependency>
-    <dependency>
-      <groupId>org.pegdown</groupId>
-      <artifactId>pegdown</artifactId>
-      <version>1.6.0</version>
+      <version>3.0.21</version>
     </dependency>
     <dependency>
       <groupId>org.tmatesoft.svnkit</groupId>
@@ -106,6 +138,12 @@
       <groupId>org.eclipse.jgit</groupId>
       <artifactId>org.eclipse.jgit.pgm</artifactId>
       <version>5.1.3.201810200350-r</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>args4j</groupId>
@@ -120,13 +158,27 @@
     <dependency>
       <groupId>org.tomitribe</groupId>
       <artifactId>swizzle</artifactId>
-      <version>1.1</version>
+      <version>1.3</version>
     </dependency>
     <!-- required for DownloadsNG.java -->
     <dependency>
       <groupId>org.apache.tika</groupId>
       <artifactId>tika-parsers</artifactId>
       <version>1.17</version>
+    </dependency>
+
+    <!-- jffi 1.3.1 (transitive via JRuby/asciidoctorj) ships only i386/x86_64 native stubs.
+         1.3.13 adds arm64-darwin so the build runs on Apple Silicon. -->
+    <dependency>
+      <groupId>com.github.jnr</groupId>
+      <artifactId>jffi</artifactId>
+      <version>1.3.13</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.jnr</groupId>
+      <artifactId>jffi</artifactId>
+      <version>1.3.13</version>
+      <classifier>native</classifier>
     </dependency>
 
   </dependencies>
@@ -136,10 +188,9 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
+        <version>3.13.0</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <release>21</release>
         </configuration>
       </plugin>
       <plugin>
@@ -164,37 +215,8 @@
               </arguments>
             </configuration>
           </execution>
-          <execution>
-            <id>publish</id>
-            <phase>pre-site</phase>
-            <goals>
-              <goal>java</goal>
-            </goals>
-            <configuration>
-              <includeProjectDependencies>true</includeProjectDependencies>
-              <mainClass>org.apache.tomee.website.SvnPub</mainClass>
-              <arguments>
-                <argument>${site.password}</argument>
-                <argument>${site.message}</argument>
-              </arguments>
-            </configuration>
-          </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
-
-  <repositories>
-    <repository>
-      <id>svnkit</id>
-      <name>SVNKit</name>
-      <url>https://maven.tmatesoft.com/content/repositories/releases/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 </project>

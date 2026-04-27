@@ -1,8 +1,6 @@
 package org.apache.tomee.website;
 
 import com.orientechnologies.orient.core.Orient;
-import lombok.RequiredArgsConstructor;
-import org.apache.commons.configuration.CompositeConfiguration;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import org.apache.commons.io.filefilter.FileFileFilter;
@@ -10,8 +8,9 @@ import org.apache.commons.io.filefilter.FileFilterUtils;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.tomee.embedded.Configuration;
 import org.apache.tomee.embedded.Container;
-import org.jbake.app.ConfigUtil;
 import org.jbake.app.Oven;
+import org.jbake.app.configuration.JBakeConfiguration;
+import org.jbake.app.configuration.JBakeConfigurationFactory;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -30,10 +29,12 @@ import java.util.stream.Stream;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
-import static lombok.AccessLevel.PRIVATE;
 
-@RequiredArgsConstructor(access = PRIVATE)
 public class JBake {
+
+    private JBake() {
+    }
+
     public static void main(final String[] args) throws Exception {
         System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "64"); // try to have parallelStream better than default
 
@@ -72,10 +73,9 @@ public class JBake {
             try {
                 orient.startup();
 
-                final Oven oven = new Oven(sources.getJbake(), destination, new CompositeConfiguration() {{
-                    addConfiguration(ConfigUtil.load(sources.getJbake()));
-                }}, true);
-                oven.setupPaths();
+                final JBakeConfiguration config = new JBakeConfigurationFactory()
+                        .createDefaultJbakeConfiguration(sources.getJbake(), destination, true);
+                final Oven oven = new Oven(config);
 
                 System.out.println("  > baking");
                 oven.bake();

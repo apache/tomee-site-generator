@@ -1,8 +1,5 @@
 package org.apache.tomee.website;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.text.WordUtils;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -30,11 +27,12 @@ import static java.time.format.DateTimeFormatter.RFC_1123_DATE_TIME;
 import static java.util.Arrays.asList;
 import static java.util.Optional.ofNullable;
 import static java.util.stream.Collectors.toList;
-import static lombok.AccessLevel.PRIVATE;
 
 // regenerate when needed only, useless to do it for any site update
-@RequiredArgsConstructor(access = PRIVATE)
 public class Downloads {
+
+    private Downloads() {
+    }
     private static final SAXParserFactory FACTORY = SAXParserFactory.newInstance();
     private static final String MVN_BASE = "https://repo.maven.apache.org/maven2/";
     private static final long MEGA_RATIO = 1024 * 1024;
@@ -235,12 +233,16 @@ public class Downloads {
         }
     }
 
-    @AllArgsConstructor
     public static class Version {
         private final String base;
         private final String version;
         private final Collection<String> classifiers = new ArrayList<>();
         private final Collection<String> extensions = new ArrayList<>();
+
+        public Version(final String base, final String version) {
+            this.base = base;
+            this.version = version;
+        }
 
         private Version extensions(final String... values) {
             extensions.addAll(asList(values));
@@ -253,13 +255,9 @@ public class Downloads {
         }
     }
 
-    @Data
-    public static class ArtifactDescription {
-        private final String classifier;
-        private final String extension;
+    public record ArtifactDescription(String classifier, String extension) {
     }
 
-    @Data
     public static class Download {
         private final String name;
         private final String classifier;
@@ -271,6 +269,33 @@ public class Downloads {
         private final String asc;
         private String date;
         private long size;
+
+        public Download(final String name, final String classifier, final String version, final String format,
+                        final String url, final String md5, final String sha1, final String asc) {
+            this.name = name;
+            this.classifier = classifier;
+            this.version = version;
+            this.format = format;
+            this.url = url;
+            this.md5 = md5;
+            this.sha1 = sha1;
+            this.asc = asc;
+        }
+
+        public String getName() { return name; }
+        public String getClassifier() { return classifier; }
+        public String getVersion() { return version; }
+        public String getFormat() { return format; }
+        public String getUrl() { return url; }
+        public String getMd5() { return md5; }
+        public String getSha1() { return sha1; }
+        public String getAsc() { return asc; }
+
+        public String getDate() { return date; }
+        public void setDate(final String date) { this.date = date; }
+
+        public long getSize() { return size; }
+        public void setSize(final long size) { this.size = size; }
     }
 
     private static class QuickMvnMetadataParser extends DefaultHandler {

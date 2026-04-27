@@ -1,6 +1,5 @@
 package org.apache.tomee.website;
 
-import lombok.Data;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.tomitribe.util.IO;
@@ -58,14 +57,7 @@ public class GitHubContributors {
         return contributorList;
     }
 
-    @Data
-    public static class Contributor {
-        private final String id;
-        private final String name;
-        private final String avatar;
-        private final String url;
-        private final long contributions;
-
+    public record Contributor(String id, String name, String avatar, String url, long contributions) {
         @Override
         public String toString() {
             return name + " | " + url + " | " + avatar;
