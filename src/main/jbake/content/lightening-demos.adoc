@@ -72,4 +72,4 @@ video::16876426[vimeo]
 |video::16872034[vimeo]
 |===
 
-NOTE: For more details about the idea behind Lightening Demos, please read link:http://markmail.org/message/5jq5xun44kt7tcni.adoc[this]  e-mail thread.
+NOTE: For more details about the idea behind Lightening Demos, please read link:https://markmail.org/message/5jq5xun44kt7tcni.adoc[this]  e-mail thread.

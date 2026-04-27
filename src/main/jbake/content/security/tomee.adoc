@@ -14,7 +14,7 @@ For TomEE 1.x those are xref:/dev/building-from-source.adoc[Building TomEE from 
 
 If you need help on building or configuring TomEE or other help on following the instructions to mitigate the known vulnerabilities listed here, please send your questions to the public xref:../support.adoc[Users mailing list]
 
-If you have encountered an unlisted security vulnerability or other unexpected behaviour that has security impact, or if the descriptions here are incomplete, please report them privately to the http://www.apache.org/security[Apache Security Team].
+If you have encountered an unlisted security vulnerability or other unexpected behaviour that has security impact, or if the descriptions here are incomplete, please report them privately to the https://www.apache.org/security[Apache Security Team].
 Thank you.
 
 == Fixed in Apache TomEE 7.0.1
@@ -31,8 +31,8 @@ This one one is not activated by default on the 7.x series but it was on the 1.x
 
 The related CVE numbers are:
 
-* http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0779[CVE-2016-0779]: The EJBd protocol provided by TomEE can exploit the 0-day vulnerability.
-* http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8581[CVE-2015-8581]: The EjbObjectInputStream class in Apache TomEE allows remote attackers to execute arbitrary commands via a serialized Java stream.
+* https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0779[CVE-2016-0779]: The EJBd protocol provided by TomEE can exploit the 0-day vulnerability.
+* https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8581[CVE-2015-8581]: The EjbObjectInputStream class in Apache TomEE allows remote attackers to execute arbitrary commands via a serialized Java stream.
 
 This has been fixed in commit 58cdbbef9c77ab2b44870f9d606593b49cde76d9.
 
@@ -44,21 +44,21 @@ We would like to thank cpnrodzc7 who discovered it working with HP's Zero Day In
 
 == Fixed in Third-party
 
-Covered by http://tomee.apache.org/downloads.html[Apache TomEE 1.6.0.2]
+Covered by https://tomee.apache.org/downloads.html[Apache TomEE 1.6.0.2]
 
-* http://cxf.apache.org/security-advisories.data/CVE-2014-0109.txt.asc?version=1&modificationDate=1398873370740&api=v2[CVE-2014-0109]: HTML content posted to SOAP endpoint could cause OOM errors
-* http://cxf.apache.org/security-advisories.data/CVE-2014-0110.txt.asc?version=1&modificationDate=1398873378628&api=v2[CVE-2014-0110]: Large invalid content could cause temporary space to fill
-* http://cxf.apache.org/security-advisories.data/CVE-2014-0034.txt.asc?version=1&modificationDate=1398873385252&api=v2[CVE-2014-0034]: The SecurityTokenService accepts certain invalid SAML Tokens as valid
-* http://cxf.apache.org/security-advisories.data/CVE-2014-0035.txt.asc?version=1&modificationDate=1398873391788&api=v2[CVE-2014-0035]: UsernameTokens are sent in plaintext with a Symmetric EncryptBeforeSigning policy
+* https://cxf.apache.org/security-advisories.data/CVE-2014-0109.txt.asc?version=1&modificationDate=1398873370740&api=v2[CVE-2014-0109]: HTML content posted to SOAP endpoint could cause OOM errors
+* https://cxf.apache.org/security-advisories.data/CVE-2014-0110.txt.asc?version=1&modificationDate=1398873378628&api=v2[CVE-2014-0110]: Large invalid content could cause temporary space to fill
+* https://cxf.apache.org/security-advisories.data/CVE-2014-0034.txt.asc?version=1&modificationDate=1398873385252&api=v2[CVE-2014-0034]: The SecurityTokenService accepts certain invalid SAML Tokens as valid
+* https://cxf.apache.org/security-advisories.data/CVE-2014-0035.txt.asc?version=1&modificationDate=1398873391788&api=v2[CVE-2014-0035]: UsernameTokens are sent in plaintext with a Symmetric EncryptBeforeSigning policy
 
-Covered by http://tomee.apache.org/downloads.html[Apache TomEE 1.6.0.1]
+Covered by https://tomee.apache.org/downloads.html[Apache TomEE 1.6.0.1]
 
-* Fixed in Tomcat 7.0.52 _Important: Denial of Service_ http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0050[CVE-2014-0050]
+* Fixed in Tomcat 7.0.52 _Important: Denial of Service_ https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0050[CVE-2014-0050]
 
-Covered by http://tomee.apache.org/downloads.html[Apache TomEE 1.6.0]
+Covered by https://tomee.apache.org/downloads.html[Apache TomEE 1.6.0]
 
-* http://cxf.apache.org/security-advisories.data/CVE-2013-2160.txt.asc?version=1&modificationDate=1372324301000&api=v2[CVE-2013-2160] - Denial of Service Attacks on Apache CXF
-* http://cxf.apache.org/cve-2012-5575.html[Note on CVE-2012-5575] - XML Encryption backwards compatibility attack on Apache CXF.
-* http://cxf.apache.org/cve-2013-0239.html[CVE-2013-0239] - Authentication bypass in the case of WS-SecurityPolicy enabled plaintext UsernameTokens.
+* https://cxf.apache.org/security-advisories.data/CVE-2013-2160.txt.asc?version=1&modificationDate=1372324301000&api=v2[CVE-2013-2160] - Denial of Service Attacks on Apache CXF
+* https://cxf.apache.org/cve-2012-5575.html[Note on CVE-2012-5575] - XML Encryption backwards compatibility attack on Apache CXF.
+* https://cxf.apache.org/cve-2013-0239.html[CVE-2013-0239] - Authentication bypass in the case of WS-SecurityPolicy enabled plaintext UsernameTokens.
 
 == Not a vulnerability

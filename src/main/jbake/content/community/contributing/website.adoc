@@ -4,7 +4,7 @@
 :jbake-status: published
 
 
-This website is a simple link:http://jbake.org/[JBake] project you can find at:
+This website is a simple link:https://jbake.org/[JBake] project you can find at:
 
  - https://gitbox.apache.org/repos/asf/tomee-site-generator.git. (Apache)
 

@@ -13,14 +13,14 @@ This page describes the steps to create EJB test cases.
 === How itests work
 
 The itests module lives in OpenEJB's repository in the _modules\itests_ directory.
-Setting up the test environment to execute the itests is based on (http://svn.apache.org/repos/asf/maven/maven-1/plugins-sandbox/trunk/itest/[maven-itest-plugin-1.0 plugin] ).
+Setting up the test environment to execute the itests is based on (https://svn.apache.org/repos/asf/maven/maven-1/plugins-sandbox/trunk/itest/[maven-itest-plugin-1.0 plugin] ).
 
 Take a look at maven.xml in modules\itests directory.
 There you'll see that the default goal is _ejb:install_, which in turn executes _itest_.
 When the EJBs (todo: describe it a bit more) are done, the _itest:setup_ goal is executed, which starts the real game.
 First, _org/openejb/Security_ configuration is started.
 Once it's done, _openejb-itests-xxx.jar_ is deployed, which is _org/openejb/Itests_ configuration to be started, afterwards.
-When the configurations are deployed and started, the maven-itest-plugin executes junit (see http://ant.apache.org/manual/OptionalTasks/junit.html[Ant JUnit task documentation]  and project.properties of the itests module).
+When the configurations are deployed and started, the maven-itest-plugin executes junit (see https://ant.apache.org/manual/OptionalTasks/junit.html[Ant JUnit task documentation]  and project.properties of the itests module).
 The project.properties file configures which itests are run and some other stuff.
 
 The first itest test case is _org.openejb.test.entity.cmp.CmpTestSuite_.

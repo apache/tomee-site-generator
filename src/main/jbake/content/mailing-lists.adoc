@@ -26,12 +26,12 @@ TomEE Users Online Archives/Forums:
 |{y}
 |{n}
 |2002
-|http://openejb.markmail.org/search/?q=type:users
+|https://openejb.markmail.org/search/?q=type:users
 
 |{y}
 |{n}
 |2002
-|http://marc.info/?l=openejb-user
+|https://marc.info/?l=openejb-user
 
 |{y}
 |{y}
@@ -41,7 +41,7 @@ TomEE Users Online Archives/Forums:
 |{y}
 |{n}
 |2007
-|http://www.mail-archive.com/users@tomee.apache.org
+|https://www.mail-archive.com/users@tomee.apache.org
 |===
 
 == Developer Mailing List
@@ -66,12 +66,12 @@ TomEE Developers Online Archives/Forums:
 |{y}
 |{n}
 |2002
-|http://openejb.markmail.org/search/?q=type:development
+|https://openejb.markmail.org/search/?q=type:development
 
 |{y}
 |{n}
 |2002
-|http://marc.info/?l=openejb-development
+|https://marc.info/?l=openejb-development
 
 |{y}
 |{y}
@@ -81,7 +81,7 @@ TomEE Developers Online Archives/Forums:
 |{y}
 |{n}
 |2007
-|http://www.mail-archive.com/dev@tomee.apache.org
+|https://www.mail-archive.com/dev@tomee.apache.org
 |===
 
 == Commit Mailing List
@@ -106,12 +106,12 @@ TomEE Commits Online Archives/Forums:
 |{y}
 |{n}
 |2002
-|http://openejb.markmail.org/search/?q=type:checkins
+|https://openejb.markmail.org/search/?q=type:checkins
 
 |{y}
 |{n}
 |2004
-|http://marc.info/?l=openejb-cvs
+|https://marc.info/?l=openejb-cvs
 
 |{y}
 |{y}
@@ -121,5 +121,5 @@ TomEE Commits Online Archives/Forums:
 |{y}
 |{n}
 |2007
-|http://www.mail-archive.com/commits@tomee.apache.org
+|https://www.mail-archive.com/commits@tomee.apache.org
 |===

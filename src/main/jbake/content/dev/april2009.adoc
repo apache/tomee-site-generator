@@ -25,4 +25,4 @@ Regardless of the outcome, support for that feature is planned.
 
 link:1.html[1]
 
-http://mail-archives.apache.org/mod_mbox/openejb-users/200902.mbox/%3c98A91BE3-4ACC-4D86-AE19-4CD4A202E1CD@visi.com%3e
+https://mail-archives.apache.org/mod_mbox/openejb-users/200902.mbox/%3c98A91BE3-4ACC-4D86-AE19-4CD4A202E1CD@visi.com%3e

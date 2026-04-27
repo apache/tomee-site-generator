@@ -126,12 +126,12 @@ Once Tomcat is fully started, simply visit link:http://localhost:8080/openejb/in
 
 === ejb-examples.war
 
-Download the link:http://people.apache.org/~dain/openejb-temp/examples[ejb-examples.war] , copy it into the Tomcat webapps directory, and visit link:http://localhost:8080/ejb-examples[] .
+Download the link:https://people.apache.org/~dain/openejb-temp/examples[ejb-examples.war] , copy it into the Tomcat webapps directory, and visit link:http://localhost:8080/ejb-examples[] .
 
 === OpenEJB iTests
 
 OpenEJB uses a large test suite to verify the final server assembly, and you can use this to verify your OpenEJB installation.
-Simply download the link:http://people.apache.org/~dain/openejb-temp/itests[openejb-itests.war and openejb-standalone-client.jar]  and copy it the war into the Tomcat webapps directory.
+Simply download the link:https://people.apache.org/~dain/openejb-temp/itests[openejb-itests.war and openejb-standalone-client.jar]  and copy it the war into the Tomcat webapps directory.
 It will take a bit to load the application because it contains a huge number of EJBs.
 Finally, run the test client executable jar.
 

@@ -64,18 +64,18 @@ Leading the charge on 500 tests being ported is astonishing.
 
 The tests in question are located more or less here:
 
-* svn co http://svn.apache.org/repos/asf/activemq/trunk
-* svn co http://svn.apache.org/repos/asf/bval/trunk
-* svn co http://svn.apache.org/repos/asf/cxf/trunk
-* svn co http://svn.apache.org/repos/asf/myfaces/core/trunk
-* svn co http://svn.apache.org/repos/asf/tomee/tomee/trunk/itests
-* svn co http://svn.apache.org/repos/asf/openjpa/branches/2.2.x
-* svn co http://svn.apache.org/repos/asf/openwebbeans/trunk
-* svn co http://svn.apache.org/repos/asf/tomcat/tc7.0.x/trunk
+* svn co https://svn.apache.org/repos/asf/activemq/trunk
+* svn co https://svn.apache.org/repos/asf/bval/trunk
+* svn co https://svn.apache.org/repos/asf/cxf/trunk
+* svn co https://svn.apache.org/repos/asf/myfaces/core/trunk
+* svn co https://svn.apache.org/repos/asf/tomee/tomee/trunk/itests
+* svn co https://svn.apache.org/repos/asf/openjpa/branches/2.2.x
+* svn co https://svn.apache.org/repos/asf/openwebbeans/trunk
+* svn co https://svn.apache.org/repos/asf/tomcat/tc7.0.x/trunk
 
 While not part of TomEE, Wink has some wonderful JAX-RS tests we could use:
 
-* svn co http://svn.apache.org/repos/asf/wink/trunk
+* svn co https://svn.apache.org/repos/asf/wink/trunk
 
 At this stage there's still quite a lot of information needed to mobilize the troops.
 How to write Arquillian tests, which tests are most important, how should they be divided?

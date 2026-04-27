@@ -14,7 +14,7 @@ This page serves as a link collector to different resources available to contrib
 An overview over all TomEE repositories hosted at the ASF infrastructure can be found link:https://gitbox.apache.org/repos/asf#tomee[here].
 Most of them are mirrored to link:https://github.com/search?q=org%3Aapache+tomee[GitHub].
 
-Some legacy code is served from link:http://svn.apache.org/viewvc/tomee/[SVN].
+Some legacy code is served from link:https://svn.apache.org/viewvc/tomee/[SVN].
 
 == Quick Links
 === TomEE 8

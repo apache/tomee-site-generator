@@ -6,9 +6,9 @@
 
 Apache has a few roles that relate to all Apache projects:
 
-* Contributors http://www.apache.org/dev/contributors.html
-* Committers http://www.apache.org/dev/committers.html
-* PMC Members http://www.apache.org/dev/pmc.html
+* Contributors https://www.apache.org/dev/contributors.html
+* Committers https://www.apache.org/dev/committers.html
+* PMC Members https://www.apache.org/dev/pmc.html
 
 Despite there being various roles, we try extremely hard to keep the project flat.
 All feedback is welcome, all people matter.

@@ -16,8 +16,8 @@ NOTE: The next (broken) link on the current site points to an apparently generat
 
 If you love the project and want to see it grow, follow it on Facebook and Twitter.
 
-* http://twitter.com/ApacheTomEE
-* http://facebook.com/ApacheTomEE
+* https://twitter.com/ApacheTomEE
+* https://facebook.com/ApacheTomEE
 
 The more people we reach the more the project grows.
 
@@ -42,136 +42,136 @@ If you want to edit the xref:{examples-vc}::index.adoc[Examples Documentation] t
 |===
 | link:mailto:adc@apache.org[Alan Cabrera]
 | Committer, PMC
-| http://people.apache.org/~adc[adc]
-| http://people.apache.org/map.html?adc[map]
+| https://people.apache.org/~adc[adc]
+| https://people.apache.org/map.html?adc[map]
 
 | link:mailto:ammulder@apache.org[Aaron Mulder]
 | Committer
-| http://people.apache.org/~ammulder[ammulder]
-| http://people.apache.org/map.html?ammulder[map]
+| https://people.apache.org/~ammulder[ammulder]
+| https://people.apache.org/map.html?ammulder[map]
 
 | link:mailto:andygumbrecht@apache.org[Andrew Gumbrecht]
 | Committer
-| http://people.apache.org/~andygumbrecht[andygumbrecht]
-| http://people.apache.org/map.html?andygumbrecht[map]
+| https://people.apache.org/~andygumbrecht[andygumbrecht]
+| https://people.apache.org/map.html?andygumbrecht[map]
 
 | link:mailto:dain@apache.org[Dain Sundstrom]
 | Committer, PMC
-| http://people.apache.org/~dain[dain]
-| http://people.apache.org/map.html?dain[map]
+| https://people.apache.org/~dain[dain]
+| https://people.apache.org/map.html?dain[map]
 
 | link:mailto:dblevins@apache.org[David Blevins]
 | Founder, Chair
-| http://people.apache.org/~dblevins[dblevins]
-| http://people.apache.org/map.html?dblevins[map]
+| https://people.apache.org/~dblevins[dblevins]
+| https://people.apache.org/map.html?dblevins[map]
 
 | link:mailto:djencks@apache.org[David Jencks]
 | Committer, PMC
-| http://people.apache.org/~djencks[djencks]
-| http://people.apache.org/map.html?djencks[map]
+| https://people.apache.org/~djencks[djencks]
+| https://people.apache.org/map.html?djencks[map]
 
 | link:mailto:dsh@apache.org[Daniel Stefan Haischt]
 | Committer
-| http://people.apache.org/~dsh[dsh]
-| http://people.apache.org/map.html?dsh[map]
+| https://people.apache.org/~dsh[dsh]
+| https://people.apache.org/map.html?dsh[map]
 
 | link:mailto:gawor@apache.org[Jarek Gawor]
 | Committer
-| http://people.apache.org/~gawor[gawor]
-| http://people.apache.org/map.html?gawor[map]
+| https://people.apache.org/~gawor[gawor]
+| https://people.apache.org/map.html?gawor[map]
 
 | link:mailto:gdamour@apache.org[Gianny Damour]
 | Committer
-| http://people.apache.org/~gdamour[gdamour]
-| http://people.apache.org/map.html?gdamour[map]
+| https://people.apache.org/~gdamour[gdamour]
+| https://people.apache.org/map.html?gdamour[map]
 
 | link:mailto:genspring@apache.org[Lin Quan Jiang]
 | Committer
-| http://people.apache.org/~genspring[genspring]
-| http://people.apache.org/map.html?genspring[map]
+| https://people.apache.org/~genspring[genspring]
+| https://people.apache.org/map.html?genspring[map]
 
 | link:mailto:hogstrom@apache.org[Matt Richard Hogstrom]
 | Committer
-| http://people.apache.org/~hogstrom[hogstrom]
-| http://people.apache.org/map.html?hogstrom[map]
+| https://people.apache.org/~hogstrom[hogstrom]
+| https://people.apache.org/map.html?hogstrom[map]
 
 | link:mailto:jgallimore@apache.org[Jonathan Gallimore]
 | Committer, PMC
-| http://people.apache.org/~jgallimore[jgallimore]
-| http://people.apache.org/map.html?jgallimore[map]
+| https://people.apache.org/~jgallimore[jgallimore]
+| https://people.apache.org/map.html?jgallimore[map]
 
 | link:mailto:jgenender@apache.org[Jeff Genender]
 | Committer
-| http://people.apache.org/~jgenender[jgenender]
-| http://people.apache.org/map.html?jgenender[map]
+| https://people.apache.org/~jgenender[jgenender]
+| https://people.apache.org/map.html?jgenender[map]
 
 | link:mailto:jlaskowski@apache.org[Jacek Laskowski]
 | Committer, PMC
-| http://people.apache.org/~jlaskowski[jlaskowski]
-| http://people.apache.org/map.html?jlaskowski[map]
+| https://people.apache.org/~jlaskowski[jlaskowski]
+| https://people.apache.org/map.html?jlaskowski[map]
 
 | link:mailto:jlmonteiro@apache.org[Jean-Louis Monteiro]
 | Committer, PMC
-| http://people.apache.org/~jlmonteiro[jlmonteiro]
-| http://people.apache.org/map.html?jlmonteiro[map]
+| https://people.apache.org/~jlmonteiro[jlmonteiro]
+| https://people.apache.org/map.html?jlmonteiro[map]
 
 | link:mailto:jvanzyl@apache.org[Jason van Zyl]
 | Committer
-| http://people.apache.org/~jvanzyl[jvanzyl]
-| http://people.apache.org/map.html?jvanzyl[map]
+| https://people.apache.org/~jvanzyl[jvanzyl]
+| https://people.apache.org/map.html?jvanzyl[map]
 
 | link:mailto:jwhitlock@apache.org[Jeremy Whitlock]
 | Committer
-| http://people.apache.org/~jwhitlock[jwhitlock]
-| http://people.apache.org/map.html?jwhitlock[map]
+| https://people.apache.org/~jwhitlock[jwhitlock]
+| https://people.apache.org/map.html?jwhitlock[map]
 
 | link:mailto:kevan@apache.org[Kevan Lee Miller]
 | Committer, PMC
-| http://people.apache.org/~kevan[kevan]
-| http://people.apache.org/map.html?kevan[map]
+| https://people.apache.org/~kevan[kevan]
+| https://people.apache.org/map.html?kevan[map]
 
 | link:mailto:kmalhi@apache.org[Karan Singh Malhi]
 | Committer
-| http://people.apache.org/~kmalhi[kmalhi]
-| http://people.apache.org/map.html?kmalhi[map]
+| https://people.apache.org/~kmalhi[kmalhi]
+| https://people.apache.org/map.html?kmalhi[map]
 
 | link:mailto:lajos@apache.org[Lajos Moczar]
 | Committer
-| http://people.apache.org/~lajos[lajos]
-| http://people.apache.org/map.html?lajos[map]
+| https://people.apache.org/~lajos[lajos]
+| https://people.apache.org/map.html?lajos[map]
 
 | link:mailto:manugeorge@apache.org[Manu George]
 | Committer
-| http://people.apache.org/~manugeorge[manugeorge]
-| http://people.apache.org/map.html?manugeorge[map]
+| https://people.apache.org/~manugeorge[manugeorge]
+| https://people.apache.org/map.html?manugeorge[map]
 
 | link:mailto:struberg@apache.org[Mark Struberg]
 | Committer, PMC
-| http://people.apache.org/~struberg[struberg]
-| http://people.apache.org/map.html?struberg[map]
+| https://people.apache.org/~struberg[struberg]
+| https://people.apache.org/map.html?struberg[map]
 
 | link:mailto:mnour@apache.org[Mohammad Nour El-Din]
 | Committer
-| http://people.apache.org/~mnour[mnour]
-| http://people.apache.org/map.html?mnour[map]
+| https://people.apache.org/~mnour[mnour]
+| https://people.apache.org/map.html?mnour[map]
 
 | link:mailto:rickmcguire@apache.org[Richard McGuire]
 | Committer
-| http://people.apache.org/~rickmcguire[rickmcguire]
-| http://people.apache.org/map.html?rickmcguire[map]
+| https://people.apache.org/~rickmcguire[rickmcguire]
+| https://people.apache.org/map.html?rickmcguire[map]
 
 | link:mailto:rmannibucau@apache.org[Romain Manni-Bucau]
 | Committer
-| http://people.apache.org/~rmannibucau[rmannibucau]
-| http://people.apache.org/map.html?rmannibucau[map]
+| https://people.apache.org/~rmannibucau[rmannibucau]
+| https://people.apache.org/map.html?rmannibucau[map]
 
 | link:mailto:tveronezi@apache.org[Thiago Veronezi]
 | Committer
-| http://people.apache.org/~tveronezi[tveronezi]
-| http://people.apache.org/map.html?tveronezi[map]
+| https://people.apache.org/~tveronezi[tveronezi]
+| https://people.apache.org/map.html?tveronezi[map]
 
 | link:mailto:xuhaihong@apache.org[Haihong Xu]
 | Committer
-| http://people.apache.org/~xuhaihong[xuhaihong]
-| http://people.apache.org/map.html?xuhaihong[map]
+| https://people.apache.org/~xuhaihong[xuhaihong]
+| https://people.apache.org/map.html?xuhaihong[map]
 |===

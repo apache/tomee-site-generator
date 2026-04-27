@@ -39,7 +39,7 @@ for n in $@; do
 
   cat /dev/null > $LOG
 
-  echo "Merging r$n - http://svn.apache.org/viewvc?rev=$n&view=rev" >> $LOG
+  echo "Merging r$n - https://svn.apache.org/viewvc?rev=$n&view=rev" >> $LOG
   echo "" >> $LOG
   echo "svn merge -r $m:$n https://svn.apache.org/repos/asf/tomee/tomee/trunk ." >> $LOG
   echo "" >> $LOG
@@ -78,10 +78,10 @@ function fail () { echo $1 >&2; exit 1;}
 mkdir $VER
 (cd $VER
 
-svn export http://svn.apache.org/repos/asf/openejb/tags/openejb-$VER/examples openejb-examples-$VER
+svn export https://svn.apache.org/repos/asf/openejb/tags/openejb-$VER/examples openejb-examples-$VER
 package openejb-examples-$VER && rm -r openejb-examples-$VER
 
-svn export http://svn.apache.org/repos/asf/openejb/tags/openejb-$VER openejb-$VER-src
+svn export https://svn.apache.org/repos/asf/openejb/tags/openejb-$VER openejb-$VER-src
 package openejb-$VER-src && rm -r openejb-$VER-src
 
 for archive in *.{zip,tar.gz}; do
@@ -108,10 +108,10 @@ echo $VER | ssh people.apache.org 'read VER && for n in ~/public_html/stage/repo
 == Release notes
 
 ....
-#set( $rpc = $xmlrpc.connect("dblevins:xxxxx","http://issues.apache.org/jira/rpc/xmlrpc") )
+#set( $rpc = $xmlrpc.connect("dblevins:xxxxx","https://issues.apache.org/jira/rpc/xmlrpc") )
 #set( $version = $rpc.getVersion("OPENEJB", "3.0") )
 #set ( $versionId = $version.id )
-#set ( $jira = $rss.fetch("http://issues.apache.org/jira/secure/IssueNavigator.jspa?view=rss&&pid=12310530&status=5&status=6&fixfor=${versionId}&tempMax=1000&reset=true&decorator=none") )
+#set ( $jira = $rss.fetch("https://issues.apache.org/jira/secure/IssueNavigator.jspa?view=rss&&pid=12310530&status=5&status=6&fixfor=${versionId}&tempMax=1000&reset=true&decorator=none") )
 #set( $issues = $jira.issues )
 
 Apache OpenEJB $version
@@ -151,7 +151,7 @@ Tasks & Sub-Tasks:
 
 Unimplemented Features, bugs, limitations
 
-#set ( $jira = $rss.fetch("http://issues.apache.org/jira/secure/IssueNavigator.jspa?view=rss&&pid=12310530&status=1&status=3&status=4&version=${versionId}&tempMax=1000&reset=true&decorator=none") )
+#set ( $jira = $rss.fetch("https://issues.apache.org/jira/secure/IssueNavigator.jspa?view=rss&&pid=12310530&status=1&status=3&status=4&version=${versionId}&tempMax=1000&reset=true&decorator=none") )
 #set( $issues = $jira.issues )
 
 #foreach ( $issue in $issues.sort("priority") )
@@ -163,5 +163,5 @@ Unimplemented Features, bugs, limitations
 
 some way to dynamically update this would be great.
 
-{code:html} <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">+++<html>++++++<head>++++++<TITLE>+++Apache OpenEJB 3.0+++</TITLE>++++++</head>++++++<body>+++[discrete] === Apache OpenEJB 3.0   {blank}   Packaging Details (or "What Should I Download?")   * OpenEJB Standlone Server:  ** link:openejb-3.0.zip[openejb-3.0.zip]  ** link:openejb-3.0.tar.gz[openejb-3.0.tar.gz] * OpenEJB for Tomcat 6 or Tomcat 5.5:  ** link:openejb.war[openejb.war] * EJB 3.0 and other examples:  ** link:openejb-examples-3.0.zip[openejb-examples-3.0.zip]  ** link:openejb-examples-3.0.tar.gz[openejb-examples-3.0.tar.gz] * Source:  ** link:openejb-3.0-src.zip[openejb-3.0-src.zip]  ** link:openejb-3.0-src.tar.gz[openejb-3.0-src.tar.gz]   Thank you for using http://tomee.apache.org/[OpenEJB]!.
-*The Apache OpenEJB Project* + http://tomee.apache.org/   {blank}</BODY></HTML> # Publishing When all voting is done {code:none} mvn stage:copy -Dsource="http://people.apache.org/~dblevins/stage/repo/" \ -Dtarget="scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository" \ -DsourceRepositoryId=apache.staging \ -DtargetRepositoryId=apache.releases \ -Dversion=3.0 {code:none} $ mv 3.0 /www/www.apache.org/dist/openejb/+++</body>++++++</html>+++
+{code:html} <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">+++<html>++++++<head>++++++<TITLE>+++Apache OpenEJB 3.0+++</TITLE>++++++</head>++++++<body>+++[discrete] === Apache OpenEJB 3.0   {blank}   Packaging Details (or "What Should I Download?")   * OpenEJB Standlone Server:  ** link:openejb-3.0.zip[openejb-3.0.zip]  ** link:openejb-3.0.tar.gz[openejb-3.0.tar.gz] * OpenEJB for Tomcat 6 or Tomcat 5.5:  ** link:openejb.war[openejb.war] * EJB 3.0 and other examples:  ** link:openejb-examples-3.0.zip[openejb-examples-3.0.zip]  ** link:openejb-examples-3.0.tar.gz[openejb-examples-3.0.tar.gz] * Source:  ** link:openejb-3.0-src.zip[openejb-3.0-src.zip]  ** link:openejb-3.0-src.tar.gz[openejb-3.0-src.tar.gz]   Thank you for using https://tomee.apache.org/[OpenEJB]!.
+*The Apache OpenEJB Project* + https://tomee.apache.org/   {blank}</BODY></HTML> # Publishing When all voting is done {code:none} mvn stage:copy -Dsource="https://people.apache.org/~dblevins/stage/repo/" \ -Dtarget="scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository" \ -DsourceRepositoryId=apache.staging \ -DtargetRepositoryId=apache.releases \ -Dversion=3.0 {code:none} $ mv 3.0 /www/www.apache.org/dist/openejb/+++</body>++++++</html>+++

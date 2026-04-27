@@ -21,7 +21,7 @@ If zip was unpacked, _chmod u+x bin/_.sh*
 
 == Download Tomcat
 
-Download Tomcat 6 zip file from link:http://tomcat.apache.org/download-60.cgi#6.0.14[here] .
+Download Tomcat 6 zip file from link:https://tomcat.apache.org/download-60.cgi#6.0.14[here] .
 
 == Unpack Tomcat
 

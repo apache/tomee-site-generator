@@ -11,7 +11,7 @@ server version, protocol implementation, java version, VM implementation, databa
 The idea came from the tests in OpenEJB that do this.
 It took a lot of work to get them to run as part of the maven build and the itest plugin was the result.
 
-Definitely give those a look at:  http://svn.apache.org/viewvc/tomee/tomee/trunk/itests/
+Definitely give those a look at:  https://svn.apache.org/viewvc/tomee/tomee/trunk/itests/
 
 == Plugging in
 
@@ -29,14 +29,14 @@ something the above series of articles hacked around with an odd bit of jelly co
 The new itest plugin was checked into Geronimo with the expectation that Geronimo would also use it.
 After some time of OpenEJB still being the only consumer of it, it was moved into the Maven repository where they keep it in the Maven sandbox.
 
-http://maven.apache.org/plugins-sandbox/itest/
+https://maven.apache.org/plugins-sandbox/itest/
 
 ActiveMQ later started using the itest plugin and now has a large suite of their own JMS specific integration tests.
 
 === In maven 2
 
 The concept of integration tests (itests) has been built into the lifecycle of maven 2, so it is no longer required to have the itest plugin around to get the extra "itest:setup" and "itest:teardown" goals.
-See this document for more info:  http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+See this document for more info:  https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
 
 === In junit setup and teardown
 

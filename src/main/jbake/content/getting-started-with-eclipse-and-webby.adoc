@@ -10,7 +10,7 @@ If you intends to run a Maven WAR project, you can adopt link:https://github.com
 Download and install both Apache TomEE (1.7.2 minimum) and Eclipse IDE (not JavaEE version, because Webby doesn't work if link:https://www.eclipse.org/m2e-wtp[m2eclipse-WTP] is present).
 
 === m2eclipse
-The next thing you need is link:http://www.eclipse.org/m2e[m2eclipse] plugin.
+The next thing you need is link:https://www.eclipse.org/m2e[m2eclipse] plugin.
 If you doesn't have it in your eclipse package, install it like another plugin.
 
 === Webby

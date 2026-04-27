@@ -12,7 +12,7 @@ Please take a look.
 
 == GIT Information for Everyone
 
-You can browse the source code via the http://gitbox.apache.org/repos/asf/tomee.git[web interface].
+You can browse the source code via the https://gitbox.apache.org/repos/asf/tomee.git[web interface].
 
 If you intend to hack on TomEE then it is recommended that you create a https://github.com[GitHub Account] and https://help.github.com/articles/fork-a-repo/[fork] the TomEE repository so that you can submit pull requests (See below).
 
@@ -51,17 +51,17 @@ The official Apache Committer documentation can be found https://gitbox.apache.o
 
 == Continuous integration
 
-Apache TomEE continuous integration relies on http://ci.apache.org/[Apache Buildbot].
-All builders are available http://ci.apache.org/builders[from the page].
+Apache TomEE continuous integration relies on https://ci.apache.org/[Apache Buildbot].
+All builders are available https://ci.apache.org/builders[from the page].
 
-* http://ci.apache.org/builders/tomee-1.7.x-ubuntu[Apache TomEE 1.7.x under Ubuntu]
-* http://ci.apache.org/builders/tomee-trunk-ubuntu[Apache TomEE 2.x under Ubuntu]
-* http://ci.apache.org/builders/tomee-trunk-win-sunjdk[Apache TomEE 2.x under Windows using a Sun/Oracle JDK]
-* http://ci.apache.org/builders/tomee-trunk-win-ibmjdk6[Apache TomEE 2.x under Windows using an IBM JDK]
+* https://ci.apache.org/builders/tomee-1.7.x-ubuntu[Apache TomEE 1.7.x under Ubuntu]
+* https://ci.apache.org/builders/tomee-trunk-ubuntu[Apache TomEE 2.x under Ubuntu]
+* https://ci.apache.org/builders/tomee-trunk-win-sunjdk[Apache TomEE 2.x under Windows using a Sun/Oracle JDK]
+* https://ci.apache.org/builders/tomee-trunk-win-ibmjdk6[Apache TomEE 2.x under Windows using an IBM JDK]
 
 == Maven
 
-To build the code, you'll need to grab a copy of http://maven.apache.org[Apache Maven], version 3.0.5 or later.
+To build the code, you'll need to grab a copy of https://maven.apache.org[Apache Maven], version 3.0.5 or later.
 
 == Memory Settings
 

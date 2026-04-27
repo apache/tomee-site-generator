@@ -78,8 +78,8 @@ can execute commands remotely too
 I wish I were a fish.
 * *tar* - package up some stuff
 * *wget* - download this url
- ** wget http://apache.org
- ** wget -q -O - http://apache.org
+ ** wget https://apache.org
+ ** wget -q -O - https://apache.org
 * *tr* - echo $PATH
 * *uname* - what system am I on?
 

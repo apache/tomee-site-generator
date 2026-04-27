@@ -53,7 +53,7 @@ That is best done as the file itself explains, once you open and view it in a UT
 * Checkout https://dist.apache.org/repos/dist/release/tomee/ via SVN
 * Make a backup of the remote KEYS file just in case
 * Overwrite the old *KEYS* file with your new one that now also contains your key.
-* Go to http://pgp.mit.edu/ and add your ascii armoured key
+* Go to https://pgp.mit.edu/ and add your ascii armoured key
 * Take note of your key fingerprint using **gpg --fingerprint +++<your name="">+++**+++</your>+++
 * Go to https://id.apache.org, log in and fill OpenPGP Public Key Primary Fingerprint with the value of your fingerprint.
 * Create a **backup** of your private and public key and store it in a **save** location.
