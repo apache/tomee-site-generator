@@ -77,42 +77,38 @@
       <artifactId>commons-configuration</artifactId>
       <version>1.10</version>
     </dependency>
+    <!-- Pinned to 3.0.37 because JBake 2.6.7 hard-codes admin/admin to open the embedded
+         "cache" database. OrientDB 3.2 disabled those default credentials and JBake's
+         ContentStore.startup fails with OSecurityAccessException, aborting the bake. -->
     <dependency>
       <groupId>com.orientechnologies</groupId>
       <artifactId>orientdb-core</artifactId>
-      <version>3.2.51</version>
-      <exclusions>
-        <!-- GraalVM 21.3.5 calls sun.misc.Unsafe.ensureClassInitialized, removed in JDK 22+.
-             OrientDB only uses it for JS scripting, which JBake does not exercise. -->
-        <exclusion>
-          <groupId>org.graalvm.sdk</groupId>
-          <artifactId>graal-sdk</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.graalvm.truffle</groupId>
-          <artifactId>truffle-api</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.graalvm.js</groupId>
-          <artifactId>js</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.graalvm.js</groupId>
-          <artifactId>js-scriptengine</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.graalvm.regex</groupId>
-          <artifactId>regex</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.graalvm.tools</groupId>
-          <artifactId>profiler</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.graalvm.tools</groupId>
-          <artifactId>chromeinspector</artifactId>
-        </exclusion>
-      </exclusions>
+      <version>3.0.37</version>
+    </dependency>
+    <!-- OrientDB 3.0.37 pins JNA 4.5.0, which only ships i386/x86_64 native stubs.
+         5.13.0 adds arm64-darwin so the build runs on Apple Silicon. -->
+    <dependency>
+      <groupId>net.java.dev.jna</groupId>
+      <artifactId>jna</artifactId>
+      <version>5.13.0</version>
+    </dependency>
+    <dependency>
+      <groupId>net.java.dev.jna</groupId>
+      <artifactId>jna-platform</artifactId>
+      <version>5.13.0</version>
+    </dependency>
+    <!-- JBake 2.6.7 detects the markdown engine via SPI. Without flexmark on the
+         classpath, *.md content is skipped with "Unable to load a suitable rendering
+         engine for extensions [md]". -->
+    <dependency>
+      <groupId>com.vladsch.flexmark</groupId>
+      <artifactId>flexmark</artifactId>
+      <version>0.62.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.vladsch.flexmark</groupId>
+      <artifactId>flexmark-profile-pegdown</artifactId>
+      <version>0.62.2</version>
     </dependency>
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
