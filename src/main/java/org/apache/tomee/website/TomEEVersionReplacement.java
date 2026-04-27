@@ -17,13 +17,14 @@
 package org.apache.tomee.website;
 
 import org.tomitribe.swizzle.stream.StreamBuilder;
-import org.tomitribe.tio.Dir;
 import org.tomitribe.util.IO;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 /**
  * This class simply looks to replace any instances of ${tomee.version} with the version from the source.
@@ -34,11 +35,15 @@ public class TomEEVersionReplacement {
         final String version = source.getVersion();
         if (version == null || version.trim().length() == 0) return;
 
-        final Dir dir = Dir.from(source.getDir());
-        dir.searchFiles()
-                .filter(File::isFile)
-                .filter(this::isDocsOrExamples)
-                .forEach(f -> this.replaceVersions(f, version));
+        try {
+            Files.walk(source.getDir().toPath())
+                    .filter(Files::isRegularFile)
+                    .map(Path::toFile)
+                    .filter(this::isDocsOrExamples)
+                    .forEach(f -> this.replaceVersions(f, version));
+        } catch (IOException e) {
+            throw new UncheckedIOException("Failed to walk " + source.getDir(), e);
+        }
     }
 
     private boolean isDocsOrExamples(final File file) {

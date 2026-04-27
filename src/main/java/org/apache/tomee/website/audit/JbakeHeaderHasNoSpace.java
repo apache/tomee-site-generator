@@ -17,10 +17,11 @@
 package org.apache.tomee.website.audit;
 
 import org.apache.openejb.loader.IO;
-import org.tomitribe.tio.Dir;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,8 +32,10 @@ import java.util.stream.Collectors;
 public class JbakeHeaderHasNoSpace {
 
     public static void main(String[] args) throws IOException {
-        final Dir dir = Dir.from(new File("/Users/dblevins/work/apache/tomee-site-generator/repos/master"));
-        final List<File> files = dir.searchFiles()
+        final File root = new File("/Users/dblevins/work/apache/tomee-site-generator/repos/master");
+        final List<File> files = Files.walk(root.toPath())
+                .filter(Files::isRegularFile)
+                .map(Path::toFile)
                 .filter(file -> file.getName().endsWith(".adoc"))
                 .collect(Collectors.toList());
         for (final File file : files) {
