@@ -119,6 +119,15 @@
       <groupId>org.tomitribe</groupId>
       <artifactId>tomitribe-tio</artifactId>
       <version>0.5</version>
+      <!-- tomitribe-tio leaks Lombok 1.18.12 as a compile dep, which the JDK 21 javac
+           auto-discovers via SPI and fails to run (LombokProcessor needs JDK internals
+           that 1.18.12 predates). Lombok is only needed when compiling tio itself. -->
+      <exclusions>
+        <exclusion>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.tomitribe</groupId>
