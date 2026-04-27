@@ -220,7 +220,7 @@ public class Javadocs {
                         }
                     });
         } catch (IOException e) {
-            throw new IllegalStateException("Failed to aggregate java sources");
+            throw new IllegalStateException("Failed to aggregate java sources from " + source.getDir(), e);
         }
     }
 
