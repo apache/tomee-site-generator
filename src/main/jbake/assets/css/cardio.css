@@ -1298,54 +1298,8 @@ a.light-white:hover, a.light-white:active {
 
 .contributor-name {
   color: var(--violet);
-  font-size: 1.0em;
-  font-weight: 500;
-  word-break: break-word;
-}
-
-.contributor-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 12px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.contributor-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  border: 1px solid var(--light-gray);
-  border-radius: 6px;
-  background: #fff;
-  text-decoration: none;
-  color: inherit;
-  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
-}
-
-.contributor-card:hover,
-.contributor-card:focus {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-color: var(--violet);
-  text-decoration: none;
-  transform: translateY(-1px);
-}
-
-.contributor-badge {
-  flex: 0 0 auto;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.95em;
-  letter-spacing: 0.5px;
-  font-family: inherit;
+  font-size: 1.7em;
+  margin-bottom: 0.5em;
 }
 
 .photo {

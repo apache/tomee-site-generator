@@ -31,7 +31,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Contributors {
-    private static final Logger log = Logger.getLogger(Contributors.class.getName());
+    private static final Logger log = Logger.getLogger(Github.class.getName());
 
     private Contributors() {
         // no-op

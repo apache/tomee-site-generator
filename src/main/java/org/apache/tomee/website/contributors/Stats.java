@@ -16,12 +16,23 @@
  */
 package org.apache.tomee.website.contributors;
 
+import lombok.Data;
+
 /**
  * We add a contributor's commits, lines added and lines removed together
  * across all repos to create an overall score that is used to sort contributors.
  */
-public record Stats(int commits, int linesAdded, int linesRemoved) {
+@Data
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
+public class Stats {
+    private final int commits;
+    private final int linesAdded;
+    private final int linesRemoved;
 
+    /**
+     * Aggregate the stats from one git repo with the same
+     * contributors stats on another repo
+     */
     public Stats add(final Stats that) {
         return new Stats(
                 this.commits + that.commits,
@@ -51,17 +62,5 @@ public record Stats(int commits, int linesAdded, int linesRemoved) {
         final double average = (commitsPercentage + linesAddedPercentage + linesRemovedPercentage) / 3;
 
         return (int) Math.round(average * 1000000);
-    }
-
-    public int getCommits() {
-        return commits;
-    }
-
-    public int getLinesAdded() {
-        return linesAdded;
-    }
-
-    public int getLinesRemoved() {
-        return linesRemoved;
     }
 }
