@@ -55,6 +55,15 @@
 			<div class="row bottom-footer text-center-mobile">
 				<div class="col-sm-12 light-white">
 					<p>Copyright &copy; 1999-2026 The Apache Software Foundation, Licensed under the Apache License, Version 2.0. Apache TomEE, TomEE, Apache, the Apache logo, and the Apache TomEE project logo are trademarks of The Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+					<p>
+						<a href="https://www.apache.org/" class="light-white">Foundation</a> |
+						<a href="https://www.apache.org/events/current-event.html" class="light-white">Events</a> |
+						<a href="https://www.apache.org/licenses/" class="light-white">License</a> |
+						<a href="https://www.apache.org/security/" class="light-white">Security</a> |
+						<a href="https://www.apache.org/foundation/sponsorship.html" class="light-white">Sponsorship</a> |
+						<a href="https://www.apache.org/foundation/thanks.html" class="light-white">Thanks</a> |
+						<a href="https://privacy.apache.org/policies/privacy-policy-public.html" class="light-white">Privacy</a>
+					</p>
 				</div>
 			</div>
 		</div>
