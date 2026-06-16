@@ -1,0 +1,52 @@
+= Apache TomEE 11.0.0-M1 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+
+This is the first milestone release of TomEE 11 targeting Jakarta EE 11.
+
+Thanks to everyone who contributed code to make this happen.
+
+We would like to highlight and give a shout-out to all our volunteers who have been doing the hard work for EE11, which is also being done in all our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, etc.
+
+Notable changes:
+
+- This is the first TomEE 11 release targeting Jakarta EE 11 and MicroProfile 7.1
+- A bunch of dependency updates due to the move to EE11
+- Passing the standalone TCKs we have set up inside TomEE (Security, Concurrency, Data, REST, MP 7.1, etc.)
+- OpenJPA is still on its TomEE 10 level - the JPA 3.2 PR is not yet included
+
+Please note that we do not pass the full Jakarta EE TCK, nor do we have a fully functional TCK setup at the moment. However, our own full build is green.
+
+Please also note the 11.0.0-M1 release is a milestone release intended for evaluation purposes and should not be used in production.
+
+
+== New Feature
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4530[TOMEE-4530] Jakarta EE 11
+- link:https://issues.apache.org/jira/browse/TOMEE-4594[TOMEE-4594] Jakarta Data 1.0
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4569[TOMEE-4569] TomEE Maven Plugin fails in debug mode in Java 22+
+- link:https://issues.apache.org/jira/browse/TOMEE-4571[TOMEE-4571] TomEE PLUME 10.1.x -  Decrease in performance (Factor 2 or more).
+- link:https://issues.apache.org/jira/browse/TOMEE-4577[TOMEE-4577] Resources with explicit contructor-type set to "String" are broken
+- link:https://issues.apache.org/jira/browse/TOMEE-4603[TOMEE-4603] LinkageError in tomee 10.1 with scope="request"
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4580[TOMEE-4580] Improve clarity of conf.0008 deployment mismatch error
+- link:https://issues.apache.org/jira/browse/TOMEE-4602[TOMEE-4602] Bouncycastle use jdk18on artifacts instead of jdk15to18
+- link:https://issues.apache.org/jira/browse/TOMEE-4574[TOMEE-4574] Add exception details to Assembler#postConstructResources(...)
+- link:https://issues.apache.org/jira/browse/TOMEE-4610[TOMEE-4610] openejb-client: AuthenticationException from JNDIContext.authenticate() loses RemoteException cause
+- link:https://issues.apache.org/jira/browse/TOMEE-4604[TOMEE-4604] Client's HttpConnectionFactory does not strip sslTruststorePassword from outgoing request.
+
+== Task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4600[TOMEE-4600] Remove openejb.cache.cdi-type-resolution-failure / WebAppInjectionResolver
+- link:https://issues.apache.org/jira/browse/TOMEE-4570[TOMEE-4570] Align resource and services-jar.xml type definitions with XBean 4.30 fix to prevent implicit resolution

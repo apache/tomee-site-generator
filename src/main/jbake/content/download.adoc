@@ -10,6 +10,30 @@ You **must** link:https://www.apache.org/info/verification.html[verify] the inte
 
 *SECURITY NOTICE: This software is developed and maintained by unpaid volunteers who donate time as they have it.  There is no guarantee security vulnerabilities will be fixed on any timeline or at all.*
 
+== [[tomee-11]]Apache TomEE 11 (Milestone)
+
+- Jakarta EE 11
+- MicroProfile 7.1
+- Java 17 or higher
+- link:11.0.0-M1/release-notes.html[Release Notes]
+
+IMPORTANT: Apache TomEE 11.0.0-M1 is a milestone release intended for evaluation purposes and should not be used in production. We do not yet pass the full Jakarta EE TCK. Feedback on this release is encouraged.
+
+[cols="2,4*^1",options="header"]
+|===
+|Name|Version|Date|Size|Signatures & Hashes
+|https://www.apache.org/dyn/closer.cgi/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.zip[icon:download[] TomEE Microprofile ZIP] |11.0.0-M1|11 June 2026|69 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.zip.sha512[icon:download[] SHA512]
+|https://www.apache.org/dyn/closer.cgi/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.tar.gz[icon:download[] TomEE Microprofile TAR.GZ] |11.0.0-M1|11 June 2026|69 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.tar.gz.sha512[icon:download[] SHA512]
+|https://www.apache.org/dyn/closer.cgi/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.zip[icon:download[] TomEE Plume ZIP] |11.0.0-M1|11 June 2026|82 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.zip.sha512[icon:download[] SHA512]
+|https://www.apache.org/dyn/closer.cgi/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.tar.gz[icon:download[] TomEE Plume TAR.GZ] |11.0.0-M1|11 June 2026|81 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.tar.gz.sha512[icon:download[] SHA512]
+|https://www.apache.org/dyn/closer.cgi/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.zip[icon:download[] TomEE Plus ZIP] |11.0.0-M1|11 June 2026|74 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.zip.sha512[icon:download[] SHA512]
+|https://www.apache.org/dyn/closer.cgi/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.tar.gz[icon:download[] TomEE Plus TAR.GZ] |11.0.0-M1|11 June 2026|73 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.tar.gz.sha512[icon:download[] SHA512]
+|https://www.apache.org/dyn/closer.cgi/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.zip[icon:download[] TomEE Webprofile ZIP] |11.0.0-M1|11 June 2026|60 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.zip.sha512[icon:download[] SHA512]
+|https://www.apache.org/dyn/closer.cgi/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.tar.gz[icon:download[] TomEE Webprofile TAR.GZ] |11.0.0-M1|11 June 2026|59 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.tar.gz.sha512[icon:download[] SHA512]
+|https://www.apache.org/dyn/closer.cgi/tomee/tomee-11.0.0-M1/tomee-project-11.0.0-M1-source-release.zip[icon:download[] TomEE Project Source Release ZIP] |11.0.0-M1|11 June 2026|22 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/tomee-project-11.0.0-M1-source-release.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/tomee-project-11.0.0-M1-source-release.zip.sha512[icon:download[] SHA512]
+|===
+
+
 == [[tomee-10]]Apache TomEE 10
 
 - Jakarta EE 10

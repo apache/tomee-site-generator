@@ -64,6 +64,40 @@ public class Configuration {
                 new Source("https://github.com/eclipse-ee4j/saaj-api.git", "3.0.0", "jakartaee-10.0-repos/xml-soap-ws-api"),
         };
 
+        final Source[] jakartaEE11 = {
+                new Source("https://github.com/eclipse-ee4j/jaf.git", "2.1.1", "jakartaee-11.0-repos/activation-api"),
+                new Source("https://github.com/eclipse-ee4j/common-annotations-api.git", "3.0.0", "jakartaee-11.0-repos/annotations-api"),
+                new Source("https://github.com/jakartaee/authentication.git", "3.1.0-RELEASE", "jakartaee-11.0-repos/authentication-api"),
+                new Source("https://github.com/jakartaee/authorization.git", "3.0.0-RELEASE", "jakartaee-11.0-repos/authorization-api"),
+                new Source("https://github.com/eclipse-ee4j/batch-api.git", "2.1.1", "jakartaee-11.0-repos/batch-api"),
+                new Source("https://github.com/jakartaee/cdi.git", "4.1.0", "jakartaee-11.0-repos/cdi-api"),
+                new Source("https://github.com/jakartaee/concurrency.git", "3.1.0", "jakartaee-11.0-repos/concurrency-api"),
+                new Source("https://github.com/eclipse-ee4j/jca-api.git", "2.1.0-RELEASE", "jakartaee-11.0-repos/connectors-api"),
+                new Source("https://github.com/jakartaee/data.git", "1.0.1", "jakartaee-11.0-repos/data-api"),
+                new Source("https://github.com/jakartaee/enterprise-beans.git", "4.0.1-RELEASE", "jakartaee-11.0-repos/enterprise-beans-api"),
+                new Source("https://github.com/jakartaee/expression-language.git", "6.0.0-RELEASE-api", "jakartaee-11.0-repos/expression-language-api"),
+                // new Source("https://github.com/jakartaee/faces.git", "4.1.0-RELEASE", "jakartaee-11.0-repos/faces-api"), // NO JAVA SOURCE, ONLY DOC.
+                new Source("https://github.com/eclipse-ee4j/mojarra.git", "4.1.0-RELEASE", "jakartaee-11.0-repos/faces-impl"), // TAKE API FROM MOJARRA IMPL.
+                new Source("https://github.com/eclipse-ee4j/injection-api.git", "2.0.1", "jakartaee-11.0-repos/injection-api"),
+                new Source("https://github.com/jakartaee/interceptors.git", "2.2.0-RELEASE", "jakartaee-11.0-repos/interceptors-api"),
+                new Source("https://github.com/eclipse-ee4j/jsonb-api.git", "3.0.0", "jakartaee-11.0-repos/json-binding-api"),
+                new Source("https://github.com/eclipse-ee4j/jsonp.git", "2.1.1-RELEASE", "jakartaee-11.0-repos/json-processing-api"),
+                new Source("https://github.com/eclipse-ee4j/mail.git", "2.1.1", "jakartaee-11.0-repos/mail-api"),
+                new Source("https://github.com/jakartaee/messaging.git", "3.1.0-RELEASE", "jakartaee-11.0-repos/messaging-api"),
+                new Source("https://github.com/jakartaee/pages.git", "4.0.0-RELEASE", "jakartaee-11.0-repos/server-pages-api"),
+                new Source("https://github.com/eclipse-ee4j/jpa-api.git", "3.2-3.2.0-RELEASE", "jakartaee-11.0-repos/persistence-api"),
+                new Source("https://github.com/jakartaee/rest.git", "4.0.0-RELEASE", "jakartaee-11.0-repos/rest-api"),
+                new Source("https://github.com/jakartaee/security.git", "4.0.0-RELEASE", "jakartaee-11.0-repos/security-api"),
+                new Source("https://github.com/jakartaee/servlet.git", "6.1.0-RELEASE", "jakartaee-11.0-repos/servlet-api"),
+                new Source("https://github.com/eclipse-ee4j/jstl-api.git", "3.0.0-RELEASE", "jakartaee-11.0-repos/jstl-api"),
+                new Source("https://github.com/jakartaee/transactions.git", "2.0.1", "jakartaee-11.0-repos/transactions-api"),
+                new Source("https://github.com/jakartaee/validation.git", "3.1.0", "jakartaee-11.0-repos/validation-api"),
+                new Source("https://github.com/jakartaee/websocket.git", "2.2.0-RELEASE", "jakartaee-11.0-repos/websocket-api"),
+                new Source("https://github.com/eclipse-ee4j/jaxb-api.git", "4.0.0", "jakartaee-11.0-repos/xml-binding-api"),
+                new Source("https://github.com/eclipse-ee4j/jax-ws-api.git", "4.0.0", "jakartaee-11.0-repos/xml-web-services-api"),
+                new Source("https://github.com/eclipse-ee4j/saaj-api.git", "3.0.0", "jakartaee-11.0-repos/xml-soap-ws-api"),
+        };
+
         final Source[] jakartaEE9 = {
                 new Source("https://github.com/eclipse-ee4j/jaf.git", "2.0.1", "jakartaee-9.1-repos/activation-api"),
                 new Source("https://github.com/eclipse-ee4j/common-annotations-api.git", "2.0.0", "jakartaee-9.1-repos/annotations-api"),
@@ -149,6 +183,17 @@ public class Configuration {
                 new Source("https://github.com/eclipse/microprofile-telemetry", "1.1", "microprofile-6.1-repos/telemetry").filterJavadoc(".*/api/src/main/java/.*", ""),
         };
 
+        final Source[] microProfile71 = new Source[]{
+                new Source("https://github.com/eclipse/microprofile-config.git", "3.1", "microprofile-7.1-repos/config").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-fault-tolerance", "4.1", "microprofile-7.1-repos/fault-tolerance").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-health", "4.0.1", "microprofile-7.1-repos/health").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-jwt-auth.git", "2.1", "microprofile-7.1-repos/jwt").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-metrics", "5.1.0", "microprofile-7.1-repos/metrics").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-open-api", "4.1", "microprofile-7.1-repos/open-api").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-rest-client", "4.0", "microprofile-7.1-repos/rest-client").filterJavadoc(".*/api/src/main/java/.*", ""),
+                new Source("https://github.com/eclipse/microprofile-telemetry", "2.1", "microprofile-7.1-repos/telemetry").filterJavadoc(".*/api/src/main/java/.*", ""),
+        };
+
         final Source[] microProfile6 = new Source[]{
                 new Source("https://github.com/eclipse/microprofile-config.git", "3.0.2", "microprofile-6.0-repos/config").filterJavadoc(".*/api/src/main/java/.*", ""),
                 new Source("https://github.com/eclipse/microprofile-fault-tolerance", "4.0.2", "microprofile-6.0-repos/fault-tolerance").filterJavadoc(".*/api/src/main/java/.*", ""),
@@ -197,19 +242,21 @@ public class Configuration {
 //        if (1 == 1) return new Source[0]; // uncomment this line to generate only the main site pages.
         return new Source[]{
                 // TOMEE NEXT
-                new Source("https://github.com/apache/tomee.git", "main", "tomee-10.1", true).related(microProfile61).related(jakartaEE10).javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "tomee-project-11.0.0-M1", "tomee-11.0", true).related(microProfile71).related(jakartaEE11).javadoc("^org.apache.(openejb|tomee).*"),
                 // TOMEE CURRENT
+                new Source("https://github.com/apache/tomee.git", "tomee-10.x", "tomee-10.1", false).related(microProfile61).related(jakartaEE10).javadoc("^org.apache.(openejb|tomee).*"),
             //    new Source("https://github.com/apache/tomee.git", "tomee-9.x", "tomee-9.0", false).related(microProfile5).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
            //     new Source("https://github.com/apache/tomee.git", "tomee-8.x", "tomee-8.0", false).related(microProfile2).related(jakartaEE8).javadoc("^org.apache.(openejb|tomee).*"),
             //    new Source("https://github.com/apache/tomee.git", "tomee-7.1.x", "tomee-7.1", false).javadoc("^org.apache.(openejb|tomee).*"),
           //      new Source("https://github.com/apache/tomee.git", "tomee-7.0.x", "tomee-7.0", false).javadoc("^org.apache.(openejb|tomee).*"),
                 // JAKARTA EE
+                new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v11", "jakartaee-11.0").related(jakartaEE11).javadoc("^jakarta.*"),
                 new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v10", "jakartaee-10.0").related(jakartaEE10).javadoc("^jakarta.*"),
             //    new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v9.1", "jakartaee-9.1").related(jakartaEE9).javadoc("^jakarta.*"),
            //     new Source("https://github.com/eclipse-ee4j/jakartaee-platform.git", "v8", "jakartaee-8.0").related(jakartaEE8).javadoc("^javax.*"),
                 // JAVA EE : no git source for v7 or less, javadoc is at https://docs.oracle.com/javaee/7/api/
                 // MICRO PROFILE
-                // NEXT : new Source("https://github.com/eclipse/microprofile.git", "7.0", "microprofile-7.0").related(microProfile7).label("milestone").javadoc("^org.eclipse.microprofile.*"),
+                new Source("https://github.com/eclipse/microprofile.git", "7.1", "microprofile-7.1").related(microProfile71).javadoc("^org.eclipse.microprofile.*"),
                 new Source("https://github.com/eclipse/microprofile.git", "6.1", "microprofile-6.1").related(microProfile61).javadoc("^org.eclipse.microprofile.*"),
                // new Source("https://github.com/eclipse/microprofile.git", "6.0", "microprofile-6.0").related(microProfile6).javadoc("^org.eclipse.microprofile.*"),
                // new Source("https://github.com/eclipse/microprofile.git", "5.0", "microprofile-5.0").related(microProfile5).javadoc("^org.eclipse.microprofile.*"),
