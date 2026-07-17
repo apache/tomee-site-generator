@@ -74,8 +74,8 @@
                 <div class="col-md-6 d-flex f-column-end accented-block accent-red f-space-between">
                     <div class="block-content">
                         <h5 class="muted">Final Release - Jakarta EE 10</h5>
-                        <h4 class="muted">apache-tomee-10.1.5</h4>
-                        <p>Final Release, Apache TomEE 10.1 implements Jakarta EE 10 with MicroProfile 6.1. It runs on Java 17 or higher.</p>
+                        <h4 class="muted">apache-tomee-10.2.0</h4>
+                        <p>Final Release, Apache TomEE 10.2 implements Jakarta EE 10 with MicroProfile 6.1. It runs on Java 17 or higher.</p>
                     </div>
                     <a class="btn btn-accent btn-primary square"  href="download.html#tomee-10"><i class="icon_plus"></i>Download</a>
 				</div>

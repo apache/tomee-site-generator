@@ -244,7 +244,7 @@ public class Configuration {
                 // TOMEE NEXT
                 new Source("https://github.com/apache/tomee.git", "tomee-project-11.0.0-M1", "tomee-11.0", true).related(microProfile71).related(jakartaEE11).javadoc("^org.apache.(openejb|tomee).*"),
                 // TOMEE CURRENT
-                new Source("https://github.com/apache/tomee.git", "tomee-10.x", "tomee-10.1", false).related(microProfile61).related(jakartaEE10).javadoc("^org.apache.(openejb|tomee).*"),
+                new Source("https://github.com/apache/tomee.git", "tomee-10.x", "tomee-10.2", false).related(microProfile61).related(jakartaEE10).javadoc("^org.apache.(openejb|tomee).*"),
             //    new Source("https://github.com/apache/tomee.git", "tomee-9.x", "tomee-9.0", false).related(microProfile5).related(jakartaEE9).javadoc("^org.apache.(openejb|tomee).*"),
            //     new Source("https://github.com/apache/tomee.git", "tomee-8.x", "tomee-8.0", false).related(microProfile2).related(jakartaEE8).javadoc("^org.apache.(openejb|tomee).*"),
             //    new Source("https://github.com/apache/tomee.git", "tomee-7.1.x", "tomee-7.1", false).javadoc("^org.apache.(openejb|tomee).*"),

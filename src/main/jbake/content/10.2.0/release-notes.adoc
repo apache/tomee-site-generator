@@ -1,0 +1,47 @@
+= Apache TomEE 10.2.0 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+We are excited to announce the release of Apache TomEE 10.2.0!
+
+This is a maintenance release on the TomEE 10 / Jakarta EE 10 line. It ships several bug fixes, including a fix for the
+`LinkageError` with `scope="request"`, improvements to the EJB client (`sslTruststorePassword` is no longer sent in
+outgoing requests, and `AuthenticationException` now retains its `RemoteException` cause), and a large batch of
+dependency upgrades.
+
+We extend our deepest gratitude to everyone who contributed to this release, especially our incredible volunteers
+who worked on TomEE 10 and on fixes in our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, and more.
+
+Your efforts made TomEE 10.2.0 possible!
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4589[TOMEE-4589] openejb reports an error in web.xml which is wrong
+- link:https://issues.apache.org/jira/browse/TOMEE-4603[TOMEE-4603] LinkageError in tomee 10.1 with scope="request"
+- link:https://issues.apache.org/jira/browse/TOMEE-4604[TOMEE-4604] Client's HttpConnectionFactory does not strip sslTruststorePassword from outgoing request
+- link:https://issues.apache.org/jira/browse/TOMEE-4610[TOMEE-4610] openejb-client: AuthenticationException from JNDIContext.authenticate() loses RemoteException cause
+- link:https://issues.apache.org/jira/browse/TOMEE-4620[TOMEE-4620] Misspelled field accesToken in OIDC TokenResponse prevents interoperability with custom JSON providers (Jackson)
+- link:https://issues.apache.org/jira/browse/TOMEE-4631[TOMEE-4631] arquillian-tomee-remote: static "registered" latch breaks container re-registration on a second Arquillian Manager (e.g. failsafe rerunFailingTestsCount)
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4630[TOMEE-4630] ActiveMQ 6.2.7
+- link:https://issues.apache.org/jira/browse/TOMEE-4639[TOMEE-4639] Bouncycastle 1.85
+- link:https://issues.apache.org/jira/browse/TOMEE-4606[TOMEE-4606] Commons Codec 1.22.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4627[TOMEE-4627] Commons Logging 1.4.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4622[TOMEE-4622] CXF 4.1.7
+- link:https://issues.apache.org/jira/browse/TOMEE-4637[TOMEE-4637] Jackson 2.22.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4608[TOMEE-4608] Jakarta Faces / Mojarra 4.0.17
+- link:https://issues.apache.org/jira/browse/TOMEE-4615[TOMEE-4615] Mojarra 4.0.18
+- link:https://issues.apache.org/jira/browse/TOMEE-4638[TOMEE-4638] log4j2 2.26.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4612[TOMEE-4612] Neethi 3.2.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4618[TOMEE-4618] SAAJ 3.0.5
+- link:https://issues.apache.org/jira/browse/TOMEE-4629[TOMEE-4629] saaj-impl 3.0.6
+- link:https://issues.apache.org/jira/browse/TOMEE-4636[TOMEE-4636] Smallrye Config 3.18.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4635[TOMEE-4635] Tomcat 10.1.57
+- link:https://issues.apache.org/jira/browse/TOMEE-4619[TOMEE-4619] opentelemetry-api 1.63.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4633[TOMEE-4633] XBean 4.31
+- Johnzon 2.1.0
