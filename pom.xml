@@ -10,15 +10,34 @@
   <name>Apache TomEE :: WebSite NG</name>
 
   <properties>
-    <tomee.version>10.1.4</tomee.version>
-    <johnzon.version>2.0.2</johnzon.version>
+    <!--Dependency Versions-->
+    <asciidoctorj.version>2.4.3</asciidoctorj.version>
+    <commons-configuration.version>1.10</commons-configuration.version>
     <cxf.version>4.0.5</cxf.version>
+    <flexmark.version>0.62.2</flexmark.version>
+    <groovy.version>3.0.21</groovy.version>
+    <jbake.version>2.6.7</jbake.version>
+    <jffi.version>1.3.13</jffi.version>
+    <jgit.version>7.6.0.202603022253-r</jgit.version>
+    <jna.version>5.13.0</jna.version>
+    <johnzon.version>2.0.2</johnzon.version>
+    <json.version>20240303</json.version>
+    <junit.version>4.13.2</junit.version>
+    <orientdb.version>3.0.37</orientdb.version>
+    <swizzle.version>1.3</swizzle.version>
     <tika.version>2.9.4</tika.version>
+    <tomee.version>10.1.4</tomee.version>
+    <tomitribe-util.version>1.3.10</tomitribe-util.version>
+    <!--Plugin Versions-->
+    <exec-maven.version>1.6.0</exec-maven.version>
+    <maven-compiler.version>3.13.0</maven-compiler.version>
+    <!--Variables-->
     <jbake.http>false</jbake.http>
     <jbake.pdf>false</jbake.pdf>
 
     <site.message>notset</site.message>
-
+    <!--Project Variables-->
+    <maven.compiler.release>21</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -26,7 +45,7 @@
     <dependency>
       <groupId>org.asciidoctor</groupId>
       <artifactId>asciidoctorj</artifactId>
-      <version>2.4.3</version>
+      <version>${asciidoctorj.version}</version>
     </dependency>
     <!-- Github.java uses JAX-RS client + JSON-B; the APIs come transitively from
          johnzon-jsonb (jakarta.json.bind-api) and cxf-rt-rs-client (jakarta.ws.rs-api). -->
@@ -49,11 +68,11 @@
       <groupId>org.apache.tomee</groupId>
       <artifactId>tomee-embedded</artifactId>
       <version>${tomee.version}</version>
-    </dependency>
+   </dependency>
     <dependency>
       <groupId>org.jbake</groupId>
       <artifactId>jbake-core</artifactId>
-      <version>2.6.7</version>
+      <version>${jbake.version}</version>
       <exclusions>
         <exclusion>
           <groupId>org.slf4j</groupId>
@@ -65,7 +84,7 @@
     <dependency>
       <groupId>commons-configuration</groupId>
       <artifactId>commons-configuration</artifactId>
-      <version>1.10</version>
+      <version>${commons-configuration.version}</version>
     </dependency>
     <!-- Pinned to 3.0.37 because JBake 2.6.7 hard-codes admin/admin to open the embedded
          "cache" database. OrientDB 3.2 disabled those default credentials and JBake's
@@ -73,19 +92,19 @@
     <dependency>
       <groupId>com.orientechnologies</groupId>
       <artifactId>orientdb-core</artifactId>
-      <version>3.0.37</version>
+      <version>${orientdb.version}</version>
     </dependency>
     <!-- OrientDB 3.0.37 pins JNA 4.5.0, which only ships i386/x86_64 native stubs.
          5.13.0 adds arm64-darwin so the build runs on Apple Silicon. -->
     <dependency>
       <groupId>net.java.dev.jna</groupId>
       <artifactId>jna</artifactId>
-      <version>5.13.0</version>
+      <version>${jna.version}</version>
     </dependency>
     <dependency>
       <groupId>net.java.dev.jna</groupId>
       <artifactId>jna-platform</artifactId>
-      <version>5.13.0</version>
+      <version>${jna.version}</version>
     </dependency>
     <!-- JBake 2.6.7 detects the markdown engine via SPI. Without flexmark on the
          classpath, *.md content is skipped with "Unable to load a suitable rendering
@@ -93,37 +112,37 @@
     <dependency>
       <groupId>com.vladsch.flexmark</groupId>
       <artifactId>flexmark</artifactId>
-      <version>0.62.2</version>
+      <version>${flexmark.version}</version>
     </dependency>
     <dependency>
       <groupId>com.vladsch.flexmark</groupId>
       <artifactId>flexmark-profile-pegdown</artifactId>
-      <version>0.62.2</version>
+      <version>${flexmark.version}</version>
     </dependency>
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy</artifactId>
-      <version>3.0.21</version>
+      <version>${groovy.version}</version>
     </dependency>
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-templates</artifactId>
-      <version>3.0.21</version>
+      <version>${groovy.version}</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jgit</groupId>
       <artifactId>org.eclipse.jgit</artifactId>
-      <version>7.6.0.202603022253-r</version>
+      <version>${jgit.version}</version>
     </dependency>
     <dependency>
       <groupId>org.tomitribe</groupId>
       <artifactId>swizzle</artifactId>
-      <version>1.3</version>
+      <version>${swizzle.version}</version>
     </dependency>
     <dependency>
       <groupId>org.tomitribe</groupId>
       <artifactId>tomitribe-util</artifactId>
-      <version>1.3.10</version>
+      <version>${tomitribe-util.version}</version>
     </dependency>
     <!-- Tika 2.x split into modular artifacts. DownloadsNG only needs tika-core
          (Metadata, BodyContentHandler, LinkContentHandler, TeeContentHandler, Link,
@@ -143,7 +162,7 @@
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
-      <version>20240303</version>
+      <version>${json.version}</version>
     </dependency>
 
     <!-- jffi 1.3.1 (transitive via JRuby/asciidoctorj) ships only i386/x86_64 native stubs.
@@ -151,19 +170,19 @@
     <dependency>
       <groupId>com.github.jnr</groupId>
       <artifactId>jffi</artifactId>
-      <version>1.3.13</version>
+      <version>${jffi.version}</version>
     </dependency>
     <dependency>
       <groupId>com.github.jnr</groupId>
       <artifactId>jffi</artifactId>
-      <version>1.3.13</version>
+      <version>${jffi.version}</version>
       <classifier>native</classifier>
     </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.2</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -174,15 +193,12 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.13.0</version>
-        <configuration>
-          <release>21</release>
-        </configuration>
+        <version>${maven-compiler.version}</version>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
-        <version>1.6.0</version>
+        <version>${exec-maven.version}</version>
         <executions>
           <execution>
             <id>tomee-site</id>
