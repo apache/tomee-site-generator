@@ -35,6 +35,7 @@ Your efforts made TomEE 10.2.0 possible!
 - link:https://issues.apache.org/jira/browse/TOMEE-4622[TOMEE-4622] CXF 4.1.7
 - link:https://issues.apache.org/jira/browse/TOMEE-4637[TOMEE-4637] Jackson 2.22.1
 - link:https://issues.apache.org/jira/browse/TOMEE-4608[TOMEE-4608] Jakarta Faces / Mojarra 4.0.17
+- link:https://issues.apache.org/jira/browse/TOMEE-4621[TOMEE-4621] Johnzon 2.1.0
 - link:https://issues.apache.org/jira/browse/TOMEE-4615[TOMEE-4615] Mojarra 4.0.18
 - link:https://issues.apache.org/jira/browse/TOMEE-4638[TOMEE-4638] log4j2 2.26.1
 - link:https://issues.apache.org/jira/browse/TOMEE-4612[TOMEE-4612] Neethi 3.2.2
@@ -44,4 +45,3 @@ Your efforts made TomEE 10.2.0 possible!
 - link:https://issues.apache.org/jira/browse/TOMEE-4635[TOMEE-4635] Tomcat 10.1.57
 - link:https://issues.apache.org/jira/browse/TOMEE-4619[TOMEE-4619] opentelemetry-api 1.63.0
 - link:https://issues.apache.org/jira/browse/TOMEE-4633[TOMEE-4633] XBean 4.31
-- Johnzon 2.1.0
