@@ -8,10 +8,10 @@ DirectoryIndex index.html README.html
 
 # Legacy redirects
 Redirect permanent /builds.html                 https://tomee.apache.org/download.html
-Redirect permanent /tomcat.html                 https://tomee.apache.org/apache-tomee.html
-Redirect permanent /3.0/tomcat.html             https://tomee.apache.org/apache-tomee.html
-Redirect permanent /3.0/apache-tomee.html       https://tomee.apache.org/apache-tomee.html
-Redirect permanent /3.0/tomee.html              https://tomee.apache.org/apache-tomee.html
+Redirect permanent /tomcat.html                 https://tomee.apache.org/comparison.html
+Redirect permanent /3.0/tomcat.html             https://tomee.apache.org/comparison.html
+Redirect permanent /3.0/apache-tomee.html       https://tomee.apache.org/comparison.html
+Redirect permanent /3.0/tomee.html              https://tomee.apache.org/comparison.html
 Redirect permanent /download-ng.html            https://tomee.apache.org/download.html
 Redirect permanent /download/index.html         https://tomee.apache.org/download.html
 Redirect permanent /downloads.html              https://tomee.apache.org/download.html
@@ -20,12 +20,12 @@ Redirect permanent /design.html                 https://tomee.apache.org/dev/des
 Redirect permanent /design_appserver.html       https://tomee.apache.org/dev/design-application-server.html
 Redirect permanent /design_assembler.html       https://tomee.apache.org/dev/design-assembler.html
 Redirect permanent /design_bmpcontainer.html    https://tomee.apache.org/dev/design-bmp-entitybean-container.html
-Redirect permanent /design_classicassembler.html        https://tomee.apache.org/dev/design-classic-assembler.html
+Redirect permanent /design_classicassembler.html        https://tomee.apache.org/dev/design-assembler.html
 Redirect permanent /design_cmpcontainer.html    https://tomee.apache.org/dev/design-cmp-entitybean-container.html
 Redirect permanent /design_configfactory.html   https://tomee.apache.org/dev/design-configuration-factory.html
 Redirect permanent /design_container.html       https://tomee.apache.org/dev/design-container.html
 Redirect permanent /design_intravm.html         https://tomee.apache.org/dev/design-local-server.html
-Redirect permanent /design_novaconfig.html      https://tomee.apache.org/dev/design-nova-configuration-factory.html
+Redirect permanent /design_novaconfig.html      https://tomee.apache.org/dev/design-configuration-factory.html
 Redirect permanent /design_openejb.html         https://tomee.apache.org/dev/design.html
 Redirect permanent /design_rafpassivator.html   https://tomee.apache.org/dev/design-random-file-passivator.html
 Redirect permanent /design_remoteserver.html    https://tomee.apache.org/dev/design-remote-server.html
@@ -38,7 +38,7 @@ Redirect permanent /design_stlesscontainer.html https://tomee.apache.org/dev/des
 Redirect permanent /design_txservice.html       https://tomee.apache.org/dev/design-transaction-service.html
 Redirect permanent /embedded-and-remotable.html https://tomee.apache.org/3.0/embedded-and-remotable.html
 
-Redirect permanent /3.0/apache-tomee.html https://tomee.apache.org/apache-tomee.html
+Redirect permanent /3.0/apache-tomee.html https://tomee.apache.org/comparison.html
 Redirect permanent /3.0/jpa-concepts.html https://tomee.apache.org/jpa-concepts.html
 
 
@@ -67,7 +67,7 @@ Redirect permanent /3.0/spring-ejb-and-jpa.html https://tomee.apache.org/spring-
 Redirect permanent /3.0/configuring-persistenceunits-in-tests.html https://tomee.apache.org/configuring-persistenceunits-in-tests.html
 Redirect permanent /3.0/persistence-context.html https://tomee.apache.org/persistence-context.html
 Redirect permanent /3.0/hibernate.html https://tomee.apache.org/hibernate.html
-Redirect permanent /3.0/tomcat.html https://tomee.apache.org/tomcat.html
+Redirect permanent /3.0/tomcat.html https://tomee.apache.org/comparison.html
 Redirect permanent /3.0/ejb-local-ref.html https://tomee.apache.org/ejb-local-ref.html
 Redirect permanent /3.0/ejb-refs.html https://tomee.apache.org/ejb-refs.html
 Redirect permanent /3.0/security-annotations.html https://tomee.apache.org/security-annotations.html
@@ -83,14 +83,14 @@ Redirect permanent /3.0/deploy-tool.html https://tomee.apache.org/deploy-tool.ht
 Redirect permanent /3.0/examples.html https://tomee.apache.org/examples.html
 Redirect permanent /3.0/embedded-configuration.html https://tomee.apache.org/embedded-configuration.html
 Redirect permanent /3.0/javaagent-with-maven-surefire.html https://tomee.apache.org/javaagent-with-maven-surefire.html
-Redirect permanent /3.0/tomcat-detailed-instructions.html https://tomee.apache.org/tomcat-detailed-instructions.html
+Redirect permanent /3.0/tomcat-detailed-instructions.html https://tomee.apache.org/comparison.html
 Redirect permanent /3.0/jms-resources-and-mdb-container.html https://tomee.apache.org/jms-resources-and-mdb-container.html
 Redirect permanent /3.0/spring.html https://tomee.apache.org/spring.html
 Redirect permanent /3.0/startup.html https://tomee.apache.org/startup.html
 Redirect permanent /3.0/service-locator.html https://tomee.apache.org/service-locator.html
 Redirect permanent /3.0/singleton-beans.html https://tomee.apache.org/singleton-beans.html
 Redirect permanent /3.0/containers-and-resources.html https://tomee.apache.org/containers-and-resources.html
-Redirect permanent /3.0/tomcat-ejb-refs.html https://tomee.apache.org/tomcat-ejb-refs.html
+Redirect permanent /3.0/tomcat-ejb-refs.html https://tomee.apache.org/comparison.html
 Redirect permanent /3.0/application-discovery-via-the-classpath.html https://tomee.apache.org/application-discovery-via-the-classpath.html
 Redirect permanent /3.0/failover.html https://tomee.apache.org/ejb-failover.html
 Redirect permanent /3.0/clients.html https://tomee.apache.org/clients.html
@@ -115,7 +115,7 @@ Redirect permanent /3.0/system-properties.html https://tomee.apache.org/system-p
 Redirect permanent /3.0/configuring-logging-in-tests.html https://tomee.apache.org/configuring-logging-in-tests.html
 Redirect permanent /3.0/spring-and-openejb-30.html https://tomee.apache.org/spring-and-openejb-30.html
 Redirect permanent /3.0/configuring-datasources-in-tests.html https://tomee.apache.org/configuring-datasources-in-tests.html
-Redirect permanent /3.0/tomcat-installation.html https://tomee.apache.org/tomcat-installation.html
+Redirect permanent /3.0/tomcat-installation.html https://tomee.apache.org/comparison.html
 Redirect permanent /3.0/webapp-based-ejbs.html https://tomee.apache.org/webapp-based-ejbs.html
 Redirect permanent /3.0/openejbxml.html https://tomee.apache.org/openejbxml.html
 Redirect permanent /3.0/security.html https://tomee.apache.org/security.html
@@ -142,7 +142,7 @@ Redirect permanent /3.0/collapsed-ear-on-linux.html https://tomee.apache.org/col
 Redirect permanent /3.0/app-clients-and-jndi.html https://tomee.apache.org/app-clients-and-jndi.html
 Redirect permanent /3.0/built-in-type-converters.html https://tomee.apache.org/built-in-type-converters.html
 Redirect permanent /3.0/configuring-durations.html https://tomee.apache.org/configuring-durations.html
-Redirect permanent /3.0/design-classic-assembler.html https://tomee.apache.org/design-classic-assembler.html
+Redirect permanent /3.0/design-classic-assembler.html https://tomee.apache.org/dev/design-assembler.html
 Redirect permanent /3.0/design-random-access-file-passivater.html https://tomee.apache.org/design-random-access-file-passivater.html
 Redirect permanent /3.0/users-guide.html https://tomee.apache.org/users-guide.html
 Redirect permanent /3.0/configuration-properties.html https://tomee.apache.org/configuration-properties.html
@@ -152,7 +152,7 @@ Redirect permanent /3.0/design-transaction-service.html https://tomee.apache.org
 Redirect permanent /3.0/hello-world.html https://tomee.apache.org/hello-world.html
 Redirect permanent /3.0/online-javadocs.html https://tomee.apache.org/online-javadocs.html
 Redirect permanent /3.0/design-bmp-entitybean-container.html https://tomee.apache.org/design-bmp-entitybean-container.html
-Redirect permanent /3.0/design-nova-configuration-factory.html https://tomee.apache.org/design-nova-configuration-factory.html
+Redirect permanent /3.0/design-nova-configuration-factory.html https://tomee.apache.org/dev/design-configuration-factory.html
 Redirect permanent /3.0/design-resource-manager.html https://tomee.apache.org/design-resource-manager.html
 Redirect permanent /3.0/design-simple-passivater.html https://tomee.apache.org/design-simple-passivater.html
 Redirect permanent /3.0/design-stateless-sessionbean-container.html https://tomee.apache.org/design-stateless-sessionbean-container.html
@@ -160,3 +160,43 @@ Redirect permanent /3.0/design.html https://tomee.apache.org/design.html
 Redirect permanent /3.0/documentation.html https://tomee.apache.org/documentation.html
 Redirect permanent /3.0/embedding.html https://tomee.apache.org/embedding.html
 Redirect permanent /3.0/introduction-to-the-command-line-tools.html https://tomee.apache.org/introduction-to-the-command-line-tools.html
+
+# Pages removed because the features or modules they describe no longer exist
+Redirect permanent /features.html https://tomee.apache.org/docs.html
+Redirect permanent /azure.html https://tomee.apache.org/docs.html
+Redirect permanent /community/culture.html https://tomee.apache.org/community/index.html
+Redirect permanent /webobjects.html https://tomee.apache.org/docs.html
+Redirect permanent /tck-results.html https://tomee.apache.org/comparison.html
+Redirect permanent /enterprise-tomcat.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-ejb.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-java-ee.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-javaee.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-jaxrs.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-jaxws.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-jsf.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-installation.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-detailed-instructions.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-object-factory.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-activemq.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-cdi.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-jms.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-jpa.html https://tomee.apache.org/comparison.html
+Redirect permanent /tomcat-ejb-refs.html https://tomee.apache.org/comparison.html
+Redirect permanent /webadmin.html https://tomee.apache.org/docs.html
+Redirect permanent /geronimo.html https://tomee.apache.org/docs.html
+Redirect permanent /getting-started-with-eclipse-and-webby.html https://tomee.apache.org/docs.html
+Redirect permanent /faq.html https://tomee.apache.org/docs.html
+Redirect permanent /time-saved.html https://tomee.apache.org/docs.html
+Redirect permanent /articles.html https://tomee.apache.org/docs.html
+Redirect permanent /powered-by.html https://tomee.apache.org/docs.html
+Redirect permanent /dev/openejb-release-process.html https://tomee.apache.org/dev/release-tomee.html
+Redirect permanent /dev/logging.html https://tomee.apache.org/docs.html
+Redirect permanent /dev/building-from-source.html https://tomee.apache.org/community/sources.html
+Redirect permanent /dev/design-nova-configuration-factory.html https://tomee.apache.org/dev/design-configuration-factory.html
+Redirect permanent /dev/design-classic-assembler.html https://tomee.apache.org/dev/design-assembler.html
+Redirect permanent /dev/website-dev.html https://tomee.apache.org/community/contributing/website.html
+Redirect permanent /dev/contribution-tips.html https://tomee.apache.org/community/contributing/contribution-tips.html
+Redirect permanent /dev/take-my-code.html https://tomee.apache.org/community/contributing/workflow.html
+Redirect permanent /dev/validation-keys-audit-report.html https://tomee.apache.org/dev/writing-validation-tests.html
+Redirect permanent /dev/roadmap.html https://tomee.apache.org/community/index.html
+Redirect permanent /dev/cdi-tck-webappsdeployer.html https://tomee.apache.org/community/index.html

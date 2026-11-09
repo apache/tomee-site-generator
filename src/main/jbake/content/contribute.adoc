@@ -6,7 +6,7 @@ Contributing to the project is a great way to support the community.
 Some great links for getting involved
 
 * xref:dev/source-code.adoc[Source Code]
-* xref:dev/contribution-tips.adoc[Contribution Tips]
+* xref:community/contributing/contribution-tips.adoc[Contribution Tips]
 
 NOTE: The next (broken) link on the current site points to an apparently generated list of pages in dev.
 

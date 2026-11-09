@@ -10,7 +10,7 @@ This page contains a list of JIRA issues that are open and not assigned to anyon
 
 **Note "Major" and "Minor" refer to priority and not effort required to complete a task.**
 
-When looking for a task for first-time contributors, we highly encourage people to start small and find something simple and quick.  See also [Contribution Tips](../contribution-tips.html)
+When looking for a task for first-time contributors, we highly encourage people to start small and find something simple and quick.  See also [Contribution Tips](../../community/contributing/contribution-tips.html)
 
 #foreach( $p in $priorities )
 #$p

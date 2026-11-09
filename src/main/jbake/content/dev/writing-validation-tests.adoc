@@ -97,17 +97,6 @@ If count is not equal to 2 or some other Validation Failure/Warning/Error was al
 NOTE: Be Careful The test must cause a Validation Failure otherwise the test framework does not get invoked.
 For example, in the above code, a Key of type WARNING is being tested, however the test is purposely being failed by putting an `@AroundInvoke` around the method with zero arguments
 
-[start=5]
-. Once you have written the test and successfully run it, you now need to generate the report.
-Simply invoke the following maven command
-
-[source,console]
-----
-mvn test -Dtest=ValidationKeysAuditorTest -DconfluenceUsername=YourConfluenceUsername -DconfluencePassword=YourConfluencePassword
-----
-
-The above command will create a complete test coverage report and post it to this location xref:validation-keys-audit-report.adoc[Validation Keys Audit Report]
-
 === Quick facts about ValidationRunner and things to keep in mind while writing tests
 
 This class is created specifically to write tests which test OpenEjb validation code.

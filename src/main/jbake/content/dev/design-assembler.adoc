@@ -28,4 +28,4 @@ Doing this comes with large amounts of resposibility and complexity and should n
 
 == Implementations
 
-* xref:design-classic-assembler.adoc[Classic Assembler]
+* org.apache.openejb.assembler.classic.Assembler
