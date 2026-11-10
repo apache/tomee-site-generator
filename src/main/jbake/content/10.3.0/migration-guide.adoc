@@ -1,0 +1,384 @@
+= Migrating to Apache TomEE 10.3.0
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+:toc:
+
+TomEE 10.3.0 contains a large number of security hardening changes. Many of them tighten defaults that earlier TomEE
+versions left open, so applications and deployments that relied on the old behavior need to be adjusted. This guide
+lists every change that can affect an upgrade from TomEE 10.2.x, explains who is affected, and shows what to change.
+Where TomEE offers a switch to restore the previous behavior, it is listed as well. Use these switches only as a
+temporary measure: they re-open the issue the change fixed.
+
+See the link:release-notes.html[release notes] for the full list of changes.
+
+System properties mentioned in this guide can be set in `conf/system.properties` or passed as `-D` options to the JVM,
+unless the section says otherwise.
+
+== Removed Modules
+
+The following modules are no longer built or published. None of them was part of a TomEE distribution by default.
+
+[cols="1,2,2",options="header"]
+|===
+|Module|What it provided|Replacement
+|`openejb-hessian` (link:https://issues.apache.org/jira/browse/TOMEE-4700[TOMEE-4700])
+|The `hessian` server service exposing `@Remote` EJBs over Hessian, `HessianInitialContextFactory` and the CDI `@Hessian` client injection
+|EJBd (`ejbd`/`ejbds`, or EJBd over HTTP at `/tomee/ejb`), JAX-RS or JAX-WS
+|`openejb-ssh` (link:https://issues.apache.org/jira/browse/TOMEE-4701[TOMEE-4701])
+|The `ssh` service (port 4222), a JAAS-authenticated administration shell
+|JMX, `tomee-maven-plugin` or remote deployment through the Deployer, the `bin/openejb` and `bin/tomee` commands
+|`openejb-common-cli` (link:https://issues.apache.org/jira/browse/TOMEE-4702[TOMEE-4702])
+|The command framework behind the SSH shell
+|None needed. The `bin/openejb` commands (`start`, `stop`, `deploy`, `cipher`, ...) are not affected.
+|`openejb-http` (link:https://issues.apache.org/jira/browse/TOMEE-4707[TOMEE-4707])
+|The standalone HTTP server (`httpejbd` service, port 4204) used by OpenEJB standalone and embedded containers, including its Jetty backend and the embedded JAX-RS/JAX-WS registries
+|TomEE, TomEE embedded or the Arquillian TomEE adapters. EJBd over HTTP is available in TomEE at `/tomee/ejb` with `tomee.remote.support=true`.
+|===
+
+Removing `openejb-http` has these further consequences:
+
+* OpenEJB standalone, `ApplicationComposer`, `EJBContainer` and `arquillian-openejb-embedded` no longer serve JAX-RS or
+  JAX-WS endpoints over HTTP. The `conf/httpejbd.properties` file, the `httpejbd.*` properties and the
+  `--httpejbd-bind`/`--httpejbd-port` options are gone.
+* `@EnableServices` no longer has the `jaxrs`, `jaxws` and `httpDebug` attributes, and `@JaxrsProviders` no longer has
+  `applicationName`. Tests that used them need to move to TomEE embedded or Arquillian.
+* The `org.apache.openejb.server.httpd.ServerServlet` class is now `org.apache.tomee.catalina.remote.ServerServlet`.
+  If your `web.xml` declares this servlet to expose EJBd over HTTP, update the class name. `EEFilter`,
+  `BeginWebBeansListener` and `EndWebBeansListener` moved to the `org.apache.tomee.catalina` package as well.
+* The default of `openejb.rest.wildcard` changed from `.*` to `*`.
+
+== Build Tools
+
+=== Maven 3.10.0 or newer
+
+The TomEE Maven plugins no longer use the Maven 2 API
+(link:https://issues.apache.org/jira/browse/TOMEE-4705[TOMEE-4705]). `tomee-maven-plugin` and the other TomEE Maven
+plugins now require Maven 3.10.0 or newer and Java 17. Plugin coordinates, goals and parameters are unchanged.
+
+=== Gradle plugin
+
+The Gradle plugin is built against the current Gradle API
+(link:https://issues.apache.org/jira/browse/TOMEE-4706[TOMEE-4706]) and works with Gradle 8.x and 9.x. The plugin id
+`org.apache.tomee.tomee-embedded` and its DSL are unchanged.
+
+=== quickSession defaults to false
+
+The `quickSession` option makes the dev tooling generate session ids with a non-secure random generator. It now
+defaults to `false` in:
+
+* `tomee-maven-plugin` (`quickSession`, user property `tomee-plugin.quick-session`)
+* `tomee-embedded-maven-plugin` (user property `tomee-embedded-plugin.quickSession`)
+* TomEE embedded (`Configuration.quickSession`)
+* the Gradle `tomee-embedded` task (`quickSession`)
+
+Startup can be slightly slower on systems with little entropy. Set the option to `true` to restore the previous behavior.
+
+=== LiveReload only listens on localhost
+
+The LiveReload connector of `tomee-embedded-maven-plugin` (port 35729) now binds to `localhost` and rejects WebSocket
+handshakes whose `Origin` is not a loopback address. Browser extensions and requests without an `Origin` are still
+accepted. If you use LiveReload from another machine, a VM or a container host, configure:
+
+[source,xml]
+----
+<liveReload>
+  <host>0.0.0.0</host>
+  <allowAnyOrigin>true</allowAnyOrigin>
+</liveReload>
+----
+
+=== Credentials over plain HTTP
+
+The `tomee-maven-plugin` command goals (`deploy`, `undeploy`, ...) log a warning when they send a user and password to a
+non-local host over plain HTTP. Configure an HTTPS port with `tomee-plugin.https` and set
+`tomee-plugin.command-force-https=true` to send credentials over HTTPS.
+
+== MicroProfile JWT
+
+=== The MP-JWT filter requires authMethod "MP-JWT"
+
+Before, any class annotated with `@LoginConfig` enabled MP-JWT processing, whatever its `authMethod`. Now JWT
+processing is only enabled for:
+
+[source,java]
+----
+@LoginConfig(authMethod = "MP-JWT")
+----
+
+Applications that use a different `authMethod` (for example `BASIC`) and still expect bearer tokens to be accepted must
+change it to `MP-JWT`.
+
+=== Role constraints are resolved per resource class
+
+`@RolesAllowed`, `@PermitAll` and `@DenyAll` are now resolved for each resource class separately:
+
+* A method inherited by several resource classes no longer gets the union of the roles of all these classes. Each class
+  gets the roles declared for it.
+* An empty `@RolesAllowed({})` denies all callers (HTTP 403). Before, it allowed everyone. Use `@PermitAll` if the
+  method should be public.
+* An unannotated subclass inherits the class-level annotation of an annotated superclass for the methods it inherits
+  (link:https://issues.apache.org/jira/browse/TOMEE-4730[TOMEE-4730]). Such endpoints were unprotected before and now
+  return 401 or 403 for callers without the required role. A class carrying more than one of these annotations fails
+  the deployment.
+
+Review resources that use inheritance or empty role lists.
+
+=== Negative clock skew is rejected
+
+A negative `mp.jwt.verify.clock.skew` used to disable the expiry check of tokens. It now fails the deployment with a
+`DeploymentException`. Set the value to `0` or a positive number of seconds.
+
+== Authentication and Identity Stores
+
+=== LDAP identity store
+
+* Caller names are escaped (RFC 4515) when TomEE builds search filters, and DNs built from `callerBaseDn` are escaped
+  as well. If your application escaped caller names itself, remove that code, since names would now be escaped twice.
+  Caller names containing `*`, `(`, `)` or `\` no longer act as wildcards or filter syntax.
+* A caller with an empty or missing password is rejected without a bind attempt. Before, an LDAP server allowing
+  anonymous binds accepted such logins.
+
+=== Login modules
+
+* `SQLLoginModule` rejects users whose stored password is `NULL`. Before, such users could log in without a password.
+  Give these users a password or remove them.
+* `PropertiesLoginModule` reports `Username or password does not match` for both an unknown user and a wrong password.
+  Update anything that parses the old messages.
+
+=== PBKDF2 password hashes
+
+`TomEEPbkdf2PasswordHash` now only accepts the algorithms `PBKDF2WithHmacSHA1`, `PBKDF2WithHmacSHA224`,
+`PBKDF2WithHmacSHA256`, `PBKDF2WithHmacSHA384` and `PBKDF2WithHmacSHA512` with at least 1024 iterations, both for new
+hashes and for stored hashes:
+
+* Logins whose stored hash uses fewer iterations or another algorithm fail, and TomEE logs a warning once.
+* `Pbkdf2PasswordHash.Algorithm` or `Pbkdf2PasswordHash.Iterations` parameters outside these limits make the
+  initialization fail with an `IllegalArgumentException`.
+* Malformed stored hashes fail the login instead of throwing an exception.
+
+Rehash affected passwords with stronger parameters. As a temporary measure, set the system property
+`tomee.security.pbkdf2.allow-weak-parameters=true` to accept weak stored hashes. TomEE then logs a warning for each
+weak parameter combination it accepts.
+
+=== Tomcat user identity store
+
+The identity store behind `@TomcatUserIdentityStoreDefinition` now checks passwords with the `CredentialHandler` of the
+`UserDatabaseRealm` in `conf/server.xml` that uses the same user database resource:
+
+* Passwords stored as digests in `tomcat-users.xml` are verified against the password the user enters. Sending the
+  stored digest itself no longer works.
+* A wrong password results in `INVALID` instead of `NOT_VALIDATED`.
+* If no matching realm is found, TomEE compares passwords as plain text and logs a warning.
+
+Make sure the `CredentialHandler` of the realm matches the format of the passwords in `tomcat-users.xml`.
+
+=== Principal names are no longer mapped to roles
+
+A user authenticated by a Tomcat realm was implicitly given a role with the same name as the user (for example user
+`admin` got role `admin`). This no longer happens: roles come only from the realm. Group principals are still mapped
+by name. If your application relied on this, assign the role to the user in the realm.
+
+=== Static3DES password cipher
+
+Using the `Static3DES` password cipher for resource passwords logs a warning: it uses a key shipped with TomEE and
+only obfuscates the password. Nothing breaks, but consider a custom `PasswordCipher` or a `cdi:` cipher.
+
+== Authorization
+
+=== EJB method permissions are enforced on Java 21 and newer
+
+On Java 21 and newer, TomEE 10.2.0 skipped the JACC check for EJB method permissions and logged
+`Skipping JACC authorization checks as TomEE running on JDK 21+`. All callers could invoke EJBs regardless of
+`@RolesAllowed` and `@DenyAll`. TomEE 10.3.0 evaluates these permissions through the installed policy on all JDKs.
+
+If you run on Java 21 or newer, callers without the required role now get an `EJBAccessException`. Check the role
+assignments of your users and the `@RolesAllowed` annotations of your EJBs. If no JACC policy is installed, EJB access
+is denied.
+
+=== Internal EJBs require an admin role
+
+Internal EJBs such as the Deployer (`openejb/DeployerBusinessRemote`) and `ConfigurationInfo` always require the
+`tomee-admin` or `openejb-admin` role. Before, the check was skipped in the default `development` profile. TomEE also
+no longer creates a `tomee`/`tomee` user with the `tomee-admin` role when `tomcat-users.xml` is empty.
+
+Remote deployment, for example with the `tomee-maven-plugin` deploy goals, now needs a user with one of these roles in
+`conf/tomcat-users.xml`:
+
+[source,xml]
+----
+<role rolename="tomee-admin"/>
+<user username="deployer" password="..." roles="tomee-admin"/>
+----
+
+The Arquillian remote adapter, `RemoteTomEEEJBContainer` and `tomee-maven-plugin` with `reloadOnUpdate` disable the
+check themselves for the servers they start. To disable it for a server, set
+`openejb.internal.beans.security.enabled=false`.
+
+== Web Services, JAX-RS and Routing
+
+=== JAX-WS endpoints protect all HTTP methods
+
+The security constraint TomEE generates for EJB web services with an `auth-method` used to cover only `GET` and `POST`.
+It now covers all HTTP methods and denies uncovered methods. `PUT`, `DELETE`, `OPTIONS` and other methods now require
+authentication as well. There is no switch to restore the old behavior.
+
+=== EJB web services in a WAR enforce their auth-method
+
+EJB web services packaged in a WAR were published without applying the `<web-service-security>` settings
+(`auth-method`, `transport-guarantee`, `realm-name`) from `openejb-jar.xml`. They are now enforced:
+
+* Unauthenticated calls, including `?wsdl` requests, get HTTP 401.
+* An `auth-method` other than `BASIC`, `DIGEST`, `CLIENT-CERT` or `NONE` fails the deployment.
+* If the webapp has its own `login-config` with a different method, the webapp setting wins and TomEE logs a warning.
+
+Set `<auth-method>NONE</auth-method>` (or remove it) for endpoints that are meant to be public. Role names are still
+configured with `tomee.jaxws.security-role.<context name>`.
+
+=== JAX-RS responses for EJBException
+
+When an `EJBException` has no mapper of its own, the default JAX-RS mapper used to return the exception message as a
+`text/plain` body. It now returns an empty HTTP 500 response and logs the message on the server. Exceptions whose cause
+has a mapper are not affected.
+
+If clients parse the error body, register your own `ExceptionMapper`. As a temporary measure, set
+`openejb.jaxrs.ejb-exception-mapper.expose-message=true` to restore the old body.
+
+=== RouterValve forwards
+
+Forward routes in `WEB-INF/tomee-router.conf` are normalized and checked before forwarding:
+
+* Targets that are not absolute paths, cannot be decoded or point into `WEB-INF` or `META-INF` get HTTP 404.
+* Targets protected by a security constraint the caller does not satisfy get HTTP 403. Before, the forward bypassed
+  the constraint.
+
+Redirect routes are not affected.
+
+== Remote EJB and Server Services
+
+=== Remote DataSource lookup is disabled
+
+Remote clients could look up a DataSource over EJBd and receive its connection details, including database
+credentials. This is now refused with a `NamingException` (`Remote DataSource lookup is disabled`), for `ejbd`, `ejbds`
+and EJBd over HTTP. Remote EJB calls are not affected.
+
+Clients should not connect to the database with server credentials. If you still need this, set
+`openejb.ejbd.datasource-metadata=true` on the server. This applies to all remote clients.
+
+=== ejbds clients verify the server host name
+
+Clients connecting with `ejbds` now check that the server certificate matches the host in the provider URL. A
+certificate without a matching subject alternative name or common name, for example when connecting by IP address,
+fails the TLS handshake. Issue certificates for the host names clients use. As a temporary measure, start the client
+JVM with `-Dopenejb.client.disableEndpointIdentification=true`. This must be a system property of the client JVM, not a
+JNDI property.
+
+=== No transport downgrade for clients
+
+A client configured with `ejbds`, `zejbds` or `https` ignores cluster and failover locations with a plain scheme
+(logging a warning) and refuses authentication redirects to a plain scheme. If you run a cluster that mixes secure and
+plain transports, configure all members for the secure transport. To restore the old behavior, start the client JVM
+with `-Dopenejb.client.allowTransportDowngrade=true`.
+
+=== only_from is authoritative
+
+When a server service sets `only_from`, only the listed hosts may connect. Localhost and the server's own address are
+no longer admitted implicitly. Add `localhost` (or `127.0.0.1`) to `only_from` if local clients must connect. To restore
+the old behavior, set `openejb.server.only_from.implicit-local=true`.
+
+=== Derby network server binds to localhost
+
+The `derbynet` service ignored its `bind` setting and listened on all interfaces. It now honors it, and the default is
+`127.0.0.1`. Remote JDBC clients of the embedded Derby network server (port 4205) need `-Dderbynet.bind=0.0.0.0` or the
+corresponding setting in the service configuration.
+
+=== Admin port stop requires a secret (OpenEJB standalone)
+
+This only affects OpenEJB standalone (`bin/openejb start`). TomEE does not start the admin service, and
+`catalina.sh stop` uses the Tomcat shutdown port as before.
+
+Stop requests on the admin port (4200) must carry a secret. Requests without it are refused and the server logs
+`Refused stop request without a valid secret`:
+
+* Set a fixed secret with `openejb.admin.shutdown.secret`. Otherwise the server generates one at each start and writes
+  it to `conf/admin-shutdown.secret`, readable only by the server user.
+* `bin/openejb stop` reads the secret from `-s <secret>`, the `openejb.admin.shutdown.secret` property or
+  `conf/admin-shutdown.secret`, so it works unchanged for the same user on the same machine. To stop the server from
+  another host, use `bin/openejb stop -h <host> -s <secret>`.
+* Custom scripts that send a plain stop byte to port 4200 must send the secret as well.
+* To restore the old behavior, set `openejb.admin.shutdown.secret.required=false`.
+
+== Filesystem and Passivation
+
+=== Passivation directory
+
+Stateful and managed beans were passivated directly into `java.io.tmpdir`, which is `CATALINA_BASE/temp` in TomEE. They
+are now passivated into a private directory `${java.io.tmpdir}/openejb-passivation-<random>/`, readable only by the
+server user. A new directory is used at every start and deleted when the JVM exits. The startup log shows the directory
+in use.
+
+Passivated state does not survive a restart, which matches the lifecycle of stateful beans. If tooling or monitoring
+expects the files in the shared temp directory, set `openejb.stateful.passivation.shared-tmpdir=true`. This property
+applies to both stateful and managed beans.
+
+`RAFPassivater` also uses a private temp directory now. There is no switch for it.
+
+=== Temp directories and archive extraction
+
+* Internal temp directories (for example for URL caching) are created with owner-only permissions. If another OS user
+  needs to read them, adjust your setup.
+* Archives whose entries resolve outside the target directory (for example `../` entries) fail to deploy or extract,
+  both in the server and in `tomee-maven-plugin`. Repackage such archives.
+
+== Packaging and Operations
+
+=== Debian packages
+
+The post-install script of the Debian packages no longer makes the configuration writable for the `apachetomee`
+service group. `/etc/tomee-<classifier>` and `/var/lib/tomee-<classifier>` are now readable but not writable for the
+group, so members of `apachetomee` can no longer edit `server.xml`, `tomcat-users.xml`, `tomee.xml` or
+`bin/setenv.sh`. Edit these files as root. The `work` directory, the log directory and
+`/var/lib/tomee-<classifier>-user-data` (webapps, temp) remain writable for the group.
+
+If an application writes context descriptors to `conf/Catalina/localhost` at runtime, grant that directory write access
+yourself.
+
+=== Server info and version output
+
+TomEE no longer patches `catalina.jar` to report its version
+(link:https://issues.apache.org/jira/browse/TOMEE-4710[TOMEE-4710]). The server info string is the same as before,
+`Apache Tomcat (TomEE)/<tomcat version> (<tomee version>)`, but it now comes from
+`lib/org/apache/catalina/util/ServerInfo.properties`:
+
+* The `tomee.keep-server-info` system property is no longer read. To report the plain Tomcat server info, delete
+  `lib/org/apache/catalina/util/ServerInfo.properties`.
+* The bundled jars are no longer repacked, so their signatures and metadata are intact.
+
+The startup banner has a new `Git revision` line
+(link:https://issues.apache.org/jira/browse/TOMEE-4709[TOMEE-4709]). Update log parsers that rely on the number of banner
+lines.
+
+=== Jars skipped by the scan exclusion list
+
+TomEE now logs the webapp jars it skips because their name matches the built-in scan exclusion list. Annotations in
+these jars (`@WebServlet`, `@RolesAllowed`, ...) are ignored. This was already the case before, but silently. If the log
+lists a jar that must be scanned, add its name prefix to the `openejb.additional.include` system property.
+
+== Configuration Reference
+
+The following switches restore previous behavior. All of them default to the secure setting.
+
+[cols="2,1,3",options="header"]
+|===
+|Property|Default|Effect when changed
+|`tomee.security.pbkdf2.allow-weak-parameters`|`false`|`true` accepts stored PBKDF2 hashes with weak parameters
+|`openejb.internal.beans.security.enabled`|`true`|`false` allows access to internal EJBs without an admin role
+|`openejb.jaxrs.ejb-exception-mapper.expose-message`|`false`|`true` returns `EJBException` messages to JAX-RS clients
+|`openejb.ejbd.datasource-metadata`|`false`|`true` allows remote DataSource lookups over EJBd
+|`openejb.client.disableEndpointIdentification`|`false`|`true` disables host name verification for `ejbds` clients (client JVM)
+|`openejb.client.allowTransportDowngrade`|`false`|`true` lets secure clients follow plain failover locations and redirects (client JVM)
+|`openejb.server.only_from.implicit-local`|`false`|`true` admits localhost to services restricted with `only_from`
+|`derbynet.bind`|`127.0.0.1`|`0.0.0.0` exposes the Derby network server on all interfaces
+|`openejb.admin.shutdown.secret.required`|`true`|`false` accepts stop requests without a secret (OpenEJB standalone)
+|`openejb.stateful.passivation.shared-tmpdir`|`false`|`true` passivates stateful and managed beans into `java.io.tmpdir`
+|===

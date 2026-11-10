@@ -34,8 +34,36 @@ and appreciated.
 
 === Download Links
 
-IMPORTANT: Note: Please note the 10.0.0-M releases are milestone releases intended for evaluation purposes and should not be used in production.
+IMPORTANT: Note: Please note the 10.0.0-M and 11.0.0-M releases are milestone releases intended for evaluation purposes and should not be used in production.
 
+
+[cols="2,4*^1",options="header"]
+|===
+|Name|Version|Date|Size|Signatures & Hashes
+|https://archive.apache.org/dist/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.zip[icon:download[] TomEE Microprofile ZIP] |11.0.0-M1|11 June 2026|70 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.tar.gz[icon:download[] TomEE Microprofile TAR.GZ] |11.0.0-M1|11 June 2026|70 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-microprofile.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.zip[icon:download[] TomEE Plume ZIP] |11.0.0-M1|11 June 2026|82 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.tar.gz[icon:download[] TomEE Plume TAR.GZ] |11.0.0-M1|11 June 2026|82 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plume.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.zip[icon:download[] TomEE Plus ZIP] |11.0.0-M1|11 June 2026|74 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.tar.gz[icon:download[] TomEE Plus TAR.GZ] |11.0.0-M1|11 June 2026|74 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-plus.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.zip[icon:download[] TomEE Webprofile ZIP] |11.0.0-M1|11 June 2026|60 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.tar.gz[icon:download[] TomEE Webprofile TAR.GZ] |11.0.0-M1|11 June 2026|60 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/apache-tomee-11.0.0-M1-webprofile.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-11.0.0-M1/tomee-project-11.0.0-M1-source-release.zip[icon:download[] TomEE Project Source Release ZIP] |11.0.0-M1|11 June 2026|22 MiB |https://downloads.apache.org/tomee/tomee-11.0.0-M1/tomee-project-11.0.0-M1-source-release.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-11.0.0-M1/tomee-project-11.0.0-M1-source-release.zip.sha512[icon:download[] SHA512]
+|===
+
+[cols="2,4*^1",options="header"]
+|===
+|Name|Version|Date|Size|Signatures & Hashes
+|https://archive.apache.org/dist/tomee/tomee-10.2.0/apache-tomee-10.2.0-microprofile.zip[icon:download[] TomEE Microprofile ZIP] |10.2.0|17 July 2026|71 MiB |https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-microprofile.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-microprofile.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-10.2.0/apache-tomee-10.2.0-microprofile.tar.gz[icon:download[] TomEE Microprofile TAR.GZ] |10.2.0|17 July 2026|71 MiB |https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-microprofile.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-microprofile.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-10.2.0/apache-tomee-10.2.0-plume.zip[icon:download[] TomEE Plume ZIP] |10.2.0|17 July 2026|83 MiB |https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-plume.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-plume.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-10.2.0/apache-tomee-10.2.0-plume.tar.gz[icon:download[] TomEE Plume TAR.GZ] |10.2.0|17 July 2026|83 MiB |https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-plume.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-plume.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-10.2.0/apache-tomee-10.2.0-plus.zip[icon:download[] TomEE Plus ZIP] |10.2.0|17 July 2026|76 MiB |https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-plus.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-plus.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-10.2.0/apache-tomee-10.2.0-plus.tar.gz[icon:download[] TomEE Plus TAR.GZ] |10.2.0|17 July 2026|75 MiB |https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-plus.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-plus.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-10.2.0/apache-tomee-10.2.0-webprofile.zip[icon:download[] TomEE Webprofile ZIP] |10.2.0|17 July 2026|61 MiB |https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-webprofile.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-webprofile.zip.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-10.2.0/apache-tomee-10.2.0-webprofile.tar.gz[icon:download[] TomEE Webprofile TAR.GZ] |10.2.0|17 July 2026|61 MiB |https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-webprofile.tar.gz.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-10.2.0/apache-tomee-10.2.0-webprofile.tar.gz.sha512[icon:download[] SHA512]
+|https://archive.apache.org/dist/tomee/tomee-10.2.0/tomee-project-10.2.0-source-release.zip[icon:download[] TomEE Project Source Release ZIP] |10.2.0|17 July 2026|22 MiB |https://downloads.apache.org/tomee/tomee-10.2.0/tomee-project-10.2.0-source-release.zip.asc[icon:download[] PGP] https://downloads.apache.org/tomee/tomee-10.2.0/tomee-project-10.2.0-source-release.zip.sha512[icon:download[] SHA512]
+|===
 
 [cols="2,4*^1",options="header"]
 |===

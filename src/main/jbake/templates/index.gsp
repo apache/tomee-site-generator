@@ -66,7 +66,7 @@
 			<div class="col-md-6 d-flex f-column-start accented-block accent-violet f-space-between">
                     <div class="block-content">
                         <h5 class="muted">Milestone Release - Jakarta EE 11</h5>
-                        <h4 class="muted">apache-tomee-11.0.0-M1</h4>
+                        <h4 class="muted">apache-tomee-11.0.0-M2</h4>
                         <p>Milestone Release, Apache TomEE 11 implements Jakarta EE 11 with MicroProfile 7.1. It runs on Java 17 or higher. Intended for evaluation only - not for production.</p>
                     </div>
                     <a class="btn btn-accent btn-primary square"  href="download.html#tomee-11"><i class="icon_plus"></i>Download</a>
@@ -74,8 +74,8 @@
                 <div class="col-md-6 d-flex f-column-end accented-block accent-red f-space-between">
                     <div class="block-content">
                         <h5 class="muted">Final Release - Jakarta EE 10</h5>
-                        <h4 class="muted">apache-tomee-10.2.0</h4>
-                        <p>Final Release, Apache TomEE 10.2 implements Jakarta EE 10 with MicroProfile 6.1. It runs on Java 17 or higher.</p>
+                        <h4 class="muted">apache-tomee-10.3.0</h4>
+                        <p>Final Release, Apache TomEE 10.3 implements Jakarta EE 10 with MicroProfile 6.1. It runs on Java 17 or higher.</p>
                     </div>
                     <a class="btn btn-accent btn-primary square"  href="download.html#tomee-10"><i class="icon_plus"></i>Download</a>
 				</div>

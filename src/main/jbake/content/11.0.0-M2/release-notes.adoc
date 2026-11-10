@@ -1,0 +1,218 @@
+= Apache TomEE 11.0.0-M2 Release Notes
+:index-group: Release Notes
+:jbake-type: page
+:jbake-status: published
+
+This is the second milestone release of TomEE 11 targeting Jakarta EE 11 and MicroProfile 7.1.
+
+Besides the fixes tracked in Jira, this milestone contains a large security hardening effort. We reviewed large parts of
+the code base and tightened the defaults of authentication, authorization, remote EJB, web services, passivation and build
+tooling. The Jakarta Authorization 3.0 implementation is now complete. This milestone also removes several legacy modules
+(`openejb-hessian`, `openejb-ssh`, `openejb-common-cli`, `tomee-webaccess` and the standalone HTTP server of
+`openejb-http`), moves the Maven and Gradle plugins to current build tool APIs, and upgrades Tomcat to 11.0.27 along
+with many other dependencies.
+
+IMPORTANT: Several of these changes are not backwards compatible. Please read the link:migration-guide.html[TomEE 11.0.0-M2 Migration Guide]
+before upgrading from TomEE 11.0.0-M1 or TomEE 10.
+
+Thanks to everyone who contributed code to make this happen.
+
+We would like to highlight and give a shout-out to all our volunteers who have been doing the hard work for EE11, which is also being done in all our upstream dependencies such as Tomcat, OWB, CXF, MyFaces, etc.
+
+Notable changes:
+
+- Security hardening across the server, summarized below
+- Jakarta Authorization 3.0 is fully implemented, and EJB method permissions are enforced on all JDKs
+- TomEE Plume ships the modular EclipseLink JPA artifact instead of the `eclipselink` uber jar
+- OpenJPA is still on its TomEE 10 level - the JPA 3.2 PR is not yet included
+
+Please note that we do not pass the full Jakarta EE TCK, nor do we have a fully functional TCK setup at the moment. However, our own full build is green.
+
+Please also note the 11.0.0-M2 release is a milestone release intended for evaluation purposes and should not be used in production.
+
+== Security Hardening
+
+The following changes were made without dedicated Jira issues. Items marked *(breaking)* are covered in the
+link:migration-guide.html[migration guide].
+
+=== MicroProfile JWT
+
+[.compact]
+- The MP-JWT filter is only registered for applications using `@LoginConfig(authMethod = "MP-JWT")`. Other authentication methods no longer trigger JWT processing *(breaking)*.
+- `@RolesAllowed` constraints are resolved per resource class. Methods inherited by several resource classes no longer merge their roles, and an empty `@RolesAllowed({})` now denies all callers *(breaking)*.
+- The caller identity is restored when the filter chain throws, so it cannot leak into a later request on a pooled thread.
+- A negative `mp.jwt.verify.clock.skew` now fails the deployment instead of silently disabling the token expiry check *(breaking)*.
+
+=== Authentication and Identity Stores
+
+[.compact]
+- The LDAP identity store escapes caller names in search filters and DNs, and no longer attempts a bind with an empty password (anonymous bind) *(breaking)*.
+- `SQLLoginModule` rejects users with a `NULL` stored password. `SQLLoginModule` and `PropertiesLoginModule` compare passwords in constant time and report a single generic failure message *(breaking)*.
+- `TomEEPbkdf2PasswordHash` validates the algorithm and iteration count of stored hashes and rejects weak parameters *(breaking)*.
+- The Tomcat user identity store verifies passwords through the `CredentialHandler` of the matching `UserDatabaseRealm`, so digested passwords in `tomcat-users.xml` work as expected *(breaking)*.
+- A caller principal is no longer granted a role just because its name matches the role name *(breaking)*.
+- Remember-me tokens are removed from the `RememberMeIdentityStore` on logout.
+- OpenID Connect `state` and `nonce` values are generated with `SecureRandom`, and `state` is compared in constant time.
+- Using the `Static3DES` password cipher logs a warning that it only obfuscates passwords.
+
+=== Authorization
+
+[.compact]
+- The Jakarta Authorization 3.0 implementation is complete. EJB method permissions are evaluated through `jakarta.security.jacc.PolicyFactory` on all JDKs (11.0.0-M1 skipped this check on Java 21 and newer), the `**` role is supported, and web constraints are installed as JACC permissions for every deployment path *(breaking)*.
+- Internal EJBs such as the Deployer always require the `tomee-admin` or `openejb-admin` role, and TomEE no longer creates a default `tomee`/`tomee` admin user *(breaking)*.
+
+=== Web Services, JAX-RS and Routing
+
+[.compact]
+- Security constraints generated for JAX-WS endpoints protect all HTTP methods instead of only `GET` and `POST` *(breaking)*.
+- EJB web services packaged in a WAR now enforce the `auth-method` configured in `openejb-jar.xml` *(breaking)*.
+- The WS-Security caller identity is cleared after each JAX-WS request, including on faults.
+- The default JAX-RS mapper for `EJBException` no longer returns the exception message to the client *(breaking)*.
+- `RouterValve` validates forward targets: it refuses `WEB-INF`/`META-INF` targets and honors the webapp's security constraints *(breaking)*.
+
+=== Remote EJB and Server Services
+
+[.compact]
+- Remote lookups of DataSources over EJBd are disabled by default *(breaking)*.
+- `ejbds` clients verify that the server certificate matches the host name *(breaking)*.
+- Clients configured for a secure transport ignore failover locations and refuse redirects that downgrade to a plain transport *(breaking)*.
+- `only_from` is authoritative for server services: localhost is no longer admitted implicitly *(breaking)*.
+- The Derby network server honors its `bind` setting (default `127.0.0.1`) *(breaking)*.
+- Stop requests on the standalone admin port require a shared secret *(breaking)*.
+- Primary keys of stateful and managed beans are random `UUID` values.
+
+=== Filesystem and Passivation
+
+[.compact]
+- Stateful and managed beans are passivated to a private, owner-only directory instead of the shared temp directory *(breaking)*.
+- `RAFPassivater` keeps its file in a private temp directory and reads back the data it wrote correctly.
+- Session ids that would resolve outside the passivation directory are rejected.
+- Internal temp directories are created atomically with owner-only permissions.
+- Archive extraction (WAR/EAR deployment, provisioning and `tomee-maven-plugin`) rejects entries that escape the target directory.
+- XML parsing of Maven metadata and `settings.xml` used for `mvn:` provisioning disables DTDs and external entities.
+
+=== Jakarta Data
+
+[.compact]
+- Dynamic `Sort` properties must be attribute names or dotted attribute paths *(breaking)*.
+
+=== Build Tooling and Packaging
+
+[.compact]
+- `tomee-maven-plugin` warns when it sends credentials over plain HTTP to a non-local host.
+- The LiveReload connector of `tomee-embedded-maven-plugin` binds to `localhost` and checks the WebSocket `Origin` header *(breaking)*.
+- The `quickSession` option of the Maven, Gradle and embedded tooling defaults to `false`, so session ids are always generated with `SecureRandom` *(breaking)*.
+- The Debian packages keep the configuration read-only for the `apachetomee` service group *(breaking)*.
+- The systemd service example in the documentation runs TomEE as a dedicated user.
+- Webapp jars skipped by the built-in scan exclusion list are now logged, so annotations that are silently ignored become visible.
+- The optional log4j 1.x API dependency (EOL log4j 1.2.17) is replaced by reload4j.
+
+== Bug
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-2044[TOMEE-2044] threadPool-queue (in ServicePool) from ejbd-Service is never processed
+- link:https://issues.apache.org/jira/browse/TOMEE-2764[TOMEE-2764] Path not appended when using UriBuilder.fromUri().path() with file scheme
+- link:https://issues.apache.org/jira/browse/TOMEE-2970[TOMEE-2970] JaxRS Server Sent events implementation leaves lots of warning logs
+- link:https://issues.apache.org/jira/browse/TOMEE-3726[TOMEE-3726] Queue is visible in JNDI Tree (java://id-resource)
+- link:https://issues.apache.org/jira/browse/TOMEE-3782[TOMEE-3782] cdi-request-scope example not working
+- link:https://issues.apache.org/jira/browse/TOMEE-4011[TOMEE-4011] Multi-threaded Deployment of multiple war-files runs in TomEERuntimeException
+- link:https://issues.apache.org/jira/browse/TOMEE-4029[TOMEE-4029] Use of JWKS forces kid to be present in JWTs
+- link:https://issues.apache.org/jira/browse/TOMEE-4240[TOMEE-4240] The implementation for mail.mime.parameters.strict parameter is missing in jakarta/mail/internet/ParameterList.java class of geronimo-mail_2.1_spec-1.0.0-M1.jar in TomEE 9.1.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4438[TOMEE-4438] Disable releases for apache-snapshot repo
+- link:https://issues.apache.org/jira/browse/TOMEE-4547[TOMEE-4547] MultipartMessage not build correctly with Jakarta.mail / Interferes with Geronimo-mail
+- link:https://issues.apache.org/jira/browse/TOMEE-4589[TOMEE-4589] openejb reports an error in web.xml which is wrong
+- link:https://issues.apache.org/jira/browse/TOMEE-4620[TOMEE-4620] Misspelled field accesToken in OIDC TokenResponse prevents interoperability with custom JSON providers (Jackson)
+- link:https://issues.apache.org/jira/browse/TOMEE-4631[TOMEE-4631] arquillian-tomee-remote: static "registered" latch breaks container re-registration on a second Arquillian Manager (e.g. failsafe rerunFailingTestsCount)
+- link:https://issues.apache.org/jira/browse/TOMEE-4642[TOMEE-4642] Deployment fails when a war lists a servlet or filter class it does not package
+- link:https://issues.apache.org/jira/browse/TOMEE-4651[TOMEE-4651] TomEE does not register jakarta.tags.* TLD URIs, breaking all Jakarta Tags 3.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4655[TOMEE-4655] A failed CDI/EJB deployment leaks its deployment ID into later apps
+- link:https://issues.apache.org/jira/browse/TOMEE-4657[TOMEE-4657] Bean Validation XML config fails on stock Plume: MOXy beats JAXB RI in ServiceLoader
+- link:https://issues.apache.org/jira/browse/TOMEE-4674[TOMEE-4674] Using otel.config.file in TomEE fails
+- link:https://issues.apache.org/jira/browse/TOMEE-4682[TOMEE-4682] SecurityContext.authenticate() does not persist the session (bypasses HttpServletRequest.authenticate())
+- link:https://issues.apache.org/jira/browse/TOMEE-4699[TOMEE-4699] ThreadContext constructor is not thread-safe, causing loss of submitted tasks.
+- link:https://issues.apache.org/jira/browse/TOMEE-4703[TOMEE-4703] ApplicationThreadContextProvider stores a live ThreadContext reference instead of an immutable snapshot
+- link:https://issues.apache.org/jira/browse/TOMEE-4704[TOMEE-4704] CUTask.invoke() does not safely propagate errors to ManagedTask
+- link:https://issues.apache.org/jira/browse/TOMEE-4708[TOMEE-4708] OpenID definition EL expressions are evaluated on a shared ELProcessor and fail under concurrent requests (regression of TOMEE-4595)
+- link:https://issues.apache.org/jira/browse/TOMEE-4711[TOMEE-4711] Jakarta Data repositories fail when called from a @Transactional CDI method
+- link:https://issues.apache.org/jira/browse/TOMEE-4712[TOMEE-4712] MDB endpoints are activated before the application's other EJBs are started
+- link:https://issues.apache.org/jira/browse/TOMEE-4714[TOMEE-4714] TomEEEmbeddedExtension (JUnit 5) can not start the container again after it was closed
+- link:https://issues.apache.org/jira/browse/TOMEE-4715[TOMEE-4715] TomEE embedded application runner does not inject @Resource into the @Application descriptor
+- link:https://issues.apache.org/jira/browse/TOMEE-4716[TOMEE-4716] MicroProfile Health endpoints are not deployed when the webapp declares a JAX-RS Application subclass
+- link:https://issues.apache.org/jira/browse/TOMEE-4727[TOMEE-4727] Jakarta Data repository fails when called from an AFTER_SUCCESS transactional observer
+- link:https://issues.apache.org/jira/browse/TOMEE-4728[TOMEE-4728] MicroProfile Health endpoint runs the providers of a declared JAX-RS application
+- link:https://issues.apache.org/jira/browse/TOMEE-4729[TOMEE-4729] MP-JWT security state is not restored for asynchronous requests
+- link:https://issues.apache.org/jira/browse/TOMEE-4730[TOMEE-4730] MP-JWT ignores class-level security annotations of a resource superclass
+- link:https://issues.apache.org/jira/browse/TOMEE-4731[TOMEE-4731] TxThreadContextRestorer fails with NPE when managed threads end after the container shut down
+
+== Improvement
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-1619[TOMEE-1619] Add exception message to Alerts
+- link:https://issues.apache.org/jira/browse/TOMEE-3234[TOMEE-3234] Update Examples to use Server / API Boms
+- link:https://issues.apache.org/jira/browse/TOMEE-4662[TOMEE-4662] Speed up annotation processing during WAR deploy
+- link:https://issues.apache.org/jira/browse/TOMEE-4709[TOMEE-4709] Track git revision in version info
+- link:https://issues.apache.org/jira/browse/TOMEE-4710[TOMEE-4710] Don't patch catalina.jar just to print TomEE Version
+
+== Task
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-2850[TOMEE-2850] Investigate and remove -j parameter from TCK setup
+- link:https://issues.apache.org/jira/browse/TOMEE-4259[TOMEE-4259] Fix "cdi-tck" after OWB-4 upgrade (CDI 4.0)
+- link:https://issues.apache.org/jira/browse/TOMEE-4260[TOMEE-4260] Fix "cdi-tck-embedded" after OWB-4 upgrade (CDI 4.0)
+- link:https://issues.apache.org/jira/browse/TOMEE-4634[TOMEE-4634] Remove tomee-webaccess
+- link:https://issues.apache.org/jira/browse/TOMEE-4675[TOMEE-4675] update to xbean-5.0.0 and owb-4.1.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4700[TOMEE-4700] Drop openejb-hessian
+- link:https://issues.apache.org/jira/browse/TOMEE-4701[TOMEE-4701] Drop openejb-ssh
+- link:https://issues.apache.org/jira/browse/TOMEE-4702[TOMEE-4702] Drop openejb-common-cli
+- link:https://issues.apache.org/jira/browse/TOMEE-4705[TOMEE-4705] Migrate the Maven plugins off the Maven 2 API
+- link:https://issues.apache.org/jira/browse/TOMEE-4706[TOMEE-4706] Migrate the Gradle plugin to a current Gradle version
+- link:https://issues.apache.org/jira/browse/TOMEE-4707[TOMEE-4707] Drop the standalone HTTP server from openejb-http
+- link:https://issues.apache.org/jira/browse/TOMEE-4733[TOMEE-4733] Pin Surefire to 3.5.x in TCK modules
+
+== Documentation
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-3738[TOMEE-3738] Replace Hibernate Validator with BVal for "Bean Validation TCK"
+- link:https://issues.apache.org/jira/browse/TOMEE-4673[TOMEE-4673] Remove "About the 'tomee' webapp" since Tomee drop-in webapp was removed in TOMEE-3724
+
+== Dependency upgrade
+
+[.compact]
+- link:https://issues.apache.org/jira/browse/TOMEE-4687[TOMEE-4687] actions/setup-java 6.0.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4630[TOMEE-4630] ActiveMQ 6.2.7
+- link:https://issues.apache.org/jira/browse/TOMEE-4665[TOMEE-4665] Apache ActiveMQ 6.3.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4690[TOMEE-4690] Apache ActiveMQ 6.3.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4692[TOMEE-4692] Apache BVal 3.1.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4680[TOMEE-4680] Apache CXF - CVE-2026-54225 in TomEE 10.2.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4664[TOMEE-4664] Apache Neethi 3.2.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4724[TOMEE-4724] Apache Neethi 3.2.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4672[TOMEE-4672] Bouncycastle 1.86
+- link:https://issues.apache.org/jira/browse/TOMEE-4627[TOMEE-4627] Commons Logging 1.4.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4669[TOMEE-4669] commons-codec 1.23.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4726[TOMEE-4726] commons-lang3 3.21.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4625[TOMEE-4625] CXF 4.2.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4689[TOMEE-4689] CXF 4.2.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4632[TOMEE-4632] Eclipselink 5.0.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4663[TOMEE-4663] Geronimo Mail 1.1.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4623[TOMEE-4623] Jackson 2.22.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4667[TOMEE-4667] Jackson 2.22.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4683[TOMEE-4683] Jackson 2.22.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4723[TOMEE-4723] Jackson 2.22.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4684[TOMEE-4684] Johnzon 2.2.0
+- link:https://issues.apache.org/jira/browse/TOMEE-4719[TOMEE-4719] Jose4j 0.9.7
+- link:https://issues.apache.org/jira/browse/TOMEE-4685[TOMEE-4685] JUnit 6.1.3
+- link:https://issues.apache.org/jira/browse/TOMEE-4670[TOMEE-4670] Mojarra 4.1.11
+- link:https://issues.apache.org/jira/browse/TOMEE-4691[TOMEE-4691] Mojarra 4.1.19
+- link:https://issues.apache.org/jira/browse/TOMEE-4717[TOMEE-4717] MyFaces 4.1.4
+- link:https://issues.apache.org/jira/browse/TOMEE-4693[TOMEE-4693] Plexus Classworlds 2.12.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4629[TOMEE-4629] saaj-impl 3.0.6
+- link:https://issues.apache.org/jira/browse/TOMEE-4722[TOMEE-4722] SLF4J 2.0.20
+- link:https://issues.apache.org/jira/browse/TOMEE-4668[TOMEE-4668] SmallRye Config 3.18.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4686[TOMEE-4686] SmallRye Config 3.18.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4628[TOMEE-4628] Smallrye OpenTelemtry 2.15.1
+- link:https://issues.apache.org/jira/browse/TOMEE-4720[TOMEE-4720] Snakeyaml 2.7
+- link:https://issues.apache.org/jira/browse/TOMEE-4624[TOMEE-4624] Tomcat 11.0.24
+- link:https://issues.apache.org/jira/browse/TOMEE-4688[TOMEE-4688] Tomcat 11.0.27
+- link:https://issues.apache.org/jira/browse/TOMEE-4725[TOMEE-4725] WSS4J 4.0.2
+- link:https://issues.apache.org/jira/browse/TOMEE-4633[TOMEE-4633] XBean 4.31
+
