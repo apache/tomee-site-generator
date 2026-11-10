@@ -46,7 +46,7 @@ Removing `openejb-http` has these further consequences:
 * The `org.apache.openejb.server.httpd.ServerServlet` class is now `org.apache.tomee.catalina.remote.ServerServlet`.
   If your `web.xml` declares this servlet to expose EJBd over HTTP, update the class name. `EEFilter`,
   `BeginWebBeansListener` and `EndWebBeansListener` moved to the `org.apache.tomee.catalina` package as well.
-* The default of `openejb.rest.wildcard` changed from `.*` to `*`.
+* The default of `openejb.rest.wildcard` changed from `+.*+` to `+*+`.
 
 == Build Tools
 

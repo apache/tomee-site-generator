@@ -58,7 +58,7 @@ link:migration-guide.html[migration guide].
 === Authorization
 
 [.compact]
-- The Jakarta Authorization 3.0 implementation is complete. EJB method permissions are evaluated through `jakarta.security.jacc.PolicyFactory` on all JDKs (11.0.0-M1 skipped this check on Java 21 and newer), the `**` role is supported, and web constraints are installed as JACC permissions for every deployment path *(breaking)*.
+- The Jakarta Authorization 3.0 implementation is complete. EJB method permissions are evaluated through `jakarta.security.jacc.PolicyFactory` on all JDKs (11.0.0-M1 skipped this check on Java 21 and newer), the `+**+` role is supported, and web constraints are installed as JACC permissions for every deployment path *(breaking)*.
 - Internal EJBs such as the Deployer always require the `tomee-admin` or `openejb-admin` role, and TomEE no longer creates a default `tomee`/`tomee` admin user *(breaking)*.
 
 === Web Services, JAX-RS and Routing
