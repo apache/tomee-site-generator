@@ -31,6 +31,11 @@ The private security mailing address is: **security (at) apache (dot) org**
 
 Note that all networked servers are subject to denial of service attacks, and we cannot promise magic workarounds to generic problems (such as a client streaming lots of data to your server, or re-requesting the same URL repeatedly). In general our philosophy is to avoid any attacks which can cause the server to consume resources in a non-linear relationship to the size of inputs.
 
+== Apache TomEE vulnerabilities
+
+The vulnerabilities fixed in Apache TomEE, with their affected versions and the releases that fix them, are listed on the
+xref:tomee.adoc[Apache TomEE Security Vulnerabilities] page.
+
 == Third-party projects
 
 Apache TomEE is built with the following components. Please see the security advisories information for each component for more information on the security vulnerabilities and issues that may affect that component.

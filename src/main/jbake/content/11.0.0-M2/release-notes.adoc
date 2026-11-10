@@ -30,9 +30,58 @@ Please note that we do not pass the full Jakarta EE TCK, nor do we have a fully 
 
 Please also note the 11.0.0-M2 release is a milestone release intended for evaluation purposes and should not be used in production.
 
+== Security Vulnerabilities
+
+This release fixes the following vulnerabilities. See the link:../security/tomee.html[TomEE security page] for details,
+affected versions and credits.
+
+[.compact]
+- link:../security/tomee.html#CVE-2026-86336[CVE-2026-86336] (important) EJB method authorization is silently skipped on JDK 21+
+- link:../security/tomee.html#CVE-2026-111244[CVE-2026-111244] (important) Authorization bypass in MicroProfile JWT role checks for JAX-RS resources
+- link:../security/tomee.html#CVE-2026-111257[CVE-2026-111257] (important) Well-known administrative credentials created at startup
+- link:../security/tomee.html#CVE-2026-111261[CVE-2026-111261] (important) Authentication bypass with empty password in LDAP identity store
+- link:../security/tomee.html#CVE-2026-111264[CVE-2026-111264] (important) Authentication bypass on EJB web service endpoints via HTTP method
+- link:../security/tomee.html#CVE-2026-86811[CVE-2026-86811] (moderate) Path traversal via stateful EJB passivation
+- link:../security/tomee.html#CVE-2026-87755[CVE-2026-87755] (moderate) Stateful session bean hijacking via predictable session identifiers
+- link:../security/tomee.html#CVE-2026-87756[CVE-2026-87756] (moderate) Missing authorization on internal deployer EJBs in default profile
+- link:../security/tomee.html#CVE-2026-87758[CVE-2026-87758] (moderate) Missing TLS hostname verification in ejbds client connections
+- link:../security/tomee.html#CVE-2026-97849[CVE-2026-97849] (moderate) Derby network service listens on all interfaces
+- link:../security/tomee.html#CVE-2026-97867[CVE-2026-97867] (moderate) Database credential disclosure via remote JNDI lookup
+- link:../security/tomee.html#CVE-2026-111240[CVE-2026-111240] (moderate) Authentication bypass for accounts without a stored password in SQL login module
+- link:../security/tomee.html#CVE-2026-111241[CVE-2026-111241] (moderate) Local code execution via predictable passivation files in the shared temporary directory
+- link:../security/tomee.html#CVE-2026-111242[CVE-2026-111242] (moderate) Privilege escalation via leaked MicroProfile JWT run-as identity
+- link:../security/tomee.html#CVE-2026-111245[CVE-2026-111245] (moderate) Privilege escalation via WS-Security caller identity leaking between requests
+- link:../security/tomee.html#CVE-2026-111247[CVE-2026-111247] (moderate) Privilege escalation via user name matching a role name
+- link:../security/tomee.html#CVE-2026-111251[CVE-2026-111251] (moderate) Unauthenticated server shutdown via the admin port
+- link:../security/tomee.html#CVE-2026-111258[CVE-2026-111258] (moderate) Security constraint bypass via request routing
+- link:../security/tomee.html#CVE-2026-111259[CVE-2026-111259] (moderate) Predictable HTTP session identifiers in embedded server
+- link:../security/tomee.html#CVE-2026-111262[CVE-2026-111262] (moderate) LDAP injection in LDAP identity store
+- link:../security/tomee.html#CVE-2026-111263[CVE-2026-111263] (moderate) Missing authentication on EJB web service endpoints deployed in a web application
+- link:../security/tomee.html#CVE-2026-86532[CVE-2026-86532] (low) Username enumeration and timing side channel in JAAS login modules
+- link:../security/tomee.html#CVE-2026-111243[CVE-2026-111243] (low) Expired MicroProfile JWT tokens accepted with negative clock skew
+- link:../security/tomee.html#CVE-2026-111248[CVE-2026-111248] (low) Authentication with the stored password digest in Tomcat user identity store
+- link:../security/tomee.html#CVE-2026-111249[CVE-2026-111249] (low) Unauthenticated LiveReload endpoint reachable from the network
+- link:../security/tomee.html#CVE-2026-111260[CVE-2026-111260] (low) Predictable OpenID Connect state and nonce values
+
+The following vulnerabilities affect modules that were removed in this release. Upgrading removes the affected code.
+
+[.compact]
+- link:../security/tomee.html#CVE-2026-86531[CVE-2026-86531] (moderate) DoS via unbounded request body and multipart handling in embedded HTTP server
+- link:../security/tomee.html#CVE-2026-97870[CVE-2026-97870] (moderate) Missing authentication for Hessian endpoints in embedded HTTP server
+- link:../security/tomee.html#CVE-2026-97872[CVE-2026-97872] (moderate) Authentication bypass of Hessian EJB endpoints due to ignored security settings
+- link:../security/tomee.html#CVE-2026-97874[CVE-2026-97874] (moderate) Authentication bypass for Hessian endpoints in non-root web applications
+- link:../security/tomee.html#CVE-2026-97880[CVE-2026-97880] (moderate) Authentication bypass in the embedded HTTP server for endpoints protected by HTTP Basic authentication
+- link:../security/tomee.html#CVE-2026-97881[CVE-2026-97881] (moderate) Path traversal in embedded HTTP server static resource handling
+- link:../security/tomee.html#CVE-2026-97888[CVE-2026-97888] (moderate) Caller identity leaks across requests in embedded HTTP server
+- link:../security/tomee.html#CVE-2026-111239[CVE-2026-111239] (moderate) Code execution by any authenticated user via the SSH administration shell
+- link:../security/tomee.html#CVE-2026-111250[CVE-2026-111250] (moderate) Authentication bypass via programmatic authentication in embedded HTTP server
+- link:../security/tomee.html#CVE-2026-111256[CVE-2026-111256] (moderate) Missing authentication for web service endpoints in embedded HTTP server
+- link:../security/tomee.html#CVE-2026-97890[CVE-2026-97890] (low) Session fixation in embedded HTTP server
+- link:../security/tomee.html#CVE-2026-111246[CVE-2026-111246] (low) HTTP sessions shared across web applications in embedded HTTP server
+
 == Security Hardening
 
-The following changes were made without dedicated Jira issues. Items marked *(breaking)* are covered in the
+Besides the fixes for the vulnerabilities above, the following changes were made without dedicated Jira issues. Items marked *(breaking)* are covered in the
 link:migration-guide.html[migration guide].
 
 === MicroProfile JWT
