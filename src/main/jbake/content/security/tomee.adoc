@@ -6,6 +6,8 @@ This page lists the security vulnerabilities fixed in Apache TomEE releases.
 Each vulnerability is given a security impact rating by either the Apache TomEE team or by the dependent project supplying the fix - please note that this rating is not uniform and will vary from project to project.
 We also list the versions of Apache TomEE the flaw is known to affect, and where a flaw has not been verified list the version with a question mark.
 
+IMPORTANT: Only Apache TomEE 10.x and 11.x are maintained. End of life versions may be listed as affected, but they receive no fixes. See xref:security.adoc#supported-versions[Supported versions].
+
 NOTE: Vulnerabilities that are not TomEE vulnerabilities but have either been incorrectly reported against TomEE or where TomEE provides a workaround are listed bellow in the section "Not a vulnerability".
 
 Please note that binary patches are never provided.

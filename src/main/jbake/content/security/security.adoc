@@ -4,6 +4,20 @@
 :jbake-status: published
 //:page-aliases: security/index.adoc
 
+[[supported-versions]]
+== Supported versions
+
+Only the following release lines are maintained and receive security fixes:
+
+- Apache TomEE 11.x
+- Apache TomEE 10.x
+
+All other versions are end of life (see xref:../download-discontinued.adoc[Discontinued TomEE Versions]).
+They receive no fixes, including for security vulnerabilities, and they ship with outdated transitive dependencies that have known vulnerabilities of their own.
+Vulnerability announcements list end of life versions as affected where this is known, but no fixed release is provided for them.
+If you are running an end of life version, upgrade to a maintained release line.
+If you need help with older versions, see the xref:../community/commercial.adoc[Commercial Support] page.
+
 == Security updates
 
 Please note that, except in rare circumstances, binary patches are not produced for individual vulnerabilities. To obtain the binary fix for a particular vulnerability you should upgrade to an Apache TomEE version where that vulnerability has been fixed.
